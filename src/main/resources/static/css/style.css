@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+#wrap{
+	width:1200px;
+	
+	margin:auto;
+}
+
+header{
+	
+	height:70px;
+	
+	background-color:#1E90FF;
+	
+	font-color: white;
+}
+
+.contents{
+	
+	height:500px;
+}
+
+.contents > .join-box{
+	
+	width:450px;
+}
+
+footer{
+	
+	height:70px;
+	background-color: #1E90FF;
+	
+}
