@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.choongmotour.user.dao.UserDAO;
+import com.marondal.choongmotour.user.model.User;
+import com.marondal.choongmotour.common.EncryptService;
 
 @Service
 public class UserBO {
@@ -16,15 +18,13 @@ public class UserBO {
 			String loginId
 			, String password
 			, String name
-			, String email
-			, String phoneNumber
+			, String email	
 			, String nickname
-			, String imagePath
 			) {
+		//비밀번호 암호화 
+		String encryptPassword= EncryptService.md5(password);
 		
-		//String encryptPassword= EncryptService.md5(password);
-		
-		return userDAO.insertUser(loginId, password, name, email, phoneNumber, nickname, imagePath);
+		return userDAO.insertUser(loginId, encryptPassword, name, email, nickname);
 		
 	}
 	
@@ -41,10 +41,15 @@ public class UserBO {
 		
 	}
 	
-	//비밀번호 암호화  ecrypt 나중에 까먹지 말것. 
+	
 	
 	//로그인 api
-	public int getUser() {
+	public User getUser(String loginId, String password) {//모델객체 불러오는것.
+		
+		//비밀번호 암호화
+		String ecryptPassword = EncryptService.md5(password);
+		
+		return userDAO.selectUser(loginId, ecryptPassword);
 		
 		
 	}

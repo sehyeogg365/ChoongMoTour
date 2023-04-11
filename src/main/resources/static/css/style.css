@@ -11,8 +11,7 @@ header{
 	height:70px;
 	
 	background-color:#1E90FF;
-	
-	font-color: white;
+
 }
 
 .contents{
@@ -25,9 +24,19 @@ header{
 	width:450px;
 }
 
+.contents > .login-box{
+	
+	width:450px;
+}
+
+.contents> .main-page{
+	width:1200px;
+}
+
 footer{
 	
 	height:70px;
+	
 	background-color: #1E90FF;
 	
 }

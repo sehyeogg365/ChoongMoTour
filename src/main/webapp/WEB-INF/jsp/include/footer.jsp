@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+		<footer class="d-flex justify-content-center">
+			<div class="text-center text-white pt-3">Copyright © choongmotour 2023</div>
+		</footer>
 </body>
 </html>

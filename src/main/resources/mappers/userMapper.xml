@@ -14,21 +14,17 @@
 		  		,`password` 
 		  		, `name`
 		    	, `email` 
-		    	, `phoneNumber` 
-		    	, `nickname` 
-		    	, `imagePath` 
+		    	, `nickname` <!--Field 'phoneNumber' doesn't have a default value 라는 오류 디비엔 폰넘버가 있지만 회원가입 때는 폰넘버가 필요없다. 폰넘버를 안넣고 싶은경우가 있을것. 디비및 설계문서를 null로 바꿀것.  -->
 		    	, `createdAt` 
 		    	, `updatedAt` 
 		  	)
-	  VALUE
+	  VALUES
 		  (
 		  	#{loginId}
 		  	, #{password}
 		  	, #{name}
 		  	, #{email}
-		  	, #{phoneNumber}
 		  	, #{nickname}
-		  	, #{imagePath}
 		  	, now()
 		  	, now()
 		  	
@@ -37,6 +33,33 @@
   
   
   </insert>
+  
+  <select id = "selectCountloginId" resultType="int" parameterType="String">
+  	SELECT 
+  		count(1)
+  	FROM
+  		`user`
+  	WHERE
+  		`loginId` = #{loginId};
+  	
+  </select>
+  
+  <select id="selectUser" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+  	
+  	SELECT
+  		`loginId`
+		 ,`password` 
+		 , `name`
+		 , `email` 
+		 , `nickname`
+		 , `createdAt` 
+		 , `updatedAt` 
+  	FROM
+  		`user`
+  	WHERE
+  		`loginId` = #{loginId}
+  		AND `password` = #{password};
+  </select>
   
   
   </mapper>
