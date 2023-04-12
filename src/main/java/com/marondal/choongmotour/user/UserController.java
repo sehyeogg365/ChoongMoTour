@@ -26,17 +26,23 @@ public class UserController {
 		HttpSession session = request.getSession();
 		session.removeAttribute("userId");
 		session.removeAttribute("userNickname");
+		session.removeAttribute("userImagePath");//로그인할때 세션 갑으로 불러오면 당연히 여기서도 있어야 한다 함
 		
 		return "redirect:/user/signin/view";
 	
 	
 	
 	}
-	
-	
 	@GetMapping("/find_id_pw/view")
 	public String findIdPw() {
 		return "user/find_id_pw";
 	}
+	
+	@GetMapping("/mypage/view")
+	public String myPage() {
+		return "user/mypage";
+	}
+	
+	
 	
 }

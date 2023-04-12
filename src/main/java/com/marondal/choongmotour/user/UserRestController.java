@@ -86,10 +86,11 @@ public class UserRestController {
 		if(user != null) {
 			resultMap.put("result", "success");
 			
-			session.setAttribute("userId", user.getId());//id, 네임, 닉네임 값을 가져오기 위해 세션
+			session.setAttribute("userId", user.getId());//id, 네임, 닉네임, 이미지 값을 가져오기 위해 세션
 			session.setAttribute("loginId", user.getLoginId());
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("userNickname", user.getNickname());
+			session.setAttribute("userImagePath", user.getImagePath());//세션 값으로 불러오는것들을 최소화 할것 안그러면 서버 과부하가 오니 폰넘버, 이메일은 그 수정페이지에서만 사용하기에 그런건 db에서 불러오면 됨 
 			
 		} else {
 			resultMap.put("result", "fail");

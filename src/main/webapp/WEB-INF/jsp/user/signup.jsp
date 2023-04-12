@@ -54,6 +54,19 @@
 		var isDuplicateId = true;//id중복여부	중복이되야 진행안되니 중복되는걸 기본값	
 		
 		
+		//중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
+		$("#loginIdInput").on("input", function(){
+			 //중복 관련된 상태 초기화
+			 isChecked = false;
+			 isDuplicateId = true;
+			 
+			 $("#duplicateYes").addClass("d-none");
+			 $("#duplicateNo").addClass("d-none");
+			//다시 지우면 중복확인 상태가 초기화
+		});
+		
+		
+		
 		$("#duplicateBtn").on("click", function(){
 			let id = $("#loginIdInput").val();
 			
@@ -84,10 +97,7 @@
 				, error:function(){
 					alert("중복확인 에러");
 				}
-					
-					
-				   
-			  
+	  
 				
 			});
 			
@@ -127,8 +137,32 @@
 				alert("이메일을 입력해주세요.");
 				return ;
 			}
+			
+			if(!email.includes('@')){
+				alert("이메일 형식이 아닙니다.");
+				return;
+				
+			}
+			
 			if(nickname == ""){
 				alert("닉네임을 입력해주세요.");
+				return ;
+			}
+			
+			if(nickname.length < 2){
+				alert("닉네임을 두글자 이상 입력해주세요.");
+				return ;
+			}
+			
+			
+			//중복체크가 안됐을때
+			if(!isChecked) {
+				alert("중복체크를 진행해주세요");
+				return ;
+			}
+			//중복된 아이디일때
+			if(isDuplicateId){
+				alert("아이디가 중복됩니다.");
 				return ;
 			}
 		
@@ -137,7 +171,7 @@
 				, url: "/user/signup"
 				, data:	{"loginId":id, "password": password, "name":name, "email":email, "nickname":nickname}
 				, success:function(data){
-						if(data.result="success"){
+						if(data.result == "success"){
 							alert("회원가입 성공");
 							location.href = "/user/signin/view";
 						} else{
