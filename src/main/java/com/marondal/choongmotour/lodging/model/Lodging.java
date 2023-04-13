@@ -1,5 +1,64 @@
 package com.marondal.choongmotour.lodging.model;
 
-public class Lodging {
+import java.util.Date;
 
+public class Lodging {
+	private int id;
+	private int adminId;
+	private String roomName;
+	private String imagePath;
+	private int level;
+	private String areaName;
+	private Date createdAt;
+	private Date updatedAt;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getAdminId() {
+		return adminId;
+	}
+	public void setAdminId(int adminId) {
+		this.adminId = adminId;
+	}
+	public String getRoomName() {
+		return roomName;
+	}
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	public String getAreaName() {
+		return areaName;
+	}
+	public void setAreaName(String areaName) {
+		this.areaName = areaName;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	
+	
 }

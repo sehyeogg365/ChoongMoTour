@@ -39,7 +39,7 @@
 				
 				
 			  	<div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="/user/mypage/">MyPage</a>
+			    <a class="dropdown-item" href="/user/mypage/view">MyPage</a>
 			    <a class="dropdown-item" href="#">ReservePage</a>
 			    <a class="dropdown-item" href="/user/signout/">로그아웃</a>
 			    

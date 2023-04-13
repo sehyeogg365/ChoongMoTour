@@ -14,6 +14,17 @@ public class LodgingController {
 		return "lodging/main";
 	}
 	
+	@GetMapping("/list/view")
+	public String lodgingList() {
+		return "lodging/list";
+	}
+	
+	@GetMapping("/room/view")
+	public String room() {
+		return "lodging/room";
+	}
+	
+	
 	
 	
 }

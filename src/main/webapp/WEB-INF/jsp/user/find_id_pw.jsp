@@ -17,7 +17,7 @@
 
 </head>
 <body>
-	<div id="wrap" class="container">
+	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 		
