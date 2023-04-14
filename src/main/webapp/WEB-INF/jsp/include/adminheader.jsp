@@ -13,12 +13,12 @@
 			
 			
 			<c:choose>
-			<c:when test="${not empty userId }">
+			<c:when test="${not empty adminId }">
 			<div class="btn-group">
 			<!-- 프로필사진이 있을때 없을때 -->
 			  <c:choose>
-			  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-			  	<img class="adminprofile" src="${userImagePath}">
+			  <c:when test="${not empty adminImagePath }"><!-- 있을때 -->
+			  	<img class="adminprofile" src="${adminImagePath}">
 			  </c:when>
 			  <c:otherwise><!-- 없을때 -->
 			  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
@@ -31,24 +31,24 @@
 			  
 			  
 			  <div class="dropdown-menu">
-				<c:if test ="${not empty userId }">
+				<c:if test ="${not empty adminId }">
 				<div class="mr-3">
-					${userNickname } 님 
+					${adminNickname } 님 
 				</div>
 				</c:if>
 				
 				
 			  	<div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="/user/mypage/view">MyPage</a>
+			    <a class="dropdown-item" href="/admin/mypage/view">MyPage</a>
 			    <a class="dropdown-item" href="#">ReservePage</a>
-			    <a class="dropdown-item" href="/user/signout/">로그아웃</a>
+			    <a class="dropdown-item" href="/admin/signout/">로그아웃</a>
 			    
 			   
 			  </div>
 			</div>
 			</c:when>
 			<c:otherwise><!-- 로그인 했을시 위에 드롭다운 버튼이 로그인 안됐을시 로그인 글씨가 -->
-				<h4> <a href="/user/signin/view">로그인</a></h4>
+				<h4> <a href="/admin/signin/view">로그인</a></h4>
 			</c:otherwise>
 			
 			</c:choose>

@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div id="wrap">
-		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
+		<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="join-box"><!-- 유저 회원가입과 달리 인증번호 보내기 추가 -->
 				<h1 class="text-center pt-3">관리자 회원 가입</h1>
@@ -38,7 +38,7 @@
 					
 					<div class="d-flex">
 						<input type="text" id="certificationnumberInput" placeholder="인증번호" class="form-control mt-4">
-						<button type="button" class="btn btn-primary btn-block" id="sendcertification">인증번호 발송</button>
+						<button type="button" class="btn btn-primary btn-block" id="certificationCheck">인증번호 확인</button>
 					
 					</div>
 					
@@ -61,21 +61,68 @@
 		
 		//인증번호 발송 버튼
 		
-		$("#sendcertification").on("click", function(){
+		$("#certificationCheck").on("click", function(){
 			let certificationnumber = $("#certificationnumberInput").val();
 			
-			alert("인증번호가 이메일로 발송되었습니다.");
+			
+			
+			if(certificationnumber == ${c}){
+				alert("인증번호를 입력해주세요.");
+				return ;
+			} 
+			
+			//if(certificationnumber != ){//코드문안에 넣을지 말지 고민해보기? 근데 코드문 안에 넣기는 그렇다고 함.
+			//	alert("인증번호가 일치 하지 않습니다.");
+			//	return ;
+			//}
+			
+			
 		});
 		
 		//중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
 		$("#loginIdInput").on("input", function(){
-			
-			
+			isChecked = false;
+			 isDuplicateId = true;
+			 
+			 $("#duplicateYes").addClass("d-none");
+			 $("#duplicateNo").addClass("d-none");
 		});
 		
 		//중복검사 버튼
 		$("#duplicateBtn").on("click", function(){
 			let id = $("#loginIdInput").val();	
+			
+			if(id == "") {
+				alert("아이디를 입력하세요.");
+				return ;
+			}
+			
+			$.ajax({
+				type:"get"
+				, url: "/admin/duplicate_id"
+				, data: {"loginId":id}
+				, success:function(data){
+					
+					isChecked = true;
+					isDuplicateId = data.is_duplicate;
+					
+					if(data.is_duplicate){
+						$("#duplicateYes").removeClass("d-none");
+						$("#duplicateNo").addClass("d-none");
+					} else{
+						$("#duplicateYes").addClass("d-none");
+						$("#duplicateNo").removeClass("d-none");
+					}
+	
+				}
+				, error:function(){
+					alert("중복확인 에러");
+				}
+				
+				
+			});
+			
+			
 		});
 		
 		//조인버튼
@@ -88,7 +135,7 @@
 			let nickname = ("#nicknameInput").val();
 			let certificationnumber = $("#certificationnumberInput").val();
 			
-			
+			//유효성검사
 			if(id == ""){
 				alert("아이디를 입력해주세요.");
 				return ;
@@ -133,6 +180,15 @@
 				alert("인증번호를 입력해주세요.");
 				return ;
 			}
+			
+			//인증번호가 일치 하지 않습니다.
+			if(certificationnumber == ""){
+				alert("인증번호를 입력해주세요.");
+				return ;
+			}
+			
+			
+			
 			//중복체크가 안됐을때
 			if(!isChecked){
 				alert("중복체크를 진행해주세요.");
@@ -147,12 +203,17 @@
 			
 			
 			$.ajax({
-				type:""
+				type:"post"
 				, url : "/admin/signup"
 				, data: {"loginId":id, "password": password, "name" : name, "email" : email, "nickname":nickname, "certificationnumber":certificationnumber }
 				,succes:function(data){
 					
-					if(data == )
+					if(data.result == "success"){
+						alert("회원가입 성공");
+						location.href = "/admin/signin/view";
+					} else {
+						alert("회원가입 실패");
+					}
 					
 				}
 				, error:function(){

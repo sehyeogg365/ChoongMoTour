@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.marondal.choongmotour.admin.dao.AdminDAO">
+  
+  <insert id ="insertAdmin" parameterType="map">
+  	INSERT INTO
+  			`admin`
+  		(
+  			`loginId`
+  			, `password`
+  			, `name`
+  			, `email`
+  			, `nickname` 
+  			, `createdAt`
+  			, `updatedAt`
+  		)
+  		VALUES
+  		(
+  			#{loginId}
+  			, #{password}
+  			, #name}
+  			, #{email}
+  			, #{nickname}
+  			, now()
+  			, now()
+  		
+  		)
+
+  </insert>
+  
+  <select id = "selectCountloginId" resultType="int" parameterType="String">
+  	SELECT
+  		count(1)
+  	FROM
+  		`admin`
+  	WHERE
+  		`loginId` = #{loginId}  
+  
+  </select>
+  
+
+  
+  
+  </mapper>
