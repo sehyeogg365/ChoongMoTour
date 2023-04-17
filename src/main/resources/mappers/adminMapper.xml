@@ -38,11 +38,39 @@
   	FROM
   		`admin`
   	WHERE
-  		`loginId` = #{loginId}  
+  		`loginId` = #{loginId}; 
   
   </select>
   
+  <!-- 인증번호 조회및 일치여부 확인 --> 
+  <select id="selectcertificationNumber" resultType="int" parameterType="String">
+  	SELECT
+  		count(1)
+  	FROM
+  		`certificationnumber`
+  	WHERE
+  		`certificationNumber` = #{certificationNumber};
 
+  </select>
+  
+ 
+ <select id="selectAdmin" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
+ 	SELECT 
+ 		`loginId`
+  		, `password`
+  		 , `name`
+		 , `email` 
+		 , `nickname`
+		 , `createdAt` 
+		 , `updatedAt` 
+ 	FROM
+ 		`admin`
+ 	WHERE
+ 		`loginId` = #{loginId}
+ 		AND
+ 		`password` = #{password};
+ 
+ </select>
   
   
   </mapper>

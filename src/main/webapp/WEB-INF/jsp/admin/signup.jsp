@@ -37,9 +37,7 @@
 					<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
 					
 					<div class="d-flex">
-						<input type="text" id="certificationnumberInput" placeholder="인증번호" class="form-control mt-4">
-						<button type="button" class="btn btn-primary btn-block" id="certificationCheck">인증번호 확인</button>
-					
+						<input type="text" id="certificationnumberInput" placeholder="인증번호" class="form-control mt-4">	
 					</div>
 					
 					
@@ -59,25 +57,7 @@
 		
 		var isDuplicateId = true;//id중복여부	중복이되야 진행안되니 중복되는걸 기본값	
 		
-		//인증번호 발송 버튼
-		
-		$("#certificationCheck").on("click", function(){
-			let certificationnumber = $("#certificationnumberInput").val();
-			
-			
-			
-			if(certificationnumber == ${c}){
-				alert("인증번호를 입력해주세요.");
-				return ;
-			} 
-			
-			//if(certificationnumber != ){//코드문안에 넣을지 말지 고민해보기? 근데 코드문 안에 넣기는 그렇다고 함.
-			//	alert("인증번호가 일치 하지 않습니다.");
-			//	return ;
-			//}
-			
-			
-		});
+	
 		
 		//중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
 		$("#loginIdInput").on("input", function(){
@@ -129,10 +109,10 @@
 		$("#joinBtn").on("click", function(){
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
-			let passwordConfirm = ("#passwordConfirmInput").val();
-			let name = ("#nameInput").val();
-			let email = ("#emailInput").val();
-			let nickname = ("#nicknameInput").val();
+			let passwordConfirm = $("#passwordConfirmInput").val();
+			let name = $("#nameInput").val();
+			let email = $("#emailInput").val();
+			let nickname = $("#nicknameInput").val();
 			let certificationnumber = $("#certificationnumberInput").val();
 			
 			//유효성검사
@@ -181,12 +161,13 @@
 				return ;
 			}
 			
-			//인증번호가 일치 하지 않습니다.
-			if(certificationnumber == ""){
-				alert("인증번호를 입력해주세요.");
-				return ;
-			}
 			
+			//인증번호가 일치 하지 않습니다. 인증번호는 디비값이므로 서버에서 알아서 해결될문제 굳이 없어도됨
+			//if(certificationnumber != "#123$%"){
+			//	alert("인증번호가 일치 하지 않습니다.")
+			//	return ;
+			//}
+			//레스트 컨트롤러 디버깅 결과 값들이 정상적으로 다 들어왔다. 그말인즉슨 아작스 위의 값은 다 정상적으로 수행되고 문제없단뜻
 			
 			
 			//중복체크가 안됐을때
@@ -205,12 +186,12 @@
 			$.ajax({
 				type:"post"
 				, url : "/admin/signup"
-				, data: {"loginId":id, "password": password, "name" : name, "email" : email, "nickname":nickname, "certificationnumber":certificationnumber }
-				,succes:function(data){
+				, data: {"loginId":id, "password": password, "name": name, "email": email, "nickname":nickname, "certificationNumber":certificationnumber }
+				, success:function(data){// 알고보니 s하나가 빠졌었다.
 					
-					if(data.result == "success"){
+					if(data.result == "success"){//만약 값이 들어온다면 이것이 수행될텐데 안된다는 뜻.
 						alert("회원가입 성공");
-						location.href = "/admin/signin/view";
+						location.href = "/admin/signin/view";//이제는 아예 안뜨다가 회원가입실패로 바뀌어서 뜬다. 그런데도 콘솔창 오류메시지 안뜸
 					} else {
 						alert("회원가입 실패");
 					}

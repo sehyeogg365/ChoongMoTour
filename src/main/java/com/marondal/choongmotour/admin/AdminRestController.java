@@ -45,17 +45,8 @@ public class AdminRestController {
 		//인증번호 일치 여부 새로운 api를 만들필요없다고 함 기존의 api에서 애초에 인증번호를 전달받아서 그것이 일치 하는 여부를 따지고 그담에
 		//일치하면 리턴진행하고 이런식으로 할것.
 				
+		//인증번호 일치 여부
 
-
-				
-		if(count == 1) {
-					
-		} else {
-					
-		}
-		
-		
-		
 		
 		if(count == 1) {
 			resultMap.put("result", "success");
@@ -91,6 +82,33 @@ public class AdminRestController {
 	
 	
 	//관리자 로그인 api
+	@PostMapping("/signin")
+	public Map<String, String> signin(
+			@RequestParam("loginId") String loginId
+			, @RequestParam("password") String password
+			, HttpSession session
+			){
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+			Admin admin = adminBO.getAdmin(loginId, password);
+		
+			if(admin != null) {
+				resultMap.put("result", "success");
+				
+				session.setAttribute("adminId", admin.getId());
+				session.setAttribute("passowrd", admin.getPassword());
+				session.setAttribute("adminName", admin.getName());
+				session.setAttribute("adminNickname", admin.getNickname());
+				session.setAttribute("adminImagePath", admin.getImagePath());		
+			} else {
+				resultMap.put("result", "fail");
+			}
+			
+			return resultMap;
+		
+	}
 	
-	//
+	
+	
 }
