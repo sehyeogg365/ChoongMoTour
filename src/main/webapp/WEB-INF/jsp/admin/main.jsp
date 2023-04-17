@@ -15,6 +15,27 @@
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 </head>
 <body>
+	<div id = "wrap">
+	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
+		<section class="contents d-flex justify-content-center">
+		
+			<div class="main-page">
+				<h1 class="text-center">
+					ChoongMo Tour Admin Main Page
+				</h1>
+			
+			
+			
+			</div>
+		
+		
+		</section>
+	
+	
+	
+	
+	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+	</div>
 
 </body>
 </html>

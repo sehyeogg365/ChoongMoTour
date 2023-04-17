@@ -36,5 +36,21 @@ public class AdminController {
 		return "redirect:/admin/signin/view";
 		
 	}
+	
+	
+	@GetMapping("/find_id_pw/view")
+	public String findIdPw() {
+		return "admin/find_id_pw";
+	}
+	
+	@GetMapping("/main/view")
+	public String mainPage() {
+		return "admin/main";
+	}
+	
+	@GetMapping("/mypage/view")
+	public String myPage() {
+		return "admin/mypage";
+	}
 
 }
