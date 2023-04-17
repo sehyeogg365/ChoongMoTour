@@ -27,8 +27,13 @@ public class AdminController {
 	@GetMapping("/signout")
 	public String signout(HttpServletRequest request) {
 		
+		HttpSession session = request.getSession();
+		session.removeAttribute("adminId");
+		session.removeAttribute("adminNickname");
+		session.removeAttribute("adminImagePath");
 		
-		return "";
+		
+		return "redirect:/admin/signin/view";
 		
 	}
 

@@ -28,12 +28,12 @@ public class AdminRestController {
 	//관리자 회원가입 api
 	@PostMapping("/signup")
 	public Map<String, String> signup(
-			@RequestParam String loginId
-			,@RequestParam String password
-			,@RequestParam String name
-			,@RequestParam String email
-			,@RequestParam String nickname
-			, @RequestParam String certificationNumber
+			@RequestParam("loginId") String loginId
+			,@RequestParam("password") String password
+			,@RequestParam("name") String name
+			,@RequestParam("email") String email
+			,@RequestParam("nickname") String nickname 
+			, @RequestParam("certificationNumber") String certificationNumber
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -48,14 +48,11 @@ public class AdminRestController {
 		//인증번호 일치 여부
 
 		
-		if(count == 0) {//일치하지 않을시
-			resultMap.put("result", "fail");
+		if(count == 1) {
+			resultMap.put("result", "success");
 		} else {
-			resultMap.put("result", "success");//일치할시
+			resultMap.put("result", "fail");
 		}
-		
-		
-		
 		
 		return resultMap;
 	
@@ -96,11 +93,12 @@ public class AdminRestController {
 			if(admin != null) {
 				resultMap.put("result", "success");
 				
-				session.setAttribute("adminId", admin.getId());
-				session.setAttribute("passowrd", admin.getPassword());
-				session.setAttribute("adminName", admin.getName());
+				session.setAttribute("adminId", admin.getId());//여기도
+				session.setAttribute("loginId", admin.getLoginId());
+				session.setAttribute("adminName", admin.getName());//여기부분 필요한가 질문
 				session.setAttribute("adminNickname", admin.getNickname());
-				session.setAttribute("adminImagePath", admin.getImagePath());		
+				session.setAttribute("adminImagePath", admin.getImagePath());
+		
 			} else {
 				resultMap.put("result", "fail");
 			}
