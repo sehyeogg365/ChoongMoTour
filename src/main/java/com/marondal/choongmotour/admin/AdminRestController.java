@@ -48,10 +48,10 @@ public class AdminRestController {
 		//인증번호 일치 여부
 
 		
-		if(count == 1) {
-			resultMap.put("result", "success");
-		} else {
+		if(count == 0) {//일치하지 않을시
 			resultMap.put("result", "fail");
+		} else {
+			resultMap.put("result", "success");//일치할시
 		}
 		
 		

@@ -192,8 +192,8 @@
 					if(data.result == "success"){//만약 값이 들어온다면 이것이 수행될텐데 안된다는 뜻.
 						alert("회원가입 성공");
 						location.href = "/admin/signin/view";//이제는 아예 안뜨다가 회원가입실패로 바뀌어서 뜬다. 그런데도 콘솔창 오류메시지 안뜸
-					} else {
-						alert("회원가입 실패");
+					} else {//레스트 컨트롤러가서 왜 fail이 뜨는건지 확인
+						alert("회원가입 실패");	
 					}
 					
 				}
