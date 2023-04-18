@@ -71,7 +71,7 @@
 				, data: {"loginId":id, "password":password}
 				, success:function(data){
 					if(data.result == "success"){
-						location.href="/lodging/main/view";
+						location.href="/admin/main/view";
 						alert("로그인 성공");
 					} else {
 						alert("아이디/비밀번호가 일치하지 않습니다.");

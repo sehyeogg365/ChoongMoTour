@@ -24,7 +24,61 @@
 					ChoongMo Tour Admin Main Page
 				</h1>
 			
+			<div class="text-center">
+				<a href="/admin/lodging/create/view" class="btn btn-primary col-8">추가하기</a>
+			</div>
 			
+			<!-- 게시글 카드 리스트 -->
+				<!-- c태그 반복문 활용   -->
+			<div class="card-list d-flex justify-content-center flex-wrap mt-3">
+				<!-- 게시글 카드 -->
+				<div class="card ml-3 mt-3">
+					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
+					
+					<div class="d-flex justify-content-between">
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+										
+				</div>
+				
+				<div class="card ml-3 mt-3">
+					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
+					
+					<div class="d-flex justify-content-between">
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+										
+				</div>
+				
+				<div class="card ml-3 mt-3">
+					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
+					
+					<div class="d-flex justify-content-between">
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+										
+				</div>
+				
+				<div class="card ml-3 mt-3">
+					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
+					
+					<div class="d-flex justify-content-between">
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+										
+				</div>
+				
+			
+				
+				
+			
+			
+			
+			</div>
 			
 			</div>
 		

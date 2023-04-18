@@ -48,6 +48,16 @@ public class AdminController {
 		return "admin/main";
 	}
 	
+	@GetMapping("/lodging/create/view")
+	public String createPage() {
+		return "admin/create";
+	}
+	
+	@GetMapping("/lodging/update/view")
+	public String updatePage() {
+		return "admin/update";
+	}
+	
 	@GetMapping("/mypage/view")
 	public String myPage() {
 		return "admin/mypage";
