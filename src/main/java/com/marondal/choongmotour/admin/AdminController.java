@@ -49,13 +49,18 @@ public class AdminController {
 	}
 	
 	@GetMapping("/lodging/create/view")
-	public String createPage() {
+	public String lodgingcreatePage() {
 		return "admin/create";
 	}
 	
 	@GetMapping("/lodging/update/view")
 	public String updatePage() {
 		return "admin/update";
+	}
+	
+	@GetMapping("/room/create/view")
+	public String roomcreatePage() {
+		return "admin/create";
 	}
 	
 	@GetMapping("/mypage/view")

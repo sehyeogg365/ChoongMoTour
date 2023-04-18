@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.marondal.choongmotour.admin.bo.AdminBO;
 import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.admin.model.CertificationNumber;
 
-@Controller
+@RestController
 @RequestMapping("/admin")
 public class AdminRestController {
 
@@ -36,10 +37,10 @@ public class AdminRestController {
 			, @RequestParam("certificationNumber") String certificationNumber
 			){
 		
-		Map<String, String> resultMap = new HashMap<>();
 		
 		int count = adminBO.addAdmin(loginId, password, name, email, nickname, certificationNumber);
 		
+		Map<String, String> resultMap = new HashMap<>();
 		
 		//관리자 인증번호 확인 api
 		//인증번호 일치 여부 새로운 api를 만들필요없다고 함 기존의 api에서 애초에 인증번호를 전달받아서 그것이 일치 하는 여부를 따지고 그담에
@@ -48,10 +49,10 @@ public class AdminRestController {
 		//인증번호 일치 여부
 
 		
-		if(count == 1) {
-			resultMap.put("result", "success");
-		} else {
+		if(count == 0) {
 			resultMap.put("result", "fail");
+		} else {
+			resultMap.put("result", "success");
 		}
 		
 		return resultMap;

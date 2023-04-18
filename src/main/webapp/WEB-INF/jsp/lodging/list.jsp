@@ -35,7 +35,7 @@
 				
 				<!-- 숙소 리스트 카드 리스트 -->
 				
-				<div class="card-list">
+				<div class="lodging-list">
 					
 					<div class="card">
 					

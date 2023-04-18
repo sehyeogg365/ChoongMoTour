@@ -188,7 +188,7 @@
 				, url : "/admin/signup"
 				, data: {"loginId":id, "password": password, "name": name, "email": email, "nickname":nickname, "certificationNumber":certificationnumber }
 				, success:function(data){// 알고보니 s하나가 빠졌었다.
-					
+					console.log(data);//확인해보니 첨엔 뷰값이 들어가있다. 레스트컨트롤러 어노테이션 수정후 잘됨
 					if(data.result == "success"){//만약 값이 들어온다면 이것이 수행될텐데 안된다는 뜻.
 						alert("회원가입 성공");
 						location.href = "/admin/signin/view";//이제는 아예 안뜨다가 회원가입실패로 바뀌어서 뜬다. 그런데도 콘솔창 오류메시지 안뜸

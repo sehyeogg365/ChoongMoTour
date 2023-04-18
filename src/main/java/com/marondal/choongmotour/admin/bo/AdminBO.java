@@ -30,8 +30,8 @@ public class AdminBO {
 		if(count == 0) {// 인증 번호일치 하지 않을때 이 조건문은 잘썼으나 인증번호 기반으로 되는게 없다고 하고 마찬가지로 인증번호 조회해서 맞는지 확인하는 쿼리문도 만들기
 			return 0;
 		} else {
-			return adminDAO.selectcertificationNumber(certificationNumber);
-			
+			//return adminDAO.selectcertificationNumber(certificationNumber);//인서트 안되는 이유 매퍼에는 문제가 없었다. 인서트는 안하고 계속 인증번호만 확인하고 있는게 보인다.
+			return adminDAO.insertAdmin(loginId, encryptPassword, name, email, nickname);
 		}
 		
 		

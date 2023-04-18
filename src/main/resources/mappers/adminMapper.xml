@@ -22,13 +22,13 @@
   		(
   			#{loginId}
   			, #{password}
-  			, #name}
+  			, #{name}
   			, #{email}
   			, #{nickname}
   			, now()
   			, now()
   		
-  		)
+  		);
 
   </insert>
   

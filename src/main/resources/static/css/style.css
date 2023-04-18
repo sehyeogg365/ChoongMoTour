@@ -33,17 +33,26 @@ header{
 	width:1200px;
 }
 
+.contents> .lodgingcreate-page{
+	width:600px;
+}
+
+
+.contents> .update-page{
+	width:600px;
+}
+
+.contents> .roomcreate-page{
+	width:600px;
+}
 
 .contents> .lodging-list{
 	width:1200px;
 }
+
 .contents> .room{
 	width:1200px;
 }
-
-
-
-
 
 
 .box-list > .box{
@@ -71,11 +80,17 @@ header{
 .card > .profile{
 	width: 100%;
     height: 100%;
+ 
 }
 
 
 
 .userprofile{
+	 border-radius: 70%;
+	 overflow: hidden;
+}
+
+.adminprofile{
 	 border-radius: 70%;
 	 overflow: hidden;
 }

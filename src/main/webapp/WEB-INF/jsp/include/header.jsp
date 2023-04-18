@@ -18,10 +18,10 @@
 			<!-- 프로필사진이 있을때 없을때 -->
 			  <c:choose>
 			  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-			  	<img class="adminprofile" src="${userImagePath}">
+			  	<img class="userprofile" src="${userImagePath}">
 			  </c:when>
 			  <c:otherwise><!-- 없을때 -->
-			  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+			  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 			  </c:otherwise>
 			  </c:choose>	
 			
