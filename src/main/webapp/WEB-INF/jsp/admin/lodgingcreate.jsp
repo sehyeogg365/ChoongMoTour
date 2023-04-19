@@ -28,9 +28,7 @@
 				<input type="file" name="file" id="fileInput"><br>
 				
 				<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
-				
-	
-				<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control mt-4">원<br>
+
 			
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
@@ -55,25 +53,7 @@
                  </select>
                  
                  
-                  <label>사이즈</label> <br>
-			      <label>싱글<input type="checkbox" name="check" value="size1"></label><br>
-			      <label>더블<input type="checkbox" name="check" value="size2"></label><br>
-			      <label>트윈<input type="checkbox" name="check" value="size3"></label><br>
                  
-                 <div class="d-none">
-	                 <label>기본정보 (싱글)</label><br>
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
-                 </div>
-                 
-                 <div class="d-none">
-	                 <label>기본정보 (더블)</label><br>
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
-                 </div>
-                 
-                 <div class="d-none">
-	                 <label>기본정보 (트윈)</label><br>
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
-                 </div>
 				
 				<div class="text-center">
 					<button id="createBtn"class="btn btn-primary" type="submit">입력 완료</button>
@@ -89,9 +69,21 @@
 	<script>
 	$(document).ready(function(){
 		
+		//성급선택
+		$("#levelSelector").on("change",function(){
+			
+			
+			
+		});
+		
+		//지역 선택
+		$("#areaSelector").on("change",function(){
+			
+			
+		});
+		
 		$("#createBtn").on("click", function(){
 			
-			let content = $("#contentInput").val(); 
 			let file = $("#fileInput")[0];
 			
 			
@@ -99,15 +91,19 @@
 				alert("이름을 입력하세요.");
 				return ;
 			}
-			if(priceInput == ""){		
-				alert("가격을 입력하세요.");
+			
+			//파일선택 
+			if(file.files.length == 0){
+				alert("파일을 선택하세요");
 				return ;
 			}
 			
-			if(content == "") {
-				alert("내용을 입력하세요");
-				return;
-			}
+			
+			
+			var formData = new FormData();
+			formData.append("content", content);
+			formData.append("file", file.files[0]);
+			
 			
 			$.ajax({
 				type:"get"

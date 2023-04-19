@@ -50,7 +50,7 @@ public class AdminController {
 	
 	@GetMapping("/lodging/create/view")
 	public String lodgingcreatePage() {
-		return "admin/create";
+		return "admin/lodgingcreate";
 	}
 	
 	@GetMapping("/lodging/update/view")
@@ -60,7 +60,7 @@ public class AdminController {
 	
 	@GetMapping("/room/create/view")
 	public String roomcreatePage() {
-		return "admin/create";
+		return "admin/roomcreate";
 	}
 	
 	@GetMapping("/mypage/view")

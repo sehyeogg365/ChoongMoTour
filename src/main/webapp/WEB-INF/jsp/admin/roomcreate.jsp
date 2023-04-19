@@ -22,7 +22,38 @@
 		<section class="contents d-flex justify-content-center">
 			
 			<div class="roomcreate-page">
+				<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+				
+				<input type="file" name="file" id="fileInput"><br>
 			
+			
+				<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control mt-4">원<br>
+				
+				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
+			     <label>싱글<input type="checkbox" name="check" value="size1"></label><br>
+			     <label>더블<input type="checkbox" name="check" value="size2"></label><br>
+			     <label>트윈<input type="checkbox" name="check" value="size3"></label><br>
+                 
+                 <div class="d-none">
+	                 <label>기본정보 (싱글)</label><br>
+	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 </div>
+                 
+                 <div class="d-none">
+	                 <label>기본정보 (더블)</label><br>
+	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 </div>
+                 
+                 <div class="d-none">
+	                 <label>기본정보 (트윈)</label><br>
+	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 </div>
+			
+			
+				<div class="text-center">
+					<button id="createBtn"class="btn btn-primary" type="submit">입력 완료</button>
+				</div>
+				
 			</div>
 		</section>
 	
@@ -31,7 +62,29 @@
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	
 	</div>
-
+	<script>
+	$(document).ready(function(){
+		
+		$("#createBtn").on("click", function(){
+			
+			let content = $("#contentInput").val(); 
+			let file = $("#fileInput")[0];
+			
+			if(priceInput == ""){		
+				alert("가격을 입력하세요.");
+				return ;
+			}
+			if(content == "") {
+				alert("내용을 입력하세요");
+				return;
+			}
+			
+		});
+		
+		
+	});
+	
+	</script>
 
 </body>
 </html>
