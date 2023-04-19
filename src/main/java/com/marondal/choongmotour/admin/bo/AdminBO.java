@@ -1,17 +1,21 @@
 package com.marondal.choongmotour.admin.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.admin.dao.AdminDAO;
 import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.common.EncryptService;
+import com.marondal.choongmotour.lodging.model.Lodging;
 
 @Service
 public class AdminBO {
 	
 	@Autowired AdminDAO adminDAO;
-	
+	//관리자 페이지긴 해도 숙소에 대한 테이블, 숙소에 대한 기능으로 생각해볼것.
 	public int addAdmin(
 			String loginId
 			, String password
@@ -58,9 +62,44 @@ public class AdminBO {
 		
 		return adminDAO.selectAdmin(loginId, ecryptPassword);
 		
-		
-		
 	}
+	
+	//숙소 추가
+	
+//	public int addLodging(String roomName, int level, String areaName, MultipartFile file) {
+//		
+//		
+//		return adminDAO.insertLodging(roomName, level, areaName, areaName);
+//		
+//	}
+	
+	// 숙소 리스트
+	
+	
+//	public List<Lodging> getLodgingList(int adminId) {//관리자 id
+//			
+//		return adminDAO.selectLodgingList(adminId);
+//			
+//	}
+		
+	//객실추가
+	
+//	public int getRoom(int price, String size, String content, MultipartFile file) {
+//		
+//		return adminDAO.insertRoom(price, size, content, content);
+//	}
+	
+	
+	
+	
+	//숙소 수정
+//	public int updateRoom() {
+//		return 0;
+//		
+//	}
+	
+	
+	//숙소 삭제
 
 
 		

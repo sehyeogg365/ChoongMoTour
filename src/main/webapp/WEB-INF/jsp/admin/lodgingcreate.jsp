@@ -78,7 +78,7 @@
 		
 		//지역 선택
 		$("#areaSelector").on("change",function(){
-			
+			var area = $("#areaSelector")
 			
 		});
 		
@@ -110,10 +110,10 @@
 			$.ajax({
 				type:"get"
 				,url:"/admin/lodging/create"
-				,data:{"roomName" :, "price: ", "size: ", "content: "}
-				, enctype :"multipart/form-data"
-				, processData:false
-				, contentType:false
+				,data:{"roomName" :roomName, "price":, "size":, "content": }
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
 					
 				, success:function(data){
 					if(data.result == "success") {

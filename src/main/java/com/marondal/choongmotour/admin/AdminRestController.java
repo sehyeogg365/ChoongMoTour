@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.admin.bo.AdminBO;
 import com.marondal.choongmotour.admin.model.Admin;
@@ -108,6 +109,13 @@ public class AdminRestController {
 		
 	}
 	
+	// 숙소 추가 api LodgingRestController로 옮김
+	
+	
+	
+	
+	
+	// 관리자 마이페이지
 	
 	
 }
