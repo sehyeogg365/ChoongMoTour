@@ -74,10 +74,20 @@
 				alert("가격을 입력하세요.");
 				return ;
 			}
+			
+			if(file.files.length == 0){
+				alert("파일을 선택하세요");
+				return ;
+			}
+			
 			if(content == "") {
 				alert("내용을 입력하세요");
 				return;
 			}
+			
+			//사이즈 선택
+			
+			
 			
 		});
 		

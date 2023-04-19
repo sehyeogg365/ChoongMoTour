@@ -98,7 +98,9 @@
 				return ;
 			}
 			
+			//성급 선택
 			
+			//지역선택
 			
 			var formData = new FormData();
 			formData.append("content", content);
