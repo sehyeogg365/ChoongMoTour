@@ -23,12 +23,14 @@ public class LodgingBO {
 	
 	
 	//관리자 페이지
+	
+	
 	//숙소 추가
 	
 	public int addLodging(int adminId, String roomName, int level, String areaName, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	
-		return lodgingDAO.insertLodging(roomName, level, areaName, file);
+		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, file);
 			
 	}
 	
@@ -60,7 +62,7 @@ public class LodgingBO {
 		
 		
 	//숙소 삭제
-	
+
 	
 	
 	

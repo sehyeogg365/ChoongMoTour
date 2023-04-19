@@ -64,45 +64,8 @@ public class AdminBO {
 		
 	}
 	
-	//숙소 추가
+	//숙소 추가, 숙소 리스트, 객실추가, 숙소 수정숙소 삭제 등등 LodgingBO로 옮김
 	
-//	public int addLodging(String roomName, int level, String areaName, MultipartFile file) {
-//		
-//		
-//		return adminDAO.insertLodging(roomName, level, areaName, areaName);
-//		
-//	}
-	
-	// 숙소 리스트
-	
-	
-//	public List<Lodging> getLodgingList(int adminId) {//관리자 id
-//			
-//		return adminDAO.selectLodgingList(adminId);
-//			
-//	}
-		
-	//객실추가
-	
-//	public int getRoom(int price, String size, String content, MultipartFile file) {
-//		
-//		return adminDAO.insertRoom(price, size, content, content);
-//	}
-	
-	
-	
-	
-	//숙소 수정
-//	public int updateRoom() {
-//		return 0;
-//		
-//	}
-	
-	
-	//숙소 삭제
-
-
-		
 	
 	
 	

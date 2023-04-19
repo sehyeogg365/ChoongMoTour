@@ -24,24 +24,9 @@ public class LodgingController {
 		return "lodging/room";
 	}
 	
-	//관리자 페이지
+	//관리자 페이지 입력,수정,삭제 기능 관리자페이지에서 진행되고 로징 기능이긴해도 아무래도 경로는 Lodging이아닌 Admin에다가 하는게 자연스러운듯
 	
-	@GetMapping("/create/view")
-	public String lodgingCreate() {
-		return "admin/lodgingcreate";
-	}
-	
-	
-	@GetMapping("/room/create/view")
-	public String roomCreate() {
-		return "admin/roomcreate";
-	}
-	
-	
-	@GetMapping("/update/view")
-	public String roomUpdate() {	
-		return "admin/update";
-	}
+
 	
 	
 	

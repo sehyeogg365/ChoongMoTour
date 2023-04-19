@@ -5,6 +5,78 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.marondal.choongmotour.lodging.dao.LodgingDAO">
-  
+  	
+  	
+  	
+  	
+  	
+  <!-- 관리자 페이지 숙소 추가, 숙소리스트 조회, 객실 추가, 숙소 수정, 숙소 삭제 -->	
+  <insert id="insertLodging" parameterType="map">
+ 	INSERT INTO 
+ 			`lodging`
+ 	(
+ 		
+ 		 `roomName`
+ 		, `level`
+ 		, `areaName`
+ 		, `imagePath`
+ 		, `createdAt`
+  		, `updatedAt`
+ 	)
+ 	VALUES
+ 	(
+ 		#{roomName}
+ 		, #{level}
+ 		, #{areaName}
+ 		, #{imagePath}
+ 		, now()
+ 		, now()
+ 	)
+ 	
+ 
+ </insert>
+ 
+ <select id="selectLodgingList" resultType="com.marondal.choongmotour.lodging.model.Lodging"  parameterType="int">
+ 	SELECT
+ 		`id`
+ 		, `adminId`
+ 		, `roomName`
+ 		, `imagePath`
+ 		, `level`
+ 		, `areaName`
+ 		, `createdAt`	
+ 		, `updatedAt`
+ 	FROM
+ 		`lodging`
+	ORDER BY
+  		`id` DESC;
+ </select>
+ 
+ <insert id="insertRoom" parameterType="map">
+ 	INSERT INTO 
+ 			`room`
+	(
+	 	`imagePath`
+	 	, `price`
+	 	, `size`
+	 	, `content`
+	 	, `createdAt`	
+ 		, `updatedAt`
+	)
+	VALUES
+	(
+		#{imagePath}
+		, #{price}
+		, #{size}
+		, #{content}
+		, now()
+		, now()
+	 	
+	)
+	 			
+ 
+ </insert>
+ 
+ 
   
   </mapper>

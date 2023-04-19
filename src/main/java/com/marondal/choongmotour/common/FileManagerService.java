@@ -19,7 +19,7 @@ public static final String FILE_UPLOAD_PATH = "D:\\임세혁\\spring\\springProj
 	//member변수 웬만하면 public안쓴다.				//경로 잘 지정하고 슬래쉬 잘구분하기(메가그램거이므로 경로 수정)
 // 파일 저장 -> 경로 생성
 // 객체 생성없이 쓸수 있는 메소드 -> static 객체생성없이 쓸수 있도록 구성
-	public static String saveFile(int userId, MultipartFile file) {//접근하기 위한 경로 리턴
+	public static String saveFile(int adminId, MultipartFile file) {//접근하기 위한 경로 리턴
 				//리턴값: 경로가 되야하므로 스트링 사용자정보 이므로 userId 그리고 메모거 그대로 복사하는건 잘함 ㅇㅇ.
 	
 		if(file == null) {//file이 널이라면?
@@ -34,7 +34,7 @@ public static final String FILE_UPLOAD_PATH = "D:\\임세혁\\spring\\springProj
 	// UNIX TIME : 1970년 1월 1일 부터 흐른 시간을 (milli second 1/1000)
 	// 폴더 이름 : userId_time(3_3949828284 15:00:11)		
 	
-	String directoryName = "/" + userId + "_" + System.currentTimeMillis() + "/";//로그인 한정보 필요 파라미터 추가
+	String directoryName = "/" + adminId + "_" + System.currentTimeMillis() + "/";//로그인 한정보 필요 파라미터 추가
 	
 	// 디렉토리 생성
 	String directoryPath = FILE_UPLOAD_PATH + directoryName;

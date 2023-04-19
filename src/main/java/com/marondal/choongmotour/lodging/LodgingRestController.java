@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,9 +22,9 @@ public class LodgingRestController {
 	@Autowired LodgingBO lodgingBO;
 	
 	//숙소 추가 api
-	@GetMapping("/create")
+	@PostMapping("/create")
 	public Map<String, String>lodgingcreate(
-			@RequestParam("roomName") String roomName
+			@RequestParam("roomName") String roomName 
 			, @RequestParam("level") int level
 			, @RequestParam(value="file", required=true) MultipartFile file
 			, @RequestParam("areaName") String areaName
@@ -47,13 +48,13 @@ public class LodgingRestController {
 	
 	}
 	// 객실 추가 api
-	//@GetMapping("/room/create")
+	//@PostMapping("/room/create")
 	
 	
 	// 숙소 수정 api
-		
+	//@PostMapping	
 	// 숙소 삭제 api
-	
+	//@PostMapping
 	
 	
 }

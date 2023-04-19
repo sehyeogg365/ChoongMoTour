@@ -32,7 +32,7 @@
 			
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
-                            <option>지역</option>
+                            <option value="">지역</option>
                             <option value="seoul">서울</option>
                             <option value="inchecon">인천</option>
                             <option value="gangwon">강원</option>
@@ -44,7 +44,7 @@
                  
 				<select class="form-control col-5 mt-3" id="levelSelector">
 							
-                            <option>등급</option>
+                            <option value="">등급</option>
                             <option value="1level">1성급</option>
                             <option value="2level">2성급</option>
                             <option value="3level">3성급</option>
@@ -69,26 +69,31 @@
 	<script>
 	$(document).ready(function(){
 		
-		//성급선택
-		$("#levelSelector").on("change",function(){
-			
-			
-			
-		});
 		
-		//지역 선택
-		$("#areaSelector").on("change",function(){
-			var area = $("#areaSelector")
+		//셀렉터에 대한 체인지 이벤트는 사실상 필요없다고 함 왜냐면 어떤걸 선택했는지만 확인하면 되기 때문에 이안에서 바꾸거나 그러지 않으므로
 			
-		});
+		
 		
 		$("#createBtn").on("click", function(){
 			
 			let file = $("#fileInput")[0];
 			
+			let name = $("#roomNameInput").val();
 			
-			if(nameInput == ""){		
+			let area = $("#areaSelector").val();
+				
+			let	level = $("#levelSelector").val();
+			
+			if(name == ""){		
 				alert("이름을 입력하세요.");
+				return ;
+			}
+			if(area == ""){		
+				alert("지역을 선택하세요.");
+				return ;
+			}
+			if(level == ""){		
+				alert("성급을 선택하세요.");
 				return ;
 			}
 			
@@ -97,20 +102,16 @@
 				alert("파일을 선택하세요");
 				return ;
 			}
-			
-			//성급 선택
-			
-			//지역선택
+
 			
 			var formData = new FormData();
-			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
 			
 			$.ajax({
-				type:"get"
-				,url:"/admin/lodging/create"
-				,data:{"roomName" :roomName, "price":, "size":, "content": }
+				type:"post"
+				, url:"/lodging/create"
+				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
 				, enctype :"multipart/form-data"// 파일 업로드 필수
 				, processData:false// 파일 업로드 필수
 				, contentType:false// 파일 업로드 필수

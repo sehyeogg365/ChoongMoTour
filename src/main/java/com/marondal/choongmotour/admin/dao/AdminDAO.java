@@ -29,28 +29,7 @@ public interface AdminDAO {
 	public Admin selectAdmin(@Param("loginId") String loginId
 							, @Param("password") String password);
 	
-	//숙소 추가
-	public int insertLodging(@Param("roomName") String roomName
-							, @Param("level") int level
-							, @Param("areaName") String areaName
-							, @Param("imagePath") String imagePath
-							);
-
-	//숙소 리스트
-	public List<Lodging> selectLodgingList(@Param("adminId")int adminId);
-	
-	//객실 추가
-	
-	public int insertRoom(@Param("price")int price
-						  , @Param("size") String size
-						  , @Param("content") String content
-						  , @Param("imagePath") String imagePath
-						  );
-	
-	
-	
-	
-	//숙소 수정
+	//숙소 추가, 수정 객실 추가 등등 LodgingDAO로 이전
 	
 	
 }
