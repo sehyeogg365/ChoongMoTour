@@ -115,11 +115,11 @@
 				, enctype :"multipart/form-data"// 파일 업로드 필수
 				, processData:false// 파일 업로드 필수
 				, contentType:false// 파일 업로드 필수
-					
 				, success:function(data){
+					
 					if(data.result == "success") {
-						location.href="/admin/main/view";
-						alert("입력 성공");
+						location.href="/admin/main/view";//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
+						alert("입력 성공");	// Required request parameter 'roomName' for method parameter type String is not present한마디로 roomName이 안들어오고있다 이런뜻같다. controller or ajax 찾아보기
 					} else {
 						alert("입력 실패");
 					}

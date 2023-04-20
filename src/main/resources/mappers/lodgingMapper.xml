@@ -15,8 +15,8 @@
  	INSERT INTO 
  			`lodging`
  	(
- 		
- 		 `roomName`
+ 		  `adminId`	
+ 		, `roomName`
  		, `level`
  		, `areaName`
  		, `imagePath`
@@ -25,7 +25,8 @@
  	)
  	VALUES
  	(
- 		#{roomName}
+ 	 	 #{adminId}
+ 		,#{roomName}
  		, #{level}
  		, #{areaName}
  		, #{imagePath}

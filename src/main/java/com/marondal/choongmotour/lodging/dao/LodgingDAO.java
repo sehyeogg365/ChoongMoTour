@@ -21,21 +21,25 @@ public interface LodgingDAO {
 							, @Param("roomName") String roomName
 							, @Param("level") int level
 							, @Param("areaName") String areaName
-							, @Param("imagePath") MultipartFile file
+							, @Param("imagePath") String imagePath
 							);
 
 	//숙소 리스트
 	public List<Lodging> selectLodgingList(@Param("adminId")int adminId);
 		
 	//객실 추가
-	public int insertRoom(@Param("price")int price
+	public int insertRoom(
+						  @Param("lodgingId") int lodgingId
+						  , @Param("price")int price
 						  , @Param("size") String size
 						  , @Param("content") String content
 						  , @Param("imagePath") String imagePath
 						  );
 		
 	// 숙소 수정
-	public int updateLodging(@Param("roomName") String roomName
+	public int updateLodging(
+							@Param("adminId") int adminId
+							, @Param("roomName") String roomName
 							, @Param("level") int level
 							, @Param("areaName") String areaName
 							, @Param("imagePath") String imagePath
@@ -43,6 +47,7 @@ public interface LodgingDAO {
 							, @Param("size") String size
 							, @Param("content") String content
 					 		);
+
 		
 	// 숙소 삭제
 		

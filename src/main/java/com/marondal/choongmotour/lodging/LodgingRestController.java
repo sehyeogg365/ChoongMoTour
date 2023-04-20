@@ -26,8 +26,8 @@ public class LodgingRestController {
 	public Map<String, String>lodgingcreate(
 			@RequestParam("roomName") String roomName 
 			, @RequestParam("level") int level
-			, @RequestParam(value="file", required=true) MultipartFile file
 			, @RequestParam("areaName") String areaName
+			, @RequestParam(value="file", required=false) MultipartFile file //Memo 프로젝트 포스트 컨트롤러로 이현상 참조해보기
 			, HttpSession session // adminId값 불러오기
 			) {
 		

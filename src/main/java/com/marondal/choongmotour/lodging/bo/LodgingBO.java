@@ -19,6 +19,11 @@ public class LodgingBO {
 	
 	//사용자페이지
 	
+	//숙소리스트
+	
+	//숙소 하나 클릭시 하나의 정보만
+	
+	
 	
 	
 	
@@ -30,7 +35,7 @@ public class LodgingBO {
 	public int addLodging(int adminId, String roomName, int level, String areaName, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	
-		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, file);
+		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
 			
 	}
 	
@@ -39,24 +44,32 @@ public class LodgingBO {
 	
 	public List<Lodging> getLodgingList(int adminId) {//관리자 id
 			
+		
+		
 		return lodgingDAO.selectLodgingList(adminId);
-			
+		
+		
+		
 	}
 	
 	//객실추가
 	
-	public int getRoom(int price, String size, String content, MultipartFile file) {
+	public int addRoom(int lodgingId, int price, String size, String content, MultipartFile file) {
 			
-		return lodgingDAO.insertRoom(price, size, content, content);
+		String imagePath = FileManagerService.saveFile(lodgingId, file);
+		
+		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
 	}
 		
 		
 		
 		
 	//숙소 수정
-	public int updateRoom(String roomName, int level, String areaName, MultipartFile file, int price, String size, String content) {
+	public int updateLodging(int adminId, String roomName, int level, String areaName, MultipartFile file, int price, String size, String content) {
+
+		String imagePath = FileManagerService.saveFile(adminId, file);
 		
-		return lodgingDAO.updateLodging(roomName, level, areaName, null, 0, null, null);
+		return lodgingDAO.updateLodging(adminId, roomName, level, areaName, imagePath, price, size, content);
 			
 	}
 		
