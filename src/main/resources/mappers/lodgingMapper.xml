@@ -57,16 +57,18 @@
  	INSERT INTO 
  			`room`
 	(
-	 	`imagePath`
+	 	, `lodgingId`
 	 	, `price`
 	 	, `size`
 	 	, `content`
+	 	, `imagePath`
 	 	, `createdAt`	
  		, `updatedAt`
 	)
 	VALUES
 	(
-		#{imagePath}
+		#{lodgingId}
+		, #{imagePath}
 		, #{price}
 		, #{size}
 		, #{content}

@@ -22,30 +22,39 @@
 		<section class="contents d-flex justify-content-center">
 			
 			<div class="roomcreate-page">
-				<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 				
-				<input type="file" name="file" id="fileInput"><br>
+				
+				
 			
 			
 				<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control mt-4">원<br>
 				
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
-			     <label>싱글<input type="checkbox" name="check" value="size1"></label><br>
-			     <label>더블<input type="checkbox" name="check" value="size2"></label><br>
-			     <label>트윈<input type="checkbox" name="check" value="size3"></label><br>
+			     
+			     <label>싱글<input type="checkbox" name="size" value="singleroom"></label><br>
+			     
+			     <label>더블<input type="checkbox" name="size" value="doubleroom"></label><br>
+			     
+			     <label>트윈<input type="checkbox" name="size" value="twinroom"></label><br>
                  
-                 <div class="d-none">
+                 <div id="singleInput" class="d-none" >
 	                 <label>기본정보 (싱글)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
                  
-                 <div class="d-none">
+                 <div id="doubleInput" class="d-none" >
 	                 <label>기본정보 (더블)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
                  
-                 <div class="d-none">
+                 <div id="twinInput" class="d-none" >
 	                 <label>기본정보 (트윈)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
 			
@@ -65,13 +74,52 @@
 	<script>
 	$(document).ready(function(){
 		
+		
+		$("input[name='size']").on("change", function(){
+			
+			let size = $(this).val();
+			
+			alert(size);//클릭시 경고창
+			
+			
+			
+			if(size == "singleroom"){
+				$("#singleInput").removeClass("d-none");
+				
+			}
+			if(size == "doubleroom"){
+				
+				$("#doubleInput").removeClass("d-none");
+			}
+			if(size == "twinroom"){
+				
+				$("#twinInput").removeClass("d-none");
+			}
+			
+		});
+		
+		
+		
 		$("#createBtn").on("click", function(){
 			
+			let price = $("#priceInput").val();
+			
+			let size = $("#sizeInput").val();
+			
 			let content = $("#contentInput").val(); 
+			
 			let file = $("#fileInput")[0];
 			
 			if(priceInput == ""){		
 				alert("가격을 입력하세요.");
+				return ;
+			}
+			if(size == ""){		
+				alert("사이즈를 선택하세요.");
+				return ;
+			}
+			if(content == ""){		
+				alert("내용설명을 입력하세요.");
 				return ;
 			}
 			
