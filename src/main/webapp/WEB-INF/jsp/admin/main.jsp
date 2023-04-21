@@ -41,9 +41,15 @@
 					
 					<div class="d-flex justify-content-between">
 						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
-						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>					
+											
 						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
 					</div>
+					<div class="d-flex justify-content-between">
+						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
+						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
+						
+					</div>
+					
 										
 				</div>
 				
@@ -55,9 +61,14 @@
 					<div class="">2성급</div>
 					
 					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view?room_name" class="btn btn-primary">수정하기</a>
-						<a href="/admin/room/create/view?room_name" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/lodging/delete/view?room_name" class="btn btn-danger">삭제하기</a>
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+											
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+					<div class="d-flex justify-content-between">
+						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
+						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
+						
 					</div>
 										
 				</div>
@@ -70,9 +81,14 @@
 					<div class="">3성급</div>
 					
 					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view?room_name" class="btn btn-primary">수정하기</a>
-						<a href="/admin/room/create/view?room_name" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/lodging/delete/view?room_name" class="btn btn-danger">삭제하기</a>
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+											
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+					<div class="d-flex justify-content-between">
+						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
+						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
+						
 					</div>
 										
 				</div>
@@ -85,9 +101,14 @@
 					<div class="">4성급</div>
 					
 					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view?room_name" class="btn btn-primary">수정하기</a>
-						<a href="/admin/room/create/view?room_name" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/lodging/delete/view?room_name" class="btn btn-danger">삭제하기</a>
+						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
+											
+						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+					</div>
+					<div class="d-flex justify-content-between">
+						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
+						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
+						
 					</div>
 										
 				</div>
