@@ -32,86 +32,32 @@
 				<!-- c태그 반복문 활용   -->
 			<div class="card-list d-flex justify-content-center flex-wrap mt-3">
 				<!-- 게시글 카드 -->
+				<c:forEach var="lodging" items="${lodgingList}">
 				<div class="card ml-3 mt-3">
-					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
+					<img class="profile" width = "400" src="${lodging.imagePath }" alt="호텔">
 					
-					<div class="">ㅇㅇ호텔</div>
+					<div class="">${lodging.roomName }</div>
 					
-					<div class="">1성급</div>
+					<div class="">${lodging.level }</div>
 					
 					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
-											
-						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
+						<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
+						<a href="/admin/lodging/delete/view?id=${lodging.id }" class="btn btn-danger">삭제하기</a>
 					</div>
 					<div class="d-flex justify-content-between">
-						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
+						<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
+						<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary">객실수정하기</a>
 						
 					</div>
 					
 										
 				</div>
+				</c:forEach>
+			
 				
-				<div class="card ml-3 mt-3">
-					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
-					
-					<div class="">ㅇㅇ호텔</div>
-					
-					<div class="">2성급</div>
-					
-					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
-											
-						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
-					</div>
-					<div class="d-flex justify-content-between">
-						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
-						
-					</div>
-										
-				</div>
+		
 				
-				<div class="card ml-3 mt-3">
-					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
-					
-					<div class="">△△호텔</div>
-					
-					<div class="">3성급</div>
-					
-					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
-											
-						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
-					</div>
-					<div class="d-flex justify-content-between">
-						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
-						
-					</div>
-										
-				</div>
-				
-				<div class="card ml-3 mt-3">
-					<img class="profile" width = "400" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
-					
-					<div class="">ㅇㅇ호텔</div>
-					
-					<div class="">4성급</div>
-					
-					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view" class="btn btn-primary">수정하기</a>
-											
-						<a href="/admin/lodging/delete/view" class="btn btn-danger">삭제하기</a>
-					</div>
-					<div class="d-flex justify-content-between">
-						<a href="/admin/room/create/view" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/room/create/view" class="btn btn-primary">객실수정하기</a>
-						
-					</div>
-										
-				</div>
+			
 				
 			
 				
@@ -128,6 +74,15 @@
 
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	
+	<script>
+	$(document).ready(function(){
+		
+		
+	});
+	
+	
+	</script>
 	
 </body>
 </html>

@@ -1,16 +1,29 @@
 package com.marondal.choongmotour.lodging;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.model.Lodging;
 
 @Controller
 @RequestMapping("/lodging")
 public class LodgingController {
 
+	@Autowired
+	private LodgingBO lodgingBO;
+	
 	//사용자페이지
 	@GetMapping("/main/view")
 	public String mainPage() {
+
 		return "lodging/main";
 	}
 	

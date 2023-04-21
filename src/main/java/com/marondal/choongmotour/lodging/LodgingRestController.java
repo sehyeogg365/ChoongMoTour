@@ -27,9 +27,9 @@ public class LodgingRestController {
 	//관리자페이지
 	//숙소 추가 api
 	@PostMapping("/create")
-	public Map<String, String>lodgingcreate(
+	public Map<String, String>lodgingCreate(
 			  @RequestParam("roomName") String roomName //400에러면 파라미터 문제
-			, @RequestParam("level") int level
+			, @RequestParam("level") String level// 그리고 사용자영역에서 지역이름별로 숙소 조회 하는데 여긴 입력부분이고 관리자 입력부분과 사용자 조회부분은 아예 별개라서 신경쓸필요 없다하심
 			, @RequestParam("areaName") String areaName
 			, @RequestParam(value="file", required=false) MultipartFile file //Memo 프로젝트 포스트 컨트롤러로 이현상 참조해보기
 			, HttpSession session // adminId값 불러오기
@@ -51,6 +51,35 @@ public class LodgingRestController {
 		return resultMap;
 	
 	}
+	
+	// 숙소 수정 api
+		@PostMapping("/update")	
+		public Map<String, String> lodgingUpdate(
+				 	 @RequestParam("lodgingId") int lodgingId
+					, @RequestParam("roomName") String roomName
+					, @RequestParam("level") String level
+					, @RequestParam("areaName") String areaName
+					, @RequestParam(value="file", required=false) MultipartFile file 
+					, HttpSession session
+				){
+			
+			
+			int count = lodgingBO.updateLodging(lodgingId, roomName, level, areaName, file);
+			
+			Map<String, String> resultMap = new HashMap<>();
+			
+			
+			if(count == 1) {
+				resultMap.put("result", "success");
+			} else {
+				resultMap.put("result", "fail");
+			}
+			
+			return resultMap;
+			
+			
+		}
+	
 	// 객실 추가 api
 	@PostMapping("/room/create")
 	public Map<String, String>roomcreate(
@@ -77,8 +106,14 @@ public class LodgingRestController {
 
 	}
 	
-	// 숙소 수정 api
-	//@PostMapping	
+	
+	
+	
+	
+	// 객실 수정 api
+	//@PostMapping
+	
+	
 	// 숙소 삭제 api
 	//@PostMapping
 	

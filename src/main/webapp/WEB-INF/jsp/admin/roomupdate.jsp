@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>choongmotour - 관리자 숙소 수정</title>
+<title>choongmotour - 관리자 객실 수정</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -32,27 +32,6 @@
 				</div>
 			
 			
-				<select class="form-control col-5 mt-3" id="areaSelector">
-							
-                            <option>지역</option>
-                            <option>서울</option>
-                            <option>인천</option>
-                            <option>강원</option>
-                            <option>경상</option>
-                            <option>전라</option>
-                            <option>부산</option>
-                            <option>제주</option>
-                 </select>
-                 
-				<select class="form-control col-5 mt-3" id="levelSelector">
-							
-                            <option>등급</option>
-                            <option value="1level">1성급</option>
-                            <option value="2level">2성급</option>
-                            <option value="3level">3성급</option>
-                            <option value="4level">4성급</option>
-                            <option value="5level">5성급</option>   
-                 </select>
                  
                  
                   <label>사이즈</label> <br>
@@ -109,7 +88,7 @@
 			let file = $("#fileInput")[0];
 			
 			
-			if(priceInput == ""){		
+			if(price == ""){		
 				alert("가격을 입력하세요.");
 				return ;
 			}
@@ -127,6 +106,33 @@
 				return ;
 			}
 			
+			var formData = new FormData();
+			formData.append("file", file.files[0]);
+			
+			
+			$.ajax({
+				type:
+				, url:"/lodging/update"
+				, data:formData
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result == "success"){
+						location.href="/admin/main/view";
+						alert("수정 성공");
+					} else{
+						alert("수정 실패")
+					}
+					
+				}
+				, error:function(){
+					alert("수정 에러");
+				}
+				
+				
+				
+			});
 			
 			
 		});

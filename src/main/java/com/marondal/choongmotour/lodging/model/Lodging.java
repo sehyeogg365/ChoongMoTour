@@ -7,15 +7,12 @@ public class Lodging {
 	private int adminId;
 	private String roomName;
 	private String imagePath;
-	private int level;
+	private String level;
 	private String areaName;
 	private Date createdAt;
 	private Date updatedAt;
 	public int getId() {
 		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
 	}
 	public int getAdminId() {
 		return adminId;
@@ -35,10 +32,10 @@ public class Lodging {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public int getLevel() {
+	public String getLevel() {
 		return level;
 	}
-	public void setLevel(int level) {
+	public void setLevel(String level) {
 		this.level = level;
 	}
 	public String getAreaName() {
@@ -58,6 +55,9 @@ public class Lodging {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	

@@ -1,15 +1,26 @@
 package com.marondal.choongmotour.admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.model.Lodging;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	@Autowired
+	private LodgingBO lodgingBO;
+	
 	
 	@GetMapping("/signup/view")
 	public String signupInput() {
@@ -44,7 +55,14 @@ public class AdminController {
 	}
 	
 	@GetMapping("/main/view")
-	public String mainPage() {
+	public String mainPage(Model model
+			, HttpSession session) {
+		
+		int adminId = (Integer)session.getAttribute("adminId");
+		
+		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);
+		model.addAttribute("lodgingList", lodgingList);
+		
 		return "admin/main";
 	}
 	
@@ -54,16 +72,22 @@ public class AdminController {
 	public String lodgingcreatePage() {
 		return "admin/lodgingcreate";
 	}
-	
 	@GetMapping("/lodging/update/view")
-	public String updatePage() {
-		return "admin/update";
+	public String lodgingupdatePage() {
+		return "admin/lodgingupdate";
 	}
 	
 	@GetMapping("/room/create/view")
 	public String roomcreatePage() {
 		return "admin/roomcreate";
 	}
+	
+	@GetMapping("/room/update/view")
+	public String updatePage() {
+		return "admin/roomupdate";
+	}
+	
+	
 	
 	@GetMapping("/mypage/view")
 	public String myPage() {

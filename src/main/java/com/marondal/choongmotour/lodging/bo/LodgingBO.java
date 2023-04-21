@@ -32,7 +32,7 @@ public class LodgingBO {
 	
 	//숙소 추가
 	
-	public int addLodging(int adminId, String roomName, int level, String areaName, MultipartFile file) {
+	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	
 		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
@@ -44,13 +44,18 @@ public class LodgingBO {
 	
 	public List<Lodging> getLodgingList(int adminId) {//관리자 id
 			
-		
-		
 		return lodgingDAO.selectLodgingList(adminId);
-		
-		
-		
+
 	}
+	
+	//숙소 수정
+		public int updateLodging(int lodgingId, String roomName, String level, String areaName, MultipartFile file) {
+							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
+			String imagePath = FileManagerService.saveFile(lodgingId, file);
+			
+			return lodgingDAO.updateLodging(lodgingId, roomName, level, areaName, imagePath);
+				
+		}
 	
 	//객실추가
 	
@@ -61,17 +66,12 @@ public class LodgingBO {
 		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
 	}
 		
-		
-		
-		
-	//숙소 수정
-	public int updateLodging(int adminId, String roomName, int level, String areaName, MultipartFile file, int price, String size, String content) {
 
-		String imagePath = FileManagerService.saveFile(adminId, file);
-		
-		return lodgingDAO.updateLodging(adminId, roomName, level, areaName, imagePath, price, size, content);
-			
-	}
+	
+	
+	//객실 수정
+	
+	
 		
 		
 	//숙소 삭제
