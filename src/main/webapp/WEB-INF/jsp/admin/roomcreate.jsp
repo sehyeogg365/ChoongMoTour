@@ -23,12 +23,12 @@
 			
 			<div class="roomcreate-page">
 				
-				
+				<h1 class="text-center pt-3">관리자 객실 추가</h1>
 				
 			
-			
-				<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control mt-4">원<br>
-				
+				<div class="d-flex mt-3">
+					<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+				</div>
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
 			     
 			     <label>싱글<input type="checkbox" name="size" value="singleroom"></label><br>
@@ -87,10 +87,14 @@
 				$("#singleInput").removeClass("d-none");
 				
 			}
+			
+			
 			if(size == "doubleroom"){
 				
 				$("#doubleInput").removeClass("d-none");
 			}
+			
+			
 			if(size == "twinroom"){
 				
 				$("#twinInput").removeClass("d-none");
@@ -110,7 +114,7 @@
 			
 			let file = $("#fileInput")[0];
 			
-			if(priceInput == ""){		
+			if(price == ""){		
 				alert("가격을 입력하세요.");
 				return ;
 			}
@@ -128,12 +132,31 @@
 				return ;
 			}
 			
-			if(content == "") {
-				alert("내용을 입력하세요");
-				return;
-			}
+			var formData = new FormData();
+			formData.append("file", file.files[0]);
 			
-			//사이즈 선택
+			$.ajax({
+				type: "post"
+				, url: "/lodging/room/create"
+				, data:formData
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result =="success"){
+						location.href="/admin/main/view";//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
+						alert("추가 성공");
+					} else{
+						//또 400에러가뜬다.
+						alert("추가 실패");
+					}		
+					
+				}
+				, error:function(){
+					alert("추가 에러");
+				}
+				
+			});
 			
 			
 			

@@ -22,9 +22,15 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="update-page">
 			
+				<h1 class="text-center pt-3">관리자 객실 수정</h1>
+				
 				<label>이름</label><input type="text" id="nameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 				
-				<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control mt-4">
+				
+				<div class="d-flex mt-3">
+					<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+				</div>
+			
 			
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
@@ -50,22 +56,31 @@
                  
                  
                   <label>사이즈</label> <br>
-			      <label>싱글<input type="checkbox" name="check" value="check1"></label><br>
-			      <label>더블<input type="checkbox" name="check" value="check2"></label><br>
-			      <label>트윈<input type="checkbox" name="check" value="check3"></label><br>
+                  
+			      <label>싱글<input type="checkbox" name="size" value="check1"></label><br>
+			    
+			      <label>더블<input type="checkbox" name="size" value="check2"></label><br>
+			      
+			      <label>트윈<input type="checkbox" name="size" value="check3"></label><br>
                  
                  <div class="">
 	                 <label>기본정보 (싱글)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" class=""></textarea>
                  </div>
                  
                  <div class="d-none">
 	                 <label>기본정보 (더블)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" class="d-none"></textarea>
                  </div>
                  
                  <div class="d-none">
 	                 <label>기본정보 (트윈)</label><br>
+	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+	                 <input type="file" name="file" id="fileInput"><br>
 	                 <textarea rows="5" cols="100" class=""></textarea>
                  </div>
                  
@@ -83,7 +98,38 @@
 	<script>
 	$(document).ready(function(){
 		
-		
+		$("#updateBtn").on("click", function(){
+			
+			let price = $("#priceInput").val();
+			
+			let size = $("#sizeInput").val();
+			
+			let content = $("#contentInput").val(); 
+			
+			let file = $("#fileInput")[0];
+			
+			
+			if(priceInput == ""){		
+				alert("가격을 입력하세요.");
+				return ;
+			}
+			if(size == ""){		
+				alert("사이즈를 선택하세요.");
+				return ;
+			}
+			if(content == ""){		
+				alert("내용설명을 입력하세요.");
+				return ;
+			}
+			
+			if(file.files.length == 0){
+				alert("파일을 선택하세요");
+				return ;
+			}
+			
+			
+			
+		});
 		
 		
 	});

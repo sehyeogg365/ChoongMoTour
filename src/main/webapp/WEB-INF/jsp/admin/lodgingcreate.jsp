@@ -23,6 +23,9 @@
 			
 			<div class="lodgingcreate-page">
 				
+				<h1 class="text-center pt-3">관리자 객실 추가</h1>
+				
+				
 				<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 				
 				<input type="file" name="file" id="fileInput"><br>
@@ -119,13 +122,13 @@
 					
 					if(data.result == "success") {
 						location.href="/admin/main/view";//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
-						alert("입력 성공");	// Required request parameter 'roomName' for method parameter type String is not present한마디로 roomName이 안들어오고있다 이런뜻같다. controller or ajax 찾아보기
+						alert("추가 성공");	// Required request parameter 'roomName' for method parameter type String is not present한마디로 roomName이 안들어오고있다 이런뜻같다. controller or ajax 찾아보기
 					} else {
-						alert("입력 실패");
+						alert("추가 실패");
 					}
 				}
 				, error:function(){
-					alert("입력 에러");
+					alert("추가 에러");
 				}
 			});
 			

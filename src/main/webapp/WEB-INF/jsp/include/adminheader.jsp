@@ -9,7 +9,7 @@
 </head>
 <body>
 	<header class="d-flex align-items-center justify-content-between">
-			<h1 class="ml-3 text-white">ChoongMo Tour</h1>
+			<h1 class="ml-3 text-white"><a href="/admin/main/view" class="text-white">ChoongMo Tour</a></h1>
 			
 			
 			<c:choose>
@@ -47,7 +47,7 @@
 			</div>
 			</c:when>
 			<c:otherwise><!-- 로그인 했을시 위에 드롭다운 버튼이 로그인 안됐을시 로그인 글씨가 -->
-				<h4> <a href="/admin/signin/view">로그인</a></h4>
+				<h4> <a href="/admin/signin/view" class="text-white">로그인</a></h4>
 			</c:otherwise>
 			
 			</c:choose>
