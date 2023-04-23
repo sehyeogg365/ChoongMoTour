@@ -90,8 +90,8 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int lodgindId = (Integer)session.getAttribute("lodgingId");
-		int count = lodgingBO.addRoom(lodgindId, price, size, content, file);
+		int lodgingId = (Integer)session.getAttribute("lodgingId");
+		int count = lodgingBO.addRoom(lodgingId, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		

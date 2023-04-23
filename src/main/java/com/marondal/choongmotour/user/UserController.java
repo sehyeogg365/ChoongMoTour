@@ -43,6 +43,11 @@ public class UserController {
 		return "user/mypage";
 	}
 	
+	@GetMapping("/reservelist/view")
+	public String reserveList() {
+		return "user/reservelist";
+	}
+	
 	
 	
 }

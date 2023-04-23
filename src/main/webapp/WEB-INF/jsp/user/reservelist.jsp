@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>choongmotour - 마이페이지</title>
+<title>choongmotour - 예약목록</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
@@ -18,13 +18,13 @@
 </head>
 <body>
 	<div id = "wrap">
+	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			<div class="my-page">
+			<div class="reservelist-page">
 				<h1 class="text-center">
-					ChoongMo Tour My Page
+					ChoongMo Tour ReserveList
 				</h1>
-				
 				
 				<div class="mypagecontents d-flex">
 				<aside class="aside1 col-4 bg-success">
@@ -49,50 +49,56 @@
 				</aside>
 				
 				<section class="contents1 col-8 bg-warning">
+					<!-- 예약리스트 -->
+					<div class="d-flex justify-content-center flex-wrap">
+						<!-- 예약 카드 -->
+						
+						<div class="reservation-card">
+							<img class="" width="" src="">
+							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						</div>
+						
+						<div class="reservation-card">
+							<img class="" width="" src="">
+							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						</div>
+						
+						<div class="reservation-card">
+							<img class="" width="" src="">
+							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						</div>
+						
+						<div class="reservation-card">
+							<img class="" width="" src="">
+							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						</div>
 					
-					<label>프로필 사진 변경</label><br>
-					<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-				
-					<input type="file" name="file" id="fileInput">
+						
 					
-					<c:choose>
-					  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-					  	<img class="userprofile" src="${userImagePath}">
-					  </c:when>
-					  <c:otherwise><!-- 없을때 -->
-					  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					  </c:otherwise>
-			 		 </c:choose>	
+					</div>
 					
-					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
-					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-					<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-					<input type="text" id="nicknameInput" placeholder="전화번호" class="form-control mt-4">
-				
-					<div class="text-center">
-					<button id="createBtn"class="btn btn-primary" type="submit">수정 완료</button>
-				</div>
 				
 				</section>
 					
 			</div>
-			
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			</div>
+			
 		
 		</section>
+	
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
-	<script>
-	$(document).ready(function(){
-		
-		
-		
-	});
-	
-	</script>
+
 </body>
 </html>

@@ -101,10 +101,10 @@
 	VALUES
 	(
 		#{lodgingId}
-		, #{imagePath}
 		, #{price}
 		, #{size}
 		, #{content}
+		, #{imagePath}
 		, now()
 		, now()
 	 	

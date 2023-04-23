@@ -59,7 +59,7 @@
                  
 				
 				<div class="text-center">
-					<button id="createBtn"class="btn btn-primary" type="submit">입력 완료</button>
+					<button id="createBtn"class="btn btn-primary" type="button">입력 완료</button>
 				</div>
 					
 					

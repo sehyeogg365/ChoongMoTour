@@ -19,7 +19,7 @@
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 		
-			<div class="main-page">
+			<div class="adminmain-page">
 				<h1 class="text-center">
 					ChoongMo Tour Admin Main Page
 				</h1>
@@ -34,7 +34,7 @@
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
 				<div class="card ml-3 mt-3">
-					<img class="profile" width = "400" src="${lodging.imagePath }" alt="호텔">
+					<img class="profile" width="250" src="${lodging.imagePath }" alt="호텔">
 					
 					<div class="">${lodging.roomName }</div>
 					
@@ -52,17 +52,9 @@
 					
 										
 				</div>
+				
+				
 				</c:forEach>
-			
-				
-		
-				
-			
-				
-			
-				
-				
-			
 			
 			
 			</div>
