@@ -107,6 +107,8 @@
 			}
 		
 			var formData = new FormData();
+			
+
 			formData.append("roomName", roomName);
 			formData.append("areaName", areaName);//이것가지 areaName 으로 바꿔주니 추가 성공했다.
 			formData.append("level", level);

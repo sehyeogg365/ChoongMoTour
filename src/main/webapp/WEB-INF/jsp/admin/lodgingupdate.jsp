@@ -26,11 +26,12 @@
 			
 				<h1 class="text-center pt-3">관리자 숙소 수정</h1>
 				
-				
+				<!-- 그냥 파일업로드는 수정 넣지말기 -->
+				<!--  
 				<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 				
 				<input type="file" name="file" id="fileInput"><br>
-				
+				-->
 				<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 
 			
@@ -56,11 +57,9 @@
                             <option value="5성급">5성급</option>   
                  </select>
                  
-                 
-                 
 				
 				<div class="text-center">
-					<button id="updateBtn"class="btn btn-primary" type="submit">수정 완료</button>
+					<button id="updateBtn"class="btn btn-primary" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 				</div>
 			
 			
@@ -77,13 +76,13 @@
 		
 		$("#updateBtn").on("click", function(){
 			
+			let id = $(this).data("lodging-id");
+			
 			let roomName = $("#roomNameInput").val();
 			
 			let areaName = $("#areaSelector").val();
 				
 			let	level = $("#levelSelector").val();
-			
-			let file = $("#fileInput")[0];
 			
 			if(roomName == ""){		
 				alert("이름을 입력하세요.");
@@ -97,27 +96,12 @@
 				alert("성급을 선택하세요.");
 				return ;
 			}
-			
-			//파일선택 
-			if(file.files.length == 0){
-				alert("파일을 선택하세요");
-				return ;
-			}
+
 		
-			var formData = new FormData();
-			formData.append("lodgingId", lodgingId);
-			formData.append("roomName", roomName);
-			formData.append("areaName", areaName);//이것가지 areaName 으로 바꿔주니 추가 성공했다.
-			formData.append("level", level);
-			formData.append("file", file.files[0]);
-			
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
-				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
-				, enctype :"multipart/form-data"// 파일 업로드 필수
-				, processData:false// 파일 업로드 필수
-				, contentType:false
+				, data:{"id":id,"roomName":roomName, "level":level, "areaName":areaName }
 				, success:function(data){
 					if(data.result == "success") {
 						location.href="/admin/main/view";

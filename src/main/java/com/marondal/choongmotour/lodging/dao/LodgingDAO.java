@@ -17,24 +17,27 @@ public interface LodgingDAO {
 	//관리자 페이지
 	//숙소 추가
 	public int insertLodging(
-							@Param("adminId") int adminId
-							, @Param("roomName") String roomName
+				
+							 @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
 							, @Param("imagePath") String imagePath
 							);
 
 	//숙소 리스트
-	public List<Lodging> selectLodgingList(@Param("adminId")int adminId);
+	public List<Lodging> selectLodgingList(@Param("id")int id);
+	
+	//숙소 한행
+	public Lodging selectLodging(@Param("id") int id);
+	
 	
 	// 숙소 수정
-		public int updateLodging(
-								 @Param("id") int id
-								, @Param("roomName") String roomName
-								, @Param("level") String level
-								, @Param("areaName") String areaName
-								, @Param("imagePath") String imagePath
-						 		);
+	public int updateLodging(
+							@Param("id") int id
+							, @Param("roomName") String roomName
+							, @Param("level") String level
+							, @Param("areaName") String areaName
+						 	);
 	
 	//객실 추가
 	public int insertRoom(

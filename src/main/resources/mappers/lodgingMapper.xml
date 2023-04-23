@@ -15,8 +15,8 @@
  	INSERT INTO 
  			`lodging`
  	(
- 		  `adminId`	
- 		, `roomName`
+
+ 		 `roomName`
  		, `level`
  		, `areaName`
  		, `imagePath`
@@ -25,8 +25,8 @@
  	)
  	VALUES
  	(
- 	 	 #{adminId}
- 		,#{roomName}
+
+ 		 #{roomName}
  		, #{level}
  		, #{areaName}
  		, #{imagePath}
@@ -51,6 +51,24 @@
  		`lodging`
 	ORDER BY
   		`id` DESC;
+ </select>
+ 
+ <select id="selectLodging" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Lodging">
+ 
+ 	SELECT 
+ 		`id`
+ 		, `adminId`
+ 		, `roomName`
+ 		, `imagePath`
+ 		, `level`
+ 		, `areaName`
+ 		, `createdAt`	
+ 		, `updatedAt`
+ 	FROM
+ 		`lodging`
+ 	WHERE
+ 		`id` = #{id}
+ 
  </select>
  
  <!-- 숙소 수정 -->

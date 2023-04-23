@@ -32,30 +32,34 @@ public class LodgingBO {
 	
 	//숙소 추가
 	
-	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file) {
+	public int addLodging(int id, String roomName, String level, String areaName, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(adminId, file);	
-		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
+		String imagePath = FileManagerService.saveFile(id, file);	
+		return lodgingDAO.insertLodging(roomName, level, areaName, imagePath);
 			
 	}
 	
 	// 숙소 리스트
 	
 	
-	public List<Lodging> getLodgingList(int adminId) {//관리자 id
+	public List<Lodging> getLodgingList(int id) {//관리자 id
 			
-		return lodgingDAO.selectLodgingList(adminId);
+		return lodgingDAO.selectLodgingList(id);
 
 	}
 	
+	public Lodging getLodging(int id) {
+		return lodgingDAO.selectLodging(id);
+	}
+	
 	//숙소 수정
-		public int updateLodging(int lodgingId, String roomName, String level, String areaName, MultipartFile file) {
+	public int updateLodging(int id, String roomName, String level, String areaName) {
 							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
-			String imagePath = FileManagerService.saveFile(lodgingId, file);
-			
-			return lodgingDAO.updateLodging(lodgingId, roomName, level, areaName, imagePath);
+		//String imagePath = FileManagerService.saveFile(lodgingId, file);
+		//이것도 꼭넣어야하냐고 물어보시는데 빼보기
+		return lodgingDAO.updateLodging(id, roomName, level, areaName);
 				
-		}
+	}
 	
 	//객실추가
 	
