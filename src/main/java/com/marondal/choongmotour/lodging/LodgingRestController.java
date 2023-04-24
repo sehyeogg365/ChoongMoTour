@@ -55,17 +55,16 @@ public class LodgingRestController {
 	// 숙소 수정 api
 		@PostMapping("/update")	
 		public Map<String, String> lodgingUpdate(
-				 	
-					 @RequestParam("roomName") String roomName
+				 	@RequestParam("id") int id
+					, @RequestParam("roomName") String roomName
 					, @RequestParam("level") String level
 					, @RequestParam("areaName") String areaName
 					, HttpSession session
 				){
 			
-			//int id = (Integer)session.getAttribute("id");
+			//int id = (Integer)session.getAttribute("id");//수정할 대상
 			
-			int count = lodgingBO.updateLodging(roomName, level, areaName);
-			
+			int count = lodgingBO.updateLodging(id, roomName, level, areaName);
 			Map<String, String> resultMap = new HashMap<>();
 					
 			if(count == 1) {

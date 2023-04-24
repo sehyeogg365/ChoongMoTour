@@ -34,8 +34,8 @@ public interface LodgingDAO {
 	
 	// 숙소 수정
 	public int updateLodging(
-							
-							 @Param("roomName") String roomName
+							@Param("id") int id
+							, @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
 						 	);
