@@ -19,7 +19,42 @@
 	
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
+			<div class="find-id-pw-page">
+				<h1 class="text-center">
+					ChoongMo Tour Admin Find Id/Pw
+				</h1>
+				<div class="findidpwcontents">
+				
+				<div class="d-flex justify-content-center align-items-end">
+				 	<label>아이디찾기
+                         	<input type="radio" name="type" value='findId' checked></label>
+                            <label class="ml-3">비밀번호 찾기
+                            <input type="radio" name="type" value="findPassword"></label> <br>
+				
+				
+				</div>
+				<div class="find-id " id="findId">
+					<label>아이디 찾기</label>
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
+				</div>
+				
+				<div class="find-pw d-none" id="findPassword">
+					<label>비밀번호 찾기</label>
+					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
+				
+				</div>
+				
+				
+				
+				</div>
+				
+			</div>
 		
 		
 		</section>
@@ -27,7 +62,73 @@
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<script>
+	$(document).ready(function(){
+		
+		// 라디오 버튼 선택에 따른 인풋 변경
+		$("input[name=type]").on('change', function() {
+			 if($(this).val() == 'findId') {
+				 $("#findId").removeClass("d-none");
+                 $("#findPassword").addClass("d-none");
+				 
+			 } else {
+				 $("#findPassword").removeClass("d-none");
+				 $("#findId").addClass("d-none");
+                 
+			 }
+			
+			
+		});
+		
+		
+		
+		
+		
+		$("#findIdBtn").on("click", function(){
+			
+			let name = $("#nameInput").val();
+			let email = $("#emailInput").val();
+			
+			if(name == ""){
+				alert("아이디를 입력하세요.");
+				return;
+				
+			}
+			
+			if(email == ""){
+				alert("이메일을 입력하세요.");
+				return;
+				
+			}
+			
+		});
+		
+		
+		
+		$("#findPwBtn").on("click", function(){
+			
+			let id = $("#loginIdInput").val();
+			let email = $("#emailInput").val();
+			
+			
+			if(id == ""){
+				alert("아이디를 입력하세요.");
+				return;
+				
+			}
+			
+			if(email == ""){
+				alert("이메일을 입력하세요.");
+				return;
+				
+			}
+			
+		});
+		
+		
+	});
+	
+	</script>
 
 </body>
 </html>

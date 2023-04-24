@@ -31,25 +31,26 @@
 				 	<label>아이디찾기
                          	<input type="radio" name="type" value='findId' checked></label>
                             <label class="ml-3">비밀번호 찾기
-                            <input type="radio" name="type" value="findPassowrd"></label> <br>
+                            <input type="radio" name="type" value="findPassword"></label> <br>
 				
 				
 				</div>
-				<aside class="aside1 bg-success">
+				<div class="find-id " id="findId">
 					<label>아이디 찾기</label>
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 				
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
-				</aside>
-				<section class="contents1 bg-warning">
+				</div>
+				
+				<div class="find-pw d-none" id="findPassword">
 					<label>비밀번호 찾기</label>
 					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 				
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
 				
-				</section>
+				</div>
 				
 				
 				</div>
@@ -64,6 +65,25 @@
 	
 	<script>
 	$(document).ready(function(){
+		
+		// 라디오 버튼 선택에 따른 인풋 변경
+		$("input[name=type]").on('change', function() {
+			 if($(this).val() == 'findId') {
+				 $("#findId").removeClass("d-none");
+                 $("#findPassword").addClass("d-none");
+				 
+			 } else {
+				 $("#findPassword").removeClass("d-none");
+				 $("#findId").addClass("d-none");
+                 
+			 }
+			
+			
+		});
+		
+		
+		
+		
 		
 		$("#findIdBtn").on("click", function(){
 			

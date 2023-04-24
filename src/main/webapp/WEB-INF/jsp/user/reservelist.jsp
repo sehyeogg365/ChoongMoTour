@@ -30,13 +30,13 @@
 				<aside class="aside1 col-4 bg-success">
 				
 					<div>
-						<h2>마이페이지</h2>
+						<h2><a href="/user/dibspage/view" class="text-dark">찜목록</a></h2>
 					</div>
 					<div>
 						<h2><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h2>내 정보수정</h2>
+						<h2><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h2>
 					</div>
 		
 					

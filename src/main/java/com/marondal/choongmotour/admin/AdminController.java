@@ -54,6 +54,11 @@ public class AdminController {
 		return "admin/find_id_pw";
 	}
 	
+	@GetMapping("/mypage/view")
+	public String myPage(Model model) {
+		return "admin/mypage";
+	}
+	
 	@GetMapping("/main/view")
 	public String mainPage(Model model
 			, HttpSession session) {
@@ -82,16 +87,11 @@ public class AdminController {
 		return "admin/roomcreate";
 	}
 	
-	@GetMapping("/room/update/view")
-	public String updatePage() {
-		return "admin/roomupdate";
-	}
 	
 	
-	
-	@GetMapping("/mypage/view")
-	public String myPage() {
-		return "admin/mypage";
+	@GetMapping("/dibspage/view")
+	public String dibsPage() {
+		return "admin/dibspage";
 	}
 
 }

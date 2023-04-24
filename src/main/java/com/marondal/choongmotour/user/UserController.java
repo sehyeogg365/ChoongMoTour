@@ -64,6 +64,10 @@ public class UserController {
 	public String reserveList() {
 		return "user/reservelist";
 	}
+	@GetMapping("/dibspage/view")
+	public String dibsPage() {
+		return "user/dibspage";
+	}
 	
 	
 	
