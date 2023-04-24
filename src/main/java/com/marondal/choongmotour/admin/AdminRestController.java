@@ -108,13 +108,8 @@ public class AdminRestController {
 			return resultMap;
 		
 	}
-	
-	// 숙소 추가 api LodgingRestController로 옮김
-	
-	
-	
-	
-	
+
+
 	// 관리자 마이페이지
 	
 	

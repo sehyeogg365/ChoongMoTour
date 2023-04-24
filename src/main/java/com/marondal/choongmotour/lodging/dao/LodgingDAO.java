@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.Room;
 
 @Repository
 public interface LodgingDAO {
@@ -48,8 +49,16 @@ public interface LodgingDAO {
 						  , @Param("imagePath") String imagePath
 						  );
 		
+	//객실 리스트
+	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
 	
 	// 객실 수정
+	public int updateRoom(
+						 @Param("id") int id
+						  , @Param("price")int price
+						  , @Param("size") String size
+						  , @Param("content") String content
+						);
 	
 	
 		

@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.Room;
 
 
 @Service
@@ -70,10 +71,24 @@ public class LodgingBO {
 		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
 	}
 		
+	//객실 리스트
+	
+	public List<Room> getRoomList(int lodgingId){
 
+		return lodgingDAO.selectRoomList(lodgingId);
+
+	}
 	
 	
 	//객실 수정
+	
+	public int updateRoom(int id, int price, String size, String content) {
+		
+		
+		return price;
+		
+		
+	}
 	
 	
 		

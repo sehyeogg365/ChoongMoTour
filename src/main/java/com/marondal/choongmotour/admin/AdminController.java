@@ -92,12 +92,11 @@ public class AdminController {
 	public String roomcreatePage() {
 		return "admin/roomcreate";
 	}
-	
-	
-	
-	@GetMapping("/dibspage/view")
-	public String dibsPage() {
-		return "admin/dibspage";
+	@GetMapping("/room/update/view")
+	public String roomupdatePage() {
+		return "admin/roomupdate";
 	}
+	
+	
 
 }

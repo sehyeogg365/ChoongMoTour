@@ -105,11 +105,25 @@ public class LodgingRestController {
 	}
 	
 	
-	
-	
-	
 	// 객실 수정 api
-	//@PostMapping
+	@PostMapping
+	public Map<String, String>roomupdate(
+			@RequestParam("price") int price
+			, @RequestParam("size") String size
+			, @RequestParam("content") String content
+			, HttpSession session
+			){
+		
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int id = (Integer)session.getAttribute("id");
+		int count = lodgingBO.updateRoom(id, price, size, content);
+		
+		return resultMap;
+		
+		
+	}
 	
 	
 	// 숙소 삭제 api

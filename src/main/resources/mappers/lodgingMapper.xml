@@ -32,7 +32,7 @@
  		, #{imagePath}
  		, now()
  		, now()
- 	)
+ 	);
  	
  
  </insert>
@@ -67,7 +67,7 @@
  	FROM
  		`lodging`
  	WHERE
- 		`id` = #{id}
+ 		`id` = #{id};
  
  </select>
  
@@ -82,7 +82,7 @@
  		, `imagePath` = #{imagePath}
   		, `updatedAt` = now()
  	WHERE	
- 		`id` = #{id}
+ 		`id` = #{id};
  </update>
  
  <!-- 객실추가 -->
@@ -108,13 +108,25 @@
 		, now()
 		, now()
 	 	
-	)
+	);
 	 			
  
  </insert>
  
  <!-- 객실 수정 -->
+ <update id="updateRoom" parameterType="map">
+ UPDATE
+ 	`room`
+ SET
+ 	
+	 	, `price`
+	 	, `size`
+	 	, `content`
+	 	, `imagePath`
+	 	, `updatedAt` = now()
+ WHERE
+ 		`id` = #{id};
  
- 
+ </update>
   
   </mapper>
