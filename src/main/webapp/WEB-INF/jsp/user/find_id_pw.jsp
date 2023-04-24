@@ -20,11 +20,95 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
+			<div class="find-id-pw-page">
+				<h1 class="text-center">
+					ChoongMo Tour Find Id/Pw
+				</h1>
+				<div class="findidpwcontents">
+				
+				<!-- 라디오 버튼으로 아이디 찾기냐 비번찾기냐 이렇게 해야할듯? 아니면 아예 독립된 페이지를 만들던가? -->
+				<div class="d-flex justify-content-center align-items-end">
+				 	<label>아이디찾기
+                         	<input type="radio" name="type" value='findId' checked></label>
+                            <label class="ml-3">비밀번호 찾기
+                            <input type="radio" name="type" value="findPassowrd"></label> <br>
+				
+				
+				</div>
+				<aside class="aside1 bg-success">
+					<label>아이디 찾기</label>
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
+				</aside>
+				<section class="contents1 bg-warning">
+					<label>비밀번호 찾기</label>
+					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
+				
+				</section>
+				
+				
+				</div>
+				
+			
+			
+			</div>
 		
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	
+	<script>
+	$(document).ready(function(){
+		
+		$("#findIdBtn").on("click", function(){
+			
+			let name = $("#nameInput").val();
+			let email = $("#emailInput").val();
+			
+			if(name == ""){
+				alert("아이디를 입력하세요.");
+				return;
+				
+			}
+			
+			if(email == ""){
+				alert("이메일을 입력하세요.");
+				return;
+				
+			}
+			
+		});
+		
+		
+		
+		$("#findPwBtn").on("click", function(){
+			
+			let id = $("#loginIdInput").val();
+			let email = $("#emailInput").val();
+			
+			
+			if(id == ""){
+				alert("아이디를 입력하세요.");
+				return;
+				
+			}
+			
+			if(email == ""){
+				alert("이메일을 입력하세요.");
+				return;
+				
+			}
+			
+		});
+		
+		
+	});
+	</script>
 
 </body>
 </html>
