@@ -107,10 +107,8 @@
 			}
 		
 			var formData = new FormData();
-			
-
 			formData.append("roomName", roomName);
-			formData.append("areaName", areaName);//이것가지 areaName 으로 바꿔주니 추가 성공했다.
+			formData.append("areaName", areaName);//이것까지 areaName 으로 바꿔주니 추가 성공했다.
 			formData.append("level", level);
 			formData.append("file", file.files[0]);//400에러면 api호출하는곳에가봐야 함 비오다오 볼필요도 없고 레스트컨트롤러에서 조차도 아예 안들어가고 튕기는 현상임 바로 여기임 여기는 폼데이터로 데이터를 호출하는데 여기선 파일밖에 안불러옴. 이게원인이였음
 		

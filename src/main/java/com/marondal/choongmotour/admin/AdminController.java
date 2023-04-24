@@ -58,9 +58,9 @@ public class AdminController {
 	public String mainPage(Model model
 			, HttpSession session) {
 		
-		int adminId = (Integer)session.getAttribute("adminId");
+		int id = (Integer)session.getAttribute("id");
 		
-		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);
+		List<Lodging> lodgingList = lodgingBO.getLodgingList(id);//알고보니 이거 id로 안바꿔서 실수가 났나??
 		model.addAttribute("lodgingList", lodgingList);
 		
 		return "admin/main";

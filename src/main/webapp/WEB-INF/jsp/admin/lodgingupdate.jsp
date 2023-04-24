@@ -32,9 +32,11 @@
 				
 				<input type="file" name="file" id="fileInput"><br>
 				-->
+				
+				
 				<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 
-			
+				<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
                             <option value="">지역</option>
@@ -76,7 +78,7 @@
 		
 		$("#updateBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("lodging-id"); //이거 만드니 400에러가 뜬다.
 			
 			let roomName = $("#roomNameInput").val();
 			
@@ -101,7 +103,7 @@
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
-				, data:{"id":id,"roomName":roomName, "level":level, "areaName":areaName }
+				, data:{"id":id,"roomName":roomName, "areaName":areaName, "level":level }
 				, success:function(data){
 					if(data.result == "success") {
 						location.href="/admin/main/view";

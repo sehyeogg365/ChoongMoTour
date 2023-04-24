@@ -29,9 +29,7 @@
 				<div class="mypagecontents d-flex">
 				<aside class="aside1 col-4 bg-success">
 				
-					<div>
-						<h2>마이페이지</h2>
-					</div>
+			
 					<div>
 						<h2>마이페이지</h2>
 					</div>
@@ -39,10 +37,7 @@
 						<h2><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h2>마이페이지</h2>
-					</div>
-					<div>
-						<h2>마이페이지</h2>
+						<h2>내 정보수정</h2>
 					</div>
 					
 				
@@ -55,6 +50,8 @@
 				
 					<input type="file" name="file" id="fileInput">
 					
+					
+					
 					<c:choose>
 					  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
 					  	<img class="userprofile" src="${userImagePath}">
@@ -66,11 +63,13 @@
 					
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
-					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-					<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-					<input type="text" id="nicknameInput" placeholder="전화번호" class="form-control mt-4">
-				
+					
+					
+						<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+						<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
+						<input type="text" id="nicknameInput" placeholder="전화번호" class="form-control mt-4">
+					<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 					<div class="text-center">
 					<button id="createBtn"class="btn btn-primary" type="submit">수정 완료</button>
 				</div>
