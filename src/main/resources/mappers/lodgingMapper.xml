@@ -77,12 +77,12 @@
  		`lodging`
  	SET 
  		 `roomName` = #{roomName}
- 		, `level` = #{level}
- 		, `areaName` = #{areaName}<!-- 이미지패스 컬럼 이거를 실수로 추가해서 500error가 뜬거같다. -->
+ 		, `level` = #{level}<!-- #{}이값은 역시나 다오에서 불러온값들 -->
+ 		, `areaName` = #{areaName}
   		, `updatedAt` = now()
  	WHERE	
- 		`id` = #{id};
- </update>
+ 		`id` = #{id};<!-- 500에러가 뜬다.  Parameter 'id' not found. Available parameters are [level, areaName, param3, roomName, param1, param2] 이고 mybatis 어쩌구도 뜬다. 즉 마이바티스 기반인 다오, 매퍼 쪽에 문제 이다.-->
+ </update>			 <!-- 매퍼에서 id를 쓸려면 다오에서도 id 파라미터가 있어야한다. -->
  
  <!-- 객실추가 -->
  <insert id="insertRoom" parameterType="map">

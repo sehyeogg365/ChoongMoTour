@@ -54,7 +54,7 @@ public class LodgingBO {
 	}
 	
 	//숙소 수정
-	public int updateLodging(String roomName, String level, String areaName) {
+	public int updateLodging( String roomName, String level, String areaName) {
 							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
 		//String imagePath = FileManagerService.saveFile(lodgingId, file);
 		//이것도 꼭넣어야하냐고 물어보시는데 빼보기
