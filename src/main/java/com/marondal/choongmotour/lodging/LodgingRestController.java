@@ -32,7 +32,7 @@ public class LodgingRestController {
 			, @RequestParam("level") String level// 그리고 사용자영역에서 지역이름별로 숙소 조회 하는데 여긴 입력부분이고 관리자 입력부분과 사용자 조회부분은 아예 별개라서 신경쓸필요 없다하심
 			, @RequestParam("areaName") String areaName
 			, @RequestParam(value="file", required=false) MultipartFile file //Memo 프로젝트 포스트 컨트롤러로 이현상 참조해보기
-			, HttpSession session // adminId값 불러오기
+			, HttpSession session // id값 불러오기
 			) {
 		
 		int id = (Integer)session.getAttribute("id");

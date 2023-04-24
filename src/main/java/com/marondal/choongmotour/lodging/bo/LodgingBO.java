@@ -41,7 +41,6 @@ public class LodgingBO {
 	
 	// 숙소 리스트
 	
-	
 	public List<Lodging> getLodgingList(int id) {//관리자 id
 			
 		return lodgingDAO.selectLodgingList(id);
