@@ -33,13 +33,14 @@
 				<input type="file" name="file" id="fileInput"><br>
 				-->
 				
-				
-				<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
+				<!-- 프론트엔드 영역 부분 피드백은 딱 처음 들어왔을때 값들이 미리 입력 된상태에서 수정이되어야 함 메모게시판 처럼 그게 일반적인 경우 -->
+				<label>이름</label>
+				<input type="text" id="roomNameInput" value="${lodging.roomName }" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 
 				<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
-                            <option value="">지역</option>
+                            <option value="${lodging.areaName }">${lodging.areaName }</option>
                             <option value="seoul">서울</option>
                             <option value="inchecon">인천</option>
                             <option value="gangwon">강원</option>
@@ -51,7 +52,7 @@
                  
 				<select class="form-control col-5 mt-3" id="levelSelector">
 							
-                            <option value="">등급</option>
+                            <option value="${lodging.level }">${lodging.level }</option>
                             <option value="1성급">1성급</option>
                             <option value="2성급">2성급</option>
                             <option value="3성급">3성급</option>
@@ -61,7 +62,7 @@
                  
 				
 				<div class="text-center">
-					<button id="updateBtn"class="btn btn-primary" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+					<button id="updateBtn"class="btn btn-primary update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 				</div>
 			
 			
@@ -76,7 +77,7 @@
 	<script>
 	$(document).ready(function(){
 		
-		$("#updateBtn").on("click", function(){
+		$(".update-btn").on("click", function(){//아마 class가아닌 id값을 받아와서 500에러가 뜨는건가?? 업데이트 버튼이 여러개이므로
 			
 			let id = $(this).data("lodging-id"); 
 			
@@ -98,14 +99,18 @@
 				alert("성급을 선택하세요.");
 				return ;
 			}
-
+			
+			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(roomName);//보아하니 id만 제대로 안들어오고있는상황
+			alert(areaName);
+			alert(level);
 		
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
 				, data:{"id":id,"roomName":roomName, "areaName":areaName, "level":level } //여기까지 바꾸니 이제 에러가 바뀌어서 나온다. Required request parameter 'id' for method parameter type int is not present 에서 Failed to convert value of type 'java.lang.String' to required type 'int';로
-				, success:function(data){
-					if(data.result == "success") {
+				, success:function(data){ //400에러면 요청문제(아작스영역) 스타벅스서 커피를 시켰는데 뜨거운 아이스아메리카노요 하는거를 연상해서 엉뚱한게 나온것. 
+					if(data.result == "success") {// 어떤 거를 수행하고 있었는지, 어떤거를 봐서 어떤 오류가 생겼다고 알게되었는지. 등등을 잘 설명할것.
 						location.href="/admin/main/view";
 						alert("수정 성공");	
 					} else {

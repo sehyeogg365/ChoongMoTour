@@ -83,7 +83,12 @@ public class AdminController {
 			@RequestParam("id") int id
 			,Model model) {
 		
+		
+		
 		Lodging lodging = lodgingBO.getLodging(id);
+		
+		model.addAttribute("lodging", lodging);//이거를 깜빡함 근데도 500에러가 뜬다.
+		
 		
 		return "admin/lodgingupdate";
 	}

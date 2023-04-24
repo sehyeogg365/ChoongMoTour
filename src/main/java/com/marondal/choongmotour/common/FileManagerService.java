@@ -38,7 +38,7 @@ public class FileManagerService {
 	// 폴더 이름 : userId_time(3_3949828284 15:00:11)		
 	
 	String directoryName = "/" + adminId + "_" + System.currentTimeMillis() + "/";//로그인 한정보 필요 파라미터 추가
-	
+	//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
 	// 디렉토리 생성
 	String directoryPath = FILE_UPLOAD_PATH + directoryName;
 	File directory = new File(directoryPath);//java.io.file 

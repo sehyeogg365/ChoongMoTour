@@ -29,13 +29,13 @@ public interface LodgingDAO {
 	public List<Lodging> selectLodgingList(@Param("id")int id);
 	
 	//숙소 한행
-	public Lodging selectLodging(@Param("id") int id);
+	public Lodging selectLodgingById(@Param("id") int id);
 	
 	
 	// 숙소 수정
 	public int updateLodging(
-							@Param("id") int id
-							, @Param("roomName") String roomName
+							
+							 @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
 						 	);

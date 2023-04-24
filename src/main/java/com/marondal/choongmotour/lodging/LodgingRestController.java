@@ -35,10 +35,10 @@ public class LodgingRestController {
 			, HttpSession session // id값 불러오기
 			) {
 		
-		//int id = (Integer)session.getAttribute("id");
+		int adminId = (Integer)session.getAttribute("adminId");
 		
-		int count = lodgingBO.addLodging(roomName, level, areaName, file); 
-				
+		int count = lodgingBO.addLodging(adminId, roomName, level, areaName, file);
+								//그리고 웬만하면 자동완성 하지말기. 헷갈리고 더 복잡해짐
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
@@ -54,16 +54,17 @@ public class LodgingRestController {
 	
 	// 숙소 수정 api
 		@PostMapping("/update")	
-		public Map<String, String> lodgingUpdate(//수정에선 lodgingId
-				 	 @RequestParam("id") int id 
-					, @RequestParam("roomName") String roomName
+		public Map<String, String> lodgingUpdate(
+				 	
+					 @RequestParam("roomName") String roomName
 					, @RequestParam("level") String level
 					, @RequestParam("areaName") String areaName
 					, HttpSession session
 				){
 			
+			//int id = (Integer)session.getAttribute("id");
 			
-			int count = lodgingBO.updateLodging(id, roomName, level, areaName);
+			int count = lodgingBO.updateLodging(roomName, level, areaName);
 			
 			Map<String, String> resultMap = new HashMap<>();
 					

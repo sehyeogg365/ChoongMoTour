@@ -33,13 +33,13 @@ public class LodgingBO {
 	
 	//숙소 추가
 	
-	public int addLodging(String roomName, String level, String areaName, MultipartFile file) {
+	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(0, file);	
+		String imagePath = FileManagerService.saveFile(adminId, file);	
 		return lodgingDAO.insertLodging(roomName, level, areaName, imagePath);
-			
-	}
-	
+									//bo 에서 필요해서 호출한 adminId가 dao에서는 필요가없으므로 뺀다. 금욜날 이거를 말한거였음
+	}								//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
+									// 모호하게 전에서 이걸 써서 이게 필요할것이다 라는 생각이 들게됨 근데 명확하게 해야함개발은 쓸때 쓰고 뺄땐빼고 이래야 함.
 	// 숙소 리스트
 	
 	public List<Lodging> getLodgingList(int id) {//관리자 id
@@ -50,15 +50,15 @@ public class LodgingBO {
 	
 	//숙소 한행 불러오기
 	public Lodging getLodging(int id) {
-		return lodgingDAO.selectLodging(id);
+		return lodgingDAO.selectLodgingById(id);
 	}
 	
 	//숙소 수정
-	public int updateLodging(int id, String roomName, String level, String areaName) {
+	public int updateLodging(String roomName, String level, String areaName) {
 							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
 		//String imagePath = FileManagerService.saveFile(lodgingId, file);
 		//이것도 꼭넣어야하냐고 물어보시는데 빼보기
-		return lodgingDAO.updateLodging(id, roomName, level, areaName);
+		return lodgingDAO.updateLodging(roomName, level, areaName);
 				
 	}
 	
