@@ -78,7 +78,7 @@
 		
 		$("#updateBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id"); //이거 만드니 400에러가 뜬다.
+			let id = $(this).data("lodging-id"); 
 			
 			let roomName = $("#roomNameInput").val();
 			
@@ -103,7 +103,7 @@
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
-				, data:{"id":id,"roomName":roomName, "areaName":areaName, "level":level }
+				, data:{"id":id,"roomName":roomName, "areaName":areaName, "level":level } //여기까지 바꾸니 이제 에러가 바뀌어서 나온다. Required request parameter 'id' for method parameter type int is not present 에서 Failed to convert value of type 'java.lang.String' to required type 'int';로
 				, success:function(data){
 					if(data.result == "success") {
 						location.href="/admin/main/view";

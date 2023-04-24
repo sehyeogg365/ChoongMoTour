@@ -35,9 +35,9 @@ public class LodgingRestController {
 			, HttpSession session // id값 불러오기
 			) {
 		
-		int id = (Integer)session.getAttribute("id");
+		//int id = (Integer)session.getAttribute("id");
 		
-		int count = lodgingBO.addLodging(id, roomName, level, areaName, file); 
+		int count = lodgingBO.addLodging(roomName, level, areaName, file); 
 				
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -54,8 +54,8 @@ public class LodgingRestController {
 	
 	// 숙소 수정 api
 		@PostMapping("/update")	
-		public Map<String, String> lodgingUpdate(//수정에선 lodgingID
-				 	 @RequestParam("id") int id
+		public Map<String, String> lodgingUpdate(//수정에선 lodgingId
+				 	 @RequestParam("id") int id 
 					, @RequestParam("roomName") String roomName
 					, @RequestParam("level") String level
 					, @RequestParam("areaName") String areaName

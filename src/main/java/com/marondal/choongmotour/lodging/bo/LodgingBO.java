@@ -32,9 +32,9 @@ public class LodgingBO {
 	
 	//숙소 추가
 	
-	public int addLodging(int id, String roomName, String level, String areaName, MultipartFile file) {
+	public int addLodging(String roomName, String level, String areaName, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(id, file);	
+		String imagePath = FileManagerService.saveFile(0, file);	
 		return lodgingDAO.insertLodging(roomName, level, areaName, imagePath);
 			
 	}
@@ -47,6 +47,7 @@ public class LodgingBO {
 
 	}
 	
+	//숙소 한행 불러오기
 	public Lodging getLodging(int id) {
 		return lodgingDAO.selectLodging(id);
 	}

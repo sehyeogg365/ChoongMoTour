@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Lodging;
@@ -78,7 +79,12 @@ public class AdminController {
 		return "admin/lodgingcreate";
 	}
 	@GetMapping("/lodging/update/view")
-	public String lodgingupdatePage() {
+	public String lodgingupdatePage(
+			@RequestParam("id") int id
+			,Model model) {
+		
+		Lodging lodging = lodgingBO.getLodging(id);
+		
 		return "admin/lodgingupdate";
 	}
 	
