@@ -68,10 +68,10 @@
 						<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 						<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-						<input type="text" id="nicknameInput" placeholder="전화번호" class="form-control mt-4">
+						<input type="text" id="phoneNumberInput" placeholder="전화번호" class="form-control mt-4">
 					<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 					<div class="text-center">
-					<button id="createBtn"class="btn btn-primary" type="submit">수정 완료</button>
+					<button id="updateBtn"class="btn btn-primary" type="button">수정 완료</button>
 				</div>
 				
 				</section>
@@ -88,6 +88,37 @@
 	<script>
 	$(document).ready(function(){
 		
+		$("#updateBtn").on("click", function(){
+			
+			let password = $("#password").val();
+			let passwordInput = $("#passwordInput").val();			
+			let name = $("#nameInput").val();
+			let email = $("#emailInput").val();
+			let phoneNumber = $("#phoneNumberInput").val();
+			
+			if(password != passwordInput){
+				alert("비밀번호가 다릅니다.");
+				return ;
+			}
+			
+			$.ajax({
+				type:
+				, url:
+				, data:
+				, success:function(data){
+					
+				}
+				
+				, error:function(){
+					
+				}
+				
+			});
+			
+			
+			
+			
+		});
 		
 		
 	});
