@@ -40,7 +40,7 @@
 				<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
 				<select class="form-control col-5 mt-3" id="areaSelector">
 							
-                            <option value="${lodging.areaName }">${lodging.areaName }</option>
+                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
                             <option value="seoul">서울</option>
                             <option value="inchecon">인천</option>
                             <option value="gangwon">강원</option>

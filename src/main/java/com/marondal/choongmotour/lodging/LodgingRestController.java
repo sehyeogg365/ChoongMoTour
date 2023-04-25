@@ -92,7 +92,7 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 
-		int count = lodgingBO.addRoom(id, price, size, content, file);
+		int count = lodgingBO.addRoom(id, lodgingId, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		

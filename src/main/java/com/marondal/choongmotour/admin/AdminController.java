@@ -95,7 +95,14 @@ public class AdminController {
 	}
 	
 	@GetMapping("/room/create/view")
-	public String roomcreatePage() {
+	public String roomcreatePage(
+			@RequestParam("id") int id
+			,Model model) {
+		
+		Room room = lodgingBO.getRoom(id);
+			
+		model.addAttribute("room", room);//id별로 추가 버튼이 다르기에 결국에 모델을 불러와서 c태그쓸려면 여기서 객체 추가해야하나??
+										//아마 어제 숙소수정도 위에거 모델 추가해서 생긴듯.
 		return "admin/roomcreate";
 	}
 	
