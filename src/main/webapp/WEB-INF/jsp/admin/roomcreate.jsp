@@ -26,21 +26,24 @@
 				<h1 class="text-center pt-3">관리자 객실 추가</h1>
 				
 			
-				<div class="d-flex mt-3">
-					<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
-				</div>
+				
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
 			     
-			     <label>싱글<input type="checkbox" name="size" value="singleroom"></label><br>
+			     <label>싱글<input type="checkbox" id="single" name="size" value="singleroom"></label><br>
 			     
-			     <label>더블<input type="checkbox" name="size" value="doubleroom"></label><br>
+			     <label>더블<input type="checkbox" id="double" name="size" value="doubleroom"></label><br>
 			     
-			     <label>트윈<input type="checkbox" name="size" value="twinroom"></label><br>
-                 
+			     <label>트윈<input type="checkbox" id="twin"name="size" value="twinroom"></label><br>
+                  								<!-- id값부여해보기 -->
                  <div id="singleInput" class="d-none" >
 	                 <label>기본정보 (싱글)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 	                 <input type="file" name="file" id="fileInput"><br>
+	                 
+	                 <div class="d-flex mt-3">
+						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+					 </div>
+	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
                  
@@ -48,6 +51,11 @@
 	                 <label>기본정보 (더블)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 	                 <input type="file" name="file" id="fileInput"><br>
+	                 
+	                 <div class="d-flex mt-3">
+						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+					 </div>
+	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
                  
@@ -55,6 +63,11 @@
 	                 <label>기본정보 (트윈)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 	                 <input type="file" name="file" id="fileInput"><br>
+	                 
+	                 <div class="d-flex mt-3">
+						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+					 </div>
+	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
                  </div>
 			
@@ -83,22 +96,29 @@
 			
 			
 			
-			if(size == "singleroom"){
+			if($("#single").is(":checked")){
 				$("#singleInput").removeClass("d-none");
 				
+			} else {
+				$("#singleInput").addClass("d-none");
 			}
 			
-			
-			if(size == "doubleroom"){
-				
+			if($("#double").is(":checked")){
 				$("#doubleInput").removeClass("d-none");
-			}
-			
-			
-			if(size == "twinroom"){
 				
-				$("#twinInput").removeClass("d-none");
+			} else {
+				$("#doubleInput").addClass("d-none");
 			}
+			
+			if($("#twin").is(":checked")){
+				$("#twinInput").removeClass("d-none");
+				
+			} else {
+				$("#twinInput").addClass("d-none");
+			}
+			
+			
+			
 			
 		});
 		

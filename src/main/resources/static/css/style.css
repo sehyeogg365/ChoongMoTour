@@ -95,12 +95,20 @@ header{
 
 .card-list > .card{
 	width: 400px;
-    height: 500px; 
+    height: 600px; 
+	
+}
+
+.card-list > .card-body{
+	width: 400px;
+    height: 200px; 
 	
 }
 
 .card > .profile{
-	border-radius: 70%;
+	width: 400px;
+    height: 400px;
+    object-fit: cover;
 	margin : auto;
  
 }

@@ -34,22 +34,24 @@
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
 				<div class="card ml-3 mt-3">
-					<img class="profile" width="250" src="${lodging.imagePath }" alt="호텔">
+					<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
 					
-					<div class="">${lodging.roomName }</div>
 					
-					<div class="">${lodging.level }</div>
-					
-					<div class="d-flex justify-content-between">
-						<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
-						<a href="/admin/lodging/delete/view?id=${lodging.id }" class="btn btn-danger">삭제하기</a>
-					</div>
-					<div class="d-flex justify-content-between">
-						<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
-						<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary">객실수정하기</a>
+					<div class="card-body">
+						<div class="">${lodging.roomName }</div>
 						
+						<div class="">${lodging.level }</div>
+						
+						<div class="d-flex justify-content-between mt-3">
+							<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
+							<a href="/admin/lodging/delete/view?id=${lodging.id }" class="btn btn-danger">삭제하기</a>
+						</div>
+						<div class="d-flex justify-content-between">
+							<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
+							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary">객실수정하기</a>
+							
+						</div>
 					</div>
-					
 										
 				</div>
 				
