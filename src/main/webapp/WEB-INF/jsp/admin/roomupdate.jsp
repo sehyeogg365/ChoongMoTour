@@ -27,7 +27,7 @@
 				
 				<label>사이즈</label> <br>
                   
-			    <label>싱글<input type="radio" id="single" name="size" value="singleroom"></label>
+			    <label>싱글<input type="radio" id="single" name="size" value="singleroom" checked></label>
 			     
 			    <label>더블<input type="radio" id="double" name="size" value="doubleroom"></label>
 			     
@@ -35,7 +35,7 @@
 				
 				
 
-                 <div id="singleInput" class="d-none">
+                 <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br>
 	                 
 	                 <div class="d-flex mt-3">
@@ -51,7 +51,7 @@
                  
                  <div id="doubleInput" class="d-none">
 	                 <label>기본정보 (더블)</label><br>
-	                 
+	                 <!-- 각각 c태그로 넣기 -->
 	                 <div class="d-flex mt-3">
 						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
 					 </div>
@@ -63,11 +63,14 @@
 					 </div>
                  </div>
                  
-                 <div class="d-none">
+                 <div id="twinInput" class="d-none">
 	                 <label>기본정보 (트윈)</label><br>
-	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-	                 <input type="file" name="file" id="fileInput"><br>
-	                 <textarea rows="5" cols="100" class=""></textarea>
+	                 <div class="d-flex mt-3">
+						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+					 </div>
+					 
+	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 	
                  	<div class="text-center">
 						<button id="twinupdateBtn"class="btn btn-primary twin-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 					</div>

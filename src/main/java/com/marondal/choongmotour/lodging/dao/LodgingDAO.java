@@ -43,6 +43,7 @@ public interface LodgingDAO {
 	//객실 추가
 	public int insertRoom(
 						  @Param("id") int id
+						  , @Param("lodgingId") int lodgingId
 						  , @Param("price")int price
 						  , @Param("size") String size
 						  , @Param("content") String content

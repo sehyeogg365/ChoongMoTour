@@ -28,14 +28,14 @@
 			
 				
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
-			     
-			     <label>싱글<input type="radio" id="single" name="size" value="singleroom"></label>
+			     <!-- roomcreate, update 에서 굳이 입력란을 처음부터 숨겨야하는지? 굳이 이점이 없다면 다른 페이지들처럼 처음에는 드러내놓는게 좋을듯 -->
+			     <label>싱글<input type="radio" id="single" name="size" value="singleroom" checked></label>
 			     
 			     <label>더블<input type="radio" id="double" name="size" value="doubleroom"></label>
 			     
 			     <label>트윈<input type="radio" id="twin"name="size" value="twinroom"></label><br>
                   								<!-- id값부여해보기 -->
-                 <div id="singleInput" class="d-none" >
+                 <div id="singleInput" class="" >
 	                 <label>기본정보 (싱글)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 	                 <input type="file" name="file" id="fileInput"><br>

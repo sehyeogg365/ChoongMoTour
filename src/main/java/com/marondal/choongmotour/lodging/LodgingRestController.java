@@ -59,11 +59,12 @@ public class LodgingRestController {
 					, @RequestParam("roomName") String roomName
 					, @RequestParam("level") String level
 					, @RequestParam("areaName") String areaName
-					, HttpSession session
+				
 				){
 			
 			//int id = (Integer)session.getAttribute("id");//수정할 대상
-			
+			// because the return value of "javax.servlet.http.HttpSession.getAttribute(String)" is null 이렇게 뜬다. 세션에 LodgingId값을 저장하지 않아서 null이뜨는것.
+			// 그래서 파라미터로 불러오는것이고, 세션 값이란 로그인할때 저장되는 값, 파라미터로 해볼까가 아닌 세션에 저장에 안된값이 안되는구나 이렇게 알아야 하고, 세션 불러오는건 최소화 해야함.
 			int count = lodgingBO.updateLodging(id, roomName, level, areaName);
 			Map<String, String> resultMap = new HashMap<>();
 					
@@ -80,19 +81,17 @@ public class LodgingRestController {
 	
 	// 객실 추가 api
 	@PostMapping("/room/create")
-	public Map<String, String>roomcreate(
+	public Map<String, String>roomCreate(
 			@RequestParam("id") int id
+			, @RequestParam("lodgingId") int lodgingId
 			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
 			, @RequestParam(value="file", required=false) MultipartFile file
-			, HttpSession session
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
-		
-		//int lodgingId = (Integer)session.getAttribute("lodgingId");
-		
+
 		int count = lodgingBO.addRoom(id, price, size, content, file);
 		
 		if(count == 1) {
@@ -109,19 +108,24 @@ public class LodgingRestController {
 	
 	// 객실 수정 api
 	@PostMapping
-	public Map<String, String>roomupdate(
-			@RequestParam("price") int price
+	public Map<String, String>roomUpdate(
+			@RequestParam("id") int id
+			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
-			, HttpSession session
+
 			){
 		
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int id = (Integer)session.getAttribute("id");
-		
 		int count = lodgingBO.updateRoom(id, price, size, content);
+		
+		if(count == 1) {
+			resultMap.put("result", "success");			
+		} else {
+			resultMap.put("result", "fail");		
+		}
 		
 		return resultMap;
 		
@@ -130,7 +134,17 @@ public class LodgingRestController {
 	
 	
 	// 숙소 삭제 api
-	//@PostMapping
+//	@PostMapping
+//	public Map<String, String> lodgingDelete(
+//			@RequestParam("id") int id){
+//		Map<String, String> resultMap = new HashMap<>();
+//		
+//		int count = 
+//		
+//		return resultMap;
+//		
+//		
+//	}
 	
 	
 }
