@@ -50,18 +50,21 @@
 						<!-- 예약 카드 -->
 						
 						<div class="card ml-3 mt-3">
+							<i class="bi bi-x-square d-flex justify-content-end"></i>
+							<img class="profile" width="250" src=" " alt="호텔">
+							<div class="">ㅇㅇ호텔</div>
+							
+							<div class="">3성급</div>
+						</div>
+						<div class="card ml-3 mt-3">
+							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<img class="profile" width="250" src=" " alt="호텔">
 							<div class="">ㅇㅇ호텔</div>
 					
 							<div class="">3성급</div>
 						</div>
 						<div class="card ml-3 mt-3">
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
-					
-							<div class="">3성급</div>
-						</div>
-						<div class="card ml-3 mt-3">
+							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<img class="profile" width="250" src=" " alt="호텔">
 							<div class="">ㅇㅇ호텔</div>
 					
