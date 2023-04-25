@@ -89,7 +89,7 @@
  	INSERT INTO 
  			`room`
 	(
-	 	 `lodgingId`<!-- lodgindId 앞에 실수로 ,붙임 -->
+	 	 `id`<!-- lodgindId 앞에 실수로 ,붙임 -->
 	 	, `price`
 	 	, `size`
 	 	, `content`
@@ -99,7 +99,7 @@
 	)
 	VALUES
 	(
-		#{lodgingId}
+		#{id}
 		, #{price}
 		, #{size}
 		, #{content}
