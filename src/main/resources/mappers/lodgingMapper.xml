@@ -128,7 +128,7 @@
  	FROM
  		`room`
  	WHERE
- 		`lodgingId`=#{lodgingId}
+ 		`id`=#{id}
  </select>
  
  <!-- 객실 수정 -->

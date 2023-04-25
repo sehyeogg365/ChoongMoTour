@@ -45,27 +45,27 @@
 				
 				<section class="contents1 col-8 bg-warning">
 					<!-- 예약리스트 -->
-					<div class="d-flex justify-content-center flex-wrap">
+					<label>예약목록</label>
+					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						<!-- 예약 카드 -->
 						
-						<div class="reservation-card">
-							<img class="" width="" src="">
-							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						<div class="card ml-3 mt-3">
+							<img class="profile" width="250" src=" " alt="호텔">
+							<div class="">ㅇㅇ호텔</div>
+					
+							<div class="">3성급</div>
 						</div>
-						
-						<div class="reservation-card">
-							<img class="" width="" src="">
-							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						<div class="card ml-3 mt-3">
+							<img class="profile" width="250" src=" " alt="호텔">
+							<div class="">ㅇㅇ호텔</div>
+					
+							<div class="">3성급</div>
 						</div>
-						
-						<div class="reservation-card">
-							<img class="" width="" src="">
-							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
-						</div>
-						
-						<div class="reservation-card">
-							<img class="" width="" src="">
-							<button type="button" class="btn btn-primary btn-block mt-3" id="reviewBtn">리뷰쓰기</button>
+						<div class="card ml-3 mt-3">
+							<img class="profile" width="250" src=" " alt="호텔">
+							<div class="">ㅇㅇ호텔</div>
+					
+							<div class="">3성급</div>
 						</div>
 					
 						

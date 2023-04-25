@@ -126,7 +126,7 @@
 		
 		$(".create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("lodging-id");
 			
 			let price = $("#priceInput").val();
 			
@@ -156,13 +156,13 @@
 			
 			var formData = new FormData();
 			
-			formData.append("lodgingId", lodgingId);
+			formData.append("id", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(lodgingId);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
 			alert(price);//O
 			alert(size);//X
 			alert(content);//O

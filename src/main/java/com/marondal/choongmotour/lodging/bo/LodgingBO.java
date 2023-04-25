@@ -64,34 +64,34 @@ public class LodgingBO {
 	
 	//객실추가
 	
-	public int addRoom(int lodgingId, int price, String size, String content, MultipartFile file) {
+	public int addRoom(int id, int price, String size, String content, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(lodgingId, file);
+		String imagePath = FileManagerService.saveFile(id, file);
 		
-		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
+		return lodgingDAO.insertRoom(id, price, size, content, imagePath);
 	}
 		
 	//객실 리스트
 	
-	public List<Room> getRoomList(int lodgingId){
+	public List<Room> getRoomList(int id){
 
-		return lodgingDAO.selectRoomList(lodgingId);
+		return lodgingDAO.selectRoomList(id);
 
 	}
 	
 	//객실 한행 조회
-	public Room getRoom(int lodgingId) {
+	public Room getRoom(int id) {
 		
-		return lodgingDAO.selectRoomById(lodgingId);
+		return lodgingDAO.selectRoomById(id);
 	}
 	
 	
 	//객실 수정
 	
-	public int updateRoom(int lodgingId, int price, String size, String content) {
+	public int updateRoom(int id, int price, String size, String content) {
 		
 		
-		return lodgingDAO.updateRoom(lodgingId, price, size, content);
+		return lodgingDAO.updateRoom(id, price, size, content);
 		
 		
 	}

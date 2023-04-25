@@ -100,18 +100,20 @@ public class UserRestController {
 		
 		return resultMap;
 		
-		
-	
-	
-	
+
 	}
 
 //	
-//	@PostMapping("find_id_pw")
+//	@PostMapping("/find_id_pw")
 //	public Map <String, String> findIdPw(){
 //		
 //	}
 	
+	
+//	@PostMapping("/mypage")
+//	public Map <String, String> mypageUpdate(){
+//		
+//	}
 	
 	
 }
