@@ -119,9 +119,9 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int lodgingId = (Integer)session.getAttribute("lodgingId");
+		int id = (Integer)session.getAttribute("id");
 		
-		int count = lodgingBO.updateRoom(lodgingId, price, size, content);
+		int count = lodgingBO.updateRoom(id, price, size, content);
 		
 		return resultMap;
 		
