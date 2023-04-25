@@ -57,14 +57,17 @@ header{
 	width:1200px;
 }
 
+.contents > .find-id-pw-page{
+	
+	width:600px;
+}
+
 .contents> .my-page{
 	width:1200px;
 }
 .contents> .dibs-page{
 	width:1200px;
 }
-
-
 
 .contents> .reservelist-page{
 	width:1200px;

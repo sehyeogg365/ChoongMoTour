@@ -101,6 +101,27 @@
 				
 			}
 			
+			$.ajax({
+				type:"post"
+				, url:"/admin/find_id_pw"
+				, data:{"name": name, "email" : email}
+				, success:function(data){
+					if(data.result=="success"){
+						alert("아이디는 : " + );
+						location.reload();
+					} else {
+						alert("이름/이메일이 일치하지 않습니다.");
+					
+					}
+				
+					
+					
+					
+				}
+				, error:function(){
+					alert("아이디 찾기 에러");
+				}
+			
 		});
 		
 		
@@ -122,6 +143,24 @@
 				return;
 				
 			}
+			
+			$.ajax({
+				type:"post"
+				, url:"/admin/find_id_pw"
+				, data:{"loginId":id, "email":email}
+				, success:function(data){
+					
+					if(data.result="success"){
+						
+						alert("임시비밀번호는 : " + );
+						location.reload();
+					}else{
+						alert("아이디/이메일이 일치하지 않습니다.");
+					}
+				}
+				, error:function(){
+					alert("비밀번호 찾기 에러");
+				}
 			
 		});
 		

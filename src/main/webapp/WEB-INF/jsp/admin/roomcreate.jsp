@@ -88,7 +88,7 @@
 	$(document).ready(function(){
 		
 		
-		$("input[name='size']").on("change", function(){
+		$("input[name='size']").on("change", function(){//마찬가지로 클래스에 create-btn 값지정 id마다 버튼이 하나씩 달려있으므로.
 			
 			let size = $(this).val();
 			
