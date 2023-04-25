@@ -29,11 +29,11 @@
 				
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
 			     
-			     <label>싱글<input type="checkbox" id="single" name="size" value="singleroom"></label><br>
+			     <label>싱글<input type="radio" id="single" name="size" value="singleroom"></label>
 			     
-			     <label>더블<input type="checkbox" id="double" name="size" value="doubleroom"></label><br>
+			     <label>더블<input type="radio" id="double" name="size" value="doubleroom"></label>
 			     
-			     <label>트윈<input type="checkbox" id="twin"name="size" value="twinroom"></label><br>
+			     <label>트윈<input type="radio" id="twin"name="size" value="twinroom"></label><br>
                   								<!-- id값부여해보기 -->
                  <div id="singleInput" class="d-none" >
 	                 <label>기본정보 (싱글)</label><br>
@@ -45,6 +45,10 @@
 					 </div>
 	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 	 
+                 	 <div class="text-center">
+						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+					 </div>
                  </div>
                  
                  <div id="doubleInput" class="d-none" >
@@ -57,6 +61,11 @@
 					 </div>
 	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 	 
+                 	 <div class="text-center">
+						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+					 </div>
+                 
                  </div>
                  
                  <div id="twinInput" class="d-none" >
@@ -69,12 +78,15 @@
 					 </div>
 	                 
 	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+                 	 
+                 	 <div class="text-center">
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+					 </div>
+                 
                  </div>
 			
 			
-				<div class="text-center">
-					<button id="createBtn"class="btn btn-primary create-btn" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
-				</div>
+				
 				
 			</div>
 		</section>
@@ -124,7 +136,79 @@
 		
 		
 		
-		$(".create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
+		$(".single-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
+			
+			let id = $(this).data("lodging-id");
+			
+			let price = $("#priceInput").val();
+			
+			let size = $("#sizeInput").val();
+			
+			let content = $("#contentInput").val(); 
+			
+			let file = $("#fileInput")[0];
+			
+			if(price == ""){		
+				alert("가격을 입력하세요.");
+				return ;
+			}
+			if(size == ""){		
+				alert("사이즈를 선택하세요.");
+				return ;
+			}
+			if(content == ""){		
+				alert("내용설명을 입력하세요.");
+				return ;
+			}
+			
+			if(file.files.length == 0){
+				alert("파일을 선택하세요");
+				return ;
+			}
+			
+			var formData = new FormData();
+			
+			formData.append("id", id);
+			formData.append("price", price);
+			formData.append("size", size);
+			formData.append("content", content);
+			formData.append("file", file.files[0]);
+			
+			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(price);//O
+			alert(size);//X
+			alert(content);//O
+			alert(file);//X
+			
+			$.ajax({
+				type: "post"
+				, url: "/lodging/room/create"
+				, data:formData
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result == "success"){
+						location.reload();//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
+						alert("추가 성공");
+					} else{
+						//또 400에러가뜬다.
+						alert("추가 실패");
+					}		
+					
+				}
+				, error:function(){
+					alert("추가 에러");
+				}
+				
+			});
+			
+			
+			
+		});
+		
+		
+		$(".double-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
 			let id = $(this).data("lodging-id");
 			
@@ -177,7 +261,79 @@
 				, contentType:false// 파일 업로드 필수
 				, success:function(data){
 					if(data.result =="success"){
-						location.href="/admin/main/view";//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
+						location.reload();//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
+						alert("추가 성공");
+					} else{
+						//또 400에러가뜬다.
+						alert("추가 실패");
+					}		
+					
+				}
+				, error:function(){
+					alert("추가 에러");
+				}
+				
+			});
+			
+			
+			
+		});
+		
+		
+		$(".twin-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
+			
+			let id = $(this).data("lodging-id");
+			
+			let price = $("#priceInput").val();
+			
+			let size = $("#sizeInput").val();
+			
+			let content = $("#contentInput").val(); 
+			
+			let file = $("#fileInput")[0];
+			
+			if(price == ""){		
+				alert("가격을 입력하세요.");
+				return ;
+			}
+			if(size == ""){		
+				alert("사이즈를 선택하세요.");
+				return ;
+			}
+			if(content == ""){		
+				alert("내용설명을 입력하세요.");
+				return ;
+			}
+			
+			if(file.files.length == 0){
+				alert("파일을 선택하세요");
+				return ;
+			}
+			
+			var formData = new FormData();
+			
+			formData.append("id", id);
+			formData.append("price", price);
+			formData.append("size", size);
+			formData.append("content", content);
+			formData.append("file", file.files[0]);
+			
+			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(price);//O
+			alert(size);//X
+			alert(content);//O
+			alert(file);//X
+			
+			$.ajax({
+				type: "post"
+				, url: "/lodging/room/create"
+				, data:formData
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result =="success"){
+						location.reload();//Request method 'GET' not supported로 갑자기 오류메시지가 바뀌는데?? 
 						alert("추가 성공");
 					} else{
 						//또 400에러가뜬다.

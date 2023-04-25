@@ -117,7 +117,7 @@
  <select id ="selectRoomById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Room">
  	SELECT
  		
- 		, `adminId`
+ 		 `adminId`
  		, `lodgingId`
  		, `imagePath`
  		, `price`
@@ -133,16 +133,14 @@
  
  <!-- 객실 수정 -->
  <update id="updateRoom" parameterType="map">
- UPDATE
- 	`room`
- SET
- 	
-	 	, `price`
+	 UPDATE
+	 	`room`
+	 SET
+	 	 `price`
 	 	, `size`
 	 	, `content`
-	 	, `imagePath`
 	 	, `updatedAt` = now()
- WHERE
+ 	WHERE
  		`lodgingId` = #{lodgingId};
  
  </update>
