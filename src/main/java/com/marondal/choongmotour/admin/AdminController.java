@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.Room;
 
 @Controller
 @RequestMapping("/admin")
@@ -97,8 +98,17 @@ public class AdminController {
 	public String roomcreatePage() {
 		return "admin/roomcreate";
 	}
+	
 	@GetMapping("/room/update/view")
-	public String roomupdatePage() {
+	public String roomupdatePage(
+			@RequestParam("id") int id
+			,Model model) {
+		
+		Room room = lodgingBO.getRoom(id);
+		
+		model.addAttribute("room", room);
+		
+		
 		return "admin/roomupdate";
 	}
 	

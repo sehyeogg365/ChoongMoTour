@@ -100,10 +100,10 @@
 				return ;
 			}
 			
-			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
-			alert(roomName);//보아하니 id만 제대로 안들어오고있는상황
-			alert(areaName);
-			alert(level);
+			//alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			//alert(roomName);//보아하니 id만 제대로 안들어오고있는상황
+			//alert(areaName);
+			//alert(level);
 		
 			$.ajax({
 				type:"post"

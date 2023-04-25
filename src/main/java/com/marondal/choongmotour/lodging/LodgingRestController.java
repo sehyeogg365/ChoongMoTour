@@ -81,7 +81,8 @@ public class LodgingRestController {
 	// 객실 추가 api
 	@PostMapping("/room/create")
 	public Map<String, String>roomcreate(
-			@RequestParam("price") int price
+			@RequestParam("lodgingId") int lodgingId
+			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
 			, @RequestParam(value="file", required=false) MultipartFile file
@@ -90,7 +91,7 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int lodgingId = (Integer)session.getAttribute("lodgingId");
+		//int lodgingId = (Integer)session.getAttribute("lodgingId");
 		
 		int count = lodgingBO.addRoom(lodgingId, price, size, content, file);
 		
@@ -118,8 +119,9 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int id = (Integer)session.getAttribute("id");
-		int count = lodgingBO.updateRoom(id, price, size, content);
+		int lodgingId = (Integer)session.getAttribute("lodgingId");
+		
+		int count = lodgingBO.updateRoom(lodgingId, price, size, content);
 		
 		return resultMap;
 		

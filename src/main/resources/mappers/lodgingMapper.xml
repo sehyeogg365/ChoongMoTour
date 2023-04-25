@@ -89,7 +89,7 @@
  	INSERT INTO 
  			`room`
 	(
-	 	, `lodgingId`
+	 	 `lodgingId`<!-- lodgindId 앞에 실수로 ,붙임 -->
 	 	, `price`
 	 	, `size`
 	 	, `content`
@@ -112,6 +112,25 @@
  
  </insert>
  
+ <!-- 객실 1행 조회 -->
+ 
+ <select id ="selectRoomById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Room">
+ 	SELECT
+ 		
+ 		, `adminId`
+ 		, `lodgingId`
+ 		, `imagePath`
+ 		, `price`
+ 		, `size`
+ 		, `content`
+ 		, `createdAt`	
+ 		, `updatedAt`
+ 	FROM
+ 		`room`
+ 	WHERE
+ 		`lodgingId`=#{lodgingId}
+ </select>
+ 
  <!-- 객실 수정 -->
  <update id="updateRoom" parameterType="map">
  UPDATE
@@ -124,7 +143,7 @@
 	 	, `imagePath`
 	 	, `updatedAt` = now()
  WHERE
- 		`id` = #{id};
+ 		`lodgingId` = #{lodgingId};
  
  </update>
   

@@ -79,18 +79,22 @@ public class LodgingBO {
 
 	}
 	
-	
-	//객실 수정
-	
-	public int updateRoom(int id, int price, String size, String content) {
+	//객실 한행 조회
+	public Room getRoom(int lodgingId) {
 		
-		
-		return price;
-		
-		
+		return lodgingDAO.selectRoomById(lodgingId);
 	}
 	
 	
+	//객실 수정
+	
+	public int updateRoom(int lodgingId, int price, String size, String content) {
+		
+		
+		return lodgingDAO.updateRoom(lodgingId, price, size, content);
+		
+		
+	}
 		
 		
 	//숙소 삭제

@@ -52,9 +52,13 @@ public interface LodgingDAO {
 	//객실 리스트
 	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
 	
+	//객실 한행 조회
+	
+	public Room selectRoomById(@Param("lodgingId") int lodgingId);
+	
 	// 객실 수정
 	public int updateRoom(
-						 @Param("id") int id
+						 @Param("lodgingId") int lodgingId
 						  , @Param("price")int price
 						  , @Param("size") String size
 						  , @Param("content") String content
