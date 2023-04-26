@@ -23,10 +23,73 @@
 	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			<div class="room">
+			<div class="room-page">
 				<h1 class="text-center">
 					ChoongMo Tour Room Page
 				</h1>
+				
+				<div class="text-center">
+						<img class="lodging-profile" width="500" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+					</div>
+				<div class=""  >4월 26일</div>
+				
+				<div class="room-card-list">
+				
+				
+					
+					
+					
+					<div class="card">
+					
+						<img class="lodging-profile" width ="200"src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg">
+						
+						<div class=""><a href="/lodging/room/view?room_name=ㅇㅇ호텔">ㅇㅇ호텔</a></div>
+						<div class="">2성급호텔</div>
+					</div>
+					
+					<div class="room-card  ml-3 mt-3">
+							<img class="room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							
+							
+							<div class="room-card-body">
+								<div class="">싱글룸</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+								<button id="reserveBtn" class="btn btn-primary mt-3" type="button" data-lodging-id="${lodging.id }">예약하기</button>
+							</div>
+					</div>
+					
+					
+					<div class="room-card  ml-3 mt-3">
+							<img class="room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							
+							
+							<div class="room-card-body">
+								<div class="">더블룸</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+								<button id="reserveBtn" class="btn btn-primary mt-3" type="button" data-lodging-id="${lodging.id }">예약하기</button>
+							</div>
+					</div>
+					<div class="room-card  ml-3 mt-3">
+							<img class=""room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							
+							
+							<div class="room-card-body">
+								<div class="">트윈룸</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+								<button id="reserveBtn" class="btn btn-primary mt-3" type="button" data-lodging-id="${lodging.id }">예약하기</button>
+							</div>
+					</div>
+					
+					
+					
+					</div>
+				
+				
+				
+				
 			
 			</div>
 			

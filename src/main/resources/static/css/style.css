@@ -29,6 +29,11 @@ header{
 	width:450px;
 }
 
+.contents > .find-id-pw-page{
+	
+	width:600px;
+}
+
 .contents> .main-page{
 	width:1200px;
 }
@@ -54,13 +59,15 @@ header{
 }
 
 .contents> .lodging-list{
-	width:1200px;
+	width:1000px;
 }
 
-.contents > .find-id-pw-page{
-	
-	width:600px;
+
+.contents> .room-page{
+	width:1000px;
 }
+
+
 
 .contents> .my-page{
 	width:1200px;
@@ -75,9 +82,6 @@ header{
 
 
 
-.contents> .room{
-	width:1200px;
-}
 
 
 .box-list > .box{
