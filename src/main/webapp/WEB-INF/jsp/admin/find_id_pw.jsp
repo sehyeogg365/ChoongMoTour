@@ -44,7 +44,7 @@
 				<div class="find-pw d-none" id="findPassword">
 					<label>비밀번호 찾기</label>
 					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 				
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
 				
@@ -106,8 +106,8 @@
 				, url:"/admin/find_id_pw"
 				, data:{"name": name, "email" : email}
 				, success:function(data){
-					if(data.result=="success"){
-						alert("아이디는 : " + );
+					if(data.result == "success"){
+						alert("아이디는 : " );
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
@@ -122,14 +122,14 @@
 					alert("아이디 찾기 에러");
 				}
 			
+			});
 		});
-		
 		
 		
 		$("#findPwBtn").on("click", function(){
 			
 			let id = $("#loginIdInput").val();
-			let email = $("#emailInput").val();
+			let email = $("#email2Input").val();
 			
 			
 			if(id == ""){
@@ -144,27 +144,28 @@
 				
 			}
 			
-			$.ajax({
-				type:"post"
-				, url:"/admin/find_id_pw"
-				, data:{"loginId":id, "email":email}
-				, success:function(data){
-					
-					if(data.result="success"){
+				$.ajax({
+					type:"post"
+					, url:"/admin/find_id_pw"
+					, data:{"loginId":id, "email":email}
+					, success:function(data){
 						
-						alert("임시비밀번호는 : " + );
-						location.reload();
-					}else{
-						alert("아이디/이메일이 일치하지 않습니다.");
+						if(data.result == "success"){
+							
+							alert("임시비밀번호는 : " );
+							location.reload();
+						}else{
+							alert("아이디/이메일이 일치하지 않습니다.");
+						}
 					}
-				}
-				, error:function(){
-					alert("비밀번호 찾기 에러");
-				}
-			
+					, error:function(){
+						alert("비밀번호 찾기 에러");
+					}
+				
+				});
+		
+		
 		});
-		
-		
 	});
 	
 	</script>

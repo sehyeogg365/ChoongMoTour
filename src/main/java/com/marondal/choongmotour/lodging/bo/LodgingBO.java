@@ -19,12 +19,15 @@ public class LodgingBO {
 	
 	
 	//사용자페이지
+
 	
-	//숙소리스트
+	//숙소리스트 지역별로
 	
-	//숙소 하나 클릭시 하나의 정보만
+	//객체 리스트 lodgingId 별로
 	
+	// 찜목록 userId별로
 	
+	// 예약목록 userId별로
 	
 	
 	

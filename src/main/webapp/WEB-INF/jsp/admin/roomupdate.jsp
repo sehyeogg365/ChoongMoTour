@@ -33,8 +33,8 @@
                             <option value="twinroom">트윈</option>
                        
                  </select>
-				<label>로징아이디 : ${room.lodgingId }</label>
-
+				<label>로징아이디 : ${room.lodgingId }</label><br>
+				<label>숙소명 : <input type="text" id="roomNameInput" value="${lodging.roomName }" class="form-control col-6"></label>
                  <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br>
 	                 
@@ -119,13 +119,19 @@
 		$("#singleupdateBtn").on("click", function(){
 			
 			let id = $(this).data("room-id");
-	
+			
+			let roomName = $("#roomNameInput").val();
+			
 			let price = $("#singlepriceInput").val();
 			
 			let size = $("#sizeSelector").val();
 			
 			let content = $("#singlecontentInput").val(); 
 			
+			if(roomName == ""){
+				alert("숙소명을 입력하세요.");
+				return ;
+			}
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -140,6 +146,13 @@
 				return ;
 			}
 			
+			
+			
+			alert(id);
+			alert(price);
+			alert(size);
+			alert(content);
+			alert(roomName);
 	
 			
 			$.ajax({
