@@ -64,11 +64,11 @@ public class LodgingBO {
 	
 	//객실추가
 	
-	public int addRoom(int id, int lodgingId, int price, String size, String content, MultipartFile file) {
+	public int addRoom(int adminId, int lodgingId, int price, String size, String content, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(id, file);
+		String imagePath = FileManagerService.saveFile(adminId, file);
 		
-		return lodgingDAO.insertRoom(id, lodgingId,  price,  size, content, imagePath);
+		return lodgingDAO.insertRoom(adminId, lodgingId,  price, size, content, imagePath);
 	}
 		
 	//객실 리스트

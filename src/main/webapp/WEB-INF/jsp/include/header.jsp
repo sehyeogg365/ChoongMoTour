@@ -48,7 +48,7 @@
 			</div>
 			</c:when>
 			<c:otherwise><!-- 로그인 했을시 위에 드롭다운 버튼이 로그인 안됐을시 로그인 글씨가 -->
-				<h4> <a href="/user/signin/view" class="text-white">로그인</a></h4>
+				<h3> <a href="/user/signin/view" class="text-white">로그인</a></h3>
 			</c:otherwise>
 			
 			</c:choose>

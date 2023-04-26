@@ -25,27 +25,27 @@
 				<h1 class="text-center pt-3">관리자 객실 수정</h1>
 				
 				
-				<label>사이즈</label> <br>
-                  
-			    <label>싱글<input type="radio" id="single" name="size" value="singleroom" checked></label>
-			     
-			    <label>더블<input type="radio" id="double" name="size" value="doubleroom"></label>
-			     
-			    <label>트윈<input type="radio" id="twin"name="size" value="twinroom"></label><br>
-				
-				
+				<select class="form-control col-5 mt-3" id="sizeSelector">
+							
+                            <option value="">사이즈</option>
+                            <option value="singleroom">싱글</option>
+                            <option value="doubleroom">더블</option>
+                            <option value="twinroom">트윈</option>
+                       
+                 </select>
+				<label>로징아이디 : ${room.lodgingId }</label>
 
                  <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br>
 	                 
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
-						<button id="signleupdateBtn"class="btn btn-primary single-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+						<button id="singleupdateBtn"class="btn btn-primary single-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 					 </div>
                  </div>
                  
@@ -53,10 +53,10 @@
 	                 <label>기본정보 (더블)</label><br>
 	                 <!-- 각각 c태그로 넣기 -->
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="doublepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	  
                  	 <div class="text-center">
 						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
@@ -66,10 +66,10 @@
                  <div id="twinInput" class="d-none">
 	                 <label>기본정보 (트윈)</label><br>
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="twinpriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	
                  	<div class="text-center">
 						<button id="twinupdateBtn"class="btn btn-primary twin-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
@@ -90,53 +90,45 @@
 	<script>
 	$(document).ready(function(){
 		
-		$("input[name='size']").on("change", function(){//마찬가지로 클래스에 create-btn 값지정 id마다 버튼이 하나씩 달려있으므로.
+		$("#sizeSelector").on("change", function(){//체인지 이벤트 밸류값을 밑에 클릭 이벤트에다가도 가져오는 방법? 셀렉터가 답이라고 본다.
 			
 			let size = $(this).val();
 			
 			alert(size);//클릭시 경고창
 			
-			
-			
-			if($("#single").is(":checked")){
+			if(size == 'singleroom'){
 				$("#singleInput").removeClass("d-none");
+				$("#doubleInput").addClass("d-none");
+				$("#twinInput").addClass("d-none");
 				
-			} else {
-				$("#singleInput").addClass("d-none");
-			}
-			
-			if($("#double").is(":checked")){
+			} else if(size == 'doubleroom'){//이거실수로 = 하나만함
 				$("#doubleInput").removeClass("d-none");
+				$("#singleInput").addClass("d-none");
+				$("#twinInput").addClass("d-none");
 				
-			} else {
+			} else if(size == 'twinroom'){//여기서 트윈눌렀을때도 왜 더블이 나오는진 몰라도 얼추는 해결됨 d
+				$("#twinInput").removeClass("d-none");
+				$("#singleInput").addClass("d-none");
 				$("#doubleInput").addClass("d-none");
 			}
-			
-			if($("#twin").is(":checked")){
-				$("#twinInput").removeClass("d-none");
-				
-			} else {
-				$("#twinInput").addClass("d-none");
-			}
-			
-			
-			
 			
 		});
 		
 		
 		
-		$(".single-update-btn").on("click", function(){
+		$("singleupdateBtn").on("click", function(){
 			
 			let id = $(this).data("lodging-id");
 			
-			let price = $("#priceInput").val();
+			let lodgingId =$(this).data("lodging-id");
 			
-			let size = $("#sizeInput").val();
+			let price = $("#singlepriceInput").val();
 			
-			let content = $("#contentInput").val(); 
+			let size = $("#sizeSelector").val();
 			
-			let file = $("#fileInput")[0];
+			let content = $("#singlecontentInput").val(); 
+			
+			//let file = $("#fileInput")[0];
 			
 			
 			if(price == ""){		
@@ -157,7 +149,7 @@
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
-				, data:{"id": id, "price":price, "size":size, "content":content}
+				, data:{"id": id, "lodgingId":lodgingId, "price":price, "size":size, "content":content}
 				, success:function(data){
 					if(data.result == "success"){
 						location.reload();

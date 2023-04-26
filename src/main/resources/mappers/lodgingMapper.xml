@@ -25,7 +25,7 @@
  	)
  	VALUES
  	(
-		`adminId`
+		#{adminId} <!-- #{}추가 안됬었음 이래서 자꾸 테이블에 0이 저장된게 아니였나 싶음 그리고 adminId 굳이 넣어야 하는지 의문 아예 디비 테이블 날리고 설계부터 다시해보는것도 좋은생각 -->
  		, #{roomName}
  		, #{level}
  		, #{areaName}
@@ -90,8 +90,8 @@
  			`room`
 	(
 	 	<!-- lodgingId 앞에 실수로 ,붙임 -->
-	 	`id`
- 		, `adminId`
+	 	` <!-- id 뺄것. primarykey라서 자동 저장됨 현재 현상이 id 키값에 lodgingId값이 저장되는 현상.-->
+ 		 `adminId`
  		, `lodgingId`
  		, `imagePath`
  		, `price`
@@ -102,8 +102,8 @@
 	)
 	VALUES
 	(
-		#{id}
-		, #{adminId}
+
+		 #{adminId}
 		, #{lodgingId}
 		, #{imagePath}
 		, #{price}
@@ -157,7 +157,7 @@
  	FROM
  		`room`
  	WHERE
- 		`lodgingId`=#{lodgingId};
+ 		`lodgingId`= #{lodgingId};
  </select>
  
  <!-- 객실 수정 -->
