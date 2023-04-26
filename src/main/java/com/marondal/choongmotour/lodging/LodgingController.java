@@ -28,12 +28,16 @@ public class LodgingController {
 	}
 	
 	@GetMapping("/list/view")
-	public String lodgingList() {
+	public String lodgingList(Model model) {
+		
+		
 		return "lodging/list";
 	}
 	
 	@GetMapping("/room/view")
-	public String room() {
+	public String room(Model model) {
+		
+		
 		return "lodging/room";
 	}
 	

@@ -27,48 +27,55 @@
 				</h1>
 				
 				<div class="mypagecontents d-flex">
-				<aside class="aside1 col-4 bg-success">
+				<aside class="aside1 col-3 ">
 				
 					<div>
-						<h2><a href="/user/dibspage/view" class="text-dark">찜목록</a></h2>
+						<h3><a href="/user/dibspage/view" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
-						<h2><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
+						<h3><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h2><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h2>
+						<h3><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h3>
 					</div>
 		
 					
 				
 				</aside>
 				
-				<section class="contents1 col-8 bg-warning">
+				<section class="contents1 col-9 ">
 					<!-- 예약리스트 -->
 					<label>예약목록</label>
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						<!-- 예약 카드 -->
 						
-						<div class="card ml-3 mt-3">
+						<div class="reservation-card ml-3 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
+							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							
-							<div class="">3성급</div>
+							<div class="reservation-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								
+								<div class="">3성급</div>
+							</div>
 						</div>
-						<div class="card ml-3 mt-3">
+						<div class="reservation-card ml-3 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
-					
-							<div class="">3성급</div>
+							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							<div class="reservation-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								
+								<div class="">3성급</div>
+							</div>
 						</div>
-						<div class="card ml-3 mt-3">
+						<div class="reservation-card ml-3 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
-					
-							<div class="">3성급</div>
+							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							<div class="reservation-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								
+								<div class="">3성급</div>
+							</div>
 						</div>
 					
 						

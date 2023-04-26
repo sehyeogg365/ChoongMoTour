@@ -116,6 +116,46 @@ header{
  
 }
 
+.info-input-box{
+	width:500px;
+	
+}
+
+
+.dibs-card-list >.dibs-card{
+	width: 350px;
+    height: 400px; 
+}
+
+.dibs-card >.dibs-profile{
+	width: 350;
+    height: 200px;
+    object-fit: cover;
+	margin : auto;
+}
+
+.dibs-card-list >.dibs-card-body{
+	width: 350px;
+    height: 200px; 
+}
+
+.reservation-card-list >.reservation-card{
+	width: 350px;
+    height: 400px; 
+}
+
+.reservation-card >.reservation-profile{
+	width: 350;
+    height: 200px;
+    object-fit: cover;
+	margin : auto;
+}
+
+.reservation-card-list >.reservation-card-body{
+	width: 350px;
+    height: 200px; 
+}
+
 
 
 .userprofile{

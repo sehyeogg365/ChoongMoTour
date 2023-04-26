@@ -28,57 +28,68 @@
 					</h1>
 					
 					<div class="mypagecontents d-flex">
-					<aside class="aside1 col-4 bg-success">
+					<aside class="aside1 col-3 ">
 						
 					<div>
-						<h2><a href="/user/dibspage/view" class="text-dark">찜목록</a></h2>
+						<h3><a href="/user/dibspage/view" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
-						<h2><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
+						<h3><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h2><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h2>
+						<h3><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h3>
 					</div>
 					
 					
 					</aside>
-					<section class="contents1 col-8 bg-warning">
+					<section class="contents1 col-9 ">
 					
 						<label>찜목록</label><br>
 						
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						
-						<div class="card ml-3 mt-3">
+						<div class="dibs-card  ml-3 mt-3">
 							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
+							<img class="dibs-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							
-							<div class="">71,250원</div>
-							<div class="">3성급</div>
-						</div>
-						<div class="card ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">							
-							<div class="">ㅇㅇ호텔</div>
-					
-							<div class="">71,250원</div>
-							<div class="">3성급</div>
-						</div>
-						<div class="card ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
 							
-							<div class="">71,250원</div>
-							<div class="">3성급</div>
+							<div class="dibs-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+							</div>
 						</div>
-						<div class="card ml-3 mt-3">
+						<div class="dibs-card ml-3 mt-3">
 							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
-							<img class="profile" width="250" src=" " alt="호텔">
-							<div class="">ㅇㅇ호텔</div>
+							<img class="dibs-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">							
+							
 					
-							<div class="">71,250원</div>
-							<div class="">3성급</div>
+							<div class="dibs-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+							</div>
+						</div>
+						<div class="dibs-card ml-3 mt-3">
+							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<img class="dibs-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							
+							<div class="dibs-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+							</div>
+						</div>
+						<div class="dibs-card ml-3 mt-3">
+							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<img class="dibs-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							
+							
+							<div class="dibs-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								<div class="">71,250원</div>
+								<div class="">3성급</div>
+							</div>
 						</div>
 						
 						

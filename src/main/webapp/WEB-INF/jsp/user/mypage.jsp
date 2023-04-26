@@ -27,53 +27,57 @@
 				
 				
 				<div class="mypagecontents d-flex">
-				<aside class="aside1 col-4 bg-success">
+				<aside class="aside1 col-3 ">
 				
 			
 					<div>
-						<h2><a href="/user/dibspage/view" class="text-dark">찜목록</a></h2>
+						<h3><a href="/user/dibspage/view" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
-						<h2><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
+						<h3><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h2><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h2>
+						<h3><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h3>
 					</div>
 					
 				
 				</aside>
 				
-				<section class="contents1 col-8 bg-warning">
+				<section class="contents1 col-9">
 					
-					<label>프로필 사진 변경</label><br>
-					<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-				
-					<input type="file" name="file" id="fileInput">
+					<div class="info-input-box">
+					
+						<label>프로필 사진 변경</label><br>
+						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+					
+						<input type="file" name="file" id="fileInput">
+						
+						
+						
+						<c:choose>
+						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
+						  	<img class="userprofile" src="${userImagePath}">
+						  </c:when>
+						  <c:otherwise><!-- 없을때 -->
+						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+						  </c:otherwise>
+				 		 </c:choose>	
+						
+						<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+						<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
+						
+						
+							<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+							<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+							<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
+							<input type="text" id="phoneNumberInput" placeholder="전화번호" class="form-control mt-4">
+						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
+						<div class="text-center">
+						<button id="updateBtn"class="btn btn-primary mt-3" type="button">수정 완료</button>
+						</div>
 					
 					
-					
-					<c:choose>
-					  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-					  	<img class="userprofile" src="${userImagePath}">
-					  </c:when>
-					  <c:otherwise><!-- 없을때 -->
-					  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					  </c:otherwise>
-			 		 </c:choose>	
-					
-					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
-					
-					
-						<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-						<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-						<input type="text" id="phoneNumberInput" placeholder="전화번호" class="form-control mt-4">
-					<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
-					<div class="text-center">
-					<button id="updateBtn"class="btn btn-primary" type="button">수정 완료</button>
-				</div>
-				
+					</div>
 				</section>
 					
 			</div>
