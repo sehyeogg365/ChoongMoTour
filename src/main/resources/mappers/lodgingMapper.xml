@@ -89,23 +89,26 @@
  	INSERT INTO 
  			`room`
 	(
-	 	 `id`<!-- lodgingId 앞에 실수로 ,붙임 -->
-	 	, `lodgingId`
-	 	, `price`
-	 	, `size`
-	 	, `content`
-	 	, `imagePath`
-	 	, `createdAt`	
+	 	<!-- lodgingId 앞에 실수로 ,붙임 -->
+	 	`id`
+ 		, `adminId`
+ 		, `lodgingId`
+ 		, `imagePath`
+ 		, `price`
+ 		, `size`
+ 		, `content`
+ 		, `createdAt`	
  		, `updatedAt`
 	)
 	VALUES
 	(
 		#{id}
-		,`#{lodgingId}`
+		, #{adminId}
+		, #{lodgingId}
+		, #{imagePath}
 		, #{price}
 		, #{size}
 		, #{content}
-		, #{imagePath}
 		, now()
 		, now()
 	 	
