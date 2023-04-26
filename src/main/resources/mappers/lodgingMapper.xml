@@ -133,6 +133,8 @@
  	
  	WHERE
  		`lodgingId` = #{lodgingId};
+ 	ORDER BY
+ 		`price`;
  
  </select>
  
