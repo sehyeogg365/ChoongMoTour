@@ -177,7 +177,7 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
@@ -250,7 +250,7 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
+			formData.append("lodgingId", id);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
@@ -323,7 +323,7 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);

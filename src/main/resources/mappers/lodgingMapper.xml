@@ -101,7 +101,7 @@
 	VALUES
 	(
 		#{id}
-		,`lodgingId`
+		,`#{lodgingId}`
 		, #{price}
 		, #{size}
 		, #{content}
