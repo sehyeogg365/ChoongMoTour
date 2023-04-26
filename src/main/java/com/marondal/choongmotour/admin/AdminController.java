@@ -96,22 +96,22 @@ public class AdminController {
 	}
 	
 	@GetMapping("/room/create/view")
-	public String roomcreatePage(@RequestParam("id") int id//여깄는 아이디는 lodgingId를뜻함
-			,Model model) {			//이거 로징아이디로 바꿔도 뭐 안바뀐다.
+	public String roomcreatePage(
+			 @RequestParam("id") int id// 룸테이블 id
+			
+			, Model model) {//lodging 모델?
 		
-		//추가에선 Lodging 객체를 불러야 하나 모르겠다. 왜냐면 추가할때만 LodgingId필요해서
+		Lodging lodging = lodgingBO.getLodging(id);
 		
-		Room room = lodgingBO.getRoom(id);
+		model.addAttribute("lodging", lodging);
 		
-		model.addAttribute("room", room);
-		//id별로 추가 버튼이 다르기에 결국에 모델을 불러와서 c태그쓸려면 여기서 객체 추가해야하나??
-		//아마 어제 숙소수정도 위에거 모델 추가해서 생긴듯.
-		return "admin/roomcreate";		
+		return "admin/roomcreate";
 	}
+	
 	
 	@GetMapping("/room/update/view")
 	public String roomupdatePage(
-			@RequestParam("id") int id//여깄는 아이디는 lodgingId를뜻함
+			@RequestParam("id") int id
 			,Model model) {
 											
 		Room room = lodgingBO.getRoom(id);

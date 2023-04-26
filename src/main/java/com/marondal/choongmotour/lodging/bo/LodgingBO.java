@@ -68,7 +68,7 @@ public class LodgingBO {
 			
 		String imagePath = FileManagerService.saveFile(id, file);
 		
-		return lodgingDAO.insertRoom(id, lodgingId, price, size, content, imagePath);
+		return lodgingDAO.insertRoom(id, lodgingId,  price,  size, content, imagePath);
 	}
 		
 	//객실 리스트

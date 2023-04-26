@@ -40,7 +40,7 @@
                             <option value="twinroom">트윈</option>
                        
                  </select>
-			     
+			     <label>로징아이디 : ${lodging.id }</label><!-- lodgingId안잡히는데?? -->
 			     
 			     							<!-- id값부여해보기 -->
                  <div id="singleInput" class="">
@@ -55,7 +55,7 @@
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
-						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
+						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 					 </div>
                  </div>
                  
@@ -71,7 +71,7 @@
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
-						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
+						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -88,7 +88,7 @@
 	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -142,7 +142,7 @@
 		
 		$(".single-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("room-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
+			let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			
 			let price = $("#singlepriceInput").val();
 			
@@ -177,13 +177,13 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", id);
+			//formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
+			alert(id);//X //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -219,7 +219,7 @@
 		
 		$(".double-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("room-id");
+			let id = $(this).data("lodging-id");
 			
 			let price = $("#doublepriceInput").val();
 			
@@ -250,13 +250,13 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", id);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
+			//formData.append("lodgingId", id);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O
+			alert(id);//X
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -292,7 +292,7 @@
 		
 		$(".twin-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("room-id");
+			let id = $(this).data("lodging-id");
 			
 			let price = $("#twinpriceInput").val();
 			
@@ -323,13 +323,13 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", id);
+			//formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O
+			alert(id);//X
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
