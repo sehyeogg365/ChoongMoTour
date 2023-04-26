@@ -44,11 +44,11 @@
 						
 						<div class="d-flex justify-content-between mt-3">
 							<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
-							<a href="/admin/lodging/delete/view?id=${lodging.id }" class="btn btn-danger">삭제하기</a>
+							<button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn" data-lodging-id="${lodging.id }">삭제하기</button>
 						</div>
 						<div class="d-flex justify-content-between">
 							<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
-							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary delete-btn" data-lodging-id="${lodging.id }">객실수정하기</a>
+							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary" >객실수정하기</a>
 							
 						</div>
 					</div>
@@ -76,6 +76,22 @@
 			
 			let id = $(this).data("lodging-id");
 			
+			$.ajax({
+				type: "get"
+				, url:"/lodging/delete"
+				, data:{"id": id}
+				, success:function(data){
+					if(data.resut == "success"){
+						location.reload();
+						alert("삭제 성공");
+					} else{
+						alert("삭제 실패");
+					}
+				}
+				, error:fucntion(){
+					alert("삭제 에러");
+				}
+			});
 			
 		});
 		
