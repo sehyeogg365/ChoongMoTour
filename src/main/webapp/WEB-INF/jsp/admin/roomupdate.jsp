@@ -38,8 +38,8 @@
                  <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br>
 	                 
-	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="singlepriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
+	                 <div class="d-flex mt-3">													<!-- 이것도 placeholder가 아닌 다른거에 다가 넣기 memo참고 -->
+						<label>가격</label><input type="text" id="singlepriceInput" value="${room.price }원" class="form-control col-6"><br>
 					 </div>
 					 
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control">${room.content }</textarea>
@@ -59,7 +59,7 @@
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control">${room.content }</textarea>
                  	  
                  	 <div class="text-center">
-						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
+						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-room-id="${room.id }" >수정 완료</button>
 					 </div>
                  </div>
                  
@@ -170,11 +170,11 @@
 			
 			let id = $(this).data("room-id");
 	
-			let price = $("#singlepriceInput").val();
+			let price = $("#doublepriceInput").val();
 			
 			let size = $("#sizeSelector").val();
 			
-			let content = $("#singlecontentInput").val(); 
+			let content = $("#doublecontentInput").val(); 
 			
 			
 			if(price == ""){		
@@ -220,11 +220,11 @@
 			
 			let id = $(this).data("room-id");
 
-			let price = $("#singlepriceInput").val();
+			let price = $("#twinpriceInput").val();
 			
 			let size = $("#sizeSelector").val();
 			
-			let content = $("#singlecontentInput").val(); 
+			let content = $("#twincontentInput").val(); 
 			
 			
 			if(price == ""){		

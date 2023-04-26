@@ -117,6 +117,10 @@ public class AdminController {
 											
 		//그리고 Lodging id별, size 별 조회 해야하므로
 		// LodgingId, room id 둘다 불러오게 하려면 room 객체에서 불러오는게 맞을듯.
+//		
+//		Lodging lodging = lodgingBO.getLodging(id);
+//		
+//		model.addAttribute("lodging", lodging);
 		
 		Room room = lodgingBO.getRoom(id);
 		//객체에 값이제대로 안들어갔다는뜻 디버깅 해보기.
