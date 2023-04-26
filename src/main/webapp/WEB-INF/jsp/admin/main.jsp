@@ -81,14 +81,14 @@
 				, url:"/lodging/delete"
 				, data:{"id": id}
 				, success:function(data){
-					if(data.resut == "success"){
+					if(data.result == "success"){//알고보니 l 하나가 빠짐
 						location.reload();
 						alert("삭제 성공");
 					} else{
 						alert("삭제 실패");
 					}
 				}
-				, error:fucntion(){
+				, error:function(){
 					alert("삭제 에러");
 				}
 			});

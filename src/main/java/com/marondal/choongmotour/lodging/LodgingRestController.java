@@ -134,7 +134,7 @@ public class LodgingRestController {
 	
 	
 	// 숙소 삭제 api
-	@PostMapping("/delete")
+	@GetMapping("/delete")//이것도 겟매핑으로
 	public Map<String, String> lodgingDelete(
 			@RequestParam("id") int id){
 		
