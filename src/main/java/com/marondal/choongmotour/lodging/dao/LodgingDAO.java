@@ -53,17 +53,19 @@ public interface LodgingDAO {
 		
 	//객실 리스트
 	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
+	//어차피 여기는 사용자영역이라서 쓸일은 없을듯.
 	
 	//객실 한행 조회
 	
-	public Room selectRoomById(@Param("id") int id);
+	public Room selectRoomById(@Param("id")int id);
 	
 	// 객실 수정
 	public int updateRoom(
-						 @Param("id") int id
-						  , @Param("price")int price
-						  , @Param("size") String size
-						  , @Param("content") String content
+						@Param("id") int id
+						,@Param("price") int price
+						,@Param("size") String size
+						,@Param("content") String content
+						
 						);
 	
 	

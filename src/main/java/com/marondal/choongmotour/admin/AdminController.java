@@ -112,12 +112,20 @@ public class AdminController {
 	@GetMapping("/room/update/view")
 	public String roomupdatePage(
 			@RequestParam("id") int id
-			,Model model) {
+			, Model model
+			) {
 											
-		List<Room> room = lodgingBO.getRoomList(id);//그리고 Lodging id별, size 별 조회 해야하므로
-										 // LodgingId, room id 둘다 불러오게 하려면 room 객체에서 불러오는게 맞을듯.
-		model.addAttribute("room", room);//여기서는 저장한 불러와야 하므로 room 객체값을 불러오는게 맞긴하다.
+		//그리고 Lodging id별, size 별 조회 해야하므로
+		// LodgingId, room id 둘다 불러오게 하려면 room 객체에서 불러오는게 맞을듯.
 		
+		Room room = lodgingBO.getRoom(id);
+		//객체에 값이제대로 안들어갔다는뜻 디버깅 해보기.
+		
+		model.addAttribute("room", room);
+		
+		//원래이것도 getRoom이였다가 List조회가 맞는거같애서 이걸로바꿈
+		//여기서는 저장한 불러와야 하므로 room 객체값을 불러오는게 맞긴하다.
+		// 뭐하나 알아냄 여기 List 넣으니 아까500에러 어쩌구 뜬다.
 		
 		return "admin/roomupdate";
 	}

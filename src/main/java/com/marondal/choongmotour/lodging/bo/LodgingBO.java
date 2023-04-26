@@ -74,9 +74,9 @@ public class LodgingBO {
 		
 	//객실 리스트
 	
-	public List<Room> getRoomList(int LodgingId){
+	public List<Room> getRoomList(int lodgingId){
 
-		return lodgingDAO.selectRoomList(LodgingId);
+		return lodgingDAO.selectRoomList(lodgingId);
 
 	}
 	
@@ -90,11 +90,9 @@ public class LodgingBO {
 	//객실 수정
 	
 	public int updateRoom(int id, int price, String size, String content) {
-		
-		
+	
 		return lodgingDAO.updateRoom(id, price, size, content);
-		
-		
+	
 	}
 		
 		

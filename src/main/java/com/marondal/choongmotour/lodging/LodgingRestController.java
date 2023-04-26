@@ -119,20 +119,18 @@ public class LodgingRestController {
 
 			){
 		
-		
 		Map<String, String> resultMap = new HashMap<>();
-		
+
 		int count = lodgingBO.updateRoom(id, price, size, content);
 		
 		if(count == 1) {
-			resultMap.put("result", "success");			
+			resultMap.put("result", "success");
 		} else {
-			resultMap.put("result", "fail");		
+			resultMap.put("result", "fail");
 		}
 		
 		return resultMap;
-		
-		
+			
 	}
 	
 	

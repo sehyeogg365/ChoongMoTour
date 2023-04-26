@@ -133,11 +133,10 @@
  	
  	FROM
  		`room`
- 	
  	WHERE
- 		`lodgingId` = #{lodgingId}
- 	ORDER BY
- 		`price`;
+ 		`lodgingId` = #{lodgingId};
+	<!-- orderby 넣는거는 사용자 영역에서만 -->
+ 	
  
  </select>
  
@@ -157,7 +156,7 @@
  	FROM
  		`room`
  	WHERE
- 		`id`= #{id};
+ 		`id` = #{id};
  </select>
  
  <!-- 객실 수정 -->
@@ -165,12 +164,13 @@
 	 UPDATE
 	 	`room`
 	 SET
-	 	 `price`
-	 	, `size`
-	 	, `content`
+	 	`price` = #{price}
+	 	,`size` = #{size}
+	 	,`content`= #{content}
 	 	, `updatedAt` = now()
- 	WHERE
- 		`id` = #{id} <!-- 그냥 사이즈 빼자 너무 복잡하다. -->
+ 	WHERE 
+ 		`id` = #{id};
+ 		<!-- 그냥 사이즈 빼자 너무 복잡하다. 헐.. 설마 `하나땜에 500뜬건가?-->
  </update>
  
  <!-- 숙소 삭제 -->

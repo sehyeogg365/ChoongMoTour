@@ -27,7 +27,7 @@
 				
 				<select class="form-control col-5 mt-3" id="sizeSelector">
 							
-                            <option value=""></option>
+                            <option value="${room.size }"></option>
                             <option value="singleroom">싱글</option>
                             <option value="doubleroom">더블</option>
                             <option value="twinroom">트윈</option>
@@ -125,8 +125,6 @@
 			let size = $("#sizeSelector").val();
 			
 			let content = $("#singlecontentInput").val(); 
-			
-			//let file = $("#fileInput")[0];
 			
 			
 			if(price == ""){		
