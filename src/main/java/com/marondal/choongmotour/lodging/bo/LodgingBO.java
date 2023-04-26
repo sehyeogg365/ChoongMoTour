@@ -36,13 +36,14 @@ public class LodgingBO {
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	
-		return lodgingDAO.insertLodging(roomName, level, areaName, imagePath);
+		
+		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
 									//bo 에서 필요해서 호출한 adminId가 dao에서는 필요가없으므로 뺀다. 금욜날 이거를 말한거였음
 	}								//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
 									// 모호하게 전에서 이걸 써서 이게 필요할것이다 라는 생각이 들게됨 근데 명확하게 해야함개발은 쓸때 쓰고 뺄땐빼고 이래야 함.
 	// 숙소 리스트
 	
-	public List<Lodging> getLodgingList(int id) {//관리자 id
+	public List<Lodging> getLodgingList(int id) {//로징 id
 			
 		return lodgingDAO.selectLodgingList(id);
 
@@ -80,9 +81,9 @@ public class LodgingBO {
 	}
 	
 	//객실 한행 조회
-	public Room getRoom(int lodgingId) {
+	public Room getRoom(int id) {
 		
-		return lodgingDAO.selectRoomById(lodgingId);
+		return lodgingDAO.selectRoomById(id);
 	}
 	
 	

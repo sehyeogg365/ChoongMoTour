@@ -27,7 +27,7 @@
 				
 				<select class="form-control col-5 mt-3" id="sizeSelector">
 							
-                            <option value="">사이즈</option>
+                            <option value=""></option>
                             <option value="singleroom">싱글</option>
                             <option value="doubleroom">더블</option>
                             <option value="twinroom">트윈</option>
@@ -39,13 +39,13 @@
 	                 <label>기본정보 (싱글)</label><br>
 	                 
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="singlepriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control">${room.content }</textarea>
                  	 
                  	 <div class="text-center">
-						<button id="singleupdateBtn"class="btn btn-primary single-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+						<button id="singleupdateBtn"class="btn btn-primary single-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
 					 </div>
                  </div>
                  
@@ -53,26 +53,26 @@
 	                 <label>기본정보 (더블)</label><br>
 	                 <!-- 각각 c태그로 넣기 -->
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="doublepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="doublepriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control">${room.content }</textarea>
                  	  
                  	 <div class="text-center">
-						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
 					 </div>
                  </div>
                  
                  <div id="twinInput" class="d-none">
 	                 <label>기본정보 (트윈)</label><br>
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="twinpriceInput" placeholder="내용을 입력해주세요" class="form-control col-6">원<br>
+						<label>가격</label><input type="text" id="twinpriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
 					 </div>
 					 
-	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control">${room.content }</textarea>
                  	
                  	<div class="text-center">
-						<button id="twinupdateBtn"class="btn btn-primary twin-update-btn mt-3" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+						<button id="twinupdateBtn"class="btn btn-primary twin-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
 					</div>
                  	
                  </div>
@@ -116,12 +116,10 @@
 		
 		
 		
-		$("singleupdateBtn").on("click", function(){
+		$("#singleupdateBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
-			
-			let lodgingId =$(this).data("lodging-id");
-			
+			let id = $(this).data("room-id");
+	
 			let price = $("#singlepriceInput").val();
 			
 			let size = $("#sizeSelector").val();
@@ -149,7 +147,7 @@
 			$.ajax({
 				type:"post"
 				, url:"/lodging/update"
-				, data:{"id": id, "lodgingId":lodgingId, "price":price, "size":size, "content":content}
+				, data:{"id": id, "price":price, "size":size, "content":content}
 				, success:function(data){
 					if(data.result == "success"){
 						location.reload();
@@ -169,16 +167,16 @@
 			
 			
 		});
-		
-		$(".double-update-btn").on("click", function(){
+	
+		$("#doubleupdateBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
+	
+			let price = $("#singlepriceInput").val();
 			
-			let price = $("#priceInput").val();
+			let size = $("#sizeSelector").val();
 			
-			let size = $("#sizeInput").val();
-			
-			let content = $("#contentInput").val(); 
+			let content = $("#singlecontentInput").val(); 
 			
 			
 			if(price == ""){		
@@ -220,15 +218,15 @@
 			
 		});
 		
-		$(".twin-update-btn").on("click", function(){
+		$("#twinupdateBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
+
+			let price = $("#singlepriceInput").val();
 			
-			let price = $("#priceInput").val();
+			let size = $("#sizeSelector").val();
 			
-			let size = $("#sizeInput").val();
-			
-			let content = $("#contentInput").val(); 
+			let content = $("#singlecontentInput").val(); 
 			
 			
 			if(price == ""){		

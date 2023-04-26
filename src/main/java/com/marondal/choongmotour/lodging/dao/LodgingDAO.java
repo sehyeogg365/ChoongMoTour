@@ -18,8 +18,8 @@ public interface LodgingDAO {
 	//관리자 페이지
 	//숙소 추가
 	public int insertLodging(
-				
-							 @Param("roomName") String roomName
+				 			  @Param("adminId") int adminId
+							, @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
 							, @Param("imagePath") String imagePath
@@ -56,11 +56,11 @@ public interface LodgingDAO {
 	
 	//객실 한행 조회
 	
-	public Room selectRoomById(@Param("lodgingId") int lodgingId);
+	public Room selectRoomById(@Param("id") int id);
 	
 	// 객실 수정
 	public int updateRoom(
-						 @Param("lodgingId") int lodgingId
+						 @Param("id") int id
 						  , @Param("price")int price
 						  , @Param("size") String size
 						  , @Param("content") String content

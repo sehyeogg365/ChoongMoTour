@@ -142,8 +142,8 @@
 		
 		$("#singlecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			
+			//let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
+			//이것도 굳이 빼준다.
 			let lodgingId = $(this).data("lodging-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
 			
 			let price = $("#singlepriceInput").val();
@@ -178,15 +178,15 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			//alert(lodgingId);//X
+			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
+			alert(lodgingId);//O
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -222,7 +222,6 @@
 		
 		$("#doublecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			 
-			let id = $(this).data("lodging-id");
 			
 			let lodgingId = $(this).data("lodging-id");
 			
@@ -254,15 +253,14 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			//formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O
-			//alert(lodgingId);
+			alert(lodgingId);
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -298,8 +296,6 @@
 		
 		$("#twincreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("lodging-id");
-			
 			let lodgingId = $(this).data("lodging-id");
 		
 			let price = $("#twinpriceInput").val();
@@ -330,18 +326,19 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//O
+			
+			alert(lodgingId);//O
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
-			alert(file);//X
+			alert(file);//O
 			
 			$.ajax({
 				type: "post"

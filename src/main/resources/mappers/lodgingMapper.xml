@@ -90,8 +90,8 @@
  			`room`
 	(
 	 	<!-- lodgingId 앞에 실수로 ,붙임 -->
-	 	` <!-- id 뺄것. primarykey라서 자동 저장됨 현재 현상이 id 키값에 lodgingId값이 저장되는 현상.-->
- 		 `adminId`
+	 	 <!-- id 뺄것. primarykey라서 자동 저장됨 현재 현상이 id 키값에 lodgingId값이 저장되는 현상.-->
+ 		 `adminId`<!-- Parameter index out of range (1 > number of parameters, which is 0). 이문제는 `문제 아까 `하나가 떡하니 있었다. -->
  		, `lodgingId`
  		, `imagePath`
  		, `price`
@@ -135,7 +135,7 @@
  		`room`
  	
  	WHERE
- 		`lodgingId` = #{lodgingId};
+ 		`lodgingId` = #{lodgingId}
  	ORDER BY
  		`price`;
  
@@ -157,7 +157,7 @@
  	FROM
  		`room`
  	WHERE
- 		`lodgingId`= #{lodgingId};
+ 		`id`= #{id};
  </select>
  
  <!-- 객실 수정 -->
@@ -170,8 +170,7 @@
 	 	, `content`
 	 	, `updatedAt` = now()
  	WHERE
- 		`lodgingId` = #{lodgingId};
- 
+ 		`id` = #{id} <!-- 그냥 사이즈 빼자 너무 복잡하다. -->
  </update>
  
  <!-- 숙소 삭제 -->
