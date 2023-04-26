@@ -107,7 +107,7 @@ public class LodgingRestController {
 	
 	
 	// 객실 수정 api
-	@PostMapping
+	@PostMapping("/room/update")
 	public Map<String, String>roomUpdate(
 			@RequestParam("id") int id
 			, @RequestParam("price") int price
@@ -134,17 +134,24 @@ public class LodgingRestController {
 	
 	
 	// 숙소 삭제 api
-//	@PostMapping
-//	public Map<String, String> lodgingDelete(
-//			@RequestParam("id") int id){
-//		Map<String, String> resultMap = new HashMap<>();
-//		
-//		int count = 
-//		
-//		return resultMap;
-//		
-//		
-//	}
+	@PostMapping("/delete")
+	public Map<String, String> lodgingDelete(
+			@RequestParam("id") int id){
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int count = lodgingBO.deleteLodging(id);
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		return resultMap;
+		
+		
+	}
 	
 	
 }

@@ -48,7 +48,7 @@
 						</div>
 						<div class="d-flex justify-content-between">
 							<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
-							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary">객실수정하기</a>
+							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary delete-btn" data-lodging-id="${lodging.id }">객실수정하기</a>
 							
 						</div>
 					</div>
@@ -69,7 +69,21 @@
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	
-
+	<script>
+	$(document).ready(function(){
+		
+		$(".delete-btn").on("click", function(){
+			
+			let id = $(this).data("lodging-id");
+			
+			
+		});
+		
+		
+		
+	});
+	
+	</script>
 	
 </body>
 </html>

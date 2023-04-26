@@ -98,7 +98,13 @@ public class LodgingBO {
 		
 		
 	//숙소 삭제
-
+	
+	public int deleteLodging(int id) {
+		
+		
+		return lodgingDAO.deleteLodging(id);
+		
+	}
 	
 	
 	

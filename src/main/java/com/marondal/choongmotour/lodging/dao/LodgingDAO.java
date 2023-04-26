@@ -68,7 +68,7 @@ public interface LodgingDAO {
 	
 		
 	// 숙소 삭제
-		
+	public int deleteLodging(@Param("id") int id);	
 		
 		
 }

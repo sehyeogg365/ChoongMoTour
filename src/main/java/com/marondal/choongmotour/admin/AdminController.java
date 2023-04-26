@@ -122,6 +122,8 @@ public class AdminController {
 		return "admin/roomupdate";
 	}
 	
+	//숙소삭제는 안해도됨 경로가아녀서
+	
 	
 
 }

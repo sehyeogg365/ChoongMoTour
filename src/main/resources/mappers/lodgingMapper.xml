@@ -173,5 +173,12 @@
  		`lodgingId` = #{lodgingId};
  
  </update>
+ 
+ <!-- 숙소 삭제 -->
+ <delete id="deleteLodging" parameterType="int">
+ 	DELETE
+ 	FROM `lodging`
+ 	WHERE `id`=#{id}
+ </delete>
   
   </mapper>
