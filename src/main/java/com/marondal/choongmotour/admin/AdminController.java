@@ -24,6 +24,7 @@ public class AdminController {
 	private LodgingBO lodgingBO;
 	
 	
+	
 	@GetMapping("/signup/view")
 	public String signupInput() {
 		
@@ -95,25 +96,27 @@ public class AdminController {
 	}
 	
 	@GetMapping("/room/create/view")
-	public String roomcreatePage(
-			@RequestParam("id") int id
-			,Model model) {
+	public String roomcreatePage(@RequestParam("id") int id//여깄는 아이디는 lodgingId를뜻함
+			,Model model) {			//이거 로징아이디로 바꿔도 뭐 안바뀐다.
 		
-		Room room = lodgingBO.getRoom(id);
-			
-		model.addAttribute("room", room);//id별로 추가 버튼이 다르기에 결국에 모델을 불러와서 c태그쓸려면 여기서 객체 추가해야하나??
-										//아마 어제 숙소수정도 위에거 모델 추가해서 생긴듯.
-		return "admin/roomcreate";
-	}
-	
-	@GetMapping("/room/update/view")
-	public String roomupdatePage(
-			@RequestParam("id") int id
-			,Model model) {
+		//추가에선 Lodging 객체를 불러야 하나 모르겠다. 왜냐면 추가할때만 LodgingId필요해서
 		
 		Room room = lodgingBO.getRoom(id);
 		
 		model.addAttribute("room", room);
+		//id별로 추가 버튼이 다르기에 결국에 모델을 불러와서 c태그쓸려면 여기서 객체 추가해야하나??
+		//아마 어제 숙소수정도 위에거 모델 추가해서 생긴듯.
+		return "admin/roomcreate";		
+	}
+	
+	@GetMapping("/room/update/view")
+	public String roomupdatePage(
+			@RequestParam("id") int id//여깄는 아이디는 lodgingId를뜻함
+			,Model model) {
+											
+		Room room = lodgingBO.getRoom(id);
+										 // LodgingId, room id 둘다 불러오게 하려면 room 객체에서 불러오는게 맞을듯.
+		model.addAttribute("room", room);//여기서는 저장한 불러와야 하므로 room 객체값을 불러오는게 맞긴하다.
 		
 		
 		return "admin/roomupdate";

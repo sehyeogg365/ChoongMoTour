@@ -46,13 +46,13 @@
                  <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br><!-- 마찬가지로 라디오 버튼을 눌렀을때 위의 값이 굳이 바뀌어야 할이윤 없지만 라디오 버튼을 눌렀을때 특정값을 가져오게 할순 있다고함 -->
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-	                 <input type="file" name="file" id="fileInput"><br>
+	                 <input type="file" name="file" id="singlefileInput"><br>
 	                 
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+						<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
 					 </div>
 	                 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
 						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
@@ -62,13 +62,13 @@
                  <div id="doubleInput" class="d-none">
 	                 <label>기본정보 (더블)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-	                 <input type="file" name="file" id="fileInput"><br>
+	                 <input type="file" name="file" id="doublefileInput"><br>
 	                 
-	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+	                 <div class="d-flex mt-3">					<!-- 여기도 사이즈 별로 id값 다르게 구별해야 한다. 그래서 계속 가격입력하라고 뜬것. -->
+						<label>가격</label><input type="text" id="doublepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
 					 </div>
 	                 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
 						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
@@ -79,15 +79,15 @@
                  <div id="twinInput" class="d-none">
 	                 <label>기본정보 (트윈)</label><br>
 	                 <i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-	                 <input type="file" name="file" id="fileInput"><br>
+	                 <input type="file" name="file" id="twinfileInput"><br>
 	                 
 	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="priceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+						<label>가격</label><input type="text" id="twinpriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
 					 </div>
 	                 
-	                 <textarea rows="5" cols="100" id="contentInput" class="mt-4 form-control"></textarea>
+	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
-                 	 <div class="text-center">
+                 	 <div class="text-center">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
 						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  
@@ -142,17 +142,17 @@
 		
 		$(".single-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("room-id");
+			let id = $(this).data("room-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			
-			let price = $("#priceInput").val();
+			let price = $("#singlepriceInput").val();
 			
 			//여긴 클릭이벤트 저기위에는 체인지이벤트라서 아무상관없다하고. 이 밸류값 당연히 못가져옴.
 			
 			let size = $("#sizeSelector").val();
 			
-			let content = $("#contentInput").val(); 
+			let content = $("#singlecontentInput").val(); 
 			
-			let file = $("#fileInput")[0];
+			let file = $("#singlefileInput")[0];//여기도 id값 컨텐트, 파일 다 이렇게 구분해줘야 함.
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -176,13 +176,14 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);
+			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(id);//O //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -218,15 +219,15 @@
 		
 		$(".double-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
 			
-			let price = $("#priceInput").val();
+			let price = $("#doublepriceInput").val();
 			
-			let size = $("#sizeInput").val();
+			let size = $("#sizeSelector").val();
 			
-			let content = $("#contentInput").val(); 
+			let content = $("#doublecontentInput").val(); 
 			
-			let file = $("#fileInput")[0];
+			let file = $("#doublefileInput")[0];
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -248,15 +249,16 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);
+			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(id);//O
 			alert(price);//O
-			alert(size);//X
+			alert(size);//O
 			alert(content);//O
 			alert(file);//X
 			
@@ -290,15 +292,15 @@
 		
 		$(".twin-create-btn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
 			
-			let price = $("#priceInput").val();
+			let price = $("#twinpriceInput").val();
 			
-			let size = $("#sizeInput").val();
+			let size = $("#sizeSelector").val();
 			
-			let content = $("#contentInput").val(); 
+			let content = $("#twincontentInput").val(); 
 			
-			let file = $("#fileInput")[0];
+			let file = $("#twinfileInput")[0];
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -320,15 +322,16 @@
 			
 			var formData = new FormData();
 			
-			formData.append("id", id);
+			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(id);//alert 해보니 아이디 값조차도 제대로 안들어오는 상황 인걸 확인할수 있다.
+			alert(id);//O
 			alert(price);//O
-			alert(size);//X
+			alert(size);//O
 			alert(content);//O
 			alert(file);//X
 			
