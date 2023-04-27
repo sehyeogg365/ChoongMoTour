@@ -31,8 +31,7 @@ public class UserRestController {
 				,@RequestParam("name") String name
 				,@RequestParam("email") String email
 				,@RequestParam("nickname") String nickname
-				
-				
+	
 				) {
 		
 		int count = userBO.addUser(loginId, password, name, email, nickname);
@@ -103,11 +102,47 @@ public class UserRestController {
 
 	}
 
-//	
-//	@PostMapping("/find_id_pw")
-//	public Map <String, String> findIdPw(){
-//		
-//	}
+	//아이디 비번 찾기 api
+	@PostMapping("/find_id_pw")
+	public Map <String, Boolean> findId(@RequestParam("loginId") String loginId
+										, @RequestParam("name") String name
+										, @RequestParam("email") String email
+										){
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		boolean isCorrect = userBO.getId(loginId, name, email);
+		
+		if(isCorrect) {
+			resultMap.put("is_correct", true);//일치함
+		} else {
+			resultMap.put("is_correct", false);//일치하지 않음
+		}
+		
+		return resultMap;
+		
+	}
+	
+	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
+	
+	@PostMapping("/temppassword")
+	public Map <String, Boolean> findPw(@RequestParam("loginId") String loginId
+										, @RequestParam("password") String password
+										, @RequestParam("email") String email){
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		boolean isCorrect = userBO.getPassword(loginId, password, email);
+		
+		if(isCorrect) {
+			resultMap.put("is_correct", true);
+		} else {
+			resultMap.put("is_correct", false);
+		}
+	
+		return resultMap;
+
+	}
 	
 	
 //	@PostMapping("/mypage")

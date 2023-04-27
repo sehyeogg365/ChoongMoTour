@@ -40,9 +40,7 @@ public class UserBO {
 		}
 		
 	}
-	
-	
-	
+
 	//로그인 api
 	public User getUser(String loginId, String password) {//모델객체 불러오는것.
 		
@@ -50,8 +48,35 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return userDAO.selectUser(loginId, ecryptPassword);
-		
-		
+	
 	}
+	
+	//아이디 찾기
+	public boolean getId(String lodginId, String name, String email) {
+		
+		int count = userDAO.selectId(lodginId, name, email);
+	
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+	
+	
+	// 비번 찾기 (임시 비밀번호 발급)
+	public boolean getPassword(String loginId, String password, String email) {
+		
+		int count = userDAO.updatePw(loginId, password, email);
+		
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+
+	}
+	
 	
 }

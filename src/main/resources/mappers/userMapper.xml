@@ -61,5 +61,30 @@
   		AND `password` = #{password};
   </select>
   
+  <select id ="selectId" resultType="String" parameterType="map">
+  	SELECT
+  		`loginId`
+ 
+		 , `name`
+		 , `email` 
+  	FROM
+  		`user`
+  	WHERE 
+  		`loginId` = #{loginId}
+  		AND `name` = #{name}
+  		AND `email` = #{email}
+  		;
+  
+  </select>
+  <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
+  <update id = "updatePw" parameterType="map">
+  	UPDATE
+  		`user`
+  	SET
+  		`password` = '123456789a'
+  	WHERE
+  		`loginId` = #{loginId}
+  		AND `email` = #{email}
+  </update>
   
   </mapper>
