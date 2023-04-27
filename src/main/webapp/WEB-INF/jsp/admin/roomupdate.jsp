@@ -45,7 +45,7 @@
 					<c:forEach var="room" items="${roomList }">
 						<tr>
 							
-							<td><select class="form-control" id="sizeSelector">
+							<td><select class="form-control size-selector" id="sizeSelector${room.id }">
 							
 		                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
 		                            <option value="singleroom">싱글</option>
@@ -54,8 +54,8 @@
                        
                  				</select>
                  			</td>
-							<td><input type="text" id="priceInput" value="${room.price }원" class="form-control"></td>
-							<td><textarea rows="5" cols="100" id="contentInput" class="form-control">${room.content }</textarea></td>
+							<td><input type="text" id="priceInput${room.id }" value="${room.price }" class="form-control price-input"></td>
+							<td><textarea rows="5" cols="100" id="contentInput${room.id }" class="form-control content-input">${room.content }</textarea></td>
 							<td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
 						</tr>
 						
@@ -78,48 +78,25 @@
 	<script>
 	$(document).ready(function(){
 		
-		$("#sizeSelector").on("change", function(){//체인지 이벤트 밸류값을 밑에 클릭 이벤트에다가도 가져오는 방법? 셀렉터가 답이라고 본다.
-			
-			let size = $(this).val();
-			
-			alert(size);//클릭시 경고창
-			
-			if(size == 'singleroom'){
-				$("#singleInput").removeClass("d-none");
-				$("#doubleInput").addClass("d-none");
-				$("#twinInput").addClass("d-none");
-				
-			} else if(size == 'doubleroom'){//이거실수로 = 하나만함
-				$("#doubleInput").removeClass("d-none");
-				$("#singleInput").addClass("d-none");
-				$("#twinInput").addClass("d-none");
-				
-			} else if(size == 'twinroom'){//여기서 트윈눌렀을때도 왜 더블이 나오는진 몰라도 얼추는 해결됨 d
-				$("#twinInput").removeClass("d-none");
-				$("#singleInput").addClass("d-none");
-				$("#doubleInput").addClass("d-none");
-			}
-			
-		});
+		var ths = $(ths);
+		
+		ths.parents("");
+		
+		var id = "id";
 		
 		
 		
-		$("#singleupdateBtn").on("click", function(){
+		$(".update-btn").on("click", function(){
 			
 			let id = $(this).data("room-id");
 			
-			let roomName = $("#roomNameInput").val();
+			let price = $("#priceInput" + id).val();
 			
-			let price = $("#singlepriceInput").val();
+			let size = $("#sizeSelector" + id).val();
 			
-			let size = $("#sizeSelector").val();
+			let content = $("#contentInput" + id).val(); 
+				
 			
-			let content = $("#singlecontentInput").val(); 
-			
-			if(roomName == ""){
-				alert("숙소명을 입력하세요.");
-				return ;
-			}
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -132,20 +109,16 @@
 			if(content == ""){		
 				alert("내용설명을 입력하세요.");
 				return ;
-			}
+			}		
 			
-			
-			
-			alert(id);
-			alert(price);
-			alert(size);
-			alert(content);
-			alert(roomName);
+			alert(id);//O
+			alert(price);//O
+			alert(size);//O
+			alert(content);//O
 	
-			
 			$.ajax({
 				type:"post"
-				, url:"/lodging/update"
+				, url:"/lodging/room/update"//404에러 여기앞에다가 또 /lodging을 안써서 404error
 				, data:{"id": id, "price":price, "size":size, "content":content}
 				, success:function(data){
 					if(data.result == "success"){
@@ -166,131 +139,7 @@
 			
 			
 		});
-	
-		$("#doubleupdateBtn").on("click", function(){
-			
-			let id = $(this).data("room-id");
-	
-			let roomName = $("#roomNameInput").val();
-			
-			let price = $("#doublepriceInput").val();
-			
-			let size = $("#sizeSelector").val();
-			
-			let content = $("#doublecontentInput").val(); 
-			
-			
-			if(roomName == ""){
-				alert("숙소명을 입력하세요.");
-				return ;
-			}
 
-			if(price == ""){		
-				alert("가격을 입력하세요.");
-				return ;
-			}
-			if(size == ""){		
-				alert("사이즈를 선택하세요.");
-				return ;
-			}
-			if(content == ""){		
-				alert("내용설명을 입력하세요.");
-				return ;
-			}
-			
-			alert(id);
-			alert(price);
-			alert(size);
-			alert(content);
-			alert(roomName);
-			
-			$.ajax({
-				type:"post"
-				, url:"/lodging/update"
-				, data:{"id": id, "price":price, "size":size, "content":content}
-				, success:function(data){
-					if(data.result == "success"){
-						location.reload();
-						alert("수정 성공");
-					} else{
-						alert("수정 실패")
-					}
-					
-				}
-				, error:function(){
-					alert("수정 에러");
-				}
-				
-				
-				
-			});
-			
-			
-		});
-		
-		$("#twinupdateBtn").on("click", function(){
-			
-			let id = $(this).data("room-id");
-			
-			let roomName = $("#roomNameInput").val();
-			
-			let price = $("#twinpriceInput").val();
-			
-			let size = $("#sizeSelector").val();
-			
-			let content = $("#twincontentInput").val(); 
-			
-			
-			if(roomName == ""){
-				alert("숙소명을 입력하세요.");
-				return ;
-			}
-			
-			if(price == ""){		
-				alert("가격을 입력하세요.");
-				return ;
-			}
-			if(size == ""){		
-				alert("사이즈를 선택하세요.");
-				return ;
-			}
-			if(content == ""){		
-				alert("내용설명을 입력하세요.");
-				return ;
-			}
-			
-	
-			alert(id);
-			alert(price);
-			alert(size);
-			alert(content);
-			alert(roomName);
-			
-			$.ajax({
-				type:"post"
-				, url:"/lodging/update"
-				, data:{"id": id, "price":price, "size":size, "content":content}
-				, success:function(data){
-					if(data.result == "success"){
-						location.reload();
-						alert("수정 성공");
-					} else{
-						alert("수정 실패")
-					}
-					
-				}
-				, error:function(){
-					alert("수정 에러");
-				}
-				
-				
-				
-			});
-			
-			
-		});
-		
-		
 		
 		
 	});

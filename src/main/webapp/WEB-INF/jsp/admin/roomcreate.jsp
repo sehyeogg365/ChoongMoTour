@@ -186,11 +186,11 @@
 			formData.append("file", file.files[0]);
 			
 			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			alert(lodgingId);//O
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//X
+			//alert(lodgingId);//O
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			//alert(file);//X
 			
 			$.ajax({
 				type: "post"
@@ -260,11 +260,11 @@
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			alert(lodgingId);
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//X
+			//alert(lodgingId);
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			//alert(file);//X
 			
 			$.ajax({
 				type: "post"
@@ -304,7 +304,7 @@
 			
 			let content = $("#twincontentInput").val(); 
 			
-			let file = $("#twinfileInput")[2];
+			let file = $("#twinfileInput")[0];
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -334,11 +334,11 @@
 			formData.append("file", file.files[0]);
 			
 			
-			alert(lodgingId);//O
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//O
+			//alert(lodgingId);//O
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			//alert(file);//O
 			
 			$.ajax({
 				type: "post"
