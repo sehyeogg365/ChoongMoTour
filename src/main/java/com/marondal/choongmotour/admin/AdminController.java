@@ -122,10 +122,10 @@ public class AdminController {
 		
 		model.addAttribute("lodging", lodging);
 		
-		Room room = lodgingBO.getRoom(id);//lodgingId
+		List<Room> roomList = lodgingBO.getRoomList(id);//lodgingId
 		//객체에 값이제대로 안들어갔다는뜻 디버깅 해보기.
 		
-		model.addAttribute("room", room);
+		model.addAttribute("roomList", roomList);
 		
 		//원래이것도 getRoom이였다가 List조회가 맞는거같애서 이걸로바꿈
 		//여기서는 저장한 불러와야 하므로 room 객체값을 불러오는게 맞긴하다.

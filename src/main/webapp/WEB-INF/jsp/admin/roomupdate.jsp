@@ -24,58 +24,38 @@
 			
 				<h1 class="text-center pt-3">관리자 객실 수정</h1>
 				
+				<!-- 생각해보니 여기도 어드민 메인페이지처럼 roomList를 리스팅해서 불러오는게 맞는거 같긴하다.  -->
+				<!-- 굳이 셀렉터가 아닌 다른 양상으로. -->
 				
-				<select class="form-control col-5 mt-3" id="sizeSelector">
+				
+				<div class="">${lodging.roomName }</div>
+				<table class="table">
+					<thead>
+						<tr>
+						
+							<th>사이즈</th>
+							<th>가격</th>
+							<th>정보</th>
+							<th></th>
+						</tr>
+					</thead>
+					
+					<tbody>
+					
+					<c:forEach var="room" items="${roomList }">
+						<tr>
 							
-                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
-                            <option value="singleroom">싱글</option>
-                            <option value="doubleroom">더블</option>
-                            <option value="twinroom">트윈</option>
-                       
-                 </select>
-				<label>로징아이디 : ${room.lodgingId }</label><br>
-				<label>숙소명 : <input type="text" id="roomNameInput" value="${lodging.roomName }" class="form-control col-6"></label>
-                 <div id="singleInput" class="">
-	                 <label>기본정보 (싱글)</label><br>
-	                 
-	                 <div class="d-flex mt-3">													<!-- 이것도 placeholder가 아닌 다른거에 다가 넣기 memo참고 -->
-						<label>가격</label><input type="text" id="singlepriceInput" value="${room.price }원" class="form-control col-6"><br>
-					 </div>
-					 
-	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control">${room.content }</textarea>
-                 	 
-                 	 <div class="text-center">
-						<button id="singleupdateBtn"class="btn btn-primary single-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
-					 </div>
-                 </div>
-                 
-                 <div id="doubleInput" class="d-none">
-	                 <label>기본정보 (더블)</label><br>
-	                 <!-- 각각 c태그로 넣기 -->
-	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="doublepriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
-					 </div>
-					 
-	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control">${room.content }</textarea>
-                 	  
-                 	 <div class="text-center">
-						<button id="doubleupdateBtn"class="btn btn-primary double-update-btn mt-3" type="button" data-room-id="${room.id }" >수정 완료</button>
-					 </div>
-                 </div>
-                 
-                 <div id="twinInput" class="d-none">
-	                 <label>기본정보 (트윈)</label><br>
-	                 <div class="d-flex mt-3">
-						<label>가격</label><input type="text" id="twinpriceInput" placeholder="${room.price }원" class="form-control col-6"><br>
-					 </div>
-					 
-	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control">${room.content }</textarea>
-                 	
-                 	<div class="text-center">
-						<button id="twinupdateBtn"class="btn btn-primary twin-update-btn mt-3" type="button" data-room-id="${room.id }">수정 완료</button>
-					</div>
-                 	
-                 </div>
+							<td>${room.size }</td>
+							<td>${room.price }원</td>
+							<td>${room.content }</td>
+							<td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
+						</tr>
+						
+					</c:forEach>
+					</tbody>
+				
+				
+				</table>
                  
                  
                  
