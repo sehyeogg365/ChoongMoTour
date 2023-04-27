@@ -45,9 +45,17 @@
 					<c:forEach var="room" items="${roomList }">
 						<tr>
 							
-							<td>${room.size }</td>
-							<td>${room.price }원</td>
-							<td>${room.content }</td>
+							<td><select class="form-control" id="sizeSelector">
+							
+		                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
+		                            <option value="singleroom">싱글</option>
+		                            <option value="doubleroom">더블</option>
+		                            <option value="twinroom">트윈</option>
+                       
+                 				</select>
+                 			</td>
+							<td><input type="text" id="priceInput" value="${room.price }원" class="form-control"></td>
+							<td><textarea rows="5" cols="100" id="contentInput" class="form-control">${room.content }</textarea></td>
 							<td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
 						</tr>
 						
