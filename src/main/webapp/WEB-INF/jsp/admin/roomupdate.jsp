@@ -27,7 +27,7 @@
 				
 				<select class="form-control col-5 mt-3" id="sizeSelector">
 							
-                            <option value="${room.size }"></option>
+                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
                             <option value="singleroom">싱글</option>
                             <option value="doubleroom">더블</option>
                             <option value="twinroom">트윈</option>
@@ -183,6 +183,8 @@
 			
 			let id = $(this).data("room-id");
 	
+			let roomName = $("#roomNameInput").val();
+			
 			let price = $("#doublepriceInput").val();
 			
 			let size = $("#sizeSelector").val();
@@ -190,6 +192,11 @@
 			let content = $("#doublecontentInput").val(); 
 			
 			
+			if(roomName == ""){
+				alert("숙소명을 입력하세요.");
+				return ;
+			}
+
 			if(price == ""){		
 				alert("가격을 입력하세요.");
 				return ;
@@ -203,7 +210,11 @@
 				return ;
 			}
 			
-	
+			alert(id);
+			alert(price);
+			alert(size);
+			alert(content);
+			alert(roomName);
 			
 			$.ajax({
 				type:"post"
@@ -232,13 +243,20 @@
 		$("#twinupdateBtn").on("click", function(){
 			
 			let id = $(this).data("room-id");
-
+			
+			let roomName = $("#roomNameInput").val();
+			
 			let price = $("#twinpriceInput").val();
 			
 			let size = $("#sizeSelector").val();
 			
 			let content = $("#twincontentInput").val(); 
 			
+			
+			if(roomName == ""){
+				alert("숙소명을 입력하세요.");
+				return ;
+			}
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -254,6 +272,11 @@
 			}
 			
 	
+			alert(id);
+			alert(price);
+			alert(size);
+			alert(content);
+			alert(roomName);
 			
 			$.ajax({
 				type:"post"
