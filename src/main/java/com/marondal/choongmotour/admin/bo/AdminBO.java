@@ -64,8 +64,32 @@ public class AdminBO {
 		
 	}
 	
-	//숙소 추가, 숙소 리스트, 객실추가, 숙소 수정숙소 삭제 등등 LodgingBO로 옮김
+	//아이디 찾기
+	public boolean getId(String name, String email) {
+		
+		int count = adminDAO.selectId(name, email);
+		
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+		
+	}
 	
+	
+	// 비번 찾기 (임시 비밀번호 발급)
+	public boolean getPassword(String loginId, String password, String email) {
+		
+		int count = adminDAO.updatePw(loginId, password, email);
+		
+		if(count == 0) {
+			return false;
+		} else {
+			return true;
+		}
+		
+	}
 	
 	
 	

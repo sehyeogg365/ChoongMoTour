@@ -52,9 +52,9 @@ public class UserBO {
 	}
 	
 	//아이디 찾기
-	public boolean getId(String lodginId, String name, String email) {
+	public boolean getId(String name, String email) {
 		
-		int count = userDAO.selectId(lodginId, name, email);
+		int count = userDAO.selectId( name, email);
 	
 		if(count == 0) {
 			return false;

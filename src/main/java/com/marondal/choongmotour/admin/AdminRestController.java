@@ -110,7 +110,46 @@ public class AdminRestController {
 	}
 
 
-	// 관리자 마이페이지
+	//아이디 찾기 api
+	@PostMapping("/find_id")
+	public Map <String, Boolean> findId( @RequestParam("name") String name
+										, @RequestParam("email") String email){
+
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		boolean isCorrect = adminBO.getId(name, email);
+		
+		if(isCorrect) {
+			resultMap.put("is_correct", true);
+		} else {
+			resultMap.put("is_correct", false);
+		}
+		
+		return resultMap;	
+		
+	}
+	
+	
+	
+	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
+	@PostMapping("/temppassword")
+	public Map <String, Boolean> findPw(@RequestParam("loginId") String loginId
+										, @RequestParam("password") String password
+										, @RequestParam("email") String email){
+		
+		Map<String, Boolean> resultMap = new HashMap<>();
+		
+		boolean isCorrect = adminBO.getPassword(loginId, password, email);
+		
+		if(isCorrect) {
+			resultMap.put("is_correct", true);
+		} else {
+			resultMap.put("is_correct", false);
+		}
+		
+		return resultMap;
+
+	}
 	
 	
 }

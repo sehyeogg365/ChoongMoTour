@@ -53,7 +53,7 @@ public class AdminController {
 	
 	
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw() {
+	public String findIdPw(Model model) {
 		return "admin/find_id_pw";
 	}
 	

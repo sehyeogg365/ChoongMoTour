@@ -26,30 +26,30 @@
 				</h1>
 				<div class="findidpwcontents">
 				
-				<!-- 라디오 버튼으로 아이디 찾기냐 비번찾기냐 이렇게 해야할듯? 아니면 아예 독립된 페이지를 만들던가? -->
-					<div class="d-flex justify-content-center align-items-end">
-					 	<label>아이디찾기
-	                    <input type="radio" name="type" value="findIdRadio" checked></label>
-	                    <label class="ml-3">비밀번호 찾기
-	                    <input type="radio" name="type" value="findPasswordRadio"></label> <br>
+				<div class="d-flex justify-content-center align-items-end">
+				 	<label>아이디찾기
+                         	<input type="radio" name="type" value='findId' checked></label>
+                            <label class="ml-3">비밀번호 찾기
+                            <input type="radio" name="type" value="findPassword"></label> <br>
 
-					</div>
-					<div class="" id="findIdInput">
-						<label>아이디 찾기</label>
-						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-						<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-					
-						<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
-					</div>
+				</div>
+				<div class="find-id " id="findIdInput">
+					<label>아이디 찾기</label>
+					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 				
-					<div class="d-none" id="findPasswordInput">
-						<label>비밀번호 찾기</label>
-						<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-						<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
-					
-						<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
-					
-					</div>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
+				</div>
+				
+				<div class="find-pw d-none" id="findPasswordInput">
+					<label>비밀번호 찾기</label>
+					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
+				
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
+				
+				</div>
+				
 				
 				
 				</div>
@@ -65,19 +65,19 @@
 	<script>
 	$(document).ready(function(){
 		
-		$("input[name='type']").on('change', function(){
-				
+		// 라디오 버튼 선택에 따른 인풋 변경
+		$("input[name=type]").on('change', function() {
+			 if($(this).val() == 'findId') {
+				 $("#findIdInput").removeClass("d-none");
+                 $("#findPasswordInput").addClass("d-none");
+				 
+			 } else {
+				 $("#findPasswordInput").removeClass("d-none");
+				 $("#findIdInput").addClass("d-none");
+                 
+			 }
 			
-				let check = $(this).val();
 			
-				if(check == "findIdRadio"){
-					$("#findIdInput").removeClass("d-none");
-					$("#findPasswordInput").addClass("d-none");
-				} else {
-					$("#findPasswordInput").removeClass("d-none");
-					$("#findIdInput").addClass("d-none");
-				}
-				
 		});
 		
 	

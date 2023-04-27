@@ -104,19 +104,20 @@ public class UserRestController {
 
 	//아이디 비번 찾기 api
 	@PostMapping("/find_id")
-	public Map <String, Boolean> findId(@RequestParam("loginId") String loginId
-										, @RequestParam("name") String name
+	public Map <String, Boolean> findId(
+										 @RequestParam("name") String name
 										, @RequestParam("email") String email
+										, HttpSession session
 										){
 		
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
-		boolean isCorrect = userBO.getId(loginId, name, email);
+		boolean isCorrect = userBO.getId(name, email);
 		
 		if(isCorrect) {
 			resultMap.put("is_correct", true);//일치함
 		} else {
-			resultMap.put("is_correct", false);//일치하지 않음
+			resultMap.put("is_incorrect", false);//일치하지 않음
 		}
 		
 		return resultMap;

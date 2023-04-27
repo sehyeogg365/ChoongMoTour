@@ -27,13 +27,12 @@
 				
 				<div class="d-flex justify-content-center align-items-end">
 				 	<label>아이디찾기
-                         	<input type="radio" name="type" value='findId' checked></label>
+                         	<input type="radio" name="type" value="findId" checked></label>
                             <label class="ml-3">비밀번호 찾기
                             <input type="radio" name="type" value="findPassword"></label> <br>
-				
-				
+
 				</div>
-				<div class="find-id " id="findId">
+				<div class="find-id " id="findIdInput">
 					<label>아이디 찾기</label>
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
@@ -41,7 +40,7 @@
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
 				</div>
 				
-				<div class="find-pw d-none" id="findPassword">
+				<div class="find-pw d-none" id="findPasswordInput">
 					<label>비밀번호 찾기</label>
 					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
@@ -68,12 +67,12 @@
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
-				 $("#findId").removeClass("d-none");
-                 $("#findPassword").addClass("d-none");
+				 $("#findIdInput").removeClass("d-none");
+                 $("#findPasswordInput").addClass("d-none");
 				 
 			 } else {
-				 $("#findPassword").removeClass("d-none");
-				 $("#findId").addClass("d-none");
+				 $("#findPasswordInput").removeClass("d-none");
+				 $("#findIdInput").addClass("d-none");
                  
 			 }
 			
@@ -86,11 +85,12 @@
 		
 		$("#findIdBtn").on("click", function(){
 			
+			
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
 			if(name == ""){
-				alert("아이디를 입력하세요.");
+				alert("이름을 입력하세요.");
 				return;
 				
 			}
@@ -103,11 +103,11 @@
 			
 			$.ajax({
 				type:"post"
-				, url:"/admin/find_id_pw"
+				, url:"/admin/find_id"
 				, data:{"name": name, "email" : email}
 				, success:function(data){
-					if(data.result == "success"){
-						alert("아이디는 : " );
+					if(data.is_correct){//여기도 실수로 is_correct라 안함
+						alert("아이디는 : ${user.loginId}" );
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
@@ -142,12 +142,11 @@
 			
 				$.ajax({
 					type:"post"
-					, url:"/admin/find_id_pw"
-					, data:{"loginId":id, "email":email}
+					, url:"/admin/temppassword"
+					, data:{"loginId":id, "password":password, "email":email}
 					, success:function(data){
 						
-						if(data.result == "success"){
-							
+						if(data.is_correct){
 							alert("임시비밀번호는 : 123456789a 입니다." );
 							location.reload();
 						}else{
