@@ -28,8 +28,12 @@ public interface AdminDAO {
 	
 	public Admin selectAdmin(@Param("loginId") String loginId
 							, @Param("password") String password);
+
+	public int selectId(String name, String email);
+
+	public int updatePw(String loginId, String password, String email);
 	
-	//숙소 추가, 수정 객실 추가 등등 LodgingDAO로 이전
+	
 	
 	
 }
