@@ -103,7 +103,7 @@ public class UserRestController {
 	}
 
 	//아이디 비번 찾기 api
-	@PostMapping("/find_id_pw")
+	@PostMapping("/find_id")
 	public Map <String, Boolean> findId(@RequestParam("loginId") String loginId
 										, @RequestParam("name") String name
 										, @RequestParam("email") String email

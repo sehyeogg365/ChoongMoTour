@@ -102,8 +102,8 @@
 					
 				$.ajax({
 					type:"post"
-					, url:"/user/find_id_pw"
-					, data:{"name": name, "email" : email}
+					, url:"/user/find_id"
+					, data:{"loginId":id, "name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
 							alert("아이디는 : " );
@@ -145,8 +145,8 @@
 					
 				$.ajax({
 					type:"post"
-					, url:"/user/find_id_pw"
-					, data:{"loginId":id, "email":email}
+					, url:"/user/temppassword"
+					, data:{"loginId":id, "password:"password, "email":email}
 					, success:function(data){
 						if(data.result=="success"){
 								
