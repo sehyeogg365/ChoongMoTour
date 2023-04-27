@@ -64,14 +64,10 @@
   <select id ="selectId" resultType="String" parameterType="map">
   	SELECT
   		`loginId`
- 
-		 , `name`
-		 , `email` 
   	FROM
   		`user`
   	WHERE 
-  		`loginId` = #{loginId}
-  		AND `name` = #{name}
+  		`name` = #{name}
   		AND `email` = #{email}
   		;
   
