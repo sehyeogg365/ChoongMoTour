@@ -35,9 +35,9 @@ public class LodgingRestController {
 			, HttpSession session // id값 불러오기
 			) {
 		
-		int adminId = (Integer)session.getAttribute("adminId");
+		//int adminId = (Integer)session.getAttribute("adminId");
 		
-		int count = lodgingBO.addLodging(adminId, roomName, level, areaName, file);
+		int count = lodgingBO.addLodging( roomName, level, areaName, file);
 								//그리고 웬만하면 자동완성 하지말기. 헷갈리고 더 복잡해짐
 		Map<String, String> resultMap = new HashMap<>();
 		
