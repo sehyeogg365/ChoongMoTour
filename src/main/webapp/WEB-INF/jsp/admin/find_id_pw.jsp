@@ -42,7 +42,7 @@
 				
 				<div class="find-pw d-none" id="findPasswordInput">
 					<label>비밀번호 찾기</label>
-					<input type="text" id=loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 				
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
@@ -139,13 +139,16 @@
 				
 			}
 			
+			alert(id);
+			alert(email);
+			
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
 					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						
-						if(data.result){
+						if(data.result == "success"){
 							alert("임시비밀번호는 : 123456789a 입니다." );
 							location.reload();
 						}else{

@@ -60,7 +60,6 @@ public class AdminController {
 	@GetMapping("/find_id_pw/view")
 	public String findIdPw() {
 
-		//여기는 그냥 비워놓기
 		
 		return "admin/find_id_pw";
 	}
