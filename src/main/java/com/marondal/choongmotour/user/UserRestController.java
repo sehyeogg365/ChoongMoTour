@@ -104,20 +104,21 @@ public class UserRestController {
 
 	//아이디 비번 찾기 api
 	@PostMapping("/find_id")
-	public Map <String, Boolean> findId(
+	public Map <String, String> findId(
 										 @RequestParam("name") String name
 										, @RequestParam("email") String email
 										, HttpSession session
 										){
 		
-		Map<String, Boolean> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		
-		boolean isCorrect = userBO.getId(name, email);
+		User user = userBO.getUserByNameEmail(name, email);
 		
-		if(isCorrect) {
-			resultMap.put("is_correct", true);//일치함
+		if(user != null) {
+			resultMap.put("result", "success");//일치함
+			session.setAttribute("loginId", user.getLoginId());
 		} else {
-			resultMap.put("is_incorrect", false);//일치하지 않음
+			resultMap.put("result", "faik");//일치하지 않음
 		}
 		
 		return resultMap;
@@ -127,18 +128,17 @@ public class UserRestController {
 	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	
 	@PostMapping("/temppassword")
-	public Map <String, Boolean> findPw(@RequestParam("loginId") String loginId
-										, @RequestParam("password") String password
+	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email){
 		
-		Map<String, Boolean> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		
-		boolean isCorrect = userBO.getPassword(loginId, password, email);
+		int count = userBO.updatePasswordByIdEmail(loginId, email);
 		
-		if(isCorrect) {
-			resultMap.put("is_correct", true);
+		if(count == 0) {
+			resultMap.put("result", "fail");
 		} else {
-			resultMap.put("is_correct", false);
+			resultMap.put("result", "success");
 		}
 	
 		return resultMap;

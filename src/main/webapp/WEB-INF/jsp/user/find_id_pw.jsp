@@ -142,6 +142,10 @@
 					return;
 						
 				}
+				
+				alert(id);
+				alert(email);
+				
 					
 				$.ajax({
 					type:"post"
@@ -171,24 +175,7 @@
 		});
 		
 		
-		
 	
-		
-			
-			
-		
-		
-			 
-				
-				
-				
-				
-
-		
-		
-		
-		
-		
 		
 	</script>
 

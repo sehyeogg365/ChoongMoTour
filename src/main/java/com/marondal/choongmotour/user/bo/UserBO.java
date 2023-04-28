@@ -52,29 +52,19 @@ public class UserBO {
 	}
 	
 	//아이디 찾기
-	public boolean getId(String name, String email) {
+	public User getUserByNameEmail(String name, String email) {
 		
-		int count = userDAO.selectId( name, email);
+		return userDAO.selectUserByNameEmail(name, email);
 	
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
-
 	}
 	
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-	public boolean getPassword(String loginId, String password, String email) {
+	public int updatePasswordByIdEmail(String loginId, String email) {
 		
-		int count = userDAO.updatePw(loginId, password, email);
+		return userDAO.updatePw(loginId, email);
 		
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		
 
 	}
 	

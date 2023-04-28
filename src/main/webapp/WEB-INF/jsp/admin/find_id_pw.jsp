@@ -105,7 +105,7 @@
 				, url:"/admin/find_id"
 				, data:{"name": name, "email" : email}
 				, success:function(data){
-					if(data.result){
+					if(data.result == "success"){
 						alert("아이디는 : ${admin.id}" );
 						location.reload();
 					} else {

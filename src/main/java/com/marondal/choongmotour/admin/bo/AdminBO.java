@@ -78,7 +78,7 @@ public class AdminBO {
 	//아이디 찾기
 	public Admin getAdminByNameEmail(String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
 
-		return adminDAO.selectAdminByNameEmail(name, email) ;
+		return adminDAO.selectAdminByNameEmail(name, email);
 	
 	}
 	
