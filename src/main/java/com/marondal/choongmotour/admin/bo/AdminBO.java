@@ -64,30 +64,31 @@ public class AdminBO {
 		
 	}
 	
+	
+
+	// 관리자 리스트
+	
+	public List<Admin> getAdminList(String loginId) {
+		
+		
+		return adminDAO.selectAdminList(loginId);
+		
+	}
+	
 	//아이디 찾기
-	public boolean getId(String name, String email) {
-		
-		int count = adminDAO.selectId(name, email);
-		
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
-		
+	public Admin getAdminByNameEmail(String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
+
+		return adminDAO.selectAdminByNameEmail(name, email) ;
+	
 	}
 	
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-	public boolean getPassword(String loginId, String password, String email) {
+	public int getPassword(String loginId, String password, String email) {
 		
-		int count = adminDAO.updatePw(loginId, password, email);
 		
-		if(count == 0) {
-			return false;
-		} else {
-			return true;
-		}
+		return adminDAO.updatePw(loginId, password, email);
+		
 		
 	}
 	

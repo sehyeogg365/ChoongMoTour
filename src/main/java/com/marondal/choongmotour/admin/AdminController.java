@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.marondal.choongmotour.admin.bo.AdminBO;
+import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Room;
@@ -19,6 +21,9 @@ import com.marondal.choongmotour.lodging.model.Room;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	@Autowired
+	private AdminBO adminBO;
 	
 	@Autowired
 	private LodgingBO lodgingBO;
@@ -53,7 +58,10 @@ public class AdminController {
 	
 	
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw(Model model) {
+	public String findIdPw() {
+
+		//여기는 그냥 비워놓기
+		
 		return "admin/find_id_pw";
 	}
 	

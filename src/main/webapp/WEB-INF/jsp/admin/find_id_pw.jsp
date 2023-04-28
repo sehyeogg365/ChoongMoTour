@@ -77,15 +77,12 @@
 			 }
 			
 			
-		});
-		
-		
-		
-		
+		});	
 		
 		$("#findIdBtn").on("click", function(){
 			
 			
+			let id = $("").val();
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
@@ -100,14 +97,17 @@
 				return;
 				
 			}
+
+			alert(name);
+			alert(email);
 			
 			$.ajax({
 				type:"post"
 				, url:"/admin/find_id"
 				, data:{"name": name, "email" : email}
 				, success:function(data){
-					if(data.is_correct){//여기도 실수로 is_correct라 안함
-						alert("아이디는 : ${user.loginId}" );
+					if(data.result){
+						alert("아이디는 : ${admin.id}" );
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
@@ -146,7 +146,7 @@
 					, data:{"loginId":id, "password":password, "email":email}
 					, success:function(data){
 						
-						if(data.is_correct){
+						if(data.result){
 							alert("임시비밀번호는 : 123456789a 입니다." );
 							location.reload();
 						}else{

@@ -25,13 +25,21 @@ public interface AdminDAO {
 	//인증번호 일치 확인
 	public int selectcertificationNumber(@Param("certificationNumber") String certificationNumber);
 	
-	
+	//로그인
 	public Admin selectAdmin(@Param("loginId") String loginId
 							, @Param("password") String password);
 
-	public int selectId(String name, String email);
-
-	public int updatePw(String loginId, String password, String email);
+	//관리자 리스트
+	public List<Admin> selectAdminList(@Param("loginId") String loginId);
+	
+	//관리자 한행 조회(아이디찾기)
+	public Admin selectAdminByNameEmail(@Param("name") String name
+										, @Param("email") String email);
+	
+	//비밀번호 찾기(임시비밀번호 발급)
+	public int updatePw(@Param("loginId")String loginId
+						, @Param("password")String password
+						, @Param("email") String email);
 	
 	
 	

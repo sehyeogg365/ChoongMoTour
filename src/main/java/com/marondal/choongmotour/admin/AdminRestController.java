@@ -112,17 +112,17 @@ public class AdminRestController {
 
 	//아이디 찾기 api
 	@PostMapping("/find_id")
-	public Map <String, Boolean> findId( @RequestParam("name") String name
+	public Map <String, String> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email){
 
-		Map<String, Boolean> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		
-		boolean isCorrect = adminBO.getId(name, email);
+		Admin admin = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 
 		
-		if(isCorrect) {
-			resultMap.put("is_correct", true);
+		if(admin != null) {
+			resultMap.put("result", "success");
 		} else {
-			resultMap.put("is_correct", false);
+			resultMap.put("result", "fail");
 		}
 		
 		return resultMap;	
@@ -133,18 +133,18 @@ public class AdminRestController {
 	
 	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
-	public Map <String, Boolean> findPw(@RequestParam("loginId") String loginId
+	public Map <String, String> findPw(@RequestParam("loginId") String loginId
 										, @RequestParam("password") String password
 										, @RequestParam("email") String email){
 		
-		Map<String, Boolean> resultMap = new HashMap<>();
+		Map<String, String> resultMap = new HashMap<>();
 		
-		boolean isCorrect = adminBO.getPassword(loginId, password, email);
+		int count = adminBO.getPassword(loginId, password, email);
 		
-		if(isCorrect) {
-			resultMap.put("is_correct", true);
+		if(count == 0) {
+			resultMap.put("result", "fail");
 		} else {
-			resultMap.put("is_correct", false);
+			resultMap.put("result", "success");
 		}
 		
 		return resultMap;
