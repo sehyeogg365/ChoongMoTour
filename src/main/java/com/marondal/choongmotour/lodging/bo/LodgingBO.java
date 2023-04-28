@@ -22,10 +22,27 @@ public class LodgingBO {
 
 	
 	//숙소리스트 지역별로
+	public List<Lodging> getLodgingListByArea(String areaName){
+		
+		
+		return lodgingDAO.selectLodgingListByArea(areaName);
+		
+	}
+	
 	
 	//객체 리스트 lodgingId 별로
+	public List<Room> getRoomListByLodgingId(int lodgingId){
+		
+		
+		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
+		
+		
+	}
+	
 	
 	// 찜목록 userId별로
+	
+	
 	
 	// 예약목록 userId별로
 	

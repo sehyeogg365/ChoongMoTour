@@ -37,30 +37,21 @@
 				
 				<div class="lodging-list">
 					
+					<c:forEach var="lodging" items = "${lodgingList }">
+					
+					
+					
+					
 					<div class="card">
 					
-						<img class="lodging-profile" width ="200"src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg">
+						<img class="lodging-profile" width ="200"src="${lodging.imagePath }">
 						
-						<div class=""><a href="/lodging/room/view?room_name=ㅇㅇ호텔">ㅇㅇ호텔</a></div>
-						<div class="">2성급호텔</div>
+						<div class=""><a href="/lodging/room/view?room_name=ㅇㅇ호텔">${lodging.roomName }</a></div>
+						<div class="">${lodging.level }</div>
 					</div>
-					<div class="card">
-					
-						<img width ="200"src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg">
-						
-						<div class=""><a href="/lodging/room/view?room_name=xx호텔">xx호텔</a></div>
-						<div class="">3성급호텔</div>
-					
-					</div>
-					<div class="card">
-					
-						<img width ="200"src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg">
-						
-						
-						<div class=""><a href="/lodging/room/view?room_name=△△호텔">△△호텔</a></div>
-						<div class="">5성급호텔</div>
-					</div>
-					
+				
+				
+					</c:forEach>
 					
 					
 				</div>

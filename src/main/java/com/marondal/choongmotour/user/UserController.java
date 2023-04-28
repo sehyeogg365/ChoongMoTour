@@ -64,10 +64,17 @@ public class UserController {
 		return "user/mypage";
 	}
 	
+	@GetMapping("/reservepage/view")
+	public String reservePage() {
+		
+		return "user/reservepage";
+	}
+	
 	@GetMapping("/reservelist/view")
 	public String reserveList() {
 		return "user/reservelist";
 	}
+	
 	@GetMapping("/dibspage/view")
 	public String dibsPage() {
 		return "user/dibspage";

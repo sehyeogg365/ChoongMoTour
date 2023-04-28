@@ -30,6 +30,7 @@ public class LodgingController {
 	@GetMapping("/list/view")
 	public String lodgingList(Model model) {
 		
+		//이거를 이제 지역별 리스팅 비오 만들어야 함 ㅇㅇ. 
 		
 		return "lodging/list";
 	}

@@ -21,7 +21,7 @@ public class LodgingRestController {
 
 	@Autowired LodgingBO lodgingBO;
 	
-	//사용자 페이지
+	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
 	
 	//관리자페이지

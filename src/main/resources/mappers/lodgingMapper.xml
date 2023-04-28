@@ -6,8 +6,39 @@
   
   <mapper namespace="com.marondal.choongmotour.lodging.dao.LodgingDAO">
   	
+  <!-- 사용자 페이지 지역별 숙소조회, 객실조회 등등 -->	
+  	<select id = "selectLodgingListByArea" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="String">
+  		SELECT
+  			id`
+	 		, `roomName`
+	 		, `imagePath`
+	 		, `level`
+	 		, `areaName`
+	 		, `createdAt`	
+	 		, `updatedAt`
+  		FROM
+  			`lodging`
+  		WHERE
+  			`areaName` = #{areaName}
   	
+  	</select>
   	
+  	<select id = "selectRoomListByLodgingId" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
+  		SELECT
+  			`id`
+ 			, `adminId`
+	 		, `lodgingId`
+	 		, `imagePath`
+	 		, `price`
+	 		, `size`
+	 		, `content`
+	 		, `createdAt`	
+	 		, `updatedAt`
+  		FROM
+  			`room`
+  		WHERE
+  			`lodgingId` = #{lodgingId}
+  	</select>
   	
   	
   <!-- 관리자 페이지 숙소 추가, 숙소리스트 조회, 객실 추가, 숙소 수정, 숙소 삭제 -->	

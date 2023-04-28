@@ -44,7 +44,7 @@ public interface AdminDAO {
 	//임시 비밀번호 발급 (이건 필요없으려나? 아닌데??)
 	public int updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
-							,@Param("password") String password);
+							, @Param("password") String password);
 	
 	//관리자 회원정보 조회
 	public Admin selectAdminInfo(@Param("loginId")String loginId

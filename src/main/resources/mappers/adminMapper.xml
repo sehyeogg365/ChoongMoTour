@@ -108,7 +108,7 @@
   		`loginId` = #{loginId}
   		AND `email` = #{email}
   </update>
-
+<!--  
  <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
 	SELECT
 		`loginId`
@@ -125,7 +125,7 @@
 	WHERE
 		`loginId` = #{loginId}
  </select>
-
+-->
 	
   <update id ="updateAdmin" parameterType="map">
   	UPDATE
