@@ -150,7 +150,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email, "password":password}
 					, success:function(data){
 						if(data.result=="success"){
 								

@@ -63,7 +63,7 @@ public class AdminRestController {
 	// 관리자 아이디 중복확인
 	@GetMapping("/duplicate_id")
 	@ResponseBody
-	public Map<String, Boolean> duplicateCheck(@RequestParam String loginId){
+	public Map<String, Boolean> duplicateCheck(@RequestParam("loginId") String loginId){//@RequestParam String loginId 이렇게 되있는거 발견함 이와중에
 		
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
@@ -141,22 +141,28 @@ public class AdminRestController {
 	
 	
 	
-	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
+	//비밀번호 찾기 및 임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
-										, @RequestParam("password") String password
+									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.updatePasswordByIdEmail(loginId, email, password);
+		int count = adminBO.getPasswordByIdEmail(loginId, email);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");
 		} else {
 			resultMap.put("result", "success");
+			
 		}
+
+		
+		//여기서 아마 임시 비밀번호 발급을 해야하나? 모르겠다. 여기서 페일이냐 석세스냐 바탕으로 update 진행
+		//어차피 일치하지않으면 업데이트는 진행안된다고 말하심.
+		
 		
 		return resultMap;
 

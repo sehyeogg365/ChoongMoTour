@@ -37,12 +37,14 @@ public interface AdminDAO {
 	public List<Admin> selectAdminByNameEmail(@Param("name") String name
 										, @Param("email") String email);
 	
-	//비밀번호 찾기(임시비밀번호 발급)
-	public int updatePw(@Param("loginId")String loginId
+	//비밀번호 찾기 아이디 이메일 입력받아서
+	public int selectPwByIdEmail(@Param("loginId")String loginId
 						, @Param("email") String email
-						, @Param("password") String password
 						);
-	
+	//임시 비밀번호 발급
+	public int updatePassword(@Param("loginId")String loginId
+							, @Param("email") String email
+							,@Param("password") String password);
 	
 	//관리자 회원정보 조회
 	public Admin selectAdminInfo(@Param("loginId")String loginId

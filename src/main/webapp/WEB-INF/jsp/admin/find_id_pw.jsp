@@ -125,7 +125,7 @@
 			
 			let id = $("#loginIdInput").val();
 			let email = $("#email2Input").val();
-			
+			//패스워드를 입력받지않는데 이렇게 받아올수가 있나?
 			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
@@ -145,7 +145,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email,}
 					, success:function(data){
 						
 						if(data.result == "success"){

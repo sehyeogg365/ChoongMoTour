@@ -74,8 +74,23 @@
   		;
   
   </select>
+  
+  <select id ="selectPwByIdEmail" resultType="String" parameterType="map">
+  	SELECT
+ 		 `loginId`
+ 		,`email`
+ 		
+ 	FROM
+ 		`user`<!-- 그리고 비밀번호도 암호화되야하기에 이렇게 하는것도 적합하지 않다고 함 -->
+ 	WHERE
+ 		`loginId` = #{loginId}
+ 		AND
+ 		`email` = #{email}
+  
+  </select>
+  
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
-  <update id = "updatePw" parameterType="map">
+  <update id = "updatePassword" parameterType="map">
   	UPDATE
   		`user`
   	SET

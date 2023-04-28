@@ -132,12 +132,12 @@ public class UserRestController {
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
-										, @RequestParam("password") String password
+									
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.updatePasswordByIdEmail(loginId, email, password);
+		int count = userBO.getPasswordByIdEmail(loginId, email);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");
