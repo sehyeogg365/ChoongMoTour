@@ -34,7 +34,8 @@ public interface UserDAO {
 	
 	//임시비밀번호 발급
 	public int updatePw(@Param("loginId")String loginId
-						, @Param("email") String email);
+						, @Param("email") String email
+						, @Param("password")String password);
 	
 	
 	//회원정보 조회

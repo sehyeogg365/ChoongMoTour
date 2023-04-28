@@ -108,8 +108,7 @@ public class UserRestController {
 	@PostMapping("/find_id")
 	public Map <String, String> findId(
 										 @RequestParam("name") String name
-										, @RequestParam("email") String email
-										, HttpSession session
+										, @RequestParam("email") String email	
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -118,7 +117,8 @@ public class UserRestController {
 		
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
-			session.getAttribute("loginId");//이것도 실수로 setAttribute로 해버림
+//			session.getAttribute("loginId");//이것도 실수로 setAttribute로 해버림
+			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
 		} else {
 			resultMap.put("result", "fail");//일치하지 않음
 		}
@@ -131,11 +131,13 @@ public class UserRestController {
 	
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
-										, @RequestParam("email") String email){
+										, @RequestParam("email") String email
+										, @RequestParam("password") String password
+										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.updatePasswordByIdEmail(loginId, email);
+		int count = userBO.updatePasswordByIdEmail(loginId, email, password);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");
@@ -150,13 +152,12 @@ public class UserRestController {
 	//사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("loginId") String loginId
+			@RequestParam("loginId") String loginId // 가만보니 이것도 필요없을듯???
 			,@RequestParam("password") String password
 			,@RequestParam("name") String name
 			,@RequestParam("email") String email
 			,@RequestParam("phoneNumber") String phoneNumber
 			,@RequestParam("nickname") String nickname
-			
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
 		

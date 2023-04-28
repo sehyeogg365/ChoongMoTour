@@ -85,11 +85,12 @@ public class AdminBO {
 	}
 	
 	
-	// 비번 찾기 (임시 비밀번호 발급)
-	public int updatePasswordByIdEmail(String password, String email) {
+	// 비번 찾기 (임시 비밀번호 발급) 이거를 구분하지말고 한번에 하라 함. 
+	public int updatePasswordByIdEmail(String loginId, String email, String password) {
 		
+		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return adminDAO.updatePw(password, email);
+		return adminDAO.updatePw(loginId, email, ecryptPassword);
 		
 		
 	}
@@ -122,7 +123,7 @@ public class AdminBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return adminDAO.updateAdmin(loginId, password, name, email, phoneNumber, nickname, file);
+		return adminDAO.updateAdmin(loginId, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

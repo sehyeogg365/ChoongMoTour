@@ -61,7 +61,7 @@ public class AdminController {
 	public String findIdPw(HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
-		session.getAttribute("adminId");
+		session.getAttribute("loginId");
 		
 		return "admin/find_id_pw";
 	}

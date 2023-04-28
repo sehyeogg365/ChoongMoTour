@@ -39,7 +39,9 @@ public interface AdminDAO {
 	
 	//비밀번호 찾기(임시비밀번호 발급)
 	public int updatePw(@Param("loginId")String loginId
-						, @Param("email") String email);
+						, @Param("email") String email
+						, @Param("password") String password
+						);
 	
 	
 	//관리자 회원정보 조회
@@ -58,7 +60,7 @@ public interface AdminDAO {
 			, @Param("email")String email
 			, @Param("phoneNumber")String phoneNumber
 			, @Param("nickname")String nickname
-			, @Param("imagePath") MultipartFile file);
+			, @Param("imagePath") String imagePath);
 	
 	
 	

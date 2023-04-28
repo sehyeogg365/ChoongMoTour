@@ -65,9 +65,11 @@ public class UserBO {
 	}
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-	public int updatePasswordByIdEmail(String loginId, String email) {
+	public int updatePasswordByIdEmail(String loginId, String email,  String password) {
 		
-		return userDAO.updatePw(loginId, email);
+		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
+		
+		return userDAO.updatePw(loginId, email, ecryptPassword);
 
 	}
 	

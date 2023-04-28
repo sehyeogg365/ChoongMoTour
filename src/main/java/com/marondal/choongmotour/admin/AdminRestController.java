@@ -115,7 +115,12 @@ public class AdminRestController {
 	@PostMapping("/find_id")
 	public Map <String, String> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email
-										, HttpSession session){//세션값으로 아이디, 비번 불러오기
+										){//세션값으로 아이디, 비번 불러오기
+										//여기선 굳이 세션 필요없을듯 하다.
+		
+		//컨트롤러서 리스폰스 리퀘스트를 하고 파라미터로 필요한값 받아오고 리스폰스 요청보내는거
+		//우리가 reuslt success result fail 해서 원하는 값을 response 해주듯이 아이디 값도 마찬가지로 그렇게 한다고 어쩌구저쩌구..
+		// 그외에 나머지 것들은 비오
 
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -123,8 +128,8 @@ public class AdminRestController {
 		
 		if(admin != null) {
 			resultMap.put("result", "success");
-			
-			session.getAttribute("loginId");
+//			session.getAttribute("loginId");
+			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
 			
 		} else {
 			resultMap.put("result", "fail");
@@ -140,11 +145,12 @@ public class AdminRestController {
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
+										, @RequestParam("password") String password
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.updatePasswordByIdEmail(loginId, email);
+		int count = adminBO.updatePasswordByIdEmail(loginId, email, password);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");

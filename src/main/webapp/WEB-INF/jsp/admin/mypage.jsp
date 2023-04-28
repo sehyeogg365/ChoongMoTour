@@ -102,17 +102,41 @@
 				alert("비밀번호가 다릅니다.");
 				return ;
 			}
+			if(name == ""){		
+				alert("이름을 입력하세요."");
+				return ;
+			}
+			if(email == ""){		
+				alert("이메일을 입력하세요.");
+				return ;
+			}
+			
+			var formData = new FormData();
+			formData.append("password", password);
+			formData.append("name", name);
+			formData.append("email", email);
+			formData.append("phoneNumber", phoneNumber);
+			formData.append("email", email);
+			formData.append("file", file.files[0]);
 			
 			$.ajax({
-				type:
-				, url:
-				, data:
+				type:"post"
+				, url:"/admin/mypage"
+				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+				, contentType:false// 파일 업로드 필수
 				, success:function(data){
-					
+					if(data.result == "success"){
+						alert("수정 성공" );
+						location.reload();
+					} else {
+						alert("수정 실패");'
+					}
 				}
 				
 				, error:function(){
-					
+					alert("수정 에러");
 				}
 				
 			});

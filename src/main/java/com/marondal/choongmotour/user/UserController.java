@@ -45,10 +45,10 @@ public class UserController {
 	
 	}
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw(Model model
-						, HttpSession session) {
+	public String findIdPw(HttpServletRequest request) {
 		
-		
+		HttpSession session = request.getSession();
+		session.getAttribute("loginId");
 		
 		return "user/find_id_pw";
 	}
