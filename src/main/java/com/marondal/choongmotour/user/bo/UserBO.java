@@ -2,10 +2,13 @@ package com.marondal.choongmotour.user.bo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.user.dao.UserDAO;
 import com.marondal.choongmotour.user.model.User;
 import com.marondal.choongmotour.common.EncryptService;
+import com.marondal.choongmotour.common.FileManagerService;
 
 @Service
 public class UserBO {
@@ -58,14 +61,28 @@ public class UserBO {
 	
 	}
 	
-	
 	// 비번 찾기 (임시 비밀번호 발급)
 	public int updatePasswordByIdEmail(String loginId, String email) {
 		
 		return userDAO.updatePw(loginId, email);
-		
-		
 
+	}
+	
+	//회원정보 수정
+	
+	public int updateUser( String loginId
+			, String password
+			, String name
+			, String email
+			, String phoneNumber
+			, String nickname
+			, MultipartFile file) {
+		
+		String imagePath = FileManagerService.saveFile(0, file);
+		
+		return userDAO.updateUser(loginId, password, name, email, phoneNumber, nickname, file);
+		
+		
 	}
 	
 	

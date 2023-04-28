@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.marondal.choongmotour.admin.dao.AdminDAO;
 import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.common.EncryptService;
+import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.model.Lodging;
 
 @Service
@@ -93,8 +94,21 @@ public class AdminBO {
 	}
 	
 	
-	
-	
+	//관리자 회원정보 수정
+	public int updateAdmin( String loginId
+			, String password
+			, String name
+			, String email
+			, String phoneNumber
+			, String nickname
+			, MultipartFile file) {
+		
+		String imagePath = FileManagerService.saveFile(0, file);
+		
+		return adminDAO.updateAdmin(loginId, password, name, email, phoneNumber, nickname, file);
+		
+		
+	}
 	
 	
 }

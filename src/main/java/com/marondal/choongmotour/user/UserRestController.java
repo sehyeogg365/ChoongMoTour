@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -146,10 +147,33 @@ public class UserRestController {
 	}
 	
 	
-//	@PostMapping("/mypage")
-//	public Map <String, String> mypageUpdate(){
-//		
-//	}
+	@PostMapping("/mypage")
+	public Map <String, String> mypageUpdate(
+			@RequestParam("loginId") String loginId
+			,@RequestParam("password") String password
+			,@RequestParam("name") String name
+			,@RequestParam("email") String email
+			,@RequestParam("phoneNumber") String phoneNumber
+			,@RequestParam("nickname") String nickname
+			
+			, @RequestParam(value="file", required=false) MultipartFile file
+			){
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		int count = userBO.updateUser(loginId, password, name, email, phoneNumber, nickname,  file);
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+			
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		
+		return resultMap;
+		
+	}
 	
 	
 }

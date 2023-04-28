@@ -83,4 +83,23 @@
   		AND `email` = #{email}
   </update>
   
+  
+  <update id ="updateUser" parameterType="map">
+  	UPDATE
+  		`user`
+  	SET
+  		`loginId` =#{loginId}
+  		`password` =#{password}
+  		`name` =#{name}
+  		`email` =#{email}
+  		`email` =#{email}
+  		`phoneNumber` = #{phoneNumber}
+  		`nickname` =#{nickname}
+  		`imagePath` =#{imagePath}
+  		
+  		
+  	WHERE
+  		`loginId` = #{loginId}
+  </update>
+  
   </mapper>

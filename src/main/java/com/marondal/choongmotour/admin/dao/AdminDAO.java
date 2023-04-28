@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.lodging.model.Lodging;
@@ -41,6 +42,14 @@ public interface AdminDAO {
 						, @Param("email") String email);
 	
 	
+	//관리자 회원정보 수정
+	public int updateAdmin(@Param("loginId")String loginId
+			, @Param("password")String password
+			, @Param("name")String name
+			, @Param("email")String email
+			, @Param("phoneNumber")String phoneNumber
+			, @Param("nickname")String nickname
+			, @Param("imagePath") MultipartFile file);
 	
 	
 }

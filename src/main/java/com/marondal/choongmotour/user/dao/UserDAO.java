@@ -2,6 +2,7 @@ package com.marondal.choongmotour.user.dao;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.user.model.User;
 
@@ -29,7 +30,20 @@ public interface UserDAO {
 	public User selectUserByNameEmail(@Param("name") String name 
 						, @Param("email") String email);
 	
+	//임시비밀번호 발급
 	public int updatePw(@Param("loginId")String loginId
 						, @Param("email") String email);
+	
+	
+	//회원정보 수정
+	public int updateUser(@Param("loginId")String loginId
+			, @Param("password")String password
+			, @Param("name")String name
+			, @Param("email")String email
+			, @Param("phoneNumber")String phoneNumber
+			, @Param("nickname")String nickname
+			, @Param("imagePath") MultipartFile file);
 
+	
+	
 }
