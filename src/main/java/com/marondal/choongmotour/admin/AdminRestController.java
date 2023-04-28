@@ -113,7 +113,8 @@ public class AdminRestController {
 	//아이디 찾기 api
 	@PostMapping("/find_id")
 	public Map <String, String> findId( @RequestParam("name") String name
-										, @RequestParam("email") String email){
+										, @RequestParam("email") String email
+										, HttpSession session){//세션값으로 아이디, 비번 불러오기
 
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -121,6 +122,9 @@ public class AdminRestController {
 		
 		if(admin != null) {
 			resultMap.put("result", "success");
+			
+			session.setAttribute("loginId", admin.getLoginId());
+			
 		} else {
 			resultMap.put("result", "fail");
 		}
@@ -133,13 +137,13 @@ public class AdminRestController {
 	
 	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
-	public Map <String, String> findPw(@RequestParam("loginId") String loginId
-										, @RequestParam("password") String password
-										, @RequestParam("email") String email){
+	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
+										, @RequestParam("email") String email
+										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.getPassword(loginId, password, email);
+		int count = adminBO.updatePasswordByIdEmail(loginId, email);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");

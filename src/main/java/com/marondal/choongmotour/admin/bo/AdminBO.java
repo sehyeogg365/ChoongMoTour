@@ -84,10 +84,10 @@ public class AdminBO {
 	
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-	public int getPassword(String loginId, String password, String email) {
+	public int updatePasswordByIdEmail(String password, String email) {
 		
 		
-		return adminDAO.updatePw(loginId, password, email);
+		return adminDAO.updatePw(password, email);
 		
 		
 	}

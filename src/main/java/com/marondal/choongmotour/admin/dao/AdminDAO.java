@@ -38,7 +38,6 @@ public interface AdminDAO {
 	
 	//비밀번호 찾기(임시비밀번호 발급)
 	public int updatePw(@Param("loginId")String loginId
-						, @Param("password")String password
 						, @Param("email") String email);
 	
 	
