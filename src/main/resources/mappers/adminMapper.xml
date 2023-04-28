@@ -97,7 +97,25 @@
  		`email` = #{email}
  </update>
  
- <!--  
+
+ <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
+	SELECT
+		`loginId`
+  		 , `password`
+  		 , `name`
+		 , `email` 
+		 , `phoneNumber`
+		 , `nickname`
+		 , `imagePath`
+		 , `createdAt` 
+		 , `updatedAt` 
+	FROM
+		`admin`
+	WHERE
+		`loginId` = #{loginId}
+ </select>
+
+	
   <update id ="updateAdmin" parameterType="map">
   	UPDATE
   		`user`
@@ -115,6 +133,6 @@
   	WHERE
   		`loginId` = #{loginId}
   </update>
-  -->
+
   
   </mapper>

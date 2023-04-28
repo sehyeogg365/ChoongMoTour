@@ -61,14 +61,16 @@
   		AND `password` = #{password};
   </select>
   
-  <select id ="selectId" resultType="String" parameterType="map">
+  <select id ="selectUserByNameEmail" resultType="String" parameterType="map">
   	SELECT
-  		`loginId`
+  		`name`
+  		,`email`
   	FROM
   		`user`
   	WHERE 
   		`name` = #{name}
-  		AND `email` = #{email}
+  		AND 
+  		`email` = #{email}
   		;
   
   </select>
@@ -82,6 +84,25 @@
   		`loginId` = #{loginId}
   		AND `email` = #{email}
   </update>
+  
+  
+  <!-- 회원 정보 조회 -->
+  <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+	SELECT
+		`loginId`
+  		 , `password`
+  		 , `name`
+		 , `email` 
+		 , `phoneNumber`
+		 , `nickname`
+		 , `imagePath`
+		 , `createdAt` 
+		 , `updatedAt` 
+	FROM
+		`user`
+	WHERE
+		`loginId` = #{loginId}
+ </select>
   
   
   <update id ="updateUser" parameterType="map">

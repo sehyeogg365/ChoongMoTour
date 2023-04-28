@@ -1,6 +1,7 @@
 package com.marondal.choongmotour.admin;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -118,12 +119,12 @@ public class AdminRestController {
 
 		Map<String, String> resultMap = new HashMap<>();
 		
-		Admin admin = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 
+		List<Admin> admin = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 Admin에서 List로
 		
 		if(admin != null) {
 			resultMap.put("result", "success");
 			
-			session.setAttribute("loginId", admin.getLoginId());
+			session.getAttribute("loginId");
 			
 		} else {
 			resultMap.put("result", "fail");

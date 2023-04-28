@@ -57,6 +57,7 @@ public class AdminBO {
 		
 	}
 	
+	//로그인
 	public Admin getAdmin(String loginId, String password) {
 		
 		String ecryptPassword = EncryptService.md5(password);
@@ -77,7 +78,7 @@ public class AdminBO {
 	}
 	
 	//아이디 찾기
-	public Admin getAdminByNameEmail(String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
+	public List<Admin> getAdminByNameEmail(String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
 
 		return adminDAO.selectAdminByNameEmail(name, email);
 	
@@ -89,6 +90,22 @@ public class AdminBO {
 		
 		
 		return adminDAO.updatePw(password, email);
+		
+		
+	}
+	
+	//관리자 회원정보 조회
+	public Admin getAdminInfo(String loginId
+			, String password
+			, String name
+			, String email
+			, String phoneNumber
+			, String nickname
+			, MultipartFile file) {
+		
+		String imagePath = FileManagerService.saveFile(0, file);
+		
+		return adminDAO.selectAdminInfo(loginId, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

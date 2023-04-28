@@ -58,8 +58,10 @@ public class AdminController {
 	
 	
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw() {
-
+	public String findIdPw(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		session.getAttribute("adminId");
 		
 		return "admin/find_id_pw";
 	}
@@ -79,7 +81,10 @@ public class AdminController {
 	}
 	
 	@GetMapping("/mypage/view")
-	public String myPage() {
+	public String myPage(Model model) {
+		
+		
+		
 		return "admin/mypage";
 	}
 	

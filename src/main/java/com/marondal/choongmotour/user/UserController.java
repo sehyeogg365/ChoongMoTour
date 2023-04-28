@@ -45,7 +45,11 @@ public class UserController {
 	
 	}
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw() {
+	public String findIdPw(Model model
+						, HttpSession session) {
+		
+		
+		
 		return "user/find_id_pw";
 	}
 	

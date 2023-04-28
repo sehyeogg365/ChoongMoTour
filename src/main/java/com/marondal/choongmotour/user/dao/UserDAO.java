@@ -1,5 +1,7 @@
 package com.marondal.choongmotour.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,15 +27,24 @@ public interface UserDAO {
 	
 	//사용자 리스트
 	
-	//사용자 한행 조회(아이디찾기)
+	//사용자 조회(아이디찾기)
 	
-	public User selectUserByNameEmail(@Param("name") String name 
+	public List<User> selectUserByNameEmail(@Param("name") String name 
 						, @Param("email") String email);
 	
 	//임시비밀번호 발급
 	public int updatePw(@Param("loginId")String loginId
 						, @Param("email") String email);
 	
+	
+	//회원정보 조회
+	public User selectUserInfo(@Param("loginId")String loginId
+			, @Param("password")String password
+			, @Param("name")String name
+			, @Param("email")String email
+			,@Param("phoneNumber") String phoneNumber
+			, @Param("nickname")String nickname
+			, @Param("imagePath") String imagePath);
 	
 	//회원정보 수정
 	public int updateUser(@Param("loginId")String loginId
@@ -43,6 +54,8 @@ public interface UserDAO {
 			, @Param("phoneNumber")String phoneNumber
 			, @Param("nickname")String nickname
 			, @Param("imagePath") MultipartFile file);
+
+	
 
 	
 	

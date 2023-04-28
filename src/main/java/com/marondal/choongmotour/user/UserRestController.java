@@ -1,6 +1,7 @@
 package com.marondal.choongmotour.user;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -103,7 +104,7 @@ public class UserRestController {
 
 	}
 
-	//아이디 비번 찾기 api
+	//아이디 찾기 api
 	@PostMapping("/find_id")
 	public Map <String, String> findId(
 										 @RequestParam("name") String name
@@ -113,13 +114,13 @@ public class UserRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		User user = userBO.getUserByNameEmail(name, email);
+		List<User> user = userBO.getUserByNameEmail(name, email);
 		
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
-			session.setAttribute("loginId", user.getLoginId());
+			session.getAttribute("loginId");//이것도 실수로 setAttribute로 해버림
 		} else {
-			resultMap.put("result", "faik");//일치하지 않음
+			resultMap.put("result", "fail");//일치하지 않음
 		}
 		
 		return resultMap;
@@ -146,7 +147,7 @@ public class UserRestController {
 
 	}
 	
-	
+	//사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
 			@RequestParam("loginId") String loginId
