@@ -64,10 +64,7 @@ public class AdminController {
 		return "admin/find_id_pw";
 	}
 	
-	@GetMapping("/mypage/view")
-	public String myPage(Model model) {
-		return "admin/mypage";
-	}
+	
 	
 	@GetMapping("/main/view")
 	public String mainPage(Model model
@@ -80,6 +77,12 @@ public class AdminController {
 		
 		return "admin/main";
 	}
+	
+	@GetMapping("/mypage/view")
+	public String myPage() {
+		return "admin/mypage";
+	}
+	
 	
 	//관리자 페이지 입력,수정,삭제 기능 관리자페이지에서 진행되고 로징 기능이긴해도 아무래도 경로는 Lodging이아닌 Admin에다가 하는게 자연스러운듯
 	
