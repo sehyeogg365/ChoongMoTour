@@ -115,7 +115,7 @@ public class AdminRestController {
 	@PostMapping("/find_id")
 	public Map <String, String> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email
-										){//세션값으로 아이디, 비번 불러오기
+										){
 										//여기선 굳이 세션 필요없을듯 하다.
 		
 		//컨트롤러서 리스폰스 리퀘스트를 하고 파라미터로 필요한값 받아오고 리스폰스 요청보내는거
@@ -145,18 +145,21 @@ public class AdminRestController {
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
+										, HttpSession session
 									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.getPasswordByIdEmail(loginId, email);
+		String password = (String) session.getAttribute("password");
+		
+		int count = adminBO.updateTemporrayPassword(loginId, email, password);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");
 		} else {
 			resultMap.put("result", "success");
-			
+		
 		}
 
 		

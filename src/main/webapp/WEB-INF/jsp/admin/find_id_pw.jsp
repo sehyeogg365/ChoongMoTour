@@ -145,7 +145,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email,}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						
 						if(data.result == "success"){
