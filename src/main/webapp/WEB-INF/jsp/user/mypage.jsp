@@ -62,7 +62,7 @@
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						
+						<div class="">${user.loginId }</div>
 						<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 						<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
 						
@@ -94,6 +94,7 @@
 		
 		$("#updateBtn").on("click", function(){
 			
+			let loginId = $("#loginId").val();
 			let password = $("#password").val();
 			let passwordInput = $("#passwordInput").val();			
 			let name = $("#nameInput").val();

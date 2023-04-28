@@ -152,8 +152,8 @@ public class UserRestController {
 	//사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("loginId") String loginId // 가만보니 이것도 필요없을듯???
-			,@RequestParam("password") String password
+		
+			@RequestParam("password") String password
 			,@RequestParam("name") String name
 			,@RequestParam("email") String email
 			,@RequestParam("phoneNumber") String phoneNumber
@@ -163,7 +163,7 @@ public class UserRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.updateUser(loginId, password, name, email, phoneNumber, nickname,  file);
+		int count = userBO.updateUser(password, name, email, phoneNumber, nickname,  file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");

@@ -104,8 +104,8 @@
   <!-- 회원 정보 조회 -->
   <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
 	SELECT
-		`loginId`
-  		 , `password`
+
+  		  `password`
   		 , `name`
 		 , `email` 
 		 , `phoneNumber`
@@ -124,16 +124,13 @@
   	UPDATE
   		`user`
   	SET
-  		`loginId` =#{loginId}
+  		
   		`password` =#{password}
-  		`name` =#{name}
-  		`email` =#{email}
-  		`email` =#{email}
-  		`phoneNumber` = #{phoneNumber}
-  		`nickname` =#{nickname}
-  		`imagePath` =#{imagePath}
-  		
-  		
+  		,`name` =#{name}
+  		,`email` =#{email}
+  		,`phoneNumber` = #{phoneNumber}
+  		,`nickname` =#{nickname}
+  		,`imagePath` =#{imagePath}
   	WHERE
   		`loginId` = #{loginId}
   </update>

@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -55,12 +56,16 @@ public class UserController {
 	
 	@GetMapping("/mypage/view")
 	public String myPage(Model model
-//			, @RequestParam("id") String id
-//			, @Request
+		
+			, @RequestParam("password")String password
+			, @RequestParam("name")String name
+			, @RequestParam("email")String email
+			, @RequestParam("phoneNumber")String phoneNumber
+			, @RequestParam("nickname")String nickname
+			, MultipartFile file
 			) {
 			
-//		User user = userBO.getUser(id, id);
-//		model.addAttribute("user", user);
+		User user = userBO.getUserInfo(password, name, email, phoneNumber, nickname, file);
 		return "user/mypage";
 	}
 	

@@ -83,8 +83,8 @@ public class UserBO {
 	}
 	
 	// 회원정보 조회
-	public User getUserInfo(String loginId
-			, String password
+	public User getUserInfo(
+			 String password
 			, String name
 			, String email
 			, String phoneNumber
@@ -93,15 +93,15 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return userDAO.selectUserInfo(loginId, password, name, email, phoneNumber, nickname, imagePath);
+		return userDAO.selectUserInfo(password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}
 	
 	
 	//회원정보 수정
-	public int updateUser( String loginId
-			, String password
+	public int updateUser(
+			 String password
 			, String name
 			, String email
 			, String phoneNumber
@@ -110,7 +110,7 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return userDAO.updateUser(loginId, password, name, email, phoneNumber, nickname, file);
+		return userDAO.updateUser( password, name, email, phoneNumber, nickname, file);
 		
 		
 	}

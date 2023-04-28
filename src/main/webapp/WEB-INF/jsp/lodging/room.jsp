@@ -31,18 +31,16 @@
 				<div class="text-center">
 						<img class="lodging-profile" width="500" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 					</div>
-				<div class="" >
+				<label class="mt-3">시작 일 </label>
+		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <label class="mt-3">종료 일 </label>
+		        <input type="text" id="endDate" autocomplete="off"><br>
 				
-				4월 26일
 				
-				</div>
 				
+				<!-- 객실리스트 시작 -->
 				<div class="room-card-list">
-				
-					
-					
-					
-			
+					<!-- 객실 카드 -->
 					<div class="room-card  ml-3 mt-3">
 							<img class="room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							
@@ -94,6 +92,49 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
+	<script>
+	 $(document).ready(function() {
+		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
+             dateFormat:"yy-mm-dd",
+            
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , 
+            
+             showButtonPanel:true,
+             closeText: 'done',
+             minDate: 0,//오늘날짜 부터
+             onSelect:function(selectedDate) {
+                 
+                 $("#endDate").datepicker("option", "minDate", selectedDate);
+
+                 }
+
+         });
+
+       
+
+         $("#endDate").datepicker({//종료일
+             dateFormat:"yy-mm-dd",
+           
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+             showButtonPanel:true,//버튼보이기
+             closeText: 'done',
+             minDate:'+1D',//오늘날짜 다음 부터
+             //beforeShow: customRange
+              onSelect:function(selectedDate) {
+                 
+                 $("#startDate").datepicker( "option", "maxDate", selectedDate );
+                 
+             
+              }
+            
+
+         });
+		 
+		 
+	 });
+	</script>
 
 
 </body>
