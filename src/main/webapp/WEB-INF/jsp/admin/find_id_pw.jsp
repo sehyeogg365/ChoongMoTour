@@ -81,8 +81,7 @@
 		
 		$("#findIdBtn").on("click", function(){
 			
-			
-			let id = $("").val();
+
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
@@ -143,7 +142,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "password":password, "email":email}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						
 						if(data.result){

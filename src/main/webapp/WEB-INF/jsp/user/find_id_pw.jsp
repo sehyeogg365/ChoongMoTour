@@ -28,7 +28,7 @@
 				
 				<div class="d-flex justify-content-center align-items-end">
 				 	<label>아이디찾기
-                         	<input type="radio" name="type" value='findId' checked></label>
+                         	<input type="radio" name="type" value="findId" checked></label>
                             <label class="ml-3">비밀번호 찾기
                             <input type="radio" name="type" value="findPassword"></label> <br>
 
@@ -103,7 +103,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/user/find_id"
-					, data:{"loginId":id, "name": name, "email" : email}
+					, data:{"name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
 							alert("아이디는 : " );
@@ -146,7 +146,7 @@
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "password:"password, "email":email}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						if(data.result=="success"){
 								
