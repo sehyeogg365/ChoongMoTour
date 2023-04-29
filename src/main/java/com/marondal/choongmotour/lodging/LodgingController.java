@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
@@ -36,11 +37,13 @@ public class LodgingController {
 	}
 	//숙소리스트
 	@GetMapping("/list/view")
-	public String lodgingList(Model model,  String areaName) {
+	public String lodgingList(Model model
+			,  @RequestParam("area_name")String areaName
+			, @RequestParam("id")int id) {
 		
 		// int id,
-//		User user = userBO.getUserInfo(id);
-//		model.addAttribute("id", id);
+		User user = userBO.getUserInfo(id);
+		model.addAttribute("id", id);
 		
 		List<Lodging> lodgingList = lodgingBO.getLodgingListByArea(areaName);
 		model.addAttribute("lodgingList", lodgingList);
@@ -58,6 +61,14 @@ public class LodgingController {
 		User user = userBO.getUserInfo(id);
 		
 		model.addAttribute("user", user);
+		
+		Lodging lodging = lodgingBO.getLodging(id);
+		
+		model.addAttribute("lodging", lodging);
+		
+		List<Room> roomList = lodgingBO.getRoomList(id);
+		
+		model.addAttribute("roomList", roomList);
 		
 		return "lodging/room";
 	}
