@@ -65,7 +65,7 @@ public class UserController {
 //			, @RequestParam("nickname")String nickname
 //			, MultipartFile file
 			) {
-			
+		
 //		User user = userBO.getUserInfo(password, name, email, phoneNumber, nickname, file);
 		return "user/mypage";
 	}

@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -108,17 +109,20 @@ public class UserRestController {
 	@PostMapping("/find_id")
 	public Map <String, String> findId(
 										 @RequestParam("name") String name
-										, @RequestParam("email") String email	
+										, @RequestParam("email") String email
+										, Model model
 										){
 										//여기선 굳이 세션 필요없을듯 하다.
 		Map<String, String> resultMap = new HashMap<>();
 		
-		List<User> user = userBO.getUserByNameEmail(name, email);
+		List<User> userList = userBO.getUserByNameEmail(name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 		
-		if(user != null) {
+		
+		if(userList != null) {
 			resultMap.put("result", "success");//일치함
-//			session.getAttribute("loginId");//이것도 실수로 setAttribute로 해버림
-//			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
+			model.addAttribute("userList", userList);
+			//이것도 실수로 setAttribute로 해버림
+			 // 여기서 id를 풋 하란뜻인데..
 		} else {
 			resultMap.put("result", "fail");//일치하지 않음
 		}

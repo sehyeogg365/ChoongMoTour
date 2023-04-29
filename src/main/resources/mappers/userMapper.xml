@@ -63,8 +63,7 @@
   
   <select id ="selectUserByNameEmail" resultType="String" parameterType="map">
   	SELECT
-  		`name`
-  		,`email`
+  		count(1)
   	FROM
   		`user`
   	WHERE 
@@ -74,21 +73,8 @@
   		;
   
   </select>
-  <!--  
-  <select id ="selectPwByIdEmail" resultType="String" parameterType="map">
-  	SELECT
- 		 `loginId`
- 		,`email`
- 		
- 	FROM
- 		`user`
- 	WHERE
- 		`loginId` = #{loginId}
- 		AND
- 		`email` = #{email}
-  
-  </select>
-  -->
+
+
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
   <update id = "updatePassword" parameterType="map">
   	UPDATE

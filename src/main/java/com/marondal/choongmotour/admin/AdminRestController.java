@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,6 +116,7 @@ public class AdminRestController {
 	@PostMapping("/find_id")
 	public Map <String, String> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email
+										, Model model
 										){
 										//여기선 굳이 세션 필요없을듯 하다.
 		
@@ -124,12 +126,12 @@ public class AdminRestController {
 
 		Map<String, String> resultMap = new HashMap<>();
 		
-		List<Admin> admin = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 Admin에서 List로
+		List<Admin> adminList = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 Admin에서 List로
 		
-		if(admin != null) {
+		if(adminList != null) {
 			resultMap.put("result", "success");
-//			session.getAttribute("loginId");
-			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
+			model.addAttribute("adminList", adminList);
+		// 여기서 id를 풋 하란뜻인데..
 			
 		} else {
 			resultMap.put("result", "fail");
