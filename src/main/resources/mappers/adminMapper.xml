@@ -119,12 +119,12 @@
   		`user`
   	SET
   		`password` =#{password}
-  		`name` =#{name}
-  		`email` =#{email}
-  		`email` =#{email}
-  		`phoneNumber` = #{phoneNumber}
-  		`nickname` =#{nickname}
-  		`imagePath` =#{imagePath}
+  		,`name` =#{name}
+  		,`email` =#{email}
+  		,`email` =#{email}
+  		,`phoneNumber` = #{phoneNumber}
+  		,`nickname` =#{nickname}
+  		,`imagePath` =#{imagePath}
 
   	WHERE
   		`id` = #{id}
