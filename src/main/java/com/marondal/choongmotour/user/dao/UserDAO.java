@@ -42,11 +42,18 @@ public interface UserDAO {
 							, @Param("password") String password);
 	
 	//회원정보 한행 조회
-	public User selectUserInfoById(@Param("id") int id);
+	public User selectUserInfo(@Param("loginId") String loginId
+									,@Param("password") String password 
+									,@Param("name") String passnameword  
+									,@Param("email") String email  
+									,@Param("phoneNumber") String phoneNumber  
+									,@Param("nickname") String nickname  
+									,@Param("imagePath") String imagePath
+									);
 	
 	//회원정보 수정
 	public int updateUser(
-			@Param("id") int id
+			@Param("loginId") String loginId
 			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email

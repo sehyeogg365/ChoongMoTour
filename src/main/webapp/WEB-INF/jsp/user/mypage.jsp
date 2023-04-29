@@ -56,24 +56,24 @@
 						
 						<c:choose>
 						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-						  	<img class="userprofile" src="${userImagePath}">
+						  	<img class="userprofile" src="${user.ImagePath}">
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
 						<div class="">${user.id }</div>
-						<input type="password" id="passwordInput"value= "" placeholder="비밀번호" class="form-control mt-4">
-						<input type="password" id="passwordConfirmInput" value= "" placeholder="비밀번호 확인" class="form-control mt-4">
+						<input type="password" id="passwordInput"value= "${user.password}" class="form-control mt-4">
+						<input type="password" id="passwordConfirmInput" value= "${user.password}"  class="form-control mt-4">
 						
 						
-							<input type="text" id="nameInput" value= "" placeholder="이름" class="form-control mt-4">
-							<input type="text" id="emailInput" value= ""placeholder="이메일" class="form-control mt-4">
-							<input type="text" id="nicknameInput" value= ""placeholder="닉네임" class="form-control mt-4">
-							<input type="text" id="phoneNumberInput" value= "" placeholder="전화번호" class="form-control mt-4">
+							<input type="text" id="nameInput" value= "${user.name}" class="form-control mt-4">
+							<input type="text" id="emailInput" value= "${user.email}" class="form-control mt-4">
+							<input type="text" id="nicknameInput" value= "${user.nickName}" class="form-control mt-4">
+							<input type="text" id="phoneNumberInput" value= "${user.phoneNumber}"  class="form-control mt-4">
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
 						</div>
 					
 					
