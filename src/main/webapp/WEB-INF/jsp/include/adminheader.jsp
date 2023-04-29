@@ -39,7 +39,7 @@
 				
 				
 			  	<div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="/admin/mypage/view">MyPage</a>
+			    <a class="dropdown-item" href="/admin/mypage/view?id=${admin.id }">MyPage</a>
 			    <a class="dropdown-item" href="/admin/signout/">로그아웃</a>
 			    
 			   

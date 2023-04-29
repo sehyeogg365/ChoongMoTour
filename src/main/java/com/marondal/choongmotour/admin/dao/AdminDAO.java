@@ -49,12 +49,7 @@ public interface AdminDAO {
 	//관리자 회원정보 조회
 	public Admin selectAdminInfo(
 			@Param("id") int id
-			, @Param("password")String password
-			, @Param("name")String name
-			, @Param("email")String email
-			, @Param("phoneNumber")String phoneNumber
-			, @Param("nickname")String nickname
-			, @Param("imagePath") String imagePath);
+			);
 	
 	//관리자 회원정보 수정
 	public int updateAdmin(
