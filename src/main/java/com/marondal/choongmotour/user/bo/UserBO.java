@@ -9,10 +9,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.user.dao.UserDAO;
 import com.marondal.choongmotour.user.model.User;
-import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.common.EncryptService;
 import com.marondal.choongmotour.common.FileManagerService;
-
+import java.util.Random;
 @Service
 public class UserBO {
 	
@@ -50,6 +49,7 @@ public class UserBO {
 	//로그인 api
 	public User getUser(String loginId, String password) {//모델객체 불러오는것.
 		
+		
 		//비밀번호 암호화
 		String ecryptPassword = EncryptService.md5(password);
 		
@@ -76,11 +76,39 @@ public class UserBO {
 	// 임시 비밀번호 발급
 	public int updateTemporrayPassword(String loginId, String email, String password) {
 	
-		//String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
+		//String password = new StringBuffer();
+		
+		//임시비밀번호 생성 알고리즘
+		Random random = new Random();
+		
+		int index = 0;
+		char[] charSet = new char[] {
+				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+	                '!', '@', '#', '$', '%', '^', '&'
+				
+		};
+		
+		int i = 0;
+		
+		while ( i < charSet.length ) {
+			
+			double rd = random.nextDouble();
+			index = (int) (charSet.length * rd);
+			
+			password = password + charSet[index];
+		
+			
+		}
+
+		
+		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
 		return userDAO.updatePassword(loginId, email, password);
 		
 	}
+	
 	
 	// 회원정보 조회
 	public User getUserInfo(

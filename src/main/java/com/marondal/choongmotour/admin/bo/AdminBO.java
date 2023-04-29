@@ -10,8 +10,7 @@ import com.marondal.choongmotour.admin.dao.AdminDAO;
 import com.marondal.choongmotour.admin.model.Admin;
 import com.marondal.choongmotour.common.EncryptService;
 import com.marondal.choongmotour.common.FileManagerService;
-import com.marondal.choongmotour.lodging.model.Lodging;
-
+import java.util.Random;
 @Service
 public class AdminBO {
 	
@@ -96,6 +95,31 @@ public class AdminBO {
 	
 	//임시 비밀번호 발급
 	public int updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
+		
+		
+		//임시비밀번호 생성 알고리즘
+		Random random = new Random();
+		
+		int index = 0;
+		char[] charSet = new char[] {
+				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+	                '!', '@', '#', '$', '%', '^', '&'
+				
+		};
+		
+		int i = 0;
+		
+		while ( i < charSet.length ) {
+			
+			double rd = random.nextDouble();
+			index = (int) (charSet.length * rd);
+			
+			password = password + charSet[index];
+		
+			
+		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
