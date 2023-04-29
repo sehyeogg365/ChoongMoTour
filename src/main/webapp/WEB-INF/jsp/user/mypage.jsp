@@ -37,7 +37,7 @@
 						<h3><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h3><a href="/user/mypage/view" class="text-dark">내 정보수정</a></h3>
+						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>
 					</div>
 					
 				

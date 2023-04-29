@@ -41,7 +41,7 @@
 					
 	
 					<div class="card">
-					
+						<i class="bi bi-heart  d-flex justify-content-end"></i>
 						<img class="lodging-profile" width ="200"src="${lodging.imagePath }">
 															<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
 						<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>
