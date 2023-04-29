@@ -31,6 +31,8 @@ public class LodgingController {
 	@GetMapping("/main/view")
 	public String mainPage(Model model) {//지역 나타내기 및 id 
 		
+		
+		
 		// 생객해보니 매 페이지 마다 User객체를 할필요가없더라 ㅎㅎ.. 그래서 500에러가 뜨나보다.
 		return "lodging/main";
 	}
@@ -52,18 +54,16 @@ public class LodgingController {
 	// 객실리스트
 	@GetMapping("/room/view")
 	public String room(Model model
+						, @RequestParam("lodgingId") int lodgingId
 						, @RequestParam("id") int id) {
-		
-		
-		User user = userBO.getUserInfo(id);
-		
-		model.addAttribute("user", user);
-		
+
+	
+		//숙소 한행
 		Lodging lodging = lodgingBO.getLodging(id);
 		
 		model.addAttribute("lodging", lodging);
 		
-		List<Room> roomList = lodgingBO.getRoomList(id);
+		List<Room> roomList = lodgingBO.getRoomList(lodgingId);
 		
 		model.addAttribute("roomList", roomList);
 		

@@ -28,9 +28,15 @@
 					ChoongMo Tour Room Page
 				</h1>
 				
+				
+				
 				<div class="text-center">
-						<img class="lodging-profile" width="500" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-					</div>
+						<img class="lodging-profile" width="500" src="${lodging.imagePath } " alt="호텔">
+				</div><br>
+				
+				<div class="text-center">
+					<h2>${lodging.roomName }</h2>
+				</div><br>
 				<label class="mt-3">시작 일 </label>
 		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">종료 일 </label>
@@ -41,41 +47,24 @@
 				<!-- 객실리스트 시작 -->
 				<div class="room-card-list">
 					<!-- 객실 카드 -->
+					
+					
+					<c:forEach var="room" items = "${roomList } ">
 					<div class="room-card  ml-3 mt-3">
-							<img class="room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							<img class="room-profile" width="250" src="${room.imagePath }" alt="호텔">
 							
 							
 							<div class="room-card-body">
-								<div class="">싱글룸</div>
-								<div class="">71,250원</div>
-								<div class="">3성급</div>
-								<a href="/user/reservepage/view" class="btn btn-primary ">예약하기</a>
+								<div class="">${room.size }</div>
+								<div class="">${room.price }</div>
+								<div class="">${lodging.level }</div>
+								<a href="/user/reservepage/view?roomName=" class="btn btn-primary" type="button" data-room-id="${room.lodgingId }">예약하기</a>
 							</div>
 					</div>
 					
-					
-					<div class="room-card  ml-3 mt-3">
-							<img class="room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							
-							
-							<div class="room-card-body">
-								<div class="">더블룸</div>
-								<div class="">71,250원</div>
-								<div class="">3성급</div>
-								<button id="reserveBtn" class="btn btn-primary mt-3" type="button" data-lodging-id="${lodging.id }">예약하기</button>
-							</div>
-					</div>
-					<div class="room-card  ml-3 mt-3">
-							<img class=""room-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							
-							
-							<div class="room-card-body">
-								<div class="">트윈룸</div>
-								<div class="">71,250원</div>
-								<div class="">3성급</div>
-								<button id="reserveBtn" class="btn btn-primary mt-3" type="button" data-lodging-id="${lodging.id }">예약하기</button>
-							</div>
-					</div>
+					</c:forEach>
+				
+				
 					
 					
 					
@@ -94,6 +83,10 @@
 	</div>
 	<script>
 	 $(document).ready(function() {
+		 
+		 
+		 
+		 
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy-mm-dd",
             

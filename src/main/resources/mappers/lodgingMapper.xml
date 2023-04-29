@@ -9,7 +9,7 @@
   <!-- 사용자 페이지 지역별 숙소조회, 객실조회 등등 -->	
   	<select id = "selectLodgingListByArea" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="String">
   		SELECT
-  			id`
+  			`id`
 	 		, `roomName`
 	 		, `imagePath`
 	 		, `level`

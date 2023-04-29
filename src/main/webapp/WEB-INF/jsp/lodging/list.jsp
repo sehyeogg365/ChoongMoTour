@@ -43,8 +43,8 @@
 					<div class="card">
 					
 						<img class="lodging-profile" width ="200"src="${lodging.imagePath }">
-						
-						<div class=""><a href="/lodging/room/view?room_name=ㅇㅇ호텔">${lodging.roomName }</a></div>
+															<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
+						<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>
 						<div class="">${lodging.level }</div>
 					</div>
 				
