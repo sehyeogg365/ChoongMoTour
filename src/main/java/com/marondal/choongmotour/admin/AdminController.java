@@ -72,12 +72,14 @@ public class AdminController {
 	
 	@GetMapping("/main/view")
 	public String mainPage(Model model
-			, HttpSession session) {
+						   , HttpSession session
+						   ) {
 		
 		int adminId = (Integer)session.getAttribute("adminId");
 		
 		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);//
 		model.addAttribute("lodgingList", lodgingList);
+		
 		
 		return "admin/main";
 	}
@@ -89,6 +91,9 @@ public class AdminController {
 		//그니까 이상하다 숙소수정 객실 수정도 컨트롤러서 이렇게 불렀는데 왜자꾸 400에러가뜰까
 		Admin admin = adminBO.getAdminInfo(id);
 		model.addAttribute("admin", admin);
+		
+		
+		
 		return "admin/mypage";
 	}
 	
@@ -103,9 +108,7 @@ public class AdminController {
 	public String lodgingupdatePage(
 			@RequestParam("id") int id
 			,Model model) {
-		
-		
-		
+
 		Lodging lodging = lodgingBO.getLodging(id);
 		
 		model.addAttribute("lodging", lodging);//이거를 깜빡함 근데도 500에러가 뜬다.

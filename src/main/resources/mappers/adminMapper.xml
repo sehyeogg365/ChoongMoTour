@@ -98,8 +98,8 @@
 
  <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
 	SELECT
-	
-  		 , `password`
+		`id`
+  		 , `password`<!-- 이거 콤마앞에 찍음 -->
   		 , `name`
 		 , `email` 
 		 , `phoneNumber`
@@ -118,7 +118,6 @@
   	UPDATE
   		`user`
   	SET
-  
   		`password` =#{password}
   		`name` =#{name}
   		`email` =#{email}
@@ -126,8 +125,7 @@
   		`phoneNumber` = #{phoneNumber}
   		`nickname` =#{nickname}
   		`imagePath` =#{imagePath}
-  		
-  		
+
   	WHERE
   		`id` = #{id}
   </update>

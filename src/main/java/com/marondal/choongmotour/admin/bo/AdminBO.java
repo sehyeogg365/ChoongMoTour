@@ -138,7 +138,8 @@ public class AdminBO {
 	
 	//관리자 회원정보 수정
 	public int updateAdmin( 
-			 String password
+			int id
+			, String password
 			, String name
 			, String email
 			, String phoneNumber
@@ -147,7 +148,7 @@ public class AdminBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return adminDAO.updateAdmin( password, name, email, phoneNumber, nickname, imagePath);
+		return adminDAO.updateAdmin(id, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

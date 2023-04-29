@@ -58,22 +58,15 @@
 								<div class="">${room.size }</div>
 								<div class="">${room.price }</div>
 								<div class="">${lodging.level }</div>
-								<a href="/user/reservepage/view?roomName=" class="btn btn-primary" type="button" data-room-id="${room.lodgingId }">예약하기</a>
+								<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary" type="button">예약하기</a>
 							</div>
 					</div>
 					
 					</c:forEach>
-				
-				
-					
-					
+
 					
 					</div>
-				
-				
-				
-				
-			
+	
 			</div>
 			
 		</section>

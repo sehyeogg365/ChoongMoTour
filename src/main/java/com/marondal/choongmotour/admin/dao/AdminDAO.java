@@ -53,7 +53,8 @@ public interface AdminDAO {
 	
 	//관리자 회원정보 수정
 	public int updateAdmin(
-			 @Param("password")String password
+			@Param("id") int id
+			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email
 			, @Param("phoneNumber")String phoneNumber
