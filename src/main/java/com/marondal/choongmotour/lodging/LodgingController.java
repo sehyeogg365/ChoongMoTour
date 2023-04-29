@@ -29,21 +29,18 @@ public class LodgingController {
 	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
 	@GetMapping("/main/view")
-	public String mainPage(Model model, int id) {//지역 나타내기 및 id 
-
-		User user = userBO.getUserInfo(id);
+	public String mainPage(Model model) {//지역 나타내기 및 id 
 		
+		// 생객해보니 매 페이지 마다 User객체를 할필요가없더라 ㅎㅎ.. 그래서 500에러가 뜨나보다.
 		return "lodging/main";
 	}
 	//숙소리스트
 	@GetMapping("/list/view")
 	public String lodgingList(Model model
 			,  @RequestParam("area_name")String areaName
-			, @RequestParam("id")int id) {
-		
-		// int id,
-		User user = userBO.getUserInfo(id);
-		model.addAttribute("id", id);
+			
+			) {
+
 		
 		List<Lodging> lodgingList = lodgingBO.getLodgingListByArea(areaName);
 		model.addAttribute("lodgingList", lodgingList);

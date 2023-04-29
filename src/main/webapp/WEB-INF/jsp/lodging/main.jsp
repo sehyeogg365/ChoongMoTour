@@ -36,7 +36,7 @@
 						<img class="profile" width = "250" src="https://cdn.pixabay.com/photo/2022/09/16/17/07/namsan-tower-7459173_960_720.jpg" alt="서울">
 						
 						
-					</div>
+					</div>							<!-- 생각해보니 이것도 잘못한거아니냐?  아예 헷갈리니 죄다 areaName으로 바꿔버리자-->
 						<div class=""><a href="/lodging/list/view?area_name=seoul">서울</a></div>
 					
 					<div class="box ml-3">
@@ -48,7 +48,7 @@
 					<div class="box ml-3">
 						<img class="profile" width = "250" src="https://cdn.pixabay.com/photo/2015/09/26/05/07/mt-seoraksan-958643_960_720.jpg" alt="강원">
 						
-					</div>
+					</div>										
 						<div class=""><a href="/lodging/list/view?area_name=gangwon">강원</a></div>
 					
 					<div class="box ml-3">

@@ -53,8 +53,8 @@ public class LodgingRestController {
 	}
 	
 	// 숙소 수정 api
-		@PostMapping("/update")	
-		public Map<String, String> lodgingUpdate(
+	@PostMapping("/update")	
+	public Map<String, String> lodgingUpdate(
 				 	@RequestParam("id") int id
 					, @RequestParam("roomName") String roomName
 					, @RequestParam("level") String level
