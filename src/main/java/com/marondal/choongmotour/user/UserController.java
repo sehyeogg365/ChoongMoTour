@@ -46,10 +46,11 @@ public class UserController {
 	
 	}
 	@GetMapping("/find_id_pw/view")
-	public String findIdPw(HttpServletRequest request) {
-		
-		HttpSession session = request.getSession();
-		session.getAttribute("loginId");
+	public String findIdPw() {
+		//HttpServletRequest request
+//		HttpSession session = request.getSession();
+//		session.getAttribute("loginId");
+//		session.getAttribute("password");
 		
 		return "user/find_id_pw";
 	}
@@ -57,15 +58,15 @@ public class UserController {
 	@GetMapping("/mypage/view")
 	public String myPage(Model model
 		
-			, @RequestParam("password")String password
-			, @RequestParam("name")String name
-			, @RequestParam("email")String email
-			, @RequestParam("phoneNumber")String phoneNumber
-			, @RequestParam("nickname")String nickname
-			, MultipartFile file
+//			, @RequestParam("password")String password
+//			, @RequestParam("name")String name
+//			, @RequestParam("email")String email
+//			, @RequestParam("phoneNumber")String phoneNumber
+//			, @RequestParam("nickname")String nickname
+//			, MultipartFile file
 			) {
 			
-		User user = userBO.getUserInfo(password, name, email, phoneNumber, nickname, file);
+//		User user = userBO.getUserInfo(password, name, email, phoneNumber, nickname, file);
 		return "user/mypage";
 	}
 	

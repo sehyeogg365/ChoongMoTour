@@ -33,10 +33,10 @@ public interface UserDAO {
 						, @Param("email") String email);
 	
 	//비밀번호 찾기 아이디 이메일 입력받아서
-	public int selectPwByIdEmail(@Param("loginId")String loginId
-						, @Param("email") String email
-						);
-	//임시 비밀번호 발급
+//	public int selectPwByIdEmail(@Param("loginId")String loginId
+//						, @Param("email") String email
+//						);
+	// 비밀번호 찾기 아이디 이메일 입력받아서 임시 비밀번호 발급
 	public int updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
 							, @Param("password") String password);
@@ -57,7 +57,7 @@ public interface UserDAO {
 			, @Param("email")String email
 			, @Param("phoneNumber")String phoneNumber
 			, @Param("nickname")String nickname
-			, @Param("imagePath") MultipartFile file);
+			, @Param("imagePath") String imagePath);
 
 	
 

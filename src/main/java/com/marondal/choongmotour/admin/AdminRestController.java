@@ -175,19 +175,17 @@ public class AdminRestController {
 	//관리자 회원정보수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("loginId") String loginId
-			,@RequestParam("password") String password
+			@RequestParam("password") String password
 			,@RequestParam("name") String name
 			,@RequestParam("email") String email
 			,@RequestParam("phoneNumber") String phoneNumber
 			,@RequestParam("nickname") String nickname
-			
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.updateAdmin(loginId, password, name, email, phoneNumber, nickname,  file);
+		int count = adminBO.updateAdmin( password, name, email, phoneNumber, nickname,  file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");

@@ -86,6 +86,7 @@
  
  </select>
  
+ <!--  
  <select id="selectPwByIdEmail" resultType="String" parameterType="map">
  	SELECT
  		 `loginId`
@@ -98,6 +99,7 @@
  		AND
  		`email` = #{email}
  </select>
+ -->
  
   <update id = "updatePassword" parameterType="map">
   	UPDATE
@@ -108,10 +110,10 @@
   		`loginId` = #{loginId}
   		AND `email` = #{email}
   </update>
-<!--  
+
  <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
 	SELECT
-		`loginId`
+	
   		 , `password`
   		 , `name`
 		 , `email` 
@@ -125,13 +127,13 @@
 	WHERE
 		`loginId` = #{loginId}
  </select>
--->
+
 	
   <update id ="updateAdmin" parameterType="map">
   	UPDATE
   		`user`
   	SET
-  		`loginId` =#{loginId}
+  
   		`password` =#{password}
   		`name` =#{name}
   		`email` =#{email}

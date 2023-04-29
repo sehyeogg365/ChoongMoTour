@@ -106,7 +106,7 @@
 					, data:{"name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
-							alert("아이디는 : " );
+							alert("아이디는 : ${admin.id}" );
 							location.reload();
 						} else {
 							alert("이름/이메일이 일치하지 않습니다.");
@@ -150,9 +150,9 @@
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "email":email, "password":password}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
-						if(data.result=="success"){
+						if(data.result == "success"){
 								
 							alert("임시비밀번호는 : 123456789a 입니다." );
 							location.reload();

@@ -65,20 +65,20 @@ public class UserBO {
 	}
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-	public int getPasswordByIdEmail(String loginId, String email) {
-		
-		//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
-		
-		return userDAO.selectPwByIdEmail(loginId, email);
-
-	}
+//	public int getPasswordByIdEmail(String loginId, String email) {
+//		
+//		
+//		
+//		return userDAO.selectPwByIdEmail(loginId, email);
+//
+//	}
 	
 	// 임시 비밀번호 발급
 	public int updateTemporrayPassword(String loginId, String email, String password) {
 	
-		String ecryptPassword = EncryptService.md5(password);
+		//String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return userDAO.updatePassword(loginId, email, ecryptPassword);
+		return userDAO.updatePassword(loginId, email, password);
 		
 	}
 	
@@ -110,7 +110,7 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return userDAO.updateUser( password, name, email, phoneNumber, nickname, file);
+		return userDAO.updateUser(password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

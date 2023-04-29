@@ -110,7 +110,7 @@ public class UserRestController {
 										 @RequestParam("name") String name
 										, @RequestParam("email") String email	
 										){
-		
+										//여기선 굳이 세션 필요없을듯 하다.
 		Map<String, String> resultMap = new HashMap<>();
 		
 		List<User> user = userBO.getUserByNameEmail(name, email);
@@ -118,7 +118,7 @@ public class UserRestController {
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
 //			session.getAttribute("loginId");//이것도 실수로 setAttribute로 해버림
-			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
+//			resultMap.put("loginId", " ");// 여기서 id를 풋 하란뜻인데..
 		} else {
 			resultMap.put("result", "fail");//일치하지 않음
 		}
@@ -132,12 +132,15 @@ public class UserRestController {
 	@PostMapping("/temppassword")
 	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
-									
+										, HttpSession session
+										//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.getPasswordByIdEmail(loginId, email);
+		String password = (String) session.getAttribute("password");
+		
+		int count = userBO.updateTemporrayPassword(loginId, email, password);
 		
 		if(count == 0) {
 			resultMap.put("result", "fail");
