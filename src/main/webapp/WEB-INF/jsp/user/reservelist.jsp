@@ -57,6 +57,10 @@
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>
+								
+								<div class="text-center">
+									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+								</div>
 							</div>
 						</div>
 						<div class="reservation-card ml-3 mt-3">
@@ -66,6 +70,10 @@
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>
+								
+								<div class="text-center">
+									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+								</div>
 							</div>
 						</div>
 						<div class="reservation-card ml-3 mt-3">
@@ -75,6 +83,10 @@
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>
+								
+								<div class="text-center">
+									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+								</div>
 							</div>
 						</div>
 					
@@ -88,7 +100,25 @@
 			</div>
 				
 				
-				
+			<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-post-id="${post.id }" data-bs-toggle="modal" data-target="#moreModal"><!-- 버튼태그의 두개의 속성을 아이디에 잘맞춰주면 동작하는구나 -->
+		  Launch demo modal
+		</button>
+		
+		<!-- Modal 도 댓글달기-->
+		<div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-dialog-centered" role="document">
+		    <div class="modal-content">
+		    
+		
+		      <div class="modal-body text-center">
+		       	<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+		      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+		      
+		   
+		    </div>
+		  </div>
+		</div>	
 				
 				
 				
