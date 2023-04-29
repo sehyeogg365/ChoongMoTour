@@ -72,7 +72,7 @@ public class UserController {
 	
 	@GetMapping("/mypage/view")//숙소 수정 잘 참조 해보기
 	public String myPage(Model model
-						, @RequestParam("loginId") String loginId				
+						, @RequestParam("id") int id				
 						, @RequestParam("password") String password				
 						, @RequestParam("name") String name				
 						, @RequestParam("email") String email				
@@ -81,7 +81,7 @@ public class UserController {
 						, @RequestParam("imagePath") String imagePath				
 						) {
 		
-		User user = userBO.getUserInfo(loginId, password, name, email, phoneNumber, nickname, imagePath);
+		User user = userBO.getUserInfo(id, password, name, email, phoneNumber, nickname, imagePath);
 		
 		model.addAttribute("user", user);
 				

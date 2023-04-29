@@ -52,25 +52,25 @@
 					
 						<input type="file" name="file" id="fileInput">
 						
-						
+						<div class="">${user.loginId }</div>
 						
 						<c:choose>
 						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-						  	<img class="userprofile" src="${user.ImagePath}">
+						  	<img class="userprofile" src="${userImagePath}">
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
 						<div class="">${user.id }</div>
-						<input type="password" id="passwordInput"value= "${user.password}" class="form-control mt-4">
-						<input type="password" id="passwordConfirmInput" value= "${user.password}"  class="form-control mt-4">
+						<input type="password" id="passwordInput"value= "" class="form-control mt-4">
+						<input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4">
 						
 						
-							<input type="text" id="nameInput" value= "${user.name}" class="form-control mt-4">
-							<input type="text" id="emailInput" value= "${user.email}" class="form-control mt-4">
-							<input type="text" id="nicknameInput" value= "${user.nickName}" class="form-control mt-4">
-							<input type="text" id="phoneNumberInput" value= "${user.phoneNumber}"  class="form-control mt-4">
+							<input type="text" id="nameInput" value= "" class="form-control mt-4">
+							<input type="text" id="emailInput" value= "" class="form-control mt-4">
+							<input type="text" id="nicknameInput" value= "" class="form-control mt-4">
+							<input type="text" id="phoneNumberInput" value= ""  class="form-control mt-4">
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
 							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
@@ -118,6 +118,8 @@
 			
 			
 			var formData = new FormData();
+			
+			formData.append("loginId", loginId);
 			formData.append("password", password);
 			formData.append("name", name);
 			formData.append("email", email);
@@ -130,8 +132,8 @@
 				, url:"/user/mypage"
 				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
 				, enctype :"multipart/form-data"// 파일 업로드 필수
-				, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
-				, contentType:false// 파일 업로드 필수
+				, processData:true// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+				, contentType:true// 파일 업로드 필수
 				, success:function(data){
 					if(data.result == "success"){
 						alert("수정 성공" );
