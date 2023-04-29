@@ -76,7 +76,7 @@ public class AdminController {
 		
 		int adminId = (Integer)session.getAttribute("adminId");
 		
-		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);//알고보니 이거 id로 안바꿔서 실수가 났나??
+		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);//
 		model.addAttribute("lodgingList", lodgingList);
 		
 		return "admin/main";
@@ -84,11 +84,11 @@ public class AdminController {
 	
 	@GetMapping("/mypage/view")
 	public String myPage(Model model
-			//, @RequestParam("id") int id) {
+						, @RequestParam("id") int id) {
 		
 		//그니까 이상하다 숙소수정 객실 수정도 컨트롤러서 이렇게 불렀는데 왜자꾸 400에러가뜰까
-		//Admin admin = adminBO.getAdminInfo(id);
-		//model.addAttribute("admin", admin);
+		Admin admin = adminBO.getAdminInfo(id);
+		model.addAttribute("admin", admin);
 		return "admin/mypage";
 	}
 	

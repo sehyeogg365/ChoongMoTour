@@ -39,9 +39,7 @@
 					
 					<c:forEach var="lodging" items = "${lodgingList }">
 					
-					
-					
-					
+	
 					<div class="card">
 					
 						<img class="lodging-profile" width ="200"src="${lodging.imagePath }">

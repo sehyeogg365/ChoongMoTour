@@ -20,6 +20,8 @@ public class LodgingBO {
 	
 	//사용자페이지
 
+	//lodging 정보 - 지역 불러오기??
+	
 	
 	//숙소리스트 지역별로
 	public List<Lodging> getLodgingListByArea(String areaName){
@@ -30,14 +32,14 @@ public class LodgingBO {
 	}
 	
 	
-	//객체 리스트 lodgingId 별로
-	public List<Room> getRoomListByLodgingId(int lodgingId){
-		
-		
-		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
-		
-		
-	}
+	//객체 리스트 lodgingId 별로 이거 어드민 영역할때 만들어서 안해도 될듯?
+//	public List<Room> getRoomListByLodgingId(int lodgingId){
+//		
+//		
+//		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
+//		
+//		
+//	}
 	
 	
 	// 찜목록 userId별로
