@@ -71,7 +71,7 @@
 							<input type="text" id="phoneNumberInput" placeholder="전화번호" class="form-control mt-4">
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary mt-3" type="button">수정 완료</button>
+						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 						</div>
 					
 					
@@ -91,7 +91,7 @@
 	$(document).ready(function(){
 		
 		$("#updateBtn").on("click", function(){
-			
+			let id = $(this).data("admin-id");
 			let password = $("#password").val();
 			let passwordInput = $("#passwordInput").val();			
 			let name = $("#nameInput").val();

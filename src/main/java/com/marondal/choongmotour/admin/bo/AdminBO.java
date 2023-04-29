@@ -128,9 +128,10 @@ public class AdminBO {
 		
 	}
 	
-	//관리자 회원정보 조회
+	//관리자 회원정보 조회 한행조회
 	public Admin getAdminInfo(
-			 String password
+			int id
+			, String password
 			, String name
 			, String email
 			, String phoneNumber
@@ -139,7 +140,7 @@ public class AdminBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return adminDAO.selectAdminInfo(password, name, email, phoneNumber, nickname, imagePath);
+		return adminDAO.selectAdminInfo(id, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

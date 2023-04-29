@@ -37,7 +37,8 @@
 					<label>아이디 찾기</label>
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-				
+					<!--  <a href="/user/find_id/view" class="btn btn-primary btn-block mt-3 " id="findIdBtn">Next</a>-->
+					
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
 				</div>
 				

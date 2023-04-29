@@ -110,7 +110,7 @@
 	FROM
 		`admin`
 	WHERE
-		`loginId` = #{loginId}
+		`id` = #{id}
  </select>
 
 	
@@ -129,7 +129,7 @@
   		
   		
   	WHERE
-  		`loginId` = #{loginId}
+  		`id` = #{id}
   </update>
 
   

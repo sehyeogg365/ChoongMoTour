@@ -88,7 +88,7 @@
   
   
   <!-- 회원 정보 조회 -->
-  <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+  <select id="selectUserInfoById" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
 	SELECT
 
   		  `password`
@@ -102,7 +102,7 @@
 	FROM
 		`user`
 	WHERE
-		`loginId` = #{loginId}
+		`id` = #{id}
  </select>
   
   
@@ -117,7 +117,7 @@
   		,`nickname` =#{nickname}
   		,`imagePath` =#{imagePath}
   	WHERE
-  		`loginId` = #{loginId}
+  		`id` = #{id}
   </update>
   
   </mapper>

@@ -159,19 +159,19 @@ public class UserRestController {
 	//사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-		
-			@RequestParam("password") String password
-			,@RequestParam("name") String name
-			,@RequestParam("email") String email
-			,@RequestParam("phoneNumber") String phoneNumber
-			,@RequestParam("nickname") String nickname
+			@RequestParam("id") int id //restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
+			, @RequestParam("password") String password
+			, @RequestParam("name") String name
+			, @RequestParam("email") String email
+			, @RequestParam("phoneNumber") String phoneNumber
+			, @RequestParam("nickname") String nickname
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.updateUser(password, name, email, phoneNumber, nickname,  file);
-		
+		int count = userBO.updateUser(id, password, name, email, phoneNumber, nickname, file);
+	
 		if(count == 1) {
 			resultMap.put("result", "success");
 			

@@ -55,18 +55,30 @@ public class UserController {
 		return "user/find_id_pw";
 	}
 	
-	@GetMapping("/mypage/view")
+	//아이디 찾기 결과창 
+//	@GetMapping("/find_id/view")
+//	public String findIdPage(Model model
+//							, @RequestParam("name") String name
+//							, @RequestParam("email") String email
+//							
+//						) {
+//		
+//		List<User> userList = userBO.getUserByNameEmail(name, email);
+//	
+//		model.addAttribute("userList", userList);
+//		
+//		return "user/findidpage";
+//	}
+	
+	@GetMapping("/mypage/view")//숙소 수정 잘 참조 해보기
 	public String myPage(Model model
-		
-//			, @RequestParam("password")String password
-//			, @RequestParam("name")String name
-//			, @RequestParam("email")String email
-//			, @RequestParam("phoneNumber")String phoneNumber
-//			, @RequestParam("nickname")String nickname
-//			, MultipartFile file
+			, @RequestParam("id") int id				
 			) {
 		
-//		User user = userBO.getUserInfo(password, name, email, phoneNumber, nickname, file);
+		User user = userBO.getUserInfo(id);
+		
+		model.addAttribute("user", user);
+				
 		return "user/mypage";
 	}
 	

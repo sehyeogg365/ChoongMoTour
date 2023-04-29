@@ -177,11 +177,12 @@ public class AdminRestController {
 	//관리자 회원정보수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("password") String password
-			,@RequestParam("name") String name
-			,@RequestParam("email") String email
-			,@RequestParam("phoneNumber") String phoneNumber
-			,@RequestParam("nickname") String nickname
+			@RequestParam("id") int id
+			, @RequestParam("password") String password
+			, @RequestParam("name") String name
+			, @RequestParam("email") String email
+			, @RequestParam("phoneNumber") String phoneNumber
+			, @RequestParam("nickname") String nickname
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
 		

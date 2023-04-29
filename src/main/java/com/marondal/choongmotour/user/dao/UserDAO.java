@@ -41,18 +41,13 @@ public interface UserDAO {
 							, @Param("email") String email
 							, @Param("password") String password);
 	
-	//회원정보 조회
-	public User selectUserInfo(
-			@Param("password")String password
-			, @Param("name")String name
-			, @Param("email")String email
-			, @Param("phoneNumber") String phoneNumber
-			, @Param("nickname")String nickname
-			, @Param("imagePath") String imagePath);
+	//회원정보 한행 조회
+	public User selectUserInfoById(@Param("id") int id);
 	
 	//회원정보 수정
 	public int updateUser(
-			 @Param("password")String password
+			@Param("id") int id
+			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email
 			, @Param("phoneNumber")String phoneNumber
