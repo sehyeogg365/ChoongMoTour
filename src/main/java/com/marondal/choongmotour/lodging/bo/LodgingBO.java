@@ -33,10 +33,10 @@ public class LodgingBO {
 	
 	
 	//객체 리스트  이거 어드민 영역할때 만들어서 안해도 될듯?
-	public List<Room> getRoomListByLodgingId(int lodgingId){
+	public List<Room> getRoomListOrderByPrice(int lodgingId){
 		
 		
-		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
+		return lodgingDAO.selectRoomListOrderByPrice(lodgingId);
 		
 		
 	}
@@ -50,7 +50,7 @@ public class LodgingBO {
 	
 	
 	
-	//관리자 페이지
+	//-------관리자 페이지---------
 	
 	
 	//숙소 추가

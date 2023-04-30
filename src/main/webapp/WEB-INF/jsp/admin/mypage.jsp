@@ -60,18 +60,18 @@
 						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						<div class="">${admin.id }</div>
+						<div class="">${admin.loginId }</div>
 						<input type="password" id="passwordInput"  value = "${admin.password}"  class="form-control mt-4">
 						<input type="password" id="passwordConfirmInput" value="${admin.password} " placeholder="비밀번호 확인" class="form-control mt-4">
 						
 						
 							<input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4">
 							<input type="text" id="emailInput" value  = "${admin.email}" placeholder="이메일" class="form-control mt-4">
-							<input type="text" id="nicknameInput" value = "${admin.nickName}" placeholder="닉네임" class="form-control mt-4">
+							<input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4">
 							<input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4">
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
+						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-loginId="${admin.loginId }">수정 완료</button>
 						</div>
 					
 					
@@ -91,10 +91,11 @@
 	$(document).ready(function(){
 		
 		$("#updateBtn").on("click", function(){
-			let adminId = $(this).data("admin-id");
+			let loginId = $(this).data("admin-loginId");
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
+			let nickname = $("#nicknameInput").val();
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
 			let file = $("#fileInput")[0];
@@ -113,8 +114,12 @@
 			}
 			
 			var formData = new FormData();
+			
+			formData.append("loginId", loginId);
 			formData.append("password", password);
 			formData.append("name", name);
+			formData.append("nickname", nickname);
+			
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
 			formData.append("email", email);

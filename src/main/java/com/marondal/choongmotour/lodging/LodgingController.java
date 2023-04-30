@@ -63,7 +63,7 @@ public class LodgingController {
 		
 //		model.addAttribute("lodging", lodging);
 		
-		List<Room> roomList = lodgingBO.getRoomListByLodgingId(lodgingId);
+		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(lodgingId);
 		
 		model.addAttribute("roomList", roomList);
 		

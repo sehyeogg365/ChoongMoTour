@@ -81,10 +81,10 @@ public class AdminController {
 	
 	@GetMapping("/mypage/view")
 	public String myPage(Model model
-						, @RequestParam("id") int id) {
+						, @RequestParam("loginId") String loginId) {
 		
 		//그니까 이상하다 숙소수정 객실 수정도 컨트롤러서 이렇게 불렀는데 왜자꾸 400에러가뜰까
-		Admin admin = adminBO.getAdminInfo(id);
+		Admin admin = adminBO.getAdminInfo(loginId);
 		model.addAttribute("admin", admin);
 		
 		

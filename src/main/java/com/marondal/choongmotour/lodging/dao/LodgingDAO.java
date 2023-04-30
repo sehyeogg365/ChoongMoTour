@@ -19,10 +19,10 @@ public interface LodgingDAO {
 	
 	
 	// 로징아이디 별 객실 근데 이건 밑에거 써도 되나???
-	public List<Room> selectRoomListByLodgingId(@Param("lodgingId") int lodgingId);
+	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 	
 	
-	//관리자 페이지
+	//-------관리자 페이지---------
 	//숙소 추가
 	public int insertLodging(
 							@Param("roomName") String roomName

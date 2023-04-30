@@ -99,7 +99,7 @@
 
  <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
 	SELECT
-		`id`
+		`loginId`
   		 , `password`<!-- 이거 콤마앞에 찍음 -->
   		 , `name`
 		 , `email` 
@@ -111,7 +111,7 @@
 	FROM
 		`admin`
 	WHERE
-		`id` = #{id};
+		`loginId` = #{loginId};
  </select>
 
 	
@@ -129,7 +129,7 @@
   		, `updatedAt` = now()
 
   	WHERE
-  		`id` = #{id};
+  		`loginId` = #{loginId};
   </update>
 
   

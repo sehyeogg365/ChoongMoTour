@@ -45,13 +45,11 @@ public interface AdminDAO {
 							, @Param("password") String password);
 	
 	//관리자 회원정보 조회
-	public Admin selectAdminInfo(
-			@Param("id") int id
-			);
+	public Admin selectAdminInfo(@Param("loginId") String loginId);
 	
 	//관리자 회원정보 수정
 	public int updateAdmin(
-			@Param("id") int id
+			@Param("String") String loginId
 			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email

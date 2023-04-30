@@ -98,6 +98,8 @@
 			let password = $("#passwordInput").val();//이것도 틀림
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
+			//닉네임이 파라미터가 없다..
+			let nickname = $("#nicknameInput").val();
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
 			let file = $("#fileInput")[0];
@@ -122,6 +124,7 @@
 			formData.append("loginId", loginId);
 			formData.append("password", password);
 			formData.append("name", name);
+			formData.append("nickname", nickname);
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
 			formData.append("email", email);

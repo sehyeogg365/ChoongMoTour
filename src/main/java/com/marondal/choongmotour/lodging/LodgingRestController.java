@@ -23,8 +23,10 @@ public class LodgingRestController {
 	
 	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
+	//예약 하기 / 예약 취소
 	
-	//관리자페이지
+	
+	//-------관리자 페이지---------
 	//숙소 추가 api
 	@PostMapping("/create")
 	public Map<String, String>lodgingCreate(
