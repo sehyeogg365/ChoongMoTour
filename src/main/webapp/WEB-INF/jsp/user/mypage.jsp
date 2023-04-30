@@ -56,7 +56,7 @@
 						
 						<c:choose>
 						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-						  	<img class="userprofile" src="${userImagePath}">
+						  	<img class="userprofile" src="${user.imagePath}">
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">

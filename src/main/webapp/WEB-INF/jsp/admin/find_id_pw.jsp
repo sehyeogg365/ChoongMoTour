@@ -80,7 +80,8 @@
 		
 		$("#findIdBtn").on("click", function(){
 			
-
+			var id = "id";
+			
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			

@@ -45,7 +45,7 @@
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-user-id="${user.id }">Next</button>
 				
 				</div>
 				
@@ -78,12 +78,10 @@
 			
 			
 		});
-		
-	
-
 			
 		$("#findIdBtn").on("click", function(){
-					
+				var id = "id";
+				
 				let name = $("#nameInput").val();
 				let email = $("#emailInput").val();
 					
@@ -150,7 +148,7 @@
 				
 				alert(id);
 				alert(email);
-				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
+				//alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
 					
 				$.ajax({
 					type:"post"
