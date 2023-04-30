@@ -1,5 +1,6 @@
 package com.marondal.choongmotour.lodging.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -20,6 +21,11 @@ public interface LodgingDAO {
 	
 	// 로징아이디 별 객실 근데 이건 밑에거 써도 되나???
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
+	
+	//예약하기
+	public int insertReserve(@Param("userId") int userId
+							,@Param("roomId") int roomId 
+							, @Param("reserveDate") Date reserveDate);
 	
 	
 	//-------관리자 페이지---------

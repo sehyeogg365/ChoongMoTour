@@ -58,7 +58,7 @@
 								<div class="">${room.size }</div>
 								<div class="">${room.price }</div>
 								<div class="">${lodging.level }</div>
-								<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary" type="button">예약하기</a>
+								<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm" type="button" data-room-id="${room.id }">예약하기</a>
 							</div>
 					</div>
 					
@@ -78,6 +78,12 @@
 	 $(document).ready(function() {
 		 
 		 
+		 $(".reserve-btn").on("click", function(){
+			
+			 let id = $(this).data("room-id");
+			 //날짜
+			 //유저id???
+		 });
 		 
 		 
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색

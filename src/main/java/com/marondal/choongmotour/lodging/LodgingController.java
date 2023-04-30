@@ -55,13 +55,14 @@ public class LodgingController {
 	@GetMapping("/room/view")
 	public String room(Model model
 						, @RequestParam("lodgingId") int lodgingId
+						, @RequestParam("lodgingId") int id
 						) {
 
 	
 		//숙소 한행 , @RequestParam("id") int id
-//		Lodging lodging = lodgingBO.getLodging(id);
+		Lodging lodging = lodgingBO.getLodging(id);
 		
-//		model.addAttribute("lodging", lodging);
+		model.addAttribute("lodging", lodging);
 		
 		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(lodgingId);
 		

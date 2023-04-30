@@ -1,5 +1,6 @@
 package com.marondal.choongmotour.lodging.bo;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,6 @@ public class LodgingBO {
 
 	//lodging 정보 - 지역 불러오기??
 	
-	
 	//숙소리스트 지역별로
 	public List<Lodging> getLodgingListByArea(String areaName){
 		
@@ -37,6 +37,17 @@ public class LodgingBO {
 		
 		
 		return lodgingDAO.selectRoomListOrderByPrice(lodgingId);
+		
+		
+	}
+	
+	//예약하기 
+	public int addReserve(int userId, int roomId, Date reserveDate) {
+		
+		
+		
+		return roomId;
+		
 		
 		
 	}

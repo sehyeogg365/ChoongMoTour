@@ -43,8 +43,29 @@
   			`price` = #{price} 
   	</select>
   	
+  	<!-- 예약하기 -->
+  	<insert id = "insertReserve" parameterType="map">
+  	INSERT INTO
+  			`reserved_list`
+  	(
+  		`userId`
+  		, `roomId`
+  		, `reserveDate`
+  		, `createdAt`
+  		, `updatedAt`
+  	) 
+  		VALUES
+  	(
+  		#{userId}
+  		,#{roomId}
+  		,#{reserveDate}
+  		, now()
+  		, now()
   	
+  	)
+  			
   	
+  	</insert>
   	
   	
   	
