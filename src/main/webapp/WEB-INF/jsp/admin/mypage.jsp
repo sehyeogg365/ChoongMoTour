@@ -32,7 +32,7 @@
 			
 					
 					<div>
-						<h3><a href="/admin/mypage/view" class="text-dark">내 정보수정</a></h3>
+						<h3><a href="/admin/mypage/view?loginId=${admin.loginId }" class="text-dark">내 정보수정</a></h3>
 					</div>
 					<div>
 						<h3><a href="#" class="text-dark">사용자 삭제</a></h3>
@@ -125,7 +125,7 @@
 				return ;
 			}
 			if(name == ""){		
-				alert("이름을 입력하세요."");
+				alert("이름을 입력하세요.");
 				return ;
 			}
 			if(email == ""){		
