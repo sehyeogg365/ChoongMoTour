@@ -81,9 +81,6 @@ header{
 }
 
 
-
-
-
 .box-list > .box{
 	
 	width: 270px;
@@ -116,7 +113,7 @@ header{
 	
 }
 
-.card > .profile{
+.card-profile > .profile{
 	width: 400px;
     height: 400px;
     object-fit: cover;
@@ -129,40 +126,40 @@ header{
 	
 }
 
-
 .dibs-card-list >.dibs-card{
 	width: 350px;
     height: 400px; 
 }
-
-.dibs-card >.dibs-profile{
+.dibs-card-list >.dibs-card-body{
+	width: 350px;
+    height: 200px; 
+}
+.dibs-profile >.profile{
 	width: 350;
     height: 200px;
     object-fit: cover;
 	margin : auto;
 }
 
-.dibs-card-list >.dibs-card-body{
-	width: 350px;
-    height: 200px; 
-}
+
 
 .reservation-card-list >.reservation-card{
 	width: 350px;
     height: 400px; 
 }
 
-.reservation-card >.reservation-profile{
+.reservation-card-list > .reservation-card-body{
+	width: 350px;
+    height: 200px; 
+}
+
+.reservation-profile >.profile{
 	width: 350;
     height: 200px;
     object-fit: cover;
 	margin : auto;
 }
 
-.reservation-card-list >.reservation-card-body{
-	width: 350px;
-    height: 200px; 
-}
 
 
 

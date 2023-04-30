@@ -51,9 +51,24 @@
 						
 						<div class="reservation-card ml-3 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							
+							<div class="reservation-profile">
+								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							</div>
 							<div class="reservation-card-body">
+								<div class="">ㅇㅇ호텔</div>
+								
+								<div class="">3성급</div>
+								
+								<div class="">
+									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+								</div>
+							</div>
+						</div>
+						<div class="reservation-card ml-3 mt-3">
+							<i class="bi bi-x-square d-flex justify-content-end"></i>
+							<div class="reservation-profile">
+								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							</div>							<div class="reservation-card-body">
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>
@@ -65,21 +80,9 @@
 						</div>
 						<div class="reservation-card ml-3 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							<div class="reservation-card-body">
-								<div class="">ㅇㅇ호텔</div>
-								
-								<div class="">3성급</div>
-								
-								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
-								</div>
-							</div>
-						</div>
-						<div class="reservation-card ml-3 mt-3">
-							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<img class="reservation-profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							<div class="reservation-card-body">
+							<div class="reservation-profile">
+								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+							</div>							<div class="reservation-card-body">
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>
@@ -101,7 +104,7 @@
 				
 				
 			<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-post-id="${post.id }" data-bs-toggle="modal" data-target="#moreModal"><!-- 버튼태그의 두개의 속성을 아이디에 잘맞춰주면 동작하는구나 -->
+		<button type="button" class="btn btn-primary" data-room-id="${room.id }" data-bs-toggle="modal" data-target="#moreModal"><!-- 버튼태그의 두개의 속성을 아이디에 잘맞춰주면 동작하는구나 -->
 		  Launch demo modal
 		</button>
 		

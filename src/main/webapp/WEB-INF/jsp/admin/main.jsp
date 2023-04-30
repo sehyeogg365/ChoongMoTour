@@ -34,8 +34,9 @@
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
 				<div class="card ml-3 mt-3">
-					<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
-					
+					<div class="card-profile">
+						<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
+					</div>
 					
 					<div class="card-body">
 						<div class="">${lodging.roomName }</div>
