@@ -106,21 +106,21 @@ public class UserRestController {
 	}
 
 	//아이디 찾기 api
-	@PostMapping("/find_id")
-	public Map <String, String> findId(
+	@GetMapping("/find_id")
+	public Map <String, Object> findId(
 										 @RequestParam("name") String name
 										, @RequestParam("email") String email
-										, Model model
+										//, Model model
 										){
 										//여기선 굳이 세션 필요없을듯 하다.
-		Map<String, String> resultMap = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
 		
-		List<User> user = userBO.getUserByNameEmail(name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
+		List<User> userList = userBO.getUserByNameEmail(name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 		
 		
-		if(user != null) {
+		if(userList != null) {
 			resultMap.put("result", "success");//일치함
-			resultMap.put("info", user);
+			resultMap.put("info", userList);
 			//이것도 실수로 setAttribute로 해버림
 			 // 여기서 id를 풋 하란뜻인데..
 		} else {

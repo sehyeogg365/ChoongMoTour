@@ -101,15 +101,17 @@
 				
 				alert(name);
 				alert(email);
-				alert(id);
+				//alert(id);
 					
 				$.ajax({
-					type:"post"
+					type:"get"
 					, url:"/user/find_id"
 					, data:{"name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
-							alert("아이디는 : + ${user.loginId}"  );
+							
+							alert("아이디는 : " + data.info.loginId );
+							
 							location.reload();
 						} else {
 							alert("이름/이메일이 일치하지 않습니다.");
@@ -148,7 +150,7 @@
 				
 				alert(id);
 				alert(email);
-				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
+				//alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
 					
 				$.ajax({
 					type:"post"

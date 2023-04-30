@@ -98,7 +98,7 @@
 
 			alert(name);
 			alert(email);
-			alert(id);
+			//alert(id);
 			
 			$.ajax({
 				type:"post"
@@ -106,7 +106,7 @@
 				, data:{"name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
 				, success:function(data){
 					if(data.result == "success"){
-						alert("아이디는 : + ${admin.loginId}" );
+						alert("아이디는 : " + data.info.id);
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");

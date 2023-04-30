@@ -116,9 +116,9 @@ public class AdminRestController {
 
 	//아이디 찾기 api
 	@PostMapping("/find_id")
-	public Map <String, String> findId( @RequestParam("name") String name
+	public Map <String, Object> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email
-										, Model model
+										//, Model model
 										){
 										//여기선 굳이 세션 필요없을듯 하다.
 		
@@ -126,14 +126,15 @@ public class AdminRestController {
 		//우리가 reuslt success result fail 해서 원하는 값을 response 해주듯이 아이디 값도 마찬가지로 그렇게 한다고 어쩌구저쩌구..
 		// 그외에 나머지 것들은 비오
 
-		Map<String, String> resultMap = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
 		
 		List<Admin> adminList = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 Admin에서 List로
 		
 		if(adminList != null) {
 			resultMap.put("result", "success");
-			model.addAttribute("adminList", adminList);
-		// 여기서 id를 풋 하란뜻인데..
+			resultMap.put("info", adminList);
+		
+			// 여기서 id를 풋 하란뜻인데..
 			
 		} else {
 			resultMap.put("result", "fail");

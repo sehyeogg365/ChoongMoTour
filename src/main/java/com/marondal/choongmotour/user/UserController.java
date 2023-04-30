@@ -47,11 +47,7 @@ public class UserController {
 	}
 	@GetMapping("/find_id_pw/view")
 	public String findIdPw() {
-		//HttpServletRequest request
-//		HttpSession session = request.getSession();
-//		session.getAttribute("loginId");
-//		session.getAttribute("password");
-		
+
 		return "user/find_id_pw";
 	}
 	

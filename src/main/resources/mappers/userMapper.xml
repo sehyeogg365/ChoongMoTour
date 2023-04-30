@@ -63,15 +63,14 @@
   
   <select id ="selectUserByNameEmail" resultType="String" parameterType="map">
   	SELECT
-  		count(1)
+  		`name`
+  		,`email`<!-- 실수로 ` 하나 빼먹는 실수로 500뜸 --> 
   	FROM
   		`user`
   	WHERE 
   		`name` = #{name}
   		AND 
-  		`email` = #{email}
-  		;
-  
+  		`email` = #{email};
   </select>
 
 
