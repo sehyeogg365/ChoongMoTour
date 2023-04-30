@@ -54,7 +54,7 @@
 						
 						<c:choose>
 						  <c:when test="${not empty adminImagePath }"><!-- 있을때 -->
-						  	<img class="adminprofile" src="${admin.imagePath}">
+						  	<img class="adminprofile" src="${adminImagePath}">
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
@@ -71,7 +71,7 @@
 							<input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4">
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary mt-3" type="button">수정 완료</button>
+						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 						</div>
 					
 					
@@ -91,14 +91,15 @@
 	$(document).ready(function(){
 		
 		$("#updateBtn").on("click", function(){
-			let id = $(this).data("admin-id");
-			let password = $("#password").val();
-			let passwordInput = $("#passwordInput").val();			
+			let adminId = $(this).data("admin-id");
+			let password = $("#passwordInput").val();
+			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
+			let file = $("#fileInput")[0];
 			
-			if(password != passwordInput){
+			if(password != passwordConfirm){
 				alert("비밀번호가 다릅니다.");
 				return ;
 			}

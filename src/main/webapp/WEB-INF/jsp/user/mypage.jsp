@@ -94,15 +94,15 @@
 		
 		$("#updateBtn").on("click", function(){
 			
-			let id = $(this).data("user-id");
-			let password = $("#password").val();
-			let passwordInput = $("#passwordInput").val();			
+			let userId = $(this).data("user-id");
+			let password = $("#passwordInput").val();//이것도 틀림
+			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
 			let file = $("#fileInput")[0];
 			
-			if(password != passwordInput){
+			if(password != passwordConfirm){
 				alert("비밀번호가 다릅니다.");
 				return ;
 			}
