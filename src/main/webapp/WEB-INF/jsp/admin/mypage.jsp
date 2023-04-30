@@ -60,18 +60,38 @@
 						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						<div class="">${admin.loginId }</div>
-						<input type="password" id="passwordInput"  value = "${admin.password}"  class="form-control mt-4">
-						<input type="password" id="passwordConfirmInput" value="${admin.password} " placeholder="비밀번호 확인" class="form-control mt-4">
+						<div class="">${admin.loginId }</div><br>
+						
+						<div class="d-flex">
+							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = "${admin.password}"  class="form-control mt-4 ">
+						</div>
+						
+						<div class="d-flex">
+							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value="${admin.password} " placeholder="비밀번호 확인" class="form-control mt-4 ">
+						</div>
 						
 						
-							<input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4">
-							<input type="text" id="emailInput" value  = "${admin.email}" placeholder="이메일" class="form-control mt-4">
-							<input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4">
-							<input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4">
+							<div class="d-flex">
+								<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 ">
+							</div>
+							
+							<div class="d-flex">
+								<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value  = "${admin.email}" placeholder="이메일" class="form-control mt-4 ">
+							</div>
+							
+							<div class="d-flex">
+								<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 ">
+							</div>
+							
+							<div class="d-flex">
+								<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 ">
+							</div>
+							
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
+						
+						
 						<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-loginId="${admin.loginId }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-loginId="${admin.loginId }">수정 완료</button>
 						</div>
 					
 					
@@ -119,7 +139,6 @@
 			formData.append("password", password);
 			formData.append("name", name);
 			formData.append("nickname", nickname);
-			
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
 			formData.append("email", email);
@@ -130,14 +149,14 @@
 				, url:"/admin/mypage"
 				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
 				, enctype :"multipart/form-data"// 파일 업로드 필수
-				, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
-				, contentType:false// 파일 업로드 필수
+				, processData:true// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+				, contentType:true// 파일 업로드 필수
 				, success:function(data){
 					if(data.result == "success"){
-						alert("수정 성공" );
+						alert("수정 성공");
 						location.reload();
 					} else {
-						alert("수정 실패");'
+						alert("수정 실패");
 					}
 				}
 				

@@ -104,12 +104,12 @@ public class UserBO {
 	
 	
 	// 회원정보 한행 조회
-	public User getUserInfo(int id) {
+	public User getUserInfo(String loginId) {
 		
 		//String imagePath = FileManagerService.saveFile(0, file);
 		
 		
-		return userDAO.selectUserInfo(id);
+		return userDAO.selectUserInfo(loginId);
 		
 		
 	}
@@ -117,7 +117,7 @@ public class UserBO {
 	
 	//회원정보 수정
 	public int updateUser(
-			int id
+			String loginId
 			, String password
 			, String name
 			, String email
@@ -127,7 +127,7 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(0, file);
 		
-		return userDAO.updateUser(id, password, name, email, phoneNumber, nickname, imagePath);
+		return userDAO.updateUser(loginId, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

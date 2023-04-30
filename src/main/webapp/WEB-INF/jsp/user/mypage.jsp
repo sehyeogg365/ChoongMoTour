@@ -37,7 +37,7 @@
 						<h3><a href="/user/reservelist/view" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>
+						<h3><a href="/user/mypage/view?loginId${user.loginId }" class="text-dark">내 정보수정</a></h3>
 					</div>
 					
 				
@@ -52,28 +52,39 @@
 					
 						<input type="file" name="file" id="fileInput">
 						
-						<div class="">${user.loginId }</div>
+						
 						
 						<c:choose>
 						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-						  	<img class="userprofile" src="${user.imagePath}">
+						  	<img class="userprofile" src="${userImagePath}">
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						<div class="">${user.id }</div>
-						<input type="password" id="passwordInput"value= "" class="form-control mt-4">
-						<input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4">
-						
-						
-							<input type="text" id="nameInput" value= "" class="form-control mt-4">
-							<input type="text" id="emailInput" value= "" class="form-control mt-4">
-							<input type="text" id="nicknameInput" value= "" class="form-control mt-4">
-							<input type="text" id="phoneNumberInput" value= ""  class="form-control mt-4">
+						<div class="">${user.loginId }</div><br>
+							
+						<div class="d-flex">
+							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "${user.password }" class="form-control mt-4">
+						</div>
+						<div class="d-flex">
+							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= "${user.password }"  class="form-control mt-4">
+						</div>
+						<div class="d-flex">
+							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value= "${user.name }" class="form-control mt-4">
+						</div>	
+						<div class="d-flex">	
+							<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value= "${user.email }" class="form-control mt-4">
+						</div>		
+						<div class="d-flex">
+							<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value= "${user.nickname }" class="form-control mt-4">
+						</div>
+						<div class="d-flex">	
+							<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value= "${user.phoneNumber }"  class="form-control mt-4">
+						</div>
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-loginId="${user.loginId }">수정 완료</button>
 						</div>
 					
 					
@@ -94,7 +105,7 @@
 		
 		$("#updateBtn").on("click", function(){
 			
-			let userId = $(this).data("user-id");
+			let loginId = $(this).data("user-loginId");
 			let password = $("#passwordInput").val();//이것도 틀림
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
@@ -139,10 +150,10 @@
 				, contentType:true// 파일 업로드 필수
 				, success:function(data){
 					if(data.result == "success"){
-						alert("수정 성공" );
+						alert("수정 성공");
 						location.reload();
 					} else {
-						alert("수정 실패");'
+						alert("수정 실패");
 					}
 				}
 				

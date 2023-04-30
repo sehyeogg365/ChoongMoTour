@@ -117,7 +117,7 @@
 	
   <update id ="updateAdmin" parameterType="map">
   	UPDATE
-  		`user`
+  		`admin`
   	SET
   		`password` =#{password}
   		,`name` =#{name}
