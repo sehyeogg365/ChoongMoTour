@@ -43,12 +43,6 @@ public interface UserDAO {
 	
 	//회원정보 한행 조회
 	public User selectUserInfo(@Param("id") int id
-									,@Param("password") String password 
-									,@Param("name") String passnameword  
-									,@Param("email") String email  
-									,@Param("phoneNumber") String phoneNumber  
-									,@Param("nickname") String nickname  
-									,@Param("imagePath") String imagePath
 									);
 	
 	//회원정보 수정
