@@ -115,7 +115,7 @@ public class AdminRestController {
 
 
 	//아이디 찾기 api
-	@PostMapping("/find_id")
+	@GetMapping("/find_id")
 	public Map <String, Object> findId( @RequestParam("name") String name
 										, @RequestParam("email") String email
 										//, Model model

@@ -105,7 +105,7 @@ public class UserRestController {
 
 	}
 
-	//아이디 찾기 api
+	//아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
 	@GetMapping("/find_id")
 	public Map <String, Object> findId(
 										 @RequestParam("name") String name

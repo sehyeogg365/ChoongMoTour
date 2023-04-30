@@ -101,7 +101,7 @@
 			//alert(id);
 			
 			$.ajax({
-				type:"post"
+				type:"get"
 				, url:"/admin/find_id"
 				, data:{"name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
 				, success:function(data){
@@ -141,7 +141,7 @@
 			
 			alert(id);
 			alert(email);
-			//alert(password);//이렇게 패스워드 까지 넣으면 명확할듯
+			alert(password);//이렇게 패스워드 까지 넣으면 명확할듯
 			
 				$.ajax({
 					type:"post"

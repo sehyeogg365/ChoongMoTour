@@ -150,7 +150,7 @@
 				
 				alert(id);
 				alert(email);
-				//alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
+				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
 					
 				$.ajax({
 					type:"post"
