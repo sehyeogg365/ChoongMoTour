@@ -32,14 +32,14 @@ public class LodgingBO {
 	}
 	
 	
-	//객체 리스트 lodgingId 별로 이거 어드민 영역할때 만들어서 안해도 될듯?
-//	public List<Room> getRoomListByLodgingId(int lodgingId){
-//		
-//		
-//		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
-//		
-//		
-//	}
+	//객체 리스트  이거 어드민 영역할때 만들어서 안해도 될듯?
+	public List<Room> getRoomListByLodgingId(int lodgingId){
+		
+		
+		return lodgingDAO.selectRoomListByLodgingId(lodgingId);
+		
+		
+	}
 	
 	
 	// 찜목록 userId별로

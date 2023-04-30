@@ -37,7 +37,7 @@ public class LodgingController {
 		return "lodging/main";
 	}
 	//숙소리스트
-	@GetMapping("/list/view")
+	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
 			,  @RequestParam("area_name")String areaName
 			
@@ -49,21 +49,21 @@ public class LodgingController {
 		
 		//이거를 이제 지역별 리스팅 비오 만들어야 함 ㅇㅇ. 
 		
-		return "lodging/list";
+		return "lodging/lodginglist";
 	}
 	// 객실리스트
 	@GetMapping("/room/view")
 	public String room(Model model
 						, @RequestParam("lodgingId") int lodgingId
-						, @RequestParam("id") int id) {
+						) {
 
 	
-		//숙소 한행
-		Lodging lodging = lodgingBO.getLodging(id);
+		//숙소 한행 , @RequestParam("id") int id
+//		Lodging lodging = lodgingBO.getLodging(id);
 		
-		model.addAttribute("lodging", lodging);
+//		model.addAttribute("lodging", lodging);
 		
-		List<Room> roomList = lodgingBO.getRoomList(lodgingId);
+		List<Room> roomList = lodgingBO.getRoomListByLodgingId(lodgingId);
 		
 		model.addAttribute("roomList", roomList);
 		
