@@ -123,10 +123,15 @@
 				alert("이름을 입력하세요.");
 				return ;
 			}
+			if(nickname == ""){		
+				alert("닉네임을 입력하세요.");
+				return ;
+			}
 			if(email == ""){		
 				alert("이메일을 입력하세요.");
 				return ;
 			}
+			
 	
 			
 			
@@ -146,8 +151,8 @@
 				, url:"/user/mypage"
 				, data:formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
 				, enctype :"multipart/form-data"// 파일 업로드 필수
-				, processData:true// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
-				, contentType:true// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수(근데 여기선 필수로 하면안됨)
+				, contentType:false// 파일 업로드 필수
 				, success:function(data){
 					if(data.result == "success"){
 						alert("수정 성공");

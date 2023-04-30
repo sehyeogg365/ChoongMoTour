@@ -115,14 +115,13 @@
  </select>
 
 	
-  <update id ="updateAdmin" parameterType="map">
+  <update id ="updateAdmin" parameterType="map"> <!-- 여기에 실수로 이메일 컬럼 두번씀 -->
   	UPDATE
   		`admin`
   	SET
   		`password` =#{password}
   		,`name` =#{name}
-  		,`email` =#{email}
-  		,`email` =#{email}
+  		,`email` =#{email}  		
   		,`phoneNumber` = #{phoneNumber}
   		,`nickname` =#{nickname}
   		,`imagePath` =#{imagePath}

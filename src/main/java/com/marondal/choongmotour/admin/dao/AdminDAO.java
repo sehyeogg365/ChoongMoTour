@@ -49,7 +49,7 @@ public interface AdminDAO {
 	
 	//관리자 회원정보 수정
 	public int updateAdmin(
-			@Param("String") String loginId
+			@Param("loginId") String loginId
 			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email
