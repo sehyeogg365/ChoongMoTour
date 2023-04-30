@@ -27,18 +27,16 @@
 				<div class="findidpwcontents">
 				
 				<div class="d-flex justify-content-center align-items-end">
-				 	<label>아이디찾기
-                         	<input type="radio" name="type" value="findId" checked></label>
-                            <label class="ml-3">비밀번호 찾기
-                            <input type="radio" name="type" value="findPassword"></label> <br>
-
-				</div>
-				<div class="find-id " id="findIdInput">
+				 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
+                         	
+                    <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
+  
+				</div><!-- class 값 space땜에 라디오 안먹힌듯 -->
+				<div class="find-id" id="findIdInput">
 					<label>아이디 찾기</label>
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-					<!--  <a href="/user/find_id/view" class="btn btn-primary btn-block mt-3 " id="findIdBtn">Next</a>-->
-					
+				
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
 				</div>
 				
@@ -100,6 +98,10 @@
 					return;
 						
 				}
+				
+				alert(name);
+				alert(email);
+				alert(id);
 					
 				$.ajax({
 					type:"post"
@@ -107,7 +109,7 @@
 					, data:{"name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
-							alert("아이디는 : " + ${user.loginId} );
+							alert("아이디는 : + ${user.loginId}"  );
 							location.reload();
 						} else {
 							alert("이름/이메일이 일치하지 않습니다.");
@@ -146,12 +148,12 @@
 				
 				alert(id);
 				alert(email);
-				
+				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
 					
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email, "password" : password}
 					, success:function(data){
 						if(data.result == "success"){
 								

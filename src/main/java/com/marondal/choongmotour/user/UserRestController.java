@@ -115,12 +115,12 @@ public class UserRestController {
 										//여기선 굳이 세션 필요없을듯 하다.
 		Map<String, String> resultMap = new HashMap<>();
 		
-		List<User> userList = userBO.getUserByNameEmail(name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
+		List<User> user = userBO.getUserByNameEmail(name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 		
 		
-		if(userList != null) {
+		if(user != null) {
 			resultMap.put("result", "success");//일치함
-			model.addAttribute("userList", userList);
+			resultMap.put("info", user);
 			//이것도 실수로 setAttribute로 해버림
 			 // 여기서 id를 풋 하란뜻인데..
 		} else {

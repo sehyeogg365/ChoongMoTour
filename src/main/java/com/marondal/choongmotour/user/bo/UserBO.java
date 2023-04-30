@@ -65,14 +65,7 @@ public class UserBO {
 	}
 	
 	// 비번 찾기 (임시 비밀번호 발급)
-//	public int getPasswordByIdEmail(String loginId, String email) {
-//		
-//		
-//		
-//		return userDAO.selectPwByIdEmail(loginId, email);
-//
-//	}
-	
+
 	// 임시 비밀번호 발급
 	public int updateTemporrayPassword(String loginId, String email, String password) {
 	
@@ -120,7 +113,7 @@ public class UserBO {
 		
 		
 	}
-	
+	//딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
 	
 	//회원정보 수정
 	public int updateUser(

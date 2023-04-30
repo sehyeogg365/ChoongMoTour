@@ -26,11 +26,10 @@
 				<div class="findidpwcontents">
 				
 				<div class="d-flex justify-content-center align-items-end">
-				 	<label>아이디찾기
-                         	<input type="radio" name="type" value="findId" checked></label>
-                            <label class="ml-3">비밀번호 찾기
-                            <input type="radio" name="type" value="findPassword"></label> <br>
-
+				 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
+                         	
+                    <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
+  
 				</div>
 				<div class="find-id " id="findIdInput">
 					<label>아이디 찾기</label>
@@ -99,14 +98,15 @@
 
 			alert(name);
 			alert(email);
+			alert(id);
 			
 			$.ajax({
 				type:"post"
 				, url:"/admin/find_id"
-				, data:{"name": name, "email" : email}
+				, data:{"name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
 				, success:function(data){
 					if(data.result == "success"){
-						alert("아이디는 : ${admin.id}" );
+						alert("아이디는 : + ${admin.loginId}" );
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
@@ -141,11 +141,12 @@
 			
 			alert(id);
 			alert(email);
+			//alert(password);//이렇게 패스워드 까지 넣으면 명확할듯
 			
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email, "password" : password}
 					, success:function(data){
 						
 						if(data.result == "success"){
