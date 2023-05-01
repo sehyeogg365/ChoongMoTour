@@ -66,11 +66,11 @@ public class UserController {
 	
 	@GetMapping("/mypage/view")//숙소 수정 잘 참조 해보기
 	public String myPage(Model model
-						, @RequestParam("loginId") String loginId				
+						, @RequestParam("id") int id				
 
 						) {
 		
-		User user = userBO.getUserInfo(loginId);
+		User user = userBO.getUserInfo(id);
 		
 		model.addAttribute("user", user);
 				

@@ -31,13 +31,13 @@
 				
 			
 					<div>
-						<h3><a href="/user/dibspage/view?loginId=${user.loginId }" class="text-dark">찜목록</a></h3>
+						<h3><a href="/user/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
-						<h3><a href="/user/reservelist/view?loginId=${user.loginId }" class="text-dark">예약내역</a></h2>
+						<h3><a href="/user/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
-						<h3><a href="/user/mypage/view?loginId=${user.loginId }" class="text-dark">내 정보수정</a></h3>
+						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>
 					</div>
 					
 				
@@ -84,7 +84,7 @@
 						</div>
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-loginId="${user.loginId }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
 						</div>
 					
 					
@@ -110,7 +110,7 @@
 		
 		$("#updateBtn").on("click", function(){
 			
-			let loginId = $(this).data("user-loginId");
+			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();//이것도 틀림
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
@@ -144,10 +144,11 @@
 			
 			//파일은 필수사항이아님 전화번호는 회원가입할땐 필수사항이 아니지만, 전화번호를 쓰게끔하는게 속편할듯.
 			
-			
+			alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
+							//그나저나 저기 위에선 loginId는 들어오는 상황인데 왜 안들어오는지??
 			var formData = new FormData();
 			
-			formData.append("loginId", loginId);
+			formData.append("id", id);//여기도 로그인id 그냥 id 로 수정
 			formData.append("password", password);
 			formData.append("name", name);
 			formData.append("nickname", nickname);

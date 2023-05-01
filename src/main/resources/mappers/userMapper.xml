@@ -47,8 +47,9 @@
   <select id="selectUser" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
   	
   	SELECT
-  		`loginId`
-		 ,`password` 
+  		 `id`	
+  		 , `loginId`<!-- id컬럼 추가를 안시켜서 자꾸 id값이 0이라고 들어가는거였다. -->
+		 , `password` 
 		 , `name`
 		 , `email` 
 		 , `nickname`
@@ -89,8 +90,8 @@
   <!-- 회원 정보 조회 -->
   <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
 	SELECT
-		`loginId`
-  		 , `password`
+		 `id` <!-- 여기도 당연히 추가해보기 -->
+  		 ,`password`
   		 , `name`
 		 , `email` 
 		 , `phoneNumber`
@@ -101,7 +102,7 @@
 	FROM
 		`user`
 	WHERE
-		`loginId` = #{loginId};
+		`id` = #{id};
  </select>
   
   
@@ -117,7 +118,7 @@
   		,`imagePath` =#{imagePath}
   		, `updatedAt` = now()
   	WHERE
-  		`loginId` = #{loginId};
+  		`id` = #{id};
   </update>
   
   </mapper>

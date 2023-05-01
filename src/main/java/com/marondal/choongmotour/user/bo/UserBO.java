@@ -116,12 +116,12 @@ public class UserBO {
 	
 	
 	// 회원정보 한행 조회
-	public User getUserInfo(String loginId) {
+	public User getUserInfo(int id) {//loginId->id로변경하기
 		
 		//String imagePath = FileManagerService.saveFile(0, file);
 		
 		
-		return userDAO.selectUserInfo(loginId);
+		return userDAO.selectUserInfo(id);
 		
 		
 	}
@@ -129,7 +129,7 @@ public class UserBO {
 	
 	//회원정보 수정
 	public int updateUser(
-			String loginId
+			int id//loginId빼보기
 			, String password
 			, String name
 			, String email
@@ -137,9 +137,9 @@ public class UserBO {
 			, String nickname
 			, MultipartFile file) {
 		
-		String imagePath = FileManagerService.saveFile(0, file);
+		String imagePath = FileManagerService.saveFile(id, file);
 		
-		return userDAO.updateUser(loginId, password, name, email, phoneNumber, nickname, imagePath);
+		return userDAO.updateUser(id, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

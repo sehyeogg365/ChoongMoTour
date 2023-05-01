@@ -91,7 +91,7 @@
 						
 						
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-loginId="${admin.loginId }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 						</div>
 					
 					
@@ -111,7 +111,7 @@
 	$(document).ready(function(){
 		
 		$("#updateBtn").on("click", function(){
-			let loginId = $(this).data("admin-loginId");
+			let id = $(this).data("admin-id");
 			let password = $("#passwordInput").val();
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
@@ -144,7 +144,7 @@
 			
 			var formData = new FormData();
 			
-			formData.append("loginId", loginId);
+			formData.append("id", id);
 			formData.append("password", password);
 			formData.append("name", name);
 			formData.append("nickname", nickname);

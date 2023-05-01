@@ -87,7 +87,7 @@ public class UserRestController {
 		
 		if(user != null) {
 			resultMap.put("result", "success");
-			
+					//여기서 id 불러올까? 이미 있는데??
 			session.setAttribute("userId", user.getId());//id, 네임, 닉네임, 이미지 값을 가져오기 위해 세션
 			session.setAttribute("loginId", user.getLoginId());
 			session.setAttribute("userName", user.getName());
@@ -160,7 +160,7 @@ public class UserRestController {
 	//사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("loginId") String loginId //restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
+			@RequestParam("id") int id //restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
 			, @RequestParam("email") String email
@@ -171,7 +171,7 @@ public class UserRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = userBO.updateUser(loginId, password, name, email, phoneNumber, nickname, file);
+		int count = userBO.updateUser(id, password, name, email, phoneNumber, nickname, file);
 	
 		if(count == 1) {
 			resultMap.put("result", "success");

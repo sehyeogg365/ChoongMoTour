@@ -168,6 +168,8 @@ header{
 }
 .room-profile > .profile {
 	width:250px;
+	height:170px;
+	object-fit: cover;
 	border-radius: 8px;
 }
 
