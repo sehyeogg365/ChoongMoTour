@@ -43,9 +43,9 @@
 				<div class="text-center">
 					<h2>${lodging.roomName }</h2>
 				</div><br>
-				<label class="mt-3">시작 일 </label>
+				<label class="mt-3">체크인 </label>
 		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
-		        <label class="mt-3">종료 일 </label>
+		        <label class="mt-3">체크아웃 </label>
 		        <input type="text" id="endDate" autocomplete="off"><br>
 				
 				
@@ -53,22 +53,25 @@
 				<!-- 객실리스트 시작 -->
 				<div class="room-card-list">
 					<!-- 객실 카드 -->
+	
 					
-					
-					<c:forEach var="room" items = "${roomList }">
-					<div class="room-card  ml-3 mt-3">
-						<div class="room-profile">
-							<img class="profile" width="250" src="${room.imagePath }" alt="호텔">
+					<div class="room-card d-flex ml-3 mt-3">
+						<div class="room-profile ml-3 mt-3">
+							<img class="profile" width="250" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="호텔">
 						</div>
 							
-						<div class="room-card-body">
-							<div class="">${room.size }</div>
-							<div class="">${room.price }</div>
-							<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm" type="button" data-room-id="${room.id }">예약하기</a>
+						<div class="room-card-body ml-3 mt-3">
+							<div class="">싱글룸</div>
+							<div class="mt-3">90000원</div>
+							
+							<div class = "buttonlist text-center">
+							<button id = "modalBtn" type="button"  class="btn btn-primary modal-btn btn-sm col-10" data-room-id="${room.id }">상세정보</button><br>
+							<a href="/user/reservepage/view?id=" class="btn btn-primary reserve-btn btn-sm mt-3 col-10" type="button" data-room-id="${room.id }">예약하기</a>
+							</div>
 						</div>
 					</div>
 					
-					</c:forEach>
+					
 
 					
 				</div>
@@ -122,7 +125,7 @@
              //beforeShow: customRange
               onSelect:function(selectedDate) {
                  
-                 $("#startDate").datepicker( "option", "maxDate", selectedDate );
+                 $("#startDate").datepicker("option", "maxDate", selectedDate );
                  
              
               }
