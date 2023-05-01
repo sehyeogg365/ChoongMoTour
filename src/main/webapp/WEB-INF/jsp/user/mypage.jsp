@@ -62,7 +62,7 @@
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						<div class="">${user.loginId }</div><br>
+						<div class="">${user.id }</div><br>
 							
 						<div class="d-flex">
 							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "${user.password }" class="form-control mt-4">

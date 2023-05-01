@@ -42,11 +42,11 @@ public interface AdminDAO {
 							, @Param("password") String password);
 	
 	//관리자 회원정보 조회
-	public Admin selectAdminInfo(@Param("loginId") String loginId);
+	public Admin selectAdminInfo(@Param("id") int id);
 	
 	//관리자 회원정보 수정
 	public int updateAdmin(
-			@Param("loginId") String loginId
+			@Param("id") int id
 			, @Param("password")String password
 			, @Param("name")String name
 			, @Param("email")String email

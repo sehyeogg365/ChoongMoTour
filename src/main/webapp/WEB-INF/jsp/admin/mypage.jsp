@@ -32,7 +32,7 @@
 			
 					
 					<div>
-						<h3><a href="/admin/mypage/view?loginId=${admin.loginId }" class="text-dark">내 정보수정</a></h3>
+						<h3><a href="/admin/mypage/view?id=${admin.id }" class="text-dark">내 정보수정</a></h3>
 					</div>
 					<div>
 						<h3><a href="#" class="text-dark">사용자 삭제</a></h3>
@@ -60,7 +60,7 @@
 						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
-						<div class="">${admin.loginId }</div><br>
+						<div class="">${admin.id }</div><br>
 						
 						<div class="d-flex">
 							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = "${admin.password}"  class="form-control mt-4 ">

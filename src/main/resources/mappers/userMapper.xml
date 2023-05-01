@@ -118,7 +118,7 @@
   		,`imagePath` =#{imagePath}
   		, `updatedAt` = now()
   	WHERE
-  		`id` = #{id};
+  		`id` = #{id};<!-- 여기선 id가아닌 loginId 아닐까 싶음 -->
   </update>
   
   </mapper>

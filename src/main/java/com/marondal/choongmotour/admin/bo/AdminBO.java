@@ -138,14 +138,14 @@ public class AdminBO {
 	}
 	
 	//관리자 회원정보 조회 한행조회
-	public Admin getAdminInfo(String loginId) {
-		return adminDAO.selectAdminInfo(loginId);
+	public Admin getAdminInfo(int id) {
+		return adminDAO.selectAdminInfo(id);
 	}
 	//딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
 	
 	//관리자 회원정보 수정
 	public int updateAdmin( 
-			String loginId
+			int id
 			, String password
 			, String name
 			, String email
@@ -153,9 +153,9 @@ public class AdminBO {
 			, String nickname
 			, MultipartFile file) {
 		
-		String imagePath = FileManagerService.saveFile(0, file);
+		String imagePath = FileManagerService.saveFile(id, file);
 		
-		return adminDAO.updateAdmin(loginId, password, name, email, phoneNumber, nickname, imagePath);
+		return adminDAO.updateAdmin(id, password, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

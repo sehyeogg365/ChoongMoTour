@@ -177,7 +177,7 @@ public class AdminRestController {
 	//관리자 회원정보수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("loginId") String loginId
+			@RequestParam("id") int id
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
 			, @RequestParam("email") String email
@@ -188,7 +188,7 @@ public class AdminRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		int count = adminBO.updateAdmin(loginId, password, name, email, phoneNumber, nickname,  file);
+		int count = adminBO.updateAdmin(id, password, name, email, phoneNumber, nickname,  file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");
