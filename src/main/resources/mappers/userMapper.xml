@@ -85,7 +85,7 @@
   		`loginId` = #{loginId}
   		AND `email` = #{email};
   </update>
-  
+  <!-- 여기선 id가아닌 loginId 아닐까 싶음 -->
   
   <!-- 회원 정보 조회 -->
   <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
@@ -105,7 +105,7 @@
 		`id` = #{id};
  </select>
   
-  
+  <!-- 수정 -->
   <update id ="updateUser" parameterType="map">
   	UPDATE
   		`user`
@@ -118,7 +118,7 @@
   		,`imagePath` =#{imagePath}
   		, `updatedAt` = now()
   	WHERE
-  		`id` = #{id};<!-- 여기선 id가아닌 loginId 아닐까 싶음 -->
+  		`id` = #{id};
   </update>
   
   </mapper>

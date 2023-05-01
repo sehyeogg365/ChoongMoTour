@@ -108,14 +108,14 @@ public class LodgingRestController {
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
 			, @RequestParam(value="file", required=false) MultipartFile file
-			, HttpSession session
+			//, HttpSession session
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
 
-		int adminId = (Integer)session.getAttribute("adminId");
+		//int adminId = (Integer)session.getAttribute("adminId"); 이것도 없이 한번진행해보기
 		
-		int count = lodgingBO.addRoom(adminId, lodgingId, price, size, content, file);
+		int count = lodgingBO.addRoom(lodgingId, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		
