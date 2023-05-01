@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>         
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   <!-- 포맷라이브러리 추가 -->     
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,15 +33,21 @@
 					<div class=""><h2>ㅇㅇ호텔</h2></div><br>
 					<div class=""><h3>더블 룸</h3></div>
 					
-					<div class="d-flex">
-						<div class="">체크인 2023-05-01 15:00</div>
+					<div class="d-flex mt-3">
+						<div class="" >체크인 2023-05-01 15:00</div>~
 						<div class="ml-3">체크아웃 2023-05-01 11:00</div>
-						
-						
 					
 					</div>
 					
+					<div class = "">
+						<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value = "${user.name}" placeholder="이름" class="form-control mt-4 ">
+						<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 ">
+					</div>
+					<hr>
+					<label class="col-4 mt-4">총 결제 금액 </label> <strong>~~원</strong><!-- 이것도 fmt활용해보기 -->
 					
+					
+					<hr>
 					<div class="payselect mt-3">
 						<div class=""> 결제수단을 선택하세요. </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
@@ -58,7 +64,7 @@
 					
 					
 					
-					<div class="check-box">
+					<div class="check-box mt-3">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
 				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1"></label><br>
 				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2"></label><br>
@@ -91,9 +97,18 @@
 		
 		$("#payBtn").on("click", function(){
 			
-			
+			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 		});
 		
+		
+		 $("#allCheck").on("change", function() {
+             // 내 자신이 체크 되었는지 안되었는지
+             if($(this).is(":checked")) {
+                 $("input[name='check']").prop("checked", true);
+             } else {
+                 $("input[name='check']").prop("checked", false);
+             }
+         });
 		
 		
 	});
