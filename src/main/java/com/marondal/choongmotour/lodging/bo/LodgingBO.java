@@ -32,7 +32,7 @@ public class LodgingBO {
 	}
 	
 	
-	//객체 리스트  이거 어드민 영역할때 만들어서 안해도 될듯?
+	//객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
 		
 		
@@ -44,11 +44,7 @@ public class LodgingBO {
 	//예약하기 
 	public int addReserve(int userId, int roomId, Date reserveDate) {
 		
-		
-		
-		return roomId;
-		
-		
+		return lodgingDAO.insertReserve(userId, roomId, reserveDate);	
 		
 	}
 	

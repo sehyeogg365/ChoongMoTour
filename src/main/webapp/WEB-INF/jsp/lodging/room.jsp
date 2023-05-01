@@ -49,23 +49,23 @@
 					<!-- 객실 카드 -->
 					
 					
-					<c:forEach var="room" items = "${roomList } ">
+					<c:forEach var="room" items = "${roomList }">
 					<div class="room-card  ml-3 mt-3">
-							<img class="room-profile" width="250" src="${room.imagePath }" alt="호텔">
+						<div class="room-profile">
+							<img class="profile" width="250" src="${room.imagePath }" alt="호텔">
+						</div>
 							
-							
-							<div class="room-card-body">
-								<div class="">${room.size }</div>
-								<div class="">${room.price }</div>
-								<div class="">${lodging.level }</div>
-								<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm" type="button" data-room-id="${room.id }">예약하기</a>
-							</div>
+						<div class="room-card-body">
+							<div class="">${room.size }</div>
+							<div class="">${room.price }</div>
+							<a href="/user/reservepage/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm" type="button" data-room-id="${room.id }">예약하기</a>
+						</div>
 					</div>
 					
 					</c:forEach>
 
 					
-					</div>
+				</div>
 	
 			</div>
 			

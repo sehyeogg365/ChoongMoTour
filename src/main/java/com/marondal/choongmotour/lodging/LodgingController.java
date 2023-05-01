@@ -41,30 +41,34 @@ public class LodgingController {
 	public String lodgingList(Model model
 			,  @RequestParam("area_name")String areaName
 			
+			
 			) {
 
 		
 		List<Lodging> lodgingList = lodgingBO.getLodgingListByArea(areaName);
 		model.addAttribute("lodgingList", lodgingList);
 		
-		//이거를 이제 지역별 리스팅 비오 만들어야 함 ㅇㅇ. 
+//		List<Room> roomList = lodgingBO.getRoomList(lodgingId);
+//		model.addAttribute("roomList", roomList);
+		
+		//여기서 room 객체도 아마 불러와 야할듯 보통 싱글룸의 가격이 명시되어있어서.
 		
 		return "lodging/lodginglist";
 	}
 	// 객실리스트
 	@GetMapping("/room/view")
 	public String room(Model model
-						, @RequestParam("lodgingId") int lodgingId
-						, @RequestParam("lodgingId") int id
+						, @RequestParam("id") int id //설마 이것땜에 객실리스트 안들어가지나?
+
 						) {
 
 	
 		//숙소 한행 , @RequestParam("id") int id
 		Lodging lodging = lodgingBO.getLodging(id);
 		
-		model.addAttribute("lodging", lodging);
-		
-		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(lodgingId);
+		model.addAttribute("lodging", lodging);		
+		//객실리스트 싱글, 더블, 트윈
+		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(id);
 		
 		model.addAttribute("roomList", roomList);
 		

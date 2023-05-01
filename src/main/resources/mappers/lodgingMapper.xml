@@ -27,7 +27,6 @@
   	<select id = "selectRoomListOrderByPrice" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
   		SELECT
   			`id`
- 			, `adminId`
 	 		, `lodgingId`
 	 		, `imagePath`
 	 		, `price`
@@ -40,7 +39,7 @@
   		WHERE
   			`lodgingId` = #{lodgingId}
   		ORDER BY
-  			`price` = #{price} 
+  			`price`
   	</select>
   	
   	<!-- 예약하기 -->
