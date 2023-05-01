@@ -53,7 +53,7 @@
 						
 						
 						<c:choose>
-						  <c:when test="${not empty adminImagePath }"><!-- 있을때 -->
+						  <c:when test="${not empty admin.imagePath }"><!-- 있을때 -->
 						  	<img class="adminprofile" width ="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->

@@ -53,6 +53,7 @@
 		 , `name`
 		 , `email` 
 		 , `nickname`
+		 , `imagePath`
 		 , `createdAt` 
 		 , `updatedAt` 
   	FROM

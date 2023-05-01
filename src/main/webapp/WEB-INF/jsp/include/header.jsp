@@ -17,8 +17,8 @@
 			<div class="btn-group">
 			<!-- 프로필사진이 있을때 없을때 -->
 			  <c:choose>
-			  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-			  	<img class="userprofile" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 근데 사진이안뜸 -->
+			  <c:when test="${not empty userImagePath }"><!-- 있을때 이것도 그냥 user.imagePath 이렇게 해야 된다-->
+			  	<img class="userprofile" width="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 근데 사진이안뜸 -->
 			  </c:when>
 			  <c:otherwise><!-- 없을때 --><!-- 분명히 디비엔 저장이된다. 왜안될까? -->
 			  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">

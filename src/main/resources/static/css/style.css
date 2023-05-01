@@ -228,12 +228,12 @@ header{
 .userprofile{
 
 	 border-radius: 70%;
-	 overflow: hidden;
+     object-fit: cover;
 }
 
 .adminprofile{
 	 border-radius: 70%;
-	 overflow: hidden;
+	 object-fit: cover;
 }
 
 
