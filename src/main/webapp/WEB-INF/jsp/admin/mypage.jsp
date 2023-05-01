@@ -54,7 +54,7 @@
 						
 						<c:choose>
 						  <c:when test="${not empty adminImagePath }"><!-- 있을때 -->
-						  	<img class="adminprofile" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
+						  	<img class="adminprofile" width ="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
@@ -76,7 +76,7 @@
 							</div>
 							
 							<div class="d-flex">
-								<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value  = "${admin.email}" placeholder="이메일" class="form-control mt-4 ">
+								<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 ">
 							</div>
 							
 							<div class="d-flex">
@@ -141,7 +141,9 @@
 				alert("전화번호를 입력하세요.");
 				return ;
 			}
-			
+			alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
+			alert(email);
+			alert(file);
 			var formData = new FormData();
 			
 			formData.append("id", id);

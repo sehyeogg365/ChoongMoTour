@@ -55,8 +55,8 @@
 						
 						
 						<c:choose>
-						  <c:when test="${not empty userImagePath }"><!-- 있을때 -->
-						  	<img class="userprofile" src="${user.imagePath}"><!-- 이렇게 함 수정해보자 -->
+						  <c:when test="${not empty user.imagePath }"><!-- 있을때 이거를 user.imagePath로 바꾸면 어떨까? 헤더야 항상 불러와야 하니 세션을 썼지만.. 프사가 뜬다.-->
+						  	<img class="userprofile" width ="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 근데 사진이안뜸  -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
@@ -71,13 +71,13 @@
 							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= "${user.password }"  class="form-control mt-4">
 						</div>
 						<div class="d-flex">
-							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value= "${user.name }" class="form-control mt-4">
+							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value="${user.name }" class="form-control mt-4">
 						</div>	
-						<div class="d-flex">	
-							<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value= "${user.email }" class="form-control mt-4">
+						<div class="d-flex">							<!-- 왜자꾸 이메일, 이메일 이렇게 뜨는지 모르겠다. 분명 프론트엔드 영역 문제고 그럴거같은데 -->
+							<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value="${user.email }" class="form-control mt-4">
 						</div>		
 						<div class="d-flex">
-							<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value= "${user.nickname }" class="form-control mt-4">
+							<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value="${user.nickname }" class="form-control mt-4">
 						</div>
 						<div class="d-flex">	
 							<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value= "${user.phoneNumber }"  class="form-control mt-4">
@@ -102,11 +102,11 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		var ths = $(ths);
+		//var ths = $(ths);
 		
-		ths.parents("");
+		//ths.parents("");
 		
-		var id = "id";
+		//var id = "id";
 		
 		$("#updateBtn").on("click", function(){
 			
@@ -145,7 +145,8 @@
 			//파일은 필수사항이아님 전화번호는 회원가입할땐 필수사항이 아니지만, 전화번호를 쓰게끔하는게 속편할듯.
 			
 			alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
-							//그나저나 저기 위에선 loginId는 들어오는 상황인데 왜 안들어오는지??
+			alert(email);				//그나저나 저기 위에선 loginId는 들어오는 상황인데 왜 안들어오는지??
+			alert(file);
 			var formData = new FormData();
 			
 			formData.append("id", id);//여기도 로그인id 그냥 id 로 수정
