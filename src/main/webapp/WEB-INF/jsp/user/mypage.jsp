@@ -102,6 +102,11 @@
 	</div>
 	<script>
 	$(document).ready(function(){
+		var ths = $(ths);
+		
+		ths.parents("");
+		
+		var id = "id";
 		
 		$("#updateBtn").on("click", function(){
 			
@@ -109,7 +114,7 @@
 			let password = $("#passwordInput").val();//이것도 틀림
 			let passwordConfirm = $("#passwordConfirmInput").val();			
 			let name = $("#nameInput").val();
-			//닉네임이 파라미터가 없다..
+			//닉네임이 파라미터가 없었다..
 			let nickname = $("#nicknameInput").val();
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
@@ -132,7 +137,12 @@
 				return ;
 			}
 			
-	
+			if(phoneNumber == ""){
+				alert("전화번호를 입력하세요.");
+				return ;
+			}
+			
+			//파일은 필수사항이아님 전화번호는 회원가입할땐 필수사항이 아니지만, 전화번호를 쓰게끔하는게 속편할듯.
 			
 			
 			var formData = new FormData();

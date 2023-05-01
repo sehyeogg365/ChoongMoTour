@@ -111,10 +111,10 @@
 				return ;
 			}		
 			
-			alert(id);//O
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
+			//alert(id);//O
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
 	
 			$.ajax({
 				type:"post"

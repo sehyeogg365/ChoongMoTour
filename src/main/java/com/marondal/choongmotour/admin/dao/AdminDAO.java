@@ -36,8 +36,8 @@ public interface AdminDAO {
 	
 	//비밀번호 찾기(임시 비밀번호 발급) 아이디 이메일 입력받아서
 
-	//임시 비밀번호 발급 ()
-	public Admin updatePassword(@Param("loginId")String loginId
+	//임시 비밀번호 발급 (update라서 int를 넣어야 하나 모르겠다.)
+	public int updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
 							, @Param("password") String password);
 	

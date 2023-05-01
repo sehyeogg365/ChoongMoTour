@@ -63,6 +63,13 @@
 	<script>
 	$(document).ready(function(){
 		
+		var ths = $(ths);
+		
+		ths.parents("");
+		
+		var password = "password";
+		
+		
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
@@ -82,6 +89,9 @@
 			
 			var id = "id";
 			
+			ths.parents("");
+			
+			var id = "id";
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
@@ -99,7 +109,7 @@
 
 			alert(name);
 			alert(email);
-			//alert(id);
+			alert(id);
 			
 			$.ajax({
 				type:"get"
@@ -107,7 +117,7 @@
 				, data:{"name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
 				, success:function(data){
 					if(data.result == "success"){
-						alert("아이디는 : " + data.info.id);
+						alert("아이디는 : " + data.info.loginId);
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
@@ -147,11 +157,11 @@
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email, "password" : password}
+					, data:{"loginId":id, "email":email , "password" : password}
 					, success:function(data){
 						
 						if(data.result == "success"){
-							alert("임시비밀번호는 :"+ data.info.password + "입니다." );
+							alert("임시비밀번호는 :"+ password + "입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");

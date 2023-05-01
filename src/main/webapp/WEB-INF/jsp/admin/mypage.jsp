@@ -137,6 +137,11 @@
 				return ;
 			}
 			
+			if(phoneNumber == ""){
+				alert("전화번호를 입력하세요.");
+				return ;
+			}
+			
 			var formData = new FormData();
 			
 			formData.append("loginId", loginId);

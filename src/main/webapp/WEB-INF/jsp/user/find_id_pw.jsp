@@ -64,6 +64,12 @@
 	<script>
 	$(document).ready(function(){
 		
+		var ths = $(ths);
+		
+		ths.parents("");
+		
+		var password = "password";
+		
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
@@ -82,6 +88,9 @@
 		$("#findIdBtn").on("click", function(){
 				var id = "id";
 				
+				ths.parents("");
+				
+				var id = "id";
 				let name = $("#nameInput").val();
 				let email = $("#emailInput").val();
 					
@@ -99,7 +108,7 @@
 				
 				alert(name);
 				alert(email);
-				//alert(id);
+				alert(id);
 					
 				$.ajax({
 					type:"get"
@@ -148,7 +157,7 @@
 				
 				alert(id);
 				alert(email);
-				//alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
+				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
 					
 				$.ajax({
 					type:"post"
@@ -157,7 +166,7 @@
 					, success:function(data){
 						if(data.result == "success"){
 								
-							alert("임시비밀번호는 : " + "XXX" + " 입니다." );
+							alert("임시비밀번호는 : " + password + " 입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");

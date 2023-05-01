@@ -158,11 +158,11 @@ public class AdminRestController {
 		
 		String password = (String) session.getAttribute("password");
 		
-		Admin admin = adminBO.updateTemporrayPassword(loginId, email, password);
+		int count = adminBO.updateTemporrayPassword(loginId, email, password);
 		
-		if(admin != null) {
+		if(count == 1) {
 			resultMap.put("result", "success");
-			resultMap.put("info", admin);
+			
 		} else {
 			resultMap.put("result", "fail");
 		}

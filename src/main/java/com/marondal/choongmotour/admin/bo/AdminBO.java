@@ -87,7 +87,7 @@ public class AdminBO {
 	// 비번 찾기 (임시 비밀번호 발급) 이거를 구분하지말고 한번에 하라 함. 
 
 	//임시 비밀번호 발급
-	public Admin updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
+	public int updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
 		
 		
 		//임시비밀번호 생성 알고리즘
