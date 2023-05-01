@@ -33,7 +33,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 
 			if(uri.startsWith("/user")) {//user 라는 시작하는걸로 접근할려면?
 				// 리다이렉트 
-				response.sendRedirect("/post/list/view");//이동하고픈 주소
+				response.sendRedirect("/lodging/main/view");//이동하고픈 주소
 				//다른페이지로 이동하는거를 대신 try catch 대신 throw
 				
 				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
@@ -44,11 +44,21 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			// 리스트, 글쓰기, 상세화면 페이지로 접근하려고 하면
 			// post 로 시작하는 페이지에 접근하려고 하면 	
 			// 로그인 페이지로 이동해라
-				if(uri.startsWith("/post")) {
+				if(uri.startsWith("/user/reservepage")) {//예약페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
+				
+				if(uri.startsWith("/user/dibspage")) {//찜목록페이지
+					response.sendRedirect("/user/signin/view");
+					return false;
+				}
+				
+				if(uri.startsWith("/user/reservelist")) {//예약목록페이지
+					response.sendRedirect("/user/signin/view");
+					return false;
+				}
 				
 			}
 		

@@ -30,8 +30,10 @@
 				
 				
 				
-				<div class="text-center">
-						<img class="lodging-profile" width="500" src="${lodging.imagePath } " alt="호텔">
+				<div class="lodging-profile2 d-flex align-items-center">
+						<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
+				
+				
 				</div><br>
 				
 				<div class="text-center">
