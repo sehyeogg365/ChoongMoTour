@@ -55,7 +55,7 @@
 							</div>
 							
 							<div class="dibs-card-body">
-								<div class="">ㅇㅇ호텔</div>
+								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 								<div class="">3성급</div>
 							</div>
@@ -67,7 +67,7 @@
 							</div>							
 					
 							<div class="dibs-card-body">
-								<div class="">ㅇㅇ호텔</div>
+								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 								<div class="">3성급</div>
 							</div>
@@ -79,7 +79,7 @@
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
 							<div class="dibs-card-body">
-								<div class="">ㅇㅇ호텔</div>
+								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 								<div class="">3성급</div>
 							</div>
@@ -91,7 +91,7 @@
 							</div>							
 							
 							<div class="dibs-card-body">
-								<div class="">ㅇㅇ호텔</div>
+								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 								<div class="">3성급</div>
 							</div>

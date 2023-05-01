@@ -59,7 +59,7 @@
 								
 								<div class="">3성급</div>
 								
-								<div class="">
+								<div class="text-center">
 									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
 								</div>
 							</div>
@@ -68,7 +68,8 @@
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<div class="reservation-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							<div class="reservation-card-body">
+							</div>							
+							<div class="reservation-card-body">
 								<div class="">ㅇㅇ호텔</div>
 								
 								<div class="">3성급</div>

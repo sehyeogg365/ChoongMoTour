@@ -87,31 +87,47 @@ public class AdminBO {
 	// 비번 찾기 (임시 비밀번호 발급) 이거를 구분하지말고 한번에 하라 함. 
 
 	//임시 비밀번호 발급
-	public int updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
+	public Admin updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
 		
 		
 		//임시비밀번호 생성 알고리즘
 		Random random = new Random();
 		
-		int index = 0;
-		char[] charSet = new char[] {
-				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-	                '!', '@', '#', '$', '%', '^', '&'
-				
-		};
+		
+//		char[] charSet = new char[] {
+//				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+//	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+//	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+//	                '!', '@', '#', '$', '%', '^', '&'
+//				
+//		};
+		
+		int[] arr = new int[6];
 		
 		int i = 0;
 		
-		while ( i < charSet.length ) {
+		while ( i < arr.length) {
 			
-			double rd = random.nextDouble();
-			index = (int) (charSet.length * rd);
+			int rNum = random.nextInt(10) + 1;
+			int check = 1;
+			int j = 0; 
 			
-			password = password + charSet[index];
+			while( j < i ) {
+				if (rNum ==arr[j]) {
+					check = -1;
+				}
+				j++;
+			}
+			
+			if(check == 1) {
+				arr[i] = rNum;
+				i++;
+			}
+			
+		}
 		
-			
+		for (int j = 0; j < arr.length; j++) {
+			password += arr[j];
 		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.

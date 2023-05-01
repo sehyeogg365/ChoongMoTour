@@ -40,7 +40,7 @@ public interface AdminDAO {
 	//비밀번호 찾기(임시 비밀번호 발급) 아이디 이메일 입력받아서
 
 	//임시 비밀번호 발급 ()
-	public int updatePassword(@Param("loginId")String loginId
+	public Admin updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
 							, @Param("password") String password);
 	

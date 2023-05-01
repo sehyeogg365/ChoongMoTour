@@ -159,16 +159,14 @@ header{
 	
 	width:300px;
 	height:400px;
-	
+	border: 1px
 }
-
-
-
-
 
 .dibs-card-list >.dibs-card{
 	width: 350px;
     height: 400px; 
+    border: 1px solid;
+    border-radius: 8px;
 }
 
 .dibs-profile >.profile{
@@ -181,6 +179,7 @@ header{
 .dibs-card-list >.dibs-card-body{
 	width: 350px;
     height: 200px; 
+    
 }
 
 
@@ -189,12 +188,14 @@ header{
 .reservation-card-list >.reservation-card{
 	width: 350px;
     height: 400px; 
+    border: 1px solid;
+    border-radius: 8px;
+}
+.reservation-card>.reservation-profile{
+	width: 350px;
+	height:250px;
 }
 
-.reservation-card-list > .reservation-card-body{
-	width: 350px;
-    height: 200px; 
-}
 
 .reservation-profile >.profile{
 	width: 350;
@@ -202,6 +203,12 @@ header{
     object-fit: cover;
 	margin : auto;
 }
+.reservation-card-list > .reservation-card-body{
+	width: 350px;
+    height: 150px; 
+}
+
+
 
 
 

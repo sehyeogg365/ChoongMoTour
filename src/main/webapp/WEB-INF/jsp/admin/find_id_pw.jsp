@@ -151,7 +151,7 @@
 					, success:function(data){
 						
 						if(data.result == "success"){
-							alert("임시비밀번호는 : 123456789a 입니다." );
+							alert("임시비밀번호는 :"+ data.info.password + "입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");

@@ -148,23 +148,23 @@ public class AdminRestController {
 	
 	//비밀번호 찾기 및 임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
-	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
+	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
 										, HttpSession session
 									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		
-		Map<String, String> resultMap = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
 		
 		String password = (String) session.getAttribute("password");
 		
-		int count = adminBO.updateTemporrayPassword(loginId, email, password);
+		Admin admin = adminBO.updateTemporrayPassword(loginId, email, password);
 		
-		if(count == 0) {
-			resultMap.put("result", "fail");
-		} else {
+		if(admin != null) {
 			resultMap.put("result", "success");
-		
+			resultMap.put("info", admin);
+		} else {
+			resultMap.put("result", "fail");
 		}
 
 		
