@@ -86,6 +86,14 @@
 	<script>
 	 $(document).ready(function() {
 		 
+		 $(".modal-btn").on("click", function(){
+			 
+			 
+			 let id = $(this).data("room-id");
+			 
+			 
+		 });
+		 
 		 
 		 $(".reserve-btn").on("click", function(){
 			
