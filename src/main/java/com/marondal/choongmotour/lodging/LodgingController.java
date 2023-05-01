@@ -59,7 +59,6 @@ public class LodgingController {
 	@GetMapping("/room/view")
 	public String room(Model model
 						, @RequestParam("id") int id //설마 이것땜에 객실리스트 안들어가지나?
-
 						) {
 
 	
