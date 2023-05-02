@@ -59,7 +59,7 @@
                  
 				
 				<div class="text-center">
-					<button id="createBtn"class="btn btn-primary" data-lodging-id ="${lodging.id }"type="button">입력 완료</button>
+					<button id="createBtn"class="btn btn-primary" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 				</div>
 					
 					
@@ -75,11 +75,15 @@
 		
 		//셀렉터에 대한 체인지 이벤트는 사실상 필요없다고 함 왜냐면 어떤걸 선택했는지만 확인하면 되기 때문에 이안에서 바꾸거나 그러지 않으므로
 			
+		var ths = $(ths);
 		
+		ths.parents("");
+		
+		var id = "id";
 		
 		$("#createBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
+			let id = $(this).data("logding-id");
 			
 			let roomName = $("#roomNameInput").val();
 			
@@ -108,9 +112,13 @@
 				return ;
 			}
 		
-			alert(id);
+			alert(roomName);
+			alert(areaName);
+			alert(level);
+			alert(file);
 			
 			var formData = new FormData();
+			
 			
 			formData.append("id", id);
 			formData.append("roomName", roomName);
