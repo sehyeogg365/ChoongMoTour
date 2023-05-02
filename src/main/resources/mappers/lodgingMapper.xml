@@ -159,6 +159,7 @@
  		, `content`
  		, `createdAt`	
  		, `updatedAt`
+ 		
 	)
 	VALUES
 	(

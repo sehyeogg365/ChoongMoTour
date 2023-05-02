@@ -55,7 +55,7 @@
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
-						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  </div>
                  
@@ -71,7 +71,7 @@
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">
-						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -88,7 +88,7 @@
 	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -144,7 +144,7 @@
 			
 			//let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			//이것도 굳이 빼준다.
-			let lodgingId = $(this).data("lodging-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
+			let id = $(this).data("room-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
 			
 			let price = $("#singlepriceInput").val();
 			
@@ -179,6 +179,8 @@
 			var formData = new FormData();
 			
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			
+			formData.append("id", id);
 			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
@@ -222,8 +224,8 @@
 		
 		$("#doublecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			 
-			
-			let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
+			//let lodgingId = $(this).data("lodging-id");
 			
 			let price = $("#doublepriceInput").val();
 			
@@ -253,7 +255,7 @@
 			
 			var formData = new FormData();
 			
-			//formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
@@ -296,8 +298,9 @@
 		
 		$("#twincreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
-			let lodgingId = $(this).data("lodging-id");
-		
+			//let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("room-id");
+			
 			let price = $("#twinpriceInput").val();
 			
 			let size = $("#sizeSelector").val();
@@ -327,6 +330,8 @@
 			var formData = new FormData();
 			
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			
+			formData.append("id", id);
 			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);

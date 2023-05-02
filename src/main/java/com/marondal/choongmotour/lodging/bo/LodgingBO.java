@@ -94,9 +94,9 @@ public class LodgingBO {
 	
 	//객실추가
 	
-	public int addRoom(int lodgingId, int price, String size, String content, MultipartFile file) {
+	public int addRoom(int id, int lodgingId, int price, String size, String content, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(lodgingId, file);//이거 이래도 되는지???
+		String imagePath = FileManagerService.saveFile(id, file);//이거 이래도 되는지???
 		
 		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
 	}

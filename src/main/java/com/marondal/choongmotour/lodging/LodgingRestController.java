@@ -103,20 +103,20 @@ public class LodgingRestController {
 	// 객실 추가 api
 	@PostMapping("/room/create")
 	public Map<String, String>roomCreate(
-			
-			 @RequestParam("lodgingId") int lodgingId
+			@RequestParam("id") int id
+			, @RequestParam("lodgingId") int lodgingId
 			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
-			, @RequestParam(value="file", required=false) MultipartFile file
-			//, HttpSession session
+			, @RequestParam(value="file", required=false) MultipartFile file 
+			
 			){
 		
 		Map<String, String> resultMap = new HashMap<>();
 
-		//int adminId = (Integer)session.getAttribute("adminId"); 이것도 없이 한번진행해보기
 		
-		int count = lodgingBO.addRoom(lodgingId, price, size, content, file);
+		
+		int count = lodgingBO.addRoom(id, lodgingId, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		
