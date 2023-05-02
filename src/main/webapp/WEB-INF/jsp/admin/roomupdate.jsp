@@ -78,11 +78,11 @@
 	<script>
 	$(document).ready(function(){
 		
-		var ths = $(ths);
+		//var ths = $(ths);
 		
-		ths.parents("");
+		//ths.parents("");
 		
-		var id = "id";
+		//var id = "id"; // 이거굳이 넣어야하나?
 		
 		
 		

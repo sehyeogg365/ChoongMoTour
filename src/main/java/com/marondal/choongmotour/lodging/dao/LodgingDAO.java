@@ -32,7 +32,7 @@ public interface LodgingDAO {
 	//-------관리자 페이지---------
 	//숙소 추가
 	public int insertLodging(
-							@Param("adminId") int adminId
+							@Param("id") int id
 							, @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
