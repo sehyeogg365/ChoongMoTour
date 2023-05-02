@@ -95,7 +95,7 @@ public class AdminRestController {
 				resultMap.put("result", "success");
 				
 				//마이페이지 안들어가는원인이 세션에서 id 추가 안해서????
-
+			
 				session.setAttribute("adminId", admin.getId());//여기도
 				session.setAttribute("loginId", admin.getLoginId());
 				session.setAttribute("adminName", admin.getName());//여기부분 필요한가 질문
