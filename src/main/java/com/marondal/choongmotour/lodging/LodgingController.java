@@ -29,7 +29,7 @@ public class LodgingController {
 	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
 	@GetMapping("/main/view")
-	public String mainPage(Model model) {//지역 나타내기 및 id 
+	public String mainPage() {//지역 나타내기 및 id 
 		
 		
 		
