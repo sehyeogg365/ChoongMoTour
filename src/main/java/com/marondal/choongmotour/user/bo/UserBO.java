@@ -145,8 +145,9 @@ public class UserBO {
 		String imagePath = FileManagerService.saveFile(id, file);
 		
 		//여기서 한번더 암호화하면 로그인할때 암호화 여기서 한번더 암호화해서 두번 암호화 하는 꼴 그래서 아예 다른 비밀번호로 바뀌고 재로그인할경우 로그인 안되는현상이 발견
+		String ecryptPassword = EncryptService.md5(password);
 		
-		return userDAO.updateUser(id, password, name, email, phoneNumber, nickname, imagePath);
+		return userDAO.updateUser(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

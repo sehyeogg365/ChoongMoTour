@@ -156,8 +156,10 @@ public class AdminBO {
 		String imagePath = FileManagerService.saveFile(id, file);
 		
 		 //여기서 한번더 암호화하면 로그인할때 암호화 여기서 한번더 암호화해서 두번 암호화 하는 꼴 그래서 아예 다른 비밀번호로 바뀌고 재로그인할경우 로그인 안되는현상이 발견
+		//암호화는 시키는게 맞다. 대신에 저기 마이페이지 창에 밸류값 입력하면 두번 암호화되는 꼴이다 라는 뜻.
+		String ecryptPassword = EncryptService.md5(password);
 		
-		return adminDAO.updateAdmin(id, password, name, email, phoneNumber, nickname, imagePath);
+		return adminDAO.updateAdmin(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}

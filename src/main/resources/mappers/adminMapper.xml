@@ -131,7 +131,8 @@
   		, `updatedAt` = now()
 
   	WHERE
-  		`id` = #{id};
+  		`id` = #{id}
+  		;
   </update>
 
   
