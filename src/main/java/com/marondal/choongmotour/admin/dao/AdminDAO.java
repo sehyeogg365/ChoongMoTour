@@ -31,7 +31,8 @@ public interface AdminDAO {
 	public List<Admin> selectAdminList(@Param("loginId") String loginId);
 	
 	//관리자 조회(아이디찾기)
-	public List<Admin> selectAdminByNameEmail(@Param("name") String name
+	public Admin selectAdminByNameEmail( @Param("loginId") String loginId
+										, @Param("name") String name
 										, @Param("email") String email);
 	
 	//비밀번호 찾기(임시 비밀번호 발급) 아이디 이메일 입력받아서

@@ -142,7 +142,7 @@ public class UserRestController {
 		
 		Map<String, Object> resultMap = new HashMap<>();
 		
-		String password = (String) session.getAttribute("password");
+		String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
 		
 		
 		

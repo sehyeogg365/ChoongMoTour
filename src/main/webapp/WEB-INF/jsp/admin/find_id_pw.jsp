@@ -36,15 +36,15 @@
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
-				</div>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn" data-admin-id="${user.loginId }" >Next</button>
+				</div>																		
 				
-				<div class="find-pw d-none" id="findPasswordInput">
+				<div class="find-pw d-none" id="findPasswordInput">			
 					<label>비밀번호 찾기</label>
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn">Next</button>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-admin-password="${user.password }">Next</button>
 				
 				</div>
 				
@@ -62,12 +62,7 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		
-		var ths = $(ths);
-		
-		ths.parents("");
-		
-		var password = "password";
+	
 		
 		
 		// 라디오 버튼 선택에 따른 인풋 변경
@@ -93,7 +88,7 @@
 			
 			//var id = "id";
 			
-			
+			let id = $(this).data("admin-id");
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
@@ -116,7 +111,7 @@
 			$.ajax({
 				type:"get"
 				, url:"/admin/find_id"
-				, data:{"name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
+				, data:{"loginId":id, "name": name, "email" : email }//여기실수 뒤에 하나, 찍음				
 				, success:function(data){
 					if(data.result == "success"){
 						alert("아이디는 : " + data.info.loginId);
@@ -135,7 +130,7 @@
 		
 		
 		$("#findPwBtn").on("click", function(){
-			
+			let password =  $(this).data("admin-password");
 			let id = $("#loginIdInput").val();
 			let email = $("#email2Input").val();
 			//패스워드를 입력받지않는데 이렇게 받아올수가 있나?
@@ -159,11 +154,12 @@
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email, "password":password}
 					, success:function(data){
 						
 						if(data.result == "success"){
-							alert("임시비밀번호는 :"+ data.info.password + "입니다." );
+							//console.log(data.info);
+							alert("임시비밀번호는 :"+ data.info + "입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");

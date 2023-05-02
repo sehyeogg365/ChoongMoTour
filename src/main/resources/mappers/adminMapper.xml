@@ -77,8 +77,7 @@
  
  <select id="selectAdminByNameEmail" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
  	SELECT <!-- 우선적으로 매퍼에서 부터 아이디가 필요없다고 함 이름, 이메일 이 두개만 있으면 된다 하시는데. -->
-  		`name`
-  		,`email` 
+  		`loginId`
  	FROM
  		`admin`
  	WHERE

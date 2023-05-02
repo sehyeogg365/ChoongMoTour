@@ -114,7 +114,8 @@ public class AdminRestController {
 
 	//아이디 찾기 api
 	@GetMapping("/find_id")
-	public Map <String, Object> findId( @RequestParam("name") String name
+	public Map <String, Object> findId( @RequestParam("loginId") String loginId
+										, @RequestParam("name") String name
 										, @RequestParam("email") String email
 										//, Model model
 										){
@@ -126,11 +127,11 @@ public class AdminRestController {
 
 		Map<String, Object> resultMap = new HashMap<>();
 		
-		List<Admin> adminList = adminBO.getAdminByNameEmail(name, email);//이것도 int 에서 admin으로 Admin에서 List로
+		Admin admin = adminBO.getAdminByNameEmail(loginId, name, email);//이것도 int 에서 admin으로 Admin에서 List로
 		
-		if(adminList != null) {
+		if(admin != null) {
 			resultMap.put("result", "success");
-			resultMap.put("info", adminList);
+			resultMap.put("info", admin);
 		
 			// 여기서 id를 풋 하란뜻인데..
 			
@@ -158,11 +159,11 @@ public class AdminRestController {
 		
 		int count = adminBO.updateTemporrayPassword(loginId, email, password);
 		
-		if(count == 1) {
-			resultMap.put("result", "success");
+		if(count == 0) {
 			
-		} else {
 			resultMap.put("result", "fail");
+		} else {
+			resultMap.put("result", "success");
 			resultMap.put("info", password);
 		}
 

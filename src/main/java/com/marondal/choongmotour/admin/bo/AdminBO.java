@@ -77,9 +77,9 @@ public class AdminBO {
 	}
 	
 	//아이디 찾기
-	public List<Admin> getAdminByNameEmail(String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
+	public Admin getAdminByNameEmail(String loginId, String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
 
-		return adminDAO.selectAdminByNameEmail(name, email);
+		return adminDAO.selectAdminByNameEmail(loginId, name, email);
 	
 	}
 	
@@ -94,40 +94,35 @@ public class AdminBO {
 		Random random = new Random();
 		
 		
-//		char[] charSet = new char[] {
-//				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-//	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-//	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-//	                '!', '@', '#', '$', '%', '^', '&'
-//				
-//		};
 		
-		int[] arr = new int[6];
+		char[] charSet = new char[] {
+				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+		};
 		
 		int i = 0;
 		
-		while ( i < arr.length) {
+		while ( i < charSet.length ) {
 			
-			int rNum = random.nextInt(10) + 1;
+			int rNum = random.nextInt(charSet.length) + 1;//10개중 하나 ~개중 하나 이거를 의미한다. 그렇다면..
 			int check = 1;
 			int j = 0; 
 			
 			while( j < i ) {
-				if (rNum ==arr[j]) {
+				if (rNum == charSet[j]) {//해당 배열에 문자열 하나씩 대입
 					check = -1;
 				}
 				j++;
 			}
 			
 			if(check == 1) {
-				arr[i] = rNum;
+				charSet[i] = (char) rNum;
 				i++;
 			}
+		
 			
 		}
-		
-		for (int j = 0; j < arr.length; j++) {
-			password += arr[j];
+		for (int j = 0; j < charSet.length; j++) {
+			password += charSet[j];
 		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
