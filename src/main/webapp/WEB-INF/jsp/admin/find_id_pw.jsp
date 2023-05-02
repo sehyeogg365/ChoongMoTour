@@ -87,11 +87,13 @@
 		
 		$("#findIdBtn").on("click", function(){
 			
-			var id = "id";
+			//var id = "id";
 			
-			ths.parents("");
+			//ths.parents("");
 			
-			var id = "id";
+			//var id = "id";
+			
+			
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			
@@ -161,7 +163,7 @@
 					, success:function(data){
 						
 						if(data.result == "success"){
-							alert("임시비밀번호는 :"+ password + "입니다." );
+							alert("임시비밀번호는 :"+ data.info.password + "입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");

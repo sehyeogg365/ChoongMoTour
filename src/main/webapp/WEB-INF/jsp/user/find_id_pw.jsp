@@ -64,11 +64,11 @@
 	<script>
 	$(document).ready(function(){
 		
-		var ths = $(ths);
+		//var ths = $(ths);
 		
-		ths.parents("");
+		//ths.parents("");
 		
-		var password = "password";
+		//var password = "password";
 		
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {

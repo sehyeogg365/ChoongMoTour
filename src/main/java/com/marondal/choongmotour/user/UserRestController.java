@@ -90,6 +90,7 @@ public class UserRestController {
 					//여기서 id 불러올까? 이미 있는데??
 			session.setAttribute("userId", user.getId());//id, 네임, 닉네임, 이미지 값을 가져오기 위해 세션
 			session.setAttribute("loginId", user.getLoginId());
+			session.setAttribute("password", user.getPassword()); //비번도 불러와보자.
 			session.setAttribute("userName", user.getName());
 			session.setAttribute("userNickname", user.getNickname());
 			session.setAttribute("userImagePath", user.getImagePath());//세션 값으로 불러오는것들을 최소화 할것 안그러면 서버 과부하가 오니 폰넘버, 이메일은 그 수정페이지에서만 사용하기에 그런건 db에서 불러오면 됨 
@@ -135,13 +136,13 @@ public class UserRestController {
 	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	
 	@PostMapping("/temppassword")
-	public Map <String, String> passwordUpdate(@RequestParam("loginId") String loginId
+	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
 										, HttpSession session
 										//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		
-		Map<String, String> resultMap = new HashMap<>();
+		Map<String, Object> resultMap = new HashMap<>();
 		
 		String password = (String) session.getAttribute("password");
 		
@@ -151,6 +152,7 @@ public class UserRestController {
 			resultMap.put("result", "fail");
 		} else {
 			resultMap.put("result", "success");
+			resultMap.put("info", password);
 		}
 	
 		return resultMap;

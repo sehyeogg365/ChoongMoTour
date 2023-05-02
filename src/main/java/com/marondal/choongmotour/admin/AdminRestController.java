@@ -98,6 +98,7 @@ public class AdminRestController {
 			
 				session.setAttribute("adminId", admin.getId());//여기도
 				session.setAttribute("loginId", admin.getLoginId());
+				session.setAttribute("password", admin.getPassword()); //비번도 불러와보자.
 				session.setAttribute("adminName", admin.getName());//여기부분 필요한가 질문
 				session.setAttribute("adminNickname", admin.getNickname());
 				session.setAttribute("adminImagePath", admin.getImagePath());
@@ -162,6 +163,7 @@ public class AdminRestController {
 			
 		} else {
 			resultMap.put("result", "fail");
+			resultMap.put("info", password);
 		}
 
 		
