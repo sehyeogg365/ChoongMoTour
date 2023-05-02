@@ -107,9 +107,9 @@ public class UserBO {
 			password += charSet[j];
 		}
 		
-		//String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
+		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return userDAO.updatePassword(loginId, email, password);
+		return userDAO.updatePassword(loginId, email, ecryptPassword);
 		
 	}
 	
