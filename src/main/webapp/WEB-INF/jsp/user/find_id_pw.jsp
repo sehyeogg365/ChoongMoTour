@@ -37,7 +37,7 @@
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn">Next</button>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn" data-user-id="${user.loginId }">Next</button>
 				</div>
 				
 				<div class="find-pw d-none" id="findPasswordInput">
@@ -45,7 +45,7 @@
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-user-id="${user.id }">Next</button>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-user-password="${user.password }">Next</button>
 				
 				</div>
 				
@@ -64,12 +64,7 @@
 	<script>
 	$(document).ready(function(){
 		
-		//var ths = $(ths);
-		
-		//ths.parents("");
-		
-		//var password = "password";
-		
+
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
@@ -86,10 +81,12 @@
 		});
 			
 		$("#findIdBtn").on("click", function(){
-			
+				
+				let loginId = $(this).data("user-id");//????
 				let name = $("#nameInput").val();
 				let email = $("#emailInput").val();
 					
+				
 				if(name == ""){
 					alert("아이디를 입력하세요.");
 					return;
@@ -109,13 +106,14 @@
 				$.ajax({
 					type:"get"
 					, url:"/user/find_id"
-					, data:{"name": name, "email" : email}
+					, data:{"loginId": loginId, "name": name, "email" : email}
 					, success:function(data){
 						if(data.result == "success"){
 							
-							alert("아이디는 : " + data.info.loginId );
-							
+							//console.log(data.info);
 							location.reload();
+							alert("아이디는 : " + data.info.loginId);
+							
 						} else {
 							alert("이름/이메일이 일치하지 않습니다.");
 							
@@ -132,7 +130,8 @@
 			 
 			 
 		$("#findPwBtn").on("click", function(){
-					
+				
+				let password = $(this).data("user-password");//??
 				let id = $("#loginIdInput").val();
 				let email = $("#email2Input").val();
 					
@@ -158,12 +157,12 @@
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "email":email}
+					, data:{"loginId":id, "email":email, "password":password}
 					, success:function(data){
 						if(data.result == "success"){
-								
-							alert("임시비밀번호는 : " + data.info.password + " 입니다." );
-							location.reload();
+							console.log(data.info);	
+							//alert("임시비밀번호는 : " + data.info.password + " 입니다." );
+							//location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");
 						}

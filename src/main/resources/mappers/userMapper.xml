@@ -63,10 +63,9 @@
   		AND `password` = #{password};
   </select>
   
-  <select id ="selectUserByNameEmail" resultType="String" parameterType="map">
+  <select id ="selectUserByNameEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
   	SELECT
-  		`name`
-  		,`email`<!-- 실수로 ` 하나 빼먹는 실수로 500뜸 --> 
+  		`loginId`<!-- 실수로 ` 하나 빼먹는 실수로 500뜸 --> 
   	FROM
   		`user`
   	WHERE 
@@ -74,20 +73,6 @@
   		AND 
   		`email` = #{email};
   </select>
-
- <!-- 비번찾기 -->
- 
- <select id = "selectPasswordByIdEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
-  SELECT
-  	`loginId`
-  	`email`
-  FROM
-  	`user`
-  WHERE
-  	`loginId` = #{loginId}
-  	AND
-  	`email` = #{email};
-</select>
 
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
   <update id = "updatePassword" parameterType="map">
@@ -119,6 +104,7 @@
 		`id` = #{id};
  </select>
   
+ 
   <!-- 수정 -->
   <update id ="updateUser" parameterType="map">
   	UPDATE

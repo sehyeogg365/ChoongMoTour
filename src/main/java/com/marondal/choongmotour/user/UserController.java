@@ -49,20 +49,8 @@ public class UserController {
 		return "user/find_id_pw";
 	}
 	
-	//아이디 찾기 결과창 
-//	@GetMapping("/find_id/view")
-//	public String findIdPage(Model model
-//							, @RequestParam("name") String name
-//							, @RequestParam("email") String email
-//							
-//						) {
-//		
-//		List<User> userList = userBO.getUserByNameEmail(name, email);
-//	
-//		model.addAttribute("userList", userList);
-//		
-//		return "user/findidpage";
-//	}
+
+
 	
 	@GetMapping("/mypage/view")//숙소 수정 잘 참조 해보기
 	public String myPage(Model model

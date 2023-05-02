@@ -57,20 +57,18 @@ public class UserBO {
 	}
 	
 	//아이디 찾기
-	public List<User> getUserByNameEmail(String name, String email) {
+	public User getUserByNameEmail(String loginId, String name, String email) {
 		
-		return userDAO.selectUserByNameEmail(name, email);
+		return userDAO.selectUserByNameEmail(loginId, name, email);
 	
-	}
-	
-	// 비번 찾기 
-	public User getPasswordByIdEmail(String loginId, String email) {
-		
-		
-		return userDAO.selectPasswordByIdEmail(loginId, email);
 	}
 
-	// 임시 비밀번호 발급
+	
+	//비밀번호 어차피 암호화되있어서 조회는 무의미하다 보면된다고 한다.
+
+	
+	
+	// 임시 비밀번호 발급 및 암호화
 	public int updateTemporrayPassword(String loginId, String email, String password) {
 	
 		//String password = new StringBuffer();
@@ -79,38 +77,38 @@ public class UserBO {
 		Random random = new Random();
 		
 		//int index = 0;
-//		char[] charSet = new char[] {
-//				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-//	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-//	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-//	                '!', '@', '#', '$', '%', '^', '&'
-//				
-//		};
-		int[] arr = new int[6];
+		char[] charSet = new char[] {
+				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
+	                '!', '@', '#', '$', '%', '^', '&'
+				
+		};
+//		int[] arr = new int[6];
 		int i = 0;
 		
-		while ( i < arr.length ) {
+		while ( i < 5 ) {
 			
-			int rNum = random.nextInt(10) + 1;
+			int rNum = random.nextInt(charSet.length) + 1;//10개중 하나 ~개중 하나 이거를 의미한다. 그렇다면..
 			int check = 1;
 			int j = 0; 
 			
 			while( j < i ) {
-				if (rNum ==arr[j]) {
+				if (rNum == charSet[j]) {//해당 배열에 문자열 하나씩 대입
 					check = -1;
 				}
 				j++;
 			}
 			
 			if(check == 1) {
-				arr[i] = rNum;
+				charSet[i] = (char) rNum;
 				i++;
 			}
 		
 			
 		}
-		for (int j = 0; j < arr.length; j++) {
-			password += arr[j];
+		for (int j = 0; j < 5; j++) {
+			password += charSet[j];
 		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.

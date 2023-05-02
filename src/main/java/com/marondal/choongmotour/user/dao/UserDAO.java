@@ -27,15 +27,11 @@ public interface UserDAO {
 	
 	//사용자 조회(아이디찾기)
 	
-	public List<User> selectUserByNameEmail(@Param("name") String name 
-						, @Param("email") String email);
+	public User selectUserByNameEmail( @Param("loginId")String loginId
+										, @Param("name") String name 
+										, @Param("email") String email);
 	
 
-	
-	//비번 찾기
-	public User selectPasswordByIdEmail(@Param("loginId") String loginId
-										, @Param("email") String email);	
-	
 	//임시비밀번호 발급
 	public int updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
