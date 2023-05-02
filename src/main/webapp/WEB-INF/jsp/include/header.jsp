@@ -40,7 +40,7 @@
 				
 			  	<div class="dropdown-divider"></div>
 			    <a class="dropdown-item" href="/user/mypage/view?id=${userId}">MyPage</a>
-			    <a class="dropdown-item" href="/user/reservelist/view?id=${userId}">ReservePage</a>
+			    <a class="dropdown-item" href="/lodging/reservelist/view?id=${userId}">ReservePage</a>
 			    <a class="dropdown-item" href="/user/signout/">로그아웃</a>
 			    
 			   

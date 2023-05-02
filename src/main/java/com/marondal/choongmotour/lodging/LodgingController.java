@@ -76,7 +76,7 @@ public class LodgingController {
 	
 	
 	//찜목록
-	@GetMapping("/dib/view")
+	@GetMapping("/dibspage/view")
 	public String dibsPage() {
 		
 		
@@ -88,8 +88,17 @@ public class LodgingController {
 	
 	//예약페이지 
 	@GetMapping("/reservation/view")
-	public String reservePage() {
+	public String reservePage(Model model
+			, int id) {
 		
+		Lodging lodging = lodgingBO.getLodging(id);
+		model.addAttribute("lodging", lodging);
+		
+		Room room = lodgingBO.getRoom(id);
+		model.addAttribute("room", room);
+		
+		User user = userBO.getUserInfo(id);
+		model.addAttribute("user", user);
 		
 		return "lodging/reservepage";
 		

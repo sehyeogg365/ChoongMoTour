@@ -30,8 +30,8 @@
 			
 				<div class="reservepagecontents ">
 					
-					<div class=""><h2>ㅇㅇ호텔</h2></div><br>
-					<div class=""><h3>더블 룸</h3></div>
+					<div class=""><h2>${lodging.roomName }</h2></div><br>
+					<div class=""><h3>${room.size }</h3></div>
 					
 					<div class="d-flex mt-3">
 						<div class="" >체크인 2023-05-01 15:00</div>~
@@ -40,11 +40,11 @@
 					</div>
 					
 					<div class = "">
-						<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value = "${user.name}" placeholder="이름" class="form-control mt-4 ">
-						<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 ">
+						<label class="col-4 mt-4">${user.name }</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control mt-4 ">
+						<label class="col-4 mt-4">${user.phoneNumber }</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" class="form-control mt-4 ">
 					</div>
 					<hr>
-					<label class="col-4 mt-4">총 결제 금액 </label> <strong>~~원</strong><!-- 이것도 fmt활용해보기 -->
+					<label class="col-4 mt-4">총 결제 금액 </label> <strong>${room.price }원</strong><!-- 이것도 fmt활용해보기 -->
 					
 					
 					<hr>

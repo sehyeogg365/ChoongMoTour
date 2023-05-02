@@ -66,7 +66,7 @@
 							
 						<div class="d-flex">
 							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "${user.password }" class="form-control mt-4">
-						</div>
+						</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
 						<div class="d-flex">
 							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= "${user.password }"  class="form-control mt-4">
 						</div>
