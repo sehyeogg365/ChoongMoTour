@@ -150,12 +150,10 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//여기도 로그인id 그냥 id 로 수정
-			formData.append("password", password);
-			formData.append("name", name);
+			formData.append("password", password);			formData.append("name", name);
 			formData.append("nickname", nickname);
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
-			formData.append("email", email);
 			formData.append("file", file.files[0]);
 			
 			$.ajax({

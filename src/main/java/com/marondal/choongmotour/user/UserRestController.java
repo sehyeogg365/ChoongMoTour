@@ -173,7 +173,7 @@ public class UserRestController {
 		
 		int count = userBO.updateUser(id, password, name, email, phoneNumber, nickname, file);
 	
-		if(count == 1) {
+		if(count == 1) {// 업데이트하는 행의 갯수 
 			resultMap.put("result", "success");
 			
 		} else {

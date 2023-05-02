@@ -152,7 +152,6 @@
 			formData.append("nickname", nickname);
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
-			formData.append("email", email);
 			formData.append("file", file.files[0]);
 			
 			$.ajax({
