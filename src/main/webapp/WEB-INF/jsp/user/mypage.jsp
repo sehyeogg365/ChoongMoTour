@@ -31,10 +31,10 @@
 				
 			
 					<div>
-						<h3><a href="/user/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
+						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
-						<h3><a href="/user/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h2>
+						<h3><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h2>
 					</div>
 					<div>
 						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>

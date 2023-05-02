@@ -74,7 +74,40 @@ public class LodgingController {
 		return "lodging/room";
 	}
 	
-	//관리자 페이지 입력,수정,삭제 기능 관리자페이지에서 진행되고 로징 기능이긴해도 아무래도 경로는 Lodging이아닌 Admin에다가 하는게 자연스러운듯
+	
+	//찜목록
+	@GetMapping("/dib/view")
+	public String dibsPage() {
+		
+		
+		return "lodging/dibspage";
+		
+		
+	}
+	
+	
+	//예약페이지 
+	@GetMapping("/reservation/view")
+	public String reservePage() {
+		
+		
+		return "lodging/reservepage";
+		
+		
+	}
+	
+	//예약목록
+	@GetMapping("/reservelist/view")
+	public String reserveListPage() {
+		
+		
+		return "lodging/reservelist";
+		
+		
+	}
+	
+	
+	
 	
 
 	
