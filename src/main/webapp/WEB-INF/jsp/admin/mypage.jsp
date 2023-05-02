@@ -153,9 +153,9 @@
 				alert("전화번호를 입력하세요.");
 				return ;
 			}
-			alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
-			alert(email);
-			alert(file);
+			//alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
+			//alert(email);
+			//alert(file);
 			var formData = new FormData();
 			
 			formData.append("id", id);

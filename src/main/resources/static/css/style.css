@@ -177,9 +177,13 @@ header{
 	width:650px;
 }
 
-.info-modal{
+.info-modal.modal-center{
+	text-align:center;
 	
-	
+}
+
+.info-modal-dialog.modal-center{
+	display:inline-block;
 }
 
 .dibs-card-list >.dibs-card{

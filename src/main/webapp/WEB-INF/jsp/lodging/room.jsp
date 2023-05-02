@@ -64,8 +64,8 @@
 							<div class="ml-4">${room.size }</div>
 							<div class="mt-3 ml-4">${room.price }원</div>
 							
-							<div class = "buttonlist text-center">
-							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11" data-room-id="${room.id }">상세정보</button><br>
+							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
+							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal" data-room-id="${room.id }">상세정보</button><br>
 							<a href="/lodging/reservation/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
 							</div>
 						</div>
@@ -83,10 +83,12 @@
 		</section>
 		
 		<!-- Button trigger modal -->
-	
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+		  Launch demo modal
+		</button>
 		
-		<!-- Modal 도 댓글달기-->
-		<div class="info-modal fade" id="moreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<!-- Modal 도 댓글달기-->											<!-- 모달사이즈 -->
+		<div class="info-modal fade " id="moreModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		       <div class="modal-header">
@@ -101,7 +103,7 @@
 		      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 		      <div class="modal-footer">
         
-        		<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
       		  </div>
 		   
 		    </div>
@@ -113,6 +115,13 @@
 	</div>
 	<script>
 	 $(document).ready(function() {
+		 
+		 $("#closeBtn").on("click", function(){
+			
+			 $('#moreModal').modal('hide');
+			 
+		 });
+		 
 		 
 		 $(".info-modal-btn").on("click", function(){
 			 
