@@ -111,7 +111,7 @@
 
 			alert(name);
 			alert(email);
-			alert(id);
+	
 			
 			$.ajax({
 				type:"get"
@@ -154,12 +154,12 @@
 			
 			alert(id);
 			alert(email);
-			alert(password);//이렇게 패스워드 까지 넣으면 명확할듯
+			
 			
 				$.ajax({
 					type:"post"
 					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email , "password" : password}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						
 						if(data.result == "success"){

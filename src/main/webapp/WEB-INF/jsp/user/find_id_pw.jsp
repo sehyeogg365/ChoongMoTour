@@ -86,11 +86,7 @@
 		});
 			
 		$("#findIdBtn").on("click", function(){
-				var id = "id";
-				
-				ths.parents("");
-				
-				var id = "id";
+			
 				let name = $("#nameInput").val();
 				let email = $("#emailInput").val();
 					
@@ -108,7 +104,7 @@
 				
 				alert(name);
 				alert(email);
-				alert(id);
+			
 					
 				$.ajax({
 					type:"get"
@@ -157,16 +153,16 @@
 				
 				alert(id);
 				alert(email);
-				alert(password); //이렇게 패스워드 까지 넣으면 명확할듯
+				
 					
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
-					, data:{"loginId":id, "email":email, "password" : password}
+					, data:{"loginId":id, "email":email}
 					, success:function(data){
 						if(data.result == "success"){
 								
-							alert("임시비밀번호는 : " + password + " 입니다." );
+							alert("임시비밀번호는 : " + data.info.password + " 입니다." );
 							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");
