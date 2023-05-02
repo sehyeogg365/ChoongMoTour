@@ -55,8 +55,8 @@
 						
 						
 						<c:choose>
-						  <c:when test="${not empty user.imagePath }"><!-- 있을때 이거를 user.imagePath로 바꾸면 어떨까? 헤더야 항상 불러와야 하니 세션을 썼지만.. 프사가 뜬다.-->
-						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 근데 사진이안뜸  -->
+						  <c:when test="${not empty user.imagePath }"><!-- 있을때 이거를 user.imagePath로 바꾸면 어떨까?  프사가 뜬다.-->
+						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 헤더야 항상 불러와야 하니 세션을 썼지만.. -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
