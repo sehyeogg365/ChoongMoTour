@@ -34,16 +34,18 @@
 					<div class=""><h3>${room.size }</h3></div>
 					
 					<div class="d-flex mt-3">
-						<div class="" >체크인 2023-05-01 15:00</div>~
+						<div class="" >체크인 2023-05-01 15:00</div> ~
 						<div class="ml-3">체크아웃 2023-05-01 11:00</div>
 					
 					</div>
 					
 					<div class = "">
-						<label class="col-4 mt-4">${user.name }</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control mt-4 ">
-						<label class="col-4 mt-4">${user.phoneNumber }</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" class="form-control mt-4 ">
+						<label class="col-4 mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control mt-4 ">
+						<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control mt-4 ">
 					</div>
 					<hr>
+					
+					
 					<label class="col-4 mt-4">총 결제 금액 </label> <strong>${room.price }원</strong><!-- 이것도 fmt활용해보기 -->
 					
 					

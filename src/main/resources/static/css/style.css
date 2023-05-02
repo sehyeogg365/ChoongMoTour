@@ -139,7 +139,7 @@ header{
     height: 300px;
 }
 
-.lodging-card-list>.lodging-card-body{
+.lodging-card>.lodging-card-body{
 	height:50px;
 }
 
@@ -177,7 +177,7 @@ header{
 	width:650px;
 }
 
-.modal{
+.info-modal{
 	
 	
 }

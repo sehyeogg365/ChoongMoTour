@@ -34,7 +34,7 @@
 				
 				
 				
-				<div class="lodging-profile2 d-flex justify-content-between align-items-center">
+				<div class="lodging-profile2 align-items-center">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 				
 					<h3>${lodging.level }</h3>
@@ -65,7 +65,7 @@
 							<div class="mt-3 ml-4">${room.price }원</div>
 							
 							<div class = "buttonlist text-center">
-							<button id = "modalBtn" type="button"  class="btn btn-primary modal-btn btn-sm col-11" data-room-id="${room.id }">상세정보</button><br>
+							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11" data-room-id="${room.id }">상세정보</button><br>
 							<a href="/lodging/reservation/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
 							</div>
 						</div>
@@ -86,7 +86,7 @@
 	
 		
 		<!-- Modal 도 댓글달기-->
-		<div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="info-modal fade" id="moreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		       <div class="modal-header">
@@ -114,7 +114,7 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		 $(".modal-btn").on("click", function(){
+		 $(".info-modal-btn").on("click", function(){
 			 
 			 let id = $(this).data("room-id");
 			 

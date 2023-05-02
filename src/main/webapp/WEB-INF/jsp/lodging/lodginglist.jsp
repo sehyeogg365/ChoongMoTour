@@ -43,7 +43,20 @@
 					<div class="lodging-card">
 						
 						<div class="lodging-profile">
-							<i class="bi bi-heart  d-flex justify-content-end"></i>
+							
+							<!-- 하트아이콘 -->
+							<c:choose>
+								<c:when test="">
+								
+									<i class="bi bi-heart  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+								</c:when>
+								
+								<c:otherwise>
+									<i class="bi bi-heart-fill  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+								
+								</c:otherwise>
+							</c:choose>
+							
 							<img class="profile" width =""src="${lodging.imagePath }">
 						</div>
 						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
@@ -68,6 +81,26 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
 	</div>
+	<script>
+	$(document).ready(function(){
+		
+		//찜 해제 
+		
+		//찜
+		$(".like-icon").on("click", function(){
+			
+			
+			
+			
+		});
+		
+		
+		
+	});
+	
+	
+	</script>
+	
 
 </body>
 </html>
