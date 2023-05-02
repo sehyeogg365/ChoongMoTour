@@ -79,15 +79,11 @@ public class UserBO {
 		//int index = 0;
 		char[] charSet = new char[] {
 				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
-	                'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-	                'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
-	                '!', '@', '#', '$', '%', '^', '&'
-				
 		};
 //		int[] arr = new int[6];
 		int i = 0;
 		
-		while ( i < 5 ) {
+		while ( i < charSet.length ) {
 			
 			int rNum = random.nextInt(charSet.length) + 1;//10개중 하나 ~개중 하나 이거를 의미한다. 그렇다면..
 			int check = 1;
@@ -107,13 +103,13 @@ public class UserBO {
 		
 			
 		}
-		for (int j = 0; j < 5; j++) {
+		for (int j = 0; j < charSet.length; j++) {
 			password += charSet[j];
 		}
 		
-		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
+		//String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return userDAO.updatePassword(loginId, email, ecryptPassword);
+		return userDAO.updatePassword(loginId, email, password);
 		
 	}
 	
@@ -142,7 +138,7 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(id, file);
 		
-		//여기서 한번더 암호화하면 로그인할때 암호화 여기서 한번더 암호화해서 두번 암호화 하는 꼴 그래서 아예 다른 비밀번호로 바뀌고 재로그인할경우 로그인 안되는현상이 발견
+		
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return userDAO.updateUser(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);
