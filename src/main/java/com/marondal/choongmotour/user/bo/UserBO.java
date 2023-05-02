@@ -63,7 +63,12 @@ public class UserBO {
 	
 	}
 	
-	// 비번 찾기 (임시 비밀번호 발급)
+	// 비번 찾기 
+	public User getPasswordByIdEmail(String loginId, String email) {
+		
+		
+		return userDAO.selectPasswordByIdEmail(loginId, email);
+	}
 
 	// 임시 비밀번호 발급
 	public int updateTemporrayPassword(String loginId, String email, String password) {

@@ -31,9 +31,17 @@ public interface UserDAO {
 						, @Param("email") String email);
 	
 
+	
+	//비번 찾기
+	public User selectPasswordByIdEmail(@Param("loginId") String loginId
+										, @Param("email") String email);	
+	
+	//임시비밀번호 발급
 	public int updatePassword(@Param("loginId")String loginId
 							, @Param("email") String email
 							, @Param("password") String password);
+	
+	
 	
 	//회원정보 한행 조회
 	public User selectUserInfo(@Param("id") int id);

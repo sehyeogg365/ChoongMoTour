@@ -75,6 +75,19 @@
   		`email` = #{email};
   </select>
 
+ <!-- 비번찾기 -->
+ 
+ <select id = "selectPasswordByIdEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+  SELECT
+  	`loginId`
+  	`email`
+  FROM
+  	`user`
+  WHERE
+  	`loginId` = #{loginId}
+  	AND
+  	`email` = #{email};
+</select>
 
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
   <update id = "updatePassword" parameterType="map">
