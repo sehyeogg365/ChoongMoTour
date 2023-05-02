@@ -22,6 +22,7 @@
 	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
+			
 			<div class="lodging-list">
 				<h1 class="text-center">
 					ChoongMo Tour Lodging List Page
@@ -35,11 +36,14 @@
 				
 				<!-- 숙소 리스트 카드 리스트 -->
 				
+				
+				
+				
+				
+				
 				<div class="lodging-card-list">
-					
+				
 					<c:forEach var="lodging" items = "${lodgingList }">
-					
-	
 					<div class="lodging-card">
 						
 						<div class="lodging-profile">
@@ -48,11 +52,11 @@
 							<c:choose>
 								<c:when test="">
 								
-									<i class="bi bi-heart  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+									<i class="undib-icon bi bi-heart-fill text-danger  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 								</c:when>
 								
 								<c:otherwise>
-									<i class="bi bi-heart-fill  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+									<i class="dib-icon bi bi-heart-fill  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 								
 								</c:otherwise>
 							</c:choose>
@@ -64,17 +68,17 @@
 							<div class="">${lodging.level }</div>
 						</div>
 					</div>
-				
-				
 					</c:forEach>
 					
-					
 				</div>
+				
+					
+			</div>
 			<!-- 숙소 리스트 카드 리스트 -->
 			
 			
 			
-			</div>
+			
 		
 		</section>
 		
@@ -85,10 +89,47 @@
 	$(document).ready(function(){
 		
 		//찜 해제 
-		
-		//찜
-		$(".like-icon").on("click", function(){
+		$(".undib-icon").on("click", function(){
 			
+			let lodgingId = $(this).data("lodging-id");
+			
+			
+			$.ajax({
+				
+				type: ""
+				, url :"/lodging/undib"
+				, data:{"lodgingId":lodgingId}
+				, success:function(data){
+					
+					
+				}
+				, error:function(){
+					
+					
+				}
+				
+			});
+			
+		});
+		//찜
+		$(".dib-icon").on("click", function(){
+			
+			let lodgingId = $(this).data("lodging-id");
+			
+			$.ajax({
+				
+				type:""
+				, url:"/lodgin/dib"
+				, data:{"lodgingId":lodgingId}
+				,success:function(data){
+					
+				}
+				,error:function(){
+					
+					
+				}
+				
+			});
 			
 			
 			

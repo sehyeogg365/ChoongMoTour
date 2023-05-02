@@ -133,7 +133,7 @@
 			let password =  $(this).data("admin-password");
 			let id = $("#loginIdInput").val();
 			let email = $("#email2Input").val();
-			//패스워드를 입력받지않는데 이렇게 받아올수가 있나?
+			
 			
 			if(id == ""){
 				alert("아이디를 입력하세요.");
