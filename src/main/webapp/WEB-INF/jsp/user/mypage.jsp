@@ -65,10 +65,10 @@
 						
 							
 						<div class="d-flex">
-							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "${user.password }" class="form-control mt-4">
+							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "" class="form-control mt-4">
 						</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
 						<div class="d-flex">
-							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= "${user.password }"  class="form-control mt-4">
+							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4">
 						</div>
 						<div class="d-flex">
 							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value="${user.name }" class="form-control mt-4">
@@ -119,6 +119,16 @@
 			let email = $("#emailInput").val();
 			let phoneNumber = $("#phoneNumberInput").val();
 			let file = $("#fileInput")[0];
+			
+			if(password == ""){
+				alert("비밀번호를 입력해주세요.");
+				return ;
+			}
+			
+			if(passwordConfirm == ""){//근데 비밀번호가 로그인했던 그 비밀번호와 일치하는거 그거는 그냥 막바지에가서 하기 지금은 너무 바쁘다.
+				alert("비밀번호를 재확인해주세요.");
+				return ;
+			}
 			
 			if(password != passwordConfirm){
 				alert("비밀번호가 다릅니다.");
