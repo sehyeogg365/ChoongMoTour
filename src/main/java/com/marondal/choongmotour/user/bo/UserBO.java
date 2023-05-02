@@ -139,7 +139,9 @@ public class UserBO {
 		
 		String imagePath = FileManagerService.saveFile(id, file);
 		
-		return userDAO.updateUser(id, password, name, email, phoneNumber, nickname, imagePath);
+		String ecryptPassword = EncryptService.md5(password);
+		
+		return userDAO.updateUser(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);
 		
 		
 	}
