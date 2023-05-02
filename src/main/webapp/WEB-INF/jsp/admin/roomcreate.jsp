@@ -40,7 +40,7 @@
                             <option value="twinroom">트윈</option>
                        
                  </select>
-			     <label>로징아이디 : ${lodging.id }</label><!-- lodgingId안잡히는데?? -->
+			     
 			     
 			     							<!-- id값부여해보기 -->
                  <div id="singleInput" class="">

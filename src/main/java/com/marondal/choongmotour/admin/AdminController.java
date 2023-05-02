@@ -114,13 +114,14 @@ public class AdminController {
 	
 	@GetMapping("/room/create/view")
 	public String roomcreatePage(
-			 @RequestParam("id") int id// 룸테이블 id
+			// @RequestParam("id") int id// 룸테이블 id 생각해보니 굳이 이런것도 넣어야 하나 싶음? 
 			
-			, Model model) {//lodging 모델?
+		//	, Model model 어린이날때 숙소추가 객실추가해보기
+			) {//lodging 모델?
 		
-		Lodging lodging = lodgingBO.getLodging(id);
+		//Lodging lodging = lodgingBO.getLodging(id);
 		
-		model.addAttribute("lodging", lodging);
+		//model.addAttribute("lodging", lodging);
 		
 		return "admin/roomcreate";
 	}
