@@ -53,11 +53,11 @@
 						
 						
 						<c:choose>
-						  <c:when test="${not empty admin.imagePath }"><!-- 있을때 -->
-						  	<img class="adminprofile" width ="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
+						  <c:when test="${not empty adminImagePath }"><!-- 있을때 -->
+						  	<img class="adminprofile" width ="40" height="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
-						  	<img class="adminprofile" width ="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+						  	<img class="adminprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						  </c:otherwise>
 				 		 </c:choose>	
 						<div class="">${admin.id }</div><br>
