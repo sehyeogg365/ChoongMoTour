@@ -25,6 +25,48 @@ public class LodgingRestController {
 	
 	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
+	//찜
+	@PostMapping("/dib")
+	public Map<String, String> dibsCreate(
+			@RequestParam("lodgingId") int lodgingId
+			){
+		
+		int count = lodgingBO.addDibs(lodgingId);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		return resultMap;
+
+	}
+	
+	//찜 취소
+	@PostMapping("/undib")
+	public Map<String, String> dibsDelete(
+			@RequestParam("lodgingId") int lodgingId
+			){
+		
+		int count = lodgingBO.deleteDibs(lodgingId);
+		
+		Map <String, String> resultMap = new HashMap<>();
+		
+		if(count == 0) {
+			resultMap.put("result", "fail");
+		} else {
+			resultMap.put("result", "success");
+		}
+		
+		return resultMap;
+		
+	}
+	
+	
+	
 	//예약 하기 
 	@PostMapping("/reserve")
 	public Map<String, String> reserveRoom(

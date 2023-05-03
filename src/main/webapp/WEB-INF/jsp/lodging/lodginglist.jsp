@@ -78,7 +78,53 @@
 			<!-- 숙소 리스트 카드 리스트 -->
 			
 			
-			
+			<!-- Button trigger modal -->
+		
+					<!-- Modal -->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
+					<div class="modal fade " id="filterModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered" role="document">
+					    <div class="modal-content">
+					       <div class="modal-header">
+					        <h5 class="modal-title">필터 모달</h5>
+					        
+			     			 </div>	
+					
+					      <div class="modal-body text-center">
+					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+					      
+					     	<p> </p>
+					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+					      <div class="modal-footer">
+			        
+			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
+			      		  </div>
+					   
+					    </div>
+					  </div>
+					</div>
+					
+					
+					<div class="modal fade " id="sortModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-dialog-centered" role="document">
+					    <div class="modal-content">
+					       <div class="modal-header">
+					        <h5 class="modal-title">정렬 모달</h5>
+					        
+			     			 </div>	
+					
+					      <div class="modal-body text-center">
+					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+					      
+					     	<p> </p>
+					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+					      <div class="modal-footer">
+			        
+			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
+			      		  </div>
+					   
+					    </div>
+					  </div>
+					</div>
 			
 		
 		</section>
@@ -127,7 +173,7 @@
 				type:""
 				, url:"/lodgin/dib"
 				, data:{"lodgingId":lodgingId}
-				,success:function(data){
+				, success:function(data){
 					
 				}
 				,error:function(){

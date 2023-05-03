@@ -153,9 +153,9 @@
 					, success:function(data){
 						
 						if(data.result == "success"){
-							console.log(data.info);
-							//alert("임시비밀번호는 :"+ data.info + "입니다." );
-							//location.reload();
+							//console.log(data.info);
+							alert("임시비밀번호는 :"+ data.info + "입니다." );
+							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");
 						}

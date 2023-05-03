@@ -91,59 +91,61 @@
 							<div class="mt-3 ml-4"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</div>
 							
 							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
-							<button id = "infomodalBtn${room.id }" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal" data-room-id="${room.id }">상세정보</button><br>
+							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
 							<a href="/lodging/reservation/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
-							</div>
+							</div>																				<!-- 우선 모달을위해 들어가는 값들 이렇게 두개가 있다고 함 data-toggle="modal" data-target="#moreModal" 타겟은 그 id가 들어가는 모달인데 id마다 각각버튼마다 각각 다른 모달들이 1:1 매칭이 되어야 한다. 이값과 밑에 값 수정해보기 -->				
 						</div>
 					</div>
 					
 					
-					
-					
-					
 					<!-- Button trigger modal -->
 		
-					<!-- Modal 도 댓글달기-->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
+					<!-- Modal -->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
 					
-					
-					<div class="modal fade " id="moreModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-					  <div class="modal-dialog modal-dialog-centered" role="document">
-					    <div class="modal-content">
-					       <div class="modal-header">
-					        <h5 class="modal-title">객실 이용 안내</h5>
+					<!-- 객실 사이즈 별로 다른 모달을 띄워버리자 차라리 -->
+				
+						
+							<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+							  <div class="modal-dialog modal-dialog-centered" role="document">
+							    <div class="modal-content">
+							       <div class="modal-header">
+							        <h5 class="modal-title">객실 이용 안내</h5>
+							        
+					     			 </div>	
+							
+							      <div class="modal-body text-center">
+							       <p id="contentInput${room.id }">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+							      
+							     	<p>예약날짜(선택사항) </p>
+							      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+							      <div class="modal-footer">
 					        
-			     			 </div>	
-					
-					      <div class="modal-body text-center">
-					       <p id="contentInput${room.id }">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-					      
-					     	<p>예약날짜(선택사항) </p>
-					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
-					      <div class="modal-footer">
-			        
-			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
-			      		  </div>
-					   
-					    </div>
-					  </div>
-					</div>	
+					        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
+					      		  </div>
+							   
+							    </div>
+							  </div>
+							</div>	
+						
+	
 					
 					
-			</c:forEach> 
+					</c:forEach> 
+			<!-- 객실리스트 끝 -->
+				
+				
+				
 					
 					
 					
-
-					<!-- 객실리스트 끝 -->
+					
 				</div>
 	
 			</div>
 			
 		</section>
 		
-		
-		
-		
+
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 		
@@ -152,15 +154,16 @@
 	 $(document).ready(function() {
 		 
 		 
-		 
+	
 		 $(".info-modal-btn").on("click", function(){
 			 
 			 let id = $(this).data("room-id");
 			 
+			 let content = ("#contentInput" + id).val();
+			 
 			 
 		 });
-		 
-		 
+ 
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy-mm-dd",
             

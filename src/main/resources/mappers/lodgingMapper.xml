@@ -42,6 +42,54 @@
   			`price`
   	</select>
   	
+  	
+  	<!-- 찜하기 -->
+  	<insert id="" parameterType="map">
+  	INSERT INTO 
+  			`dibs_basket`
+  	(
+  		`userId`
+  		, `lodgingId`
+  		, `createdAt`
+  		, `updatedAt`
+  	
+  	)	
+  	VALUES
+  	(
+  		#{userId}
+  		, #{lodgingId}
+  		, now()
+  		, now()
+  		
+  	
+  	);	
+  	</insert>
+  	
+  	<!-- 찜목록 -->
+  	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="int">
+  		SELECT
+  			`lodgingId`
+  		FROM
+  			`dibs_basket`
+  		WHERE 
+  			`userId` = #{userId}
+  		ORDER BY 
+  			`createdAt` DESC; <!-- 최근 찜한 순서대로 -->
+  	</select>
+  	
+  	
+  	
+  	<!-- 찜취소 -->
+  	<delete id ="deleteDibs" parameterType="int">
+  		DELETE
+  		FROM
+  			`dibs_basket`
+  		WHERE
+  			`lodgingId` = ${lodgingId};
+  	</delete>
+  	
+  	
+  	
   	<!-- 예약하기 -->
   	<insert id = "insertReserve" parameterType="map">
   	INSERT INTO
@@ -66,8 +114,7 @@
   	
   	</insert>
   	
-  <!-- 찜목록 -->
-  <!-- 찜취소 -->
+  
   <!-- 예약 목록 -->	
   <!-- 예약 취소 -->
   

@@ -23,6 +23,20 @@ public interface LodgingDAO {
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 												
 	
+	//찜
+	public int insertDibs(@Param("lodgingId") int lodgingId);
+	
+	//찜 조회
+	public List<Lodging> selectDibsById(@Param("userId") int userId);
+	
+	//찜 취소
+	
+	public int deleteDibs(@Param("lodgingId") int lodgingId);
+	
+	
+	
+	
+	
 	//예약하기
 	public int insertReserve(@Param("userId") int userId
 							,@Param("roomId") int roomId 
