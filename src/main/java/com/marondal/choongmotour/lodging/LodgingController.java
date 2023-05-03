@@ -71,6 +71,9 @@ public class LodgingController {
 		
 		model.addAttribute("roomList", roomList);
 		
+		//모달창에 불러와야할 한행의 객실정보
+
+		
 		return "lodging/room";
 	}
 	
@@ -86,16 +89,17 @@ public class LodgingController {
 	}
 	
 	
-	//예약페이지 
+	//예약페이지 reserve 객체를 해야하나 모르겠다.
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
-			, int id) {
+			, int id
+			) {
 		
 		Lodging lodging = lodgingBO.getLodging(id);
 		model.addAttribute("lodging", lodging);
 		
-		Room room = lodgingBO.getRoom(id);
-		model.addAttribute("room", room);
+//		Room room = lodgingBO.getRoom(id);
+//		model.addAttribute("room", room);
 		
 		User user = userBO.getUserInfo(id);
 		model.addAttribute("user", user);

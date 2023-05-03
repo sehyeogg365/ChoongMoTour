@@ -33,20 +33,22 @@
 					<div class=""><h2>${lodging.roomName }</h2></div><br>
 					<div class=""><h3>${room.size }</h3></div>
 					
-					<div class="d-flex mt-3">
+					<div class="d-flex mt-3 justify-content-center">
 						<div class="" >체크인 2023-05-01 15:00</div> ~
 						<div class="ml-3">체크아웃 2023-05-01 11:00</div>
 					
 					</div>
 					
 					<div class = "">
-						<label class="col-4 mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control mt-4 ">
-						<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control mt-4 ">
+						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control ">
+					
+					
+						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
 					
-					<label class="col-4 mt-4">총 결제 금액 </label> <strong>${room.price }원</strong><!-- 이것도 fmt활용해보기 -->
+					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
 					
 					
 					<hr>
@@ -55,10 +57,10 @@
 						<select class="form-control col-5 mt-3" id="paySelector">
 							
                             <option value="">결제수단</option>
-                            <option value="kakao">카카오페이</option>
-                            <option value="naver">네이버페이</option>
-                            <option value="samsung">삼성페이</option>
-                            <option value="card">카드</option>
+                            <option value="카카오페이">카카오페이</option>
+                            <option value="네이버페이">네이버페이</option>
+                            <option value="삼성페이">삼성페이</option>
+                            <option value="카드">카드</option>
                        
                  </select>
 					

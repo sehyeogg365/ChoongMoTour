@@ -160,9 +160,9 @@
 					, data:{"loginId":id, "email":email, "password":password}
 					, success:function(data){
 						if(data.result == "success"){
-							console.log(data.info);	//id때 상황처럼 또다시 undefined가 뜨는상황
-							//alert("임시비밀번호는 : " + data.info.password + " 입니다." );
-							//location.reload();
+							//console.log(data.info);	//id때 상황처럼 또다시 undefined가 뜨는상황
+							alert("임시비밀번호는 : " + data.info + " 입니다." );
+							location.reload();
 						}else{
 							alert("아이디/이메일이 일치하지 않습니다.");
 						}

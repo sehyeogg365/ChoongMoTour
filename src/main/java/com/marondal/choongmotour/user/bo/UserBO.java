@@ -69,9 +69,9 @@ public class UserBO {
 	
 	
 	// 임시 비밀번호 발급 및 암호화
-	public int updateTemporrayPassword(String loginId, String email, String password) {
-	
-		//String password = new StringBuffer();
+	public String updateTemporrayPassword(String loginId, String email) {
+		// 아예 리턴타입을 스트링으로 바꿔버린다. 업데이트 횟수가 아닌 바꾼 비밀번호를 보내야 하므로.
+		// 마찬가지로 비밀번호가 파라미터로 들어갈 이유가 없음 원래 비밀번호를 알 필요가 없어서.
 		
 		//임시비밀번호 생성 알고리즘
 		
@@ -83,7 +83,8 @@ public class UserBO {
 //		int[] arr = new int[6];
 	
 		Random random = new Random();
-	
+		
+		String password = ""; //대신에 여기에 생성
 		for(int i = 0; i < 100; i++) {
 			
 			int rNum = random.nextInt(charSet.length);
@@ -96,13 +97,19 @@ public class UserBO {
 		
 		
 		for (int i = 0; i < charSet.length - 1; i++) {
-			password = charSet[i] + password;
+			password = charSet[i] + password;//문자열을 이어붙이는 형식
 		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return userDAO.updatePassword(loginId, email, ecryptPassword);
+		int count = userDAO.updatePassword(loginId, email, ecryptPassword);
 		
+		if(count == 1) {//횟수 1 정상일때 password 리턴
+			
+			return password;
+		} else {
+			return null; //비정상일땐 null 리턴 
+		}
 	}
 	
 	

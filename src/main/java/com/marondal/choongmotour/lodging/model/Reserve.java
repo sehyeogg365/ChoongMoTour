@@ -7,6 +7,7 @@ public class Reserve {
 	private int userId;
 	private int roomId;
 	private Date reserveDate;
+	private String payment;
 	private Date createdAt;
 	private Date updatedAt;
 	public int getId() {
@@ -33,6 +34,12 @@ public class Reserve {
 	public void setReserveDate(Date reserveDate) {
 		this.reserveDate = reserveDate;
 	}
+	public String getPayment() {
+		return payment;
+	}
+	public void setPayment(String payment) {
+		this.payment = payment;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -45,6 +52,7 @@ public class Reserve {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+
 	
 	
 	

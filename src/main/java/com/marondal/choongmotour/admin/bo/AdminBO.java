@@ -87,7 +87,7 @@ public class AdminBO {
 	// 비번 찾기 (임시 비밀번호 발급) 이거를 구분하지말고 한번에 하라 함. 
 
 	//임시 비밀번호 발급
-	public int updateTemporrayPassword(String loginId, String email, String password) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
+	public String updateTemporrayPassword(String loginId, String email) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
 		
 		
 		//임시비밀번호 생성 알고리즘
@@ -101,7 +101,7 @@ public class AdminBO {
 		
 		
 		//int i = 0;
-
+		String password ="";
 		 
 		for(int i = 0; i < 100; i++) {
 			
@@ -116,10 +116,18 @@ public class AdminBO {
 		for (int i = 0; i < charSet.length - 1; i++) {
 			password = charSet[i] + password;
 		}
-		
+
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
 		
-		return adminDAO.updatePassword(loginId, email, ecryptPassword);
+		int count = adminDAO.updatePassword(loginId, email, ecryptPassword);
+		
+		if(count == 1) {
+			
+			return password;
+		} else {
+			
+			return null;
+		}
 		
 		
 	}
