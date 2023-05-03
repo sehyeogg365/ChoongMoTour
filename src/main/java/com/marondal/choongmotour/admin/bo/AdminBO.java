@@ -91,38 +91,30 @@ public class AdminBO {
 		
 		
 		//임시비밀번호 생성 알고리즘
-		Random random = new Random();
-		
 		
 		
 		char[] charSet = new char[] {
 				 '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
 		};
 		
-		int i = 0;
+		Random random = new Random();
 		
-		while ( i < charSet.length ) {
+		
+		//int i = 0;
+
+		 
+		for(int i = 0; i < 100; i++) {
 			
 			int rNum = random.nextInt(charSet.length) + 1;//10개중 하나 ~개중 하나 이거를 의미한다. 그렇다면..
-			int check = 1;
-			int j = 0; 
 			
-			while( j < i ) {
-				if (rNum == charSet[j]) {//해당 배열에 문자열 하나씩 대입
-					check = -1;
-				}
-				j++;
-			}
-			
-			if(check == 1) {
-				charSet[i] = (char) rNum;
-				i++;
-			}
-		
+			char shuffle  = charSet[0];
+			charSet[0] = charSet[rNum];
+			charSet[rNum] = (char) shuffle;
 			
 		}
-		for (int j = 0; j < charSet.length; j++) {
-			password += charSet[j];
+		
+		for (int i = 0; i < charSet.length; i++) {
+			password = charSet[i] + password;
 		}
 		
 		String ecryptPassword = EncryptService.md5(password);//이게 암호화가 안되서 비번이 바뀌어도 로그인이 안되었던것.
