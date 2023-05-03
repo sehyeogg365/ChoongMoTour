@@ -83,12 +83,9 @@
 		</section>
 		
 		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-		  Launch demo modal
-		</button>
 		
-		<!-- Modal 도 댓글달기-->											<!-- 모달사이즈 -->
-		<div class="info-modal fade " id="moreModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+		<!-- Modal 도 댓글달기-->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
+		<div class="modal fade " id="moreModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 		  <div class="modal-dialog modal-dialog-centered" role="document">
 		    <div class="modal-content">
 		       <div class="modal-header">
@@ -97,7 +94,7 @@
      			 </div>	
 		
 		      <div class="modal-body text-center">
-		       <p>${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+		       <p>${room.content }ㅇㄹㅇㄹㅇㄹ</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 		     
 		     	<p>예약날짜(선택사항) </p>
 		      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
@@ -116,21 +113,18 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		 $("#closeBtn").on("click", function(){
-			
-			 $('#moreModal').modal('hide');
-			 
-		 });
+		// $("#closeBtn").on("click", function(){
+		//	
+		 //	 $('#moreModal').modal('hide');
+		 //	 
+		 //});
 		 
 		 
-		 $(".info-modal-btn").on("click", function(){
-			 
-			 let id = $(this).data("room-id");
-			 
-			 
-			 
-			 
-		 });
+		 //$(".info-modal-btn").on("click", function(){
+		//	 
+		//	 let id = $(this).data("room-id");
+		//	 
+		// });
 		 
 		 
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색

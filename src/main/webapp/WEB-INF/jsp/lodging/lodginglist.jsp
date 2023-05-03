@@ -29,9 +29,9 @@
 				</h1>
 				
 				<div class="d-flex justify-content-between">
-					<i id="filterIcon"class="bi bi-filter-left">필터</i>
+					<i id="filterIcon"class="filter-icon bi bi-filter-left">필터</i>
 					
-					<i id="sortIcon" class="bi bi-arrow-down-up">정렬</i>
+					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up">정렬</i>
 				</div>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
@@ -55,8 +55,8 @@
 									<i class="undib-icon bi bi-heart-fill text-danger  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 								</c:when>
 								
-								<c:otherwise>
-									<i class="dib-icon bi bi-heart-fill  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+								<c:otherwise>	<!-- 검정하트 빈하트 -->
+									<i class="dib-icon bi bi-heart  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 								
 								</c:otherwise>
 							</c:choose>
@@ -87,6 +87,11 @@
 	</div>
 	<script>
 	$(document).ready(function(){
+		
+		//필터모달
+		
+		//정렬모달
+		
 		
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
