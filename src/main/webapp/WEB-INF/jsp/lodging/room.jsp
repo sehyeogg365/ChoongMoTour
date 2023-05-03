@@ -38,14 +38,14 @@
 				<div class="lodging-profile2 align-items-center">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 				
-					<h3>${lodging.level }</h3>
+					<h3>${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
 				</div><br>
 				
 				<div class="text-center">
 					<h2>${lodging.roomName }</h2>
 				</div><br>
 				
-				<ul class="nav nav-tabs">
+				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
 				    <a class="nav-link active" aria-current="page" href="#">객실리스트</a>
 				  </li>
