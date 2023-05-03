@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>     
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>   <!-- 포맷라이브러리 추가 -->      
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,6 +44,18 @@
 				<div class="text-center">
 					<h2>${lodging.roomName }</h2>
 				</div><br>
+				
+				<ul class="nav nav-tabs">
+				  <li class="nav-item">
+				    <a class="nav-link active" aria-current="page" href="#">객실리스트</a>
+				  </li>
+				  <li class="nav-item">
+				    <a class="nav-link" href="#">리뷰</a>
+				  </li>
+			
+			
+				</ul>
+				
 				<label class="mt-3">체크인 </label>
 		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
@@ -61,8 +74,21 @@
 						</div>
 							
 						<div class="room-card-body ml-3 mt-3">
-							<div class="ml-4">${room.size }</div>
-							<div class="mt-3 ml-4">${room.price }원</div>
+						<c:choose>
+							<c:when test="${room.size eq 'singleroom' }">
+								<div class="ml-4">싱글룸</div>
+							</c:when>
+							<c:when test="${room.size eq 'doubleroom' }">
+								<div class="ml-4">더블룸</div>
+							</c:when>
+							<c:when test="${room.size eq 'twinroom' }">
+								<div class="ml-4">트윈룸</div>
+							</c:when>
+							<c:otherwise>
+								<div class="ml-4">${room.size }</div>
+							</c:otherwise>
+						</c:choose>	
+							<div class="mt-3 ml-4"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</div>
 							
 							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal" data-room-id="${room.id }">상세정보</button><br>
@@ -95,7 +121,7 @@
 		
 		      <div class="modal-body text-center">
 		       <p>${room.content }ㅇㄹㅇㄹㅇㄹ</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-		     
+		      
 		     	<p>예약날짜(선택사항) </p>
 		      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 		      <div class="modal-footer">
