@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+ <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
+ 
+ <!-- 예약하기 -->
+ 
+  	<insert id = "insertReserve" parameterType="map">
+  	INSERT INTO
+  			`reserved_list`
+  	(
+  		`userId`
+  		, `roomId`
+  		, `reserveDate`
+  		, `createdAt`
+  		, `updatedAt`
+  	) 
+  		VALUES
+  	(
+  		#{userId}
+  		,#{roomId}
+  		,#{reserveDate}
+  		, now()
+  		, now()
+  	
+  	);
+  			
+  	
+  	</insert>
+  	
+  
+  <!-- 예약 목록 -->	
+  <!-- 예약 취소 -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </mapper>

@@ -12,4 +12,10 @@ public interface ReserveDAO {
 	public int insertReserve(@Param("userId") int userId
 							,@Param("roomId") int roomId 
 							, @Param("reserveDate") Date reserveDate);
+	
+	
+	//예약 목록
+	
+	//예약 취소
+	
 }

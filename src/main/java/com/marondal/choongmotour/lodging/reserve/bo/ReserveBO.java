@@ -18,5 +18,9 @@ public class ReserveBO {
 		return reserveDAO.insertReserve(userId, roomId, reserveDate);	
 			
 	}
+	
+	//예약 목록
+	
+	//예약 취소
 
 }

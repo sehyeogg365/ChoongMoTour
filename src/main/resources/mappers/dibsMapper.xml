@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.marondal.choongmotour.lodging.dibs.dao.DibsDAO">
+  
+  <!-- 찜하기 -->
+  	<insert id="" parameterType="map">
+  	INSERT INTO 
+  			`dibs_basket`
+  	(
+  		`userId`
+  		, `lodgingId`
+  		, `createdAt`
+  		, `updatedAt`
+  	
+  	)	
+  	VALUES
+  	(
+  		#{userId}
+  		, #{lodgingId}
+  		, now()
+  		, now()
+  		
+  	
+  	);	
+  	</insert>
+  	
+  	<!-- 찜목록 -->
+  	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="int">
+  		SELECT
+  			`lodgingId`
+  		FROM
+  			`dibs_basket`
+  		WHERE 
+  			`userId` = #{userId}
+  		ORDER BY 
+  			`createdAt` DESC; <!-- 최근 찜한 순서대로 -->
+  	</select>
+  	
+  	
+  	
+  	<!-- 찜취소 -->
+  	<delete id ="deleteDibs" parameterType="int">
+  		DELETE
+  		FROM
+  			`dibs_basket`
+  		WHERE
+  			`lodgingId` = ${lodgingId};
+  	</delete>
+  
+  
+  
+  
+  
+  </mapper>
