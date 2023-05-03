@@ -86,7 +86,7 @@ public class UserBO {
 	
 		for(int i = 0; i < 100; i++) {
 			
-			int rNum = random.nextInt(charSet.length) + 1;
+			int rNum = random.nextInt(charSet.length);
 			
 			char shuffle  = charSet[0];
 			charSet[0] = charSet[rNum];
@@ -95,7 +95,7 @@ public class UserBO {
 		
 		
 		
-		for (int i = 0; i < charSet.length; i++) {
+		for (int i = 0; i < charSet.length - 1; i++) {
 			password = charSet[i] + password;
 		}
 		

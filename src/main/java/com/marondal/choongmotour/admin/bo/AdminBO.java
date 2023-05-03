@@ -105,7 +105,7 @@ public class AdminBO {
 		 
 		for(int i = 0; i < 100; i++) {
 			
-			int rNum = random.nextInt(charSet.length) + 1;//10개중 하나 ~개중 하나 이거를 의미한다. 그렇다면..
+			int rNum = random.nextInt(charSet.length);
 			
 			char shuffle  = charSet[0];
 			charSet[0] = charSet[rNum];
@@ -113,7 +113,7 @@ public class AdminBO {
 			
 		}
 		
-		for (int i = 0; i < charSet.length; i++) {
+		for (int i = 0; i < charSet.length - 1; i++) {
 			password = charSet[i] + password;
 		}
 		
