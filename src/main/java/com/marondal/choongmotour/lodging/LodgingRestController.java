@@ -16,12 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
+import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 
 @RestController
 @RequestMapping("/lodging")
 public class LodgingRestController {
 
 	@Autowired LodgingBO lodgingBO;
+	@Autowired DibsBO dibsBO;
+	@Autowired ReserveBO reserveBO;
 	
 	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
@@ -31,7 +35,7 @@ public class LodgingRestController {
 			@RequestParam("lodgingId") int lodgingId
 			){
 		
-		int count = lodgingBO.addDibs(lodgingId);
+		int count = dibsBO.addDibs(lodgingId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -51,7 +55,7 @@ public class LodgingRestController {
 			@RequestParam("lodgingId") int lodgingId
 			){
 		
-		int count = lodgingBO.deleteDibs(lodgingId);
+		int count = dibsBO.deleteDibs(lodgingId);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		
@@ -75,7 +79,7 @@ public class LodgingRestController {
 				, @RequestParam("reserveDate") Date reserveDate
 			) {
 		
-		int count = lodgingBO.addReserve(userId, roomId, reserveDate);
+		int count = reserveBO.addReserve(userId, roomId, reserveDate);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

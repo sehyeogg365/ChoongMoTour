@@ -1,6 +1,5 @@
 package com.marondal.choongmotour.lodging.bo;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,33 +40,8 @@ public class LodgingBO {
 		
 	}
 	
-	//예약하기 
-	public int addReserve(int userId, int roomId, Date reserveDate) {
-		
-		return lodgingDAO.insertReserve(userId, roomId, reserveDate);	
-		
-	}
-	//찜
-	public int addDibs(int lodgingId) {
-		
-		return lodgingDAO.insertDibs(lodgingId);
-	}
 	
-	
-	// 찜목록 userId별로
-	public List<Lodging> getDibsList(int userId){
-		
-		return lodgingDAO.selectDibsById(userId);
-	}
-	
-	//찜 취소
-	public int deleteDibs(int lodgingId) {
-		
-		
-		return lodgingDAO.deleteDibs(lodgingId);
-		
-		
-	}
+
 	
 	
 	// 예약목록 userId별로
