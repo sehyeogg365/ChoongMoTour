@@ -15,14 +15,14 @@ public interface DibsDAO {
 						 , @Param("lodgingId") int lodgingId);
 	
 	//찜 조회
-	public List<DibsDetail> selectDibsById(@Param("lodginId") int lodgingd
+	public List<DibsDetail> selectDibsById(@Param("userId") int userId
 										  );
 											
 	
 	//찜 취소
 	
 	public int deleteDibs(@Param("userId") int userId
-						  ,@Param("lodgingId") int lodgingId);
+						  ,@Param("id") int id);
 	
 	
 }

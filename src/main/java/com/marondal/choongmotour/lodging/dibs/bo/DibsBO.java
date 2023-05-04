@@ -16,26 +16,26 @@ public class DibsBO {
 	private DibsDAO dibsDAO;
 	
 	//찜
-	public int addDibs(int userId, int lodgingId) {
+	public int addDibs(int userId, int lodgingId) {// 어떤 숙소를 찜할것이냐, 누가 찜할것이냐
 		
 		return dibsDAO.insertDibs(userId, lodgingId);
 	}
 	
 	
 	// 찜목록
-	public List<DibsDetail> getDibsList(int lodgingId){//이것도 틀렸다. List<DibsDetail>로
+	public List<DibsDetail> getDibsList(int userId){//이것도 틀렸다. List<DibsDetail>로
+		
+		//조회할때 userId인가 id인가??
 		
 		
-		
-		
-		return dibsDAO.selectDibsById(lodgingId);//userId는 애초에 로그인한 사람 한명인데 굳이 해야하나 싶기도하다.
+		return dibsDAO.selectDibsById(userId);//
 	}
 	
 	//찜 취소
-	public int deleteDibs(int userId, int lodgingId) {
+	public int deleteDibs(int userId, int id) {//어떤 찜내역을 취소할것이냐, 누구의 것(userId)을 취소할것이냐
 		
 		
-		return dibsDAO.deleteDibs(userId, lodgingId);
+		return dibsDAO.deleteDibs(userId, id);
 		
 		
 	}

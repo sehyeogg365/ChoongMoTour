@@ -53,11 +53,11 @@ public class LodgingRestController {
 	//찜 취소
 	@GetMapping("/undib")
 	public Map<String, String> dibsDelete(
-			@RequestParam("lodgingId") int lodgingId
+			@RequestParam("id") int id
 			, HttpSession session){
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.deleteDibs(userId, lodgingId);
+		int count = dibsBO.deleteDibs(userId, id);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		

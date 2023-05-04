@@ -49,48 +49,48 @@
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						
 						<div class="dibs-card  ml-3 mt-3">
-							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-lodging-id = "${lodging.id }"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-user-id = "${user.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>
 							
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
+								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
 						
 								<div class="">71,250원</div>
 							
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
-							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
 					
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
+								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 							</div>
 						</div>
 						
 						<div class="dibs-card ml-3 mt-3">
-							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
+								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
-							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
 							
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
+								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
 							</div>
 						</div>
@@ -115,20 +115,25 @@
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
 			
-			let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("user-id");
 			
 			
 			$.ajax({
 				
 				type: "get"
 				, url :"/lodging/undib"
-				, data:{"userId":userId}
+				, data:{"userId":id}
 				, success:function(data){
-					
+					if(data.result =="succes"){
+						alert("찜해제 성공");
+						location.reload();
+					} else {
+						alert("찜해제 실패");
+					}
 					
 				}
 				, error:function(){
-					
+					alert("찜해제 오류");
 					
 				}
 				
