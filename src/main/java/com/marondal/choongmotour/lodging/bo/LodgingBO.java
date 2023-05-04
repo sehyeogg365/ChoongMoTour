@@ -35,7 +35,7 @@ public class LodgingBO {
 	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
 	public List<DibsDetail> getLodgingListByArea(String areaName, int userId, int lodgingId){
 		
-		List<Lodging> lodgingList = lodgingDAO.selectLodgingListByArea();
+		List<Lodging> lodgingList = lodgingDAO.selectLodgingListByArea(areaName);
 		
 		List<DibsDetail> dibsDetailList = new ArrayList<>();
 		
@@ -47,22 +47,22 @@ public class LodgingBO {
 			
 			
 			boolean isDibs = dibsBO.isDibs(userId, lodging.getId());
-
+			
 
 			//찜여부
 			DibsDetail dibsDetail = new DibsDetail();
 			
 			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
 			
-			
+			//그 숙소리스팅에 들어갈 것들.
 			dibsDetail.setUserId(lodging.getId());
-			dibsDetail.setLodgingId(lodging.getId());
 			dibsDetail.setRoomName(lodging.getRoomName());
 			dibsDetail.setAreaName(lodging.getAreaName());
 			dibsDetail.setPrice(dibsDetail.getPrice());
 			dibsDetail.setDibs(isDibs);
 			dibsDetail.setImagePath(lodging.getImagePath());
 			
+			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
 			dibsDetailList.add(dibsDetail);
 		}
