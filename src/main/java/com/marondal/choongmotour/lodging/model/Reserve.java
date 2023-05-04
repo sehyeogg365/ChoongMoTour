@@ -5,9 +5,8 @@ import java.util.Date;
 public class Reserve {
 	private int id;
 	private int userId;
-					//어떤 숙소냐도 필요???
-	private int roomId;
-	private Date reserveDate;
+	private int roomId; //이 roomId 하나에 또 숙소정보도 당연히 다 불러올수 있다고 한다.
+	private Date reserveDate; // 예약날짜
 	private String payment;
 	private Date createdAt;
 	private Date updatedAt;

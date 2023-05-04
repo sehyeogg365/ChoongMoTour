@@ -30,7 +30,7 @@
 					<div class="mypagecontents d-flex">
 					<aside class="aside1 col-3 ">
 						
-					<div>
+					<div>				
 						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
 					</div>
 					<div>
@@ -47,57 +47,26 @@
 						<label>찜목록</label><br>
 						
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
-						
+					
+					
+						<c:forEach var="dibs" items = "dibsList">
 						<div class="dibs-card  ml-3 mt-3">
 							
 							<div class="dibs-profile">
-								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-user-id = "${user.id }"></i>
-								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-lodgingId= "${dibs.lodgingId }"></i>
+								<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">
 							</div>
 							
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
+								<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }">${dibs.roomName }</a></div>
 						
-								<div class="">71,250원</div>
+								<div class="">${dibs.price }</div>
 							
 							</div>
 						</div>
-						<div class="dibs-card ml-3 mt-3">
-							
-							<div class="dibs-profile">
-								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
-								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							
-					
-							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
-								<div class="">71,250원</div>
-							</div>
-						</div>
+						</c:forEach>
 						
-						<div class="dibs-card ml-3 mt-3">
-							
-							<div class="dibs-profile">
-								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
-								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							
-							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
-								<div class="">71,250원</div>
-							</div>
-						</div>
-						<div class="dibs-card ml-3 mt-3">
-							
-							<div class="dibs-profile">
-								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-user-id = "${user.id }"></i>
-								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							
-							
-							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=${lodging.id }">ㅇㅇ호텔</a></div>
-								<div class="">71,250원</div>
-							</div>
-						</div>
+						
 						
 						
 						
@@ -119,7 +88,7 @@
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
 			
-			let id = $(this).data("user-id");
+			let id = $(this).data("dibs-lodgingId");
 			
 			
 			$.ajax({

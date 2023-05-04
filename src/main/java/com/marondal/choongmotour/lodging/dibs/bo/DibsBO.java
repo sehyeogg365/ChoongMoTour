@@ -21,6 +21,30 @@ public class DibsBO {
 		return dibsDAO.insertDibs(lodgingId, userId);
 	}
 	
+	//찜 해당숙소가 찜 되어있는지 안되어있는지 여부보기 빈하트냐 풀하트냐 
+	
+	public boolean isDibs(int userId, int lodgingId) {
+		
+		int count = dibsDAO.selectDibsByUserId(userId, lodgingId);
+		
+		if(count == 0) {//0개면 찜이 안됨
+			
+			return false;
+		} else {
+			
+			return true;
+		}
+	}
+	
+	//찜 취소
+	public int deleteDibs(int lodgingId, int userId) { 
+			
+			
+		return dibsDAO.deleteDibs(lodgingId, userId);
+			
+			
+	}
+	
 	
 	// 찜목록
 	public List<DibsDetail> getDibsList(int id, int userId){//이것도 틀렸다. List<DibsDetail>로
@@ -28,15 +52,8 @@ public class DibsBO {
 		//조회할때 userId인가 id인가?? 둘다인가??
 		
 		
-		return dibsDAO.selectDibsById(id, userId);//
+		return dibsDAO.selectDibsById(id, userId);
 	}
 	
-	//찜 취소
-	public int deleteDibs(int lodgingId, int userId) {// 
-		
-		
-		return dibsDAO.deleteDibs(lodgingId, userId);
-		
-		
-	}
+	
 }

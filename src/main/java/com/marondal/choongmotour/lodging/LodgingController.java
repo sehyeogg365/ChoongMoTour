@@ -31,6 +31,7 @@ public class LodgingController {
 	
 	@Autowired
 	private DibsBO dibsBO;
+
 	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
 	@GetMapping("/main/view")
@@ -44,20 +45,23 @@ public class LodgingController {
 	//숙소리스트
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
-			,  @RequestParam("area_name")String areaName
-
-			) {
-
+							  , @RequestParam("area_name")String areaName
+							  , int lodgingId
+							  , HttpSession session
+							  ) {
 		
-		List<Lodging> lodgingList = lodgingBO.getLodgingListByArea(areaName);
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<DibsDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, lodgingId);
 		model.addAttribute("lodgingList", lodgingList);
 		
-//		List<Room> roomList = lodgingBO.getRoomList(lodgingId);
-//		model.addAttribute("roomList", roomList);
+		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
 		
-		//여기서 room 객체도 아마 불러와 야할듯 보통 싱글룸의 가격이 명시되어있어서.
+		// 두개의 테이블을 융합해서 보여줘야함 로그인했을때 찜했는지 안했는지 여부, 지역별 숙소 리스팅
+		// sns 프로젝트 와 매우 유사하다고 하심 그리고 이과정을 비오에서 하는게 적합함
 		
 		return "lodging/lodginglist";
+	
 	}
 	// 객실리스트
 	@GetMapping("/room/view")
@@ -75,7 +79,6 @@ public class LodgingController {
 		
 		model.addAttribute("roomList", roomList);
 		
-		//모달창에 불러와야할 한행의 객실정보
 
 		
 		return "lodging/room";
@@ -86,13 +89,17 @@ public class LodgingController {
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
 						   , int id
-						   , int userId
+						   , HttpSession session
 						   ) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
-		
+		int userId = (Integer)session.getAttribute("userId");
 		
 		List<DibsDetail> dibsList = dibsBO.getDibsList(id, userId);
 		
 		model.addAttribute("dibsList", dibsList);
+		//밑에건 좀 잘 모르겠다 이렇게 막껴도 되는지??
+//		User user = userBO.getUserInfo(id);
+//		model.addAttribute("user", user);
+		
 		
 		return "lodging/dibspage";
 		

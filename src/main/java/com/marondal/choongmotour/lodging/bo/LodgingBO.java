@@ -1,5 +1,6 @@
 package com.marondal.choongmotour.lodging.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,8 +9,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
+import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
+import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
+import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Room;
+import com.marondal.choongmotour.user.bo.UserBO;
+import com.marondal.choongmotour.user.model.User;
 
 
 @Service
@@ -17,16 +23,53 @@ public class LodgingBO {
 
 	@Autowired LodgingDAO lodgingDAO;
 	
+	@Autowired UserBO userBO;
 	
+	@Autowired DibsBO dibsBO;//비오에서 비오 불러오기
+	
+	//@Autowired DibsDAO dibsDAO;
 	//사용자페이지
 
 	//lodging 정보 - 지역 불러오기??
 	
-	//숙소리스트 지역별로
-	public List<Lodging> getLodgingListByArea(String areaName){
+	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
+	public List<DibsDetail> getLodgingListByArea(String areaName, int userId, int lodgingId){
+		
+		List<Lodging> lodgingList = lodgingDAO.selectLodgingListByArea();
+		
+		List<DibsDetail> dibsDetailList = new ArrayList<>();
+		
+		for(Lodging lodging:lodgingList) {
+			
+			
+			
+			User user = userBO.getUserInfo(lodging.getId());
+			
+			
+			boolean isDibs = dibsBO.isDibs(userId, lodging.getId());
+
+
+			//찜여부
+			DibsDetail dibsDetail = new DibsDetail();
+			
+			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
+			
+			
+			dibsDetail.setUserId(lodging.getId());
+			dibsDetail.setLodgingId(lodging.getId());
+			dibsDetail.setRoomName(lodging.getRoomName());
+			dibsDetail.setAreaName(lodging.getAreaName());
+			dibsDetail.setPrice(dibsDetail.getPrice());
+			dibsDetail.setDibs(isDibs);
+			dibsDetail.setImagePath(lodging.getImagePath());
+			
+			
+			dibsDetailList.add(dibsDetail);
+		}
 		
 		
-		return lodgingDAO.selectLodgingListByArea(areaName);
+		
+		return dibsDetailList ;
 		
 	}
 	

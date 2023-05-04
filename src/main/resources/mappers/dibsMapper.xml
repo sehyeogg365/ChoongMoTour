@@ -7,7 +7,7 @@
   <mapper namespace="com.marondal.choongmotour.lodging.dibs.dao.DibsDAO">
   
   <!-- 찜하기 -->
-  	<insert id="" parameterType="map">
+  	<insert id="insertDibs" parameterType="map">
   	INSERT INTO 
   			`dibs_basket`
   	(
@@ -24,6 +24,21 @@
   	
   	);	
   	</insert>
+  	<!-- 찜여부 보기 -->
+  	<select id="selectDibsByUserId" parameterType="map" resultType="int">
+  	
+  	
+  	</select>
+  	
+  	<!-- 찜취소 -->
+  	<delete id ="deleteDibs" parameterType="int">
+  		DELETE
+  		FROM
+  			`dibs_basket`
+  		WHERE
+  			`lodgingId` = ${lodgingId};
+  	</delete>
+  	
   	
   	<!-- 찜목록 -->
   	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
@@ -40,14 +55,7 @@
   	
   	
   	
-  	<!-- 찜취소 -->
-  	<delete id ="deleteDibs" parameterType="int">
-  		DELETE
-  		FROM
-  			`dibs_basket`
-  		WHERE
-  			`lodgingId` = ${lodgingId};
-  	</delete>
+  	
   
   
   
