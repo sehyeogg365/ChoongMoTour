@@ -46,7 +46,7 @@ public class LodgingController {
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
 							  , @RequestParam("area_name")String areaName
-							  , int lodgingId
+							  , int lodgingId// 실수 부분?
 							  , HttpSession session
 							  ) {
 		
