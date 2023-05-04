@@ -61,11 +61,11 @@
 									<div class="">체크인 05.05 </div>
 									<div class="">체크아웃 05.05 </div>				
 								</div>
-								<div class="">다시예약</div>
+								<div class=""><a href="/lodging/room/view?id${lodging.id }">다시예약</a></div>
 								
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-3 btn-sm comment-btn" type="button">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -81,11 +81,11 @@
 									<div class="">체크인 05.05 </div>
 									<div class="">체크아웃 05.05 </div>				
 								</div>
-								<div class="">다시예약</div>
+								<div class=""><a href="/lodging/room/view?id${lodging.id }">다시예약</a></div>
 					
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3 comment-btn" type="button">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-3 btn-sm comment-btn" type="button">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -101,12 +101,12 @@
 									<div class="">체크인 05.05 </div>
 									<div class="">체크아웃 05.05 </div>				
 								</div>
-								<div class="">다시예약</div>
-				
-								
+								<div class=""><a href="/lodging/room/view?id${lodging.id }">다시예약</a></div>
+
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3 comment-modal-btn" type="button" data-toggle="modal" data-target="#commentModal${room.id }" data-room-id="${room.id }">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-3 btn-sm comment-modal-btn" type="button" data-toggle="modal" data-target="#commentModal${room.id }" data-room-id="${room.id }">댓글달기</button>
 								</div>
+								
 							</div>
 						</div>
 					

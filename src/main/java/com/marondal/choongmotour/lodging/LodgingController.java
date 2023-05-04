@@ -101,13 +101,15 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, int id
+			, int lodgingId
+
 			) {
 		
 		Lodging lodging = lodgingBO.getLodging(id);
 		model.addAttribute("lodging", lodging);
 		
-//		Room room = lodgingBO.getRoom(id);
-//		model.addAttribute("room", room);
+		Room room = lodgingBO.getRoom(id);
+		model.addAttribute("room", room);
 		
 		User user = userBO.getUserInfo(id);
 		model.addAttribute("user", user);
