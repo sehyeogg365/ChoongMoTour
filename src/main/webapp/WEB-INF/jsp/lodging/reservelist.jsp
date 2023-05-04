@@ -56,8 +56,13 @@
 							</div>
 							<div class="reservation-card-body">
 								<div class="">ㅇㅇ호텔</div>
+								<div class="">싱글룸</div>
+								<div class="d-flex">
+									<div class="">체크인 05.05 </div>
+									<div class="">체크아웃 05.05 </div>				
+								</div>
+								<div class="">다시예약</div>
 								
-								<div class="">3성급</div>
 								
 								<div class="text-center">
 									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
@@ -70,12 +75,17 @@
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
 							<div class="reservation-card-body">
-								<div class="">ㅇㅇ호텔</div>
-								
-								<div class="">3성급</div>
+								<div class="">△△호텔</div>
+								<div class="">싱글룸</div>
+								<div class="d-flex">
+									<div class="">체크인 05.05 </div>
+									<div class="">체크아웃 05.05 </div>				
+								</div>
+								<div class="">다시예약</div>
+					
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-3 comment-btn" type="button">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -83,13 +93,19 @@
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<div class="reservation-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							<div class="reservation-card-body">
-								<div class="">ㅇㅇ호텔</div>
-								
-								<div class="">3성급</div>
+							</div>							
+							<div class="reservation-card-body">
+								<div class="">xx호텔</div>
+								<div class="">더블룸</div>
+								<div class="d-flex">
+									<div class="">체크인 05.05 </div>
+									<div class="">체크아웃 05.05 </div>				
+								</div>
+								<div class="">다시예약</div>
+				
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3" type="button">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-3 comment-modal-btn" type="button" data-toggle="modal" data-target="#commentModal${room.id }" data-room-id="${room.id }">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -104,25 +120,32 @@
 			</div>
 				
 				
-			<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary" data-room-id="${room.id }" data-bs-toggle="modal" data-target="#moreModal"><!-- 버튼태그의 두개의 속성을 아이디에 잘맞춰주면 동작하는구나 -->
-		  Launch demo modal
-		</button>
+				<!-- Button trigger modal -->
 		
-		<!-- Modal 도 댓글달기-->
-		<div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		  <div class="modal-dialog modal-dialog-centered" role="document">
-		    <div class="modal-content">
-		    
-		
-		      <div class="modal-body text-center">
-		       	<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-		      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
-		      
-		   
-		    </div>
-		  </div>
-		</div>	
+			
+			<!-- Modal 도 댓글달기-->
+			<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			    	<div class="modal-header">
+						<h5 class="modal-title">객실 댓글 달기</h5>
+							        
+					</div>	
+				   <div class="modal-body text-center">
+			       	<p></p>
+			    	<p id="contentInput${room.id }">${room.content }</p>
+			    	<p></p>
+			       	
+			       	
+			      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+			      <div class="modal-footer">
+					<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
+					<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
+				 </div>
+			   
+			    </div>
+			  </div>
+			</div>	
 				
 				
 				
@@ -145,6 +168,16 @@
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 $("#commentBtn").on("click", function(){
+			 
+		 });
+		 
+		 
+ 		$(".comment-modal-btn").on("click", function(){
+			 
+			 let id = $(this).data("room-id");
+			 
+			 let content = ("#contentInput" + id).val();
+			 
 			 
 		 });
 		 

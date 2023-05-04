@@ -2,6 +2,7 @@ package com.marondal.choongmotour.lodging;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
+import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
@@ -26,6 +29,9 @@ public class LodgingController {
 	@Autowired
 	private UserBO userBO;
 	
+	@Autowired
+	private DibsBO dibsBO;
+	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
 	@GetMapping("/main/view")
 	public String mainPage() {//지역 나타내기 및 id 
@@ -39,8 +45,7 @@ public class LodgingController {
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
 			,  @RequestParam("area_name")String areaName
-			
-			
+
 			) {
 
 		
@@ -79,8 +84,13 @@ public class LodgingController {
 	
 	//찜목록
 	@GetMapping("/dibspage/view")
-	public String dibsPage() {
+	public String dibsPage(Model model
+						,HttpSession session) {
 		
+		int userId = (Integer)session.getAttribute("userId");
+
+		List<DibsDetail> dibsList = dibsBO.getDibsList(userId);
+		model.addAttribute("dibsList", dibsList);
 		
 		return "lodging/dibspage";
 		

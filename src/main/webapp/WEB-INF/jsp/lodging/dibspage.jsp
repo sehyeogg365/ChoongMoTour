@@ -56,8 +56,9 @@
 							
 							<div class="dibs-card-body">
 								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
+						
 								<div class="">71,250원</div>
-								<div class="">3성급</div>
+							
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
@@ -69,7 +70,6 @@
 							<div class="dibs-card-body">
 								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
-								<div class="">3성급</div>
 							</div>
 						</div>
 						
@@ -81,7 +81,6 @@
 							<div class="dibs-card-body">
 								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
-								<div class="">3성급</div>
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
@@ -93,7 +92,6 @@
 							<div class="dibs-card-body">
 								<div class=""><a href="/lodging/room/view?id=">ㅇㅇ호텔</a></div>
 								<div class="">71,250원</div>
-								<div class="">3성급</div>
 							</div>
 						</div>
 						

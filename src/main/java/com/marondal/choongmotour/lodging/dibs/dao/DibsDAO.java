@@ -16,7 +16,7 @@ public interface DibsDAO {
 	
 	//찜 조회
 	public List<DibsDetail> selectDibsById(@Param("userId") int userId
-										  ,@Param("lodgingId") int lodgingId);
+										  );
 											
 	
 	//찜 취소

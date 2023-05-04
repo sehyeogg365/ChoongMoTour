@@ -23,12 +23,12 @@ public class DibsBO {
 	
 	
 	// 찜목록 userId별로
-	public List<DibsDetail> getDibsList(int userId, int lodgingId){//이것도 틀렸다. List<DibsDetail>로
+	public List<DibsDetail> getDibsList(int userId){//이것도 틀렸다. List<DibsDetail>로
 		
 		
 		
 		
-		return dibsDAO.selectDibsById(userId, lodgingId);
+		return dibsDAO.selectDibsById(userId);
 	}
 	
 	//찜 취소
