@@ -13,15 +13,12 @@
   	(
   		`userId`
   		, `lodgingId`
-  		, `createdAt`
-  		, `updatedAt`
-  	
+  		, `createdAt` 	
   	)	
   	VALUES
   	(
   		#{userId}
   		, #{lodgingId}
-  		, now()
   		, now()
   		
   	
@@ -48,6 +45,8 @@
   		FROM
   			`dibs_basket`
   		WHERE
+  			`userId` = ${userId}
+  			AND
   			`lodgingId` = ${lodgingId};
   	</delete>
   

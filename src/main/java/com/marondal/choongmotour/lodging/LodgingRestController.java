@@ -33,9 +33,10 @@ public class LodgingRestController {
 	@PostMapping("/dib")
 	public Map<String, String> dibsCreate(
 			@RequestParam("lodgingId") int lodgingId
-			){
+			, HttpSession session){
+		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.addDibs(lodgingId);
+		int count = dibsBO.addDibs(userId, lodgingId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -53,9 +54,10 @@ public class LodgingRestController {
 	@PostMapping("/undib")
 	public Map<String, String> dibsDelete(
 			@RequestParam("lodgingId") int lodgingId
-			){
+			, HttpSession session){
+		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.deleteDibs(lodgingId);
+		int count = dibsBO.deleteDibs(userId, lodgingId);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		
