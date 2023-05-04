@@ -48,29 +48,23 @@
 					<div class="info-input-box">
 					
 						<label>프로필 사진 변경</label><br>
-						
+						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+					
+						<input type="file" name="file" id="fileInput" class="">
 						
 						<c:choose>
 						  <c:when test="${not empty user.imagePath }"><!-- 있을때 이거를 user.imagePath로 바꾸면 어떨까?  프사가 뜬다.-->
-						  	<div class="d-flex justify-content-between">
-						  	<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-					
-							<input type="file" name="file" id="fileInput" class="">
+						  	
 							<!-- 우선 굳이 이미지아이콘 이용해야하는지도 의문이긴한지만, 있을때는 사진변경/ 사진삭제 버튼 -->
 							<!-- 없을때는 사진 업로드 버튼 이렇게만 있게하는걸로,  -->
 							<!-- 그리고 음.. 사진변경을 안하고 수정을 누르면 아예 사라져버리는데 프로필변경과 따로해야하나 싶다. -->
-							<button id="" class="btn btn-primary" type="button">사진 삭제</button>
+							
 						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 헤더야 항상 불러와야 하니 세션을 썼지만.. -->
 						  
-						  	</div>
+						  	
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
-						  	<div class="d-flex justify-content-between">
-						  	<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-					
-							<input type="file" name="file" id="fileInput">
-						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-						 	</div>
+						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> 
 						  </c:otherwise>
 				 		 </c:choose>	
 						
