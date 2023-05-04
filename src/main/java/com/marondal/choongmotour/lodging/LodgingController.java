@@ -85,13 +85,14 @@ public class LodgingController {
 	//찜목록
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
-						, int userId) {//이제보니 로징아이디가 필요한게 아니다 id, 즉 reserved_list의 id가 필요
+						   , int id
+						   , int userId
+						   ) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
 		
-
-		List<DibsDetail> dibsList = dibsBO.getDibsList(userId);
+		
+		List<DibsDetail> dibsList = dibsBO.getDibsList(id, userId);
+		
 		model.addAttribute("dibsList", dibsList);
-		
-		
 		
 		return "lodging/dibspage";
 		

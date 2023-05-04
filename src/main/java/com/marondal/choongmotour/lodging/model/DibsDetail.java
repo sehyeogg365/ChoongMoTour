@@ -1,14 +1,14 @@
 package com.marondal.choongmotour.lodging.model;
 
 public class DibsDetail {// 찜 카드에 필요한 데이터들
-	private int id;
-	private int userId;
-	private int lodgingId;
-	private String roomName;
-	private String areaName;
-	private int price;
-	private boolean isDibs;
-	private String imagePath;
+	private int id; //몇번째 찜했는지 
+	private int userId; //누가 저장했는지
+	private int lodgingId; // 어떤숙소인지
+	private String roomName; //숙소명
+	private String areaName; //지역
+	private int price; //가격
+	private boolean isDibs; // 찜했냐 안했냐 여부
+	private String imagePath; //사진 등
 	public int getId() {
 		return id;
 	}

@@ -143,20 +143,25 @@
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
 			
-			let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("lodging-id");
 			
+			alert(id);
 			
 			$.ajax({
-				
-				type: ""
+				type: "get"
 				, url :"/lodging/undib"
-				, data:{"lodgingId":lodgingId}
+				, data:{"lodgingId":id}
 				, success:function(data){
-					
+					if(data.reuslt == "succes"){
+						alert("찜 취소 성공");
+						location.reload();
+					} else {
+						alert("찜 취소 실패");
+					}
 					
 				}
 				, error:function(){
-					
+					alert("찜 취소 오류");
 					
 				}
 				
@@ -166,19 +171,26 @@
 		//찜
 		$(".dib-icon").on("click", function(){
 			
-			let lodgingId = $(this).data("lodging-id");
+			let id = $(this).data("lodging-id");
+			
+			alert(id);
 			
 			$.ajax({
 				
-				type:""
-				, url:"/lodgin/dib"
-				, data:{"lodgingId":lodgingId}
+				type:"post"
+				, url:"/lodging/dib" //404 경로문제 여기가 잘못되었다.
+				, data:{"lodgingId":id}
 				, success:function(data){
-					
+					if(data.result == "success"){
+						alert("찜 성공");
+						location.reload();
+					} else {
+						alert("찜 실패");
+					}
 				}
 				,error:function(){
 					
-					
+					alert("찜 오류");
 				}
 				
 			});

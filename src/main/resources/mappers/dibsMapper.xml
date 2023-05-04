@@ -28,11 +28,12 @@
   	<!-- 찜목록 -->
   	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
   		SELECT
-  			`id`<!-- 이쿼리문도 어찌보면 잘못됐다. 로징아이디를 검색하는게 아닌 찜한내역을 검색하는거라서 id가 와야하고, userId가 조건문이된다. -->
+  			`id`
+  			, `lodgingId`<!-- 어떤것을 조회해올것인지 생각 --> 
   		FROM
   			`dibs_basket`
   		WHERE 
-  			`userId` = #{userId}
+  			`userId` = #{userId} <!-- 이거는 어떡해야하는가? -->
   		ORDER BY 
   			`createdAt` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
@@ -45,9 +46,7 @@
   		FROM
   			`dibs_basket`
   		WHERE
-  			`userId` = ${userId}
-  			AND
-  			`id` = ${id};
+  			`lodgingId` = ${lodgingId};
   	</delete>
   
   

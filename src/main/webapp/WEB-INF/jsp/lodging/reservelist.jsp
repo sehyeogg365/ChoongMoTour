@@ -122,7 +122,7 @@
 				
 				<!-- Button trigger modal -->
 		
-			
+			<!-- 애초에 모달도 리스팅을 안했기에 당연히 안뜰수밖에.. -->
 			<!-- Modal 도 댓글달기-->
 			<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">

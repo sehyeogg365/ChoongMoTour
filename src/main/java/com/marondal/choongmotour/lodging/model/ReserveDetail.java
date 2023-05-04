@@ -4,17 +4,13 @@ import java.util.Date;
 
 public class ReserveDetail {//예약 카드에 필요한 데이터들
 		
-	private int id;
-	private int userId;
-	//숙소명
-	private String roomName;
-	//사이즈
-	private String size;
-	//사진
-	private String imagePath;
-	//예약 날짜
-	private Date reserveDate;
-	//
+	private int id; // 몇번째 저장
+	private int userId; // 누가 저장했는지
+	private int lodgingId;//어떤 숙소인지 (다시예약시 링크 들어갈려면 필요)
+	private String roomName;//숙소명
+	private String size;// 객실 사이즈
+	private String imagePath;//사진
+	private Date reserveDate;//예약 날짜
 	public int getId() {
 		return id;
 	}
@@ -26,6 +22,12 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들
 	}
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	public int getLodgingId() {
+		return lodgingId;
+	}
+	public void setLodgingId(int lodgingId) {
+		this.lodgingId = lodgingId;
 	}
 	public String getRoomName() {
 		return roomName;
@@ -51,6 +53,8 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들
 	public void setReserveDate(Date reserveDate) {
 		this.reserveDate = reserveDate;
 	}
+
+	
 	
 	
 }

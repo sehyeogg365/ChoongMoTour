@@ -7,7 +7,6 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,10 +32,11 @@ public class LodgingRestController {
 	@PostMapping("/dib")
 	public Map<String, String> dibsCreate(
 			@RequestParam("lodgingId") int lodgingId
-			, HttpSession session){
+			, HttpSession session
+			){
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.addDibs(userId, lodgingId);
+		int count = dibsBO.addDibs(lodgingId, userId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -53,11 +53,12 @@ public class LodgingRestController {
 	//찜 취소
 	@GetMapping("/undib")
 	public Map<String, String> dibsDelete(
-			@RequestParam("id") int id
-			, HttpSession session){
+			@RequestParam("lodgingId") int lodgingId
+			, HttpSession session
+			){
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.deleteDibs(userId, id);
+		int count = dibsBO.deleteDibs(lodgingId, userId);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		
@@ -85,7 +86,11 @@ public class LodgingRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-			
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}	
 		
 		return resultMap;
 		

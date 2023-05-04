@@ -5,6 +5,7 @@ import java.util.Date;
 public class Reserve {
 	private int id;
 	private int userId;
+					//어떤 숙소냐도 필요???
 	private int roomId;
 	private Date reserveDate;
 	private String payment;
