@@ -51,7 +51,7 @@ public class LodgingRestController {
 	}
 	
 	//찜 취소
-	@PostMapping("/undib")
+	@GetMapping("/undib")
 	public Map<String, String> dibsDelete(
 			@RequestParam("lodgingId") int lodgingId
 			, HttpSession session){

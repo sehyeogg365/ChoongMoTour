@@ -26,7 +26,7 @@
   	</insert>
   	
   	<!-- 찜목록 -->
-  	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="int">
+  	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
   		SELECT
   			`lodgingId`
   		FROM

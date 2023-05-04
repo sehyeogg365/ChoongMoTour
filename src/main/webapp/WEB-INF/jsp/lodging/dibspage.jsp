@@ -49,7 +49,7 @@
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						
 						<div class="dibs-card  ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-lodging-id = "${lodging.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
@@ -74,7 +74,7 @@
 						</div>
 						
 						<div class="dibs-card ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
@@ -84,7 +84,7 @@
 							</div>
 						</div>
 						<div class="dibs-card ml-3 mt-3">
-							<i class="bi bi-heart-fill text-danger d-flex justify-content-end"></i>
+							<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
 							<div class="dibs-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
 							</div>							
@@ -105,10 +105,43 @@
 				</div>
 			
 			</section>
-	
+		
 	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
-
+	<script>
+	$(document).ready(function(){
+		
+		//찜 해제 
+		$(".undib-icon").on("click", function(){
+			
+			let lodgingId = $(this).data("lodging-id");
+			
+			
+			$.ajax({
+				
+				type: "get"
+				, url :"/lodging/undib"
+				, data:{"userId":userId}
+				, success:function(data){
+					
+					
+				}
+				, error:function(){
+					
+					
+				}
+				
+			});
+			
+		});
+		
+		
+		
+		
+	});
+	
+	
+	</script>
 </body>
 </html>

@@ -15,7 +15,7 @@ public interface DibsDAO {
 						 , @Param("lodgingId") int lodgingId);
 	
 	//찜 조회
-	public List<DibsDetail> selectDibsById(@Param("userId") int userId
+	public List<DibsDetail> selectDibsById(@Param("lodginId") int lodgingd
 										  );
 											
 	

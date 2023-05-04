@@ -85,11 +85,10 @@ public class LodgingController {
 	//찜목록
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
-						,HttpSession session) {
+						, int lodgingId) {
 		
-		int userId = (Integer)session.getAttribute("userId");
 
-		List<DibsDetail> dibsList = dibsBO.getDibsList(userId);
+		List<DibsDetail> dibsList = dibsBO.getDibsList(lodgingId);
 		model.addAttribute("dibsList", dibsList);
 		
 		return "lodging/dibspage";
