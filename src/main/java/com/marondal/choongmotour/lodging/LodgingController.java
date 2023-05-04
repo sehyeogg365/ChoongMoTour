@@ -15,6 +15,7 @@ import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -46,14 +47,15 @@ public class LodgingController {
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
 							  , @RequestParam("area_name")String areaName
-							  , int lodgingId// 실수 부분?
-							  , HttpSession session
+							  , @RequestParam("id") int id
 							  ) {
 		
-		int userId = (Integer)session.getAttribute("userId");
+		//int userId = (Integer)session.getAttribute("userId"); dibs detail 이랑 자꾸 헷갈려서 그런듯.
 		
-		List<DibsDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, lodgingId);
-		model.addAttribute("lodgingList", lodgingList);
+		List<LodgingDetail> lodgingDetailList = lodgingBO.getLodgingListByArea(areaName, id);
+		
+		model.addAttribute("lodgingDetailList", lodgingDetailList);
+		//로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		
 		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
 		
@@ -88,7 +90,7 @@ public class LodgingController {
 	//찜목록
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
-						   , int id
+						   , @RequestParam("id") int id //여기도 리퀘스트 파람 안해줬다.
 						   , HttpSession session
 						   ) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
 		int userId = (Integer)session.getAttribute("userId");

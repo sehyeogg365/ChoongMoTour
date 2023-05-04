@@ -13,8 +13,7 @@ public interface LodgingDAO {
 	//사용자페이지
 	
 	//지역별 숙소 
-	public List<Lodging> selectLodgingListByArea(@Param("areaName") String areaName);
-	
+	public List<Lodging> selectLodgingListByArea(@Param("area_name") String areaName);
 	
 	// 로징아이디 별 객실 근데 이건 밑에거 써도 되나???
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);

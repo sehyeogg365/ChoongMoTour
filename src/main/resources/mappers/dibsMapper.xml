@@ -26,8 +26,14 @@
   	</insert>
   	<!-- 찜여부 보기 -->
   	<select id="selectDibsByUserId" parameterType="map" resultType="int">
-  	
-  	
+  		SELECT 
+  			count(1)
+  		FROM
+  			`dibs_basket`
+  		WHERE
+  			`userId` = #${userId}
+  			AND
+  			`lodgingId` = #{lodgingId}; <!-- 쿼리문 안짜서 400에러가 뜬게 아닐까 싶다. -->
   	</select>
   	
   	<!-- 찜취소 -->

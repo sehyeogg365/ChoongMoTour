@@ -13,6 +13,7 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
+import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -33,43 +34,43 @@ public class LodgingBO {
 	//lodging 정보 - 지역 불러오기??
 	
 	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
-	public List<DibsDetail> getLodgingListByArea(String areaName, int userId, int lodgingId){
+	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId){
 		
 		List<Lodging> lodgingList = lodgingDAO.selectLodgingListByArea(areaName);
 		
-		List<DibsDetail> dibsDetailList = new ArrayList<>();
+		List<LodgingDetail> lodgingDetailList = new ArrayList<>();
 		
 		for(Lodging lodging:lodgingList) {
 			
-			
-			
-			User user = userBO.getUserInfo(lodging.getId());
+			//숙소카드 한장에 유저정보가 들어갈일은 없다.
 			
 			
 			boolean isDibs = dibsBO.isDibs(userId, lodging.getId());
+										
 			
-
-			//찜여부
-			DibsDetail dibsDetail = new DibsDetail();
+			LodgingDetail lodgingDetail = new LodgingDetail();
 			
 			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
 			
 			//그 숙소리스팅에 들어갈 것들.
-			dibsDetail.setUserId(lodging.getId());
-			dibsDetail.setRoomName(lodging.getRoomName());
-			dibsDetail.setAreaName(lodging.getAreaName());
-			dibsDetail.setPrice(dibsDetail.getPrice());
-			dibsDetail.setDibs(isDibs);
-			dibsDetail.setImagePath(lodging.getImagePath());
+			//lodgingDetail.setUserId(user.getId());//유저아이디?
+			lodgingDetail.setId(lodging.getId());//로징아이디
+			lodgingDetail.setRoomName(lodging.getRoomName());// 숙소명
+			lodgingDetail.setAreaName(lodging.getAreaName()); // 지역명
+			lodgingDetail.setLevel(lodging.getLevel());//성급
+			lodgingDetail.setImagePath(lodging.getImagePath());// 숙소 사진
+			lodgingDetail.setDibs(isDibs);// 찜여부
+			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
 			
+		
 			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
-			dibsDetailList.add(dibsDetail);
+			lodgingDetailList.add(lodgingDetail);
 		}
 		
 		
 		
-		return dibsDetailList ;
+		return lodgingDetailList ;
 		
 	}
 	
