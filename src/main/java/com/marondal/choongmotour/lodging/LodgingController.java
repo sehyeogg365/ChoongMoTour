@@ -115,7 +115,7 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("id") int id
-			, @RequestParam("lodgingId") int lodgingId // 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
+			//, @RequestParam("lodgingId") int lodgingId // 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
 
 			) {
 		

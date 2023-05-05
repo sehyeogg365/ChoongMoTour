@@ -7,8 +7,7 @@
 
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
  
- <!-- 예약 페이지 조회 -->
- 
+
  
  
  <!-- 예약하기 -->
@@ -39,10 +38,23 @@
   
   <!-- 예약 목록 -->	
   <!-- 이제보니 이것도 안해놔서 때로는 오류가 뜬다. -->
- 
+  <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
+  	SELECT
+  		`id`
+  	FROM
+  		`reserved_list`
+  	WHERE
+  		`id`= #{id};
+  </select>
   
   <!-- 예약 취소 -->
- 
+  <delete id = "deleteReserve" parameterType="int">
+  DELETE
+  FROM	`reserved_list`
+  WHERE `id` =#{id};
+  
+  
+  </delete>
  
  
  

@@ -40,10 +40,10 @@
 					</div>
 					
 					<div class = "">
-						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name}"  class="form-control ">
+						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = class="form-control ">
 					
 					
-						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
+						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value =  class="form-control ">
 					</div>
 					<hr>
 					
@@ -101,6 +101,19 @@
 		
 		$("#payBtn").on("click", function(){
 			
+			
+			let phoneNumber = $("#phoneNumberInput").val();
+			let name = $("#nameInput").val();
+			let size = $("#sizeInput").val();
+			let pay = $("#paySelector").val();
+			let check = $("#allCheck").val();
+			
+			
+			
+			//roomId
+			//userId
+			//payment
+			//reserveDate
 			
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 

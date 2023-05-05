@@ -102,10 +102,11 @@ public class LodgingRestController {
 	public Map<String, String> reserveRoom(
 				@RequestParam("userId") int userId
 				, @RequestParam("roomId") int roomId
+				, @RequestParam("payment") String payment
 				, @RequestParam("reserveDate") Date reserveDate
 			) {
 		
-		int count = reserveBO.addReserve(userId, roomId, reserveDate);
+		int count = reserveBO.addReserve(roomId, userId,  payment, reserveDate);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -116,11 +117,31 @@ public class LodgingRestController {
 		}	
 		
 		return resultMap;
-		
-		
+
 	}
 	
 	// 예약 취소
+	@PostMapping("/deletereserve")
+	public Map<String, String> reserveDelete(
+										@RequestParam("id")int id){
+		
+		
+		int count = reserveBO.deleteReserve(id);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+			
+		} else { 
+			
+			resultMap.put("result", "fail");
+		}
+		
+		
+		return resultMap;
+	}
+	
 	
 	//-------관리자 페이지---------
 	//숙소 추가 api

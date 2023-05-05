@@ -52,7 +52,7 @@
   	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
   		SELECT
   			`id`
-
+			`lodgingId`
 			<!-- 어떤것을 조회해올것인지 생각 로징아이디는 조회해야하나 싶음 --> 
   		FROM
   			`dibs_basket`
