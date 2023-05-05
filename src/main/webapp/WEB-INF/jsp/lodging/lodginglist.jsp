@@ -30,9 +30,9 @@
 				</h1>
 				
 				<div class="d-flex justify-content-between">
-					<i id="filterIcon"class="filter-icon bi bi-filter-left">필터</i>
+					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;">필터</i>
 					
-					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up">정렬</i>
+					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
 				</div>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
@@ -66,7 +66,23 @@
 						</div>
 						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
 							<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>
-							<div class="">${lodging.level }</div>
+							<c:choose>
+						<c:when test = "${lodging.level eq '5성급' }">
+							<div class="text-warning">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '4성급' }">
+							<div class="text-danger">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '3성급' }">
+							<div class="text-second">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '2성급' }">
+							<div class="text-success">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '1성급' }">
+							<div class="text-primary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+					</c:choose>
 						</div>
 					</div>
 					</c:forEach>

@@ -104,7 +104,9 @@ header{
 .card-list > .card{
 	width: 400px;
     height: 600px; 
-	 
+    
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 	
 }
 
@@ -123,8 +125,9 @@ header{
 }
 
 .info-input-box{
-	width:500px;
-	
+	width:700px;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 }
 
 .lodging-card-list>.lodging-card{

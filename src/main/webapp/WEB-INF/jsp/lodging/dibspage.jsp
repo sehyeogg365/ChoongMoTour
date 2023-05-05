@@ -27,8 +27,8 @@
 						ChoongMo Tour Dibs Page
 					</h1>
 					
-					<div class="mypagecontents d-flex">
-					<aside class="aside1 col-3 ">
+					<div class="dibspagecontents d-flex mx-3">
+					<aside class="aside1 col-2 ">
 						
 					<div>				
 						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
@@ -42,7 +42,7 @@
 					
 					
 					</aside>
-					<section class="contents1 col-9 ">
+					<section class="contents1 col-10 ">
 					
 						<label>찜목록</label><br>
 						
@@ -50,7 +50,7 @@
 					
 					
 							<c:forEach var="dibs" items="${dibsList }">
-							<div class="dibs-card  ml-3 mt-3">
+							<div class="dibs-card  ml-4 mt-3">
 								
 								<div class="dibs-profile">
 									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.id	 }"></i>

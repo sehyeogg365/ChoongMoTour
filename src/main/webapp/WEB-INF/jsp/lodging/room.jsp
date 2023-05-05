@@ -37,8 +37,24 @@
 				
 				<div class="lodging-profile2 align-items-center">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
+					<c:choose>
+						<c:when test = "${lodging.level eq '5성급' }">
+							<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '4성급' }">
+							<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '3성급' }">
+							<h3 class="text-second">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '2성급' }">
+							<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+						<c:when test = "${lodging.level eq '1성급' }">
+							<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+						</c:when>
+					</c:choose>
 				
-					<h3>${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
 				</div><br>
 				
 				<div class="text-center">
@@ -88,7 +104,7 @@
 								<div class="ml-4">${room.size }</div>
 							</c:otherwise>
 						</c:choose>	
-							<div class="mt-3 ml-4"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</div>
+							<p class="mt-3 ml-4 text-bold"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</p>
 							
 							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>

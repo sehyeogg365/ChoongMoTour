@@ -26,7 +26,7 @@
 					ChoongMo Tour ReserveList
 				</h1>
 				
-				<div class="mypagecontents d-flex">
+				<div class="reservelistcontents d-flex mx-3">
 				<aside class="aside1 col-3 ">
 				
 					<div>
@@ -49,7 +49,7 @@
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						<!-- 예약 카드 -->
 						
-						<div class="reservation-card ml-3 mt-3">
+						<div class="reservation-card ml-4 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<div class="reservation-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
@@ -69,7 +69,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="reservation-card ml-3 mt-3">
+						<div class="reservation-card ml-4 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<div class="reservation-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
@@ -89,7 +89,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="reservation-card ml-3 mt-3">
+						<div class="reservation-card ml-4 mt-3">
 							<i class="bi bi-x-square d-flex justify-content-end"></i>
 							<div class="reservation-profile">
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
