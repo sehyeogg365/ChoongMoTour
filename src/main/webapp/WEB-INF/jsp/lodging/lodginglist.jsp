@@ -44,7 +44,7 @@
 				
 				<div class="lodging-card-list">
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
-					<c:forEach var="lodging" items = "${lodgingDetailList }">
+					<c:forEach var="lodging" items = "${lodgingList }">
 					<div class="lodging-card">
 						
 						<div class="lodging-profile">

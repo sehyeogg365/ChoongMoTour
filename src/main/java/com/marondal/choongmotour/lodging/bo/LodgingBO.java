@@ -70,7 +70,7 @@ public class LodgingBO {
 		
 		
 		
-		return lodgingDetailList ;
+		return lodgingDetailList;
 		
 	}
 	

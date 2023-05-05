@@ -47,14 +47,15 @@ public class LodgingController {
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
 							  , @RequestParam("area_name")String areaName
-							  , @RequestParam("id") int id
+							  , HttpSession session
+							 // , @RequestParam("id") int id
 							  ) {
 		
-		//int userId = (Integer)session.getAttribute("userId"); dibs detail 이랑 자꾸 헷갈려서 그런듯.
+		int userId = (Integer)session.getAttribute("userId"); //dibs detail 이랑 자꾸 헷갈려서 그런듯.
 		
-		List<LodgingDetail> lodgingDetailList = lodgingBO.getLodgingListByArea(areaName, id);
+		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId);
 		
-		model.addAttribute("lodgingDetailList", lodgingDetailList);
+		model.addAttribute("lodgingList", lodgingList);
 		//로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		
 		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
