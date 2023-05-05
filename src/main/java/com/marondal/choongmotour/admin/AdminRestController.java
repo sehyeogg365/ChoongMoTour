@@ -101,7 +101,7 @@ public class AdminRestController {
 				session.setAttribute("adminName", admin.getName());//여기부분 필요한가 질문
 				session.setAttribute("adminNickname", admin.getNickname());
 				session.setAttribute("adminImagePath", admin.getImagePath());
-		
+			
 			} else {
 				resultMap.put("result", "fail");
 			}

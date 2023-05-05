@@ -137,7 +137,7 @@ public class LodgingRestController {
 		
 		int adminId = (Integer)session.getAttribute("adminId");
 		
-		int count = lodgingBO.addLodging(id,  adminId, roomName, level, areaName, file);
+		int count = lodgingBO.addLodging(id, adminId, roomName, level, areaName, file);
 								//그리고 웬만하면 자동완성 하지말기. 헷갈리고 더 복잡해짐
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -183,7 +183,7 @@ public class LodgingRestController {
 	@PostMapping("/room/create")
 	public Map<String, String>roomCreate(
 			@RequestParam("id") int id
-			, @RequestParam("lodgingId") int lodgingId
+			//, @RequestParam("lodgingId") int lodgingId
 			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
@@ -195,7 +195,7 @@ public class LodgingRestController {
 
 		
 		
-		int count = lodgingBO.addRoom(id, lodgingId, price, size, content, file);
+		int count = lodgingBO.addRoom(id, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		

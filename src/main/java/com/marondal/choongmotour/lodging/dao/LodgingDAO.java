@@ -53,8 +53,8 @@ public interface LodgingDAO {
 	//객실 추가
 	public int insertRoom(
 
-						   @Param("lodgingId") int lodgingId //이제보니 왜 price 가 없을까?
-						  , @Param("price") int price
+						   //이제보니 왜 price 가 없을까?
+						   @Param("price") int price
 						  , @Param("size") String size
 						  , @Param("content") String content
 						  , @Param("imagePath") String imagePath

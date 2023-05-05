@@ -143,7 +143,7 @@
 		$("#singlecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
 			//let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			//이것도 굳이 빼준다.
+			//이것도 빼준다.
 			let id = $(this).data("room-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
 			
 			let price = $("#singlepriceInput").val();
@@ -181,7 +181,7 @@
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			
 			formData.append("id", id);
-			formData.append("lodgingId", lodgingId);
+			//formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
@@ -189,10 +189,10 @@
 			
 			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			//alert(lodgingId);//O
-			//alert(price);//O
-			//alert(size);//O
-			//alert(content);//O
-			//alert(file);//X
+			alert(price);//O
+			alert(size);//O
+			alert(content);//O
+			alert(file);//O
 			
 			$.ajax({
 				type: "post"
@@ -256,17 +256,17 @@
 			var formData = new FormData();
 			
 			formData.append("id", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
+			//formData.append("lodgingId", lodgingId);//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
 			//alert(lodgingId);
-			//alert(price);//O
-			//alert(size);//O
-			//alert(content);//O
-			//alert(file);//X
+			alert(price);//O
+			alert(size);//O
+			alert(content);//O
+			alert(file);//O
 			
 			$.ajax({
 				type: "post"
