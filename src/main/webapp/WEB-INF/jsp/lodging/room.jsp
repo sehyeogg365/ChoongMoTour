@@ -186,7 +186,7 @@
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
-            
+             
              showButtonPanel:true,
              closeText: 'done',
              minDate: 0,//오늘날짜 부터
