@@ -31,7 +31,7 @@
   		FROM
   			`dibs_basket`
   		WHERE
-  			`userId` = ${userId} <!-- #${userId}를 ${userId}로 수정 -->
+  			`userId` = #{userId} <!-- #${userId}를 #{userId}로 수정 -->
   			AND
   			`lodgingId` = #{lodgingId}; <!-- 쿼리문 안짜서 400에러가 뜬게 아닐까 싶다. -->
   	</select>
@@ -42,21 +42,25 @@
   		FROM
   			`dibs_basket`
   		WHERE
-  			`lodgingId` = ${lodgingId};
+  			`lodgingId` = #{lodgingId}; <!-- 설마 이것땜에 400에러가?? -->
   	</delete>
   	
   	
   	<!-- 찜목록 -->
-  	<select id = "selectDibsById" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
+  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
   		SELECT
   			`id`
+  			, `userId`
+  			, `lodgingId`
+  			, `createdAt`
 			<!-- 어떤것을 조회해올것인지 생각 로징아이디는 조회해야하나 싶음 --> 
   		FROM
   			`dibs_basket`
   		WHERE 
   			`userId` = #{userId} <!-- 이거는 어떡해야하는가? -->
+		
   		ORDER BY 
-  			`createdAt` DESC; <!-- 최근 찜한 순서대로 -->
+  			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
   	
   	

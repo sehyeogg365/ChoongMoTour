@@ -92,11 +92,13 @@ public class LodgingController {
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
 						   , @RequestParam("id") int id //여기도 리퀘스트 파람 안해줬다.
+						   , @RequestParam("lodgingId") int lodgingId
 						   , HttpSession session
-						   ) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
+			) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
+		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<DibsDetail> dibsList = dibsBO.getDibsList(id, userId);
+		List<DibsDetail> dibsList = dibsBO.getDibsList(lodgingId, userId);
 		
 		model.addAttribute("dibsList", dibsList);
 		
@@ -113,8 +115,8 @@ public class LodgingController {
 	//예약페이지 reserve 객체를 해야하나 모르겠다.
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
-			, int id
-			, int lodgingId
+			, @RequestParam("id") int id
+			, @RequestParam("lodgingId") int lodgingId // 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
 
 			) {
 		
@@ -133,14 +135,16 @@ public class LodgingController {
 	}
 	
 	//예약목록
-	@GetMapping("/reservelist/view")
-	public String reserveListPage() {
-		
-		
-		return "lodging/reservelist";
-		
-		
-	}
+	//여기도 메인화면에서 내정보는 되는데, 찜에서 내정보, 예약에서 내정보는 안된다.
+		// 아직 안불러와서 그런다 모델값
+		@GetMapping("/reservelist/view")
+		public String reserveList(Model model
+				, @RequestParam("id") int id) {
+			User user = userBO.getUserInfo(id);
+			
+			model.addAttribute("user", user);
+			return "user/reservelist";
+		}
 	
 	
 	

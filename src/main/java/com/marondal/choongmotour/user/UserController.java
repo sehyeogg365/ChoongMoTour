@@ -73,28 +73,9 @@ public class UserController {
 		model.addAttribute("user", user);
 		return "user/reservepage";
 	}
-	//여기도 메인화면에서 내정보는 되는데, 찜에서 내정보, 예약에서 내정보는 안된다.
-	// 아직 안불러와서 그런다 모델값
-	@GetMapping("/reservelist/view")
-	public String reserveList(Model model
-			, @RequestParam("id") int id) {
-		User user = userBO.getUserInfo(id);
-		
-		model.addAttribute("user", user);
-		return "user/reservelist";
-	}
 	
-//	@GetMapping("/dibspage/view")
-//	public String dibsPage(Model model
-//			, @RequestParam("id") int id) {
-//		
-//		User user = userBO.getUserInfo(id);
-//		
-//		model.addAttribute("user", user);	
-//		
-//		
-//		return "user/dibspage";
-//	}
+	
+
 	
 	
 	

@@ -49,27 +49,24 @@
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 					
 					
-						<c:forEach var="dibs" items = "${dibsList }">
-						<div class="dibs-card  ml-3 mt-3">
-							
-							<div class="dibs-profile">
-								<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-lodgingId= "${dibs.lodgingId }"></i>
-								<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">
+							<c:forEach var="dibs" items="${dibsList }">
+							<div class="dibs-card  ml-3 mt-3">
+								
+								<div class="dibs-profile">
+									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-lodgingId= "${dibs.lodgingId }"></i>
+									<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
+								</div>
+								
+								<div class="dibs-card-body">
+									<div class=""><a href="/lodging/room/view?lodgingId=${dibs.lodgingId }">${dibs.roomName }</a></div>
+									
+									<div class="">${dibs.price }</div>
+						
+								</div>
 							</div>
-							
-							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?lodgingId=${dibs.lodgingId }">${dibs.roomName }</a></div>
-						
-								<div class="">${dibs.price }</div>
-							
-							</div>
-						</div>
-						</c:forEach>
-						
-						
-						
-						
-						
+							</c:forEach>
+	
+		
 						</div>
 					</section>
 					
@@ -90,7 +87,7 @@
 			
 			let id = $(this).data("dibs-lodgingId");
 			
-			alert(id);
+			alert(id);//undefined되는상황 역시나 lodgingId가 안불러와지고 있다.
 			
 			$.ajax({
 				
