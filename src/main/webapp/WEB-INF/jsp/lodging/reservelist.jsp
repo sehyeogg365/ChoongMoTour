@@ -27,7 +27,7 @@
 				</h1>
 				
 				<div class="reservelistcontents d-flex mx-3">
-				<aside class="aside1 col-3 ">
+				<aside class="aside1 col-2 ">
 				
 					<div>
 						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
@@ -43,7 +43,7 @@
 				
 				</aside>
 				
-				<section class="contents1 col-9 ">
+				<section class="contents1 col-10 ">
 					<!-- 예약리스트 -->
 					<label>예약목록</label>
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">

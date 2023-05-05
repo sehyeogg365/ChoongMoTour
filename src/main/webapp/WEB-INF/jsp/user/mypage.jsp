@@ -27,7 +27,7 @@
 				
 				
 				<div class="mypagecontents d-flex">
-				<aside class="aside1 col-3 ">
+				<aside class="aside1 col-2 ">
 				
 			
 					<div>
@@ -43,9 +43,9 @@
 				
 				</aside>
 				
-				<section class="contents1 col-9">
+				<section class="contents1 col-10">
 					
-					<div class="info-input-box mx-3">
+					<div class="info-input-box mx-4">
 					
 						<label>프로필 사진 변경</label><br>
 						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
