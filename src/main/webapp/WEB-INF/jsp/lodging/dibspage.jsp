@@ -58,7 +58,7 @@
 								</div>
 								
 								<div class="dibs-card-body">
-									<div class=""><a href="/lodging/room/view?id=${dibs.id }" >${dibs.roomName }</a></div>
+									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
 									
 									<div class="">${dibs.price }</div>
 						

@@ -97,7 +97,7 @@ public class LodgingBO {
 	
 	//숙소 추가
 	
-	public int addLodging(int id, String roomName, String level, String areaName, MultipartFile file) {
+	public int addLodging(int id, int adminId, String roomName, String level, String areaName, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(id, file);	
 		

@@ -135,7 +135,9 @@ public class LodgingRestController {
 			// id값 불러오기
 			) {
 		
-		int count = lodgingBO.addLodging(id,  roomName, level, areaName, file);
+		int adminId = (Integer)session.getAttribute("adminId");
+		
+		int count = lodgingBO.addLodging(id,  adminId, roomName, level, areaName, file);
 								//그리고 웬만하면 자동완성 하지말기. 헷갈리고 더 복잡해짐
 		Map<String, String> resultMap = new HashMap<>();
 		

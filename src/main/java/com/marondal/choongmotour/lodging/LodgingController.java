@@ -92,7 +92,6 @@ public class LodgingController {
 	@GetMapping("/dibspage/view")
 	public String dibsPage(Model model
 						   , @RequestParam("id") int id //여기도 리퀘스트 파람 안해줬다.
-						   //, @RequestParam("lodgingId") int lodgingId
 						   , HttpSession session
 			) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
 		
