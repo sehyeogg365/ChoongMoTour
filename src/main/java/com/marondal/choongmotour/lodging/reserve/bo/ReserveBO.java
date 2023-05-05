@@ -12,6 +12,8 @@ public class ReserveBO {
 	
 	@Autowired ReserveDAO reserveDAO;
 	
+	//예약 페이지 조회
+	
 	//예약하기 
 	public int addReserve(int userId, int roomId, Date reserveDate) {
 			

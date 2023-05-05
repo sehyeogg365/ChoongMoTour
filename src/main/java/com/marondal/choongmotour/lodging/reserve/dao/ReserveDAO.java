@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReserveDAO {
 
+	//예약 페이지 조회
+	
 	//예약하기
 	public int insertReserve(@Param("userId") int userId
 							,@Param("roomId") int roomId 

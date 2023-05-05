@@ -19,7 +19,6 @@ public interface LodgingDAO {
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 												
 	
-
 	
 	
 	

@@ -7,6 +7,10 @@
 
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
  
+ <!-- 예약 페이지 조회 -->
+ 
+ 
+ 
  <!-- 예약하기 -->
  
   	<insert id = "insertReserve" parameterType="map">

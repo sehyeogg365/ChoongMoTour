@@ -84,9 +84,7 @@ public class LodgingBO {
 		
 	}
 	
-	
 
-	
 	
 	// 예약목록 userId별로
 	
