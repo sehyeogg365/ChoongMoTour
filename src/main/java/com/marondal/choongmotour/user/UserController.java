@@ -84,17 +84,17 @@ public class UserController {
 		return "user/reservelist";
 	}
 	
-	@GetMapping("/dibspage/view")
-	public String dibsPage(Model model
-			, @RequestParam("id") int id) {
-		
-		User user = userBO.getUserInfo(id);
-		
-		model.addAttribute("user", user);	
-		
-		
-		return "user/dibspage";
-	}
+//	@GetMapping("/dibspage/view")
+//	public String dibsPage(Model model
+//			, @RequestParam("id") int id) {
+//		
+//		User user = userBO.getUserInfo(id);
+//		
+//		model.addAttribute("user", user);	
+//		
+//		
+//		return "user/dibspage";
+//	}
 	
 	
 	

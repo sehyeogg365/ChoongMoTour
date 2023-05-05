@@ -49,7 +49,7 @@
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 					
 					
-						<c:forEach var="dibs" items = "dibsList">
+						<c:forEach var="dibs" items = "${dibsList }">
 						<div class="dibs-card  ml-3 mt-3">
 							
 							<div class="dibs-profile">
@@ -58,7 +58,7 @@
 							</div>
 							
 							<div class="dibs-card-body">
-								<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }">${dibs.roomName }</a></div>
+								<div class=""><a href="/lodging/room/view?lodgingId=${dibs.lodgingId }">${dibs.roomName }</a></div>
 						
 								<div class="">${dibs.price }</div>
 							
@@ -90,6 +90,7 @@
 			
 			let id = $(this).data("dibs-lodgingId");
 			
+			alert(id);
 			
 			$.ajax({
 				
@@ -97,16 +98,16 @@
 				, url :"/lodging/undib"
 				, data:{"lodgingId":id}
 				, success:function(data){
-					if(data.result =="succes"){
-						alert("찜해제 성공");
+					if(data.result =="success"){
+						alert("찜 취소 성공");
 						location.reload();
 					} else {
-						alert("찜해제 실패");
+						alert("찜 취소 실패");
 					}
 					
 				}
 				, error:function(){
-					alert("찜해제 오류");
+					alert("찜 취소 오류");
 					
 				}
 				

@@ -152,7 +152,7 @@
 				, url :"/lodging/undib"
 				, data:{"lodgingId":id}
 				, success:function(data){
-					if(data.reuslt == "succes"){
+					if(data.result == "success"){//reuslt->result succes->success
 						alert("찜 취소 성공");
 						location.reload();
 					} else {

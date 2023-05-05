@@ -99,10 +99,10 @@ public class LodgingController {
 		List<DibsDetail> dibsList = dibsBO.getDibsList(id, userId);
 		
 		model.addAttribute("dibsList", dibsList);
-		//밑에건 좀 잘 모르겠다 이렇게 막껴도 되는지??
-//		User user = userBO.getUserInfo(id);
-//		model.addAttribute("user", user);
 		
+		User user = userBO.getUserInfo(id);
+		
+		model.addAttribute("user", user);
 		
 		return "lodging/dibspage";
 		
