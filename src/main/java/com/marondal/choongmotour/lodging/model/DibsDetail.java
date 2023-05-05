@@ -7,7 +7,7 @@ public class DibsDetail {// 찜 카드에 필요한 데이터들
 	private String roomName; //숙소명
 	private String areaName; //지역
 	private int price; //가격
-	private boolean isDibs; // 찜했냐 안했냐 여부
+	// 찜했냐 안했냐 여부 생각해보니 여긴 필요가없다. 그냥 빨간하트 한번 누르면 삭제되는 개념이라서 당연히 찜 누른게 여기 목록에있는거라서
 	private String imagePath; //사진 등
 	public int getId() {
 		return id;
@@ -45,18 +45,12 @@ public class DibsDetail {// 찜 카드에 필요한 데이터들
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public boolean isDibs() {
-		return isDibs;
-	}
-	public void setDibs(boolean isDibs) {
-		this.isDibs = isDibs;
-	}
 	public String getImagePath() {
 		return imagePath;
 	}
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	
+
 	
 }
