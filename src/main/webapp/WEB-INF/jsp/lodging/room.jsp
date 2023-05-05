@@ -153,7 +153,24 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		 
+		 //예약버튼 
+		 $(".reserve-btn").on("click", function(){
+			
+			 let startDate = $(this).val();
+			 let endDate = $(this).val();
+			 
+			 if(startDate == ""){
+				 
+				alert("체크인 날짜를 입력하세요.");
+			 	return ; 
+			 }
+			 if(startDate == ""){
+				 alert("체크아웃 날짜를 입력하세요.");
+				 return ;
+			 }
+			 
+			 
+		 });
 	
 		 $(".info-modal-btn").on("click", function(){
 			 

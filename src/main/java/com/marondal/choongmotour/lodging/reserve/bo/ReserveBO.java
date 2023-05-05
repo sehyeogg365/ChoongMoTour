@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
 
@@ -27,6 +28,12 @@ public class ReserveBO {
 		
 		return reserveDAO.selectReserveList(id);
 		
+	}
+	
+	//예약 한행 정보 조회
+	public ReserveDetail getReserveById(int id) {
+		
+		return reserveDAO.selectReservebyId(id);
 	}
 	
 	

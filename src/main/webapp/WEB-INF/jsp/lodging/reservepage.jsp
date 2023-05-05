@@ -104,17 +104,28 @@
 			
 			let phoneNumber = $("#phoneNumberInput").val();
 			let name = $("#nameInput").val();
-			let size = $("#sizeInput").val();
 			let pay = $("#paySelector").val();
 			let check = $("#allCheck").val();
 			
+			if(phoneNumber == ""){
+				alert("전화번호를 입력하세요.");
+				return ;
+			}
 			
+			if(name == ""){
+				alert("이름을 입력하세요.");
+				return ;
+			}
 			
-			//roomId
-			//userId
-			//payment
-			//reserveDate
+			if(pay == "지불수단을 선택하세요."){
+				alert("");
+				return ;
+			}
 			
+			if(check == "이용약관을 동의해주세요."){
+				alert("");
+				return ;
+			}
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 		});

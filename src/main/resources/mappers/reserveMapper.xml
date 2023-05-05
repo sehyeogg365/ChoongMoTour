@@ -41,10 +41,33 @@
   <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
   	SELECT
   		`id`
+  		`name`
+  		`phoneNumber`
+  		`roomName`
+  		`size`
+  		`price`
+  		`imagePath`
   	FROM
   		`reserved_list`
   	WHERE
   		`id`= #{id};
+  </select>
+  
+  <!-- 예약정보 한행 조회 -->
+  <select id = "selectReservebyId" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
+   SELECT
+   		`id`
+  		`name`
+  		`phoneNumber`
+  		`roomName`
+  		`size`
+  		`price`
+  		`imagePath`
+   FROM
+   		`reserved_list`
+   WHERE
+   	`id` = #{id};
+  
   </select>
   
   <!-- 예약 취소 -->

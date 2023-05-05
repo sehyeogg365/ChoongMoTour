@@ -13,7 +13,7 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 	private String size;// 객실 사이즈
 	private int price;// 객실 가격
 	private String imagePath;//사진
-	private Date reserveDate;//예약 날짜
+	private Date reserveDate;//예약 날짜 이거를 체크인 / 체크아웃으로 분류
 	public int getId() {
 		return id;
 	}

@@ -16,6 +16,7 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
+import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -127,6 +128,8 @@ public class LodgingController {
 		
 		User user = userBO.getUserInfo(id);
 		model.addAttribute("user", user);
+		
+		//Reserve reserve = 
 		
 		return "lodging/reservepage";
 		
