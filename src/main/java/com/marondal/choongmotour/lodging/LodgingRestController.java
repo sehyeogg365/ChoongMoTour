@@ -72,6 +72,29 @@ public class LodgingRestController {
 		
 	}
 	
+	//찜 목록내 제거
+	@GetMapping("/undibbasket")
+	public Map<String, String> dibsDeleteById(
+			@RequestParam("id") int id
+			, HttpSession session
+			){
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = dibsBO.deleteDibsById(userId, id);
+		
+		Map <String, String> resultMap = new HashMap<>();
+		
+		if(count == 0) {		
+			resultMap.put("result", "fail");
+		} else { 
+			resultMap.put("result", "success");
+		}
+		
+		
+		
+		return resultMap;
+		
+	}
 	
 	
 	//예약 하기 

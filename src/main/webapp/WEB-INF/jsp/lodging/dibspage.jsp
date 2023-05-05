@@ -53,12 +53,12 @@
 							<div class="dibs-card  ml-3 mt-3">
 								
 								<div class="dibs-profile">
-									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-lodgingId= "${dibs.lodgingId }"></i>
+									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.id	 }"></i>
 									<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
 								</div>
 								
 								<div class="dibs-card-body">
-									<div class=""><a href="/lodging/room/view?lodgingId=${dibs.lodgingId }">${dibs.roomName }</a></div>
+									<div class=""><a href="/lodging/room/view?id=${dibs.id }" >${dibs.roomName }</a></div>
 									
 									<div class="">${dibs.price }</div>
 						
@@ -85,15 +85,15 @@
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
 			
-			let id = $(this).data("dibs-lodgingId");
+			let id = $(this).data("dibs-id");
 			
 			alert(id);//undefined되는상황 역시나 lodgingId가 안불러와지고 있다.
 			
 			$.ajax({
 				
 				type: "get"
-				, url :"/lodging/undib"
-				, data:{"lodgingId":id}
+				, url :"/lodging/undibbasket"
+				, data:{"id":id}
 				, success:function(data){
 					if(data.result =="success"){
 						alert("찜 취소 성공");

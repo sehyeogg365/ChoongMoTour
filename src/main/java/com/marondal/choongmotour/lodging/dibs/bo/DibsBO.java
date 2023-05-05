@@ -48,36 +48,43 @@ public class DibsBO {
 	
 	
 	// 찜목록
-	public List<DibsDetail> getDibsList(int lodgingId, int userId){//이것도 틀렸다. List<DibsDetail>로
+	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-		
-		
-		List<DibsDetail> dibsDetailList = new ArrayList<>();
+	//	List<DibsDetail> dibsDetailList = new ArrayList<>();
 		//조회할때 userId인가 id인가?? 둘다인가??
 		
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
-		for(DibsDetail dibsDetail : dibsDetailList) {
+		//for(DibsDetail dibsDetail : dibsDetailList) {
 			
-			dibsDetail.setId(dibsDetail.getId());//몇번째 찜했는지 
-			dibsDetail.setUserId(dibsDetail.getUserId());//누가 저장했는지
-			dibsDetail.setLodgingId(dibsDetail.getLodgingId());// 어떤숙소인지
-			dibsDetail.setRoomName(dibsDetail.getRoomName());//숙소명
-			dibsDetail.setAreaName(dibsDetail.getAreaName());//지역
-			dibsDetail.setPrice(dibsDetail.getPrice());//가격
-			dibsDetail.setImagePath(dibsDetail.getImagePath()); //사진 등
-			dibsDetail.setDibs(dibsDetail.isDibs());// 찜했냐 안했냐 여부						
+			//int isDibs = dibsDAO.selectDibsByUserId(userId, lodgingId);
+			
+//			dibsDetail.setId(dibsDetail.getId());//몇번째 찜했는지 
+//			dibsDetail.setUserId(dibsDetail.getUserId());//누가 저장했는지
+//			dibsDetail.setLodgingId(dibsDetail.getLodgingId());// 어떤숙소인지
+//			dibsDetail.setRoomName(dibsDetail.getRoomName());//숙소명
+//			dibsDetail.setAreaName(dibsDetail.getAreaName());//지역
+//			dibsDetail.setPrice(dibsDetail.getPrice());//가격
+//			dibsDetail.setImagePath(dibsDetail.getImagePath()); //사진 등
+//			dibsDetail.setDibs(dibsDetail.isDibs());// 찜했냐 안했냐 여부						
+//									
+//									
+//									
+//			dibsDetailList.add(dibsDetail);						
 									
 									
 									
-			dibsDetailList.add(dibsDetail);						
-									
-									
-									
-		}
+	//	}
 		
 		
-		return dibsDetailList;//이것도 로징아이디 별 조회
+		return dibsDAO.selectDibsList(userId, id) ;//이것도 로징아이디 별 조회
+	}
+	
+	//찜 목록내 제거
+	
+	public int deleteDibsById(int userId, int id) {
+		
+		return dibsDAO.deleteDibsById(userId, id);
 	}
 	
 	
