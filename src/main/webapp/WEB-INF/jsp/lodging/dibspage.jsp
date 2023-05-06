@@ -64,7 +64,7 @@
 								</div>
 								
 								<div class="dibs-card-body">
-									<div class=""><a href="/lodging/room/view?id=${dibs.id }" >${dibs.roomName }</a></div>
+									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
 			
 								</div>
 							</div>
@@ -97,7 +97,7 @@
 				
 				type: "get"
 				, url :"/lodging/undibbasket"
-				, data:{"id":id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니.
+				, data:{"id":id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니
 				, success:function(data){
 					if(data.result =="success"){
 						alert("찜 취소 성공");

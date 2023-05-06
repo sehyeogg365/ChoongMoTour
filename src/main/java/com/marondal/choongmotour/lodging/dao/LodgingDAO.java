@@ -27,7 +27,7 @@ public interface LodgingDAO {
 	//숙소 추가
 	public int insertLodging(
 							@Param("id") int id
-						//	, @Param("admind") int adminId
+							, @Param("admind") int adminId
 							, @Param("roomName") String roomName
 							, @Param("level") String level
 							, @Param("areaName") String areaName
