@@ -36,11 +36,7 @@
 				</div>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
-				
-				
-				
-				
-				
+					
 				
 				<div class="lodging-card-list">
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
@@ -62,7 +58,10 @@
 								</c:otherwise>
 							</c:choose>
 							
-							<img class="profile" width =""src="${lodging.imagePath }">
+							<a href="/lodging/room/view?id=${lodging.id }" class=" lodging-profile">
+								<img class="profile" width ="" height = ""src="${lodging.imagePath }">
+							</a>
+							
 						</div>
 						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
 							<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>

@@ -33,9 +33,9 @@
 				<!-- 그다음 각각 7개의 페이지를 만드는게 아닌 해당 링크를 클릭했을시 특정지역 데이터(숙소)만 보여지게 해야 함 그렇게 하려면 메모게시판 처럼 지역을 파라미터를 사용해서 해볼것.-->
 				<div class="box-list d-flex justify-content-center flex-wrap">
 					<div class="box ml-3 mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=seoul" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2022/09/16/17/07/namsan-tower-7459173_960_720.jpg" alt="서울">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=seoul">서울</a>
 						</div>
@@ -44,9 +44,9 @@
 						
 					
 					<div class="box mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=incheon" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2021/08/21/07/55/south-korea-6562089_960_720.jpg" alt="인천">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=incheon">인천</a>
 						</div>
@@ -55,19 +55,19 @@
 						
 					
 					<div class="box  mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=gangwon" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2015/09/26/05/07/mt-seoraksan-958643_960_720.jpg" alt="강원">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=gangwon">강원</a>
 						</div>
 					</div>										
 						
 					
-					<div class="box  mt-3">
-						<div class="box-profile">
+					<div class="box mt-3">
+						<a href="/lodging/lodginglist/view?area_name=gyeongsang" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2020/05/24/11/56/to-5213925_960_720.jpg" alt="경상">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=gyeongsang">경상</a>
 						</div>
@@ -75,9 +75,9 @@
 					 	
 						
 					<div class="box mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=jeolla" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2018/08/23/22/18/jeonju-3626873_960_720.jpg" alt="전라">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=jeolla">전라</a>
 						</div>
@@ -86,9 +86,9 @@
 						
 					
 					<div class="box mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=busan" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130_960_720.jpg" alt="부산">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=busan">부산</a>
 						</div>						
@@ -96,9 +96,9 @@
 						
 					
 					<div class="box mt-3">
-						<div class="box-profile">
+						<a href="/lodging/lodginglist/view?area_name=jeju" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2017/10/15/13/54/doll-2853763_960_720.jpg" alt="제주">
-						</div>
+						</a>
 						<div class="box-body text-center">
 							<a href="/lodging/lodginglist/view?area_name=jeju">제주</a>
 						</div>
@@ -107,8 +107,10 @@
 
 				</div>
 				
-				
 				<!-- 그외에 메인페이지 추가할 내용? -->
+				
+				
+				
 				
 			</div>
 			

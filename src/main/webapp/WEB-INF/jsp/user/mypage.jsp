@@ -27,20 +27,20 @@
 				
 				
 				<div class="mypagecontents d-flex">
-				<aside class="aside1 col-2 ">
+				<aside class="side-nav col-2 ">
 				
-			
-					<div>
-						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
-					</div>
-					<div>
-						<h3><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h2>
-					</div>
-					<div>
-						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>
-					</div>
+				<ul class="nav">
+					<li>
+						<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h4>
+					</li>
+					<li class="mt-3">
+						<h4><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h4>
+					</li>
+					<li class="mt-3">
+						<h4><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h4>
+					</li>
 					
-				
+				</ul>
 				</aside>
 				
 				<section class="contents1 col-10">

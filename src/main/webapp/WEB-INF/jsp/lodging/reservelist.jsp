@@ -27,17 +27,20 @@
 				</h1>
 				
 				<div class="reservelistcontents d-flex mx-3">
-				<aside class="aside1 col-2 ">
+				<aside class="side-nav col-2 ">
 				
-					<div>
-						<h3><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h3>
-					</div><!-- 아직 찜목록 레스트컨트롤러 비오 다오 매퍼 이런거 구현안해서 안 뜨는거니 안심하자. -->
-					<div>
-						<h3><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h2>
-					</div>
-					<div>
-						<h3><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h3>
-					</div>
+				<ul class="nav">
+						<li>
+							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h4>
+						</li>
+						<li class="mt-3">
+							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h4>
+						</li>
+						<li class="mt-3">
+							<h4><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h4>
+						</li>
+					
+				</ul>
 		
 					
 				
