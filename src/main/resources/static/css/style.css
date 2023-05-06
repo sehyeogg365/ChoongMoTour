@@ -92,6 +92,7 @@ header{
 }
 
 
+
 .box-list > .box{
 	
 	width: 270px;
@@ -200,6 +201,7 @@ header{
 	display:inline-block;
 }
 
+
 .dibs-card-list >.dibs-card{
 	width: 350px;
     height: 450px; 
@@ -220,6 +222,12 @@ header{
 	width: 350px;
     height: 200px; 
     
+}
+
+.reservepagecontents{
+	 border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px black;
+	
 }
 
 .reservation-card-list >.reservation-card{
@@ -247,7 +255,23 @@ header{
 }
 
 
+.comment-page{
+	width: 1200px;
+	
+}
+.comment-page>.comment-list{
+	
+	width:700px;
+	margin:auto;
+}
 
+.comment-list>.comment-box{
+	
+	height:200px;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
+	
+}
 
 
 

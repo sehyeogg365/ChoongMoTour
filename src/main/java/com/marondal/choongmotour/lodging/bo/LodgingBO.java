@@ -99,7 +99,7 @@ public class LodgingBO {
 			
 		String imagePath = FileManagerService.saveFile(id, file);	
 		
-		return lodgingDAO.insertLodging(id, adminId, roomName, level, areaName, imagePath);
+		return lodgingDAO.insertLodging(id, roomName, level, areaName, imagePath);
 									//bo 에서 필요해서 호출한 adminId가 dao에서는 필요가없으므로 뺀다. 금욜날 이거를 말한거였음
 	}								//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
 									// 모호하게 전에서 이걸 써서 이게 필요할것이다 라는 생각이 들게됨 근데 명확하게 해야함개발은 쓸때 쓰고 뺄땐빼고 이래야 함.
@@ -127,11 +127,11 @@ public class LodgingBO {
 	
 	//객실추가
 	
-	public int addRoom(int id, int price, String size, String content, MultipartFile file) {
+	public int addRoom(int lodgingId, int id, int price, String size, String content, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(id, file);//이거 이래도 되는지???
 		
-		return lodgingDAO.insertRoom( price, size, content, imagePath);
+		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
 	}
 		
 	//객실 리스트

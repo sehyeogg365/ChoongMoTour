@@ -50,8 +50,8 @@
  	INSERT INTO 
  			`lodging`
  	(
- 		`adminId`
- 		, `roomName`
+ 		
+ 		`roomName`
  		, `level`
  		, `areaName`
  		, `imagePath`
@@ -61,8 +61,8 @@
  	VALUES
  	(
 		 <!-- #{}추가 안됬었음 이래서 자꾸 테이블에 0이 저장된게 아니였나 싶음 그리고 adminId 굳이 넣어야 하는지 의문 아예 디비 테이블 날리고 설계부터 다시해보는것도 좋은생각 -->
- 		#{adminId} 
- 		, #{roomName}
+
+ 		 #{roomName}
  		, #{level}
  		, #{areaName}
  		, #{imagePath}
@@ -129,8 +129,8 @@
 	 	 <!-- id 뺄것. primarykey라서 자동 저장됨 현재 현상이 id 키값에 lodgingId값이 저장되는 현상.-->
  		 <!-- Parameter index out of range (1 > number of parameters, which is 0). 이문제는 `문제 아까 `하나가 떡하니 있었다. -->
  	
-
- 		 `imagePath`
+		`lodgingId`
+ 		, `imagePath`
  		, `price`
  		, `size`
  		, `content`
@@ -143,8 +143,8 @@
 
 		<!-- 500error adminId 넣으나 안넣으나 똑같은데 왜그럴까? -->
 		
-		<!-- #{lodgingId} --> 
-		 #{imagePath}
+		 #{lodgingId}  
+		, #{imagePath}
 		, #{price}
 		, #{size}
 		, #{content}

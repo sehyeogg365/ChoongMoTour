@@ -63,10 +63,10 @@
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="#">객실리스트</a>
+				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">리뷰</a>
+				    <a class="nav-link" href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
 				  </li>
 			
 			
@@ -92,19 +92,19 @@
 						<div class="room-card-body ml-3 mt-3">
 						<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
-								<div class="ml-4">싱글룸</div>
+								<div class="ml-4"><strong>싱글룸</strong></div>
 							</c:when>
 							<c:when test="${room.size eq 'doubleroom' }">
-								<div class="ml-4">더블룸</div>
+								<div class="ml-4"><strong>더블룸</strong></div>
 							</c:when>
 							<c:when test="${room.size eq 'twinroom' }">
-								<div class="ml-4">트윈룸</div>
+								<div class="ml-4"><strong>트윈룸</strong></div>
 							</c:when>
 							<c:otherwise>
 								<div class="ml-4">${room.size }</div>
 							</c:otherwise>
 						</c:choose>	
-							<p class="mt-3 ml-4 text-bold"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</p>
+							<p class="mt-3 ml-4"><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></p>
 							
 							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
@@ -180,7 +180,7 @@
 				alert("체크인 날짜를 입력하세요.");
 			 	return ; 
 			 }
-			 if(startDate == ""){
+			 if(endDate == ""){
 				 alert("체크아웃 날짜를 입력하세요.");
 				 return ;
 			 }

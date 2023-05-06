@@ -11,7 +11,8 @@ import com.marondal.choongmotour.lodging.model.ReserveDetail;
 
 @Repository
 public interface ReserveDAO {
-
+	
+	
 	//예약하기
 	public int insertReserve(@Param("userId") int userId
 							,@Param("roomId") int roomId 
@@ -25,7 +26,7 @@ public interface ReserveDAO {
 	
 	//예약 조회
 
-	public ReserveDetail selectReservebyId (@Param("id") int id);
+	public ReserveDetail selectgetReserveInfoById (@Param("id") int id);
 	
 	//예약 취소
 	

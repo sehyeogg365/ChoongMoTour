@@ -203,7 +203,7 @@ public class LodgingRestController {
 	@PostMapping("/room/create")
 	public Map<String, String>roomCreate(
 			@RequestParam("id") int id
-			//, @RequestParam("lodgingId") int lodgingId
+			, @RequestParam("lodgingId") int lodgingId
 			, @RequestParam("price") int price
 			, @RequestParam("size") String size
 			, @RequestParam("content") String content
@@ -215,7 +215,7 @@ public class LodgingRestController {
 
 		
 		
-		int count = lodgingBO.addRoom(id, price, size, content, file);
+		int count = lodgingBO.addRoom(id, lodgingId, price, size, content, file);
 		
 		if(count == 1) {
 			resultMap.put("result", "success");		

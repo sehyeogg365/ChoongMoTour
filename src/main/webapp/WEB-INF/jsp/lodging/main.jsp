@@ -136,8 +136,7 @@
 						  ,"https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_960_720.jpg"  
 						  , "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg"];
 		var imageIndex = 0;
-		let seconds = 1;
-        let timerId; 
+	
 		 $("#prevBtn").on("click", function() {
              if(--imageIndex < 0) {
             	 imageIndex = imageFiles.length - 1;

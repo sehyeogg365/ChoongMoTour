@@ -17,7 +17,9 @@ import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import com.marondal.choongmotour.lodging.model.Reserve;
+import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.model.Room;
+import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
@@ -33,6 +35,9 @@ public class LodgingController {
 	
 	@Autowired
 	private DibsBO dibsBO;
+	
+	@Autowired
+	private ReserveBO reserveBO;
 
 	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
@@ -83,7 +88,7 @@ public class LodgingController {
 		
 		model.addAttribute("roomList", roomList);
 		
-
+		
 		
 		return "lodging/room";
 	}
@@ -125,16 +130,10 @@ public class LodgingController {
 
 			) {
 		
-		Lodging lodging = lodgingBO.getLodging(id);
-		model.addAttribute("lodging", lodging);
+		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id); 
 		
-		Room room = lodgingBO.getRoom(id);
-		model.addAttribute("room", room);
+		model.addAttribute("reserveDetail", reserveDetail);
 		
-		User user = userBO.getUserInfo(id);
-		model.addAttribute("user", user);
-		
-		//Reserve reserve = 
 		
 		return "lodging/reservepage";
 		
@@ -154,7 +153,20 @@ public class LodgingController {
 		}
 	
 	
-	
+	//댓글목록
+		
+	@GetMapping("/commentlist/view")
+	public String commentList(Model model
+							, int id) {
+		Lodging lodging = lodgingBO.getLodging(id);
+		
+		model.addAttribute("lodging", lodging);		
+		//객실리스트 싱글, 더블, 트윈
+		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(id);
+		
+		model.addAttribute("roomList", roomList);
+		return "lodging/commentlist";
+	}
 	
 
 	

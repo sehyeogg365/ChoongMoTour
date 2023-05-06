@@ -31,9 +31,9 @@ public class ReserveBO {
 	}
 	
 	//예약 한행 정보 조회
-	public ReserveDetail getReserveById(int id) {
+	public ReserveDetail getReserveInfoById(int id) {
 		
-		return reserveDAO.selectReservebyId(id);
+		return reserveDAO.selectgetReserveInfoById(id);
 	}
 	
 	

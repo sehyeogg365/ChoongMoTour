@@ -41,12 +41,10 @@
   <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
   	SELECT
   		`id`
-  		`name`
-  		`phoneNumber`
-  		`roomName`
-  		`size`
-  		`price`
-  		`imagePath`
+  		, `userId`
+  		, `roomId`
+  		, `payment`
+  		, `reserveDate`
   	FROM
   		`reserved_list`
   	WHERE
@@ -54,15 +52,13 @@
   </select>
   
   <!-- 예약정보 한행 조회 -->
-  <select id = "selectReservebyId" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
+  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
    SELECT
    		`id`
-  		`name`
-  		`phoneNumber`
-  		`roomName`
-  		`size`
-  		`price`
-  		`imagePath`
+  		, `userId`
+  		, `roomId`
+  		, `payment`
+  		, `reserveDate`
    FROM
    		`reserved_list`
    WHERE

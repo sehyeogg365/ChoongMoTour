@@ -30,25 +30,25 @@
 			
 				<div class="reservepagecontents ">
 					
-					<div class=""><h2>${lodging.roomName }</h2></div><br>
-					<div class=""><h3>${room.size }</h3></div>
+					<div class=""><h2>${reserveDetail.roomName }</h2></div><br>
+					<div class=""><h3>${reserveDetail.size }</h3></div>
 					
 					<div class="d-flex mt-3 justify-content-center">
-						<div class="" >체크인 2023-05-01 15:00</div> ~
-						<div class="ml-3">체크아웃 2023-05-01 11:00</div>
+						<div class="" >체크인 </div> ~
+						<div class="ml-3">체크아웃 </div>
 					
 					</div>
 					
 					<div class = "">
-						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = class="form-control ">
+						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${reserveDetail.name }" class="form-control ">
 					
 					
-						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value =  class="form-control ">
+						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${reserveDetail.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
 					
-					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
+					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${reserveDetail.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
 					
 					
 					<hr>

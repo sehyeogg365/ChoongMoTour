@@ -181,7 +181,6 @@
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			
 			formData.append("id", id);
-			//formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
