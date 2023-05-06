@@ -30,9 +30,9 @@
 				<aside class="side-nav col-2 ">
 				
 				<ul class="nav">
-						<li>
+						<li class="mt-3">
 							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h4>
-						</li>
+						</li >
 						<li class="mt-3">
 							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h4>
 						</li>
@@ -48,7 +48,7 @@
 				
 				<section class="contents1 col-10 ">
 					<!-- 예약리스트 -->
-					<label>예약목록</label>
+					
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						<!-- 예약 카드 -->
 						

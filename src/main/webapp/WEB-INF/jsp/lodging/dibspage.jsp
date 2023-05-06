@@ -31,7 +31,7 @@
 					<aside class="side-nav col-2 ">
 						
 					<ul class="nav">
-						<li>
+						<li class="mt-3">
 							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h4>
 						</li>
 						<li class="mt-3">
@@ -47,7 +47,7 @@
 					</aside>
 					<section class="contents1 col-10 ">
 					
-						<label>찜목록</label><br>
+						
 						
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 					
