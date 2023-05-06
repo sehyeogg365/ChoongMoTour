@@ -205,11 +205,13 @@ header{
     height: 450px; 
     border: 1px solid;
     border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px black;
+	
 }
 
 .dibs-profile >.profile{
-
-    height: 220px;
+	width:300px;
+    height: 300px;
     object-fit: cover;
 	
 }
@@ -223,8 +225,8 @@ header{
 .reservation-card-list >.reservation-card{
 	width: 350px;
     height: 450px; 
-    border: 1px solid;
-    border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 
 }
 .reservation-card>.reservation-profile{

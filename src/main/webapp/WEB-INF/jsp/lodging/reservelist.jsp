@@ -53,9 +53,12 @@
 						<!-- 예약 카드 -->
 						
 						<div class="reservation-card ml-4 mt-3">
-							<i class="bi bi-x-square d-flex justify-content-end"></i>
+							
 							<div class="reservation-profile">
-								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+								<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
+								<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">
+									<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
+								</a>
 							</div>
 							<div class="reservation-card-body">
 								<div class="">ㅇㅇ호텔</div>
@@ -73,10 +76,11 @@
 							</div>
 						</div>
 						<div class="reservation-card ml-4 mt-3">
-							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<div class="reservation-profile">
+							<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
+							<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">
+								
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							
+							</a>							
 							<div class="reservation-card-body">
 								<div class="">△△호텔</div>
 								<div class="">싱글룸</div>
@@ -93,10 +97,11 @@
 							</div>
 						</div>
 						<div class="reservation-card ml-4 mt-3">
-							<i class="bi bi-x-square d-flex justify-content-end"></i>
-							<div class="reservation-profile">
+							<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
+							<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">
+								
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-							</div>							
+							</a>							
 							<div class="reservation-card-body">
 								<div class="">xx호텔</div>
 								<div class="">더블룸</div>

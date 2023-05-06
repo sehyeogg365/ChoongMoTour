@@ -56,14 +56,10 @@ public class DibsBO {
 		List<DibsDetail> dibsDetailList = new ArrayList<>();
 		//조회할때 userId인가 id인가?? 둘다인가??
 		
-		
-		
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
 //		for(DibsDetail dibsDetail : dibsDetailList) {
-//			
-//			
-//			
+//								
 //			dibsDetail.setId(dibsDetail.getId());//몇번째 찜했는지 
 //			dibsDetail.setUserId(dibsDetail.getUserId());//누가 저장했는지
 //			dibsDetail.setLodgingId(dibsDetail.getLodgingId());// 어떤숙소인지
@@ -71,17 +67,9 @@ public class DibsBO {
 //			dibsDetail.setAreaName(dibsDetail.getAreaName());//지역
 //			dibsDetail.setPrice(dibsDetail.getPrice());//가격
 //			dibsDetail.setImagePath(dibsDetail.getImagePath()); //사진 등
-//						
-//									
-//									
-//									
-//			dibsDetailList.add(dibsDetail);						
-//									
-//									
-//									
-//		}
-		
-		
+//														
+//			dibsDetailList.add(dibsDetail);															
+//		}	
 		return dibsDAO.selectDibsList(userId, id);//이것도 로징아이디 별 조회
 	}
 	

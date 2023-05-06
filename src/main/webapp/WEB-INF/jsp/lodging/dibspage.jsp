@@ -56,15 +56,16 @@
 							<div class="dibs-card  ml-4 mt-3">
 								
 								<div class="dibs-profile">
-									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.id	 }"></i>
-									<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
+									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.lodgingId	 }"></i>
+									<a href="/lodging/room/view?id=${lodging.id }" class="dibs-profile">
+										
+										<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">												
+									</a>
 								</div>
 								
 								<div class="dibs-card-body">
-									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
-									
-									<div class="">${dibs.price }</div>
-						
+									<div class=""><a href="/lodging/room/view?id=${lodging.id }" >${lodging.roomName }</a></div>
+			
 								</div>
 							</div>
 							</c:forEach>
@@ -96,7 +97,7 @@
 				
 				type: "get"
 				, url :"/lodging/undibbasket"
-				, data:{"id":id}
+				, data:{"id":id} // 알고보니 여기 왜 userId가 없는가??
 				, success:function(data){
 					if(data.result =="success"){
 						alert("찜 취소 성공");

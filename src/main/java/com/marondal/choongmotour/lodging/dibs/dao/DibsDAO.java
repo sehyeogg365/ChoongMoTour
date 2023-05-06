@@ -27,8 +27,6 @@ public interface DibsDAO {
 	//찜 조회
 	public List<DibsDetail> selectDibsList(@Param("userId") int userId, @Param("id") int id);//이것도 쿼리문 자체를 잘못생각했다. 로징아이디로 조회 이되, 딥스id순 내림차순정렬일뿐
 	
-	//찜 목록 숙소리스트
-	//public List<Lodging> selectLodgingListByDibs(@Param("id") int id);
 		
 	//찜 목록내 제거
 	public int deleteDibsById(@Param("userId") int userId, @Param("id") int id);
