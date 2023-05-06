@@ -105,12 +105,23 @@
 					</div>
 						
 
-				</div>
+				</div><br>
 				
-				<!-- 그외에 메인페이지 추가할 내용? -->
+				<!-- 그외에 메인페이지 추가할 내용?  -->
 				
 				
+			<div class="image-slider text-center">
+	           
+	            <svg id="prevBtn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
+				  <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
+				</svg>
 				
+	            <img id="image" src="image1.jpg" width="800">
+	            <svg id="nextBtn" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
+				  <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
+				</svg>
+	
+        	</div>
 				
 			</div>
 			
@@ -118,5 +129,49 @@
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	
 	</div>
+	<script>
+	$(document).ready(function() {
+		
+		var imageFiles = ["https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg"
+						  ,"https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_960_720.jpg"  
+						  , "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg"];
+		var currentIndex = 0;
+		
+		 $("#prevBtn").on("click", function() {
+             if(--currentIndex < 0) {
+                 currentIndex = imageFiles.length - 1;
+             }
+
+             $("#image").attr("src", imageFiles[currentIndex]);
+         });
+
+         $("#nextBtn").on("click", function() {
+             if(++currentIndex > imageFiles.length - 1) {
+                 currentIndex = 0;
+             }
+
+             $("#image").attr("src", imageFiles[currentIndex]);
+         });
+         
+         setInterval(function(){//3초정해주면 3초마다 수행
+             // $("#image").attr("src", imageList[]); 반복문은 순시간에 012를처리하므로 안됨. 
+              currentIndex++;
+             
+              if(currentIndex == imageList.length){
+            	  currentIndex = 0;                  
+              }
+              $("#image").attr("src", imageList[currentIndex]);
+      
+
+          },3000);
+         
+         
+         
+         
+         
+		
+	});
+	
+	</script>
 </body>
 </html>
