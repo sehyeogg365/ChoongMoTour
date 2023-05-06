@@ -210,7 +210,7 @@ header{
 }
 
 .dibs-profile >.profile{
-	width:300px;
+	width:330px;
     height: 300px;
     object-fit: cover;
 	
@@ -236,8 +236,8 @@ header{
 
 
 .reservation-profile >.profile{
-
-    height: 220px;
+	width:330px;
+    height: 250px;
     object-fit: cover;
 	
 }

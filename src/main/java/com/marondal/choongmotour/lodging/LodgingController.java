@@ -102,9 +102,10 @@ public class LodgingController {
 		
 		model.addAttribute("dibsList", dibsList);
 		
-		Lodging lodging = lodgingBO.getLodging(id);
 		
-		model.addAttribute("lodging", lodging);
+//		Lodging lodging = lodgingBO.getLodging(id);
+//		
+//		model.addAttribute("lodging", lodging);
 		
 		User user = userBO.getUserInfo(id);
 		

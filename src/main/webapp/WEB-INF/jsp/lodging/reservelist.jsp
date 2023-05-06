@@ -52,29 +52,7 @@
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 						<!-- 예약 카드 -->
 						
-						<div class="reservation-card ml-4 mt-3">
-							
-							<div class="reservation-profile">
-								<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
-								<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">
-									<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
-								</a>
-							</div>
-							<div class="reservation-card-body">
-								<div class="">ㅇㅇ호텔</div>
-								<div class="">싱글룸</div>
-								<div class="d-flex">
-									<div class="">체크인 05.05 </div>
-									<div class="">체크아웃 05.05 </div>				
-								</div>
-								<div class=""><a href="/lodging/room/view?id${lodging.id }">다시예약</a></div>
-								
-								
-								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3 btn-sm comment-btn" type="button">댓글달기</button>
-								</div>
-							</div>
-						</div>
+						
 						<div class="reservation-card ml-4 mt-3">
 							<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
 							<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">

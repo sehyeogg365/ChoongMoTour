@@ -53,7 +53,7 @@ public class DibsBO {
 	// 찜목록
 	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-		List<DibsDetail> dibsDetailList = new ArrayList<>();
+		
 		//조회할때 userId인가 id인가?? 둘다인가??
 		
 		//찜목록 조회 

@@ -55,16 +55,16 @@
 							<c:forEach var="dibs" items="${dibsList }">
 							<div class="dibs-card  ml-4 mt-3">
 								
-								<div class="dibs-profile">
+								<div class="dibs-profile">															<!-- 근데 희안하게 여기 dibs-id -> dibs-lodgingId라고 바꾼다고 안되나? 아 생각해보니 이게 이게 맞다. 저기 로징리스트서 이렇게 했으므로. -->		
 									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.lodgingId	 }"></i>
-									<a href="/lodging/room/view?id=${lodging.id }" class="dibs-profile">
+									<a href="/lodging/room/view?id=${dibs.id }" class="dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
 										
 										<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">												
 									</a>
 								</div>
 								
 								<div class="dibs-card-body">
-									<div class=""><a href="/lodging/room/view?id=${lodging.id }" >${lodging.roomName }</a></div>
+									<div class=""><a href="/lodging/room/view?id=${dibs.id }" >${dibs.roomName }</a></div>
 			
 								</div>
 							</div>
@@ -91,13 +91,13 @@
 			
 			let id = $(this).data("dibs-id");
 			
-			alert(id);//undefined되는상황 역시나 lodgingId가 안불러와지고 있다.
+			alert(id);//아까 삭제할떄 14 가 뜨고 삭제됐다.그말인즉슨 이제 딥스아이디도 잘들어오고있꼬 삭제할떄 lodgingId로 삭제하는게 또 맞다. 왜냐면 lodgingId로 추가했으니.
 			
 			$.ajax({
 				
 				type: "get"
 				, url :"/lodging/undibbasket"
-				, data:{"id":id} // 알고보니 여기 왜 userId가 없는가??
+				, data:{"id":id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니.
 				, success:function(data){
 					if(data.result =="success"){
 						alert("찜 취소 성공");
