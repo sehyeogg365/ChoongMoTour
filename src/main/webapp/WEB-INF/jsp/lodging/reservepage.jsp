@@ -34,8 +34,8 @@
 					<div class=""><h3>${reserveDetail.size }</h3></div>
 					
 					<div class="d-flex mt-3 justify-content-center">
-						<div class="" >체크인 </div> ~
-						<div class="ml-3">체크아웃 </div>
+						<div class="" >체크인 ${reserveDetail.reserveDate }</div> ~
+						<div class="ml-3">체크아웃 ${reserveDetail.reserveDate }</div>
 					
 					</div>
 					
@@ -43,16 +43,16 @@
 						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${reserveDetail.name }" class="form-control ">
 					
 					
-						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${reserveDetail.phoneNumber}" class="form-control ">
+						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${reserveDetailuser.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
 					
-					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${reserveDetail.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
+					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
 					
 					
 					<hr>
-					<div class="payselect mt-3">
+					<div class="payselect mt-4">
 						<div class=""> 결제수단을 선택하세요. </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
 							
@@ -68,7 +68,7 @@
 					
 					
 					
-					<div class="check-box mt-3">
+					<div class="check-box mt-4">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
 				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1"></label><br>
 				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2"></label><br>
@@ -101,10 +101,14 @@
 		
 		$("#payBtn").on("click", function(){
 			
+			let id = $(this).data("room-id");
 			
 			let phoneNumber = $("#phoneNumberInput").val();
+			
 			let name = $("#nameInput").val();
+			
 			let pay = $("#paySelector").val();
+			
 			let check = $("#allCheck").val();
 			
 			if(phoneNumber == ""){
@@ -117,17 +121,43 @@
 				return ;
 			}
 			
-			if(pay == "지불수단을 선택하세요."){
-				alert("");
+			if(pay == ""){
+				alert("지불수단을 선택하세요.");
 				return ;
 			}
 			
-			if(check == "이용약관을 동의해주세요."){
-				alert("");
+			if(check == ""){
+				alert("이용약관을 동의해주세요.");
 				return ;
 			}
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
+		
+			alert(name);
+			alert(phoneNumber);
+			alert(payment);
+			alert(check);
+			
+			
+			$.ajax({//우선여기부터 하자.
+				type:"post"
+				, url:"/lodging/reserve"
+				, data:{"userId" : userId, "roomId":roomId,"payment":payment, "reserveDate" : reserveDate};
+				, success:function(data){
+					if(data.result == "success"){
+						location.href="/lodging/main/view";
+						alert("예약 성공");
+					} else {
+						alert("예약 실패");
+						
+					}
+					, error:function(){
+						alert("예약 에러");
+					}
+				}
+			});
+			
+		
 		});
 		
 		

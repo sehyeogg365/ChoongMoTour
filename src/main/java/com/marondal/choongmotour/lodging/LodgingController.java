@@ -89,6 +89,12 @@ public class LodgingController {
 		model.addAttribute("roomList", roomList);
 		
 		
+
+		
+		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id);
+		
+		model.addAttribute("reserveDetail", reserveDetail);
+		
 		
 		return "lodging/room";
 	}
@@ -134,6 +140,19 @@ public class LodgingController {
 		
 		model.addAttribute("reserveDetail", reserveDetail);
 		
+		User user = userBO.getUserInfo(id);
+		
+		model.addAttribute("user", user);
+		
+		Lodging lodging = lodgingBO.getLodging(id);
+		
+		model.addAttribute("lodging", lodging);	
+		
+		Room room = lodgingBO.getRoom(id);
+		
+		model.addAttribute("room", room);
+		
+
 		
 		return "lodging/reservepage";
 		
@@ -146,9 +165,13 @@ public class LodgingController {
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
 				, @RequestParam("id") int id) {
+			
+			
 			User user = userBO.getUserInfo(id);
 			
 			model.addAttribute("user", user);
+			
+			
 			return "lodging/reservelist";
 		}
 	

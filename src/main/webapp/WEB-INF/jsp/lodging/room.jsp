@@ -73,9 +73,9 @@
 				</ul>
 				
 				<label class="mt-3">체크인 </label>
-		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <input type="text" id="startDate" autocomplete="on"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
-		        <input type="text" id="endDate" autocomplete="off"><br>
+		        <input type="text" id="endDate" autocomplete="on"><br>
 				
 				
 				
@@ -202,7 +202,7 @@
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
-             
+             todayHighlight :true,// 오늘을 표시해줄지. default 가 false
              showButtonPanel:true,
              closeText: 'done',
              minDate: 0,//오늘날짜 부터
@@ -213,7 +213,7 @@
                  }
 
          });
-
+		// todayHighlight :true,
        
 
          $("#endDate").datepicker({//종료일

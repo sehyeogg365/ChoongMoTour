@@ -76,8 +76,14 @@
 			<div class="comment-box">
 				
 				<div class="comment">
-					<div></div>
-					<div></div>
+					<div class="comment-profile">
+						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+					</div>
+					<div class="comment-content ml-5">
+						<div class="ml-3">재재재방문가능</div>
+						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
+						<div class="ml-3 small">경치가 좋습니다.</div>
+					</div>
 			
 				</div>
 			
@@ -85,24 +91,42 @@
 			<div class="comment-box">
 				
 				<div class="comment">
-					<div></div>
-					<div></div>
+					<div class="comment-profile">
+						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+					</div>
+					<div class="comment-content ml-5">
+						<div class="ml-3">재재재방문가능</div>
+						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
+						<div class="ml-3 small">방이 넓어서 좋습니다..</div>
+					</div>
 				</div>
 			
 			</div>
 			<div class="comment-box">
 				
 				<div class="comment">
-					<div></div>
-					<div></div>
+					<div class="comment-profile">
+						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+					</div>
+					<div class="comment-content ml-5">
+						<div class="ml-3">재재재방문가능</div>
+						<div class="ml-3 small text-secondary">더블룸 이용자</div>
+						<div class="ml-3 small">방이꺠끗해서 좋습니다.</div>
+					</div>
 				</div>
 			
 			</div>
 			<div class="comment-box">
 				
 				<div class="comment">
-					<div></div>
-					<div></div>
+					<div class="comment-profile">
+						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+					</div>
+					<div class="comment-content ml-5">
+						<div class="ml-3">재재재방문가능</div>
+						<div class="ml-3 small text-secondary">싱글룸 이용자</div>
+						<div class="ml-3 small">직원들이 친절해서 좋습니다.</div>
+					</div>
 				</div>
 			
 			</div>
