@@ -135,35 +135,26 @@
 		var imageFiles = ["https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg"
 						  ,"https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_960_720.jpg"  
 						  , "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg"];
-		var currentIndex = 0;
-		
+		var imageIndex = 0;
+		let seconds = 1;
+        let timerId; 
 		 $("#prevBtn").on("click", function() {
-             if(--currentIndex < 0) {
-                 currentIndex = imageFiles.length - 1;
+             if(--imageIndex < 0) {
+            	 imageIndex = imageFiles.length - 1;
              }
 
-             $("#image").attr("src", imageFiles[currentIndex]);
+             $("#image").attr("src", imageFiles[imageIndex]);
          });
 
          $("#nextBtn").on("click", function() {
-             if(++currentIndex > imageFiles.length - 1) {
-                 currentIndex = 0;
+             if(++imageIndex > imageFiles.length - 1) {
+            	 imageIndex = 0;
              }
 
-             $("#image").attr("src", imageFiles[currentIndex]);
+             $("#image").attr("src", imageFiles[imageIndex]);
          });
          
-         setInterval(function(){//3초정해주면 3초마다 수행
-             // $("#image").attr("src", imageList[]); 반복문은 순시간에 012를처리하므로 안됨. 
-              currentIndex++;
-             
-              if(currentIndex == imageList.length){
-            	  currentIndex = 0;                  
-              }
-              $("#image").attr("src", imageList[currentIndex]);
-      
-
-          },3000);
+     
          
          
          

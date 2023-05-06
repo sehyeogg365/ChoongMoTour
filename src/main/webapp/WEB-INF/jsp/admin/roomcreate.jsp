@@ -188,7 +188,7 @@
 			formData.append("file", file.files[0]);
 			
 			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			//alert(lodgingId);//O
+			alert(id);//O
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -262,7 +262,7 @@
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
-			//alert(lodgingId);
+			alert(id);
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O
@@ -332,14 +332,13 @@
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			
 			formData.append("id", id);
-			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
 			
-			//alert(lodgingId);//O
+			//alert(id);//O
 			//alert(price);//O
 			//alert(size);//O
 			//alert(content);//O

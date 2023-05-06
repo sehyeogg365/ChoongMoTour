@@ -155,7 +155,6 @@ public class LodgingRestController {
 			, HttpSession session
 			// id값 불러오기
 			) {
-		
 		int adminId = (Integer)session.getAttribute("adminId");
 		
 		int count = lodgingBO.addLodging(id, adminId, roomName, level, areaName, file);

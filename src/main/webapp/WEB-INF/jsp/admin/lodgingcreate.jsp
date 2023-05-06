@@ -83,7 +83,7 @@
 		
 		$("#createBtn").on("click", function(){
 			
-			//let id = $(this).data("logding-id");
+			let id = $(this).data("logding-id");
 			
 			let roomName = $("#roomNameInput").val();
 			
@@ -112,7 +112,7 @@
 				return ;
 			}
 			
-			//alert(id);
+			alert(id);
 			alert(roomName);
 			alert(areaName);
 			alert(level);
@@ -122,7 +122,6 @@
 			
 			
 			formData.append("id", id);
-			formData.append("adminId", adminId);
 			formData.append("roomName", roomName);
 			formData.append("areaName", areaName);//이것까지 areaName 으로 바꿔주니 추가 성공했다.
 			formData.append("level", level);
