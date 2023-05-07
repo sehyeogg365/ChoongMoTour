@@ -77,6 +77,8 @@ public class LodgingRestController {
 	@GetMapping("/undibbasket")
 	public Map<String, String> dibsDeleteById(
 			@RequestParam("id") int id
+			, @RequestParam("lodgingId") int lodgingId
+			
 			, HttpSession session
 			){
 		int userId = (Integer)session.getAttribute("userId");
@@ -123,7 +125,7 @@ public class LodgingRestController {
 	//예약 하기 
 	@PostMapping("/reserve")
 	public Map<String, String> reserveRoom(
- @RequestParam("roomId") int roomId
+				@RequestParam("roomId") int roomId
 				, @RequestParam("payment") String payment
 				, @RequestParam("startDate") Date startDate
 				, @RequestParam("endDate") Date endDate

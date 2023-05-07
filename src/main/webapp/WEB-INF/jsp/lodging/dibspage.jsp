@@ -52,7 +52,7 @@
 						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
 					
 					
-							<c:forEach var="dibs" items="${dibsList }">
+							<c:forEach var="dibs" items="${dibsDetailList }">
 							<div class="dibs-card  ml-4 mt-3">
 								
 								<div class="dibs-profile">															<!-- 근데 희안하게 여기  -->		

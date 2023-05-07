@@ -54,6 +54,31 @@
 							<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
 						</c:when>
 					</c:choose>
+					
+					<c:choose>
+						<c:when test ="${lodging.areaName eq 'seoul'}">
+							<h4 class>서울</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'incheon'}">
+							<h4 class>인천</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'gangwon'}">
+							<h4 class>강원</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+							<h4 class>경상</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'jeolla'}">
+							<h4 class>전라</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'busan'}">
+							<h4 class>부산</h4>
+						</c:when>
+						<c:when test ="${lodging.areaName eq 'jeju'}">
+							<h4 class>제주</h4>
+						</c:when>
+					</c:choose>
+					
 				
 				</div><br>
 				
@@ -73,9 +98,9 @@
 				</ul>
 				
 				<label class="mt-3">체크인 </label>
-		        <input type="text" id="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <input type="text" id="startDate" name="startDate"value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
-		        <input type="text" id="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        <input type="text" id="endDate" name="endDate"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 				
 				
@@ -174,24 +199,12 @@
 			
 			 let startDate = $(this).val();
 			 let endDate = $(this).val();
+		 	
 			 
-			 if(startDate == ""){
-				 
-				alert("체크인 날짜를 입력하세요.");
-			
-			 	return ; 
+			 if(startDate == null){
+				 alert("");
+				 return;
 			 }
-			 if(endDate == ""){
-				 alert("체크아웃 날짜를 입력하세요.");
-				 
-				 return ;
-			 }
-			 
-			 
-			 
-
-			 
-			 
 			 
 		 });
 	
@@ -205,7 +218,7 @@
 		 });
  
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy년mm월dd일",
+             dateFormat:"yy-mm-dd",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -224,7 +237,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy년mm월dd일",
+             dateFormat:"yy-mm-dd",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널

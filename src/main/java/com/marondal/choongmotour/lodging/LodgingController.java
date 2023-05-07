@@ -100,17 +100,20 @@ public class LodgingController {
 	
 	//찜목록
 	@GetMapping("/dibspage/view")
-	public String dibsPage(Model model
+	public String dibsPage(Model model	
 						   , @RequestParam("id") int id //여기도 리퀘스트 파람 안해줬다.
 						   , HttpSession session
 			) {//찜은 lodgingId별로 한다 그렇다면.. 찜목록 조회는??
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<DibsDetail> dibsList = dibsBO.getDibsList(userId, id);
+		List<DibsDetail> dibsDetailList = dibsBO.getDibsList(userId, id);
 		
-		model.addAttribute("dibsList", dibsList);
+		model.addAttribute("dibsDetailList", dibsDetailList);
 
+		List<Lodging> lodgingList = lodgingBO.getLodgingList(id);
+		
+		model.addAttribute("lodgingList", lodgingList);
 		
 		User user = userBO.getUserInfo(id);
 		

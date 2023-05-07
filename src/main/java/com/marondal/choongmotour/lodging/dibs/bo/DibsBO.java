@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
 
 import com.marondal.choongmotour.lodging.model.DibsDetail;
+import com.marondal.choongmotour.lodging.model.Lodging;
 
 
 @Service
@@ -53,9 +54,9 @@ public class DibsBO {
 	// 찜목록
 	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-		
+	
 		//조회할때 userId인가 id인가?? 둘다인가??
-		
+		//List<DibsDetail> dibsDetailList = new ArrayList<>();
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
 //		for(DibsDetail dibsDetail : dibsDetailList) {
