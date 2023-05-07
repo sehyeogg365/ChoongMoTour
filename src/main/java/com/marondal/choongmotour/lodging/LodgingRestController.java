@@ -98,38 +98,39 @@ public class LodgingRestController {
 	}
 	
 	//날짜 선택/추가
-	@PostMapping("/dateselect")
-	public Map<String, String> selectDate( @RequestParam("roomId") int roomId
-										 , @RequestParam("startDate") Date startDate
-										 , @RequestParam("endDate") Date endDate	
-										){
-		
-		int count = reserveBO.addDate(roomId, startDate, endDate);
-		
-		Map <String, String> resultMap = new HashMap<>();
-		
-		if(count == 1) {
-			resultMap.put("result", "success");
-		} else {
-			resultMap.put("result", "fail");
-		}
-		
-		
-			return resultMap;
-		
-	}
+//	@PostMapping("/dateselect")
+//	public Map<String, String> selectDate( @RequestParam("roomId") int roomId
+//										 , @RequestParam("startDate") Date startDate
+//										 , @RequestParam("endDate") Date endDate	
+//										){
+//		
+//		int count = reserveBO.addDate(roomId, startDate, endDate);
+//		
+//		Map <String, String> resultMap = new HashMap<>();
+//		
+//		if(count == 1) {
+//			resultMap.put("result", "success");
+//		} else {
+//			resultMap.put("result", "fail");
+//		}
+//		
+//		
+//			return resultMap;
+//		
+//	}
 	
 	
 	//예약 하기 
 	@PostMapping("/reserve")
 	public Map<String, String> reserveRoom(
-				@RequestParam("userId") int userId
-				, @RequestParam("roomId") int roomId
+ @RequestParam("roomId") int roomId
 				, @RequestParam("payment") String payment
 				, @RequestParam("startDate") Date startDate
 				, @RequestParam("endDate") Date endDate
-				
+				, HttpSession session
 			) {
+		
+		int userId = (Integer)session.getAttribute("userId");
 		
 		int count = reserveBO.addReserve(roomId, userId,  payment, startDate, endDate);
 		

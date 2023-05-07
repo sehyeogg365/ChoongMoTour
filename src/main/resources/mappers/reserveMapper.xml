@@ -38,17 +38,19 @@
   	INSERT INTO
   			`reserved_list`
   	(
-  		`userId`
-  		, `roomId`
-  		, `startDate`
+  		
+  		 `roomId`
+  		, `payment`
+  		, `startDate` <!-- 여기서 왜 payment가 없는가??? 이래서 예약이 안되는건 아닌지??? -->
   		, `endDate`
   		, `createdAt`
   		, `updatedAt`
   	) 
   		VALUES
   	(
-  		#{userId}
-  		,#{roomId}
+  		
+  		#{roomId}
+  		,#{payment}
   		,#{startDate}
   		,#{endDate}
   		, now()

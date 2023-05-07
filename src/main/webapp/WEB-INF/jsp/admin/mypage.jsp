@@ -91,7 +91,7 @@
 						
 						
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3 mb-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 						</div>
 					
 					

@@ -17,6 +17,12 @@
 
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
 	
+	<!-- datepicker -->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+	
+	
 </head>
 <body>
 	<div id = "wrap">
@@ -30,20 +36,23 @@
 			
 				<div class="reservepagecontents ">
 					
-					<div class=""><h2>${reserveDetail.roomName }</h2></div><br>
-					<div class=""><h3>${reserveDetail.size }</h3></div>
+					<div class=""><h2>${lodging.roomName }</h2></div><br>
+					<div class=""><h3>${room.size }</h3></div>
 					
-					<div class="d-flex mt-3 justify-content-center">
-						<div class="" >체크인 ${reserveDetail.reserveDate }</div> ~
-						<div class="ml-3">체크아웃 ${reserveDetail.reserveDate }</div>
+					<div class="d-flex mt-3 mx-3 justify-content-center ">
+						<label class="mt-3">체크인 </label>
+		        		<input type="text" id="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        		<label class="mt-3">체크아웃 </label>
+		        		<input type="text" id="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+				
 					
 					</div>
 					
-					<div class = "">
-						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${reserveDetail.name }" class="form-control ">
+					<div class = "mx-3">
+						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name }" class="form-control ">
 					
 					
-						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${reserveDetailuser.phoneNumber}" class="form-control ">
+						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
@@ -52,7 +61,7 @@
 					
 					
 					<hr>
-					<div class="payselect mt-4">
+					<div class="payselect mt-4 mx-3">
 						<div class=""> 결제수단을 선택하세요. </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
 							
@@ -62,13 +71,13 @@
                             <option value="삼성페이">삼성페이</option>
                             <option value="카드">카드</option>
                        
-                 </select>
+                 		</select>
 					
 					</div>
 					
 					
 					
-					<div class="check-box mt-4">
+					<div class="check-box mt-4 mx-3">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
 				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1"></label><br>
 				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2"></label><br>
@@ -77,9 +86,9 @@
 					</div>
 					
 					
-					<div class="text-center">
+					<div class="text-center mb-3">
 					
-						<button id = "payBtn" type="button"  class="btn btn-danger col-8 ">결제하기</button>
+						<button id = "payBtn" type="button"  class="btn btn-danger col-8 mb-3">결제하기</button>
 					</div>
 				</div>
 			
@@ -107,7 +116,7 @@
 			
 			let name = $("#nameInput").val();
 			
-			let pay = $("#paySelector").val();
+			let payment = $("#paySelector").val();
 			
 			let check = $("#allCheck").val();
 			
@@ -121,7 +130,7 @@
 				return ;
 			}
 			
-			if(pay == ""){
+			if(payment == ""){
 				alert("지불수단을 선택하세요.");
 				return ;
 			}
@@ -141,24 +150,63 @@
 			
 			$.ajax({//우선여기부터 하자.
 				type:"post"
-				, url:"/lodging/reserve"
-				, data:{"userId" : userId, "roomId":roomId,"payment":payment, "reserveDate" : reserveDate};
+				, url:"/lodging/reserve" //userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
+				, data:{"roomId":id,"payment":payment, "startDate" : startDate, "endDate" : endDate}
 				, success:function(data){
 					if(data.result == "success"){
-						location.href="/lodging/main/view";
+						location.href="/lodging/reservelist/view";
 						alert("예약 성공");
 					} else {
 						alert("예약 실패");
 						
 					}
+				}
 					, error:function(){
 						alert("예약 에러");
 					}
-				}
+				
 			});
 			
 		
 		});
+		
+		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
+             dateFormat:"yy년mm월dd일",
+            
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , 
+             todayHighlight :true,// 오늘을 표시해줄지. default 가 false
+             showButtonPanel:true,
+             closeText: 'done',
+             minDate: 0,//오늘날짜 부터
+             onSelect:function(selectedDate) {
+                 
+                 $("#endDate").datepicker("option", "minDate", selectedDate);
+
+                 }
+
+         });
+		// todayHighlight :true,
+       
+
+         $("#endDate").datepicker({//종료일
+             dateFormat:"yy년mm월dd일",
+           
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+             showButtonPanel:true,//버튼보이기
+             closeText: 'done',
+             minDate:'+1D',//오늘날짜 다음 부터
+             //beforeShow: customRange
+              onSelect:function(selectedDate) {
+                 
+                 $("#startDate").datepicker("option", "maxDate", selectedDate );
+                 
+             
+              }
+            
+
+         });
 		
 		
 		 $("#allCheck").on("change", function() {

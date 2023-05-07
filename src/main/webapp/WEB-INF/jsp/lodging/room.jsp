@@ -35,7 +35,7 @@
 				
 				
 				
-				<div class="lodging-profile2 ">
+				<div class="lodging-profile2 text-center">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 					<c:choose>
 						<c:when test = "${lodging.level eq '5성급' }">
@@ -57,7 +57,7 @@
 				
 				</div><br>
 				
-				<div class="text-center">
+				<div class="text-center mt-3">
 					<h2>${lodging.roomName }</h2>
 				</div><br>
 				
@@ -73,9 +73,9 @@
 				</ul>
 				
 				<label class="mt-3">체크인 </label>
-		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <input type="text" id="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
-		        <input type="text" id="endDate" autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        <input type="text" id="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 				
 				
@@ -172,40 +172,24 @@
 		 //예약버튼 
 		 $(".reserve-btn").on("click", function(){
 			
-			 let id = $(this).data("room-id");
 			 let startDate = $(this).val();
 			 let endDate = $(this).val();
 			 
 			 if(startDate == ""){
 				 
 				alert("체크인 날짜를 입력하세요.");
+			
 			 	return ; 
 			 }
 			 if(endDate == ""){
 				 alert("체크아웃 날짜를 입력하세요.");
+				 
 				 return ;
 			 }
 			 
 			 
 			 
-			 $.ajax({
-				 
-				 type:"post"
-				 , url:"/lodging/dateselect"
-				 , data:{"roomId": roomId, "startDate" : startDate, "endDate" : endDate}
-				 , success:function(data){
-					 if(data.result == "success"){
-						 alert("날짜 선택 성공");
-						 location.href="/lodging/reservation/view";
-					 } else {
-						 alert("날짜 선택 실패");
-					 }
-				 }
-				 , error:function(){
-					 alert("날짜 선택 에러");
-				 }
-				 
-			 });
+
 			 
 			 
 			 

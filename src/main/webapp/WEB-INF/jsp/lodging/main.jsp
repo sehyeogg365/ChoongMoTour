@@ -108,21 +108,15 @@
 				</div><br>
 				
 				<!-- 그외에 메인페이지 추가할 내용?  -->
-				
-				
-			<div class="image-slider text-center">
-	           
-	            <svg id="prevBtn" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-left" viewBox="0 0 16 16">
-				  <path d="M10 12.796V3.204L4.519 8 10 12.796zm-.659.753-5.48-4.796a1 1 0 0 1 0-1.506l5.48-4.796A1 1 0 0 1 11 3.204v9.592a1 1 0 0 1-1.659.753z"/>
-				</svg>
-				
-	            <img id="image" src="image1.jpg" width="900">
-	            <svg id="nextBtn" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-right" viewBox="0 0 16 16">
-				  <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
-				</svg>
-	
-        	</div>
-				
+			<div class="text-center">
+				<i id="preveBtn" width="20" height="20" class="bi bi-caret-left"></i>
+				<!--픽사베이거 퍼오기-->
+	        		<img id="image" width ="900" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="사진1">
+	        
+	        	
+	        	<i id = "nextvBtn" width="20" height="20" class="bi bi-caret-right"></i>
+        	</div>	
+        	
 			</div>
 			
 		</section>
@@ -132,26 +126,29 @@
 	<script>
 	$(document).ready(function() {
 		
-		var imageFiles = ["https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg"
+		var imageList = ["https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg"
 						  ,"https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_960_720.jpg"  
 						  , "https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221_960_720.jpg"];
-		var imageIndex = 0;
+		
 	
-		 $("#prevBtn").on("click", function() {
-             if(--imageIndex < 0) {
-            	 imageIndex = imageFiles.length - 1;
-             }
+		var imageIndex = 1;
+        $("#prevBtn").on("click", function(){//이미지 세개 준비후 다음버튼 누르면 다음이미지거 가 보여주는거를 해야함. 배열로 저장한다.
+    
+            $("#image").attr("src", imageList[imageIndex]);
+            imageIndex--;
+            if(imageIndex == -1){//<0일때 혹은 -1일때
+                imageIndex = imageList.length - 1;//이것도 배열 길이에 맞춰서
+            }
+        });
 
-             $("#image").attr("src", imageFiles[imageIndex]);
-         });
-
-         $("#nextBtn").on("click", function() {
-             if(++imageIndex > imageFiles.length - 1) {
-            	 imageIndex = 0;
-             }
-
-             $("#image").attr("src", imageFiles[imageIndex]);
-         });
+        $("#nextvBtn").on("click", function(){
+        
+            $("#image").attr("src", imageList[imageIndex]);
+            imageIndex++;
+            if(imageIndex == imageList.length){//length 라고 잡아주면 편함 사진 개수상관없이 무리없이 가능.
+                imageIndex = 0;//0으로 다시 되돌린다.
+            }
+        });
          
      
          

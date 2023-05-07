@@ -13,14 +13,14 @@ import com.marondal.choongmotour.lodging.model.ReserveDetail;
 public interface ReserveDAO {
 	
 	//날짜 선택~예약창
-	public int insertDate(@Param("roomId")int roomId
-						 , @Param("startDate") Date startDate
-						 , @Param("endDate") Date endDate);
+//	public int insertDate(@Param("roomId")int roomId
+//						 , @Param("startDate") Date startDate
+//						 , @Param("endDate") Date endDate);
 	
 	
 	//예약하기
-	public int insertReserve(@Param("userId") int userId
-							,@Param("roomId") int roomId 
+	public int insertReserve(
+							@Param("roomId") int roomId 
 							,@Param("payment") String payment
 							, @Param("startDate") Date startDate
 							, @Param("endDate") Date endDate);

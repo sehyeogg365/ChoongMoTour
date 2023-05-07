@@ -42,11 +42,7 @@
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
 					<c:forEach var="lodging" items = "${lodgingList }">
 					<div class="lodging-card">
-						
-						<div class="lodging-profile">
-							
-							<!-- 하트아이콘 -->
-							<c:choose>
+						<c:choose>
 								<c:when test="${lodging.dibs}">
 																																				
 									<i class="undib-icon bi bi-heart-fill text-danger  d-flex justify-content-end" data-lodging-id = "${lodging.id }"></i>
@@ -57,6 +53,10 @@
 								
 								</c:otherwise>
 							</c:choose>
+						<div class="lodging-profile">
+							
+							<!-- 하트아이콘 -->
+							
 							
 							<a href="/lodging/room/view?id=${lodging.id }" class=" lodging-profile">
 								<img class="profile" width ="" height = ""src="${lodging.imagePath }">

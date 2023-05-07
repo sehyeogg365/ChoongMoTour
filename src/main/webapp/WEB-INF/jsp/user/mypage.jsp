@@ -89,7 +89,7 @@
 						</div>
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3" type="button" data-user-id="${user.id }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary mt-3 mb-3" type="button" data-user-id="${user.id }">수정 완료</button>
 						</div>
 					
 					

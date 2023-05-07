@@ -130,10 +130,10 @@ public class LodgingController {
 
 			) {
 		
-		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id); 
-		
-		model.addAttribute("reserveDetail", reserveDetail);
-		
+//		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id); 
+//		
+//		model.addAttribute("reserveDetail", reserveDetail);
+//		애초에 리저브 디테일은 예약카드 정보고 이거는... 
 		User user = userBO.getUserInfo(id);
 		
 		model.addAttribute("user", user);
@@ -165,6 +165,13 @@ public class LodgingController {
 			
 			model.addAttribute("user", user);
 			
+			Lodging lodging = lodgingBO.getLodging(id);
+			
+			model.addAttribute("lodging", lodging);	
+			
+			Room room = lodgingBO.getRoom(id);
+			
+			model.addAttribute("room", room);
 			
 			return "lodging/reservelist";
 		}

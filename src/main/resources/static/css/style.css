@@ -22,22 +22,20 @@ header{
 .contents > .join-box{
 	
 	width:450px;
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	
 }
 
 .contents > .login-box{
 	
 	width:450px;
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	
 }
 
 .contents > .find-id-pw-page{
 	
 	width:600px;
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	
+	
 }
 
 .contents> .main-page{
@@ -155,9 +153,16 @@ header{
 	border-radius: 8px;
 }
 
-.lodging-profile> .profile{
+.lodging-profile{
+	
 	width: 350;
     height: 300px;
+}
+
+.lodging-profile> .profile{
+	width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .lodging-card>.lodging-card-body{
@@ -178,7 +183,7 @@ header{
 
 .room-card-list >.room-card{
 	
-	width:900px;
+
 	height:200px;
 	border: 1px solid;
 	border-radius: 8px;
@@ -232,7 +237,7 @@ header{
 }
 
 .reservepagecontents{
-	 border-radius: 8px;
+	border-radius: 8px;
     box-shadow: 3px 3px 5px 0px black;
 	
 }
