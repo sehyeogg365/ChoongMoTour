@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.marondal.choongmotour.lodging.dao.LodgingDAO;
 import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
 
 import com.marondal.choongmotour.lodging.model.DibsDetail;
@@ -18,6 +18,8 @@ public class DibsBO {
 	@Autowired
 	private DibsDAO dibsDAO;
 	
+	@Autowired
+	private LodgingDAO lodgingDAO;
 
 	
 	//찜
@@ -54,24 +56,26 @@ public class DibsBO {
 	// 찜목록
 	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-	
+		List<Lodging> lodgingList = lodgingDAO.selectLodgingList(id);
+		
 		//조회할때 userId인가 id인가?? 둘다인가??
-		//List<DibsDetail> dibsDetailList = new ArrayList<>();
+		List<DibsDetail> dibsDetailList = new ArrayList<>();
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
-//		for(DibsDetail dibsDetail : dibsDetailList) {
-//								
-//			dibsDetail.setId(dibsDetail.getId());//몇번째 찜했는지 
-//			dibsDetail.setUserId(dibsDetail.getUserId());//누가 저장했는지
-//			dibsDetail.setLodgingId(dibsDetail.getLodgingId());// 어떤숙소인지
-//			dibsDetail.setRoomName(dibsDetail.getRoomName());//숙소명
-//			dibsDetail.setAreaName(dibsDetail.getAreaName());//지역
-//			dibsDetail.setPrice(dibsDetail.getPrice());//가격
-//			dibsDetail.setImagePath(dibsDetail.getImagePath()); //사진 등
-//														
-//			dibsDetailList.add(dibsDetail);															
-//		}	
-		return dibsDAO.selectDibsList(userId, id);//이것도 로징아이디 별 조회
+		for(Lodging lodging : lodgingList) {
+						
+			DibsDetail dibsDetail = new DibsDetail();
+			
+			dibsDetail.setAreaName(lodging.getAreaName());
+			dibsDetail.setImagePath(lodging.getImagePath());
+			dibsDetail.setRoomName(lodging.getRoomName());
+			dibsDetail.setLodgingId(lodging.getId());
+		
+			
+			dibsDetailList.add(dibsDetail);
+			
+		}	
+		return dibsDetailList;//이것도 로징아이디 별 조회
 	}
 	
 	// 찜 목록 숙소리스트
