@@ -105,9 +105,9 @@ public class LodgingBO {
 									// 모호하게 전에서 이걸 써서 이게 필요할것이다 라는 생각이 들게됨 근데 명확하게 해야함개발은 쓸때 쓰고 뺄땐빼고 이래야 함.
 	// 숙소 리스트
 	
-	public List<Lodging> getLodgingList(int adminId) {
+	public List<Lodging> getLodgingList(int id) {
 			
-		return lodgingDAO.selectLodgingList(adminId);
+		return lodgingDAO.selectLodgingList(id);
 
 	}
 	

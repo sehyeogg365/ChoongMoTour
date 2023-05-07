@@ -34,7 +34,7 @@ public interface LodgingDAO {
 							);
 
 	//숙소 리스트
-	public List<Lodging> selectLodgingList(@Param("adminId")int adminId);
+	public List<Lodging> selectLodgingList(@Param("id")int id);
 	
 	//숙소 한행
 	public Lodging selectLodgingById(@Param("id") int id);
