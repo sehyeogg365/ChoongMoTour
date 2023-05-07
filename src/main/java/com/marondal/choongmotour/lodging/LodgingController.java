@@ -91,9 +91,9 @@ public class LodgingController {
 		
 
 		
-		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id);
+		ReserveDetail reserve = reserveBO.getReserveInfoById(id);
 		
-		model.addAttribute("reserveDetail", reserveDetail);
+		model.addAttribute("reserveDetail", reserve);
 		
 		
 		return "lodging/room";
@@ -112,11 +112,7 @@ public class LodgingController {
 		List<DibsDetail> dibsList = dibsBO.getDibsList(userId, id);
 		
 		model.addAttribute("dibsList", dibsList);
-		
-		
-//		Lodging lodging = lodgingBO.getLodging(id);
-//		
-//		model.addAttribute("lodging", lodging);
+
 		
 		User user = userBO.getUserInfo(id);
 		

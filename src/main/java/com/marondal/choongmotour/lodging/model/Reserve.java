@@ -6,10 +6,12 @@ public class Reserve {
 	private int id;
 	private int userId;
 	private int roomId; //이 roomId 하나에 또 숙소정보도 당연히 다 불러올수 있다고 한다.
-	private Date reserveDate; // 예약날짜
+	private Date startDate; 
+	private Date endDate; //체크인 체크아웃 날짜 구분
 	private String payment;
 	private Date createdAt;
 	private Date updatedAt;
+	
 	public int getId() {
 		return id;
 	}
@@ -28,11 +30,17 @@ public class Reserve {
 	public void setRoomId(int roomId) {
 		this.roomId = roomId;
 	}
-	public Date getReserveDate() {
-		return reserveDate;
+	public Date getStartDate() {
+		return startDate;
 	}
-	public void setReserveDate(Date reserveDate) {
-		this.reserveDate = reserveDate;
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+	public Date getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 	public String getPayment() {
 		return payment;
@@ -53,7 +61,6 @@ public class Reserve {
 		this.updatedAt = updatedAt;
 	}
 
-	
 	
 	
 }

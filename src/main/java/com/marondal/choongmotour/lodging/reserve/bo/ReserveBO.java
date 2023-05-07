@@ -16,9 +16,9 @@ public class ReserveBO {
 	@Autowired ReserveDAO reserveDAO;
 	
 	//예약하기 
-	public int addReserve(int userId, int roomId, String payment, Date reserveDate) {
+	public int addReserve(int userId, int roomId, String payment, Date startDate, Date endDate) {
 			
-		return reserveDAO.insertReserve(userId, roomId, payment, reserveDate);	
+		return reserveDAO.insertReserve(userId, roomId, payment, startDate, endDate);	
 			
 	}
 	

@@ -35,7 +35,7 @@
 				
 				
 				
-				<div class="lodging-profile2 align-items-center">
+				<div class="lodging-profile2 ">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 					<c:choose>
 						<c:when test = "${lodging.level eq '5성급' }">
@@ -73,9 +73,9 @@
 				</ul>
 				
 				<label class="mt-3">체크인 </label>
-		        <input type="text" id="startDate" autocomplete="on"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <input type="text" id="startDate" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
-		        <input type="text" id="endDate" autocomplete="on"><br>
+		        <input type="text" id="endDate" autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 				
 				
@@ -132,7 +132,7 @@
 							      <div class="modal-body text-center">
 							       <p id="contentInput${room.id }">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 							      
-							     	<p>예약날짜(선택사항) </p>
+							     	<p id="reserveDateInput${reserve.id }">예약날짜 ${reserve.reserveDate } </p>
 							      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 							      <div class="modal-footer">
 					        
@@ -198,7 +198,7 @@
 		 });
  
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년mm월dd일",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -217,7 +217,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년mm월dd일",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널

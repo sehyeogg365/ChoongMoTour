@@ -103,10 +103,12 @@ public class LodgingRestController {
 				@RequestParam("userId") int userId
 				, @RequestParam("roomId") int roomId
 				, @RequestParam("payment") String payment
-				, @RequestParam("reserveDate") Date reserveDate
+				, @RequestParam("startDate") Date startDate
+				, @RequestParam("endDate") Date endDate
+				
 			) {
 		
-		int count = reserveBO.addReserve(roomId, userId,  payment, reserveDate);
+		int count = reserveBO.addReserve(roomId, userId,  payment, startDate, endDate);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

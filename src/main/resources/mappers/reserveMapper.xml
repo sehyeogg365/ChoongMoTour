@@ -18,7 +18,8 @@
   	(
   		`userId`
   		, `roomId`
-  		, `reserveDate`
+  		, `startDate`
+  		, `endDate`
   		, `createdAt`
   		, `updatedAt`
   	) 
@@ -26,7 +27,8 @@
   	(
   		#{userId}
   		,#{roomId}
-  		,#{reserveDate}
+  		,#{startDate}
+  		,#{endDate}
   		, now()
   		, now()
   	
@@ -44,7 +46,8 @@
   		, `userId`
   		, `roomId`
   		, `payment`
-  		, `reserveDate`
+  		, `startDate`
+  		, `endDate`
   	FROM
   		`reserved_list`
   	WHERE
@@ -58,7 +61,8 @@
   		, `userId`
   		, `roomId`
   		, `payment`
-  		, `reserveDate`
+  		, `startDate`
+  		, `endDate`
    FROM
    		`reserved_list`
    WHERE
