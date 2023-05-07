@@ -77,13 +77,13 @@ public class LodgingRestController {
 	@GetMapping("/undibbasket")
 	public Map<String, String> dibsDeleteById(
 			@RequestParam("id") int id
-			, @RequestParam("lodgingId") int lodgingId
+			,@RequestParam("lodgingId") int lodgingId
 			
-			, HttpSession session
+			//, HttpSession session
 			){
-		int userId = (Integer)session.getAttribute("userId");
+		//int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.deleteDibsById(userId, id);
+		int count = dibsBO.deleteDibsById(lodgingId, id);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		

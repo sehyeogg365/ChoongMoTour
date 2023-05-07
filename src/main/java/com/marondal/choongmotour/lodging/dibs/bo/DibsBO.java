@@ -78,19 +78,14 @@ public class DibsBO {
 		return dibsDetailList;//이것도 로징아이디 별 조회
 	}
 	
-	// 찜 목록 숙소리스트
-	
-//	public List<Lodging> getLodgingListDibs(int id){
-//		
-//		return dibsDAO.selectLodgingListByDibs(id);
-//	}
+
 	
 	
 	//찜 목록내 제거
 	
-	public int deleteDibsById(int userId, int id) {
+	public int deleteDibsById(int lodgingId, int id) {
 		
-		return dibsDAO.deleteDibsById(userId, id);
+		return dibsDAO.deleteDibsById(lodgingId, id);
 	}
 	
 	

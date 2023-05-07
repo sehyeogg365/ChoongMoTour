@@ -62,23 +62,7 @@
   		ORDER BY 
   			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
-  	<!--  
-  	<select id = "selectLodgingListByDibs" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="int">
- 		SELECT
- 			`id`
-	 		, `roomName`
-	 		, `imagePath`
-	 		, `level`
-	 		, `areaName`
-	 		, `createdAt`	
-	 		, `updatedAt`
- 		FROM
- 			`lodging`
- 		WHERE
- 			`id` = #{id};
- 	</select>
-  	
-  	-->
+ 
   	<!-- 찜 목록내 제거  -->
   	<delete id = "deleteDibsById" parameterType="int">
   		DELETE

@@ -56,7 +56,7 @@
 							<div class="dibs-card  ml-4 mt-3">
 								
 								<div class="dibs-profile">															<!-- 근데 희안하게 여기  -->		
-									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-lodging-id= "${dibs.lodgingId	 }"></i>
+									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-lodging-id= "${dibs.lodgingId}"></i>
 									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
 														
 										<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
@@ -98,8 +98,8 @@
 			$.ajax({
 				
 				type: "get"
-				, url :"/lodging/undibbasket"
-				, data:{"id":id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니
+				, url :"/lodging/undib"
+				, data:{"lodgingId": id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니
 				, success:function(data){
 					if(data.result =="success"){
 						alert("찜 취소 성공");

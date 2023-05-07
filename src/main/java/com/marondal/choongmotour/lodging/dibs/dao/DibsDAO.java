@@ -29,7 +29,7 @@ public interface DibsDAO {
 	
 		
 	//찜 목록내 제거
-	public int deleteDibsById(@Param("userId") int userId, @Param("id") int id);
+	public int deleteDibsById(@Param("lodgingId") int lodgingId, @Param("id") int id);
 	
 	
 }
