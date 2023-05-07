@@ -58,13 +58,14 @@
 								<div class="dibs-profile">															<!-- 근데 희안하게 여기 dibs-id -> dibs-lodgingId라고 바꾼다고 안되나? 아 생각해보니 이게 이게 맞다. 저기 로징리스트서 이렇게 했으므로. -->		
 									<i class="undib-icon bi bi-heart-fill text-danger d-flex justify-content-end " data-dibs-id= "${dibs.lodgingId	 }"></i>
 									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
-										<div class="">${dibs.lodgingId }</div>
-										<div class="">${dibs.id }</div>					
+														
 										<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
 									</a>
 								</div>
 								
 								<div class="dibs-card-body">
+									<div class="">${dibs.lodgingId }</div>
+										<div class="">${dibs.id }</div>	<!-- 아예 딥스아이디는 안들어오는상황 -->
 									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
 			
 								</div>

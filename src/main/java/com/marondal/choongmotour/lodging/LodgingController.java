@@ -89,11 +89,9 @@ public class LodgingController {
 		model.addAttribute("roomList", roomList);
 		
 		
-
+		//날짜 모달창 
 		
-		ReserveDetail reserve = reserveBO.getReserveInfoById(id);
 		
-		model.addAttribute("reserveDetail", reserve);
 		
 		
 		return "lodging/room";

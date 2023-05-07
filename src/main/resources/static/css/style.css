@@ -22,16 +22,22 @@ header{
 .contents > .join-box{
 	
 	width:450px;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 }
 
 .contents > .login-box{
 	
 	width:450px;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 }
 
 .contents > .find-id-pw-page{
 	
 	width:600px;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 }
 
 .contents> .main-page{

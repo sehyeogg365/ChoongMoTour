@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -93,6 +94,28 @@ public class LodgingRestController {
 		
 		
 		return resultMap;
+		
+	}
+	
+	//날짜 선택/추가
+	@PostMapping("/dateselect")
+	public Map<String, String> selectDate( @RequestParam("roomId") int roomId
+										 , @RequestParam("startDate") Date startDate
+										 , @RequestParam("endDate") Date endDate	
+										){
+		
+		int count = reserveBO.addDate(roomId, startDate, endDate);
+		
+		Map <String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		
+			return resultMap;
 		
 	}
 	

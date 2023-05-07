@@ -132,7 +132,7 @@
 							      <div class="modal-body text-center">
 							       <p id="contentInput${room.id }">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 							      
-							     	<p id="reserveDateInput${reserve.id }">예약날짜 ${reserve.reserveDate } </p>
+							     	
 							      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 							      <div class="modal-footer">
 					        
@@ -172,6 +172,7 @@
 		 //예약버튼 
 		 $(".reserve-btn").on("click", function(){
 			
+			 let id = $(this).data("room-id");
 			 let startDate = $(this).val();
 			 let endDate = $(this).val();
 			 
@@ -184,6 +185,28 @@
 				 alert("체크아웃 날짜를 입력하세요.");
 				 return ;
 			 }
+			 
+			 
+			 
+			 $.ajax({
+				 
+				 type:"post"
+				 , url:"/lodging/dateselect"
+				 , data:{"roomId": roomId, "startDate" : startDate, "endDate" : endDate}
+				 , success:function(data){
+					 if(data.result == "success"){
+						 alert("날짜 선택 성공");
+						 location.href="/lodging/reservation/view";
+					 } else {
+						 alert("날짜 선택 실패");
+					 }
+				 }
+				 , error:function(){
+					 alert("날짜 선택 에러");
+				 }
+				 
+			 });
+			 
 			 
 			 
 		 });

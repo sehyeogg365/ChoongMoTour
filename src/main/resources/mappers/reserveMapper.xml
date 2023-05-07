@@ -8,7 +8,29 @@
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
  
 
+ <!-- 날짜 선택 -->
+ <insert id = "insertDate" parameterType="map">
+ INSERT INTO
+ 	`reserved_list`
+ (
+ 	`roomId`
+ 	,`startDate`
+  	,`endDate`
+ 	, `createdAt`
+  	, `updatedAt`
  
+ )
+ 	VALUES
+ 
+ (
+ 	#{roomId}
+ 	,#{startDate}
+  	,#{endDate}
+    , now()
+  	, now()
+ 
+ );
+ </insert>
  
  <!-- 예약하기 -->
  

@@ -15,12 +15,22 @@ public class ReserveBO {
 	
 	@Autowired ReserveDAO reserveDAO;
 	
+	//날짜 선택~예약창
+	public int addDate(int roomId, Date startDate, Date endDate) {
+		
+		return reserveDAO.insertDate(roomId, startDate, endDate);
+	}
+	
+	
 	//예약하기 
 	public int addReserve(int userId, int roomId, String payment, Date startDate, Date endDate) {
 			
 		return reserveDAO.insertReserve(userId, roomId, payment, startDate, endDate);	
 			
+		
 	}
+	
+	//
 	
 	//예약 목록
 	public List<ReserveDetail> getReserveList(int id ){
