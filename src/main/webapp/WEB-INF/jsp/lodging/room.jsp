@@ -193,7 +193,7 @@
 	</div>
 	<script>
 	 $(document).ready(function() {
-		 
+		
 		 //예약버튼 
 		 $(".reserve-btn").on("click", function(){
 			
@@ -229,7 +229,7 @@
              onSelect:function(selectedDate) {
                  
                  $("#endDate").datepicker("option", "minDate", selectedDate);
-
+                 document.getElementById('date').value = new Date().toISOString().substring(0, 10);
                  }
 
          });
