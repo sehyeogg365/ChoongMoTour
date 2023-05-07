@@ -112,7 +112,7 @@
 				return ;
 			}
 			
-			alert(id);
+			//alert(id);
 			alert(roomName);
 			alert(areaName);
 			alert(level);
@@ -121,7 +121,7 @@
 			var formData = new FormData();
 			
 			
-			formData.append("id", id);
+			//formData.append("id", id);
 			formData.append("roomName", roomName);
 			formData.append("areaName", areaName);//이것까지 areaName 으로 바꿔주니 추가 성공했다.
 			formData.append("level", level);
