@@ -8,66 +8,60 @@ public class DibsDetail {// 찜 카드에 필요한 데이터들
 	private String roomName; //숙소명
 	private String areaName; //지역
 	private String imagePath; //사진 등
+	private boolean isDibs; // 이것도 가만생각해보니 넣어야 한다. 빨간하트일때 남아있고 빈하트일때 사라지게 끔
 	//가만생각해보니 roomId도 안넣었는데 어떻게 가격이 나오는가? 근데 생각해보면 싱글룸 가격을 넣는게 되게 복잡하니 넣지 말자.
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+	public int getLodgingId() {
+		return lodgingId;
+	}
+	public void setLodgingId(int lodgingId) {
+		this.lodgingId = lodgingId;
+	}
+	public int getRoomId() {
+		return roomId;
+	}
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
+	}
+	public String getRoomName() {
+		return roomName;
+	}
+	public void setRoomName(String roomName) {
+		this.roomName = roomName;
+	}
+	public String getAreaName() {
+		return areaName;
+	}
+	public void setAreaName(String areaName) {
+		this.areaName = areaName;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	public boolean isDibs() {
+		return isDibs;
+	}
+	public void setDibs(boolean isDibs) {
+		this.isDibs = isDibs;
+	}
 	
 	// 찜했냐 안했냐 여부 생각해보니 여긴 필요가없다. 그냥 빨간하트 한번 누르면 삭제되는 개념이라서 당연히 찜 누른게 여기 목록에있는거라서
 	
 
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public int getUserId() {
-		return userId;
-	}
-
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-
-	public int getLodgingId() {
-		return lodgingId;
-	}
-
-	public void setLodgingId(int lodgingId) {
-		this.lodgingId = lodgingId;
-	}
-
-	public int getRoomId() {
-		return roomId;
-	}
-
-	public void setRoomId(int roomId) {
-		this.roomId = roomId;
-	}
-
-	public String getRoomName() {
-		return roomName;
-	}
-
-	public void setRoomName(String roomName) {
-		this.roomName = roomName;
-	}
-
-	public String getAreaName() {
-		return areaName;
-	}
-
-	public void setAreaName(String areaName) {
-		this.areaName = areaName;
-	}
-
-	public String getImagePath() {
-		return imagePath;
-	}
-
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
 
 	
 	

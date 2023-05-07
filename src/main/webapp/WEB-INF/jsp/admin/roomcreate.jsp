@@ -54,7 +54,7 @@
 	                 
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
-                 	 <div class="text-center">
+                 	 <div class="text-center mb-3">
 						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  </div>
@@ -70,7 +70,7 @@
 	                 
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
-                 	 <div class="text-center">
+                 	 <div class="text-center mb-3">
 						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
 					 </div>
                  
@@ -87,8 +87,8 @@
 	                 
 	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
-                 	 <div class="text-center">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-room-id="${room.id }">입력 완료</button>
+                 	 <div class="text-center mb-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -144,7 +144,7 @@
 			
 			//let id = $(this).data("lodging-id");//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			//이것도 빼준다.
-			let id = $(this).data("room-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
+			let lodgingId = $(this).data("lodging-id");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
 			
 			let price = $("#singlepriceInput").val();
 			
@@ -180,14 +180,14 @@
 			
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			
-			formData.append("id", id);
+			formData.append("lodgingId", lodgingId);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 			
 			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			alert(id);//O
+			alert(lodgingId);//O
 			alert(price);//O
 			alert(size);//O
 			alert(content);//O

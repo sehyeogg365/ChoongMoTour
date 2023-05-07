@@ -63,9 +63,11 @@ public class DibsBO {
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
 		for(Lodging lodging : lodgingList) {
-						
+					
+			
 			DibsDetail dibsDetail = new DibsDetail();
 			
+	
 			dibsDetail.setAreaName(lodging.getAreaName());
 			dibsDetail.setImagePath(lodging.getImagePath());
 			dibsDetail.setRoomName(lodging.getRoomName());
