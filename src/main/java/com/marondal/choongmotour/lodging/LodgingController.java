@@ -149,7 +149,9 @@ public class LodgingController {
 		
 		model.addAttribute("room", room);
 		
-
+		ReserveDetail reserveDeatil = reserveBO.getReserveInfoById(id);
+		
+		model.addAttribute("reserveDeatil", reserveDeatil);
 		
 		return "lodging/reservepage";
 		

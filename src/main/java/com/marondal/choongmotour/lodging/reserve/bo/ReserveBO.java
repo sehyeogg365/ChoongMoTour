@@ -9,9 +9,12 @@ import org.springframework.stereotype.Service;
 import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
+import com.marondal.choongmotour.user.bo.UserBO;
 
 @Service
 public class ReserveBO {
+	
+	@Autowired UserBO userBO;
 	
 	@Autowired ReserveDAO reserveDAO;
 	
@@ -39,6 +42,9 @@ public class ReserveBO {
 	
 	//예약 한행 정보 조회(예약페이지조회)
 	public ReserveDetail getReserveInfoById(int id) {
+		
+		
+		
 		
 		return reserveDAO.selectgetReserveInfoById(id);
 	}
