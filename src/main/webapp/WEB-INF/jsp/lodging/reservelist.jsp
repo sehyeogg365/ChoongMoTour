@@ -54,7 +54,7 @@
 						
 						
 						<div class="reservation-card ml-4 mt-3">
-							<i class="delete-btn bi bi-x-square d-flex justify-content-end"></i>
+							<i class="delete-btn bi bi-x-square d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
 							<a href="/lodging/room/view?id${lodging.id }" class="reservation-profile">
 								
 								<img class="profile" width="" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg " alt="호텔">
@@ -110,6 +110,8 @@
 		
 			<!-- 애초에 모달도 리스팅을 안했기에 당연히 안뜰수밖에.. -->
 			<!-- Modal 도 댓글달기-->
+			
+			 
 			<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content">
@@ -133,7 +135,7 @@
 			  </div>
 			</div>	
 				
-				
+				 
 				
 				
 				
@@ -166,6 +168,34 @@
 			 
 			 
 		 });
+ 		
+ 		$(".delete-btn").on("click", function(){
+ 			
+ 			let id = $(this).data("room-id");
+ 			
+ 			$.ajax({
+ 				type: "get"
+ 				, url : "/lodging/deletereserve"
+ 				, data:{"roomId" : id}
+ 				, success:function(data){
+ 					if(data.result =="success"){
+						alert("예약 취소 성공");
+						location.reload();
+					} else {
+						alert("예약 취소 실패");
+					}
+ 				}
+ 				, error:function(){
+					alert("예약 취소 오류");
+					
+				}
+ 				
+ 				
+ 			});
+ 			
+ 			
+ 			
+ 		});
 		 
 		 
 	 });

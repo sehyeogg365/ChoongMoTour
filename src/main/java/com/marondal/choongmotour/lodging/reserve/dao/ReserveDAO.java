@@ -17,8 +17,8 @@ public interface ReserveDAO {
 	//예약하기
 	public int insertReserve(
 							@Param("roomId") int roomId 
-							,@Param("userId") int userId
-							,@Param("payment") String payment
+							, @Param("userId") int userId
+							, @Param("payment") String payment
 							, @Param("startDate") Date startDate
 							, @Param("endDate") Date endDate);
 	

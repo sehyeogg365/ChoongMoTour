@@ -108,7 +108,13 @@
 	<script>
 	$(document).ready(function(){
 		
+		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
+		document.getElementById('endDate').value = new Date().toISOString().substring(0, 10);
+		 
+		
 		$("#payBtn").on("click", function(){
+			
+			
 			
 			let id = $(this).data("room-id");
 			
