@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
 import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
-
+import com.marondal.choongmotour.lodging.model.Dibs;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 
@@ -56,22 +56,28 @@ public class DibsBO {
 	// 찜목록
 	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-		List<Lodging> lodgingList = lodgingDAO.selectLodgingList(id);
+		//List<Lodging> lodgingList = lodgingDAO.selectLodgingList(id); 찜목록을 조회해야한다. 이것은 전체 조회니 엉뚱한게 나올수 밖에 타임라인도 전체를 조회한담에 디테일부분을 안에다 조회해온것.
+		
+		List<DibsDetail> dibsList = dibsDAO.selectDibsList(userId, id);
+		
 		
 		//조회할때 userId인가 id인가?? 둘다인가??
 		List<DibsDetail> dibsDetailList = new ArrayList<>();
 		//찜목록 조회 
 		//여기도 마찬가지로 잘 조화시켜보기
-		for(Lodging lodging : lodgingList) {
+		
+		
+		
+		for(DibsDetail dibs : dibsList) {
 					
 			
 			DibsDetail dibsDetail = new DibsDetail();
 			
 	
-			dibsDetail.setAreaName(lodging.getAreaName());
-			dibsDetail.setImagePath(lodging.getImagePath());
-			dibsDetail.setRoomName(lodging.getRoomName());
-			dibsDetail.setLodgingId(lodging.getId());
+			dibsDetail.setAreaName(dibs.getAreaName());
+			dibsDetail.setImagePath(dibs.getImagePath());
+			dibsDetail.setRoomName(dibs.getRoomName());
+			dibsDetail.setLodgingId(dibs.getId());
 		
 			
 			dibsDetailList.add(dibsDetail);
