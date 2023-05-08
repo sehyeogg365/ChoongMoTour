@@ -11,8 +11,10 @@ import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
+import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
 import com.marondal.choongmotour.user.bo.UserBO;
+import com.marondal.choongmotour.user.model.User;
 
 @Service
 public class ReserveBO {
@@ -60,18 +62,30 @@ public class ReserveBO {
 			
 			Lodging lodging = lodgingBO.getLodging(reserve.getRoomId());
 			
+			User user = userBO.getUserInfo(reserve.getId());
+			
+			Room room = lodgingBO.getRoom(id);
+			
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
 			//이거 오늘밤에 채우기
-			reserveDetail.setEndDate(reserve.getEndDate());
-			reserveDetail.setStartDate(reserve.getStartDate());
-			reserveDetail.setImagePath(lodging.getImagePath());
 			
+			
+			reserveDetail.setName(user.getName());//이름
+			reserveDetail.setSize(lodging.getRoomName());//숙소이름
+			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
+			reserveDetail.setPrice(room.getPrice());//가격은 복잡해지니 넣지말기
+			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
+			reserveDetail.setStartDate(reserve.getStartDate());
+			reserveDetail.setEndDate(reserve.getEndDate());
+		
+		
+			reserveDetailList.add(reserveDetail);
 		}
 		
 		
 		
-		return reserveDAO.selectReserveList(userId, id);
+		return reserveDetailList;
 		
 	}
 	
