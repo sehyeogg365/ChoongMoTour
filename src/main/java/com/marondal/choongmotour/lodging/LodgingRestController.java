@@ -151,12 +151,12 @@ public class LodgingRestController {
 	// 예약 취소
 	@PostMapping("/deletereserve")
 	public Map<String, String> reserveDelete(
-										@RequestParam("id")int id
+										@RequestParam("roomId")int roomId
 										, HttpSession session){
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = reserveBO.deleteReserve(userId, id);
+		int count = reserveBO.deleteReserve(userId, roomId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

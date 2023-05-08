@@ -32,6 +32,6 @@ public interface ReserveDAO {
 	
 	//예약 취소
 	
-	public int deleteReserve(@Param("id") int id, @Param("userId")int userId);
+	public int deleteReserve(@Param("roomId") int roomId, @Param("userId")int userId);
 	
 }

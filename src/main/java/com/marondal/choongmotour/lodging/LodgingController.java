@@ -163,6 +163,7 @@ public class LodgingController {
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
 				, @RequestParam("id") int id
+				, @RequestParam("roomId")int roomId
 				, HttpSession session) {
 			
 			int userId = (Integer)session.getAttribute("userId");
@@ -179,7 +180,7 @@ public class LodgingController {
 			
 			model.addAttribute("room", room);
 			
-			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, id);
+			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, roomId);
 			
 			model.addAttribute("reserveDeatil", reserveDetail);			
 			

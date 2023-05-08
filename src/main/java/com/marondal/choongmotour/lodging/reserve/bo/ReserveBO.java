@@ -41,20 +41,20 @@ public class ReserveBO {
 	
 	
 	//예약 한행 정보 조회(예약페이지조회)
-	public ReserveDetail getReserveInfoById(int id, int userId) {
+	public ReserveDetail getReserveInfoById(int roomId, int userId) {
 		
 		
 		
 		
-		return reserveDAO.selectgetReserveInfoById(id, userId);
+		return reserveDAO.selectgetReserveInfoById(roomId, userId);
 	}
 	
 	
 	//예약 취소
-	public int deleteReserve(int userId, int id) {
+	public int deleteReserve(int userId, int roomId) {
 		
 		
-		return reserveDAO.deleteReserve(userId, id);
+		return reserveDAO.deleteReserve(userId, roomId);
 		
 		
 	}

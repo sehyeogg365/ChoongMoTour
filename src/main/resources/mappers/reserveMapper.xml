@@ -75,7 +75,7 @@
   	FROM
   		`reserved_list`
   	WHERE
-  		`id`= #{id};
+  		`roomId`= #{roomId};
   </select>
   
   <!-- 예약정보 한행 조회 -->
@@ -90,7 +90,7 @@
    FROM
    		`reserved_list`
    WHERE
-   	`id` = #{id}
+   	`roomId` = #{roomId}
      AND `userId` = #{userId};
   </select>
   
@@ -98,7 +98,7 @@
   <delete id = "deleteReserve" parameterType="int">
   DELETE
   FROM	`reserved_list`
-  WHERE `id` = #{id}
+  WHERE `roomId` = #{roomId}
   		AND `userId` = #{userId};
   
   
