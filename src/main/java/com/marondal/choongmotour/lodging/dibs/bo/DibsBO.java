@@ -56,7 +56,7 @@ public class DibsBO {
 	// 찜목록
 	public List<DibsDetail> getDibsList(int userId, int id){//이것도 틀렸다. List<DibsDetail>로
 		
-		//List<Lodging> lodgingList = lodgingDAO.selectLodgingList(id); 찜목록을 조회해야한다. 이것은 전체 조회니 엉뚱한게 나올수 밖에 타임라인도 전체를 조회한담에 디테일부분을 안에다 조회해온것.
+		// 찜목록을 조회해야한다. 이것은 전체 조회니 엉뚱한게 나올수 밖에 타임라인도 전체를 조회한담에 디테일부분을 안에다 조회해온것.
 		
 		List<DibsDetail> dibsList = dibsDAO.selectDibsList(userId, id);
 		
@@ -77,8 +77,8 @@ public class DibsBO {
 			dibsDetail.setAreaName(dibs.getAreaName());
 			dibsDetail.setImagePath(dibs.getImagePath());
 			dibsDetail.setRoomName(dibs.getRoomName());
-			dibsDetail.setLodgingId(dibs.getId());
-		
+			dibsDetail.setLodgingId(dibs.getLodgingId());//여기가 오류였음 로징아이디에 아이디를 셋팅해놔서 오류가 났던것.
+			dibsDetail.setId(dibs.getId());//그리고 딥스 아이디도 안불러와서 계속 0이라고 떴던것. 
 			
 			dibsDetailList.add(dibsDetail);
 			

@@ -111,9 +111,8 @@ public class LodgingController {
 		
 		model.addAttribute("dibsDetailList", dibsDetailList);
 
-		List<Lodging> lodgingList = lodgingBO.getLodgingList(id);
-		
-		model.addAttribute("lodgingList", lodgingList);
+
+		//로징리스트를 불러올일은 없다.
 		
 		User user = userBO.getUserInfo(id);
 		
