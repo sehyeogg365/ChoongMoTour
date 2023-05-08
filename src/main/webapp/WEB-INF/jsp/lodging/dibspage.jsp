@@ -67,7 +67,7 @@
 									<div class="">로징아이디:${dibs.lodgingId }</div>
 										<div class="">딥스아이디:${dibs.id }</div>	<!-- 아예 딥스아이디는 안들어오는상황 -->
 									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
-			
+									<div class="">${dibs.areaName }</div>
 								</div>
 							</div>
 							</c:forEach>

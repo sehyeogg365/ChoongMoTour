@@ -3,11 +3,15 @@ package com.marondal.choongmotour.lodging.model;
 import java.util.Date;
 
 public class Dibs {
-	int id;
-	int userId;
-	int lodgingId;
-	Date createdAt;
-	Date updatedAt;
+	private int id;
+	private int userId;
+	private int lodgingId;
+	//private String roomName;
+	//private String areaName;
+	//private String imagePath;
+	private boolean isDibs;
+	private Date createdAt;
+	private Date updatedAt;
 	public int getId() {
 		return id;
 	}
@@ -26,6 +30,12 @@ public class Dibs {
 	public void setLodgingId(int lodgingId) {
 		this.lodgingId = lodgingId;
 	}
+	public boolean isDibs() {
+		return isDibs;
+	}
+	public void setDibs(boolean isDibs) {
+		this.isDibs = isDibs;
+	}
 	public Date getCreatedAt() {
 		return createdAt;
 	}
@@ -38,6 +48,9 @@ public class Dibs {
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
+	
+	
+	
 	
 	
 }

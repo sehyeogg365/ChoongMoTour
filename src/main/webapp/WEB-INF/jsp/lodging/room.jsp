@@ -194,7 +194,7 @@
 	<script>
 	 $(document).ready(function() {
 		 document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		 document.getElementById('endDate').value = new Date().toISOString().substring(0, 10);
+		 document.getElementById('endDate').value = new Date().(today.setDate(today.getDate()+1)).substring(0, 10);
 		 
 		 //예약버튼 
 		 $(".reserve-btn").on("click", function(){

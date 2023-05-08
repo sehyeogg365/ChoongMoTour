@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
+import com.marondal.choongmotour.lodging.dibs.bo.DibsCheckBO;
 import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
@@ -26,9 +27,9 @@ public class LodgingBO {
 	
 	@Autowired UserBO userBO;
 	
-	@Autowired DibsBO dibsBO;//비오에서 비오 불러오기
+	//순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	
-	//@Autowired DibsDAO dibsDAO;
+	@Autowired DibsCheckBO dibsCheckBO;
 	//사용자페이지
 
 	//lodging 정보 - 지역 불러오기??
@@ -45,8 +46,8 @@ public class LodgingBO {
 			//숙소카드 한장에 유저정보가 들어갈일은 없다.
 			
 			
-			boolean isDibs = dibsBO.isDibs(userId, lodging.getId());
-										
+			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
+			//이거와 관련된 비오 하나를 차라리 더 팔것.							
 			
 			LodgingDetail lodgingDetail = new LodgingDetail();
 			

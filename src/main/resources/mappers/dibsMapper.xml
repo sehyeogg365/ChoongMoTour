@@ -49,7 +49,7 @@
   	
   	
   	<!-- 찜목록 -->
-  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.DibsDetail" parameterType="int">
+  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="int">
   		SELECT
   			`id`
 			,`lodgingId`
@@ -63,18 +63,7 @@
   			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
  
-  	<!-- 찜 목록내 제거  -->
-  	<delete id = "deleteDibsById" parameterType="int">
-  		DELETE
-  		FROM	
-  			`dibs_basket`
-  		WHERE
-  			`id` = #{id}
-  			AND
-  			`lodgingId` = #{lodgingId}
-  			AND
-  			`userId` = #{userId};
-  	</delete>
+  
   	
   
   
