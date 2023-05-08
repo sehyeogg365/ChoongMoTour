@@ -79,11 +79,11 @@ public class LodgingRestController {
 			@RequestParam("id") int id
 			,@RequestParam("lodgingId") int lodgingId
 			
-			//, HttpSession session
+			, HttpSession session
 			){
-		//int userId = (Integer)session.getAttribute("userId");
+		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = dibsBO.deleteDibsById(lodgingId, id);
+		int count = dibsBO.deleteDibsById(lodgingId, userId, id);
 		
 		Map <String, String> resultMap = new HashMap<>();
 		
@@ -151,10 +151,12 @@ public class LodgingRestController {
 	// 예약 취소
 	@PostMapping("/deletereserve")
 	public Map<String, String> reserveDelete(
-										@RequestParam("id")int id){
+										@RequestParam("id")int id
+										, HttpSession session){
 		
+		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = reserveBO.deleteReserve(id);
+		int count = reserveBO.deleteReserve(userId, id);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

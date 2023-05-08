@@ -28,10 +28,10 @@ public interface ReserveDAO {
 	
 	//예약 조회
 
-	public ReserveDetail selectgetReserveInfoById (@Param("id") int id);
+	public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
 	
 	//예약 취소
 	
-	public int deleteReserve(@Param("id") int id);
+	public int deleteReserve(@Param("id") int id, @Param("userId")int userId);
 	
 }

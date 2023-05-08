@@ -85,9 +85,9 @@ public class DibsBO {
 	
 	//찜 목록내 제거
 	
-	public int deleteDibsById(int lodgingId, int id) {
+	public int deleteDibsById(int lodgingId, int userId, int id) {
 		
-		return dibsDAO.deleteDibsById(lodgingId, id);
+		return dibsDAO.deleteDibsById(lodgingId, userId, id);
 	}
 	
 	

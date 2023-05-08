@@ -130,12 +130,11 @@ public class LodgingController {
 	public String reservePage(Model model
 			, @RequestParam("id") int id
 			//, @RequestParam("lodgingId") int lodgingId // 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
-
+			, int userId
+			, HttpSession session
 			) {
 		
-//		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(id); 
-//		
-//		model.addAttribute("reserveDetail", reserveDetail);
+
 //		애초에 리저브 디테일은 예약카드 정보고 이거는... 
 		User user = userBO.getUserInfo(id);
 		
@@ -149,7 +148,7 @@ public class LodgingController {
 		
 		model.addAttribute("room", room);
 		
-		ReserveDetail reserveDeatil = reserveBO.getReserveInfoById(id);
+		ReserveDetail reserveDeatil = reserveBO.getReserveInfoById(id, userId);
 		
 		model.addAttribute("reserveDeatil", reserveDeatil);
 		
@@ -163,8 +162,10 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-				, @RequestParam("id") int id) {
+				, @RequestParam("id") int id
+				, HttpSession session) {
 			
+			int userId = (Integer)session.getAttribute("userId");
 			
 			User user = userBO.getUserInfo(id);
 			
@@ -177,6 +178,10 @@ public class LodgingController {
 			Room room = lodgingBO.getRoom(id);
 			
 			model.addAttribute("room", room);
+			
+			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, id);
+			
+			model.addAttribute("reserveDeatil", reserveDetail);			
 			
 			return "lodging/reservelist";
 		}

@@ -71,6 +71,8 @@
   		WHERE
   			`id` = #{id}
   			AND
+  			`lodgingId` = #{lodgingId}
+  			AND
   			`userId` = #{userId};
   	</delete>
   	

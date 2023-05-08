@@ -118,7 +118,7 @@
 			
 			let payment = $("#paySelector").val();
 			
-			let check = $("#allCheck").val();
+	
 			
 			if(phoneNumber == ""){
 				alert("전화번호를 입력하세요.");
@@ -135,10 +135,7 @@
 				return ;
 			}
 			
-			if(check == ""){
-				alert("이용약관을 동의해주세요.");
-				return ;
-			}
+	
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 		
@@ -216,6 +213,9 @@
              } else {
                  $("input[name='check']").prop("checked", false);
              }
+             
+
+             
          });
 		
 		

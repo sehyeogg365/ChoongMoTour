@@ -90,15 +90,16 @@
    FROM
    		`reserved_list`
    WHERE
-   	`id` = #{id};
-  
+   	`id` = #{id}
+     AND `userId` = #{userId};
   </select>
   
   <!-- 예약 취소 -->
   <delete id = "deleteReserve" parameterType="int">
   DELETE
   FROM	`reserved_list`
-  WHERE `id` =#{id};
+  WHERE `id` = #{id}
+  		AND `userId` = #{userId};
   
   
   </delete>
