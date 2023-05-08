@@ -50,9 +50,9 @@
   	(
   		
   		#{roomId}
-  		,#{payment}
-  		,#{startDate}
-  		,#{endDate}
+  		, #{payment}
+  		, #{startDate}
+  		, #{endDate}
   		, now()
   		, now()
   	
