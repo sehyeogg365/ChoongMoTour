@@ -164,7 +164,7 @@
 			
 			$.ajax({
 				type: "get"
-				, url :"/lodging/undib"
+				, url :"/lodging/undibbasket"
 				, data:{"lodgingId":id}
 				, success:function(data){
 					if(data.result == "success"){//reuslt->result succes->success
