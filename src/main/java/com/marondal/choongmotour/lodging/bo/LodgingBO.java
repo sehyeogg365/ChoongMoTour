@@ -9,15 +9,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
-import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsCheckBO;
-import com.marondal.choongmotour.lodging.dibs.dao.DibsDAO;
-import com.marondal.choongmotour.lodging.model.DibsDetail;
+
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
-import com.marondal.choongmotour.user.model.User;
+
 
 
 @Service

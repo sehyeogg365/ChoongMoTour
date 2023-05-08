@@ -1,5 +1,6 @@
 package com.marondal.choongmotour.lodging.reserve.bo;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
@@ -48,23 +50,41 @@ public class ReserveBO {
 	//
 	
 	//예약 목록
-	public List<ReserveDetail> getReserveList(int id ){
+	public List<ReserveDetail> getReserveList(int userId, int id ){
+		
+		List<Reserve> reserveList = reserveDAO.selectReserveList(userId, id);
+		
+		List<ReserveDetail> reserveDetailList = new ArrayList<>();
+		
+		for(Reserve reserve : reserveList) {
+			
+			Lodging lodging = lodgingBO.getLodging(reserve.getRoomId());
+			
+			ReserveDetail reserveDetail = new ReserveDetail();
+			
+			//이거 오늘밤에 채우기
+			reserveDetail.setEndDate(reserve.getEndDate());
+			reserveDetail.setStartDate(reserve.getStartDate());
+			reserveDetail.setImagePath(lodging.getImagePath());
+			
+		}
 		
 		
-		return reserveDAO.selectReserveList(id);
+		
+		return reserveDAO.selectReserveList(userId, id);
 		
 	}
 	
 	
 	
 	//예약 한행 정보 조회(예약페이지조회)
-	public ReserveDetail getReserveInfoById(int roomId, int userId) {
-		
-		
-		
-		
-		return reserveDAO.selectgetReserveInfoById(roomId, userId);
-	}
+//	public ReserveDetail getReserveInfoById(int roomId, int userId) {
+//		
+//		
+//		
+//		
+//		return reserveDAO.selectgetReserveInfoById(roomId, userId);
+//	}
 	
 	
 	//예약 취소

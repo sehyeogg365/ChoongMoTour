@@ -128,15 +128,16 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("id") int id
-			//, @RequestParam("lodgingId") int lodgingId // 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
+			// 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
+			//, @RequestParam("lodgingId") int lodgingId 일단막아주자. 예약테이블에도 없으니.
 			
 			) {
 		
 		
 //		애초에 리저브 디테일은 예약카드 정보고 이거는... 
-		User user = userBO.getUserInfo(id);
+		User user = userBO.getUserInfo(id);//쿼리도 그렇고 여기도 딱히 큰문제는 없어보인다. 그렇다면 디버깅을통해서 값이 잘들어오는지 확인해보기
 		
-		model.addAttribute("user", user);
+		model.addAttribute("user", user);// 디버깅후 f6 결과 user null이라 뜨고 id는 5라고 뜸 아마 로징아이디일거 같은데 그 잘못전달되고 있단 뜻.
 		
 		Lodging lodging = lodgingBO.getLodging(id);
 		
@@ -175,9 +176,9 @@ public class LodgingController {
 			
 			model.addAttribute("room", room);
 			
-			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, roomId);
+			//ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, roomId);
 			
-			model.addAttribute("reserveDeatil", reserveDetail);			
+			//model.addAttribute("reserveDeatil", reserveDetail);			
 			
 			return "lodging/reservelist";
 		}

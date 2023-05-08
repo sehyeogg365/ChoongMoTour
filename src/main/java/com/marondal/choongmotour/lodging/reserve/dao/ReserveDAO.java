@@ -24,12 +24,13 @@ public interface ReserveDAO {
 	
 	
 	//예약 목록
-	public List<ReserveDetail> selectReserveList(@Param("id") int id);
+	public List<Reserve> selectReserveList(@Param("userId") int userId, @Param("id") int id);
 	
 	
-	//예약 조회
+	//예약 조회 이게굳이 필요할련지는 모르겠다????
 
-	public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
+	//public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
+	
 	
 	//예약 취소
 	
