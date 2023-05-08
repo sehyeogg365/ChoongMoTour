@@ -176,9 +176,9 @@ public class LodgingController {
 			
 			model.addAttribute("room", room);
 			
-			//ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId, roomId);
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, id);		
 			
-			//model.addAttribute("reserveDeatil", reserveDetail);			
+			model.addAttribute("reserveDetailList", reserveDetailList);
 			
 			return "lodging/reservelist";
 		}

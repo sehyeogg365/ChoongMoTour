@@ -98,9 +98,9 @@
 				</ul>
 				
 				<label class="mt-3">체크인 </label>
-		        <input type="text" id="startDate" name="startDate"value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        <input type="text" id="startDate" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        <label class="mt-3">체크아웃 </label>
-		        <input type="text" id="endDate" name="endDate"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        <input type="text" id="endDate" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 				
 				
@@ -198,21 +198,23 @@
 		 //var endDate = newDate(today.getDate()+1);
 		 
 		 document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		 document.getElementById('endDate').value = new Date(document.getElementById('startDate').value).toISOString().substring(0, 10);//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
+		 //today = document.getElementById('startDate').value = ;
+		 
+		 document.getElementById('endDate').value = new Date().toISOString().substring(0, 10);//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
 		 
 		 //예약버튼 
-		 $(".reserve-btn").on("click", function(){
-			
-			 let startDate = $(this).val();
-			 let endDate = $(this).val();
+		// $(".reserve-btn").on("click", function(){
+		//	
+		//	 let startDate = $(this).val();
+		//	 let endDate = $(this).val();
 		 	
-			 
-			 if(startDate == null){
-				 alert("");
-				 return;
-			 }
-			 
-		 });
+		//	 
+		//	 if(startDate == null){
+		//		 alert("");
+		//		 return;
+		//	 }
+		//	 
+		// });
 	
 		 $(".info-modal-btn").on("click", function(){
 			 

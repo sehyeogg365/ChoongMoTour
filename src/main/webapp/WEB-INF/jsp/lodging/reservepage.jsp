@@ -118,6 +118,10 @@
 			
 			let id = $(this).data("room-id");
 			
+			 let startDate = $(this).val();
+			 let endDate = $(this).val();
+			
+			
 			let phoneNumber = $("#phoneNumberInput").val();
 			
 			let name = $("#nameInput").val();
@@ -141,6 +145,22 @@
 				return ;
 			}
 			
+			if(startDate == ""){
+				alert("체크인 날짜를 입력해주세요.");
+				return;
+			}
+			
+			if(endDate == ""){
+				alert("체크아웃 날짜를 입력해주세요.");
+				return;
+			}
+			
+			if(startDate == endDate){
+				alert("체크인 날짜와 체크아웃 날짜가 같습니다.");
+				return;
+			}
+			
+			
 	
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
@@ -148,13 +168,16 @@
 			alert(name);
 			alert(phoneNumber);
 			alert(payment);
+			alert(startDate);
+			alert(endDate);
+			
 			alert(check);
 			
 			
 			$.ajax({//우선여기부터 하자.
 				type:"post"
 				, url:"/lodging/reserve" //userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
-				, data:{"roomId":id,"payment":payment, "startDate" : startDate, "endDate" : endDate}
+				, data:{"roomId":id, "phoneNumber":phoneNumber, "payment":payment, "startDate" : startDate, "endDate" : endDate}
 				, success:function(data){
 					if(data.result == "success"){
 						location.href="/lodging/reservelist/view";
