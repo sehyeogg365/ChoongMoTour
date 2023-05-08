@@ -194,27 +194,44 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		// var startDate = newDate();
-		 //var endDate = newDate(today.getDate()+1);
+		
+		// var endDate = new Date(startDate.setDate(startDate.getDate()+1));
 		 
-		 document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		 //today = document.getElementById('startDate').value = ;
+		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
+		
+		let now = new Date();
+		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
+		// let endDate = document.getElementById('startDate').value;
 		 
-		 document.getElementById('endDate').value = new Date().toISOString().substring(0, 10);//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
+		 //document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
+		 
+		 //newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
+		
+		 
 		 
 		 //예약버튼 
-		// $(".reserve-btn").on("click", function(){
-		//	
-		//	 let startDate = $(this).val();
-		//	 let endDate = $(this).val();
+		 $(".reserve-btn").on("click", function(){
+			
+			 let startDate = $(this).val();
+			 let endDate = $(this).val();
 		 	
-		//	 
-		//	 if(startDate == null){
-		//		 alert("");
-		//		 return;
-		//	 }
-		//	 
-		// });
+			 
+			 if(startDate == ""){
+					alert("체크인 날짜를 입력해주세요.");
+					return;
+				}
+				
+				if(endDate == ""){
+					alert("체크아웃 날짜를 입력해주세요.");
+					return;
+				}
+				
+				if(startDate == endDate){
+					alert("체크인 날짜와 체크아웃 날짜가 같습니다.");
+					return;
+				}
+			 
+		 });
 	
 		 $(".info-modal-btn").on("click", function(){
 			 
