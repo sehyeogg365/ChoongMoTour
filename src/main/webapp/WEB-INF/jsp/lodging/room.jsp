@@ -193,8 +193,12 @@
 	</div>
 	<script>
 	 $(document).ready(function() {
+		 
+		// var startDate = newDate();
+		 //var endDate = newDate(today.getDate()+1);
+		 
 		 document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		 document.getElementById('endDate').value = new Date().(today.setDate(today.getDate()+1)).substring(0, 10);
+		 document.getElementById('endDate').value = new Date((document.getElementById('startDate').value)).toISOString().substring(0, 10);//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
 		 
 		 //예약버튼 
 		 $(".reserve-btn").on("click", function(){

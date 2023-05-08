@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
@@ -18,7 +19,20 @@ public class ReserveBO {
 	
 	@Autowired ReserveDAO reserveDAO;
 	
-
+	@Autowired LodgingBO lodgingBO;
+	
+	
+	
+	//예약 한행 조회(예약페이지)
+	public Reserve getReserve(int roomId) {
+		
+		
+		return null;
+		
+		
+			
+		
+	}
 	
 	//예약하기 
 	public int addReserve( int roomId, int userId, String payment, Date startDate, Date endDate) {
@@ -27,6 +41,9 @@ public class ReserveBO {
 			
 		
 	}
+	
+	
+	
 	
 	//
 	

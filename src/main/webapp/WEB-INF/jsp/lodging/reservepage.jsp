@@ -49,7 +49,7 @@
 					</div>
 					
 					<div class = "mx-3">
-						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name }" class="form-control ">
+						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${userName }" class="form-control ">
 					
 					
 						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
