@@ -35,24 +35,24 @@
 			
 			
 				<div class="reservepagecontents ">
-					
+					<form method="post" action="" ></form>
 					<div class=""><h2>${lodging.roomName }</h2></div><br>
 					<div class=""><h3>${room.size }</h3></div>
 					
 					<div class="d-flex mt-3 mx-3 justify-content-center ">
 						<label class="mt-3">체크인 </label>
-		        		<input type="text" id="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        		<input type="text" id="startDate" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
 		        		<label class="mt-3">체크아웃 </label>
-		        		<input type="text" id="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        		<input type="text" id="endDate" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 					
 					</div>
 					
 					<div class = "mx-3">
-						<label class="mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${userName }" class="form-control ">
+						<label class="input-lable mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${userName }" class="form-control ">
 					
 					
-						<label class=" mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
+						<label class="input-lable mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
@@ -107,14 +107,12 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		//var startDate = new Date();
-		//var endDate = new Date(startDate.setDate(startDate.getDate()+1));
+
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		var startDate = document.getElementById('startDate').value;
 		
+		let now = new Date();
+		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		
-		document.getElementById('endDate').value = new Date().toISOString().substring(0, 10);
-		 
 		
 		$("#payBtn").on("click", function(){
 			
@@ -122,7 +120,8 @@
 			
 			let id = $(this).data("room-id");
 			
-			
+			let startDate = $(this).val();
+			let endDate = $(this).val();
 			
 			console.log(endDate);
 			
@@ -149,21 +148,8 @@
 				return ;
 			}
 			
-			if(startDate == ""){
-				alert("체크인 날짜를 입력해주세요.");
-				return;
-			}
 			
-			if(endDate == ""){
-				alert("체크아웃 날짜를 입력해주세요.");
-				return;
-			}
-			
-			if(startDate == endDate){
-				alert("체크인 날짜와 체크아웃 날짜가 같습니다.");
-				return;
-			}
-			
+	
 			
 	
 			
@@ -174,8 +160,7 @@
 			alert(payment);
 			alert(startDate);
 			alert(endDate);
-			
-			alert(check);
+
 			
 			
 			$.ajax({//우선여기부터 하자.
@@ -201,7 +186,7 @@
 		});
 		
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년 mm월 dd일",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -220,7 +205,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년 mm월 dd일",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널

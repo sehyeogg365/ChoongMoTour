@@ -115,7 +115,7 @@ public class UserBO {
 	// 회원정보 한행 조회
 	public User getUserInfo(int id) {//loginId->id로변경하기
 		
-		//String imagePath = FileManagerService.saveFile(0, file);
+		
 		
 		
 		return userDAO.selectUserInfo(id);

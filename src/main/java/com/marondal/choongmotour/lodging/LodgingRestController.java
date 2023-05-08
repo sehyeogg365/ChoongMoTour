@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.ResultMap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -104,8 +105,10 @@ public class LodgingRestController {
 	public Map<String, String> reserveRoom(
 				@RequestParam("roomId") int roomId
 				, @RequestParam("payment") String payment
-				, @RequestParam("startDate") Date startDate
-				, @RequestParam("endDate") Date endDate
+				, @DateTimeFormat(pattern="yyyy년 MM월 dd일")
+				 @RequestParam("startDate") Date startDate
+				, @DateTimeFormat(pattern="yyyy년 MM월 dd일")
+				 @RequestParam("endDate") Date endDate
 				, HttpSession session
 			) {
 		

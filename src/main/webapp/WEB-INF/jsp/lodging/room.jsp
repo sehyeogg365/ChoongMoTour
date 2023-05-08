@@ -195,13 +195,13 @@
 	 $(document).ready(function() {
 		 
 		
-		// var endDate = new Date(startDate.setDate(startDate.getDate()+1));
+		
 		 
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
 		
 		let now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
-		// let endDate = document.getElementById('startDate').value;
+		
 		 
 		 //document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
 		 
@@ -214,22 +214,6 @@
 			
 			 let startDate = $(this).val();
 			 let endDate = $(this).val();
-		 	
-			 
-			 if(startDate == ""){
-					alert("체크인 날짜를 입력해주세요.");
-					return;
-				}
-				
-				if(endDate == ""){
-					alert("체크아웃 날짜를 입력해주세요.");
-					return;
-				}
-				
-				if(startDate == endDate){
-					alert("체크인 날짜와 체크아웃 날짜가 같습니다.");
-					return;
-				}
 			 
 		 });
 	
@@ -243,7 +227,7 @@
 		 });
  
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년 mm월 dd일",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -262,7 +246,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy-mm-dd",
+             dateFormat:"yy년 mm월 dd일",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널

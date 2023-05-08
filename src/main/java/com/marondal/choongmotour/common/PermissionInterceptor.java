@@ -55,12 +55,12 @@ public class PermissionInterceptor implements HandlerInterceptor {
 					return false;
 				}
 				
-				if(uri.startsWith("/user/reservelist")) {//예약목록페이지
+				if(uri.startsWith("/lodging/reservelist")) {//예약목록페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.startsWith("/lodging/reservation/view")) {//예약페이지
+				if(uri.startsWith("/lodging/reservation")) {//예약페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
