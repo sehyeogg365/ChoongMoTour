@@ -104,6 +104,8 @@ public class LodgingRestController {
 	@PostMapping("/reserve")
 	public Map<String, String> reserveRoom(
 				@RequestParam("roomId") int roomId
+				, @RequestParam("name") String name
+				, @RequestParam("phoneNumber") String phoneNumber
 				, @RequestParam("payment") String payment
 				, @DateTimeFormat(pattern="yyyy년 MM월 dd일")
 				 @RequestParam("startDate") Date startDate
@@ -114,7 +116,7 @@ public class LodgingRestController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = reserveBO.addReserve(roomId, userId,  payment, startDate, endDate);
+		int count = reserveBO.addReserve(roomId, userId, name,phoneNumber, payment, startDate, endDate);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

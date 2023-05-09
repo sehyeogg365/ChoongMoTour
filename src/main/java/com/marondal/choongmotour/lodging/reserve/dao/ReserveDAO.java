@@ -25,6 +25,8 @@ public interface ReserveDAO {
 	public int insertReserve(
 							@Param("roomId") int roomId 
 							, @Param("userId") int userId
+							, @Param("name")String name
+							, @Param("phoneNumber")String phoneNumber
 							, @Param("payment") String payment
 							, @Param("startDate") Date startDate
 							, @Param("endDate") Date endDate);
