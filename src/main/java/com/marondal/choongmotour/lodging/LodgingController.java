@@ -128,19 +128,21 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("id") int id
-			// 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
+			, HttpSession session
 			) {
 		
+		int userId = (Integer)session.getAttribute("userId");
 		
 //		애초에 리저브 디테일은 예약카드 정보고 이거는... 
-		User user = userBO.getUserInfo(id);//쿼리도 그렇고 여기도 딱히 큰문제는 없어보인다. 그렇다면 디버깅을통해서 값이 잘들어오는지 확인해보기
+		User user = userBO.getUserInfo(userId);//쿼리도 그렇고 여기도 딱히 큰문제는 없어보인다. 그렇다면 디버깅을통해서 값이 잘들어오는지 확인해보기
 		
 		model.addAttribute("user", user);// 디버깅후 f6 결과 user null이라 뜨고 id는 5라고 뜸 아마 로징아이디일거 같은데 그 잘못전달되고 있단 뜻.
+		//좋아 여기 userId로 바꾸니 해결이 되었다. 전화번호 이름까진 나오는 상황
 		
+		Lodging lodging = lodgingBO.getLodging(id);//범인잡듯이 역추적으로 해보자면 화면상에 전화번호와 객실명, 가격등이 떠야 하는상황인데 안뜨고 있다. 그럼 ㄱ
 		
-		Lodging lodging = lodgingBO.getLodging(id);
-		
-		model.addAttribute("lodging", lodging);	
+		model.addAttribute("lodging", lodging);	//여기서 세개의 테이블을 넣어야하는데 id로 만 값을 지칭하다보니 꼬인거 같다. 어떤값인 지도 모르고 제대로 지칭 해줘야 할듯 하면 세션 또는 파라미터로 불러와야할터.
+
 		
 		
 		Room room = lodgingBO.getRoom(id);
@@ -159,7 +161,6 @@ public class LodgingController {
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
 				, @RequestParam("id") int id
-				, @RequestParam("roomId")int roomId
 				, HttpSession session) {
 			
 			int userId = (Integer)session.getAttribute("userId");
