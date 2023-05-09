@@ -152,11 +152,10 @@
 				return ;
 			}
 			
-			
-			if(chkList == ""){
-				alert("체크박스를 모두 클릭해주세요.");
-				return ;
-			}
+			if(!$("input:checked[name='check']").is(":checked")){
+	            alert("체크박스를 선택해주세요.")
+	            return ;
+	        }
 	
 			
 			
@@ -241,11 +240,8 @@
                  $("input[name='check']").prop("checked", false);
              }
              
-
-             if(check1 == ""|| check2 =="" || check3 ==""){
-            	 alert("체크박스를 선택해주세요.")
-            	 return ;
-             }
+         
+          
              
          });
 		
