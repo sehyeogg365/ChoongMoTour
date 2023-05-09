@@ -45,7 +45,7 @@ public class ReserveBO {
 	//
 	
 	//예약 목록
-	public List<ReserveDetail> getReserveList(int userId, int lodgingId, int roomId){//로징아이디추가
+	public List<ReserveDetail> getReserveList(int userId, int lodgingId){//로징아이디추가
 		
 		List<Reserve> reserveList = reserveDAO.selectReserveList(userId);//여기서 유저아이디가 두개가 들어가고있다는뜻. 반대로 되는게 잇음 이값이 있으니 넣어야겠다가 아닌 필요한값을 넣는것.
 		
@@ -57,7 +57,7 @@ public class ReserveBO {
 			
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
-			Room room = lodgingBO.getRoom(roomId);//여기도 id쓰면 안됨 roomId로
+			Room room = lodgingBO.getRoom(reserve.getRoomId());//여기도 id쓰면 안됨 roomId로
 			
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
@@ -87,9 +87,9 @@ public class ReserveBO {
 	}
 	
 	//예약 한행 정보 조회(예약페이지조회)
-	public ReserveDetail getReserveInfoById(int roomId, int userId) {
+	public ReserveDetail getReserveInfoById(int userId) {
 			
-		return reserveDAO.selectgetReserveInfoById(roomId, userId);
+		return reserveDAO.selectReserveInfoById( userId);
 		
 	}
 	

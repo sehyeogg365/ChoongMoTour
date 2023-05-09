@@ -181,11 +181,11 @@ public class LodgingController {
 			
 			model.addAttribute("room", room);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
-			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(roomId, userId);
+			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
 			
 			model.addAttribute("reserveDetail", reserveDetail);
 			

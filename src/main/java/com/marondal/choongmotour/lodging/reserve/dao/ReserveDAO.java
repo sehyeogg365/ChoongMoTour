@@ -36,7 +36,7 @@ public interface ReserveDAO {
 	
 	//예약 조회 이게굳이 필요할련지는 모르겠다????
 
-	public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
+	public ReserveDetail selectReserveInfoById (@Param("userId")int userId);
 	
 	
 	//예약 취소

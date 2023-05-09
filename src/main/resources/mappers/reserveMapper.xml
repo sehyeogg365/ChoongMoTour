@@ -67,7 +67,7 @@
   
   
    <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
-  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
+  <select id = "selectReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
    SELECT
    		`id`
   		, `userId`
