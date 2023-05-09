@@ -89,7 +89,7 @@ public class LodgingController {
 		model.addAttribute("roomList", roomList);
 		
 		
-		//날짜 모달창 
+	
 		
 		
 		
@@ -128,9 +128,10 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("id") int id
+			// 또웃긴게 예약서는 lodgingId를 아예 안쓰게 설계됨 
 			, HttpSession session
 			) {
-		
+		// 이름, 전화번호, 숙소명, 객실명, 가격 이렇게 불러와야 한다.
 		int userId = (Integer)session.getAttribute("userId");
 		
 //		애초에 리저브 디테일은 예약카드 정보고 이거는... 
@@ -139,16 +140,18 @@ public class LodgingController {
 		model.addAttribute("user", user);// 디버깅후 f6 결과 user null이라 뜨고 id는 5라고 뜸 아마 로징아이디일거 같은데 그 잘못전달되고 있단 뜻.
 		//좋아 여기 userId로 바꾸니 해결이 되었다. 전화번호 이름까진 나오는 상황
 		
-		Lodging lodging = lodgingBO.getLodging(id);//범인잡듯이 역추적으로 해보자면 화면상에 전화번호와 객실명, 가격등이 떠야 하는상황인데 안뜨고 있다. 그럼 ㄱ
+		//범인잡듯이 역추적으로 해보자면 화면상에 전화번호와 객실명, 가격등이 떠야 하는상황인데 안뜨고 있다. 그럼 ㄱ
 		
-		model.addAttribute("lodging", lodging);	//여기서 세개의 테이블을 넣어야하는데 id로 만 값을 지칭하다보니 꼬인거 같다. 어떤값인 지도 모르고 제대로 지칭 해줘야 할듯 하면 세션 또는 파라미터로 불러와야할터.
+		//여기서 세개의 테이블을 넣어야하는데 id로 만 값을 지칭하다보니 꼬인거 같다. 어떤값인 지도 모르고 제대로 지칭 해줘야 할듯 하면 세션 또는 파라미터로 불러와야할터.
 
-		
-		
+//		Lodging lodging = lodgingBO.getLodging(id);
+//		
+//		model.addAttribute("lodging", lodging);	
+//		
 		Room room = lodgingBO.getRoom(id);
 		
 		model.addAttribute("room", room);
-
+		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
 		
 		return "lodging/reservepage";
 		
@@ -161,8 +164,9 @@ public class LodgingController {
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
 				, @RequestParam("id") int id
-				, HttpSession session) {
-			
+				//, @RequestParam("lodgingId") int lodgingId
+				, HttpSession session ) {
+			//조회는 userId, id만이 필요하다. 여기서 더 추가할것도 없음
 			int userId = (Integer)session.getAttribute("userId");
 			
 			User user = userBO.getUserInfo(id);
@@ -170,12 +174,8 @@ public class LodgingController {
 			model.addAttribute("user", user);
 			
 			Lodging lodging = lodgingBO.getLodging(id);
+			model.addAttribute("lodging", lodging);
 			
-			model.addAttribute("lodging", lodging);	
-			
-			Room room = lodgingBO.getRoom(id);
-			
-			model.addAttribute("room", room);
 			
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, id);		
 			

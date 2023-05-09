@@ -142,9 +142,9 @@ public class LodgingBO {
 	}
 	
 	//객실 한행 조회
-	public Room getRoom(int lodgingId) {
+	public Room getRoom(int id) {
 		
-		return lodgingDAO.selectRoomById(lodgingId);
+		return lodgingDAO.selectRoomById(id);
 	}
 	
 	

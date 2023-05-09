@@ -193,7 +193,7 @@
  	FROM
  		`room`
  	WHERE
- 		`lodgingId` = #{lodgingId};
+ 		`id` = #{id};<!-- 지칭하는건 roomid 였는데 여기 쿼리문은 lodgingId라고 되어있었다. -->
  </select>
  
  <!-- 객실 수정 -->

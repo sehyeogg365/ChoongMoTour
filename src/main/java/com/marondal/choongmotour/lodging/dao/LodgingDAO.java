@@ -64,7 +64,7 @@ public interface LodgingDAO {
 	
 	//객실 한행 조회
 	
-	public Room selectRoomById(@Param("lodgingId")int lodgingId);
+	public Room selectRoomById(@Param("id")int id);
 	
 	// 객실 수정
 	public int updateRoom(
