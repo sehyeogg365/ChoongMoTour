@@ -33,24 +33,24 @@
 					ChoongMo Tour Reserve Page
 				</h1>
 			
-				<form method="post" action="/lodging/reserve"><!-- 여기경로도 뭔가 좀 이상하고?? -->
+				
 				<div class="reservepagecontents ">
 				
 					<div class="">룸아이디:${room.id }</div><!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<div class="">유저아이디:${user.id }</div><!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
-					<div class=""><h2>${lodging.roomName }</h2></div><br>
+					<div class=""><h2><strong>${lodging.roomName }</strong></h2></div><br>
 					<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
-								<h3>싱글룸</h3>
+								<h3><strong>싱글룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'doubleroom' }">
-								<h3>더블룸</h3>
+								<h3><strong>더블룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'twinroom' }">
-								<h3>트윈룸</h3>
+								<h3><strong>트윈룸</strong></h3>
 							</c:when>
 							<c:otherwise>
-								<div class="">${room.size }</div>
+								<div class=""><h3><strong>${room.size }</strong></h3></div>
 							</c:otherwise>
 						</c:choose>	
 					
@@ -94,8 +94,8 @@
 					
 					<div class="check-box mt-4 mx-3">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
-				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1" id="check1"></label><br>
-				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2" id="chceck2"></label><br>
+				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1" id="check1"></label><br><!-- 이제보니 여기도 밸류값 잘못됨 -->
+				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2" id="check2"></label><br>
 				        <label>마케팅 활용 동의<input type="checkbox" name="check" value="check3" id="check3"></label>
 					
 					</div>
@@ -107,7 +107,7 @@
 					</div>
 				</div>
 				
-			</form>
+			
 			
 			</div>
 		
@@ -130,7 +130,132 @@
 		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		
+		$("#payBtn").on("click", function(){
+
+
+			let id = $(this).data("room-id");
+
+			//let startDate = $(this).val();
+
+			let startDate = $("#startDate").val();
+
+			//let endDate = $(this).val();
+
+			let endDate = $("#endDate").val();
+
+			
+
+			let phoneNumber = $("#phoneNumberInput").val();
+
+			
+
+			let name = $("#nameInput").val();
+
+			
+
+			let payment = $("#paySelector").val();
+
+			
+			
+
+			if(name == ""){
+
+				alert("이름을 입력하세요.");
+
+				return ;
+
+			}
+
+			if(phoneNumber == ""){
+
+				alert("전화번호를 입력하세요.");
+
+				return ;
+
+			}
+
+			
+			if(payment == ""){
+
+				alert("지불수단을 선택하세요.");
+
+				return ;
+
+			}
+
 		
+			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔 
+
+			if(!$("input:checked[id='allCheck']").is(":checked")){
+
+	            alert("체크박스를 선택해주세요.");
+
+	            return ;
+
+	        } 
+
+			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
+
+		
+
+
+			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
+
+			alert(id);
+
+			alert(name);//O
+
+			alert(phoneNumber);//O
+
+			alert(payment);//O
+
+			alert(startDate);//O
+
+			alert(endDate);//O
+
+
+
+			$.ajax({//우선여기부터 하자.
+
+				type:"post"
+
+				, url:"/lodging/reserve" //userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
+
+				, data:{"roomId":id, "name" : name, "phoneNumber":phoneNumber, "payment":payment, "startDate" : startDate, "endDate" : endDate}//여기실수로 네임을 안넣었다.
+
+				, success:function(data){
+
+					if(data.result == "success"){
+
+						location.href="/lodging/reservelist/view";
+
+						alert("예약 성공");
+
+					} else {
+
+						alert("예약 실패");
+
+						
+
+					}
+
+				}
+
+					, error:function(){
+
+						alert("예약 에러");
+
+					}
+
+				
+
+			});
+
+			
+
+		
+
+		});
 		
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy년 mm월 dd일",

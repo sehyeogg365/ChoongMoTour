@@ -107,9 +107,9 @@ public class LodgingRestController {
 				, @RequestParam("name") String name
 				, @RequestParam("phoneNumber") String phoneNumber
 				, @RequestParam("payment") String payment
-				, @DateTimeFormat(pattern="yyyy년 MM월 dd일")
+				, @DateTimeFormat(pattern="yyyy-MM-dd")
 				 @RequestParam("startDate") Date startDate
-				, @DateTimeFormat(pattern="yyyy년 MM월 dd일")
+				, @DateTimeFormat(pattern="yyyy-MM-dd")
 				 @RequestParam("endDate") Date endDate
 				, HttpSession session
 			) {

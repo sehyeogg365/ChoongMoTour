@@ -33,7 +33,7 @@ public interface ReserveDAO {
 	
 	
 	//예약 목록
-	public List<Reserve> selectReserveList(@Param("userId") int userId, @Param("id") int id);
+	public List<Reserve> selectReserveList(@Param("userId") int userId);//쿼리를 수행하는것이 다오 근데 예약목록을 조회하는데 예약id가필요한가???
 	
 	
 	

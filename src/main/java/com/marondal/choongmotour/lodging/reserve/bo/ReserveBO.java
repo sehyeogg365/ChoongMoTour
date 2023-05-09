@@ -26,47 +26,8 @@ public class ReserveBO {
 	@Autowired LodgingBO lodgingBO;
 	
 	
-	//예약 한행 조회(예약페이지)
-//	public ReservePage getReserve(int roomId, int id) {
-		
-//		
-//		ReservePage reservepage = reserveDAO.selectReserveInfo(roomId, id);
-		
-//		for(Reserve reserve : reservepage) {
-//			
-//			User user = userBO.getUserInfo(id);
-//			
-//			Lodging lodging = lodgingBO.getLodging(id);
-//			
-//			ReservePage reservePage = new ReservePage();
-//			
-//			
-//			
-//			reservePage.setName(user.getName());
-//			reservePage.setPhoneNumber(user.getPhoneNumber());
-//			
-//			reservePage.setAreaName(lodging.getAreaName());
-//			
-//			
-//			reservePage.setStartDate(reserve.getStartDate());
-//			reservePage.setEndDate(reserve.getEndDate());
-//			
-//			reservePage.add(reservePage);
-//		}
-		
-		
-//		return reserveDAO.selectReserveInfo(roomId, id);
-		
-//			
-		
-//	}
 	
-	//예약 한행 정보 조회(예약페이지조회)
-		public ReserveDetail getReserveInfoById(int roomId, int userId) {
-				
-			return reserveDAO.selectgetReserveInfoById(roomId, userId);
-			
-		}
+
 		
 		
 	
@@ -84,15 +45,15 @@ public class ReserveBO {
 	//
 	
 	//예약 목록
-	public List<ReserveDetail> getReserveList(int userId, int id ){
+	public List<ReserveDetail> getReserveList(int userId, int lodgingId){//로징아이디추가
 		
-		List<Reserve> reserveList = reserveDAO.selectReserveList(userId, id);
+		List<Reserve> reserveList = reserveDAO.selectReserveList(userId);//여기서 유저아이디가 두개가 들어가고있다는뜻. 반대로 되는게 잇음 이값이 있으니 넣어야겠다가 아닌 필요한값을 넣는것.
 		
 		List<ReserveDetail> reserveDetailList = new ArrayList<>();
 		
 		for(Reserve reserve : reserveList) {
 			
-			Lodging lodging = lodgingBO.getLodging(id);
+			Lodging lodging = lodgingBO.getLodging(lodgingId);//로징불러오는값, 이값이 눌이란 뜻.
 			
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
@@ -104,11 +65,11 @@ public class ReserveBO {
 			
 			reserveDetail.setId(reserve.getId());//예약아이디
 			reserveDetail.setUserId(user.getId());//유저아이디
-			reserveDetail.setLodgingId(lodging.getId());//로징아이디
+			reserveDetail.setLodgingId(room.getLodgingId());//로징아이디 여기수정 원래 lodging.getId()였음
 			reserveDetail.setRoomId(reserve.getRoomId());//룸아이디
 			reserveDetail.setName(reserve.getName());//이름
 			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
-			reserveDetail.setSize(lodging.getRoomName());//숙소이름
+			reserveDetail.setSize(lodging.getRoomName());//숙소이름 로징객체가 널 
 			reserveDetail.setPrice(room.getPrice());//객실 가격
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
 			reserveDetail.setStartDate(reserve.getStartDate());
@@ -124,7 +85,12 @@ public class ReserveBO {
 		
 	}
 	
-	
+	//예약 한행 정보 조회(예약페이지조회)
+	public ReserveDetail getReserveInfoById(int roomId, int userId) {
+			
+		return reserveDAO.selectgetReserveInfoById(roomId, userId);
+		
+	}
 	
 	
 	

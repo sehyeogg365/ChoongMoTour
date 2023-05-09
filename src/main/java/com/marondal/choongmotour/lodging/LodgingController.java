@@ -165,20 +165,23 @@ public class LodgingController {
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
 				, @RequestParam("id") int id
-				//, @RequestParam("lodgingId") int lodgingId
+				, @RequestParam("lodgingId") int lodgingId//여기 추가해보기
+				//생각해보니 조회도 로징아이디가 아닌 roomId 아녔나???
 				, HttpSession session ) {
 			//조회는 userId, id만이 필요하다. 여기서 더 추가할것도 없음
-			int userId = (Integer)session.getAttribute("userId");
+			int userId = (Integer)session.getAttribute("userId");//null login문제 다시 로그인해 보니 다른 오류 비오 72번째줄 오류
 			
-			User user = userBO.getUserInfo(id);
+			User user = userBO.getUserInfo(userId);//이것도 구분 짓기 쉽게 userId로 변경
 			
 			model.addAttribute("user", user);
 			
-			Lodging lodging = lodgingBO.getLodging(id);
-			model.addAttribute("lodging", lodging);
+			//여기도 룸아이디로
 			
+			Room room = lodgingBO.getRoom(id);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, id);		
+			model.addAttribute("room", room);
+			
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기수정 	
 			
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
