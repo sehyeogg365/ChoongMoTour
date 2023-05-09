@@ -120,9 +120,10 @@
 
 			let id = $(this).data("room-id");
 			
-			let startDate = $(this).val();
-			let endDate = $(this).val();
-			
+			//let startDate = $(this).val();
+			let startDate = $("#startDate").val();
+			//let endDate = $(this).val();
+			let endDate = $("#endDate").val();
 			
 			let phoneNumber = $("#phoneNumberInput").val();
 			
@@ -152,11 +153,16 @@
 				return ;
 			}
 			
-			if(!$("input:checked[name='check']").is(":checked")){
-	            alert("체크박스를 선택해주세요.")
+			
+			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔 
+			
+			if(!$("input:checked[id='allCheck']").is(":checked")){
+	            alert("체크박스를 선택해주세요.");
 	            return ;
-	        }
-	
+	        } 
+			
+			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
+		
 			
 			
 	
