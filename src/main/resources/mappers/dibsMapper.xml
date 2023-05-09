@@ -49,7 +49,7 @@
   	
   	
   	<!-- 찜목록 -->
-  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="int">
+  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="map">
   		SELECT
   			`id`
 			,`lodgingId`

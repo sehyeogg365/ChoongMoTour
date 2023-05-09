@@ -8,30 +8,23 @@
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
  
 
- <!-- 날짜 선택 -->
- <insert id = "insertDate" parameterType="map">
- INSERT INTO
- 	`reserved_list`
- (
- 	`roomId`
- 	,`startDate`
-  	,`endDate`
- 	, `createdAt`
-  	, `updatedAt`
+
  
- )
- 	VALUES
- 
- (
- 	#{roomId}
- 	,#{startDate}
-  	,#{endDate}
-    , now()
-  	, now()
- 
- );
- </insert>
- 
+ <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
+  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
+   SELECT
+   		`id`
+  		, `userId`
+  		, `roomId`
+  		, `payment`
+  		, `startDate`
+  		, `endDate`
+   FROM
+   		`reserved_list`
+   WHERE
+   	`roomId` = #{roomId}
+     AND `userId` = #{userId};
+  </select>
  <!-- 예약하기 -->
  
   	<insert id = "insertReserve" parameterType="map">
@@ -40,6 +33,7 @@
   	(
   		
   		 `roomId`
+  		, `userId` 
   		, `payment`
   		, `startDate` <!-- 여기서 왜 payment가 없는가??? 이래서 예약이 안되는건 아닌지??? -->
   		, `endDate`
@@ -50,6 +44,7 @@
   	(
   		
   		#{roomId}
+  		, #{userId}
   		, #{payment}
   		, #{startDate}
   		, #{endDate}
@@ -64,7 +59,7 @@
   
   <!-- 예약 목록 -->	
   <!-- 이제보니 이것도 안해놔서 때로는 오류가 뜬다. -->
-  <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
+  <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.model.Reserve" parameterType="int">
   	SELECT
   		`id`
   		, `userId`
@@ -78,21 +73,7 @@
   		`roomId`= #{roomId};
   </select>
   
-  <!-- 예약정보 한행 조회 -->
-  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO" parameterType="int">
-   SELECT
-   		`id`
-  		, `userId`
-  		, `roomId`
-  		, `payment`
-  		, `startDate`
-  		, `endDate`
-   FROM
-   		`reserved_list`
-   WHERE
-   	`roomId` = #{roomId}
-     AND `userId` = #{userId};
-  </select>
+  
   
   <!-- 예약 취소 -->
   <delete id = "deleteReserve" parameterType="int">

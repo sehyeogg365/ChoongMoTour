@@ -26,17 +26,49 @@ public class ReserveBO {
 	@Autowired LodgingBO lodgingBO;
 	
 	
-	
 	//예약 한행 조회(예약페이지)
-	public Reserve getReserve(int roomId) {
+//	public ReservePage getReserve(int roomId, int id) {
+		
+//		
+//		ReservePage reservepage = reserveDAO.selectReserveInfo(roomId, id);
+		
+//		for(Reserve reserve : reservepage) {
+//			
+//			User user = userBO.getUserInfo(id);
+//			
+//			Lodging lodging = lodgingBO.getLodging(id);
+//			
+//			ReservePage reservePage = new ReservePage();
+//			
+//			
+//			
+//			reservePage.setName(user.getName());
+//			reservePage.setPhoneNumber(user.getPhoneNumber());
+//			
+//			reservePage.setAreaName(lodging.getAreaName());
+//			
+//			
+//			reservePage.setStartDate(reserve.getStartDate());
+//			reservePage.setEndDate(reserve.getEndDate());
+//			
+//			reservePage.add(reservePage);
+//		}
 		
 		
-		return null;
+//		return reserveDAO.selectReserveInfo(roomId, id);
 		
+//			
 		
+//	}
+	
+	//예약 한행 정보 조회(예약페이지조회)
+		public ReserveDetail getReserveInfoById(int roomId, int userId) {
+				
+			return reserveDAO.selectgetReserveInfoById(roomId, userId);
 			
+		}
 		
-	}
+		
 	
 	//예약하기 
 	public int addReserve( int roomId, int userId, String payment, Date startDate, Date endDate) {
@@ -62,7 +94,7 @@ public class ReserveBO {
 			
 			Lodging lodging = lodgingBO.getLodging(reserve.getRoomId());
 			
-			User user = userBO.getUserInfo(reserve.getId());
+			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
 			Room room = lodgingBO.getRoom(id);
 			
@@ -70,11 +102,14 @@ public class ReserveBO {
 			
 			//이거 오늘밤에 채우기
 			
-			
+			reserveDetail.setId(reserve.getId());//예약아이디
+			reserveDetail.setUserId(user.getId());//유저아이디
+			reserveDetail.setLodgingId(lodging.getId());//로징아이디
+			reserveDetail.setRoomId(reserve.getRoomId());//룸아이디
 			reserveDetail.setName(user.getName());//이름
-			reserveDetail.setSize(lodging.getRoomName());//숙소이름
 			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
-			reserveDetail.setPrice(room.getPrice());//가격은 복잡해지니 넣지말기
+			reserveDetail.setSize(lodging.getRoomName());//숙소이름
+			//reserveDetail.setPrice(room.getPrice());//가격은 복잡해지니 넣지말기
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
 			reserveDetail.setStartDate(reserve.getStartDate());
 			reserveDetail.setEndDate(reserve.getEndDate());
@@ -91,14 +126,7 @@ public class ReserveBO {
 	
 	
 	
-	//예약 한행 정보 조회(예약페이지조회)
-//	public ReserveDetail getReserveInfoById(int roomId, int userId) {
-//		
-//		
-//		
-//		
-//		return reserveDAO.selectgetReserveInfoById(roomId, userId);
-//	}
+	
 	
 	
 	//예약 취소

@@ -7,6 +7,7 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 	private int id; // 몇번째 저장
 	private int userId; // 누가 저장했는지
 	private int lodgingId;//어떤 숙소인지 (다시예약시 링크 들어갈려면 필요)
+	private int roomId; //어떤 객실인지
 	private String name;//예약자 이름
 	private String phoneNumber;// 예약자 핸드폰 번호
 	private String roomName;//숙소명
@@ -32,6 +33,12 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 	}
 	public void setLodgingId(int lodgingId) {
 		this.lodgingId = lodgingId;
+	}
+	public int getRoomId() {
+		return roomId;
+	}
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
 	}
 	public String getName() {
 		return name;
@@ -81,7 +88,7 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-	
+
 	
 	
 	

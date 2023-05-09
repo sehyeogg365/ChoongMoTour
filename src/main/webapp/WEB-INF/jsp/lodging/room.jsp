@@ -199,7 +199,7 @@
 		 
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
 		
-		let now = new Date();
+		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		
 		 

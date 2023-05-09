@@ -35,7 +35,8 @@
 			
 			
 				<div class="reservepagecontents ">
-					<form method="post" action="" ></form>
+					<div class="">룸아이디:${room.id }</div><!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
+					<div class="">유저아이디:${user.id }</div><!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
 					<div class=""><h2>${lodging.roomName }</h2></div><br>
 					<div class=""><h3>${room.size }</h3></div>
 					
@@ -79,9 +80,9 @@
 					
 					<div class="check-box mt-4 mx-3">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
-				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1"></label><br>
-				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2"></label><br>
-				        <label>마케팅 활용 동의<input type="checkbox" name="check" value="check3"></label>
+				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1" id="check1"></label><br>
+				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2" id="chceck2"></label><br>
+				        <label>마케팅 활용 동의<input type="checkbox" name="check" value="check3" id="check3"></label>
 					
 					</div>
 					
@@ -110,20 +111,18 @@
 
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
 		
-		let now = new Date();
+		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		
 		
 		$("#payBtn").on("click", function(){
 			
-			
-			
+
 			let id = $(this).data("room-id");
 			
 			let startDate = $(this).val();
 			let endDate = $(this).val();
 			
-			console.log(endDate);
 			
 			let phoneNumber = $("#phoneNumberInput").val();
 			
@@ -131,17 +130,22 @@
 			
 			let payment = $("#paySelector").val();
 			
-	
+			
+			
+		
+			
+			
+			if(name == ""){
+				alert("이름을 입력하세요.");
+				return ;
+			}
 			
 			if(phoneNumber == ""){
 				alert("전화번호를 입력하세요.");
 				return ;
 			}
 			
-			if(name == ""){
-				alert("이름을 입력하세요.");
-				return ;
-			}
+			
 			
 			if(payment == ""){
 				alert("지불수단을 선택하세요.");
@@ -149,24 +153,29 @@
 			}
 			
 			
+			if(chkList == ""){
+				alert("체크박스를 모두 클릭해주세요.");
+				return ;
+			}
 	
+			
 			
 	
 			
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 		
-			alert(name);
-			alert(phoneNumber);
-			alert(payment);
-			alert(startDate);
-			alert(endDate);
+			alert(name);//O
+			alert(phoneNumber);//O
+			alert(payment);//O
+			alert(startDate);//X
+			alert(endDate);//X
 
 			
 			
 			$.ajax({//우선여기부터 하자.
 				type:"post"
 				, url:"/lodging/reserve" //userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
-				, data:{"roomId":id, "phoneNumber":phoneNumber, "payment":payment, "startDate" : startDate, "endDate" : endDate}
+				, data:{"roomId":id, "payment":payment, "startDate" : startDate, "endDate" : endDate}
 				, success:function(data){
 					if(data.result == "success"){
 						location.href="/lodging/reservelist/view";
@@ -223,7 +232,7 @@
 
          });
 		
-		
+         var chkList = $("input[name = check]");
 		 $("#allCheck").on("change", function() {
              // 내 자신이 체크 되었는지 안되었는지
              if($(this).is(":checked")) {
@@ -233,6 +242,10 @@
              }
              
 
+             if(check1 == ""|| check2 =="" || check3 ==""){
+            	 alert("체크박스를 선택해주세요.")
+            	 return ;
+             }
              
          });
 		
