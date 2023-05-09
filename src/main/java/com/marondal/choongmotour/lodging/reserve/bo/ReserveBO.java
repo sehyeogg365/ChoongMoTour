@@ -66,9 +66,10 @@ public class ReserveBO {
 			reserveDetail.setId(reserve.getId());//예약아이디
 			reserveDetail.setUserId(user.getId());//유저아이디
 			reserveDetail.setLodgingId(room.getLodgingId());//로징아이디 여기수정 원래 lodging.getId()였음
-			reserveDetail.setRoomId(reserve.getRoomId());//룸아이디
+			reserveDetail.setRoomId(room.getId());//룸아이디
 			reserveDetail.setName(reserve.getName());//이름
-			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
+			reserveDetail.setPhoneNumber(reserve.getPhoneNumber());// 핸드폰번호
+			reserveDetail.setRoomName(lodging.getRoomName());//숙소이름
 			reserveDetail.setSize(room.getSize());//숙소이름 로징객체가 널  왜이제보니 setSize 인데 getRoomName일까??
 			reserveDetail.setPrice(room.getPrice());//객실 가격
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진

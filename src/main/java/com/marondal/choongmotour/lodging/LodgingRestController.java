@@ -116,7 +116,7 @@ public class LodgingRestController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = reserveBO.addReserve(roomId, userId, name,phoneNumber, payment, startDate, endDate);
+		int count = reserveBO.addReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
