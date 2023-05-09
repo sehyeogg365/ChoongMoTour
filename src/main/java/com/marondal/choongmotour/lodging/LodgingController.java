@@ -164,7 +164,7 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-				, @RequestParam("id") int id
+				, @RequestParam("roomId") int roomId
 				, @RequestParam("lodgingId") int lodgingId//여기 추가해보기
 				//생각해보니 조회도 로징아이디가 아닌 roomId 아녔나???
 				, HttpSession session ) {
@@ -177,18 +177,16 @@ public class LodgingController {
 			
 			
 			//아마여기서 로징 소환안해서 그런듯
-//			Lodging lodging = lodgingBO.getLodging(lodgingId);
-//			
-//			model.addAttribute("lodging", lodging);	
+
 			
 			
 			//여기도 룸아이디로
 			
-			Room room = lodgingBO.getRoom(id);
+			Room room = lodgingBO.getRoom(roomId);
 			
 			model.addAttribute("room", room);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기수정 	
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
