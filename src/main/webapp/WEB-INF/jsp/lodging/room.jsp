@@ -133,7 +133,7 @@
 							
 							<div class = "buttonlist text-center">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 							<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
-							<a href="/lodging/reservation/view?id=${room.id }" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
+							<a href="/lodging/reservation/view?roomId=${room.id }&lodgingId=${lodging.id}" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
 							</div>																				<!-- 우선 모달을위해 들어가는 값들 이렇게 두개가 있다고 함 data-toggle="modal" data-target="#moreModal" 타겟은 그 id가 들어가는 모달인데 id마다 각각버튼마다 각각 다른 모달들이 1:1 매칭이 되어야 한다. 이값과 밑에 값 수정해보기 -->				
 						</div>
 					</div>

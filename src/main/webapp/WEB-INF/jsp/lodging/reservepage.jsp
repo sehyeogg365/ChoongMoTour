@@ -33,13 +33,26 @@
 					ChoongMo Tour Reserve Page
 				</h1>
 			
-				<form method="post" action="/lodging/reserve">
+				<form method="post" action="/lodging/reserve"><!-- 여기경로도 뭔가 좀 이상하고?? -->
 				<div class="reservepagecontents ">
 				
 					<div class="">룸아이디:${room.id }</div><!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<div class="">유저아이디:${user.id }</div><!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
 					<div class=""><h2>${lodging.roomName }</h2></div><br>
-					<div class=""><h3>${room.size }</h3></div>
+					<c:choose>
+							<c:when test="${room.size eq 'singleroom' }">
+								<h3>싱글룸</h3>
+							</c:when>
+							<c:when test="${room.size eq 'doubleroom' }">
+								<h3>더블룸</h3>
+							</c:when>
+							<c:when test="${room.size eq 'twinroom' }">
+								<h3>트윈룸</h3>
+							</c:when>
+							<c:otherwise>
+								<div class="">${room.size }</div>
+							</c:otherwise>
+						</c:choose>	
 					
 					<div class="d-flex mt-3 mx-3 justify-content-center ">
 						<label class="mt-3">체크인 </label>
@@ -90,7 +103,7 @@
 					
 					<div class="text-center mb-3">
 					
-						<button id = "payBtn" type="submit"  class="btn btn-danger col-8 mb-3">결제하기</button>
+						<button id = "payBtn" type="submit"  class="btn btn-danger col-8 mb-3" data-room-id = "${room.id}" >결제하기</button>
 					</div>
 				</div>
 				

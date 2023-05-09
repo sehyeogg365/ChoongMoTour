@@ -129,6 +129,7 @@ public class LodgingController {
 	public String reservePage(Model model
 			, @RequestParam("id") int id
 			// 또웃긴게 예약서는 lodgingId를 아예 안쓰게 설계됨 
+			, @RequestParam("lodgingId") int lodgingId//, @RequestParam("lodgingId") int lodgingId 이렇게 로징테이블에 만들고 아까 룸페이지에서 예약하기 버튼을누를때 roomid만이 파라미터로 가져감. 그럴땐 로징아이디까지 파라미터 추가시키기
 			, HttpSession session
 			) {
 		// 이름, 전화번호, 숙소명, 객실명, 가격 이렇게 불러와야 한다.
@@ -144,10 +145,10 @@ public class LodgingController {
 		
 		//여기서 세개의 테이블을 넣어야하는데 id로 만 값을 지칭하다보니 꼬인거 같다. 어떤값인 지도 모르고 제대로 지칭 해줘야 할듯 하면 세션 또는 파라미터로 불러와야할터.
 
-//		Lodging lodging = lodgingBO.getLodging(id);
-//		
-//		model.addAttribute("lodging", lodging);	
-//		
+		Lodging lodging = lodgingBO.getLodging(lodgingId);
+		
+		model.addAttribute("lodging", lodging);	
+		
 		Room room = lodgingBO.getRoom(id);
 		
 		model.addAttribute("room", room);
