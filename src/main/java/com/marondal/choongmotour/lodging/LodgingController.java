@@ -129,9 +129,6 @@ public class LodgingController {
 	public String reservePage(Model model
 			, @RequestParam("id") int id
 			// 여기도 리퀘스트 파람을 안해줘서 생기는 500오류
-			//
-			//, @RequestParam("roomId")int roomId
-			
 			) {
 		
 		
@@ -140,9 +137,11 @@ public class LodgingController {
 		
 		model.addAttribute("user", user);// 디버깅후 f6 결과 user null이라 뜨고 id는 5라고 뜸 아마 로징아이디일거 같은데 그 잘못전달되고 있단 뜻.
 		
+		
 		Lodging lodging = lodgingBO.getLodging(id);
 		
 		model.addAttribute("lodging", lodging);	
+		
 		
 		Room room = lodgingBO.getRoom(id);
 		

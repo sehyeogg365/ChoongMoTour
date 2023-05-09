@@ -74,7 +74,9 @@
   	FROM
   		`reserved_list`
   	WHERE
-  		`roomId`= #{roomId};
+  		`userId` = #{userId}
+  	ORDER BY `id` DESC;
+  		<!-- 이제보니 유저아이디도 넣어야한다. 그리고 정렬순서도 넣어야할듯 -->
   </select>
   
   
@@ -83,8 +85,7 @@
   <delete id = "deleteReserve" parameterType="int">
   DELETE
   FROM	`reserved_list`
-  WHERE `roomId` = #{roomId}
-  		AND `userId` = #{userId};
+  WHERE `roomId` = #{roomId};
   
   
   </delete>
