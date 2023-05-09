@@ -106,10 +106,10 @@ public class ReserveBO {
 			reserveDetail.setUserId(user.getId());//유저아이디
 			reserveDetail.setLodgingId(lodging.getId());//로징아이디
 			reserveDetail.setRoomId(reserve.getRoomId());//룸아이디
-			reserveDetail.setName(user.getName());//이름
+			reserveDetail.setName(reserve.getName());//이름
 			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
 			reserveDetail.setSize(lodging.getRoomName());//숙소이름
-			//reserveDetail.setPrice(room.getPrice());//가격은 복잡해지니 넣지말기
+			reserveDetail.setPrice(room.getPrice());//객실 가격
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
 			reserveDetail.setStartDate(reserve.getStartDate());
 			reserveDetail.setEndDate(reserve.getEndDate());
