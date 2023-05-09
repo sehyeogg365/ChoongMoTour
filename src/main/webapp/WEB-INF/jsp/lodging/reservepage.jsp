@@ -258,7 +258,7 @@
 		});
 		
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy년 mm월 dd일",
+             dateFormat:"yy-mm-dd",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -277,7 +277,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy년 mm월 dd일",
+             dateFormat:"yy-mm-dd",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
