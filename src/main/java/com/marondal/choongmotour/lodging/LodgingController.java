@@ -182,7 +182,7 @@ public class LodgingController {
 			model.addAttribute("room", room);
 			
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기수정 	
-			
+			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
 			return "lodging/reservelist";
