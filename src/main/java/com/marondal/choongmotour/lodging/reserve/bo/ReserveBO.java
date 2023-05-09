@@ -53,7 +53,7 @@ public class ReserveBO {
 		
 		for(Reserve reserve : reserveList) {
 			
-			Lodging lodging = lodgingBO.getLodging(lodgingId);//로징불러오는값, 이값이 눌이란 뜻.
+			Lodging lodging = lodgingBO.getLodging(lodgingId);//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
 			
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			

@@ -127,7 +127,7 @@ public class LodgingController {
 	//예약페이지 reserve 객체를 해야하나 모르겠다.
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
-			, @RequestParam("id") int id
+			, @RequestParam("roomId") int roomId
 			// 또웃긴게 예약서는 lodgingId를 아예 안쓰게 설계됨 
 			, @RequestParam("lodgingId") int lodgingId//, @RequestParam("lodgingId") int lodgingId 이렇게 로징테이블에 만들고 아까 룸페이지에서 예약하기 버튼을누를때 roomid만이 파라미터로 가져감. 그럴땐 로징아이디까지 파라미터 추가시키기
 			, HttpSession session
@@ -149,7 +149,7 @@ public class LodgingController {
 		
 		model.addAttribute("lodging", lodging);	
 		
-		Room room = lodgingBO.getRoom(id);
+		Room room = lodgingBO.getRoom(roomId);
 		
 		model.addAttribute("room", room);
 		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
@@ -174,6 +174,13 @@ public class LodgingController {
 			User user = userBO.getUserInfo(userId);//이것도 구분 짓기 쉽게 userId로 변경
 			
 			model.addAttribute("user", user);
+			
+			
+			//아마여기서 로징 소환안해서 그런듯
+//			Lodging lodging = lodgingBO.getLodging(lodgingId);
+//			
+//			model.addAttribute("lodging", lodging);	
+			
 			
 			//여기도 룸아이디로
 			
