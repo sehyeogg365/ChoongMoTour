@@ -92,11 +92,11 @@ public class ReserveBO {
 		
 		for(Reserve reserve : reserveList) {
 			
-			Lodging lodging = lodgingBO.getLodging(reserve.getRoomId());
+			Lodging lodging = lodgingBO.getLodging(id);
 			
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
-			Room room = lodgingBO.getRoom(id);
+			Room room = lodgingBO.getRoom(reserve.getRoomId());
 			
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
