@@ -10,21 +10,7 @@
 
 
  
- <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
-  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
-   SELECT
-   		`id`
-  		, `userId`
-  		, `roomId`
-  		, `payment`
-  		, `startDate`
-  		, `endDate`
-   FROM
-   		`reserved_list`
-   WHERE
-   	`roomId` = #{roomId}
-     AND `userId` = #{userId};
-  </select>
+
  <!-- 예약하기 -->
  
   	<insert id = "insertReserve" parameterType="map">
@@ -70,7 +56,7 @@
   		, `roomId`
   		, `payment`
   		, `startDate`
-  		, `endDate`
+  		, `endDate` <!-- 여기가 문제다 왜안나올까? -->
   	FROM
   		`reserved_list`
   	WHERE
@@ -80,6 +66,21 @@
   </select>
   
   
+   <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
+  <select id = "selectgetReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
+   SELECT
+   		`id`
+  		, `userId`
+  		, `roomId`
+  		, `payment`
+  		, `startDate`
+  		, `endDate`
+   FROM
+   		`reserved_list`
+   WHERE
+   	`roomId` = #{roomId}
+     AND `userId` = #{userId};
+  </select>
   
   <!-- 예약 취소 -->
   <delete id = "deleteReserve" parameterType="int">

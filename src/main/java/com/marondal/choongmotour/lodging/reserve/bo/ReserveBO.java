@@ -57,7 +57,7 @@ public class ReserveBO {
 			
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
-			Room room = lodgingBO.getRoom(roomId);
+			Room room = lodgingBO.getRoom(roomId);//여기도 id쓰면 안됨 roomId로
 			
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
@@ -69,7 +69,7 @@ public class ReserveBO {
 			reserveDetail.setRoomId(reserve.getRoomId());//룸아이디
 			reserveDetail.setName(reserve.getName());//이름
 			reserveDetail.setPhoneNumber(user.getPhoneNumber());// 핸드폰번호
-			reserveDetail.setSize(lodging.getRoomName());//숙소이름 로징객체가 널 
+			reserveDetail.setSize(room.getSize());//숙소이름 로징객체가 널  왜이제보니 setSize 인데 getRoomName일까??
 			reserveDetail.setPrice(room.getPrice());//객실 가격
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
 			reserveDetail.setStartDate(reserve.getStartDate());

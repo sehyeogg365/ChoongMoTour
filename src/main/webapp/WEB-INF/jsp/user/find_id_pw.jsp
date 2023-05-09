@@ -99,8 +99,8 @@
 						
 				}
 				
-				alert(name);
-				alert(email);
+				//alert(name);
+				//alert(email);
 			
 					
 				$.ajax({
@@ -150,8 +150,8 @@
 						
 				}
 				
-				alert(id);
-				alert(email);
+				//alert(id);
+				//alert(email);
 				
 					
 				$.ajax({

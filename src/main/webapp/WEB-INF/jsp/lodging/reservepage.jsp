@@ -201,17 +201,17 @@
 
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 
-			alert(id);
+			//alert(id);
 
-			alert(name);//O
+			//alert(name);//O
 
-			alert(phoneNumber);//O
+			//alert(phoneNumber);//O
 
-			alert(payment);//O
+			//alert(payment);//O
 
-			alert(startDate);//O
+			//alert(startDate);//O
 
-			alert(endDate);//O
+			//alert(endDate);//O
 
 
 

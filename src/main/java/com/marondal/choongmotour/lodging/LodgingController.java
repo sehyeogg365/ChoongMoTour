@@ -174,21 +174,20 @@ public class LodgingController {
 			User user = userBO.getUserInfo(userId);//이것도 구분 짓기 쉽게 userId로 변경
 			
 			model.addAttribute("user", user);
-			
-			
-			//아마여기서 로징 소환안해서 그런듯
-
-			
-			
+	
 			//여기도 룸아이디로
 			
 			Room room = lodgingBO.getRoom(roomId);
 			
 			model.addAttribute("room", room);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기수정 	
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
+			
+			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(roomId, userId);
+			
+			model.addAttribute("reserveDetail", reserveDetail);
 			
 			return "lodging/reservelist";
 		}

@@ -15,9 +15,7 @@ public interface ReserveDAO {
 	
 
 
-	//예약 조회 이게굳이 필요할련지는 모르겠다????
-
-	public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
+	
 	
 	
 	
@@ -36,7 +34,9 @@ public interface ReserveDAO {
 	public List<Reserve> selectReserveList(@Param("userId") int userId);//쿼리를 수행하는것이 다오 근데 예약목록을 조회하는데 예약id가필요한가???
 	
 	
-	
+	//예약 조회 이게굳이 필요할련지는 모르겠다????
+
+	public ReserveDetail selectgetReserveInfoById (@Param("userId")int userId, @Param("id") int id);
 	
 	
 	//예약 취소

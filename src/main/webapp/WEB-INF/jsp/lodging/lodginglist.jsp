@@ -160,7 +160,7 @@
 			
 			let id = $(this).data("lodging-id");
 			
-			alert(id);
+			//alert(id);
 			
 			$.ajax({
 				type: "get"
@@ -188,7 +188,7 @@
 			
 			let id = $(this).data("lodging-id");
 			
-			alert(id);
+			//alert(id);
 			
 			$.ajax({
 				

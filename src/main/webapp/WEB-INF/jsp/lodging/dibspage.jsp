@@ -93,7 +93,7 @@
 			
 			let id = $(this).data("lodging-id");
 			
-			alert(id);//아까 삭제할떄 14 가 뜨고 삭제됐다.그말인즉슨 이제 딥스아이디도 잘들어오고있꼬 삭제할떄 lodgingId로 삭제하는게 또 맞다. 왜냐면 lodgingId로 추가했으니.
+			//alert(id);//아까 삭제할떄 14 가 뜨고 삭제됐다.그말인즉슨 이제 딥스아이디도 잘들어오고있꼬 삭제할떄 lodgingId로 삭제하는게 또 맞다. 왜냐면 lodgingId로 추가했으니.
 			
 			$.ajax({
 				
