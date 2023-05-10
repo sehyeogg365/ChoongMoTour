@@ -108,10 +108,10 @@
 			}
 			
 		
-			alert(roomName);
-			alert(areaName);
-			alert(level);
-			alert(file);
+			//alert(roomName);
+			//alert(areaName);
+			//alert(level);
+			//alert(file);
 			
 			var formData = new FormData();
 			
