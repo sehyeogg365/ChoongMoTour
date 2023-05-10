@@ -58,11 +58,15 @@ public class ReserveBO {
 
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
-			Lodging lodging = lodgingBO.getLodging(reserve.getId());//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
+			//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
 			
 			Room room = lodgingBO.getRoom(reserve.getRoomId());//여기도 id쓰면 안됨 roomId로
-			
+			Lodging lodging = lodgingBO.getLodging(room.getLodgingId());//당연히 로징이 룸위에있으니 값을 못받아왔던것.
 			ReserveDetail reserveDetail = new ReserveDetail();
+			
+			//4로 시작하는건 요청하는쪽문제 끽해야 파라미터
+			//5로 시작하는건 서버문제
+			
 			
 			//이거 오늘밤에 채우기
 			
