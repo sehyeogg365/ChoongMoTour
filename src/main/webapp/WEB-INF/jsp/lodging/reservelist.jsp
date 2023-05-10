@@ -63,21 +63,7 @@
 							</a>							
 							<div class="reservation-card-body">
 								<div class="">${reserve.roomName }</div>
-								<c:choose>
-									<c:when test="${reserve.size eq 'singleroom' }">
-									<div class=""><strong>싱글룸</strong></div>
-									</c:when>
-									<c:when test="${reserve.size eq 'doubleroom' }">
-									<div class=""><strong>더블룸</strong></div>
-									</c:when>
-									<c:when test="${reserve.size eq 'twinroom' }">
-									<div class=""><strong>트윈룸</strong></div>
-									</c:when>
-									<c:otherwise>
-									<div class="">${reserve.size }</div>
-									</c:otherwise>
-								
-								</c:choose>
+								<div class="">${reserve.size }</div>
 								<div class="d-flex">
 									<div class="">체크인 ${reserve.startDate } </div>
 									<div class="">체크아웃 ${reserve.endDate } </div>				
@@ -90,35 +76,6 @@
 								</div>
 							</div>
 						</div>
-						
-						<!-- Button trigger modal -->
-		
-			<!-- 애초에 모달도 리스팅을 안했기에 당연히 안뜰수밖에.. -->
-			<!-- Modal 도 댓글달기-->
-			
-			 
-			<div class="modal fade" id="moreModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			  <div class="modal-dialog modal-dialog-centered" role="document">
-			    <div class="modal-content">
-			    	<div class="modal-header">
-						<h5 class="modal-title">객실 댓글 달기</h5>
-							        
-					</div>	
-				   <div class="modal-body text-center">
-			       	<p></p>
-			    	<p id="contentInput${reserve.roomId }"></p>
-			    	<p></p>
-			       	
-			       	
-			      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
-			      <div class="modal-footer">
-					<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
-					<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
-				 </div>
-			   
-			    </div>
-			  </div>
-			</div>	
 						</c:forEach>
 					
 						
@@ -131,7 +88,34 @@
 			</div>
 				
 				
-				
+				<!-- Button trigger modal -->
+		
+			<!-- 애초에 모달도 리스팅을 안했기에 당연히 안뜰수밖에.. -->
+			<!-- Modal 도 댓글달기-->
+			
+			 
+			<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog modal-dialog-centered" role="document">
+			    <div class="modal-content">
+			    	<div class="modal-header">
+						<h5 class="modal-title">객실 댓글 달기</h5>
+							        
+					</div>	
+				   <div class="modal-body text-center">
+			       	<p></p>
+			    	<p id="contentInput${room.id }">${room.content }</p>
+			    	<p></p>
+			       	
+			       	
+			      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+			      <div class="modal-footer">
+					<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
+					<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
+				 </div>
+			   
+			    </div>
+			  </div>
+			</div>	
 				
 				 
 				
