@@ -163,9 +163,8 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-				, @RequestParam("roomId") int roomId // 삭제해야 해서 무조건 필요
-				, @RequestParam("lodgingId") int lodgingId//여기 추가해보기
-				//생각해보니 조회도 로징아이디가 아닌 roomId 아녔나???
+				, @RequestParam("roomId") int roomId
+				, @RequestParam("lodgingId") int lodgingId
 				, HttpSession session ) {
 			//조회는 userId, id만이 필요하다. 여기서 더 추가할것도 없음
 			int userId = (Integer)session.getAttribute("userId");//null login문제 다시 로그인해 보니 다른 오류 비오 72번째줄 오류
@@ -178,7 +177,9 @@ public class LodgingController {
 			
 			model.addAttribute("lodging", lodging);	
 			
+			Room room = lodgingBO.getRoom(roomId);
 			
+			model.addAttribute("room", room);
 			
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 

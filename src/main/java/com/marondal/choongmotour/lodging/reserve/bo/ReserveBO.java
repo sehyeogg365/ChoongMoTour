@@ -60,7 +60,7 @@ public class ReserveBO {
 			
 			Lodging lodging = lodgingBO.getLodging(lodgingId);//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
 			
-			Room room = lodgingBO.getRoom(reserve.getRoomId());//여기도 id쓰면 안됨 roomId로
+			Room room = lodgingBO.getRoom(roomId);//여기도 id쓰면 안됨 roomId로
 			
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
