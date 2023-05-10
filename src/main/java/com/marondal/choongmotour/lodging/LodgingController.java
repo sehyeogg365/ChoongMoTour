@@ -153,6 +153,10 @@ public class LodgingController {
 		model.addAttribute("room", room);
 		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
 		
+		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
+		
+		model.addAttribute("reserveDetail", reserveDetail);
+		
 		return "lodging/reservepage";
 		
 		
@@ -172,10 +176,6 @@ public class LodgingController {
 			User user = userBO.getUserInfo(userId);//이것도 구분 짓기 쉽게 userId로 변경
 			
 			model.addAttribute("user", user);
-
-			Lodging lodging = lodgingBO.getLodging(lodgingId);
-			
-			model.addAttribute("lodging", lodging);	
 			
 			Room room = lodgingBO.getRoom(roomId);
 			
