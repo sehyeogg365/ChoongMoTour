@@ -130,6 +130,7 @@
  		 <!-- Parameter index out of range (1 > number of parameters, which is 0). 이문제는 `문제 아까 `하나가 떡하니 있었다. -->
  	
 		`lodgingId`
+		,`adminId`
  		, `imagePath`
  		, `price`
  		, `size`
@@ -144,6 +145,7 @@
 		<!-- 500error adminId 넣으나 안넣으나 똑같은데 왜그럴까? -->
 		
 		 #{lodgingId}  
+		,#{adminId}
 		, #{imagePath}
 		, #{price}
 		, #{size}

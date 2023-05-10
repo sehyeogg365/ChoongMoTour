@@ -127,7 +127,7 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("roomId") int roomId
-			// 또웃긴게 예약서는 lodgingId를 아예 안쓰게 설계됨 
+
 			, @RequestParam("lodgingId") int lodgingId//, @RequestParam("lodgingId") int lodgingId 이렇게 로징테이블에 만들고 아까 룸페이지에서 예약하기 버튼을누를때 roomid만이 파라미터로 가져감. 그럴땐 로징아이디까지 파라미터 추가시키기
 			, HttpSession session
 			) {
@@ -181,7 +181,7 @@ public class LodgingController {
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
-			
+			//안쓰는 코드들도 지우길 추천 정말 자기가 배우거나, 재사용할 일이 있는게 아니고서야.
 //			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
 //			
 //			model.addAttribute("reserveDetail", reserveDetail);

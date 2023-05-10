@@ -96,7 +96,7 @@ public class LodgingBO {
 	
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file ) {
 			
-		String imagePath = FileManagerService.saveFile(adminId, file);	
+		String imagePath = FileManagerService.saveFile(adminId, file);	//파일매니저 서비스 메소드의 id값은 사용자가 쓸값 그값을쓰는이유는 폴더별로 중복되지마라고 그렇게 한거임 따라서 여기서는 adminId로 저장했을때 별문제 안되면 써도 된다.
 		
 		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
 									//bo 에서 필요해서 호출한 adminId가 dao에서는 필요가없으므로 뺀다. 금욜날 이거를 말한거였음
@@ -126,11 +126,11 @@ public class LodgingBO {
 	
 	//객실추가
 	
-	public int addRoom(int lodgingId, int price, String size, String content, MultipartFile file) {
+	public int addRoom(int lodgingId, int adminId, int price, String size, String content, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(0, file);//이거 이래도 되는지???
+		String imagePath = FileManagerService.saveFile(adminId, file);//이거 이래도 되는지???
 		
-		return lodgingDAO.insertRoom(lodgingId, price, size, content, imagePath);
+		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);
 	}
 		
 	//객실 리스트
