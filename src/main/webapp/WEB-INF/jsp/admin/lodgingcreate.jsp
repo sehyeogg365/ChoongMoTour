@@ -107,7 +107,7 @@
 				return ;
 			}
 			
-			//alert(id);
+		
 			alert(roomName);
 			alert(areaName);
 			alert(level);
@@ -115,7 +115,7 @@
 			
 			var formData = new FormData();
 			
-			
+			//딱 여기서 넣는값만
 			//formData.append("adminId", adminId);
 			formData.append("roomName", roomName);
 			formData.append("areaName", areaName);//이것까지 areaName 으로 바꿔주니 추가 성공했다.

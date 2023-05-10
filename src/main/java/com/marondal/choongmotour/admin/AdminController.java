@@ -116,10 +116,7 @@ public class AdminController {
 	public String roomcreatePage(
 
 			) {//lodging 모델?
-		
-		//Lodging lodging = lodgingBO.getLodging(id);
-		
-		//model.addAttribute("lodging", lodging);
+	
 		
 		return "admin/roomcreate";
 	}
