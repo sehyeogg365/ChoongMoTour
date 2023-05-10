@@ -63,7 +63,21 @@
 							</a>							
 							<div class="reservation-card-body">
 								<div class="">${reserve.roomName }</div>
-								<div class="">${reserve.size }</div>
+								<c:choose>
+									<c:when test="${reserve.size eq 'singleroom' }">
+									<div class=""><strong>싱글룸</strong></div>
+									</c:when>
+									<c:when test="${reserve.size eq 'doubleroom' }">
+									<div class=""><strong>더블룸</strong></div>
+									</c:when>
+									<c:when test="${reserve.size eq 'twinroom' }">
+									<div class=""><strong>트윈룸</strong></div>
+									</c:when>
+									<c:otherwise>
+									<div class="">${reserve.size }</div>
+									</c:otherwise>
+								
+								</c:choose>
 								<div class="d-flex">
 									<div class="">체크인 ${reserve.startDate } </div>
 									<div class="">체크아웃 ${reserve.endDate } </div>				
@@ -76,25 +90,14 @@
 								</div>
 							</div>
 						</div>
-						</c:forEach>
-					
 						
-					
-					</div>
-					
-				
-				</section>
-					
-			</div>
-				
-				
-				<!-- Button trigger modal -->
+						<!-- Button trigger modal -->
 		
 			<!-- 애초에 모달도 리스팅을 안했기에 당연히 안뜰수밖에.. -->
 			<!-- Modal 도 댓글달기-->
 			
 			 
-			<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal fade" id="moreModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			  <div class="modal-dialog modal-dialog-centered" role="document">
 			    <div class="modal-content">
 			    	<div class="modal-header">
@@ -103,7 +106,7 @@
 					</div>	
 				   <div class="modal-body text-center">
 			       	<p></p>
-			    	<p id="contentInput${room.id }">${room.content }</p>
+			    	<p id="contentInput${reserve.roomId }"></p>
 			    	<p></p>
 			       	
 			       	
@@ -116,6 +119,19 @@
 			    </div>
 			  </div>
 			</div>	
+						</c:forEach>
+					
+						
+					
+					</div>
+					
+				
+				</section>
+					
+			</div>
+				
+				
+				
 				
 				 
 				
