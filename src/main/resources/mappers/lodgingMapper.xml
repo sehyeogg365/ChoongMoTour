@@ -50,7 +50,8 @@
  	INSERT INTO 
  			`lodging`
  	(
- 		`roomName`
+ 		`adminId`
+ 		, `roomName`<!-- 500error Field 'adminId' doesn't have a default value NOT NULL값은 인서트할때 무조건 넣어주기 null 값은 빼도되고-->
  		, `level`
  		, `areaName`
  		, `imagePath`
@@ -60,7 +61,8 @@
  	VALUES
  	(
 		 <!-- #{}추가 안됬었음 이래서 자꾸 테이블에 0이 저장된게 아니였나 싶음 그리고 adminId 굳이 넣어야 하는지 의문 아예 디비 테이블 날리고 설계부터 다시해보는것도 좋은생각 -->
-		 #{roomName}
+		 #{adminId}
+		, #{roomName}
  		, #{level}
  		, #{areaName}
  		, #{imagePath}
