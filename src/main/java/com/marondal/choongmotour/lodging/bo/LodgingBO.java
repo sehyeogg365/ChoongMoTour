@@ -128,7 +128,7 @@ public class LodgingBO {
 	
 	public int addRoom(int lodgingId, int adminId, int price, String size, String content, MultipartFile file) {
 			
-		String imagePath = FileManagerService.saveFile(adminId, file);//이거 이래도 되는지???
+		String imagePath = FileManagerService.saveFile(adminId, file);
 		
 		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);
 	}

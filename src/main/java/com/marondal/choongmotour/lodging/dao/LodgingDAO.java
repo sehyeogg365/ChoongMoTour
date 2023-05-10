@@ -15,7 +15,7 @@ public interface LodgingDAO {
 	//지역별 숙소 
 	public List<Lodging> selectLodgingListByArea(@Param("areaName") String areaName);
 	
-	// 로징아이디 별 객실 근데 이건 밑에거 써도 되나???
+	// 로징아이디 별 객실 
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 												
 	
@@ -61,7 +61,7 @@ public interface LodgingDAO {
 		
 	//객실 리스트
 	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
-	//어차피 여기는 사용자영역이라서 쓸일은 없을듯.
+	
 	
 	//객실 한행 조회
 	

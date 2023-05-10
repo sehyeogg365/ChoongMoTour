@@ -144,7 +144,7 @@
 			//400error면 코드문제 아니고 요청쪽 문제 아작스 볼것.
 			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 			//이것도 빼준다.
-			let lodgingId = $(this).data("room-lodgingId");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
+			let id = $(this).data("room-lodgingId");//이거넣으니까 갑자기 추가가 된다. 근데 중복된값 아닌가??
 			
 			let price = $("#singlepriceInput").val();
 			
@@ -187,7 +187,7 @@
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			//lodgingId제거 딱 여기서 넣는값만
 			
-			//formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
@@ -227,7 +227,7 @@
 		
 		$("#doublecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			 
-			let lodgingId = $(this).data("room-lodgingId");
+			let id = $(this).data("room-lodgingId");
 		
 			let price = $("#doublepriceInput").val();
 			
@@ -262,7 +262,7 @@
 			
 			var formData = new FormData();
 			//lodgingId제거 딱 여기서 넣는값만
-			//formData.append("lodgingId", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("lodgingId", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
@@ -304,7 +304,7 @@
 		$("#twincreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
 			
-			let lodgingId = $(this).data("room-lodgingId");
+			let id = $(this).data("room-lodgingId");
 			
 			let price = $("#twinpriceInput").val();
 			
@@ -343,7 +343,7 @@
 			
 	
 			//lodgingId제거 딱 여기서 넣는값만
-			//formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
