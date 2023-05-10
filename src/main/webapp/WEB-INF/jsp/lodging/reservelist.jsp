@@ -57,6 +57,8 @@
 						<c:forEach var="reserve" items="${reserveDetailList }">
 						<div class="reservation-card ml-4 mt-3">
 							<i class="delete-btn bi bi-x-square d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
+							
+							
 							<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
 								
 								<img class="profile" width="" src="${reserve.imagePath } " alt="호텔">
