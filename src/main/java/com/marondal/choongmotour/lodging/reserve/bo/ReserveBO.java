@@ -45,7 +45,7 @@ public class ReserveBO {
 	//
 	
 	//예약 목록
-	public List<ReserveDetail> getReserveList(int userId, int lodgingId){//로징아이디추가
+	public List<ReserveDetail> getReserveList(int userId){//로징아이디추가
 		
 		List<Reserve> reserveList = reserveDAO.selectReserveList(userId);//여기서 유저아이디가 두개가 들어가고있다는뜻. 반대로 되는게 잇음 이값이 있으니 넣어야겠다가 아닌 필요한값을 넣는것.
 		
@@ -58,7 +58,7 @@ public class ReserveBO {
 
 			User user = userBO.getUserInfo(reserve.getUserId());//이게 왜 이렇게 되어있는지? 유저아이디라 되어있어야하는거 아닌가?
 			
-			Lodging lodging = lodgingBO.getLodging(lodgingId);//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
+			Lodging lodging = lodgingBO.getLodging(reserve.getId());//로징불러오는값, 이값이 눌이란 뜻. 여기서 id 넣으면 userId값 두번 불러온단뜻. 
 			
 			Room room = lodgingBO.getRoom(reserve.getRoomId());//여기도 id쓰면 안됨 roomId로
 			
