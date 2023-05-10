@@ -55,7 +55,7 @@
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->
-						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-room-lodgingId="${room.lodgingId }">입력 완료</button>
+						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
 					 </div>
                  </div>
                  
@@ -70,8 +70,8 @@
 	                 
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
-                 	 <div class="text-center mb-3">
-						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-room-lodgingId="${room.lodgingId }">입력 완료</button>
+                 	 <div class="text-center mb-3">																		<!-- 이름 어떻게 주는건 중요치 않음 근데 마지막건 -id이렇게 줘야함 -->
+						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -88,7 +88,7 @@
 	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center mb-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-room-lodgingId="${room.lodgingId }">입력 완료</button>
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -144,7 +144,7 @@
 			//400error면 코드문제 아니고 요청쪽 문제 아작스 볼것.
 			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
 		
-			let id = $(this).data("room-lodgingId");
+			let id = $(this).data("lodging-id");
 			
 			let price = $("#singlepriceInput").val();
 			
@@ -187,7 +187,7 @@
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			//lodgingId제거 딱 여기서 넣는값만
 			
-			formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);
@@ -227,7 +227,7 @@
 		
 		$("#doublecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			 
-			let id = $(this).data("room-lodgingId");
+			let id = $(this).data("lodging-id");
 		
 			let price = $("#doublepriceInput").val();
 			
@@ -262,7 +262,7 @@
 			
 			var formData = new FormData();
 			//lodgingId제거 딱 여기서 넣는값만
-			formData.append("lodgingId", lodgingId);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			formData.append("lodgingId", id);//레스트컨트롤러 파라미터 값 다 적어야 하는듯
 			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황						
 			formData.append("price", price);
 			formData.append("size", size);
@@ -304,7 +304,7 @@
 		$("#twincreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			
 			
-			let id = $(this).data("room-id");
+			let id = $(this).data("lodging-id");
 			
 			let price = $("#twinpriceInput").val();
 			
@@ -344,7 +344,7 @@
 			
 	
 			//lodgingId제거 딱 여기서 넣는값만
-			formData.append("lodgingId", lodgingId);
+			formData.append("lodgingId", id);
 			formData.append("price", price);
 			formData.append("size", size);
 			formData.append("content", content);

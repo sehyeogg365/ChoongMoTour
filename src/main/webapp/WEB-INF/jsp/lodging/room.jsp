@@ -20,6 +20,8 @@
 	
 	<!-- datepicker -->
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 </head>
@@ -91,7 +93,7 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
+				    <a class="nav-link " href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
 				  </li>
 			
 			
@@ -235,6 +237,7 @@
              showButtonPanel:true,
              closeText: 'done',
              minDate: 0,//오늘날짜 부터
+             language: 'ko',
              onSelect:function(selectedDate) {
                  
                  $("#endDate").datepicker("option", "minDate", selectedDate);
@@ -253,6 +256,7 @@
              showButtonPanel:true,//버튼보이기
              closeText: 'done',
              minDate:'+1D',//오늘날짜 다음 부터
+             language: 'ko',
              //beforeShow: customRange
               onSelect:function(selectedDate) {
                  
