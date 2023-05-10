@@ -60,10 +60,7 @@
 							<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
 								
 								<img class="profile" width="" src="${reserve.imagePath } " alt="호텔">
-							</a>				
-							
-							<div class="">${reserve.lodgingId }</div>			
-							<div class="">${reserve.id }</div>			
+							</a>							
 							<div class="reservation-card-body">
 								<div class="">${reserve.roomName }</div>
 								<c:choose>
