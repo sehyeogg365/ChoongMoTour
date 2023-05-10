@@ -78,8 +78,7 @@
    FROM
    		`reserved_list`
    WHERE
-   	`roomId` = #{roomId}
-     AND `userId` = #{userId};
+	 `userId` = #{userId};
   </select>
   
   <!-- 예약 취소 -->

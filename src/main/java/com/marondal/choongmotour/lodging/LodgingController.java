@@ -147,15 +147,16 @@ public class LodgingController {
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	
-		
+		//여기는 예약페이지니 절대 건드리지말기
 		Room room = lodgingBO.getRoom(roomId);
 		
 		model.addAttribute("room", room);
+		
+		//여기가 비오를 호출하는곳 
 		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
-		
-		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
-		
-		model.addAttribute("reserveDetail", reserveDetail);
+//		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
+//		
+//		model.addAttribute("reserveDetail", reserveDetail);
 		
 		return "lodging/reservepage";
 		
@@ -167,7 +168,7 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-				, @RequestParam("roomId") int roomId
+			//	, @RequestParam("roomId") int roomId
 				, @RequestParam("lodgingId") int lodgingId
 				, HttpSession session ) {
 			//조회는 userId, id만이 필요하다. 여기서 더 추가할것도 없음
@@ -177,17 +178,17 @@ public class LodgingController {
 			
 			model.addAttribute("user", user);
 			
-			Room room = lodgingBO.getRoom(roomId);
+			//Room room = lodgingBO.getRoom(roomId);
 			
-			model.addAttribute("room", room);
+		//	model.addAttribute("room", room);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
-			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
-			
-			model.addAttribute("reserveDetail", reserveDetail);
+//			ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
+//			
+//			model.addAttribute("reserveDetail", reserveDetail);
 			
 			return "lodging/reservelist";
 		}
