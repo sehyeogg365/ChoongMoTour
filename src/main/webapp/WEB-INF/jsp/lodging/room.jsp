@@ -57,25 +57,25 @@
 					
 					<c:choose>
 						<c:when test ="${lodging.areaName eq 'seoul'}">
-							<h4 class>서울</h4>
+							<h4>서울</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'incheon'}">
-							<h4 class>인천</h4>
+							<h4>인천</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'gangwon'}">
-							<h4 class>강원</h4>
+							<h4>강원</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'gyeongsang'}">
-							<h4 class>경상</h4>
+							<h4>경상</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'jeolla'}">
-							<h4 class>전라</h4>
+							<h4>전라</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'busan'}">
-							<h4 class>부산</h4>
+							<h4>부산</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'jeju'}">
-							<h4 class>제주</h4>
+							<h4>제주</h4>
 						</c:when>
 					</c:choose>
 					

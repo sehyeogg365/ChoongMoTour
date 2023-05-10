@@ -173,12 +173,12 @@ public class LodgingController {
 			User user = userBO.getUserInfo(userId);//이것도 구분 짓기 쉽게 userId로 변경
 			
 			model.addAttribute("user", user);
-	
-			//여기도 룸아이디로
+
+			Lodging lodging = lodgingBO.getLodging(lodgingId);
 			
-			Room room = lodgingBO.getRoom(roomId);
+			model.addAttribute("lodging", lodging);	
 			
-			model.addAttribute("room", room);
+			
 			
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
