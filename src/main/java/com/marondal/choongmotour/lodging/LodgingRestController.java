@@ -6,7 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.apache.ibatis.annotations.ResultMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -131,7 +131,7 @@ public class LodgingRestController {
 	}
 	
 	// 예약 취소
-	@PostMapping("/deletereserve")
+	@GetMapping("/deletereserve")
 	public Map<String, String> reserveDelete(
 										@RequestParam("roomId")int roomId
 										, HttpSession session){
@@ -268,7 +268,7 @@ public class LodgingRestController {
 	// 숙소 삭제 api
 	@GetMapping("/delete")//이것도 겟매핑으로
 	public Map<String, String> lodgingDelete(
-			@RequestParam("id") int id){
+			@RequestParam("id") int id){ 
 		
 		Map<String, String> resultMap = new HashMap<>();
 		

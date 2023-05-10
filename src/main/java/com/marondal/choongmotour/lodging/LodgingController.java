@@ -16,7 +16,6 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
-import com.marondal.choongmotour.lodging.model.Reserve;
 import com.marondal.choongmotour.lodging.model.ReserveDetail;
 import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
@@ -164,7 +163,7 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-				, @RequestParam("roomId") int roomId
+				, @RequestParam("roomId") int roomId // 삭제해야 해서 무조건 필요
 				, @RequestParam("lodgingId") int lodgingId//여기 추가해보기
 				//생각해보니 조회도 로징아이디가 아닌 roomId 아녔나???
 				, HttpSession session ) {
@@ -181,7 +180,7 @@ public class LodgingController {
 			
 			model.addAttribute("room", room);
 			
-			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId);//여기도 id->lodgingId수정 	
+			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId, lodgingId, roomId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
 			model.addAttribute("reserveDetailList", reserveDetailList);
 			
