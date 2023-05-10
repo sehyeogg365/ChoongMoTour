@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>         
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>           
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,8 +81,9 @@
 									</c:otherwise>
 								</c:choose>	
 								<div class="d-flex">
-									<div class="">체크인 ${reserve.startDate } </div>
-									<div class="">체크아웃 ${reserve.endDate } </div>				
+									<div class="">체크인 <fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/> </div>
+									<div class="">~</div>
+									<div class="">체크아웃 <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/> </div>				
 								</div>
 								<div class=""><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
 					

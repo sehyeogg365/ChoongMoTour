@@ -64,9 +64,9 @@ public class ReserveBO {
 			Lodging lodging = lodgingBO.getLodging(room.getLodgingId());//당연히 로징이 룸위에있으니 값을 못받아왔던것.
 			ReserveDetail reserveDetail = new ReserveDetail();
 			
-			//4로 시작하는건 요청하는쪽문제 끽해야 파라미터
+			//4로 시작하는건 요청하는쪽문제 컨트롤러 비오 다오 볼필요도 없음끽해야 파라미터
 			//5로 시작하는건 서버문제
-			
+			// 자동채우기 하지말고 자동채우기는 통달한자들이 편의를위해 쓰는것. 값하나하나 인자하나하나 뭘의미한지 알고 그렇게 넣기 
 			
 			//이거 오늘밤에 채우기
 			

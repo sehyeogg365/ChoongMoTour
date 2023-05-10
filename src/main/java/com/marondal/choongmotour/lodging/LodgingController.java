@@ -168,8 +168,6 @@ public class LodgingController {
 		// 아직 안불러와서 그런다 모델값
 		@GetMapping("/reservelist/view")
 		public String reserveList(Model model
-			//	, @RequestParam("roomId") int roomId
-			//	, @RequestParam("lodgingId") int lodgingId
 				, HttpSession session ) {
 			//조회는 userId, id만이 필요하다. 여기서 더 추가할것도 없음
 			int userId = (Integer)session.getAttribute("userId");//null login문제 다시 로그인해 보니 다른 오류 비오 72번째줄 오류
@@ -178,9 +176,7 @@ public class LodgingController {
 			
 			model.addAttribute("user", user);
 			
-			//Room room = lodgingBO.getRoom(roomId);
-			
-		//	model.addAttribute("room", room);
+
 			
 			List<ReserveDetail> reserveDetailList = reserveBO.getReserveList(userId);//여기도 id->lodgingId수정 	
 			//여기가 비오를 호출하는곳 
