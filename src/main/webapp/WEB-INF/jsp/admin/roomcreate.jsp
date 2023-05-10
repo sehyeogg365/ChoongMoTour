@@ -40,8 +40,8 @@
                             <option value="twinroom">트윈</option>
                        
                  </select>
-			     
-			     
+			     <div class=""> ${lodging.id }</div>
+			   
 			     							<!-- id값부여해보기 -->
                  <div id="singleInput" class="">
 	                 <label>기본정보 (싱글)</label><br><!-- 마찬가지로 라디오 버튼을 눌렀을때 위의 값이 굳이 바뀌어야 할이윤 없지만 라디오 버튼을 눌렀을때 특정값을 가져오게 할순 있다고함 -->
@@ -55,7 +55,7 @@
 	                 <textarea rows="5" cols="100" id="singlecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->
-						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
+						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 					 </div>
                  </div>
                  
@@ -71,7 +71,7 @@
 	                 <textarea rows="5" cols="100" id="doublecontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center mb-3">																		<!-- 이름 어떻게 주는건 중요치 않음 근데 마지막건 -id이렇게 줘야함 -->
-						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
+						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 					 </div>
                  
                  </div>
@@ -88,7 +88,7 @@
 	                 <textarea rows="5" cols="100" id="twincontentInput" class="mt-4 form-control"></textarea>
                  	 
                  	 <div class="text-center mb-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${room.lodgingId }">입력 완료</button>
+						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3" type="button" data-lodging-id="${lodging.id  }">입력 완료</button>
 					 </div>
                  
                  </div>

@@ -113,10 +113,11 @@ public class AdminController {
 	}
 	
 	@GetMapping("/room/create/view")
-	public String roomcreatePage(
-
-			) {//lodging 모델?
-	
+	public String roomcreatePage(Model model
+								 , int id) {//lodging 모델?
+		Lodging lodging = lodgingBO.getLodging(id);
+		
+		model.addAttribute("lodging", lodging);
 		
 		return "admin/roomcreate";
 	}
