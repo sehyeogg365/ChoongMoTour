@@ -64,8 +64,21 @@
 								<img class="profile" width="" src="${reserve.imagePath } " alt="호텔">
 							</a>							
 							<div class="reservation-card-body">
-								<div class="">${reserve.roomName }</div>
-								<div class="">${reserve.size }</div>
+								<div class=""><strong>${reserve.roomName }</strong></div>
+								<c:choose>
+									<c:when test="${reserve.size eq 'singleroom' }">
+										<div class=""><strong>싱글룸</strong></div>
+									</c:when>
+									<c:when test="${reserve.size eq 'doubleroom' }">
+										<div class=""><strong>더블룸</strong></div>
+									</c:when>
+									<c:when test="${reserve.size eq 'twinroom' }">
+										<div class=""><strong>트윈룸</strong></div>
+									</c:when>
+									<c:otherwise>
+										<div class="">${reserve.size }</div>
+									</c:otherwise>
+								</c:choose>	
 								<div class="d-flex">
 									<div class="">체크인 ${reserve.startDate } </div>
 									<div class="">체크아웃 ${reserve.endDate } </div>				
