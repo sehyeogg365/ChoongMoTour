@@ -59,7 +59,7 @@
 						<div class="reservation-card ml-4 mt-3">
 						
 							<div class="reservation-profile">
-								<i class="x-btn bi bi-x-square d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
+								<i class="x-btn bi bi-x-circle mt-2 ml-2 d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
 								
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
