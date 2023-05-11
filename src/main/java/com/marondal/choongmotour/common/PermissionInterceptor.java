@@ -43,25 +43,26 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			
 			} else {
 			// 로그인이 안되었을떄
-			// 리스트, 글쓰기, 상세화면 페이지로 접근하려고 하면
+			// 찜목록, 예약페이지, 예약목록, 마이페이지 등 페이지로 접근하려고 하면
 			// post 로 시작하는 페이지에 접근하려고 하면 	
 			// 로그인 페이지로 이동해라
 		
-				if(uri.startsWith("/user")) {//찜목록페이지
-					response.sendRedirect("/user/signin/view");
-					return false;
-				}
-				if(uri.startsWith("/lodging/dibspage")) {//찜목록페이지
+				if(uri.contains("/user/mypage/view")) {
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.startsWith("/lodging/reservelist")) {//예약목록페이지
+				if(uri.contains("/lodging/dibspage/view")) {//찜목록페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.startsWith("/lodging/reservation")) {//예약페이지
+				if(uri.contains("/lodging/reservelist/view")) {//예약목록페이지
+					response.sendRedirect("/user/signin/view");
+					return false;
+				}
+				
+				if(uri.contains("/lodging/reservation/view")) {//예약페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
@@ -69,37 +70,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			}
 		
 		
-//		if(adminId != null) {
-//			// 로그인이 되었을때
-//			// 회원 가입, 로그인 페이지 접근하려고 하면
-//			// user 로 시작하는 페이지에 접근하려고 하면 
-//			// 리스트 페이지로 이동시켜라
-//
-//			if(uri.startsWith("/admin")) {//admin 라는 시작하는걸로 접근할려면?
-//				// 리다이렉트 
-//				response.sendRedirect("/admin/main/view");//이동하고픈 주소
-//				//다른페이지로 이동하는거를 대신 try catch 대신 throw
-//				
-//				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
-//			}
-//			
-//			} else {
-//			// 로그인이 안되었을떄
-//			// 리스트, 글쓰기, 상세화면 페이지로 접근하려고 하면
-//			// admin 로 시작하는 페이지에 접근하려고 하면 	
-//			// 로그인 페이지로 이동해라
-//				if(uri.startsWith("/admin/lodging")) {//숙소 추가, 숙소 수정
-//					response.sendRedirect("/admin/signin/view");
-//					return false;
-//				}
-//				
-//				
-//				if(uri.startsWith("/admin/room")) {//객실 추가, 객실 수정
-//					response.sendRedirect("/admin/signin/view");
-//					return false;
-//				}
-//	
-//			}
+
 		
 		
 		

@@ -84,15 +84,19 @@
 										<div class="">${reserve.size }</div>
 									</c:otherwise>
 								</c:choose>	
-								<div class="d-flex">
-									<div class="d-flex">
-										<div class="">체크인 <fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/> </div>
-										
+								<div class="d-flex justify-content-between">
+									<div class="">
+										<div class="">체크인  </div>
+										<div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
 									</div>
 									
-									<div class="">~</div>
-									<div class="d-flex">
-										<div class="">체크아웃 <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/> </div>				
+									<div class="">
+										<div class=""></div><br>
+										<div class="">~</div>
+									</div>
+									<div class="">
+										<div class="">체크아웃 </div>	
+										<div class=""> <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/></div>			
 									</div>
 								</div>
 								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
