@@ -107,11 +107,7 @@
 	</div>
 	<script>
 	$(document).ready(function(){
-		//var ths = $(ths);
-		
-		//ths.parents("");
-		
-		//var id = "id";
+	
 		
 		$("#updateBtn").on("click", function(){
 			
