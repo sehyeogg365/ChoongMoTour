@@ -20,7 +20,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		HttpSession session = request.getSession();
 		
 		Integer userId = (Integer)session.getAttribute("userId");//이게저장되있으면 로그인 된상태 아니면 로그인 안된상태
-		//Integer adminId = (Integer)session.getAttribute("adminId");
+		Integer adminId = (Integer)session.getAttribute("adminId");
 		
 		//null이저장가능하게 끔 
 		
@@ -47,22 +47,22 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			// post 로 시작하는 페이지에 접근하려고 하면 	
 			// 로그인 페이지로 이동해라
 		
-				if(uri.contains("/user/mypage/view")) {
+				if(uri.startsWith("/user/mypage/view")) {
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.contains("/lodging/dibspage/view")) {//찜목록페이지
+				if(uri.startsWith("/lodging/dibspage/view")) {//찜목록페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.contains("/lodging/reservelist/view")) {//예약목록페이지
+				if(uri.startsWith("/lodging/reservelist/view")) {//예약목록페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
 				
-				if(uri.contains("/lodging/reservation/view")) {//예약페이지
+				if(uri.startsWith("/lodging/reservation/view")) {//예약페이지
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
@@ -70,6 +70,45 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			}
 		
 		
+		
+		if(adminId != null) {
+			// 로그인이 되었을때
+			// 회원 가입, 로그인 페이지 접근하려고 하면
+			// user 로 시작하는 페이지에 접근하려고 하면 
+			// 리스트 페이지로 이동시켜라
+
+			if(uri.startsWith("/admin")) {//admin 라는 시작하는걸로 접근할려면?
+				// 리다이렉트 
+				response.sendRedirect("/admin/main/view");//이동하고픈 주소
+				//다른페이지로 이동하는거를 대신 try catch 대신 throw
+				
+				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
+			}
+			
+			} else {
+			// 로그인이 안되었을떄
+			// 숙소 추가, 숙소수정, 객실 추가, 객실 수정, 마이페이지 등 페이지로 접근하려고 하면
+			//  로 시작하는 페이지에 접근하려고 하면 	
+			// 로그인 페이지로 이동해라
+		
+				if(uri.startsWith("/admin/mypage/view")) {
+					response.sendRedirect("/admin/signin/view");
+					return false;
+				}
+				
+				if(uri.startsWith("/admin/lodging")) {//숙소 추가 페이지, 숙소 수정 페이지
+					response.sendRedirect("/admin/signin/view");
+					return false;
+				}
+				
+				if(uri.startsWith("/admin/room")) {//객실 추가 페이지, 객실 수정 페이지
+					response.sendRedirect("/admin/signin/view");
+					return false;
+				}
+				
+			
+				
+			}
 
 		
 		
