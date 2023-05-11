@@ -177,6 +177,7 @@ header{
 	width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
 
 
@@ -232,7 +233,7 @@ header{
 	width:347px;
     height: 250px;
     object-fit: cover;
-	
+	position: absolute;/*사진밑으로*/
 }
 
 
@@ -240,6 +241,13 @@ header{
 	width: 350px;
     height: 200px; 
     
+}
+
+.dib-icon {
+	position: relative;/*아이콘 위로*/
+}
+.undib-icon {
+	position: relatvie;
 }
 
 
@@ -260,7 +268,7 @@ header{
 	width:347px;
     height: 250px;
     object-fit: cover;
-	
+    position: relative;/*사진밑으로*/
 }
 .reservation-card-list > .reservation-card-body{
 	width: 350px;
