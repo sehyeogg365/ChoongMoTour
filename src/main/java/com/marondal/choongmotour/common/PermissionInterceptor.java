@@ -119,7 +119,12 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			// 숙소 추가, 숙소수정, 객실 추가, 객실 수정, 마이페이지 등 페이지로 접근하려고 하면
 			//  로 시작하는 페이지에 접근하려고 하면 	
 			// 로그인 페이지로 이동해라
-		
+					
+				if(uri.startsWith("/admin/main/view")) {
+					response.sendRedirect("/admin/signin/view");
+					return false;
+				}
+				
 				if(uri.startsWith("/admin/mypage/view")) {
 					response.sendRedirect("/admin/signin/view");
 					return false;
