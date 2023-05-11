@@ -95,7 +95,7 @@
 										<div class="">체크아웃 <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/> </div>				
 									</div>
 								</div>
-								<div class=""><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
+								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
 					
 								
 								<div class="text-center">

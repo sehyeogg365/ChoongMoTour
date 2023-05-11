@@ -223,7 +223,7 @@ header{
 	
 }
 .dibs-card> .dibs-profile{
-	width: 350px;
+	/*width: 350px;*/
 	height:270px;
 	
 }
@@ -252,7 +252,7 @@ header{
 
 }
 .reservation-card>.reservation-profile{
-	width: 350px;
+	/*width: 350px;*/
 	height:270px;
 }
 
