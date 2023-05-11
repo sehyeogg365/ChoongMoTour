@@ -163,6 +163,7 @@ header{
 	width: 100%;
     height: 100%;
     object-fit: cover;
+    /*position: absolute;*/
 }
 
 .lodging-card>.lodging-card-body{
@@ -247,7 +248,7 @@ header{
 	position: relative;/*아이콘 위로*/
 }
 .undib-icon {
-	position: relatvie;
+	position: relative;
 }
 
 
