@@ -59,7 +59,7 @@
 							<!-- 없을때는 사진 업로드 버튼 이렇게만 있게하는걸로,  -->
 							<!-- 그리고 음.. 사진변경을 안하고 수정을 누르면 아예 사라져버리는데 프로필변경과 따로해야하나 싶다. -->
 							
-						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 헤더야 항상 불러와야 하니 세션을 썼지만.. -->
+						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}" value="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 헤더야 항상 불러와야 하니 세션을 썼지만.. -->
 						  
 						  	
 						  </c:when>
