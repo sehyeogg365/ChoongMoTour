@@ -59,7 +59,7 @@
 						<div class="reservation-card ml-4 mt-3">
 						
 							<div class="reservation-profile">
-								<i class="delete-btn bi bi-x-square d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
+								<i class="x-btn bi bi-x-square d-flex justify-content-end" data-room-id ="${reserve.roomId }" ></i>
 								
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
@@ -84,7 +84,7 @@
 										<div class="">${reserve.size }</div>
 									</c:otherwise>
 								</c:choose>	
-								<div class="d-flex justify-content-between">
+								<div class="d-flex justify-content-between mt-2">
 									<div class="">
 										<div class="">체크인  </div>
 										<div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
@@ -103,7 +103,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-3 btn-sm comment-btn" type="button">댓글달기</button>
+									<button id="commentModalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -184,7 +184,7 @@
 			 
 		 });
  		
- 		$(".delete-btn").on("click", function(){
+ 		$(".x-btn").on("click", function(){
  			
  			let id = $(this).data("room-id");
  			
