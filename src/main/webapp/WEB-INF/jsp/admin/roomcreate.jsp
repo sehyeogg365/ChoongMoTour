@@ -40,7 +40,7 @@
                             <option value="twinroom">트윈</option>
                        
                  </select>
-			     <div class=""> ${lodging.id }</div>
+			     <!--  <div class=""> ${lodging.id }</div>-->
 			   
 			     							<!-- id값부여해보기 -->
                  <div id="singleInput" class="">
@@ -115,7 +115,7 @@
 				
 				let size = $(this).val();
 				
-				alert(size);//클릭시 경고창
+				//alert(size);//클릭시 경고창
 				
 				if(size == 'singleroom'){
 					$("#singleInput").removeClass("d-none");
@@ -176,11 +176,11 @@
 				return ;
 			}
 			
-			alert(id);
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//O
+			//alert(id);
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			///alert(file);//O
 			
 			var formData = new FormData();
 			
@@ -254,11 +254,11 @@
 				alert("파일을 선택하세요");
 				return ;
 			}
-			alert(id);
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//O
+			//alert(id);
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			//alert(file);//O
 			
 			var formData = new FormData();
 			//lodgingId제거 딱 여기서 넣는값만
@@ -332,11 +332,11 @@
 				return ;
 			}
 			
-			alert(id);
-			alert(price);//O
-			alert(size);//O
-			alert(content);//O
-			alert(file);//O
+			//alert(id);
+			//alert(price);//O
+			//alert(size);//O
+			//alert(content);//O
+			//alert(file);//O
 			
 			var formData = new FormData();
 			
