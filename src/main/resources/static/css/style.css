@@ -228,7 +228,7 @@ header{
 
 
 .dibs-card-list{
-	position: relative;
+	
 }
 
 .dibs-card-list >.dibs-card{
@@ -239,6 +239,12 @@ header{
     box-shadow: 3px 3px 5px 0px black;
 	
 }
+
+.dibspage-heart{
+ 
+ 	position:relative; /*위에있는 로징카드 리스트가 아닌 하트아이콘 감싸는 태그에 적용 하기*/
+ }
+ 
 .dibs-card> .dibs-profile{
 	width: 350px;
 	height:270px;
