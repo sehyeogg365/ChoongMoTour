@@ -27,18 +27,19 @@
 				
 				
 				<div class="mypagecontents d-flex">
-				<aside class="aside1 col-2 ">
+				<aside class="side-nav col-2 ">
 				
-			
+				<ul class="nav d-flex justify-content-center">
+					<li class="mt-3">
 					
-					<div>
-						<h3><a href="/admin/mypage/view?id=${admin.id }" class="text-dark">내 정보수정</a></h3>
-					</div>
-					<div>
-						<h3><a href="#" class="text-dark">사용자 삭제</a></h3>
-					</div>
+						<h4><a href="/admin/mypage/view?id=${admin.id }" class="text-dark">내 정보수정</a></h4>
+					</li>
 					
-				
+					<li class="mt-3">
+						<h4><a href="#" class="text-dark">사용자 삭제</a></h4>
+					</li>
+					
+				</ul>
 				</aside>
 				
 				<section class="contents1 col-10">
