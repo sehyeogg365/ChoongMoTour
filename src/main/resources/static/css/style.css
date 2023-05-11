@@ -224,11 +224,12 @@ header{
 }
 
 .dibs-profile >.profile{
-	width:330px;
+	width:345px;
     height: 300px;
     object-fit: cover;
 	
 }
+
 
 .dibs-card-list >.dibs-card-body{
 	width: 350px;
@@ -251,19 +252,18 @@ header{
 }
 .reservation-card>.reservation-profile{
 	width: 350px;
-	height:250px;
+	height:270px;
 }
 
-
 .reservation-profile >.profile{
-	width:330px;
+	width:350px;
     height: 250px;
     object-fit: cover;
 	
 }
 .reservation-card-list > .reservation-card-body{
 	width: 350px;
-    height: 150px; 
+    height: 200px; 
 }
 
 
