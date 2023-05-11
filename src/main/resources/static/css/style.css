@@ -146,28 +146,35 @@ header{
 	border-radius: 8px;
 }
 
-.lodging-card-list{
-	
-}
+
 
 .lodging-card-list>.lodging-card{
 	
-	height:400px;
+	
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
 
+ .heart{
+ 
+ 	position:relative; /*위에있는 로징카드 리스트가 아닌 하트아이콘 감싸는 태그에 적용 하기*/
+ }
+
+
+
 .lodging-profile{
 	
-	width: 350;
+	
     height: 300px;
 }
+
+
 
 .lodging-profile> .profile{
 	width: 100%;
     height: 100%;
     object-fit: cover;
-    /*position: absolute;*/
+   
 }
 
 .lodging-card>.lodging-card-body{
@@ -253,9 +260,11 @@ header{
 }
 
 .dib-icon {
+	right:-2px;
 	position: absolute;/*아이콘 위로*/
 }
 .undib-icon {
+	right:-2px;
 	position: absolute;
 }
 

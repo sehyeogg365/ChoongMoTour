@@ -73,7 +73,7 @@
 		
 		<div class="comment-list">
 		
-			<div class="comment-box">
+			<div class="comment-box mt-3">
 				
 				<div class="comment">
 					<div class="comment-profile">
@@ -88,7 +88,7 @@
 				</div>
 			
 			</div>
-			<div class="comment-box">
+			<div class="comment-box mt-3">
 				
 				<div class="comment">
 					<div class="comment-profile">
@@ -102,7 +102,7 @@
 				</div>
 			
 			</div>
-			<div class="comment-box">
+			<div class="comment-box mt-3">
 				
 				<div class="comment">
 					<div class="comment-profile">
@@ -116,7 +116,7 @@
 				</div>
 			
 			</div>
-			<div class="comment-box">
+			<div class="comment-box mt-3">
 				
 				<div class="comment">
 					<div class="comment-profile">
