@@ -60,9 +60,9 @@
 						
 							<div class="reservation-profile">
 							
-									
-									<i class="x-btn bi bi-x-circle " data-room-id ="${reserve.roomId }" ></i>
-								
+									<div class="x">
+										<i class="x-btn bi bi-x-circle " data-room-id ="${reserve.roomId }" ></i>
+									</div>
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
 									

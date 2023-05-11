@@ -303,6 +303,10 @@ header{
     height: 200px; 
 }
 
+.x{
+	position: relative;
+}
+
 .x-btn{
 	position: absolute;
 	
