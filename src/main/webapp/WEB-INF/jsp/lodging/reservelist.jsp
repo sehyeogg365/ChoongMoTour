@@ -58,9 +58,9 @@
 						<c:forEach var="reserve" items="${reserveDetailList }">
 						<div class="reservation-card ml-4 mt-3">
 						
-							<div class="reservation-profile">
+							<div class="">
 							
-									<div class="x">
+									<div class="x mr-3">
 										<i class="x-btn bi bi-x-circle " data-room-id ="${reserve.roomId }" ></i>
 									</div>
 								

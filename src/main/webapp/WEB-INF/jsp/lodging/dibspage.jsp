@@ -53,14 +53,14 @@
 					
 					
 							<c:forEach var="dibs" items="${dibsDetailList }">
-							<div class="dibs-card  ml-4 mt-3">
+							<div class="dibs-card  mt-4 ml-4 ">
 								
 								<div class="">
 									
-									<div class="dibspage-heart bg-success">														<!-- 근데 희안하게 여기  -->		
+									<div class="dibspage-heart mr-3">														<!-- 근데 희안하게 여기  -->		
 										<i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2 d-flex justify-content-end flex-end" data-lodging-id= "${dibs.lodgingId}"></i>
 									</div>
-									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
+									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="d-block dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
 														
 										<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
 									</a>
