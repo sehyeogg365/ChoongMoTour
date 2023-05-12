@@ -48,6 +48,7 @@
 					<div class="info-input-box mx-4">
 					
 						<label>프로필 사진 변경</label><br>
+						
 						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
 						<input type="file" name="file" id="fileInput" class="">
@@ -61,7 +62,7 @@
 							
 						  	<img class="userprofile" width ="40" height="40" src="${user.imagePath}" value="${user.imagePath}"><!--이렇게 했을땐 저장은됐다. 헤더야 항상 불러와야 하니 세션을 썼지만.. -->
 						  
-						  	
+						  	<!-- 파일인풋이 없을때 수정이 안되게끔 그렇게 예외처리를 진행해보도록 한다. 파일 인풋은 말그대로 다른 인풋과는 다른것. 그냥 처음부터 없는 상태서 인서트 한다고 보면됨. 입력을 안했으니 당연히 수정 눌렀으니 저 밑에게 나옴 -->
 						  </c:when>
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> 

@@ -34,23 +34,23 @@
 				</h1>
 			
 				
-				<div class="reservepagecontents">
+				<div class="reservepagecontents ">
 				
 					<!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
-					<div class="mt-3 pt-3"><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
+					<div class="mt-3 ml-3 pt-3 "><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
 					<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
-								<h3 class=""><strong>싱글룸</strong></h3>
+								<h3 class="ml-3"><strong>싱글룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'doubleroom' }">
-								<h3 class=""><strong>더블룸</strong></h3>
+								<h3 class="ml-3"><strong>더블룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'twinroom' }">
-								<h3 class=""><strong>트윈룸</strong></h3>
+								<h3 class="ml-3"><strong>트윈룸</strong></h3>
 							</c:when>
 							<c:otherwise>
-								<div class=""><h3><strong>${room.size }</strong></h3></div>
+								<div class="ml-3"><h3><strong>${room.size }</strong></h3></div>
 							</c:otherwise>
 						</c:choose>	
 					
@@ -63,17 +63,17 @@
 					
 					</div>
 					
-					<div class = "mx-3">
-						<label class="input-lable mt-4">예약자 이름</label><input type="text" id="nameInput" value = "${user.name }" class="form-control ">
+					<div class = "mx-3 ">
+						<label class="input-lable mt-4">예약자 이름</label><input type="text" id="nameInput" class="form-control" value = "${user.name }" class="form-control ">
 					
 					
-						<label class="input-lable mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${user.phoneNumber}" class="form-control ">
+						<label class="input-lable mt-4">전화번호</label><input type="text" id="phoneNumberInput" class="form-control" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
-					
+					<div class="">
 					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
-					
+					</div>
 					
 					<hr>
 					<div class="payselect mt-4 mx-3">
@@ -92,7 +92,7 @@
 					
 					
 					
-					<div class="check-box mt-4 mx-3">
+					<div class="check-box form-control mt-4">
 						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
 				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1" id="check1"></label><br><!-- 이제보니 여기도 밸류값 잘못됨 -->
 				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2" id="check2"></label><br>
