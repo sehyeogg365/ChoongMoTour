@@ -24,7 +24,7 @@
 					ChoongMo Tour Admin Main Page
 				</h1>
 			
-			<div class="text-center">
+			<div class="text-center mt-3">
 				<a href="/admin/lodging/create/view" class="btn btn-primary col-8">추가하기</a>
 			</div>
 			
