@@ -38,6 +38,13 @@ header{
 	
 }
 
+.btn-group:hover .dropdown-menu{
+	display: inline-block;
+	
+
+}
+
+
 .contents> .main-page{
 	width:1200px;
 }
