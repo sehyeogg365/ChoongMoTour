@@ -59,8 +59,8 @@
                  
 				
 				<div class="text-center mb-3">
-					<button id="createBtn"class="btn btn-primary" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
-				</div>
+					<button id="createBtn"class="btn btn-primary" type="button" >입력 완료</button>
+				</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
 					
 					
 			</div>
@@ -78,7 +78,7 @@
 		
 		$("#createBtn").on("click", function(){
 			
-			let id = $(this).data("lodging-id");
+			//let id = $(this).data("lodging-id");
 			
 			let roomName = $("#roomNameInput").val();
 			

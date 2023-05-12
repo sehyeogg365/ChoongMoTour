@@ -34,20 +34,20 @@
 				</h1>
 			
 				
-				<div class="reservepagecontents ">
+				<div class="reservepagecontents">
 				
 					<!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
-					<div class=""><h2><strong>${lodging.roomName }</strong></h2></div><br>
+					<div class="mt-3 pt-3"><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
 					<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
-								<h3><strong>싱글룸</strong></h3>
+								<h3 class=""><strong>싱글룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'doubleroom' }">
-								<h3><strong>더블룸</strong></h3>
+								<h3 class=""><strong>더블룸</strong></h3>
 							</c:when>
 							<c:when test="${room.size eq 'twinroom' }">
-								<h3><strong>트윈룸</strong></h3>
+								<h3 class=""><strong>트윈룸</strong></h3>
 							</c:when>
 							<c:otherwise>
 								<div class=""><h3><strong>${room.size }</strong></h3></div>

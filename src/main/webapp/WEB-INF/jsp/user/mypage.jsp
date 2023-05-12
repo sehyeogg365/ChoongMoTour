@@ -166,7 +166,7 @@
 			formData.append("nickname", nickname);
 			formData.append("email", email);
 			formData.append("phoneNumber", phoneNumber);
-			formData.append("file", file.files[0]);
+			formData.append("file", file.files[0]);//??아마 여기가 문제인거같은데?
 			
 			$.ajax({
 				type:"post"
