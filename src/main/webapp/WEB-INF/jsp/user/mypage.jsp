@@ -31,13 +31,13 @@
 				
 				<ul class="nav d-flex justify-content-center">
 					<li class="mt-3">
-						<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-dark">찜목록</a></h4>
+						<h4><a href="/lodging/dibspage/view?id=${user.id }" class="text-secondary">찜목록</a></h4>
 					</li>
 					<li class="mt-3">
-						<h4><a href="/lodging/reservelist/view?id=${user.id }" class="text-dark">예약내역</a></h4>
+						<h4><a href="/lodging/reservelist/view?id=${user.id }" class="text-secondary">예약내역</a></h4>
 					</li>
 					<li class="mt-3">
-						<h4><a href="/user/mypage/view?id=${user.id }" class="text-dark">내 정보수정</a></h4>
+						<h4><a href="/user/mypage/view?id=${user.id }" class="text-secondary">내 정보수정</a></h4>
 					</li>
 					
 				</ul>

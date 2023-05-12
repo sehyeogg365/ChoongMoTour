@@ -192,15 +192,15 @@
 
 	            return ;
 
-	        } 
-			
-			if(!$("input:checked[name='check']").is(":checked")){
+	        } else if(!$("input:checked[name='check']").is(":checked")){
 
 	            alert("체크박스를 선택해주세요.");
 
 	            return ;
 
 	        } 
+			
+	
 			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
 
 		
