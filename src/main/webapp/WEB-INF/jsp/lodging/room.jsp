@@ -37,7 +37,7 @@
 				
 				
 				
-				<div class="lodging-profile2 text-center">
+				<div class="lodging-profile2 text-center mt-3">
 					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 					<c:choose>
 						<c:when test = "${lodging.level eq '5성급' }">
@@ -47,7 +47,7 @@
 							<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
 						</c:when>
 						<c:when test = "${lodging.level eq '3성급' }">
-							<h3 class="text-second">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+							<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
 						</c:when>
 						<c:when test = "${lodging.level eq '2성급' }">
 							<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
@@ -59,25 +59,25 @@
 					
 					<c:choose>
 						<c:when test ="${lodging.areaName eq 'seoul'}">
-							<h4>서울</h4>
+							<h4 class="text-secondary">서울</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'incheon'}">
-							<h4>인천</h4>
+							<h4 class="text-secondary">인천</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'gangwon'}">
-							<h4>강원</h4>
+							<h4 class="text-secondary">강원</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'gyeongsang'}">
-							<h4>경상</h4>
+							<h4 class="text-secondary">경상</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'jeolla'}">
-							<h4>전라</h4>
+							<h4 class="text-secondary">전라</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'busan'}">
-							<h4>부산</h4>
+							<h4 class="text-secondary">부산</h4>
 						</c:when>
 						<c:when test ="${lodging.areaName eq 'jeju'}">
-							<h4>제주</h4>
+							<h4 class="text-secondary">제주</h4>
 						</c:when>
 					</c:choose>
 					
@@ -85,7 +85,7 @@
 				</div><br>
 				
 				<div class="text-center mt-3">
-					<h2>${lodging.roomName }</h2>
+					<h2 class="font-weight-bold">${lodging.roomName }</h2>
 				</div><br>
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->

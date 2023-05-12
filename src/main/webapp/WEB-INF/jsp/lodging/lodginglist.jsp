@@ -29,7 +29,7 @@
 					ChoongMo Tour Lodging List Page
 				</h1>
 				
-				<div class="d-flex justify-content-between">
+				<div class="d-flex justify-content-between mt-3">
 					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;">필터</i>
 					
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
@@ -77,7 +77,7 @@
 							<div class="text-danger">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
 						</c:when>
 						<c:when test = "${lodging.level eq '3성급' }">
-							<div class="text-second">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
+							<div class="text-secondary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
 						</c:when>
 						<c:when test = "${lodging.level eq '2성급' }">
 							<div class="text-success">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
