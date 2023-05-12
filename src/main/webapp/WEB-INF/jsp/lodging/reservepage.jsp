@@ -186,13 +186,22 @@
 		
 			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔 
 
-			if(!$("input:checked[id='allCheck']").is(":checked")){
+ 
+			if(!$("input:checked[id='check1']").is(":checked")){
 
 	            alert("체크박스를 선택해주세요.");
 
 	            return ;
 
-	        } else if(!$("input:checked[name='check']").is(":checked")){
+	        } 
+			if(!$("input:checked[id='check2']").is(":checked")){
+
+	            alert("체크박스를 선택해주세요.");
+
+	            return ;
+
+	        } 
+			if(!$("input:checked[id='check3']").is(":checked")){
 
 	            alert("체크박스를 선택해주세요.");
 
