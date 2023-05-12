@@ -13,6 +13,12 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
+
+	<!-- 폰트 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	
 </head>
 <body>
 	<div id = "wrap">
@@ -69,7 +75,12 @@
 
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
+	<style>
+	*{
+		font-family: 'Noto Sans KR', sans-serif;
+	}
 	
+	</style>
 	<script>
 	$(document).ready(function(){
 		
