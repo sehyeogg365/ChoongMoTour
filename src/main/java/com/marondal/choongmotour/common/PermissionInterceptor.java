@@ -62,11 +62,10 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			// 로그인 페이지로 이동해라
 				
 				if(uri.startsWith("/lodging/lodginglist/view")) { //이것도 그냥 따로만들기
-					response.sendRedirect("/lodging/lodginglist/view");
+					response.sendRedirect("/user/signin/view");
 					return false;
-				}
-				
-				
+				}//그냥 이렇게 해버리는게 속편하겠다. 원래 로그인 안해도 숙소리스트, 객실리스트까지 보게 할려 했는데
+			
 				if(uri.startsWith("/user/mypage/view")) {
 					response.sendRedirect("/user/signin/view");
 					return false;
