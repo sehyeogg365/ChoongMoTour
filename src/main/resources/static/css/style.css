@@ -228,19 +228,20 @@ header{
 	width:650px;
 }
 
-.info-modal.modal-center{
+.modal{
 	text-align:center;
+	
 	
 }
 
 .info-modal-dialog.modal-center{
 	display:inline-block;
-}
 
-
-.dibs-card-list{
 	
 }
+
+
+
 
 .dibs-card-list >.dibs-card{
 	width: 350px;
