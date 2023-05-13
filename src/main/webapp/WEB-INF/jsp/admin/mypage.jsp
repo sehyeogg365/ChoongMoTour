@@ -52,7 +52,7 @@
 					
 					<div class="info-input-box mx-4">
 					
-						<label>프로필 사진 변경</label><br>
+						<label class="mt-3">프로필 사진 변경</label><br>
 						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
 						<input type="file" name="file" id="fileInput">

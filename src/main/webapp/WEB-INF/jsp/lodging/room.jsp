@@ -185,7 +185,7 @@
 					     			 </div>	
 							
 							      <div class="modal-body text-center">
-							       <p id="contentInput${room.id }">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+							       <p id="contentInput${room.id }" class="modalcontent">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 							      
 							     	
 							      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
@@ -252,15 +252,15 @@
 			 let endDate = $(this).val();
 			 
 		 });
-	
-		 $(".info-modal-btn").on("click", function(){
-			 
-			 let id = $(this).data("room-id");
-			 
-			 let content = ("#contentInput" + id).val();
-			 
-			 
-		 });
+		
+		// $(".info-modal-btn").on("click", function(){
+		//	 
+		//	 let id = $(this).data("room-id");
+		//	 
+		//	 let content = ("#contentInput" + id).val();
+		//	 
+		//	 
+		// });
  
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy년 mm월 dd일",

@@ -87,7 +87,7 @@ header{
 }
 
 .side-nav{
-	background-color:#DCDCDC;
+	background-color: #000080;
 	border-radius: 8px;
 }
 
@@ -229,17 +229,14 @@ header{
 }
 
 .modal{
-	text-align:center;
-	
-	
+
 }
 
-.info-modal-dialog.modal-center{
-	display:inline-block;
 
-	
+
+.modalcontent{
+	color:gray;
 }
-
 
 
 
