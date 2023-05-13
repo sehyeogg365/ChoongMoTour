@@ -115,7 +115,9 @@
   		,`email` =#{email}
   		,`phoneNumber` = #{phoneNumber}
   		,`nickname` =#{nickname}
-  		,`imagePath` =#{imagePath}
+  		<if test ="imagePath != null">
+  			,`imagePath` =#{imagePath}
+  		</if><!-- 파일 업로드 예외처리 성공 -->
   		, `updatedAt` = now()
   	WHERE
   		`id` = #{id}
