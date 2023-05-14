@@ -20,7 +20,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+	<style>
+	a{
+		color:#646477;
+	}
 	
+	</style>
 </head>
 <body>
 	<div id = "wrap">
@@ -38,11 +43,11 @@
 				<ul class="nav d-flex justify-content-center">
 					<li class="mt-3">
 					
-						<h4><a href="/admin/mypage/view?id=${admin.id }" class="text-dark">내 정보수정</a></h4>
+						<h4><a href="/admin/mypage/view?id=${admin.id }" class="">내 정보수정</a></h4>
 					</li>
 					
 					<li class="mt-3">
-						<h4><a href="#" class="text-dark">사용자 삭제</a></h4>
+						<h4><a href="#" class="">사용자 삭제</a></h4>
 					</li>
 					
 				</ul>
