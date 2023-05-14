@@ -31,10 +31,10 @@
 				</h1>
 				
 				
-				<div class="mypagecontents d-flex">
+				<div class="mypagecontents d-flex mx-3">
 				<aside class="side-nav col-2 ">
 				
-				<ul class="nav d-flex justify-content-center">
+				<ul class="nav">
 					<li class="mt-3">
 					
 						<h4><a href="/admin/mypage/view?id=${admin.id }" class="nav-list">내 정보수정</a></h4>

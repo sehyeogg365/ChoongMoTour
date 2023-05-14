@@ -36,7 +36,7 @@
 					<div class="dibspagecontents d-flex mx-3">
 					<aside class="side-nav col-2 ">
 						
-					<ul class="nav d-flex justify-content-center">
+					<ul class="nav">
 						<li class="mt-3">
 							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
 						</li>
