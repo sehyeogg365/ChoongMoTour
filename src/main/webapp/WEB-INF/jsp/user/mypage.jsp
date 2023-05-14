@@ -54,7 +54,7 @@
 					
 					<div class="info-input-box mx-4">
 					
-						<label class="mt-3">프로필 사진 변경</label><br>
+						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
 						
 						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
@@ -77,22 +77,22 @@
 				 		 </c:choose>	
 						
 							
-						<div class="d-flex">
+						<div class="d-flex mx-3">
 							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "" class="form-control mt-4 mr-3">
 						</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
-						<div class="d-flex">
+						<div class="d-flex mx-3">
 							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4 mr-3">
 						</div>
-						<div class="d-flex">
+						<div class="d-flex mx-3">
 							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value="${user.name }" class="form-control mt-4 mr-3">
 						</div>	
-						<div class="d-flex">							<!-- 왜자꾸 이메일, 이메일 이렇게 뜨는지 모르겠다. 분명 프론트엔드 영역 문제고 그럴거같은데 -->
+						<div class="d-flex mx-3">							<!-- 왜자꾸 이메일, 이메일 이렇게 뜨는지 모르겠다. 분명 프론트엔드 영역 문제고 그럴거같은데 -->
 							<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value="${user.email }" class="form-control mt-4 mr-3">
 						</div>		
-						<div class="d-flex">
+						<div class="d-flex mx-3">
 							<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value="${user.nickname }" class="form-control mt-4 mr-3">
 						</div>
-						<div class="d-flex">	
+						<div class="d-flex mx-3">	
 							<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value= "${user.phoneNumber }"  class="form-control mt-4 mr-3">
 						</div>
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
