@@ -55,13 +55,13 @@
 							<c:choose>
 								<c:when test="${lodging.dibs}">
 																																		
-										<i class="undib-icon bi bi-heart-fill text-danger " data-lodging-id = "${lodging.id }"></i>
+										<i class="undib-icon bi bi-heart-fill text-danger" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
 									
 								</c:when>
 								
 								<c:otherwise>	<!-- 검정하트 빈하트 -->
 									
-										<i class="dib-icon bi bi-heart " data-lodging-id = "${lodging.id }"></i>
+										<i class="dib-icon bi bi-heart " style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
 									
 								</c:otherwise>
 							</c:choose>

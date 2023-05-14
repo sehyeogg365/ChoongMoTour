@@ -64,7 +64,7 @@
 								<div class="">
 									
 									<div class="dibspage-heart mr-3">														<!-- 근데 희안하게 여기  -->		
-										<i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2 d-flex justify-content-end flex-end" data-lodging-id= "${dibs.lodgingId}"></i>
+										<i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id= "${dibs.lodgingId}"></i>
 									</div>
 									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="d-block dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
 														
