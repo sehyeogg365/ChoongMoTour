@@ -61,6 +61,9 @@ public class LodgingController {
 		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId);
 		
 		model.addAttribute("lodgingList", lodgingList);
+		
+		
+		
 		//로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		
 		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
