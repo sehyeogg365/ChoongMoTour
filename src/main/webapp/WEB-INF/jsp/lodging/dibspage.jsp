@@ -22,12 +22,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	
-	<style>
-	a{
-		color:#646477;
-	}
 	
-	</style>
 </head>
 <body>
 	<div id="wrap">
@@ -43,13 +38,13 @@
 						
 					<ul class="nav d-flex justify-content-center">
 						<li class="mt-3">
-							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="">찜목록</a></h4>
+							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
 						</li>
 						<li class="mt-3">
-							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="">예약내역</a></h4>
+							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="nav-list">예약내역</a></h4>
 						</li>
 						<li class="mt-3">
-							<h4><a href="/user/mypage/view?id=${user.id }" class="">내 정보수정</a></h4>
+							<h4><a href="/user/mypage/view?id=${user.id }" class="nav-list">내 정보수정</a></h4>
 						</li>
 					
 					</ul>
