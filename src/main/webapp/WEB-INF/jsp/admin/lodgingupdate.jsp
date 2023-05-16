@@ -47,7 +47,7 @@
 							
                             <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
                             <option value="seoul">서울</option>
-                            <option value="inchecon">인천</option>
+                            <option value="incheon">인천</option>
                             <option value="gangwon">강원</option>
                             <option value="gyeongsang">경상</option>
                             <option value="jeolla">전라</option>
