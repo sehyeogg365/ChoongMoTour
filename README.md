@@ -33,6 +33,9 @@ https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR> 형태
   
   
   Git Hub
+ 
+  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
+  
   
   AWS
 <img src="https://img.shields.io/badge/amazonaws-232F3E?style=flat-square&logo=amazonaws&logoColor=white"/>
