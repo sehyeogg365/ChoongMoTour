@@ -10,10 +10,10 @@ https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR> 형태
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
  HTML5  
- <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
  
  CSS3
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=JavaScript&logoColor=white"/>
+ <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=JavaScript&logoColor=white"/>
   
 JAVASCRIPT 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
