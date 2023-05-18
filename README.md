@@ -7,9 +7,8 @@ https://img.shields.io/badge/<LABEL>-<MESSAGE>-<COLOR> 형태
  💪Skills
   
  JAVA
+   <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
-  
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="20" role="img" aria-label="Java"><title>Java</title><g shape-rendering="crispEdges"><rect width="0" height="20" fill="#007396"/><rect x="0" width="35" height="20" fill="#007396"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><text x="175" y="140" transform="scale(.1)" fill="#fff" textLength="250">Java</text></g></svg>
   HTML5  
   <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML&logoColor=white"/>
  
