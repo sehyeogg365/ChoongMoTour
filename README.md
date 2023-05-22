@@ -51,5 +51,6 @@ Apache Tomcat
 [ChoongMo-Tour.pptx](https://github.com/sehyeogi360/ChoongMoTour/files/11530871/ChoongMo-Tour.pptx)
 
 <div> 
-  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FpR44c%2FbtsgYzMUo6K%2FnfkXHPH8M2qhmUxNyj3vxK%2Fimg.jpg"/>
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn
+            .net%2Fdn%2FpR44c%2FbtsgYzMUo6K%2FnfkXHPH8M2qhmUxNyj3vxK%2Fimg.jpg"/>
 </div>
