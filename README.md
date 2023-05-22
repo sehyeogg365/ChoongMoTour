@@ -52,5 +52,5 @@ Apache Tomcat
 
 <div> 
   <img src="https://img1.daumcdn.net/thumb/R1280x0/scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn
-            .net%2Fdn%2FpR44c%2FbtsgYzMUo6K%2FnfkXHPH8M2qhmUxNyj3vxK%2Fimg.jpg"/>
+            .net%2Fdn%2FpR44c%2FbtsgYzMUo6K%2FnfkXHPH8M2qhmUxNyj3vxK%2Fimg.jpg width=1000"/>
 </div>
