@@ -46,7 +46,7 @@ AWS
 Apache Tomcat
 <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat-square&logo=Apache Tomcat&logoColor=white"/>
 
-  <img src="/ChoongMo-Tour.jpg"/>
+  
 </div>
 
 
