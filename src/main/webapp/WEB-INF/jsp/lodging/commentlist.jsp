@@ -34,36 +34,80 @@
 	<div id = "wrap">
 	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<div class="comment-page">
+		<section class="contents d-flex justify-content-center">
+			<div class="comment-page">
 			<h1 class="text-center">
 				ChoongMo Tour Comment Page
 			</h1>
 		
+			<div class="d-flex  mt-4">
+					<div class="lodging-profile2">
+						<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
+					</div>
+						
+					
+						<div class="ml-3">
+							<div class="d-flex">
+								<c:choose>
+									<c:when test = "${lodging.level eq '5성급' }">
+										<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '4성급' }">
+										<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '3성급' }">
+										<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '2성급' }">
+										<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '1성급' }">
+										<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+								</c:choose>
+								<div class="ml-3">
+									<h2 class="font-weight-bold">${lodging.roomName }</h2>
+								</div>
+							
+							</div>
+							<br>
+							<div class="">
+								<c:choose>
+									<c:when test ="${lodging.areaName eq 'seoul'}">
+										<h4 class="text-secondary">서울</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'incheon'}">
+										<h4 class="text-secondary">인천</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gangwon'}">
+										<h4 class="text-secondary">강원</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+										<h4 class="text-secondary">경상</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeolla'}">
+										<h4 class="text-secondary">전라</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'busan'}">
+										<h4 class="text-secondary">부산</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeju'}">
+										<h4 class="text-secondary">제주</h4>
+									</c:when>
+								</c:choose>
+							
+							</div>
+						
+						</div>
+						
+					
+							
 		
-			<div class="lodging-profile2 align-items-center">
-					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
-					<c:choose>
-						<c:when test = "${lodging.level eq '5성급' }">
-							<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '4성급' }">
-							<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '3성급' }">
-							<h3 class="text-second">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '2성급' }">
-							<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '1성급' }">
-							<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-					</c:choose>
-				
-				</div>
-				<div class="text-center">
-					<h2>${lodging.roomName }</h2>
+					
 				</div><br>
+				
+				<br>
+		
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
@@ -142,12 +186,14 @@
 		
 		
 		</div>
-	
+		</section>
+	</div>
+
 	
 	
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	</div>
+
 	<style>
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
