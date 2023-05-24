@@ -128,17 +128,34 @@
 				    <div class="modal-content">
 				    	<div class="modal-header">
 							<h5 class="modal-title">객실 댓글 달기</h5>
-								        
+								   
 						</div>	
 					   <div class="modal-body text-center">
-				       	<p></p>
-				    	<p id="contentInput${reserve.roomId }"></p>
-				    	<p></p>
+				       	<div class="imageInput">
+				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+					
+							<input type="file" name="file" id="fileInput" class="">
+				       	</div>
 				       	
+				    	<div>
+				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
+				    	</div>
+				    	
+				    	<div>
+					    	<select class="form-control" id ="starpointSelector">
+					    		<option>별점 선택</option>
+					    		<option value="1.0">★☆☆☆☆</option>
+					    		<option value="2.0">★★☆☆☆</option>
+					    		<option value="3.0">★★★☆☆</option>
+					    		<option value="4.0">★★★★☆</option>
+					    		<option value="5.0">★★★★★</option>
+					    		
+					    	</select>
+				       	</div>
 				       	
 				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 				      <div class="modal-footer">
-						<a href="#" id="commentBtn">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
+						<a href="#" id="commentBtn" class="comment-btn" data-room-id="${reserve.roomId }">댓글달기</a> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
 						<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 					 </div>
 				   
@@ -183,19 +200,18 @@
 		 
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
-		 $("#commentBtn").on("click", function(){
-			 
-		 });
-		 
-		 
- 		$(".comment-modal-btn").on("click", function(){
-			 
+		 $(".comment-btn").on("click", function(){
 			 let id = $(this).data("room-id");
 			 
-			 let content = ("#contentInput" + id).val();
+			 let content = $("#contentInput" + id).val();
+			 let startpoint = $("#starpointInput" + id).val();
 			 
+			 
+		
 			 
 		 });
+		 
+
  		
  		$(".x-btn").on("click", function(){
  			
