@@ -4,13 +4,14 @@ import java.util.Date;
 
 public class Comment {
 	
-	int id;
-	int userId;
-	int roomId;
-	String content;
-	double starpoint;
-	Date createdAt;
-	Date updatedAt;
+	private int id;
+	private int userId;
+	private int roomId;
+	private String imagePath;
+	private String content;
+	private double starpoint;
+	private Date createdAt;
+	private Date updatedAt;
 	public int getId() {
 		return id;
 	}
@@ -28,6 +29,12 @@ public class Comment {
 	}
 	public void setRoomId(int roomId) {
 		this.roomId = roomId;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 	public String getContent() {
 		return content;

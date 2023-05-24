@@ -133,7 +133,7 @@ public class LodgingRestController {
 		return resultMap;
 	}
 	
-	//댓글 달기
+	//댓글 작성
 	@PostMapping("/comment/create")
 	public Map<String, String> commentCreate(
 											@RequestParam("roomId") int roomId
