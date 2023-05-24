@@ -111,7 +111,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentModalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button">댓글달기</button>
+									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${room.id }">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -123,7 +123,7 @@
 				<!-- Modal 도 댓글달기-->
 			
 			 
-				<div class="modal fade" id="moreModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="commentModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
 				    	<div class="modal-header">
