@@ -41,17 +41,19 @@ public class CommentBO {
 	
 	//댓글 목록
 	
-	public List<CommentDetail> getCommentList(int roomId, int userId){
+	public List<CommentDetail> getCommentList(int roomId){
 		
-		List<Comment> commentList = commentDAO.selectCommentList(roomId, userId);
+		List<Comment> commentList = commentDAO.selectCommentList(roomId);
 		
 		List<CommentDetail> commentDetailList = new ArrayList<>();
 		
 		
 		for (Comment comment : commentList) {
 			
-			User user = userBO.getUserInfo(comment.getUserId());
+			
 			Room room = lodgingBO.getRoom(comment.getRoomId());
+			User user = userBO.getUserInfo(comment.getUserId());
+			
 			CommentDetail commentDetail = new CommentDetail();
 			
 			

@@ -161,9 +161,7 @@ public class LodgingController {
 		
 		//여기가 비오를 호출하는곳 
 		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
-//		ReserveDetail reserveDetail = reserveBO.getReserveInfoById(userId);
-//		
-//		model.addAttribute("reserveDetail", reserveDetail);
+//	
 		
 		return "lodging/reservepage";
 		
@@ -198,21 +196,20 @@ public class LodgingController {
 	
 	
 	//댓글목록
-		
 	@GetMapping("/commentlist/view")
 	public String commentList(Model model
 							, @RequestParam("roomId") int roomId
 							, @RequestParam("lodgingId")int lodgingId
-							, HttpSession session
+					
 							) {
 		
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	
 		
-		int userId = (Integer)session.getAttribute("userId");
+		//int userId = (Integer)session.getAttribute("userId");
 		
-		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, userId);
+		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
 		
