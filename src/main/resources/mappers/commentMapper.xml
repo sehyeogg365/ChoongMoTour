@@ -34,6 +34,20 @@
   </insert>
   
   <!-- 댓글 목록 -->
+  <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
+  	SELECT
+  		, `id`
+  		, `userId`
+  		, `roomId`
+  		, `content`
+  		, `starpoint`
+  	FROM
+  		`comment`
+  	WHERE
+  		`roomId` = #{roomId}
+  	ORDER BY
+  		`id` DESC; <!-- 최근 업로드한 순서대로 -->
+  </select>
   
   
   

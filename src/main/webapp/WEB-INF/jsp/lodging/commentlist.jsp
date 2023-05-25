@@ -127,60 +127,26 @@
 			<div class="comment-box mt-3">
 				
 				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+					<div class="comment-profile d-flex">
+						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+						<div class="mt-4 ml-3">하굴루</div>
 					</div>
-					<div class="comment-content ml-5">
+					<div class="comment-content  ml-5 ">
+						<div class="ml-3">★★★★★</div>
+						<div class="mt-3 ml-3 small text-secondary">트윈룸 이용자</div>
 						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
 						<div class="ml-3 small">경치가 좋습니다.</div>
+						<div class="comment-image ml-3"><img width="400" height ="300"src="https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_1280.jpg"/></div>
+						<div class="ml-3 small">2023-05-25</div>
+						
 					</div>
 			
 				</div>
 			
 			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
-						<div class="ml-3 small">방이 넓어서 좋습니다..</div>
-					</div>
-				</div>
-			
-			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">더블룸 이용자</div>
-						<div class="ml-3 small">방이꺠끗해서 좋습니다.</div>
-					</div>
-				</div>
-			
-			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">싱글룸 이용자</div>
-						<div class="ml-3 small">직원들이 친절해서 좋습니다.</div>
-					</div>
-				</div>
-			
-			</div>
+
+
+	
 		
 		</div>
 		

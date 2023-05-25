@@ -41,9 +41,9 @@ public class CommentBO {
 	
 	//댓글 목록
 	
-	public List<CommentDetail> getCommentList(int roomId){
+	public List<CommentDetail> getCommentList(int roomId, int id){
 		
-		List<Comment> commentList = commentDAO.selectCommentList(roomId);
+		List<Comment> commentList = commentDAO.selectCommentList(roomId, id);
 		
 		List<CommentDetail> commentDetailList = new ArrayList<>();
 		

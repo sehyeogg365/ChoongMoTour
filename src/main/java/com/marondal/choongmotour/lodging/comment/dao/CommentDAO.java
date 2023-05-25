@@ -20,7 +20,7 @@ public interface CommentDAO {
 	
 	
 	//댓글 리스트
-	public List<Comment> selectCommentList(@Param("roomId") int roomId);
+	public List<Comment> selectCommentList(@Param("roomId") int roomId, @Param("id") int id);
 	
 	
 	

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.comment.bo.CommentBO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
+import com.marondal.choongmotour.lodging.model.CommentDetail;
 import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
@@ -37,6 +39,9 @@ public class LodgingController {
 	
 	@Autowired
 	private ReserveBO reserveBO;
+	
+	@Autowired
+	private CommentBO commentBO;
 
 	
 	//사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
@@ -130,7 +135,6 @@ public class LodgingController {
 	@GetMapping("/reservation/view")
 	public String reservePage(Model model
 			, @RequestParam("roomId") int roomId
-
 			, @RequestParam("lodgingId") int lodgingId//, @RequestParam("lodgingId") int lodgingId 이렇게 로징테이블에 만들고 아까 룸페이지에서 예약하기 버튼을누를때 roomid만이 파라미터로 가져감. 그럴땐 로징아이디까지 파라미터 추가시키기
 			, HttpSession session
 			) {
@@ -197,14 +201,20 @@ public class LodgingController {
 		
 	@GetMapping("/commentlist/view")
 	public String commentList(Model model
-							, int id) {
+				//			, @RequestParam("roomId")int roomId
+							, @RequestParam("id")int id) {
 		Lodging lodging = lodgingBO.getLodging(id);
 		
 		model.addAttribute("lodging", lodging);		
 		//객실리스트 싱글, 더블, 트윈
-		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(id);
+//		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(id);
+//		
+//		model.addAttribute("roomList", roomList);
 		
-		model.addAttribute("roomList", roomList);
+//		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, id);
+//		
+//		model.addAttribute("commentDetailList", commentDetailList);
+		
 		return "lodging/commentlist";
 	}
 	
