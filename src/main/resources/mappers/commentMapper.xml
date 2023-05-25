@@ -45,6 +45,8 @@
   		`comment`
   	WHERE
   		`roomId` = #{roomId}
+  		AND
+  		`userId` = #{userId}
   	ORDER BY
   		`id` DESC; <!-- 최근 업로드한 순서대로 -->
   </select>
