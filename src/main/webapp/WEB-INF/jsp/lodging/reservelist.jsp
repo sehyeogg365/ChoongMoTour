@@ -134,15 +134,15 @@
 				       	<div class="imageInput">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
-							<input type="file" name="file" id="fileInput" class="">
+							<input type="file" name="file" id="fileInput${reserve.roomId }" class="">
 				       	</div>
 				       	
 				    	<div class="mt-3">
-				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
+				    		<textarea rows="5" cols="100" id="contentInput${reserve.roomId }" class="form-control content-input"></textarea>
 				    	</div>
 				    	
 				    	<div>
-					    	<select class="form-control mt-3" id ="starpointSelector">
+					    	<select class="form-control mt-3" id ="starpointSelector${reserve.roomId }">
 					    		<option>별점 선택</option>
 					    		<option value="1.0">★☆☆☆☆</option>
 					    		<option value="2.0">★★☆☆☆</option>
@@ -202,9 +202,9 @@
 		 
 		 $(".comment-modal-btn").on("click", function(){
 			 let id = $(this).data("room-id");			
-			 let file = $("#fileInput")[0];
-			 let content = $("#contentInput").val();
-			 let starpoint = $("#starpointSelector").val();
+			 let file = $("#fileInput" + id)[0];
+			 let content = $("#contentInput" + id).val();
+			 let starpoint = $("#starpointSelector" + id).val();
 			 
 			 if(file.files.length == 0){
 				 alert("파일을 선택하세요");

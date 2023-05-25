@@ -52,7 +52,6 @@ public class CommentBO {
 			
 			User user = userBO.getUserInfo(comment.getUserId());
 			Room room  =lodgingBO.getRoom(comment.getRoomId());
-			Lodging lodging = lodgingBO.getLodging(room.getLodgingId());
 			CommentDetail commentDetail = new CommentDetail();
 			
 			

@@ -114,7 +114,7 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
+				    <a class="nav-link" href="/lodging/commentlist/view?lodgingId=${comment.lodgingId }">리뷰</a>
 				  </li>
 			
 			
@@ -124,27 +124,28 @@
 		
 		<div class="comment-list">
 		
+		<c:forEach var="comment" items="${commentDetailList }">
 			<div class="comment-box mt-3">
 				
 				<div class="comment">
 					<div class="comment-profile d-flex">
 						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-						<div class="mt-4 ml-3">하굴루</div>
+						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
 					<div class="comment-content  ml-5 ">
-						<div class="ml-3">★★★★★</div>
-						<div class="mt-3 ml-3 small text-secondary">트윈룸 이용자</div>
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small">경치가 좋습니다.</div>
-						<div class="comment-image ml-3"><img width="400" height ="300"src="https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_1280.jpg"/></div>
-						<div class="ml-3 small">2023-05-25</div>
+						<div class="ml-3">${comment.starpoint }</div>
+						<div class="mt-3 ml-3 small text-secondary">${comment.size } 이용자</div>
+						<div class="ml-3">${comment.content }</div>
+						
+						<div class="comment-image ml-3"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+						<div class="ml-3 small">${comment.createdAt }</div>
 						
 					</div>
 			
 				</div>
 			
 			</div>
-
+		</c:forEach>
 
 	
 		
@@ -168,6 +169,12 @@
 	</style>
 	<script>
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
+	$(document).ready(function(){
+		
+		
+		
+	});
+	
 	</script>
 
 </body>
