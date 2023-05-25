@@ -36,7 +36,7 @@
   <!-- 댓글 목록 -->
   <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
   	SELECT
-  		, `id`
+  		 `id`
   		, `userId`
   		, `roomId`
   		, `content`

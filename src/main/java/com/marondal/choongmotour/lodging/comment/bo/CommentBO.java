@@ -51,11 +51,12 @@ public class CommentBO {
 		for (Comment comment : commentList) {
 			
 			User user = userBO.getUserInfo(comment.getUserId());
-			Room room  =lodgingBO.getRoom(comment.getRoomId());
+			Room room = lodgingBO.getRoom(comment.getRoomId());
 			CommentDetail commentDetail = new CommentDetail();
 			
 			
 			commentDetail.setId(comment.getId());
+			commentDetail.setUserId(comment.getUserId());
 			commentDetail.setRoomId(comment.getRoomId());
 			commentDetail.setImagePath(comment.getImagePath());// 첨부 파일
 			commentDetail.setContent(comment.getContent());// 댓글 내용

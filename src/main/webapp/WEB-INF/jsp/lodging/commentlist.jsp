@@ -114,7 +114,7 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="/lodging/commentlist/view?lodgingId=${comment.lodgingId }">리뷰</a>
+				    <a class="nav-link" href="#">리뷰</a>
 				  </li>
 			
 			
@@ -133,6 +133,7 @@
 						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
 					<div class="comment-content  ml-5 ">
+						<div class="">${comment.roomId }</div>
 						<div class="ml-3">${comment.starpoint }</div>
 						<div class="mt-3 ml-3 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-3">${comment.content }</div>

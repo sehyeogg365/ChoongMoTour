@@ -210,7 +210,11 @@ public class LodgingController {
 		
 		model.addAttribute("lodging", lodging);	
 		
-		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, id);
+		Room room = lodgingBO.getRoom(roomId);
+		
+		model.addAttribute("room", room);
+		
+		List<CommentDetail> commentDetailList = commentBO.getCommentList(id);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
 		

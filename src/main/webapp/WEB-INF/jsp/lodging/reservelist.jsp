@@ -206,10 +206,7 @@
 			 let content = $("#contentInput" + id).val();
 			 let starpoint = $("#starpointSelector" + id).val();
 			 
-			 if(file.files.length == 0){
-				 alert("파일을 선택하세요");
-				 return ;
-			}
+
 			 
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
