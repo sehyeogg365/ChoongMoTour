@@ -201,20 +201,18 @@ public class LodgingController {
 		
 	@GetMapping("/commentlist/view")
 	public String commentList(Model model
-							, @RequestParam("roomId")int roomId
-							, @RequestParam("id")int id
+							, @RequestParam("roomId") int roomId
 							, @RequestParam("lodgingId")int lodgingId
+							, HttpSession session
 							) {
 		
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	
 		
-		Room room = lodgingBO.getRoom(roomId);
+		int userId = (Integer)session.getAttribute("userId");
 		
-		model.addAttribute("room", room);
-		
-		List<CommentDetail> commentDetailList = commentBO.getCommentList(id);
+		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, userId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
 		
