@@ -58,7 +58,7 @@ public class CommentBO {
 			
 			
 			commentDetail.setId(comment.getId());
-			commentDetail.setUserId(comment.getUserId());
+			commentDetail.setUserId(user.getId());
 			commentDetail.setRoomId(comment.getRoomId());
 			commentDetail.setImagePath(comment.getImagePath());// 첨부 파일
 			commentDetail.setContent(comment.getContent());// 댓글 내용

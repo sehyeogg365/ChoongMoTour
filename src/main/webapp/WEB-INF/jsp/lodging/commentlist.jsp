@@ -125,7 +125,7 @@
 		<div class="comment-list">
 		
 			<c:forEach var="comment"  items = "${commentDetailList }">
-			<div class="bg-warning comment-box mt-3">
+			<div class="comment-box mt-3">
 				
 				<div class="comment">
 				

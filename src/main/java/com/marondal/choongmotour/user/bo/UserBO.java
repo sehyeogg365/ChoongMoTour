@@ -95,7 +95,7 @@ public class UserBO {
 		
 		
 		
-		for (int i = 0; i < charSet.length - 1; i++) {
+		for (int i = 0; i < charSet.length; i++) {
 			password = charSet[i] + password;//문자열을 이어붙이는 형식
 		}
 		

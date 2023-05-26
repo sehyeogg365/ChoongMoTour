@@ -206,11 +206,7 @@ public class LodgingController {
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	
-		
-		Room room = lodgingBO.getRoom(roomId);
-		
-		model.addAttribute("room", room);
-		
+	
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, userId);
