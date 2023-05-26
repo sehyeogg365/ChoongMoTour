@@ -7,9 +7,9 @@ public class Comment {
 	private int id;
 	private int userId;
 	private int roomId;
-	private String imagePath;
 	private String content;
 	private double starpoint;
+	private String imagePath;
 	private Date createdAt;
 	private Date updatedAt;
 	public int getId() {
@@ -30,12 +30,6 @@ public class Comment {
 	public void setRoomId(int roomId) {
 		this.roomId = roomId;
 	}
-	public String getImagePath() {
-		return imagePath;
-	}
-	public void setImagePath(String imagePath) {
-		this.imagePath = imagePath;
-	}
 	public String getContent() {
 		return content;
 	}
@@ -47,6 +41,12 @@ public class Comment {
 	}
 	public void setStarpoint(double starpoint) {
 		this.starpoint = starpoint;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 	public Date getCreatedAt() {
 		return createdAt;

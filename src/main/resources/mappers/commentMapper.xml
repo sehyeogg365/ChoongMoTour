@@ -13,8 +13,9 @@
   			`comment`
   			(
   				`userId`
-  				,`roomId`
+  				, `roomId`
   				, `content`
+  				, `imagePath`
   				, `starpoint`
   				, `createdAt`
   				, `updatedAt`
@@ -24,6 +25,7 @@
   				#{userId}
   				, #{roomId}
   				, #{content}
+  				, #{imagePath}
   				, #{starpoint}
   				, now()
   				, now()
@@ -40,6 +42,7 @@
   		, `userId`
   		, `roomId`
   		, `content`
+  		, `imagePath`
   		, `starpoint`
   	FROM
   		`comment`
