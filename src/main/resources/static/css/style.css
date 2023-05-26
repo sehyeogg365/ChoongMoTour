@@ -356,6 +356,11 @@ header{
 	
 }
 
+.delete-btn{
+	
+	position: absolute;
+}
+
 
 
 .userprofile{

@@ -34,7 +34,7 @@
   </insert>
   
   <!-- 댓글 목록 -->
-  <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
+  <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="map">
   	SELECT
   		 `id`
   		, `userId`

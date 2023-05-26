@@ -124,16 +124,24 @@
 		
 		<div class="comment-list">
 		
-		<c:forEach var="comment" items="${commentDetailList }">
-			<div class="comment-box mt-3">
+			<c:forEach var="comment"  items = "${commentDetailList }">
+			<div class="bg-warning comment-box mt-3">
 				
 				<div class="comment">
+				
+				<div class="mr-3"><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
+					<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
+				</div>
+				
+				
 					<div class="comment-profile d-flex">
 						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
 					<div class="comment-content  ml-5 ">
 						<div class="">${comment.roomId }</div>
+						<div class="">${comment.userId }</div>
+						
 						<div class="ml-3">${comment.starpoint }</div>
 						<div class="mt-3 ml-3 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-3">${comment.content }</div>
@@ -146,7 +154,7 @@
 				</div>
 			
 			</div>
-		</c:forEach>
+			</c:forEach>
 
 	
 		
@@ -170,11 +178,17 @@
 	</style>
 	<script>
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
-	$(document).ready(function(){
-		
-		
-		
-	});
+//	$(document).ready(function(){
+//		$(".delete-btn").on("click", function(){
+//			
+//			let id = $(this).data("room-id");
+//			
+//			
+//			
+//		});
+//		
+//		
+//	});
 	
 	</script>
 

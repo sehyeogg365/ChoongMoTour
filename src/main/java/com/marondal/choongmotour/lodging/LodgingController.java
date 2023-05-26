@@ -200,16 +200,20 @@ public class LodgingController {
 	public String commentList(Model model
 							, @RequestParam("roomId") int roomId
 							, @RequestParam("lodgingId")int lodgingId
-					
+							, HttpSession session
 							) {
 		
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	
 		
-		//int userId = (Integer)session.getAttribute("userId");
+		Room room = lodgingBO.getRoom(roomId);
 		
-		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId);
+		model.addAttribute("room", room);
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, userId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
 		
