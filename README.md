@@ -48,6 +48,14 @@ Apache Tomcat
 
   
 </div>
+충모투어 사용자 로그인화면 : http://13.209.26.116:8080/user/signin/view
+충모투어 관리자 로그인화면 : http://13.209.26.116:8080/admin/signin/view
+
+사용자아이디: user01 
+비밀번호:1234
+
+관리자 아이디:admin01
+비밀번호:1234
 
 
 <div class=""><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fspc2n%2FbtsgKok87uv%2Fxp91CJiPXkPurK1KXa5Km1%2Fimg.jpg"/> </div>
