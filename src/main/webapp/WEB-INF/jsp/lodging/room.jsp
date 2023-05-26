@@ -32,7 +32,7 @@
 	
 	<!-- 네이버 지도 api -->
 	<script type="text/javascript" 
-	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s"></script>
 </head>
 <body>
 	<div id = "wrap">
