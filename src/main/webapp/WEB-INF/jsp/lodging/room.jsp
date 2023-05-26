@@ -232,13 +232,13 @@
 		 var map = new naver.maps.Map("map", {
 			    center: new naver.maps.LatLng(37.3595316, 127.1052133),
 			    zoom: 15,
-			    mapTypeControl: true,
-			    scaleControl: false,
-		        logoControl: false,
-		        mapDataControl: false,
-		        zoomControl: true,
+			    mapTypeControl: true, 
+			    scaleControl: false,//컨트롤러
+		        logoControl: false,//컨트롤러
+		        mapDataControl: false,//컨트롤러
+		        zoomControl: true,//컨트롤러
 			});
-
+			
 			var infoWindow = new naver.maps.InfoWindow({
 			    anchorSkew: true
 			});
