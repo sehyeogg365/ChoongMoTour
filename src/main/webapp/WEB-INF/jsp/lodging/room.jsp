@@ -30,7 +30,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	
-
+	<!-- 네이버 지도 api -->
+	<script type="text/javascript" 
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
 </head>
 <body>
 	<div id = "wrap">
@@ -99,7 +101,7 @@
 										<h4 class="text-secondary">제주</h4>
 									</c:when>
 								</c:choose>
-							
+								<div id="map" style="width:400px; height:300px;"></div>
 							</div>
 						
 						</div>
@@ -227,7 +229,17 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		
+		 	var map = new naver.maps.Map('map', {
+			    center: new naver.maps.LatLng(37.5112, 127.0981), // 잠실 롯데월드를 중심으로 하는 지도
+			    zoom: 15
+			});
+		 	
+		 	var map = new naver.maps.Map('map');
+		 	
+		 	var marker = new naver.maps.Marker({
+		 	    position: new naver.maps.LatLng(37.5112, 127.0981),
+		 	    map: map
+		 	});
 		
 		 
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
