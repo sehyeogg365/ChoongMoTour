@@ -124,7 +124,7 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }&roomId=${lodging.id}">리뷰</a>
+				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }&roomId=${lodging.id}&roomId=${lodging.id}&roomId=${lodging.id}">리뷰</a>
 				  </li>
 			
 			
@@ -234,11 +234,6 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-			
-		var now = new Date();
-		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
-			
 		//지도를 그려주는 함수 실행
 		 selectMapList();
 
@@ -336,6 +331,10 @@
 		 }
 
 		 
+		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
+		
+		var now = new Date();
+		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		
 		 
 		 //document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
