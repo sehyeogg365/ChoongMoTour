@@ -76,7 +76,7 @@
 								</div>
 							
 							</div>
-							<br>
+							
 							<div class="">
 								<c:choose>
 									<c:when test ="${lodging.areaName eq 'seoul'}">
@@ -124,7 +124,7 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }">리뷰</a>
+				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }&roomId=${lodging.id}">리뷰</a>
 				  </li>
 			
 			
