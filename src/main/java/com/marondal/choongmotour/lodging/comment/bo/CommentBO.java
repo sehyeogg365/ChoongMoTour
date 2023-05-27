@@ -78,11 +78,15 @@ public class CommentBO {
 		
 	}
 
+	//댓글 한행조회 
+	
 	
 	
 	//댓글 삭제
 	
 	public int deleteComment(int roomId, int userId) {
+		
+		//파일 있을때 파일도 삭제
 		
 		
 		

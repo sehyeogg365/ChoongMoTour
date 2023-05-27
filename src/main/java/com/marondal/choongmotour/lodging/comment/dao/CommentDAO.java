@@ -23,6 +23,7 @@ public interface CommentDAO {
 	public List<Comment> selectCommentList(@Param("roomId") int roomId, @Param("userId") int userId);
 	
 	
+	//댓글 한행?
 	
 	
 	//댓글 삭제
