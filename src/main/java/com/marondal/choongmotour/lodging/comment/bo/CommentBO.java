@@ -79,7 +79,10 @@ public class CommentBO {
 	}
 
 	//댓글 한행조회 
-	
+	public Comment getComment(int id) {
+		
+		return commentDAO.selectComment(id);
+	}
 	
 	
 	//댓글 삭제
@@ -88,7 +91,8 @@ public class CommentBO {
 		
 		//파일 있을때 파일도 삭제
 		
-		
+		Comment comment = commentDAO.selectComment(roomId);
+		FileManagerService.removeFile(comment.getImagePath());
 		
 		return commentDAO.deleteComment(roomId, userId);
 		

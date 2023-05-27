@@ -24,6 +24,7 @@ public interface CommentDAO {
 	
 	
 	//댓글 한행?
+	public Comment selectComment(@Param("id") int id);
 	
 	
 	//댓글 삭제
