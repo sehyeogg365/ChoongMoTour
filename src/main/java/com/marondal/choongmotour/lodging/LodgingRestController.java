@@ -163,6 +163,23 @@ public class LodgingRestController {
 	
 	
 	//댓글 삭제
+	@GetMapping("/comment/delete")
+	public Map<String, String> commentDelete(@RequestParam("roomId") int roomId
+											, HttpSession session){
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		
+		
+		return resultMap;
+		
+		
+		
+	}
+	
+	
 	
 	
 	//-------관리자 페이지---------

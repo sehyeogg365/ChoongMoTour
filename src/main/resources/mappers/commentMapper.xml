@@ -55,5 +55,18 @@
   
   
   <!-- 댓글 삭제 -->
+  <delete id = "deleteComment" parameterType="map">
+  
+  	DELETE  		
+  	FROM 
+  		`comment`
+  	WHERE `roomId` = #{roomId}
+  		   AND
+  		  `userId` = #{userId};
+  
+  
+  </delete>
+  
+  
   
   </mapper>

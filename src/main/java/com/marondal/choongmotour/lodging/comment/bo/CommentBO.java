@@ -49,12 +49,13 @@ public class CommentBO {
 		
 		
 		for (Comment comment : commentList) {
-			
-			
-			Room room = lodgingBO.getRoom(comment.getRoomId());
+					
 			User user = userBO.getUserInfo(comment.getUserId());
+
+			Room room = lodgingBO.getRoom(comment.getRoomId());
 			
 			CommentDetail commentDetail = new CommentDetail();
+			
 			
 			
 			commentDetail.setId(comment.getId());
@@ -79,7 +80,16 @@ public class CommentBO {
 
 	
 	
+	//댓글 삭제
 	
+	public int deleteComment(int roomId, int userId) {
+		
+		
+		
+		return commentDAO.deleteComment(roomId, userId);
+		
+		
+	}
 	
 	
 	
