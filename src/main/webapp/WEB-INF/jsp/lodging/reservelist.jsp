@@ -127,8 +127,10 @@
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
 				    	<div class="modal-header">
-							<h5 class="modal-title">객실 댓글 달기 ${reserve.roomId }</h5>
-								   
+							<h5 class="modal-title">객실 댓글 달기</h5>
+							<h4>룸아이디${reserve.roomId }</h4>
+							<h4>로징아이디${reserve.lodgingId }</h4>
+							
 						</div>	
 					   <div class="modal-body text-center">
 				       	<div class="imageInput">

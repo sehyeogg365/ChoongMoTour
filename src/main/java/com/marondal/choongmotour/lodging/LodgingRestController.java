@@ -136,7 +136,7 @@ public class LodgingRestController {
 	//댓글 작성
 	@PostMapping("/comment/create")
 	public Map<String, String> commentCreate(
-											@RequestParam("roomId") int roomId
+											@RequestParam("roomId") int roomId									
 											, @RequestParam(value="file", required=false) MultipartFile file
 											, @RequestParam("content") String content
 											, @RequestParam("starpoint") double starpoint				

@@ -7,6 +7,7 @@ public class CommentDetail {
 	private int id;
 	private int userId;
 	private int roomId;
+	private int lodgingId;	
 	private String content;
 	private String nickname;
 	private String imagePath;
@@ -30,6 +31,12 @@ public class CommentDetail {
 	}
 	public void setRoomId(int roomId) {
 		this.roomId = roomId;
+	}
+	public int getLodgingId() {
+		return lodgingId;
+	}
+	public void setLodgingId(int lodgingId) {
+		this.lodgingId = lodgingId;
 	}
 	public String getContent() {
 		return content;
@@ -67,6 +74,8 @@ public class CommentDetail {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
+
+	
 	
 	
 }

@@ -95,11 +95,9 @@ public class LodgingController {
 		
 		model.addAttribute("roomList", roomList);
 		
+		Room room = lodgingBO.getRoom(id);
 		
-	
-		
-		
-		
+		model.addAttribute("room", room);
 		
 		return "lodging/room";
 	}
@@ -209,7 +207,7 @@ public class LodgingController {
 	
 		//int userId = (Integer)session.getAttribute("userId");
 		
-		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId);
+		List<CommentDetail> commentDetailList = commentBO.getCommentList(roomId, lodgingId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
 		

@@ -142,7 +142,25 @@
 						<div class="">${comment.roomId }</div>
 						<div class="">${comment.userId }</div>
 						
-						<div class="ml-3">${comment.starpoint }</div>
+						<c:choose>
+						
+						<c:when test = "${comment.starpoint eq 1.0}">
+							<div class="">★</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 2.0}">
+							<div class="">★★</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 3.0}">
+							<div class="">★★★</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 4.0}">
+							<div class="">★★★★</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 5.0}">
+							<div class="">★★★★★</div>
+						</c:when>
+						
+						</c:choose>
 						<div class="mt-3 ml-3 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-3">${comment.content }</div>
 						

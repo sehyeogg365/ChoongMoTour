@@ -27,7 +27,8 @@ public interface CommentDAO {
 	public Comment selectComment(@Param("id") int id);
 	
 	
-	//댓글 삭제
-	
+	//댓글 삭제	
 	public int deleteComment(@Param("roomId") int roomId, @Param("userId") int userId);
+	
 }
+
