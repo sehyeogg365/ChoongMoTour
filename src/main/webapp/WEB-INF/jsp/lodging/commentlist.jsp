@@ -164,7 +164,16 @@
 						<div class="mt-3 ml-3 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-3">${comment.content }</div>
 						
-						<div class="comment-image ml-3"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+						
+						<c:choose>
+							<c:when test= "${not empty comment.imagePath }">
+								<div class="comment-image ml-3"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+							</c:when>
+							<c:otherwise>
+								<div class=""></div>
+							</c:otherwise>
+							
+						</c:choose>
 						<div class="ml-3 small">${comment.createdAt }</div>
 						
 					</div>
