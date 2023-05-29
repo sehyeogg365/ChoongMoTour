@@ -124,7 +124,8 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }&roomId=${room.id}&roomId=${room.id}&roomId=${room.id}">리뷰</a>
+
+				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }&<c:forEach var="room" items="${roomList }">roomId=${room.id}&</c:forEach>">리뷰</a>  
 				  </li>
 			
 			

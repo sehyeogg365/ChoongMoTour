@@ -41,7 +41,7 @@ public class CommentBO {
 	
 	//댓글 목록
 	
-	public List<CommentDetail> getCommentList(int roomId, int lodgingId){
+	public List<CommentDetail> getCommentList(int roomId){
 		
 		List<Comment> commentList = commentDAO.selectCommentList(roomId);
 		
@@ -51,8 +51,6 @@ public class CommentBO {
 		for (Comment comment : commentList) {
 					
 			User user = userBO.getUserInfo(comment.getUserId());
-
-			Lodging lodging = lodgingBO.getLodging(lodgingId);
 			
 			Room room = lodgingBO.getRoom(comment.getRoomId());
 			
@@ -63,7 +61,6 @@ public class CommentBO {
 			commentDetail.setId(comment.getId());
 			commentDetail.setUserId(user.getId());
 			commentDetail.setRoomId(comment.getRoomId());
-			commentDetail.setLodgingId(lodging.getId());
 			commentDetail.setImagePath(comment.getImagePath());// 첨부 파일
 			commentDetail.setContent(comment.getContent());// 댓글 내용
 			commentDetail.setStarpoint(comment.getStarpoint());//별점
