@@ -167,9 +167,17 @@ public class LodgingRestController {
 	public Map<String, String> commentDelete(@RequestParam("roomId") int roomId
 											, HttpSession session){
 		
-		int userId = (Integer)session.getAttribute("userId");
+		//int userId = (Integer)session.getAttribute("userId");
+		
+		int count = commentBO.deleteComment(roomId);
 		
 		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
 		
 		
 		

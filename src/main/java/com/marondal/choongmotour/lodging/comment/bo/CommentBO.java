@@ -87,14 +87,14 @@ public class CommentBO {
 	
 	//댓글 삭제
 	
-	public int deleteComment(int roomId, int userId) {
+	public int deleteComment(int roomId) {
 		
 		//파일 있을때 파일도 삭제
 		
 		Comment comment = commentDAO.selectComment(roomId);
 		FileManagerService.removeFile(comment.getImagePath());
 		
-		return commentDAO.deleteComment(roomId, userId);
+		return commentDAO.deleteComment(roomId);
 		
 		
 	}
