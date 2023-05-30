@@ -139,25 +139,25 @@
 						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
 					<div class="comment-content  ml-5 ">
-						<div class="">${comment.roomId }</div>
-						<div class="">${comment.userId }</div>
+						<div class="ml-3">${comment.roomId }</div>
+						<div class="ml-3">${comment.userId }</div>
 						
 						<c:choose>
 						
 						<c:when test = "${comment.starpoint eq 1.0}">
-							<div class="">★</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(1.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 2.0}">
-							<div class="">★★</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(2.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 3.0}">
-							<div class="">★★★</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(3.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 4.0}">
-							<div class="">★★★★</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(4.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 5.0}">
-							<div class="">★★★★★</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(5.0)</div>
 						</c:when>
 						
 						</c:choose>
@@ -174,7 +174,7 @@
 							</c:otherwise>
 							
 						</c:choose>
-						<div class="ml-3 small">${comment.createdAt }</div>
+						<!-- <div class="ml-3 small"><fmt:formatDate value ="${comment.createdAt }" pattern = "yyyy년 MM월 dd일"/></div> -->
 						
 					</div>
 			
