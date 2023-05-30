@@ -220,10 +220,10 @@
 				 return ;
 			 }
 			 
-			 alert(id); 
-			 alert(file); 
-			 alert(content); //X
-			 alert(starpoint); //X 
+			 //alert(id); 
+			 //alert(file); 
+			 //alert(content); //X
+			 //alert(starpoint); //X 
 			 
 			 var formData = new FormData();
 			 

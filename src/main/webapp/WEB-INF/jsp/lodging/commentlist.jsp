@@ -221,6 +221,9 @@
 			
 			let id = $(this).data("room-id");
 			
+			alert(id);
+			
+			
 			$.ajax({
 				type:"get"
 				, url:"/lodging/comment/delete"
