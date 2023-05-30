@@ -184,8 +184,8 @@
 							</c:otherwise>
 							
 						</c:choose>
-						<!-- <div class="ml-3 small"><fmt:formatDate value ="${comment.createdAt }" pattern = "yyyy년 MM월 dd일"/></div> -->
 						
+						<div class="ml-3 small"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
 					</div>
 			
 				</div>

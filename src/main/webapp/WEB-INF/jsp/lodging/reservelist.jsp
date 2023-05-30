@@ -144,13 +144,13 @@
 				    	</div>
 				    	
 				    	<div>
-					    	<select class="form-control mt-3" id ="starpointSelector${reserve.roomId }">
+					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector${reserve.roomId }">
 					    		<option>별점 선택</option>
-					    		<option value="1.0">★☆☆☆☆</option>
-					    		<option value="2.0">★★☆☆☆</option>
-					    		<option value="3.0">★★★☆☆</option>
-					    		<option value="4.0">★★★★☆</option>
-					    		<option value="5.0">★★★★★</option>
+					    		<option value="1.0" title ="https://icons.iconarchive.com/icons/github/octicons/256/star-16-icon.png">★☆☆☆☆</option>
+					    		<option value="2.0" title="">★★☆☆☆</option>
+					    		<option value="3.0" title="">★★★☆☆</option>
+					    		<option value="4.0" title="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKineh%2FbtqKbVIlGVb%2F3cd1u2698gFFlAHqztlhk1%2Fimg.jpg">★★★★☆</option>
+					    		<option value="5.0" title="">★★★★★</option>
 					    		
 					    	</select>
 				       	</div>
@@ -199,7 +199,7 @@
 	</style>
 	<script>
 	 $(document).ready(function() {
-		 
+		 $("body select").msDropDown();
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 $(".comment-modal-btn").on("click", function(){
