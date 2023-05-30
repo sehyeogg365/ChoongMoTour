@@ -133,8 +133,9 @@
 					
 				<c:choose>
 					<c:when test="${userId eq comment.userId }">
-						<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
-				
+						<div class="comment-delete">
+							<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
+						</div>
 					</c:when>
 					<c:otherwise>
 						

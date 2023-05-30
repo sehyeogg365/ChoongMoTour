@@ -356,8 +356,12 @@ header{
 	
 }
 
+.comment-delete{
+	position: relative;
+}
+
 .delete-btn{
-	
+	right:-2px;
 	position: absolute;
 }
 
