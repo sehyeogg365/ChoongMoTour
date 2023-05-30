@@ -130,7 +130,17 @@
 				<div class="comment">
 				
 				<div class="mr-3"><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
-					<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
+					
+				<c:choose>
+					<c:when test="${userId eq comment.userId }">
+						<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
+				
+					</c:when>
+					<c:otherwise>
+						
+					</c:otherwise>	
+				</c:choose>	
+					
 				</div>
 				
 				
