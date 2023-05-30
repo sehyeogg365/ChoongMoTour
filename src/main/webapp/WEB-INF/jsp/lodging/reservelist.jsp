@@ -199,7 +199,7 @@
 	</style>
 	<script>
 	 $(document).ready(function() {
-		 $("body select").msDropDown();
+		// $("body select").msDropDown();
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 $(".comment-modal-btn").on("click", function(){

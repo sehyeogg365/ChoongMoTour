@@ -129,11 +129,11 @@
 				
 				<div class="comment">
 				
-				<div class="mr-3"><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
+				<div class=""><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
 					
 				<c:choose>
 					<c:when test="${userId eq comment.userId }">
-						<div class="comment-delete">
+						<div class="comment-delete mr-3">
 							<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
 						</div>
 					</c:when>
