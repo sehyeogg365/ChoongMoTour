@@ -155,19 +155,19 @@
 						<c:choose>
 						
 						<c:when test = "${comment.starpoint eq 1.0}">
-							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(1.0)</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(1.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 2.0}">
-							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(2.0)</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(2.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 3.0}">
-							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(3.0)</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(3.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 4.0}">
-							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(4.0)</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(4.0)</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 5.0}">
-							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png"/width="20">(5.0)</div>
+							<div class="ml-3"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/>(5.0)</div>
 						</c:when>
 						
 						</c:choose>
