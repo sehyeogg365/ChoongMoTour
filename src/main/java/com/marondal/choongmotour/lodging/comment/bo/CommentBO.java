@@ -79,9 +79,9 @@ public class CommentBO {
 	}
 
 	//댓글 한행조회 
-	public Comment getComment(int id) {
+	public Comment getComment(int roomId, int userId) {
 		
-		return commentDAO.selectComment(id);
+		return commentDAO.selectComment(roomId, userId);
 	}
 	
 	
