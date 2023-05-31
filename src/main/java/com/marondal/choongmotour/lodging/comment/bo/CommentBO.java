@@ -91,8 +91,8 @@ public class CommentBO {
 		
 		//파일 있을때 파일도 삭제
 		
-		Comment comment = commentDAO.selectComment(roomId);
-		FileManagerService.removeFile(comment.getImagePath());
+//		Comment comment = commentDAO.selectComment(roomId);//몇몇 호텔의 댓삭이 안이뤄지는 상황.
+//		FileManagerService.removeFile(comment.getImagePath());
 		
 		return commentDAO.deleteComment(roomId);
 		
