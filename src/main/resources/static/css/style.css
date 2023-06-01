@@ -213,10 +213,16 @@ header{
 }
 
 
+.room-page>.room-card-list{
+	
+	width:1000px;
+	margin:auto;
+}
+
 
 .room-card-list >.room-card{
 	
-
+	
 	height:200px;
 	border: 1px solid;
 	border-radius: 8px;
@@ -351,7 +357,8 @@ header{
 
 .comment-list>.comment-box{
 	
-	width: 1000px;
+	width: 970px;
+	margin:auto;
 	border: 1px solid;
     border-radius: 8px;
     box-shadow: 3px 3px 5px 0px black;
