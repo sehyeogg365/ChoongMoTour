@@ -306,6 +306,7 @@ header{
 .reservation-card-list >.reservation-card{
 	width: 350px;
     height: 450px; 
+    border: 1px solid;
     box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 
@@ -338,10 +339,6 @@ header{
 }
 
 
-.comment-page{
-	width: 1000px;
-	
-}
 .comment-page>.comment-list{
 	
 	width:1000px;
@@ -350,9 +347,10 @@ header{
 
 .comment-list>.comment-box{
 	
-
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	width: 950px;
+	border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px black;
 	
 }
 
