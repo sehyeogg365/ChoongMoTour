@@ -54,6 +54,7 @@ header{
 
 .contents> .lodgingcreate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -61,18 +62,21 @@ header{
 
 .contents> .lodgingupdate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
 
 .contents> .roomcreate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
 
 .contents> .roomupdate-page{
 	width:1000px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -133,7 +137,7 @@ header{
 .card-list > .card{
 	width: 400px;
     height: 600px; 
-    
+    border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 	
