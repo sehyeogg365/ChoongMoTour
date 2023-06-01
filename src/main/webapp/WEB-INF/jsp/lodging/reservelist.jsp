@@ -139,7 +139,7 @@
 							<input type="file" name="file" id="fileInput${reserve.roomId }" class="">
 				       	</div>
 				       	
-				       		<input type="text" id="sizeInput" value="사이즈${reserve.size }" class="form-control" readonly>
+				       		<!-- <input type="text" id="sizeInput" value="사이즈${reserve.size }" class="form-control" readonly>-->
 				       
 				       	
 				    	<div class="mt-3">
