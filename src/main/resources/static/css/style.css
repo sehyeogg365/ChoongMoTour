@@ -156,6 +156,7 @@ header{
 
 .info-input-box{
 	width:800px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -163,7 +164,6 @@ header{
 
 
 .lodging-card-list>.lodging-card{
-	
 	
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
