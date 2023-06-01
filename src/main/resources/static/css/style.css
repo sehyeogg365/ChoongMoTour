@@ -168,7 +168,7 @@ header{
 
 
 .lodging-card-list>.lodging-card{
-	
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
