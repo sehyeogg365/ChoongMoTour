@@ -139,6 +139,9 @@
 							<input type="file" name="file" id="fileInput${reserve.roomId }" class="">
 				       	</div>
 				       	
+				       		<input type="text" id="sizeInput" value="사이즈${reserve.size }" class="form-control" readonly>
+				       
+				       	
 				    	<div class="mt-3">
 				    		<textarea rows="5" cols="100" id="contentInput${reserve.roomId }" class="form-control content-input"></textarea>
 				    	</div>

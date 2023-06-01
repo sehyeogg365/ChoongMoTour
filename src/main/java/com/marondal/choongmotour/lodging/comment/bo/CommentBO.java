@@ -60,7 +60,7 @@ public class CommentBO {
 			
 			commentDetail.setId(comment.getId());
 			commentDetail.setUserId(user.getId());
-			commentDetail.setRoomId(comment.getRoomId());
+			commentDetail.setRoomId(roomId);
 			commentDetail.setImagePath(comment.getImagePath());// 첨부 파일
 			commentDetail.setContent(comment.getContent());// 댓글 내용
 			commentDetail.setStarpoint(comment.getStarpoint());//별점
