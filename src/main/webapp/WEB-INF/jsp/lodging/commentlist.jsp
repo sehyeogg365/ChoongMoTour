@@ -46,7 +46,7 @@
 					</div>
 						
 					
-						<div class="ml-3">
+						<div class="ml-3 bg-success">
 							<div class="d-flex">
 								<c:choose>
 									<c:when test = "${lodging.level eq '5성급' }">
@@ -70,7 +70,7 @@
 								</div>
 							
 							</div>
-							<br>
+							
 							<div class="">
 								<c:choose>
 									<c:when test ="${lodging.areaName eq 'seoul'}">
