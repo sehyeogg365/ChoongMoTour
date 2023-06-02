@@ -212,6 +212,9 @@ header{
     
 }
 
+.room-page{
+	width:1000px;
+}
 
 .room-page>.room-card-list{
 	
@@ -350,6 +353,9 @@ header{
 	
 }
 
+.comment-page{
+	width:1000px;
+}
 
 .comment-page>.comment-list{
 	

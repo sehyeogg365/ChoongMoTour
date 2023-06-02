@@ -232,6 +232,58 @@
 	<script>
 	 $(document).ready(function() {
 		 
+		 
+		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
+			
+		var now = new Date();
+		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
+			
+			 
+		//document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
+			 
+		//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
+		
+		$("#startDate").datepicker({//datepicker 요일 한글로 검색
+             dateFormat:"yy-mm-dd",
+            
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , 
+             todayHighlight :true,// 오늘을 표시해줄지. default 가 false
+             showButtonPanel:true,
+             closeText: 'done',
+             minDate: 0,//오늘날짜 부터
+             language: 'ko',
+             onSelect:function(selectedDate) {
+                 
+                 $("#endDate").datepicker("option", "minDate", selectedDate);
+
+                 }
+
+         });
+		// todayHighlight :true,
+       
+
+         $("#endDate").datepicker({//종료일
+             dateFormat:"yy-mm-dd",
+           
+             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+             currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
+             showButtonPanel:true,//버튼보이기
+             closeText: 'done',
+             minDate:'+1D',//오늘날짜 다음 부터
+             language: 'ko',
+             //beforeShow: customRange
+              onSelect:function(selectedDate) {
+                 
+                 $("#startDate").datepicker("option", "maxDate", selectedDate );
+                 
+             
+              }
+            
+
+         });
+		
+		
 		//지도를 그려주는 함수 실행
 		 selectMapList();
 
@@ -306,10 +358,10 @@
 		 	var map = new naver.maps.Map('map', {
 		 	    center: new naver.maps.LatLng(37.3595704, 127.105399),
 		 	    zoom: 10,
-		 	    scaleControl: false,
-		        logoControl: false,
-		        mapDataControl: false,
-		        zoomControl: true,
+		 	    //scaleControl: false,
+		        //logoControl: false,
+		        //mapDataControl: false,
+		        //zoomControl: true,
 		 	});
 		 }
 
@@ -329,15 +381,7 @@
 		 }
 
 		 
-		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
 		
-		var now = new Date();
-		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
-		
-		 
-		 //document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
-		 
-		 //newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
 		
 		 
 		 
@@ -349,54 +393,9 @@
 			 
 		 });
 		
-		// $(".info-modal-btn").on("click", function(){
-		//	 
-		//	 let id = $(this).data("room-id");
-		//	 
-		//	 let content = ("#contentInput" + id).val();
-		//	 
-		//	 
-		// });
+		
  
-		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy-mm-dd",
-            
-             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-             currentText: '오늘 날짜' , 
-             todayHighlight :true,// 오늘을 표시해줄지. default 가 false
-             showButtonPanel:true,
-             closeText: 'done',
-             minDate: 0,//오늘날짜 부터
-             language: 'ko',
-             onSelect:function(selectedDate) {
-                 
-                 $("#endDate").datepicker("option", "minDate", selectedDate);
-
-                 }
-
-         });
-		// todayHighlight :true,
-       
-
-         $("#endDate").datepicker({//종료일
-             dateFormat:"yy-mm-dd",
-           
-             dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-             currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
-             showButtonPanel:true,//버튼보이기
-             closeText: 'done',
-             minDate:'+1D',//오늘날짜 다음 부터
-             language: 'ko',
-             //beforeShow: customRange
-              onSelect:function(selectedDate) {
-                 
-                 $("#startDate").datepicker("option", "maxDate", selectedDate );
-                 
-             
-              }
-            
-
-         });
+		 
 		 
 		 
 	 });
