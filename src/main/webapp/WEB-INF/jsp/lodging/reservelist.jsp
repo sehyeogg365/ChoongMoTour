@@ -136,18 +136,18 @@
 				       	<div class="imageInput">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
-							<input type="file" name="file" id="fileInput${reserve.roomId }" class="">
+							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="">
 				       	</div>
 				       	
-				       		<!-- <input type="text" id="sizeInput" value="사이즈${reserve.size }" class="form-control" readonly>-->
+				       		<input type="text" id="sizeInput" value="${reserve.size }" class="form-control" readonly>
 				       
 				       	
 				    	<div class="mt-3">
-				    		<textarea rows="5" cols="100" id="contentInput${reserve.roomId }" class="form-control content-input"></textarea>
+				    		<textarea rows="5" cols="100" id="contentInput${reserve.lodgingId }" class="form-control content-input"></textarea>
 				    	</div>
 				    	
 				    	<div>
-					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector${reserve.roomId }">
+					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector${reserve.lodgingId }">
 					    		<option>별점 선택</option>
 					    		<option value="1.0" title ="https://icons.iconarchive.com/icons/github/octicons/256/star-16-icon.png">★☆☆☆☆</option>
 					    		<option value="2.0" title="">★★☆☆☆</option>
@@ -160,7 +160,7 @@
 				       	
 				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 				      <div class="modal-footer d-flex justify-content-between">
-						<button type="button" id="commentBtn" class="comment-modal-btn btn btn-primary" data-room-id="${reserve.roomId }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
+						<button type="button" id="commentBtn" class="comment-modal-btn btn btn-primary" data-lodging-id="${reserve.lodgingId }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
 						<button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">닫기</button>
 					 </div>
 				   
@@ -206,7 +206,8 @@
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 $(".comment-modal-btn").on("click", function(){
-			 let id = $(this).data("room-id");			
+			 let id = $(this).data("lodging-id");	
+			 let size = $("#sizeInput" + id).val();
 			 let file = $("#fileInput" + id)[0];
 			 let content = $("#contentInput" + id).val();
 			 let starpoint = $("#starpointSelector" + id).val();
@@ -230,7 +231,8 @@
 			 
 			 var formData = new FormData();
 			 
-			 formData.append("roomId", id);
+			 formData.append("lodgingId", id);
+			 formData.append("size", size);			 
 			 formData.append("file", file.files[0]);
 			 formData.append("content", content);
 			 formData.append("starpoint", starpoint);

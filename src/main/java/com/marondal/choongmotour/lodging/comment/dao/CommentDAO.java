@@ -11,8 +11,9 @@ import com.marondal.choongmotour.lodging.model.Comment;
 public interface CommentDAO {
 	
 	//댓글 작성
-	public int insertComment(@Param("roomId") int roomId
+	public int insertComment(@Param("lodgingId") int lodgingId
 							, @Param("userId") int userId
+							, @Param("size") String size
 							, @Param("imagePath") String imagePath
 							, @Param("content") String content
 							, @Param("starpoint") double starpoint
@@ -20,15 +21,15 @@ public interface CommentDAO {
 	
 	
 	//댓글 리스트
-	public List<Comment> selectCommentList(@Param("roomId") int roomId);
+	public List<Comment> selectCommentList(@Param("lodgingId") int lodgingId);
 	
 	
 	//댓글 한행?
-	public Comment selectComment(@Param("roomId") int roomId, @Param("userId") int userId);
+	public Comment selectComment(@Param("lodgingId") int lodgingId, @Param("userId") int userId);
 	
 	
 	//댓글 삭제	
-	public int deleteComment(@Param("roomId") int roomId, @Param("userId") int userId);
+	public int deleteComment(@Param("id") int id, @Param("userId") int userId);
 	
 }
 

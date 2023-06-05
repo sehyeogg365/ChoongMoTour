@@ -6,12 +6,11 @@ public class CommentDetail {
 
 	private int id;
 	private int userId;
-	private int roomId;
-	private int lodgingId;	
+	private int lodgingId;		
+	private String size;
 	private String content;
 	private String nickname;
 	private String imagePath;
-	private String size;
 	private double starpoint;	
 	private Date createdAt;
 	public int getId() {
@@ -26,17 +25,17 @@ public class CommentDetail {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public int getRoomId() {
-		return roomId;
-	}
-	public void setRoomId(int roomId) {
-		this.roomId = roomId;
-	}
 	public int getLodgingId() {
 		return lodgingId;
 	}
 	public void setLodgingId(int lodgingId) {
 		this.lodgingId = lodgingId;
+	}
+	public String getSize() {
+		return size;
+	}
+	public void setSize(String size) {
+		this.size = size;
 	}
 	public String getContent() {
 		return content;
@@ -56,12 +55,6 @@ public class CommentDetail {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
-	public String getSize() {
-		return size;
-	}
-	public void setSize(String size) {
-		this.size = size;
-	}
 	public double getStarpoint() {
 		return starpoint;
 	}
@@ -74,7 +67,7 @@ public class CommentDetail {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-
+	
 	
 	
 	

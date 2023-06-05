@@ -143,7 +143,7 @@
 				<c:choose>
 					<c:when test="${userId eq comment.userId }">
 						<div class="comment-delete mr-3">
-							<i class="delete-btn bi bi-x-circle" data-room-id ="${comment.roomId }"></i>
+							<i class="delete-btn bi bi-x-circle" data-comment-id ="${comment.id }"></i>
 						</div>
 					</c:when>
 					<c:otherwise>
@@ -227,9 +227,9 @@
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 		
-$(".delete-btn").on("click", function(){
+	$(".delete-btn").on("click", function(){
 			
-			let id = $(this).data("room-id");
+			let id = $(this).data("comment-id");
 			
 			alert(id);
 			
@@ -237,7 +237,7 @@ $(".delete-btn").on("click", function(){
 			$.ajax({
 				type:"get"
 				, url:"/lodging/comment/delete"
-				, data:{"roomId": id}
+				, data:{"id": id}
 				, success:function(data){
 					if(data.result == "success"){
 						alert("댓글 삭제 성공");

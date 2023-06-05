@@ -13,7 +13,8 @@
   			`comment`
   			(
   				`userId`
-  				, `roomId`
+  				, `lodgingId`
+  				, `size`
   				, `content`
   				, `imagePath`
   				, `starpoint`
@@ -23,7 +24,8 @@
   			VALUES
   			(
   				#{userId}
-  				, #{roomId}
+  				, #{lodgingId}
+  				, #{size}
   				, #{content}
   				, #{imagePath}
   				, #{starpoint}
@@ -40,7 +42,8 @@
   	SELECT
   		 `id`
   		, `userId`
-  		, `roomId`
+  		, `lodgingId`
+  		, `size`
   		, `content`
   		, `imagePath`
   		, `starpoint`
@@ -48,7 +51,7 @@
   	FROM
   		`comment`
   	WHERE
-  		`roomId` = #{roomId}
+  		`lodgingId` = #{lodgingId}
   	ORDER BY
   		`id` DESC; <!-- 최근 업로드한 순서대로 -->
   </select>
@@ -59,14 +62,15 @@
   	SELECT
   		`id`
   		, `userId`
-  		, `roomId`
+  		, `lodgingId`
+  		, `size`
   		, `content`
   		, `imagePath`
   		, `starpoint`
   	FROM
   		`comment`
   	WHERE
-  		`roomId` = #{roomId}
+  		`lodgingId` = #{lodgingId}
   		AND
   		`userId` = #{userId};
   </select>
@@ -78,7 +82,7 @@
   	FROM
   		`comment`
   	WHERE
-		`roomId` = #{roomId}
+		`id` = #{id}
 		AND
 		`userId` = #{userId};
   </delete>

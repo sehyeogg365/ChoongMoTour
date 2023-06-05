@@ -136,7 +136,8 @@ public class LodgingRestController {
 	//댓글 작성
 	@PostMapping("/comment/create")
 	public Map<String, String> commentCreate(
-											@RequestParam("roomId") int roomId									
+											@RequestParam("lodgingId") int lodgingId
+											, @RequestParam("size") String size
 											, @RequestParam(value="file", required=false) MultipartFile file
 											, @RequestParam("content") String content
 											, @RequestParam("starpoint") double starpoint				
@@ -144,7 +145,7 @@ public class LodgingRestController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = commentBO.addComment(roomId, userId, file, content, starpoint);
+		int count = commentBO.addComment(lodgingId, userId, size, file, content, starpoint);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
@@ -164,12 +165,12 @@ public class LodgingRestController {
 	
 	//댓글 삭제
 	@GetMapping("/comment/delete")
-	public Map<String, String> commentDelete(@RequestParam("roomId") int roomId
+	public Map<String, String> commentDelete(@RequestParam("id") int id
 											, HttpSession session){
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = commentBO.deleteComment(roomId, userId);
+		int count = commentBO.deleteComment(id, userId);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
