@@ -52,7 +52,7 @@ public class CommentBO {
 					
 			User user = userBO.getUserInfo(comment.getUserId());
 			
-			Room room = lodgingBO.getRoom(comment.getRoomId());
+			Room room = lodgingBO.getRoom(comment.getRoomId());//근데 알다시피 밑에 값들은 카드 한장에 들어가는 값이라서 리스트는 불필요 함
 			
 			CommentDetail commentDetail = new CommentDetail();
 			
@@ -60,7 +60,7 @@ public class CommentBO {
 			
 			commentDetail.setId(comment.getId());
 			commentDetail.setUserId(user.getId());
-			commentDetail.setRoomId(roomId);
+			commentDetail.setRoomId(comment.getRoomId());
 			commentDetail.setImagePath(comment.getImagePath());// 첨부 파일
 			commentDetail.setContent(comment.getContent());// 댓글 내용
 			commentDetail.setStarpoint(comment.getStarpoint());//별점

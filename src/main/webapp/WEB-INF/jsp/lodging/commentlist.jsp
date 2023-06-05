@@ -187,7 +187,7 @@
 						
 						<c:choose>
 							<c:when test= "${not empty comment.imagePath }">
-								<div class="comment-image ml-3"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+								<div class="comment-image ml-4"><img width="400" height ="300"src="${comment.imagePath }"/></div>
 							</c:when>
 							<c:otherwise>
 								<div class=""></div>
