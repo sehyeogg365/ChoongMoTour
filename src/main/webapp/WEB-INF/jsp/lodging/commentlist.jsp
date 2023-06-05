@@ -227,6 +227,36 @@
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 		
+$(".delete-btn").on("click", function(){
+			
+			let id = $(this).data("room-id");
+			
+			alert(id);
+			
+			
+			$.ajax({
+				type:"get"
+				, url:"/lodging/comment/delete"
+				, data:{"roomId": id}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("댓글 삭제 성공");
+						location.reload();
+					} else {
+						alert("댓글 삭제 실패");
+					}
+				}	
+				, error:function(){
+					alert("댓글 삭제 오류");
+				}
+				
+				
+			});
+			
+			
+			
+		});
+		
 		
 		//지도를 그려주는 함수 실행
 		 selectMapList();
@@ -325,35 +355,7 @@
 		 }
 		
 		
-		$(".delete-btn").on("click", function(){
-			
-			let id = $(this).data("room-id");
-			
-			alert(id);
-			
-			
-			$.ajax({
-				type:"get"
-				, url:"/lodging/comment/delete"
-				, data:{"roomId": id}
-				, success:function(data){
-					if(data.result == "success"){
-						alert("댓글 삭제 성공");
-						location.reload();
-					} else {
-						alert("댓글 삭제 실패");
-					}
-				}	
-				, error:function(){
-					alert("댓글 삭제 오류");
-				}
-				
-				
-			});
-			
-			
-			
-		});
+		
 		
 		
 	});
