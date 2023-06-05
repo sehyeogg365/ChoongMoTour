@@ -94,7 +94,7 @@ public class CommentBO {
 		Comment comment = commentDAO.selectComment(roomId, userId);//몇몇 호텔의 댓삭이 안이뤄지는 상황.
 		FileManagerService.removeFile(comment.getImagePath());//userId추가해서 제대로 해보기 이제보니 첨에는 다오에선 id 여기선 roomId였다는... 그러니 500이뜨지.
 		
-		return commentDAO.deleteComment(roomId);
+		return commentDAO.deleteComment(roomId, userId);
 		
 		
 	}

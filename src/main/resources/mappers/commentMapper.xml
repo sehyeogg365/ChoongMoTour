@@ -78,7 +78,9 @@
   	FROM
   		`comment`
   	WHERE
-		`roomId` = #{roomId};
+		`roomId` = #{roomId}
+		AND
+		`userId` = #{userId};
   </delete>
   
   
