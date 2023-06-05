@@ -111,7 +111,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${room.id }">댓글달기</button>
+									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-room-id="${reserve.roomId }">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -123,23 +123,23 @@
 				<!-- Modal 도 댓글달기-->
 			
 			 
-				<div class="modal fade" id="commentModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="commentModal${reserve.lodgingId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
 				    	<div class="modal-header">
 							<h5 class="modal-title">객실 댓글 달기</h5>
-							<h4>룸아이디${reserve.roomId }</h4>
-							<h4>로징아이디${reserve.lodgingId }</h4>
+							<h4>${reserve.roomName }</h4>
+							<h4>${reserve.size }</h4>
 							
 						</div>	
 					   <div class="modal-body text-center">
 				       	<div class="imageInput">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
-							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="">
+							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control">
+				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control" readonly>
 				       
 				       	
 				    	<div class="mt-3">
@@ -215,6 +215,11 @@
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
 				 return ;				 
+			 }
+			 
+			 if(size == ""){
+				 alert("사이즈를 입력하세요");
+				 return ;
 			 }
 			 
 			 if(starpoint == ""){
