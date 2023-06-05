@@ -159,7 +159,7 @@
 						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
 					<div class="comment-content  ml-5 ">
-						<div class="ml-4">룸아이디${comment.roomId }</div>
+						<div class="ml-4">로징아이디${comment.lodgingId }</div>
 						<div class="ml-4">유저아이디${comment.userId }</div>
 						
 						<c:choose>

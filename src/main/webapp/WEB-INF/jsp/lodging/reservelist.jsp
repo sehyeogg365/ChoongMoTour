@@ -139,7 +139,7 @@
 							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="">
 				       	</div>
 				       	
-				       		<input type="text" id="sizeInput" value="${reserve.size }" class="form-control" readonly>
+				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control">
 				       
 				       	
 				    	<div class="mt-3">
@@ -212,8 +212,6 @@
 			 let content = $("#contentInput" + id).val();
 			 let starpoint = $("#starpointSelector" + id).val();
 			 
-
-			 
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
 				 return ;				 
@@ -224,10 +222,11 @@
 				 return ;
 			 }
 			 
-			 //alert(id); 
-			 //alert(file); 
-			 //alert(content); //X
-			 //alert(starpoint); //X 
+			 alert(id); 
+			 alert(size);
+			 alert(file); 
+			 alert(content); //X
+			 alert(starpoint); //X 
 			 
 			 var formData = new FormData();
 			 

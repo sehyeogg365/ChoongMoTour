@@ -70,7 +70,7 @@
   	FROM
   		`comment`
   	WHERE
-  		`lodgingId` = #{lodgingId}
+  		`id` = #{id}
   		AND
   		`userId` = #{userId};
   </select>
