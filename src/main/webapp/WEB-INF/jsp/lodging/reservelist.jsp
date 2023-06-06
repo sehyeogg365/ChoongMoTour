@@ -139,7 +139,7 @@
 							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control" readonly>
+				       	<input type="text" id="sizeInput" value="${reserve.size }" class="form-control" readonly>
 				       
 				       	
 				    	<div class="mt-3">
@@ -207,7 +207,7 @@
 		 
 		 $(".comment-modal-btn").on("click", function(){
 			 let id = $(this).data("lodging-id");	
-			 let size = $("#sizeInput" + id).val();
+			 let size = $("#sizeInput").val();
 			 let file = $("#fileInput" + id)[0];
 			 let content = $("#contentInput" + id).val();
 			 let starpoint = $("#starpointSelector" + id).val();
