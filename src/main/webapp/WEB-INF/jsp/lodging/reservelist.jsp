@@ -111,7 +111,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-room-id="${reserve.roomId }">댓글달기</button>
+									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-room-id="${reserve.lodgingId }">댓글달기</button>
 								</div>
 							</div>
 						</div>
