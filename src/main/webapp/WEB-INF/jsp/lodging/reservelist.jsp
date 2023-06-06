@@ -126,11 +126,12 @@
 				<div class="modal fade" id="commentModal${reserve.lodgingId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
-				    	<div class="modal-header">
+				    	<div class="modal-header d-flex justify-content-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
+							<!--  
 							<h4>${reserve.roomName }</h4>
 							<h4>${reserve.size }</h4>
-							
+							-->
 						</div>	
 					   <div class="modal-body text-center">
 				       	<div class="imageInput">
