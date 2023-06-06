@@ -231,7 +231,7 @@
 			
 			let id = $(this).data("comment-id");
 			
-			alert(id);
+			//alert(id);
 			
 			
 			$.ajax({
