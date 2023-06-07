@@ -359,7 +359,7 @@
 		 	    center: new naver.maps.LatLng(37.3595704, 127.105399),
 		 	    zoom: 10,
 		 	    scaleControl: false,
-		        logoControl: false,
+		        logoControl: false,//지도 축소 확대바
 		        mapDataControl: false,
 		        zoomControl: true,
 		 	});
