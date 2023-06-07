@@ -80,9 +80,9 @@ public class CommentBO {
 	}
 
 	//댓글 한행조회 
-	public Comment getComment(int lodgingId, int userId) {
+	public Comment getComment(int id, int userId) {//옥의티 발견 여기서 id, userId일텐데 lodgingId->id
 		
-		return commentDAO.selectComment(lodgingId, userId);
+		return commentDAO.selectComment(id, userId);
 	}
 	
 	
