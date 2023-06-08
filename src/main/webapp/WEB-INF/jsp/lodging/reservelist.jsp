@@ -111,7 +111,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-room-id="${reserve.lodgingId }">댓글달기</button>
+									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-lodging-id="${reserve.lodgingId }">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -140,7 +140,7 @@
 							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput" value="${reserve.size }" class="form-control" readonly>
+				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control" readonly>
 				       
 				       	
 				    	<div class="mt-3">
@@ -150,10 +150,10 @@
 				    	<div>
 					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector${reserve.lodgingId }">
 					    		<option>별점 선택</option>
-					    		<option value="1.0" title ="https://icons.iconarchive.com/icons/github/octicons/256/star-16-icon.png">★☆☆☆☆</option>
+					    		<option value="1.0" title ="">★☆☆☆☆</option>
 					    		<option value="2.0" title="">★★☆☆☆</option>
 					    		<option value="3.0" title="">★★★☆☆</option>
-					    		<option value="4.0" title="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FKineh%2FbtqKbVIlGVb%2F3cd1u2698gFFlAHqztlhk1%2Fimg.jpg">★★★★☆</option>
+					    		<option value="4.0" title="">★★★★☆</option>
 					    		<option value="5.0" title="">★★★★★</option>
 					    		
 					    	</select>
@@ -208,7 +208,7 @@
 		 
 		 $(".comment-modal-btn").on("click", function(){
 			 let id = $(this).data("lodging-id");	
-			 let size = $("#sizeInput").val();
+			 let size = $("#sizeInput" + id).val();
 			 let file = $("#fileInput" + id)[0];
 			 let content = $("#contentInput" + id).val();
 			 let starpoint = $("#starpointSelector" + id).val();
