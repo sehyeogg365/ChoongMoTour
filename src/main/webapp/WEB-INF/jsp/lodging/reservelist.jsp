@@ -111,7 +111,7 @@
 					
 								
 								<div class="text-center">
-									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.lodgingId }" data-lodging-id="${reserve.lodgingId }">댓글달기</button>
+									<button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button>
 								</div>
 							</div>
 						</div>
@@ -123,7 +123,7 @@
 				<!-- Modal 도 댓글달기-->
 			
 			 
-				<div class="modal fade" id="commentModal${reserve.lodgingId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="commentModal${reserve.roomId }" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				  <div class="modal-dialog modal-dialog-centered" role="document">
 				    <div class="modal-content">
 				    	<div class="modal-header d-flex justify-content-center">
@@ -137,18 +137,18 @@
 				       	<div class="imageInput">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
-							<input type="file" name="file" id="fileInput${reserve.lodgingId }" class="" >
+							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput${reserve.lodgingId }" value="${reserve.size }" class="form-control" readonly>
+				       	<input type="text" id="sizeInput" value="${reserve.size }" class="form-control" readonly>
 				       
 				       	
 				    	<div class="mt-3">
-				    		<textarea rows="5" cols="100" id="contentInput${reserve.lodgingId }" class="form-control content-input"></textarea>
+				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
 				    	</div>
 				    	
 				    	<div>
-					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector${reserve.lodgingId }">
+					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector">
 					    		<option>별점 선택</option>
 					    		<option value="1.0" title ="">★☆☆☆☆</option>
 					    		<option value="2.0" title="">★★☆☆☆</option>
@@ -208,10 +208,10 @@
 		 
 		 $(".comment-modal-btn").on("click", function(){
 			 let id = $(this).data("lodging-id");	
-			 let size = $("#sizeInput" + id).val();
-			 let file = $("#fileInput" + id)[0];
-			 let content = $("#contentInput" + id).val();
-			 let starpoint = $("#starpointSelector" + id).val();
+			 let size = $("#sizeInput").val();//굳이 객체화 안해도 댓글은 저장이된다.
+			 let file = $("#fileInput")[0];
+			 let content = $("#contentInput").val();
+			 let starpoint = $("#starpointSelector").val();
 			 
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
@@ -228,9 +228,9 @@
 				 return ;
 			 }
 			 
-			 alert(id); 
-			 alert(size);
-			 alert(file); 
+			 alert(id); //O
+			 alert(size);//X 그냥 상관없이 맨앞에값만 불러와짐 
+			 alert(file); //X
 			 alert(content); //X
 			 alert(starpoint); //X 
 			 
