@@ -353,6 +353,18 @@ header{
 	
 }
 
+.commentwrite-page{
+	width:800px;
+}
+
+
+.commentwritepagecontents{
+	border: 1px solid;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
+	
+}
+
 .comment-page{
 	width:1000px;
 }

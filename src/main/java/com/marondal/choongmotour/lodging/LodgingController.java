@@ -189,6 +189,25 @@ public class LodgingController {
 			return "lodging/reservelist";
 		}
 	
+	//댓글 작성 	
+	@GetMapping("/commentwrite/view")
+	public String commentWrite(Model model
+							  , @RequestParam("lodgingId")int lodgingId
+							  , @RequestParam("roomId") int roomId ) {
+		Lodging lodging = lodgingBO.getLodging(lodgingId);
+		
+		model.addAttribute("lodging", lodging);	
+		
+		Room room = lodgingBO.getRoom(roomId);
+		
+		model.addAttribute("room", room);
+		
+		
+		return "lodging/commentwrite";
+		
+		
+	}
+		
 	
 	//댓글목록
 	@GetMapping("/commentlist/view")

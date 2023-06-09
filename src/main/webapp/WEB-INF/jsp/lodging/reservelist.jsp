@@ -153,8 +153,74 @@
 	
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
+		 /*
+		 $(".comment-modal-btn").on("click", function(){
+			 let id = $(this).data("lodging-id");	
+			 let size = $("#sizeInput").val();//굳이 객체화 안해도 댓글은 저장이된다.
+			 let file = $("#fileInput")[0];
+			 let content = $("#contentInput").val();
+			 let starpoint = $("#starpointSelector").val();
+			 
+			 if(content == ""){
+				 alert("댓글을 입력하세요");
+				 return ;				 
+			 }
+			 
+			 if(size == ""){
+				 alert("사이즈를 입력하세요");
+				 return ;
+			 }
+			 
+			 if(starpoint == ""){
+				 alert("별점을 입력하세요");
+				 return ;
+			 }
+			 
+			 alert(id); //O
+			 alert(size);//X 그냥 상관없이 맨앞에값만 불러와짐 
+			 alert(file); //X
+			 alert(content); //X
+			 alert(starpoint); //X 
+			 
+			 var formData = new FormData();
+			 
+			 formData.append("lodgingId", id);
+			 formData.append("size", size);			 
+			 formData.append("file", file.files[0]);
+			 formData.append("content", content);
+			 formData.append("starpoint", starpoint);
+		
+			 
+			 $.ajax({
+				type:"post"
+				, url : "/lodging/comment/create"
+				, data: formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result == "success"){
+						alert("댓글 입력 성공");
+						location.reload();
+					} else {
+						alert("댓글 입력 실패");
+						
+					}
+					
+				} 
+				, error:function(){
+					alert("댓글 입력 에러");
+					
+				}
+				
+				
+			 });
+			 
+			 
+			 
+		 });
 		 
-		 
+		 */
 
  		
  		$(".x-btn").on("click", function(){

@@ -34,6 +34,50 @@
 					ChoongMo Tour Comment Write Page
 				</h1>
 			
+				<div class="commentwritepagecontents">
+					 <div class="modal-content">
+				    	<div class="modal-header d-flex justify-content-between">
+							<h5 class="modal-title">객실 댓글 달기</h5>
+							
+							<h4>${lodging.roomName }</h4>
+							<h4>${room.size }</h4>
+							
+						</div>	
+					   <div class="modal-body text-center">
+				       	<div class="imageInput">
+				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+					
+							<input type="file" name="file" id="fileInput" class="" >
+				       	</div>
+				       	
+				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control" readonly>
+				       
+				       	
+				    	<div class="mt-3">
+				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
+				    	</div>
+				    	
+				    	<div>
+					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector">
+					    		<option>별점 선택</option>
+					    		<option value="1.0" title="">★☆☆☆☆</option>
+					    		<option value="2.0" title="">★★☆☆☆</option>
+					    		<option value="3.0" title="">★★★☆☆</option>
+					    		<option value="4.0" title="">★★★★☆</option>
+					    		<option value="5.0" title="">★★★★★</option>
+					    	</select>
+				       	</div>
+				       	
+				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
+				      <div class="modal-footer d-flex justify-content-between">
+						<button type="button" id="commentBtn" class="btn btn-primary" data-lodging-id="${lodging.id }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
+						
+					 </div>
+				   
+				    </div>
+				
+				
+				</div>
 			
 			</div>
 		
@@ -55,7 +99,71 @@
 	<script>
 	$(document).ready(function(){
 		
+		$("#commentBtn").on("click", function(){
+			 let id = $(this).data("lodging-id");	
+			 let size = $("#sizeInput").val();//굳이 객체화 안해도 댓글은 저장이된다.
+			 let file = $("#fileInput")[0];
+			 let content = $("#contentInput").val();
+			 let starpoint = $("#starpointSelector").val();
+			 
+			 if(content == ""){
+				 alert("댓글을 입력하세요");
+				 return ;				 
+			 }
+			 
+			 if(size == ""){
+				 alert("사이즈를 입력하세요");
+				 return ;
+			 }
+			 
+			 if(starpoint == ""){
+				 alert("별점을 입력하세요");
+				 return ;
+			 }
+			 
+			 alert(id); //O
+			 alert(size);//X 그냥 상관없이 맨앞에값만 불러와짐 
+			 alert(file); //X
+			 alert(content); //X
+			 alert(starpoint); //X 
+			 
+			 var formData = new FormData();
+			 
+			 formData.append("lodgingId", id);
+			 formData.append("size", size);			 
+			 formData.append("file", file.files[0]);
+			 formData.append("content", content);
+			 formData.append("starpoint", starpoint);
 		
+			 
+			 $.ajax({
+				type:"post"
+				, url : "/lodging/comment/create"
+				, data: formData//파일이 포함되어있는경우 일반적인 형태:{}로는 전달안된다고 함. 위의 formData.append("file", file.files[0]);이 전달안되서.
+				, enctype :"multipart/form-data"// 파일 업로드 필수
+				, processData:false// 파일 업로드 필수
+				, contentType:false// 파일 업로드 필수
+				, success:function(data){
+					if(data.result == "success"){
+						alert("댓글 입력 성공");
+						location.href="/lodging/reservelist/view";
+					} else {
+						alert("댓글 입력 실패");
+						
+					}
+					
+				} 
+				, error:function(){
+					alert("댓글 입력 에러");
+					
+				}
+				
+				
+			 });
+			 
+			 
+			 
+		 });
 		
 		
 		
