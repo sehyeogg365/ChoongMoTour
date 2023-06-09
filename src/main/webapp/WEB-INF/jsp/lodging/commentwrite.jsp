@@ -44,13 +44,13 @@
 							
 						</div>	
 					   <div class="modal-body text-center">
-				       	<div class="imageInput">
+				       	<div class="imageInput d-flex justify-content-start">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
 					
 							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control" readonly>
+				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3" readonly>
 				       
 				       	
 				    	<div class="mt-3">
