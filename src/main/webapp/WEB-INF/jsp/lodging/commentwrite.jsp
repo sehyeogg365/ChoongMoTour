@@ -121,11 +121,11 @@
 				 return ;
 			 }
 			 
-			 alert(id); //O
-			 alert(size);//X 그냥 상관없이 맨앞에값만 불러와짐 
-			 alert(file); //X
-			 alert(content); //X
-			 alert(starpoint); //X 
+			 //alert(id); //O
+			 //alert(size);//O 그냥 상관없이 맨앞에값만 불러와짐 
+			 //alert(file); //O
+			 //alert(content); //O
+			 //alert(starpoint); //O 
 			 
 			 var formData = new FormData();
 			 
