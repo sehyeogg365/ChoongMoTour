@@ -6,9 +6,6 @@ public class Dibs {
 	private int id;
 	private int userId;
 	private int lodgingId;
-	//private String roomName;
-	//private String areaName;
-	//private String imagePath;
 	private boolean isDibs;
 	private Date createdAt;
 	private Date updatedAt;

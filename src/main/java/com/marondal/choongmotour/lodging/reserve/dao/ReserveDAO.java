@@ -34,9 +34,9 @@ public interface ReserveDAO {
 	public List<Reserve> selectReserveList(@Param("userId") int userId);//쿼리를 수행하는것이 다오 근데 예약목록을 조회하는데 예약id가필요한가???
 																		//여기다가 roomId를 넣는간 어떠한가?
 	
-	//예약 조회 이게굳이 필요할련지는 모르겠다????
+	//예약 조회 이게굳이 필요할련지는 모르겠다? 카드 클릭했을때 예약 정보가 상세 하게 뜨게하는 카드 기능
 
-	public ReserveDetail selectReserveInfoById (@Param("userId")int userId);
+//	public ReserveDetail selectReserveInfoById (@Param("userId")int userId);
 	
 	
 	//예약 취소

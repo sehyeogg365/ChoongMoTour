@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
+import com.marondal.choongmotour.lodging.comment.bo.CommentBO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 
@@ -27,6 +28,7 @@ public class LodgingRestController {
 	@Autowired LodgingBO lodgingBO;
 	@Autowired DibsBO dibsBO;
 	@Autowired ReserveBO reserveBO;
+	@Autowired CommentBO commentBO;
 	
 	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
@@ -74,30 +76,7 @@ public class LodgingRestController {
 		
 	}
 	
-	//찜 목록내 제거
-
 	
-	//날짜 선택/추가
-//	@PostMapping("/dateselect")
-//	public Map<String, String> selectDate( @RequestParam("roomId") int roomId
-//										 , @RequestParam("startDate") Date startDate
-//										 , @RequestParam("endDate") Date endDate	
-//										){
-//		
-//		int count = reserveBO.addDate(roomId, startDate, endDate);
-//		
-//		Map <String, String> resultMap = new HashMap<>();
-//		
-//		if(count == 1) {
-//			resultMap.put("result", "success");
-//		} else {
-//			resultMap.put("result", "fail");
-//		}
-//		
-//		
-//			return resultMap;
-//		
-//	}
 	
 	
 	//예약 하기 
@@ -153,6 +132,63 @@ public class LodgingRestController {
 		
 		return resultMap;
 	}
+	
+	//댓글 작성
+	@PostMapping("/comment/create")
+	public Map<String, String> commentCreate(
+											@RequestParam("lodgingId") int lodgingId
+											, @RequestParam("size") String size
+											, @RequestParam(value="file", required=false) MultipartFile file
+											, @RequestParam("content") String content
+											, @RequestParam("starpoint") double starpoint				
+											, HttpSession session){
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = commentBO.addComment(lodgingId, userId, size, file, content, starpoint);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");			
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		
+		return resultMap;
+		
+		
+	}
+	
+	
+	
+	//댓글 삭제
+	@GetMapping("/comment/delete")
+	public Map<String, String> commentDelete(@RequestParam("id") int id
+											, HttpSession session){
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = commentBO.deleteComment(id, userId);
+		
+		Map<String, String> resultMap = new HashMap<>();
+		
+		if(count == 1) {
+			resultMap.put("result", "success");
+		} else {
+			resultMap.put("result", "fail");
+		}
+		
+		
+		
+		return resultMap;
+		
+		
+		
+	}
+	
+	
 	
 	
 	//-------관리자 페이지---------

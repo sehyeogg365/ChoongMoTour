@@ -44,7 +44,7 @@
 							<a href="/lodging/lodginglist/view?area_name=seoul">서울</a>
 						</div>
 						
-					</div>							<!-- 생각해보니 이것도 잘못한거아니냐?  아예 헷갈리니 죄다 areaName으로 바꿔버리자-->
+					</div>							
 						
 					
 					<div class="box mt-3">

@@ -28,49 +28,102 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	
+	<!-- 네이버 지도 api -->
+	<script type="text/javascript" 
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s&submodules=geocoder"></script>
 
 </head>
 <body>
 	<div id = "wrap">
 	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<div class="comment-page">
+		<section class="contents d-flex justify-content-center">
+			<div class="comment-page">
 			<h1 class="text-center">
 				ChoongMo Tour Comment Page
 			</h1>
 		
+			<div class="d-flex  mt-4">
+					<div class="lodging-profile2">
+						<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
+					</div>
+						
+					
+						<div class="ml-3">
+							<div class="d-flex">
+								<c:choose>
+									<c:when test = "${lodging.level eq '5성급' }">
+										<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '4성급' }">
+										<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '3성급' }">
+										<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '2성급' }">
+										<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+									<c:when test = "${lodging.level eq '1성급' }">
+										<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+									</c:when>
+								</c:choose>
+								<div class="ml-3">
+									<h2 class="font-weight-bold">${lodging.roomName }</h2>
+								</div>
+							
+							</div>
+							
+							<div class="">
+								<c:choose>
+									<c:when test ="${lodging.areaName eq 'seoul'}">
+										<h4 class="text-secondary">서울</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'incheon'}">
+										<h4 class="text-secondary">인천</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gangwon'}">
+										<h4 class="text-secondary">강원</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+										<h4 class="text-secondary">경상</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeolla'}">
+										<h4 class="text-secondary">전라</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'busan'}">
+										<h4 class="text-secondary">부산</h4>
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeju'}">
+										<h4 class="text-secondary">제주</h4>
+									</c:when>
+								</c:choose>
+								<div class="search">
+									<input id ="address" type ="text" placeholder="검색할 주소">
+									<input id ="submit" type="button" value="주소검색">
+								</div>
+								
+								<div id="map" style="width:360px; height:290px;"></div>
+							
+							</div>
+						
+						</div>
+						
+					
+							
 		
-			<div class="lodging-profile2 align-items-center">
-					<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
-					<c:choose>
-						<c:when test = "${lodging.level eq '5성급' }">
-							<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '4성급' }">
-							<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '3성급' }">
-							<h3 class="text-second">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '2성급' }">
-							<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '1성급' }">
-							<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-					</c:choose>
-				
-				</div>
-				<div class="text-center">
-					<h2>${lodging.roomName }</h2>
+					
 				</div><br>
+				
+				<br>
+		
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
+				    <a class="nav-link" href="#">리뷰</a>
 				  </li>
 			
 			
@@ -80,74 +133,91 @@
 		
 		<div class="comment-list">
 		
+			<c:forEach var="comment"  items = "${commentDetailList }">
 			<div class="comment-box mt-3">
 				
 				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+				
+				<div class=""><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
+					
+				<c:choose>
+					<c:when test="${userId eq comment.userId }">
+						<div class="comment-delete mr-3">
+							<i class="delete-btn bi bi-x-circle" data-comment-id ="${comment.id }"></i>
+						</div>
+					</c:when>
+					<c:otherwise>
+						
+					</c:otherwise>	
+				</c:choose>	
+					
+				</div>
+				
+				
+					<div class="comment-profile d-flex">
+						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+						<div class="mt-4 ml-3">${comment.nickname }</div>
 					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
-						<div class="ml-3 small">경치가 좋습니다.</div>
+					<div class="comment-content  ml-5 ">
+					<!--  
+						<div class="ml-4">로징아이디${comment.lodgingId }</div>
+						<div class="ml-4">유저아이디${comment.userId }</div>
+					-->	
+						<c:choose>
+						
+						<c:when test = "${comment.starpoint eq 1.0}">
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(1.0)</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 2.0}">
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(2.0)</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 3.0}">
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(3.0)</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 4.0}">
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(4.0)</div>
+						</c:when>
+						<c:when test = "${comment.starpoint eq 5.0}">
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/>(5.0)</div>
+						</c:when>
+						
+						</c:choose>
+						<div class="mt-3 ml-4 small text-secondary">${comment.size } 이용자</div>
+						<div class="ml-4">${comment.content }</div>
+						
+						
+						<c:choose>
+							<c:when test= "${not empty comment.imagePath }">
+								<div class="comment-image ml-4"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+							</c:when>
+							<c:otherwise>
+								<div class=""></div>
+							</c:otherwise>
+							
+						</c:choose>
+						
+						<div class="ml-4 small"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
 					</div>
 			
 				</div>
 			
 			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">트윈룸 이용자</div>
-						<div class="ml-3 small">방이 넓어서 좋습니다..</div>
-					</div>
-				</div>
-			
-			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">더블룸 이용자</div>
-						<div class="ml-3 small">방이꺠끗해서 좋습니다.</div>
-					</div>
-				</div>
-			
-			</div>
-			<div class="comment-box mt-3">
-				
-				<div class="comment">
-					<div class="comment-profile">
-						<img class="userprofile mt-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-					</div>
-					<div class="comment-content ml-5">
-						<div class="ml-3">재재재방문가능</div>
-						<div class="ml-3 small text-secondary">싱글룸 이용자</div>
-						<div class="ml-3 small">직원들이 친절해서 좋습니다.</div>
-					</div>
-				</div>
-			
-			</div>
-		
-		</div>
-		
-		
-		</div>
+			</c:forEach>
+
 	
+		
+		</div>
+		
+		
+		</div>
+		</section>
+	</div>
+
 	
 	
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	</div>
+
 	<style>
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
@@ -156,6 +226,141 @@
 	</style>
 	<script>
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
+	$(document).ready(function(){
+		
+	$(".delete-btn").on("click", function(){
+			
+			let id = $(this).data("comment-id");
+			
+			//alert(id);
+			
+			
+			$.ajax({
+				type:"get"
+				, url:"/lodging/comment/delete"
+				, data:{"id": id}
+				, success:function(data){
+					if(data.result == "success"){
+						alert("댓글 삭제 성공");
+						location.reload();
+					} else {
+						alert("댓글 삭제 실패");
+					}
+				}	
+				, error:function(){
+					alert("댓글 삭제 오류");
+				}
+				
+				
+			});
+			
+			
+			
+		});
+		
+		
+		//지도를 그려주는 함수 실행
+		 selectMapList();
+
+		 //검색한 주소의 정보를 insertAddress 함수로 넘겨준다.
+		 function searchAddressToCoordinate(address) {
+		     naver.maps.Service.geocode({
+		         query: address
+		     }, function(status, response) {
+		         if (status === naver.maps.Service.Status.ERROR) {
+		             return alert('Something Wrong!');
+		         }
+		         if (response.v2.meta.totalCount === 0) {
+		             return alert('올바른 주소를 입력해주세요.');
+		         }
+		         var htmlAddresses = [],
+		             item = response.v2.addresses[0],
+		             point = new naver.maps.Point(item.x, item.y);
+		         if (item.roadAddress) {
+		             htmlAddresses.push('[도로명 주소] ' + item.roadAddress);
+		         }
+		         if (item.jibunAddress) {
+		             htmlAddresses.push('[지번 주소] ' + item.jibunAddress);
+		         }
+		         if (item.englishAddress) {
+		             htmlAddresses.push('[영문명 주소] ' + item.englishAddress);
+		         }
+
+		         insertAddress(item.roadAddress, item.x, item.y);
+		         
+		     });
+		 }
+
+		 // 주소 검색의 이벤트
+		 $('#address').on('keydown', function(e) {
+		     var keyCode = e.which;
+		     if (keyCode === 13) { // Enter Key
+		         searchAddressToCoordinate($('#address').val());
+		     }
+		 });
+		 $('#submit').on('click', function(e) {
+		     e.preventDefault();
+		     searchAddressToCoordinate($('#address').val());
+		 });
+		 naver.maps.Event.once(map, 'init_stylemap', initGeocoder);
+
+
+		     
+		 //검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
+		 function insertAddress(address, latitude, longitude) {
+		 	var mapList = "";
+		 	mapList += "<tr>"
+		 	mapList += "	<td>" + address + "</td>"
+		 	mapList += "	<td>" + latitude + "</td>"
+		 	mapList += "	<td>" + longitude + "</td>"
+		 	mapList += "</tr>"
+
+		 	$('#mapList').append(mapList);	
+
+		 	var map = new naver.maps.Map('map', {
+		 	    center: new naver.maps.LatLng(longitude, latitude),
+		 	    zoom: 14
+		 	});
+		     var marker = new naver.maps.Marker({
+		         map: map,
+		         position: new naver.maps.LatLng(longitude, latitude),
+		     });
+		 }
+
+		 //지도를 그려주는 함수
+		 function selectMapList() {
+		 	
+		 	var map = new naver.maps.Map('map', {
+		 	    center: new naver.maps.LatLng(37.3595704, 127.105399),
+		 	    zoom: 10,
+		 	    scaleControl: false,
+		        logoControl: false,//지도 축소 확대바
+		        mapDataControl: false,
+		        zoomControl: true,
+		 	});
+		 }
+
+
+		 // 지도를 이동하게 해주는 함수
+		 function moveMap(len, lat) {
+		 	var mapOptions = {
+		 		    center: new naver.maps.LatLng(len, lat),
+		 		    zoom: 15,
+		 		    mapTypeControl: true
+		 		};
+		     var map = new naver.maps.Map('map', mapOptions);
+		     var marker = new naver.maps.Marker({
+		         position: new naver.maps.LatLng(len, lat),
+		         map: map
+		     });
+		 }
+		
+		
+		
+		
+		
+	});
+	
 	</script>
 
 </body>
