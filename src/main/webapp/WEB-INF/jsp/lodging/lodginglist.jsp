@@ -51,7 +51,7 @@
 					<div class="lodging-card mt-3">
 						
 						<div class=" ">
-							<div class="heart mt-3 mr-3">
+							<div class="heart mr-3">
 							
 							<!-- 하트아이콘 -->
 							<c:choose>

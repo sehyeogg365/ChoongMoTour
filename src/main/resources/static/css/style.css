@@ -54,6 +54,7 @@ header{
 
 .contents> .lodgingcreate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -61,18 +62,21 @@ header{
 
 .contents> .lodgingupdate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
 
 .contents> .roomcreate-page{
 	width:600px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
 
 .contents> .roomupdate-page{
 	width:1000px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -133,7 +137,7 @@ header{
 .card-list > .card{
 	width: 400px;
     height: 600px; 
-    
+    border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 	
@@ -156,6 +160,7 @@ header{
 
 .info-input-box{
 	width:800px;
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -163,8 +168,7 @@ header{
 
 
 .lodging-card-list>.lodging-card{
-	
-	
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -208,11 +212,20 @@ header{
     
 }
 
+.room-page{
+	width:1000px;
+}
+
+.room-page>.room-card-list{
+	
+	width:1000px;
+	margin:auto;
+}
 
 
 .room-card-list >.room-card{
 	
-
+	
 	height:200px;
 	border: 1px solid;
 	border-radius: 8px;
@@ -293,6 +306,8 @@ header{
 }
 
 .reservepagecontents{
+	
+	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
@@ -306,6 +321,7 @@ header{
 .reservation-card-list >.reservation-card{
 	width: 350px;
     height: 450px; 
+    border: 1px solid;
     box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 
@@ -337,11 +353,22 @@ header{
 	
 }
 
+.commentwrite-page{
+	width:800px;
+}
 
-.comment-page{
-	width: 1200px;
+
+.commentwritepagecontents{
+	border: 1px solid;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
 	
 }
+
+.comment-page{
+	width:1000px;
+}
+
 .comment-page>.comment-list{
 	
 	width:1000px;
@@ -350,10 +377,21 @@ header{
 
 .comment-list>.comment-box{
 	
-	height:200px;
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	width: 970px;
+	margin:auto;
+	border: 1px solid;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px 0px black;
 	
+}
+
+.comment-delete{
+	position: relative;
+}
+
+.delete-btn{
+	right:-2px;
+	position: absolute;
 }
 
 

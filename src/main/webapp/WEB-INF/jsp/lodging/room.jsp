@@ -30,7 +30,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 	
-
+	<!-- 네이버 지도 api -->
+	<script type="text/javascript" 
+	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s&submodules=geocoder"></script>
 </head>
 <body>
 	<div id = "wrap">
@@ -50,66 +52,65 @@
 					</div>
 						
 					
-						<div class="ml-3">
-							<div class="d-flex">
-								<c:choose>
-									<c:when test = "${lodging.level eq '5성급' }">
-										<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '4성급' }">
-										<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '3성급' }">
-										<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '2성급' }">
-										<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '1성급' }">
-										<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-								</c:choose>
-								<div class="ml-3">
-									<h2 class="font-weight-bold">${lodging.roomName }</h2>
-								</div>
-							
+					<div class="ml-3 ">
+						<div class="d-flex">
+							<c:choose>
+								<c:when test = "${lodging.level eq '5성급' }">
+									<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '4성급' }">
+									<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '3성급' }">
+									<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '2성급' }">
+									<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '1성급' }">
+									<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+							</c:choose>
+							<div class="ml-3">
+								<h2 class="font-weight-bold">${lodging.roomName }</h2>
 							</div>
-							<br>
-							<div class="">
-								<c:choose>
-									<c:when test ="${lodging.areaName eq 'seoul'}">
-										<h4 class="text-secondary">서울</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'incheon'}">
-										<h4 class="text-secondary">인천</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'gangwon'}">
-										<h4 class="text-secondary">강원</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
-										<h4 class="text-secondary">경상</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'jeolla'}">
-										<h4 class="text-secondary">전라</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'busan'}">
-										<h4 class="text-secondary">부산</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'jeju'}">
-										<h4 class="text-secondary">제주</h4>
-									</c:when>
-								</c:choose>
 							
+						</div>
+							
+						<div class="">
+							<c:choose>
+								<c:when test ="${lodging.areaName eq 'seoul'}">
+									<h4 class="text-secondary">서울</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'incheon'}">
+									<h4 class="text-secondary">인천</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'gangwon'}">
+									<h4 class="text-secondary">강원</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+									<h4 class="text-secondary">경상</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'jeolla'}">
+									<h4 class="text-secondary">전라</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'busan'}">
+									<h4 class="text-secondary">부산</h4>
+								</c:when>
+								<c:when test ="${lodging.areaName eq 'jeju'}">
+									<h4 class="text-secondary">제주</h4>
+								</c:when>
+								</c:choose>
+								<div class="search">
+									<input id ="address" type ="text" placeholder="검색할 주소">
+									<input id ="submit" type="button" value="주소검색">
+								</div>
+								
+								<div id="map" style="width:360px; height:290px;"></div>
 							</div>
 						
 						</div>
-						
-					
 							
-					
-					
-						
-					
 					
 				</div><br>
 				
@@ -120,7 +121,8 @@
 				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link " href="/lodging/commentlist/view?id=${lodging.id }">리뷰</a>
+
+				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }">리뷰</a>  
 				  </li>
 			
 			
@@ -230,40 +232,19 @@
 	<script>
 	 $(document).ready(function() {
 		 
-		
-		
 		 
 		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
-		
+			
 		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
-		
-		 
-		 //document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
-		 
-		 //newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
-		
-		 
-		 
-		 //예약버튼 
-		 $(".reserve-btn").on("click", function(){
 			
-			 let startDate = $(this).val();
-			 let endDate = $(this).val();
 			 
-		 });
+		//document.getElementById('endDate').value = new Date(startDate.setDate(startDate.getDate()+1)).toISOString().substring(0, 10);
+			 
+		//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
 		
-		// $(".info-modal-btn").on("click", function(){
-		//	 
-		//	 let id = $(this).data("room-id");
-		//	 
-		//	 let content = ("#contentInput" + id).val();
-		//	 
-		//	 
-		// });
- 
-		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
-             dateFormat:"yy년 mm월 dd일",
+		$("#startDate").datepicker({//datepicker 요일 한글로 검색
+             dateFormat:"yy-mm-dd",
             
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
@@ -283,7 +264,7 @@
        
 
          $("#endDate").datepicker({//종료일
-             dateFormat:"yy년 mm월 dd일",
+             dateFormat:"yy-mm-dd",
            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
@@ -301,6 +282,120 @@
             
 
          });
+		
+		
+		//지도를 그려주는 함수 실행
+		 selectMapList();
+
+		 //검색한 주소의 정보를 insertAddress 함수로 넘겨준다.
+		 function searchAddressToCoordinate(address) {
+		     naver.maps.Service.geocode({
+		         query: address
+		     }, function(status, response) {
+		         if (status === naver.maps.Service.Status.ERROR) {
+		             return alert('Something Wrong!');
+		         }
+		         if (response.v2.meta.totalCount === 0) {
+		             return alert('올바른 주소를 입력해주세요.');
+		         }
+		         var htmlAddresses = [],
+		             item = response.v2.addresses[0],
+		             point = new naver.maps.Point(item.x, item.y);
+		         if (item.roadAddress) {
+		             htmlAddresses.push('[도로명 주소] ' + item.roadAddress);
+		         }
+		         if (item.jibunAddress) {
+		             htmlAddresses.push('[지번 주소] ' + item.jibunAddress);
+		         }
+		         if (item.englishAddress) {
+		             htmlAddresses.push('[영문명 주소] ' + item.englishAddress);
+		         }
+
+		         insertAddress(item.roadAddress, item.x, item.y);
+		         
+		     });
+		 }
+
+		 // 주소 검색의 이벤트
+		 $('#address').on('keydown', function(e) {
+		     var keyCode = e.which;
+		     if (keyCode === 13) { // Enter Key
+		         searchAddressToCoordinate($('#address').val());
+		     }
+		 });
+		 $('#submit').on('click', function(e) {
+		     e.preventDefault();
+		     searchAddressToCoordinate($('#address').val());
+		 });
+		 naver.maps.Event.once(map, 'init_stylemap', initGeocoder);
+
+
+		     
+		 //검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
+		 function insertAddress(address, latitude, longitude) {
+		 	var mapList = "";
+		 	mapList += "<tr>"
+		 	mapList += "	<td>" + address + "</td>"
+		 	mapList += "	<td>" + latitude + "</td>"
+		 	mapList += "	<td>" + longitude + "</td>"
+		 	mapList += "</tr>"
+
+		 	$('#mapList').append(mapList);	
+
+		 	var map = new naver.maps.Map('map', {
+		 	    center: new naver.maps.LatLng(longitude, latitude),
+		 	    zoom: 14
+		 	});
+		     var marker = new naver.maps.Marker({
+		         map: map,
+		         position: new naver.maps.LatLng(longitude, latitude),
+		     });
+		 }
+
+		 //지도를 그려주는 함수
+		 function selectMapList() {
+		 	
+		 	var map = new naver.maps.Map('map', {
+		 	    center: new naver.maps.LatLng(37.3595704, 127.105399),
+		 	    zoom: 10,
+		 	    scaleControl: false,
+		        logoControl: false,//지도 축소 확대바
+		        mapDataControl: false,
+		        zoomControl: true,
+		 	});
+		 }
+
+
+		 // 지도를 이동하게 해주는 함수
+		 function moveMap(len, lat) {
+		 	var mapOptions = {
+		 		    center: new naver.maps.LatLng(len, lat),
+		 		    zoom: 15,
+		 		    mapTypeControl: true
+		 		};
+		     var map = new naver.maps.Map('map', mapOptions);
+		     var marker = new naver.maps.Marker({
+		         position: new naver.maps.LatLng(len, lat),
+		         map: map
+		     });
+		 }
+
+		 
+		
+		
+		 
+		 
+		 //예약버튼 
+		 $(".reserve-btn").on("click", function(){
+			
+			 let startDate = $(this).val();
+			 let endDate = $(this).val();
+			 
+		 });
+		
+		
+ 
+		 
 		 
 		 
 	 });
