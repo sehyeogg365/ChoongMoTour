@@ -4,7 +4,7 @@
   
  
   
- 💪Skills
+ 💪<b>Skills</b>
   
  <div class="text-center">
  JAVA
