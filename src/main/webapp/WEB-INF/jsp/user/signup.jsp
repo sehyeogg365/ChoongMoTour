@@ -29,7 +29,7 @@
 				<h1 class="text-center pt-3">회원 가입</h1>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-					<button type="button" class="btn btn-primary btn-block" id="duplicateBtn">중복확인</button>
+					<button type="button" class="btn btn-primary " id="duplicateBtn">중복확인</button>
 				</div>
 				<div class="small d-none" id="duplicateYes"><!-- 중복될시  -->
 					중복된 아이디입니다.

@@ -50,7 +50,7 @@
 							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3" readonly>
+				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3 d-none" readonly>
 				       
 				       	
 				    	<div class="mt-3">
