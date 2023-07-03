@@ -115,7 +115,7 @@
 			<div class="text-center">
 				<i id="preveBtn" width="25" height="25" class="bi bi-caret-left"></i>
 				<!--픽사베이거 퍼오기-->
-	        		<img id="image" width ="900" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="사진1">
+	        		<img id="image" width ="700" src="https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg" alt="사진1">
 	        
 	        	
 	        	<i id = "nextvBtn" width="25" height="25" class="bi bi-caret-right"></i>

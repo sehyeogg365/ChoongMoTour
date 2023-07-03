@@ -75,7 +75,7 @@
 							
 						</div>
 						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
-							<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>
+							<div class=""><a href="/lodging/room/view?id=${lodging.id }" class="text-dark">${lodging.roomName }</a></div>
 							<c:choose>
 						<c:when test = "${lodging.level eq '5성급' }">
 							<div class="text-warning">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
