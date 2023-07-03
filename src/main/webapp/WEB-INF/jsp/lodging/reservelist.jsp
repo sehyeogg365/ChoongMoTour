@@ -67,7 +67,7 @@
 							<div class="">
 							
 								<div class="x mr-3">
-									<i class="x-btn bi bi-x-circle " style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
+									<i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
 								</div>
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
