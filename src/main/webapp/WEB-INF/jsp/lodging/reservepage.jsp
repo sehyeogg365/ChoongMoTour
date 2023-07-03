@@ -61,6 +61,11 @@
 					<div class="d-flex mt-3 mx-3 justify-content-center ">
 						<label class="mt-3">체크인 </label>
 		        		<input type="text" id="startDate" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        		<div class="mt-3 ml-3 mr-3">
+		        		~
+		        		</div>
+		        		
+		        		
 		        		<label class="mt-3">체크아웃 </label>
 		        		<input type="text" id="endDate" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
@@ -105,7 +110,7 @@
 					</div>
 					
 					
-					<div class="text-center mb-3">
+					<div class="text-center mt-3">
 					
 						<button id = "payBtn" type="submit"  class="btn btn-danger col-8 mb-3" data-room-id = "${room.id}" >결제하기</button>
 					</div>
