@@ -77,24 +77,25 @@
 							</div>
 												
 							<div class="reservation-card-body">
-								<div class=""><strong>${reserve.roomName }</strong></div>
+								<div class="d-flex"><strong>${reserve.roomName }</strong>
 								<c:choose>
 									<c:when test="${reserve.size eq 'singleroom' }">
-										<div class=""><strong>싱글룸</strong></div>
+										<div class="text-secondary ml-2"><strong>싱글룸</strong></div>
 									</c:when>
 									<c:when test="${reserve.size eq 'doubleroom' }">
-										<div class=""><strong>더블룸</strong></div>
+										<div class="text-secondary ml-2"><strong>더블룸</strong></div>
 									</c:when>
 									<c:when test="${reserve.size eq 'twinroom' }">
-										<div class=""><strong>트윈룸</strong></div>
+										<div class="text-secondary ml-2"><strong>트윈룸</strong></div>
 									</c:when>
 									<c:otherwise>
-										<div class="">${reserve.size }</div>
+										<div class="text-secondary ml-2">${reserve.size }</div>
 									</c:otherwise>
 								</c:choose>	
+								</div>
 								<div class="d-flex justify-content-between mt-2">
 									<div class="">
-										<div class="">체크인  </div>
+										<div class="text-secondary">체크인  </div>
 										<div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
 									</div>
 									
@@ -103,14 +104,14 @@
 										<div class="">~</div>
 									</div>
 									<div class="">
-										<div class="">체크아웃 </div>	
+										<div class="text-secondary">체크아웃 </div>	
 										<div class=""> <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/></div>			
 									</div>
 								</div>
-								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
+								<div class="text-center mt-3"><a href="/lodging/room/view?id=${reserve.lodgingId }" class="text-dark">다시예약</a></div>
 					
 								
-								<div class="text-center">
+								<div class="text-center mt-3">
 									<a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary">댓글달기</a>
 									<!-- <button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button> -->
 								</div>

@@ -52,7 +52,7 @@
 					<div class="info-input-box mx-4">
 					
 						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
-						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+						<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
 					
 						<input type="file" name="file" id="fileInput">
 						
@@ -69,28 +69,28 @@
 					
 						
 						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3">
+							<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3">
 						</div>
 						
 						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3">
+							<label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3">
 						</div>
 						
 						
 							<div class="d-flex mx-3">
-								<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3">
 							</div>
 							
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
