@@ -116,22 +116,22 @@ header{
 
 .box-list > .box{
 	
-	width: 270px;
-    height: 300px; 
+	width: 250px;
+    height: 250px; 
     
     overflow: hidden;
 }
 
  .box-profile > .profile{
-	width: 250px;
-    height: 250px;
+	width: 230px;
+    height: 230px;
     border-radius: 70%;
     object-fit: cover;
 }
 
 .box> .box-body{
 	width:250px;
-	height:50px;
+	height:20px;
 }
 
 .card-list > .card{
