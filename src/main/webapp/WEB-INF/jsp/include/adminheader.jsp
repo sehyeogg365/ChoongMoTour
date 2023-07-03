@@ -35,7 +35,7 @@
 			  <div class="dropdown-menu">
 				<c:if test ="${not empty adminId }">
 				<div class="mr-3">
-					${adminNickname } 님 
+					<b>${adminNickname } 님 </b> 
 				</div>
 				</c:if>
 				
