@@ -81,7 +81,7 @@
 					<hr>
 					
 					<div class="">
-					<label class="col-4 mt-4">총 결제 금액 </label> <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong><!-- 이것도 fmt활용해보기 -->
+					<label class="col-4 mt-4">총 결제 금액 <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong> </label> <!-- 이것도 fmt활용해보기 -->
 					</div>
 					
 					<hr>

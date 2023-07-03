@@ -130,6 +130,7 @@
 				
 				<label class="mt-3">체크인 </label>
 		        <input type="text" id="startDate" class="" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        ~	
 		        <label class="mt-3">체크아웃 </label>
 		        <input type="text" id="endDate" class="" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				<!-- 여기서 폼태그 활용해보기 객실페이지서 예약페이지 넘어갈때 원래 딱 버튼눌렀을때 그다음 페이지 들어갈게 없을때 api쓰는게 좋다고 함(?) 그래서 폼태그였다가 api로 바꾼건데.. -->
@@ -161,7 +162,7 @@
 										<div class="ml-4">${room.size }</div>
 									</c:otherwise>
 								</c:choose>	
-								<p class="ml-4"><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></p>
+								<p class="mr-4"><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></p>
 							</div>	
 							<div class = "buttonlist text-center mt-5">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 								<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
