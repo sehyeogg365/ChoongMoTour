@@ -32,9 +32,9 @@
 				<h1 class="">ChoongMo Tour Lodging Create Page</h1><!-- pt-3제거 -->
 				
 				<div class="lodgingcreate-page-contents">
-					<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
+					<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3 mt-3"></i>
 					
-					<input type="file" name="file" id="fileInput"><br>
+					<input type="file" name="file" id="fileInput" class="mt-3"><br>
 					
 					<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 	

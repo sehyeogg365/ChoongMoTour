@@ -51,7 +51,7 @@
 						
 						<div class="d-flex justify-content-between mt-3">
 							<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
-							<button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn" data-lodging-id="${lodging.id }">삭제하기</button>
+							<button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn mr-4" data-lodging-id="${lodging.id }">삭제하기</button>
 						</div>
 						<div class="d-flex justify-content-between mt-3">
 							<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
