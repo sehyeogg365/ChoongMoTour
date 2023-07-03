@@ -50,7 +50,7 @@
 					<c:forEach var="lodging" items = "${lodgingList }">
 					<div class="lodging-card mt-3">
 						
-						<div class=" ">
+						<div class="bg-success ">
 							<div class="heart mr-3">
 							
 							<!-- 하트아이콘 -->
@@ -74,25 +74,25 @@
 							</a>
 							
 						</div>
-						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
-							<div class=""><a href="/lodging/room/view?id=${lodging.id }" class="text-dark">${lodging.roomName }</a></div>
+						<div class="lodging-card-body bg-warning">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
+							<div class=""><a href="/lodging/room/view?id=${lodging.id }" class="text-dark"><b>${lodging.roomName }</b></a></div>
 							<c:choose>
-						<c:when test = "${lodging.level eq '5성급' }">
-							<div class="text-warning">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '4성급' }">
-							<div class="text-danger">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '3성급' }">
-							<div class="text-secondary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '2성급' }">
-							<div class="text-success">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '1성급' }">
-							<div class="text-primary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-					</c:choose>
+								<c:when test = "${lodging.level eq '5성급' }">
+									<div class="text-warning"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '4성급' }">
+									<div class="text-danger"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '3성급' }">
+									<div class="text-secondary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '2성급' }">
+									<div class="text-success"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+								<c:when test = "${lodging.level eq '1성급' }">
+									<div class="text-primary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+								</c:when>
+							</c:choose>
 						</div>
 					</div>
 					</c:forEach>

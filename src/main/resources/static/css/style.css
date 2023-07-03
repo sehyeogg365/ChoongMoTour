@@ -196,6 +196,7 @@ header{
 	border-radius: 8px;
 }
 
+
  .heart{
  
  	position:relative; /*위에있는 로징카드 리스트가 아닌 하트아이콘 감싸는 태그에 적용 하기*/
@@ -218,10 +219,12 @@ header{
     object-fit: cover;
    
 }
-
+/*여기 뜯어고치기*/
 .lodging-card>.lodging-card-body{
 	height:50px;
 }
+
+
 
 .lodging-profile2 {
 	width:500px;

@@ -39,7 +39,7 @@
 			<div class="card-list d-flex justify-content-center flex-wrap mt-3">
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
-				<div class="card ml-3 mt-3">
+				<div class="card mt-3"><!-- ml-3제거 -->
 					<div class="card-profile">
 						<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
 					</div>
