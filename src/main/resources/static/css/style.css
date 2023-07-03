@@ -54,32 +54,55 @@ header{
 
 .contents> .lodgingcreate-page{
 	width:600px;
+
+}
+
+
+.lodgingcreate-page > .lodgingcreate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
-
 
 .contents> .lodgingupdate-page{
 	width:600px;
+	
+}
+
+.lodgingupdate-page > .lodgingupdate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
 
 .contents> .roomcreate-page{
 	width:600px;
+	
+}
+
+.roomcreate-page >.roomcreate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
 
 .contents> .roomupdate-page{
 	width:1000px;
+	
+}
+
+.roomupdate-page > .roomupdate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
 
 .contents> .lodging-list{
 	width:1000px;

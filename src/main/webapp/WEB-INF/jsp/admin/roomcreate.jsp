@@ -29,10 +29,10 @@
 			
 			<div class="roomcreate-page">
 				
-				<h1 class="text-center pt-3">관리자 객실 추가</h1>
+				<h1 class="text-center pt-3">ChoongMo Tour Room Create Page</h1>
 				
 			
-				
+				<div class="roomcreate-page-contents">
 				 <label>사이즈</label> <br><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
 			     <!-- roomcreate, update 에서 굳이 입력란을 처음부터 숨겨야하는지? 굳이 이점이 없다면 다른 페이지들처럼 처음에는 드러내놓는게 좋을듯 -->
 			     
@@ -99,7 +99,7 @@
                  
                  </div>
 			
-			
+			</div>
 				
 				
 			</div>

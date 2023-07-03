@@ -33,7 +33,7 @@
 				<!-- 생각해보니 여기도 어드민 메인페이지처럼 roomList를 리스팅해서 불러오는게 맞는거 같긴하다.  -->
 				<!-- 굳이 셀렉터가 아닌 다른 양상으로. -->
 				
-				
+				<div class="roomupdate-page-contents">
 				<div class="">${lodging.roomName }</div>
 				<table class="table">
 					<thead>
@@ -72,7 +72,7 @@
 				</table>
                  
                  
-                 
+                 </div>
 				
 			</div>
 		</section>
