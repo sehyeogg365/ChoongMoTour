@@ -26,7 +26,7 @@
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="login-box">
-				<h1 class="text-center pt-3">관리자 로그인</h1>
+				<h1 class="text-center pt-3">ChoongMo Tour Admin Signin</h1>
 				
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">

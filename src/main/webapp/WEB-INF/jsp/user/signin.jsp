@@ -26,7 +26,7 @@
 		
 		<section class="contents d-flex justify-content-center">
 			<div class="login-box">
-				<h1 class="text-center pt-3">로그인</h1>
+				<h1 class="text-center pt-3">ChoongMo Tour Signin</h1>
 				
 				
 				<div class="d-flex">

@@ -26,7 +26,7 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="join-box">
-				<h1 class="text-center pt-3">회원 가입</h1>
+				<h1 class="text-center pt-3">ChoongMo Tour Signup</h1>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<button type="button" class="btn btn-primary " id="duplicateBtn">중복확인</button>
