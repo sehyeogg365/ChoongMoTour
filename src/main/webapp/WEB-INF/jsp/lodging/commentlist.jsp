@@ -98,9 +98,9 @@
 										<h4 class="text-secondary">제주</h4>
 									</c:when>
 								</c:choose>
-								<div class="search">
-									<input id ="address" type ="text" placeholder="검색할 주소">
-									<input id ="submit" type="button" value="주소검색">
+								<div class="search d-flex">
+									<input id ="address" type ="text" class="form-control"placeholder="검색할 주소">
+									<input id ="submit" type="button" class="btn btn-sm btn-primary" value="주소검색">
 								</div>
 								
 								<div id="map" style="width:360px; height:290px;"></div>
@@ -143,7 +143,7 @@
 				<c:choose>
 					<c:when test="${userId eq comment.userId }">
 						<div class="comment-delete mr-3">
-							<i class="delete-btn bi bi-x-circle" data-comment-id ="${comment.id }"></i>
+							<i class="delete-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-comment-id ="${comment.id }"></i>
 						</div>
 					</c:when>
 					<c:otherwise>

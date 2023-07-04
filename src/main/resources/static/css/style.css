@@ -35,7 +35,6 @@ header{
 	
 	width:450px;
 	
-	
 }
 
 .btn-group:hover .dropdown-menu{
@@ -207,7 +206,7 @@ header{
 .lodging-profile{
 	
 	
-    height: 300px;
+    height: 350px;
 }
 
 
@@ -217,11 +216,12 @@ header{
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
-   
+   	
 }
 /*여기 뜯어고치기*/
-.lodging-card>.lodging-card-body{
-	height:50px;
+.lodging-card>.lodging-card-text{
+	position: relative;
+	
 }
 
 
