@@ -223,7 +223,9 @@ header{
 	position: relative;
 	
 }
-
+.lodging-card-text> .lodging-texts{
+	position: absolute;
+}
 
 
 .lodging-profile2 {

@@ -73,7 +73,7 @@
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
 							<div class="lodging-card-text bg-info">
-								<h4 class="text-white ">
+								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>
 										<c:when test = "${lodging.level eq '5성급' }">
