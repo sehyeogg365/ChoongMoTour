@@ -39,7 +39,7 @@
 					<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
 	
 				
-					<select class="form-control col-5 mt-3" id="areaSelector">
+					<select class="form-control col-5 mt-3 ml-3" id="areaSelector">
 								
 	                            <option value="">지역</option>
 	                            <option value="seoul">서울</option>
@@ -51,7 +51,7 @@
 	                            <option value="jeju">제주</option>
 	                 </select>
 	                 
-					<select class="form-control col-5 mt-3" id="levelSelector">
+					<select class="form-control col-5 mt-3 ml-3" id="levelSelector">
 								
 	                            <option value="">등급</option>
 	                            <option value="1성급">1성급</option>
@@ -64,7 +64,7 @@
 	                 
 	                 
 					
-					<div class="text-center mb-3">
+					<div class="text-center my-3">
 						<button id="createBtn"class="btn btn-primary" type="button" >입력 완료</button>
 					</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
 					
