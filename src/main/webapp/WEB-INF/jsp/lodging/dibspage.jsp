@@ -59,7 +59,7 @@
 					
 					
 							<c:forEach var="dibs" items="${dibsDetailList }">
-							<div class="dibs-card  mt-4 ml-4 ">
+							<div class="dibs-card  mt-3 ml-3 ">
 								
 								<div class="">
 									

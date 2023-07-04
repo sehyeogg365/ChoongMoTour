@@ -62,7 +62,7 @@
 						
 						
 						<c:forEach var="reserve" items="${reserveDetailList }">
-						<div class="reservation-card ml-4 mt-4">
+						<div class="reservation-card ml-3 mt-3">
 						
 							<div class="">
 							
