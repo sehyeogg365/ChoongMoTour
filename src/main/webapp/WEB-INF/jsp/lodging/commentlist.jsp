@@ -69,7 +69,7 @@
 									</c:when>
 								</c:choose>
 								<div class="ml-3">
-									<h2 class="font-weight-bold">${lodging.roomName }</h2>
+									<h3 class="font-weight-bold">${lodging.roomName }</h3>
 								</div>
 							
 							</div>
