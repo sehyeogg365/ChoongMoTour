@@ -33,7 +33,7 @@
 						ChoongMo Tour Dibs Page
 					</h1>
 					
-					<div class="dibspagecontents d-flex mx-3">
+					<div class="dibspagecontents d-flex mx-5">
 					<aside class="side-nav col-2 ">
 						
 					<ul class="nav">

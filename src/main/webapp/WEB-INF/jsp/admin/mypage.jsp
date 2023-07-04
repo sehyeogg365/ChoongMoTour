@@ -31,7 +31,7 @@
 				</h1>
 				
 				
-				<div class="mypagecontents d-flex mx-3">
+				<div class="mypagecontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
 				
 				<ul class="nav">
