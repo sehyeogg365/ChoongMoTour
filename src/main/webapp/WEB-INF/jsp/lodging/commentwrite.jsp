@@ -69,7 +69,7 @@
 				       	</div>
 				       	
 				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
-				      <div class="modal-footer d-flex justify-content-between">
+				      <div class="modal-footer d-flex justify-content-center">
 						<button type="button" id="commentBtn" class="btn btn-primary" data-lodging-id="${lodging.id }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
 						
 					 </div>
