@@ -93,7 +93,7 @@
 	                 <div class="">
 	                 	<textarea rows="5" cols="100" id="twincontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
                  	 </div>
-                 	 <div class="text-center mb-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
+                 	 <div class="text-center my-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
 						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id  }">입력 완료</button>
 					 </div>
                  
