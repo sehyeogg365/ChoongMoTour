@@ -120,10 +120,10 @@
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
+				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
 				  </li>
 				  <li class="nav-item">
-				    <a class="nav-link" href="#">리뷰</a>
+				    <a class="nav-link" href="#"><b>리뷰</b></a>
 				  </li>
 			
 			
@@ -182,13 +182,13 @@
 						</c:when>
 						
 						</c:choose>
-						<div class="mt-3 ml-4 small text-secondary">${comment.size } 이용자</div>
-						<div class="ml-4">${comment.content }</div>
+						<div class="ml-4 mt-3 small text-secondary">${comment.size } 이용자</div>
+						<div class="ml-4 mt-2">${comment.content }</div>
 						
 						
 						<c:choose>
 							<c:when test= "${not empty comment.imagePath }">
-								<div class="comment-image ml-4"><img width="400" height ="300"src="${comment.imagePath }"/></div>
+								<div class="comment-image ml-4 mt-2"><img width="400" height ="300"src="${comment.imagePath }"/></div>
 							</c:when>
 							<c:otherwise>
 								<div class=""></div>
@@ -196,7 +196,7 @@
 							
 						</c:choose>
 						
-						<div class="ml-4 small"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
+						<div class="ml-4 mt-2 small"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
 					</div>
 			
 				</div>

@@ -116,13 +116,13 @@
 				
 				<br>
 				
-				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
+				<ul class="nav nav-tabs"><!-- div class tab도가능 이런것도 선택한거만 빨간밑줄표시 해보기 -->
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
+				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
 				  </li>
 				  <li class="nav-item">
 
-				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }">리뷰</a>  
+				    <a class="nav-link" href="/lodging/commentlist/view?lodgingId=${lodging.id }"><b>리뷰</b></a>  
 				  </li>
 			
 			

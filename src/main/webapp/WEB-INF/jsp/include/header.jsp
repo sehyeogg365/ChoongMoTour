@@ -11,7 +11,7 @@
 	<header class="d-flex align-items-center justify-content-between">
 			<!--<h1 class="ml-3 text-white"><a href="/lodging/main/view" class="text-white">ChoongMo Tour</a></h1>-->
 			<a href="/lodging/main/view">
-				<img class="profile" width="90" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbleWvU%2Fbtsml4maMFA%2Fb13BMYGtp2GnvY5xpbYS1k%2Fimg.png" alt="로고">
+				<img class="logo" width="90" src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbleWvU%2Fbtsml4maMFA%2Fb13BMYGtp2GnvY5xpbYS1k%2Fimg.png" alt="로고">
 			</a>
 			
 			<c:choose>
