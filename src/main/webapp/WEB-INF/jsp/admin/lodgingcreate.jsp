@@ -36,7 +36,8 @@
 					
 					<input type="file" name="file" id="fileInput" class="mt-3"><br>
 					
-					<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
+					
+					<label class="mt-4">이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4 col-11"><br>
 	
 				
 					<select class="form-control col-5 mt-3 ml-3" id="areaSelector">
@@ -65,7 +66,7 @@
 	                 
 					
 					<div class="text-center my-3">
-						<button id="createBtn"class="btn btn-primary" type="button" >입력 완료</button>
+						<button id="createBtn"class="btn btn-primary col-12" type="button" >입력 완료</button>
 					</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
 					
 				</div>	

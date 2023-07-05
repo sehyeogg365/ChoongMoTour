@@ -40,11 +40,11 @@
 				
 					<!-- 프론트엔드 영역 부분 피드백은 딱 처음 들어왔을때 값들이 미리 입력 된상태에서 수정이되어야 함 메모게시판 처럼 그게 일반적인 경우 -->
 					<div class="lodgingupdate-page-contents">
-					<label>이름</label>
-					<input type="text" id="roomNameInput" value="${lodging.roomName }" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
+					<label class="mt-4">이름</label>
+					<input type="text" id="roomNameInput" value="${lodging.roomName }" placeholder="내용을 입력해주세요" class="form-control mt-4">
 	
 					<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
-					<select class="form-control col-5 mt-3" id="areaSelector">
+					<select class="form-control col-5 mt-4" id="areaSelector">
 								
 	                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
 	                            <option value="seoul">서울</option>
@@ -56,7 +56,7 @@
 	                            <option value="jeju">제주</option>
 	                 </select>
 	                 
-					<select class="form-control col-5 mt-3" id="levelSelector">
+					<select class="form-control col-5 mt-4" id="levelSelector">
 								
 	                            <option value="${lodging.level }">${lodging.level }</option>
 	                            <option value="1성급">1성급</option>
@@ -67,8 +67,8 @@
 	                 </select>
 	                 
 					
-					<div class="text-center">
-						<button id="updateBtn"class="btn btn-primary update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+					<div class="text-center my-4">
+						<button id="updateBtn"class="btn btn-primary col-12 update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 					</div>
 				
 				

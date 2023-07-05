@@ -34,7 +34,7 @@
 				<!-- 굳이 셀렉터가 아닌 다른 양상으로. -->
 				
 				<div class="roomupdate-page-contents">
-				<div class="">${lodging.roomName }</div>
+				<div class="mt-2">${lodging.roomName }</div>
 				<table class="table">
 					<thead>
 						<tr>
