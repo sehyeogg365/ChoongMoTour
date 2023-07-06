@@ -29,7 +29,7 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 			<section class="contents d-flex justify-content-center">
 				<div class="dibs-page">
-					<h1 class="text-center">
+					<h1 class="text-center font-weight-bold">
 						ChoongMo Tour Dibs Page
 					</h1>
 					

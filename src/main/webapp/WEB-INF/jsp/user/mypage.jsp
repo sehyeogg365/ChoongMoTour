@@ -29,7 +29,7 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="my-page">
 				<h1 class="text-center">
-					ChoongMo Tour My Page
+					<b>ChoongMo Tour My Page</b>
 				</h1>
 				
 				

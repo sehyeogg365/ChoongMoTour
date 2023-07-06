@@ -29,7 +29,7 @@
 			
 			<div class="roomcreate-page">
 				
-				<h1 class="text-center pt-3">ChoongMo Tour Room Create Page</h1>
+				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Room Create Page</h1>
 				
 			
 				<div class="roomcreate-page-contents">

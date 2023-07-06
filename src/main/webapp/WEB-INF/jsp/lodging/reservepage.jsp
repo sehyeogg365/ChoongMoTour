@@ -34,7 +34,7 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="reserve-page">
 				<h1 class="text-center">
-					ChoongMo Tour Reserve Page
+					<b>ChoongMo Tour Reserve Page</b>
 				</h1>
 			
 				

@@ -41,7 +41,7 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="room-page">
 				<h1 class="text-center">
-					ChoongMo Tour Room Page
+					<b>ChoongMo Tour Room Page</b>
 				</h1>
 				
 				

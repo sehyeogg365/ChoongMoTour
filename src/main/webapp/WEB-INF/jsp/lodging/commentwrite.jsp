@@ -30,7 +30,7 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="commentwrite-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour Comment Write Page
 				</h1>
 			

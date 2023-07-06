@@ -31,7 +31,7 @@
 			
 			<div class="lodging-list">
 				<h1 class="text-center">
-					ChoongMo Tour Lodging List Page
+					<b>ChoongMo Tour Lodging List Page</b>
 				</h1>
 				
 				<div class="d-flex justify-content-between mt-3">

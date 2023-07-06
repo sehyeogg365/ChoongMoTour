@@ -40,7 +40,7 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="comment-page">
 			<h1 class="text-center">
-				ChoongMo Tour Comment Page
+				<b>ChoongMo Tour Comment Page</b>
 			</h1>
 		
 			<div class="d-flex  mt-4">

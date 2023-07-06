@@ -29,7 +29,7 @@
 			
 			<div class="lodgingupdate-page">
 			
-				<h1 class="text-center">ChoongMo Tour Lodging Update Page</h1><!-- pt-3제거 -->
+				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Lodging Update Page</h1><!-- pt-3제거 -->
 				
 				<!-- 그냥 파일업로드는 수정 넣지말기 -->
 				<!--  

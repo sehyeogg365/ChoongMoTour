@@ -29,7 +29,7 @@
 			
 			<div class="lodgingcreate-page">
 				
-				<h1 class="">ChoongMo Tour Lodging Create Page</h1><!-- pt-3제거 -->
+				<h1 class="font-weight-bold">ChoongMo Tour Lodging Create Page</h1><!-- pt-3제거 -->
 				
 				<div class="lodgingcreate-page-contents">
 					<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3 mt-3"></i>
