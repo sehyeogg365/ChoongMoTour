@@ -30,7 +30,7 @@
 		<section class="contents d-flex justify-content-center">
 			
 			<div class="lodging-list">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Lodging List Page</b>
 				</h1>
 				

@@ -26,7 +26,7 @@
 		<section class="contents d-flex justify-content-center">
 		
 			<div class="adminmain-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Admin Main Page</b>
 				</h1>
 			

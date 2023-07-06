@@ -29,7 +29,7 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="reservelist-page">
-				<h1 class="text-center font-weight-bold">
+				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour ReserveList
 				</h1>
 				
