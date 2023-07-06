@@ -26,7 +26,7 @@
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="my-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour Admin My Page
 				</h1>
 				
