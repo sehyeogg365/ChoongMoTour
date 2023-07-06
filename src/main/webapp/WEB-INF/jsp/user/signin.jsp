@@ -38,7 +38,7 @@
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					
 					<button type="button" class="btn btn-primary btn-block mt-3" id="loginBtn">로그인</button>
-					<div class="d-flex justify-content-between mt-4">
+					<div class="d-flex justify-content-between mt-3">
 						<a href="/user/signup/view" class="text-center">회원가입</a>
 						<a href="/user/find_id_pw/view" class="text-center">아이디/비밀번호 찾기</a>
 						
