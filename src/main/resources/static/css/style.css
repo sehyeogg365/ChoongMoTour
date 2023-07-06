@@ -190,9 +190,11 @@ header{
 
 
 .lodging-card-list>.lodging-card{
+	height:450px;
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
 
 
@@ -223,9 +225,7 @@ header{
 	position: relative;
 	
 }
-.lodging-card-text> .lodging-texts{
-	position: absolute;
-}
+
 
 
 .lodging-profile2 {
