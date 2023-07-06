@@ -190,7 +190,7 @@ header{
 
 
 .lodging-card-list>.lodging-card{
-	height:450px;
+	/*height:450px;*/
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
@@ -220,9 +220,16 @@ header{
     object-fit: cover;
    	
 }
-/*여기 뜯어고치기*/
-.lodging-card>.lodging-card-text{
-	position: relative;
+/*여기 뜯어고치기 숙소카드 글씨를 감싸는 태그*/
+.lodging-card-textbox{
+
+	
+	/*padding:  10px;*/
+	padding: 5px 10px;
+	position: absolute;
+	
+	transform: translate( -0%, -100% );
+	
 	
 }
 

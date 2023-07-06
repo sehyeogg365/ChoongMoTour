@@ -69,10 +69,10 @@
 							</c:choose>
 							</div>
 							
-							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile bg-danger">
+							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
-							<div class="lodging-card-text bg-info">
+							<div class="lodging-card-textbox ">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>
