@@ -30,7 +30,7 @@
 			
 			<div class="main-page">
 				<h1 class="text-center">
-					ChoongMo Tour Main Page
+					<b>ChoongMo Tour Main Page</b>
 				</h1>
 				
 				<!-- 이미지 서울, 인천, 강원, 전라, 부산, 제주 리스트 -->

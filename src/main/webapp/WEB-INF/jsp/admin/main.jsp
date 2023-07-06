@@ -27,7 +27,7 @@
 		
 			<div class="adminmain-page">
 				<h1 class="text-center">
-					ChoongMo Tour Admin Main Page
+					<b>ChoongMo Tour Admin Main Page</b>
 				</h1>
 			
 			<div class="text-center mt-3">
