@@ -57,7 +57,7 @@
 	                 <div class="d-flex align-items-center mt-3 ml-3">
 						<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
 					 </div>
-	                 <div class="">
+	                 <div class="mx-3">
 	                 	<textarea rows="5" cols="100" id="singlecontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
                  	 </div>
                  	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->

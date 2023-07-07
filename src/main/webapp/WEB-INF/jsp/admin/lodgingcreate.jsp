@@ -36,9 +36,9 @@
 					
 					<input type="file" name="file" id="fileInput" class="mt-3"><br>
 					
-					
-					<label class="mt-4">이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4 col-11"><br>
-	
+					<div class="mx-3">
+						<label class="mt-4">이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
+					</div>
 				
 					<select class="form-control col-5 mt-3 ml-3" id="areaSelector">
 								
