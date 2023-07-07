@@ -245,6 +245,12 @@ header{
 
 
 
+
+
+.room-page{
+	width:1000px;
+}
+
 .lodging-profile2 {
 	width:500px;
 	height:400px;
@@ -255,10 +261,6 @@ header{
     border-radius: 8px;
     object-fit: cover;
     
-}
-
-.room-page{
-	width:1000px;
 }
 
 .room-page>.room-card-list{
