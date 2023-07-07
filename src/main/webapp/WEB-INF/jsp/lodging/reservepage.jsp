@@ -33,7 +33,7 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="reserve-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Reserve Page</b>
 				</h1>
 			
@@ -42,7 +42,7 @@
 				
 					<!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
-					<div class="mt-3 ml-3 pt-3 "><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
+					<div class="mt-3 ml-3 "><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
 					<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
 								<h3 class="ml-3"><strong>싱글룸</strong></h3>
@@ -59,34 +59,34 @@
 						</c:choose>	
 					
 					<div class="d-flex mt-3 mx-3 justify-content-center ">
-						<label class="mt-3">체크인 </label>
-		        		<input type="text" id="startDate" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
-		        		<div class="mt-3 ml-3 mr-3">
+						<label class="mt-3 text-secondary">체크인 </label>
+		        		<input type="text" id="startDate" name="startDate" class="mt-3 col-4" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        		<div class="mt-3 mx-3">
 		        		~
 		        		</div>
 		        		
 		        		
-		        		<label class="mt-3">체크아웃 </label>
-		        		<input type="text" id="endDate" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        		<label class="mt-3 text-secondary">체크아웃 </label>
+		        		<input type="text" id="endDate" name="endDate" class="mt-3 col-4"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 					
 					</div>
 					
 					<div class = "mx-3 ">
-						<label class="input-lable mt-4">예약자 이름</label><input type="text" id="nameInput" class="form-control" value = "${user.name }" class="form-control ">
+						<label class="input-lable mt-4 text-secondary">예약자 이름</label><input type="text" id="nameInput" class="form-control text-secondary" value = "${user.name }" class="form-control ">
 					
 					
-						<label class="input-lable mt-4">전화번호</label><input type="text" id="phoneNumberInput" class="form-control" value = "${user.phoneNumber}" class="form-control ">
+						<label class="input-lable mt-4 text-secondary">전화번호</label><input type="text" id="phoneNumberInput" class="form-control text-secondary" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
 					
-					<div class="">
-					<label class="col-4 mt-4">총 결제 금액 <strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong> </label> <!-- 이것도 fmt활용해보기 -->
+					<div class="col-4">
+						<label class="mt-3 mr-3 text-secondary">총 결제 금액 </label><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong> <!-- 이것도 fmt활용해보기 -->
 					</div>
 					
 					<hr>
 					<div class="payselect mt-4 mx-3">
-						<div class=""> 결제수단을 선택하세요. </div>
+						<div class=""> <b>결제수단을 선택하세요.</b> </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
 							
                             <option value="">결제수단</option>
@@ -102,10 +102,10 @@
 					
 					
 					<div class="check-box form-control mt-4">
-						<label>전체 선택<input type="checkbox" id="allCheck"></label> <br>
-				        <label>개인정보 활용 동의<input type="checkbox" name="check" value="check1" id="check1"></label><br><!-- 이제보니 여기도 밸류값 잘못됨 -->
-				        <label>서비스 이용 동의<input type="checkbox" name="check" value="check2" id="check2"></label><br>
-				        <label>마케팅 활용 동의<input type="checkbox" name="check" value="check3" id="check3"></label>
+						<input type="checkbox" id="allCheck" s><label class="ml-2"><b>전체 선택</b></label> <br>
+				        <input type="checkbox" name="check" value="check1" id="check1" class=""><label class="ml-2">개인정보 활용 동의</label><br><!-- 이제보니 여기도 밸류값 잘못됨 -->
+				        <input type="checkbox" name="check" value="check2" id="check2"><label class="ml-2">서비스 이용 동의</label><br>
+				        <input type="checkbox" name="check" value="check3" id="check3"><label class="ml-2">마케팅 활용 동의</label>
 					
 					</div>
 					

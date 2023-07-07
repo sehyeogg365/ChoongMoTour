@@ -350,6 +350,12 @@ header{
 	position: absolute;
 }
 
+
+.reserve-page{
+	
+	width:600px;
+}
+
 .reservepagecontents{
 	
 	border: 1px solid;
