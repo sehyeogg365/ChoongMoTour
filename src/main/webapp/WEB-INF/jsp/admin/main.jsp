@@ -40,15 +40,19 @@
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
 				<div class="card mt-3"><!-- ml-3제거 -->
-					<div class="card-profile">
+					<div class="card-profile bg-danger">
 						<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
 					</div>
 					
-					<div class="card-body">
-						<div class=""><strong>${lodging.roomName }</strong></div>
+					<div class="card-text ">
+						<div class="text-white"><h4><strong>${lodging.roomName }</strong></h4></div>
 						
-						<div class=""><strong>${lodging.level }</strong></div>
-						
+						<div class="text-white"><h4><strong>${lodging.level }</strong></h4></div>
+					
+					</div>
+					
+					<div class="card-body bg-info">
+					
 						<div class="d-flex justify-content-between mt-3">
 							<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
 							<button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn mr-4" data-lodging-id="${lodging.id }">삭제하기</button>
