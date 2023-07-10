@@ -37,13 +37,13 @@
 					<aside class="side-nav col-2 ">
 						
 					<ul class="nav flex-column">
-						<li class="nav-item mt-3">
+						<li class="nav-item mt-2">
 							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
 						</li>
-						<li class="nav-item mt-3">
+						<li class="nav-item mt-2">
 							<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 						</li>
-						<li class="nav-item mt-3">
+						<li class="nav-item mt-2">
 							<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
 						</li>
 						
@@ -75,8 +75,8 @@
 								<div class="dibs-card-body">
 								<!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
 								<!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
-									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
-									<div class="text-secondary">${dibs.areaName }</div>
+									<div class="ml-2 mt-2"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
+									<div class="ml-2 text-secondary">${dibs.areaName }</div>
 								</div>
 							</div>
 							</c:forEach>

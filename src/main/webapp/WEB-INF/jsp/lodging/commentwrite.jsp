@@ -36,7 +36,7 @@
 			
 				<div class="commentwritepagecontents">
 					 <div class="modal-content">
-				    	<div class="modal-header d-flex justify-content-between">
+				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
 							
 							<h4>${lodging.roomName }</h4>

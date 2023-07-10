@@ -37,22 +37,22 @@
 				<aside class="side-nav col-2 ">
 				
 				<ul class="nav flex-column">
-					<li class="nav-item mt-3">
+					<li class="nav-item mt-2">
 						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
 					</li>
-					<li class="nav-item mt-3">
+					<li class="nav-item mt-2">
 						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 					</li>
-					<li class="nav-item mt-3">
+					<li class="nav-item mt-2">
 						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
 					</li>
 					
 				</ul>
 				</aside>
 				
-				<section class="contents1 col-10">
+				<section class="contents1 col-10 bg-secondary">
 					
-					<div class="info-input-box mx-4">
+					<div class="info-input-box mx-5 bg-info">
 					
 						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
 						
