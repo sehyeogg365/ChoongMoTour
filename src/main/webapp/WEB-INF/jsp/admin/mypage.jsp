@@ -47,10 +47,11 @@
 				</ul>
 				</aside>
 				
-				<section class="contents1 col-10 bg-secondary">
+				<section class="contents1 col-10">
 					
-					<div class="info-input-box mx-5 bg-info">
-					
+					<div class="info-input-box mx-5">
+						
+						<div class="mx-4">
 						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
 						<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
 					
@@ -69,37 +70,37 @@
 					
 						
 						<div class="d-flex mx-3">
-							<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3">
+							<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3 col-6">
 						</div>
 						
 						<div class="d-flex mx-3">
-							<label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3">
+							<label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3 col-6">
 						</div>
 						
 						
 							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3 col-6">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3 col-6">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3 col-6">
 							</div>
 							
 							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3">
+								<label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3 col-6">
 							</div>
 							
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						
 						
 						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3 mb-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
+							<button id="updateBtn"class="btn btn-primary my-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 						</div>
-					
+					</div>
 					
 					</div>
 				</section>
