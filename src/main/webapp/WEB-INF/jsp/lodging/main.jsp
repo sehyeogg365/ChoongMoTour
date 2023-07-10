@@ -47,7 +47,7 @@
 					</div>							
 						
 					
-					<div class="box mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=incheon" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2021/08/21/07/55/south-korea-6562089_960_720.jpg" alt="인천">
 						</a>
@@ -58,7 +58,7 @@
 					</div>
 						
 					
-					<div class="box  mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=gangwon" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2015/09/26/05/07/mt-seoraksan-958643_960_720.jpg" alt="강원">
 						</a>
@@ -68,7 +68,7 @@
 					</div>										
 						
 					
-					<div class="box mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=gyeongsang" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2020/05/24/11/56/to-5213925_960_720.jpg" alt="경상">
 						</a>
@@ -78,7 +78,7 @@
 					</div>
 					 	
 						
-					<div class="box mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=jeolla" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2018/08/23/22/18/jeonju-3626873_960_720.jpg" alt="전라">
 						</a>
@@ -89,7 +89,7 @@
 					</div>
 						
 					
-					<div class="box mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=busan" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2016/10/17/07/53/busan-night-scene-1747130_960_720.jpg" alt="부산">
 						</a>
@@ -99,7 +99,7 @@
 					</div>
 						
 					
-					<div class="box mt-3">
+					<div class="box ml-3 mt-3">
 						<a href="/lodging/lodginglist/view?area_name=jeju" class="box-profile">
 							<img class="profile" width = "" src="https://cdn.pixabay.com/photo/2017/10/15/13/54/doll-2853763_960_720.jpg" alt="제주">
 						</a>

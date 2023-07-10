@@ -139,7 +139,7 @@ header{
 .box-list > .box{
 	
 	width: 250px;
-    height: 250px; 
+    height: 255px; 
     
     overflow: hidden;
 }
@@ -151,9 +151,11 @@ header{
     object-fit: cover;
 }
 
+
+
  .box-profile > .profile:hover{
- 	width: 240px;
-    height: 240px;
+ 	width: 235px;
+    height: 235px;
     border-radius: 70%;
     object-fit: cover;
  }
@@ -162,6 +164,12 @@ header{
 	width:230px;
 	height:20px;
 }
+
+.box> .box-body:hover{
+	width:235px;
+	height:20px;
+}
+
 
 .card-list > .card{
 	width: 400px;
