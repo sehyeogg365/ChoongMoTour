@@ -35,13 +35,13 @@
 				<aside class="side-nav col-2 ">
 				
 				<ul class="nav flex-column">
-					<li class="mt-3">
+					<li class="nav-item mt-3">
 					
-						<h4><a href="/admin/mypage/view?id=${admin.id }" class="nav-list">내 정보수정</a></h4>
+						<h5><b><a href="/admin/mypage/view?id=${admin.id }" class="nav-link text-white">내 정보수정</a></b></h5>
 					</li>
 					
-					<li class="mt-3">
-						<h4><a href="#" class="nav-list">사용자 삭제</a></h4>
+					<li class="nav-item mt-3">
+						<h5><b><a href="#" class="nav-link text-white">사용자 삭제</a></b></h5>
 					</li>
 					
 				</ul>

@@ -37,14 +37,14 @@
 				<aside class="side-nav col-2 ">
 				
 				<ul class="nav flex-column">
-					<li class="mt-3">
-						<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
+					<li class="nav-item mt-3">
+						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
 					</li>
-					<li class="mt-3">
-						<h4><a href="/lodging/reservelist/view?id=${user.id }" class="nav-list">예약내역</a></h4>
+					<li class="nav-item mt-3">
+						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 					</li>
-					<li class="mt-3">
-						<h4><a href="/user/mypage/view?id=${user.id }" class="nav-list">내 정보수정</a></h4>
+					<li class="nav-item mt-3">
+						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
 					</li>
 					
 				</ul>

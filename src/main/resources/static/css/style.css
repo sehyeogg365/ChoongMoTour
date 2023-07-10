@@ -144,6 +144,12 @@ header{
     overflow: hidden;
 }
 
+.box >.box-profile{
+	width: 250px;
+	height: 235px;
+}
+
+
  .box-profile > .profile{
 	width: 230px;
     height: 230px;
@@ -158,6 +164,9 @@ header{
     height: 235px;
     border-radius: 70%;
     object-fit: cover;
+    
+    border: 1px solid;
+	box-shadow: 3px 3px 5px 0px black;
  }
 
 .box> .box-body{
@@ -388,7 +397,7 @@ header{
 
 .reservation-card-list >.reservation-card{
 	width: 350px;
-    height: 450px; 
+    height: 420px; /*450px->420px*/
     border: 1px solid;
     box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
