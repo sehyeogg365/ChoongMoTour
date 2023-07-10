@@ -151,6 +151,13 @@ header{
     object-fit: cover;
 }
 
+ .box-profile > .profile:hover{
+ 	width: 240px;
+    height: 240px;
+    border-radius: 70%;
+    object-fit: cover;
+ }
+
 .box> .box-body{
 	width:230px;
 	height:20px;
