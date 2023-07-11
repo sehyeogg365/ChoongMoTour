@@ -138,8 +138,8 @@ header{
 
 .box-list > .box{
 	
-	width: 250px;
-    height: 255px; 
+	width: 260px;
+    height: 260px; 
     
     overflow: hidden;
 }
@@ -160,25 +160,27 @@ header{
 
 
  .box-profile > .profile:hover{
- 	width: 235px;
-    height: 235px;
-    border-radius: 70%;
-    object-fit: cover;
+ 	/*width: 235px;*/
+    /*height: 235px;*/
+    /*border-radius: 70%;*/
+    /*object-fit: cover;*/
     
-    border: 1px solid;
-	box-shadow: 3px 3px 5px 0px black;
+    /*border: 1px solid;*/
+	/*box-shadow: 3px 3px 5px 0px black;*/
+	transform:scale(1.02, 1.02);
+	
  }
 
 .box> .box-body{
-	width:230px;
+	width:260px;
 	height:20px;
 }
-
+/*
 .box> .box-body:hover{
 	width:235px;
 	height:20px;
 }
-
+*/
 
 .card-list > .card{
 	width: 400px;

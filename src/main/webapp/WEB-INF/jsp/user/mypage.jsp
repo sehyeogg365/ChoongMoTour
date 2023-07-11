@@ -122,7 +122,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-	
+		//css 클릭시 색변화
 		
 		$("#updateBtn").on("click", function(){
 			

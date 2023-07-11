@@ -75,7 +75,7 @@
 								<div class="dibs-card-body">
 								<!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
 								<!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
-									<div class="ml-2 mt-2"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
+									<div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark d-3"><b>${dibs.roomName }</b></a></div>
 									<div class="ml-2 text-secondary">${dibs.areaName }</div>
 								</div>
 							</div>
