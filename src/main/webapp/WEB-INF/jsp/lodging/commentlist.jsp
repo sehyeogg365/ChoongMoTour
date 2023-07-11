@@ -120,7 +120,7 @@
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
+				    <a class="nav-link text-dark" aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
 				  </li>
 				  <li class="nav-item">
 				    <a class="nav-link" href="#"><b>리뷰</b></a>
@@ -156,9 +156,9 @@
 				
 					<div class="comment-profile d-flex">
 						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-						<div class="mt-4 ml-3">${comment.nickname }</div>
+						<div class="mt-4 ml-3"><b>${comment.nickname }</b></div>
 					</div>
-					<div class="comment-content  ml-5 ">
+					<div class="comment-content  ml-5">
 					<!--  
 						<div class="ml-4">로징아이디${comment.lodgingId }</div>
 						<div class="ml-4">유저아이디${comment.userId }</div>
@@ -166,23 +166,23 @@
 						<c:choose>
 						
 						<c:when test = "${comment.starpoint eq 1.0}">
-							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(1.0)</div>
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>&nbsp1.0</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 2.0}">
-							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(2.0)</div>
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>&nbsp2.0</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 3.0}">
-							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(3.0)</div>
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>&nbsp3.0</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 4.0}">
-							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>(4.0)</div>
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>&nbsp4.0</div>
 						</c:when>
 						<c:when test = "${comment.starpoint eq 5.0}">
-							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/>(5.0)</div>
+							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/>&nbsp5.0</div>
 						</c:when>
 						
 						</c:choose>
-						<div class="ml-4 mt-3 small text-secondary">${comment.size } 이용자</div>
+						<div class="ml-4 mt-2 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-4 mt-2">${comment.content }</div>
 						
 						
@@ -196,7 +196,7 @@
 							
 						</c:choose>
 						
-						<div class="ml-4 my-2 small"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
+						<div class="ml-4 my-2 small text-secondary"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
 					</div>
 			
 				</div>
