@@ -156,9 +156,9 @@
 				
 					<div class="comment-profile d-flex">
 						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-						<div class="mt-4 ml-3"><b>${comment.nickname }</b></div>
+						<div class="ml-3 mt-4"><b>${comment.nickname }</b></div>
 					</div>
-					<div class="comment-content  ml-5">
+					<div class="comment-content ml-5 mt-2">
 					<!--  
 						<div class="ml-4">로징아이디${comment.lodgingId }</div>
 						<div class="ml-4">유저아이디${comment.userId }</div>
