@@ -58,16 +58,16 @@
 							</c:otherwise>
 						</c:choose>	
 					
-					<div class="d-flex mt-3 mx-3 justify-content-center ">
-						<label class="mt-3 text-secondary">체크인 </label>
-		        		<input type="text" id="startDate" name="startDate" class="mt-3 col-4" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
-		        		<div class="mt-3 mx-3">
+					<div class="d-flex  mx-3 justify-content-center align-items-center">
+						<label class="mt-4 text-secondary">체크인 </label>
+		        		<input type="text" id="startDate" name="startDate" class="mt-4 col-4" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        		<div class="mt-4 mx-3">
 		        		~
 		        		</div>
 		        		
 		        		
-		        		<label class="mt-3 text-secondary">체크아웃 </label>
-		        		<input type="text" id="endDate" name="endDate" class="mt-3 col-4"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+		        		<label class="mt-4 text-secondary">체크아웃 </label>
+		        		<input type="text" id="endDate" name="endDate" class="mt-4 col-4"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				
 					
 					</div>
@@ -80,8 +80,8 @@
 					</div>
 					<hr>
 					
-					<div class="col-4">
-						<label class="mt-3 mr-3 text-secondary">총 결제 금액 </label><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong> <!-- 이것도 fmt활용해보기 -->
+					<div class="col-5 d-flex">
+						<label class="mt-3 mr-3 text-secondary">총 결제 금액 <strong class="text-dark"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></label> <!-- 이것도 fmt활용해보기 -->
 					</div>
 					
 					<hr>
