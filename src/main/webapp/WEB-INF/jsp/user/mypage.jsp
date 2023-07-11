@@ -44,7 +44,7 @@
 						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 					</li>
 					<li class="nav-item mt-2">
-						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
+						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-primrary">내 정보수정</a></b></h5>
 					</li>
 					
 				</ul>
@@ -119,10 +119,12 @@
 		font-family: 'Noto Sans KR', sans-serif;
 	}
 	
+	
 	</style>
 	<script>
 	$(document).ready(function(){
-		//css 클릭시 색변화
+		
+		
 		
 		$("#updateBtn").on("click", function(){
 			

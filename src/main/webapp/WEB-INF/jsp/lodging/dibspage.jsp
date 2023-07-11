@@ -38,7 +38,7 @@
 						
 					<ul class="nav flex-column">
 						<li class="nav-item mt-2">
-							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
+							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-primrary">찜목록</a></b></h5>
 						</li>
 						<li class="nav-item mt-2">
 							<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
@@ -72,11 +72,11 @@
 									</a>
 								</div>
 								
-								<div class="dibs-card-body">
+								<div class="dibs-card-body d-flex justify-content-center">
 								<!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
 								<!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
-									<div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark d-3"><b>${dibs.roomName }</b></a></div>
-									<div class="ml-2 text-secondary">${dibs.areaName }</div>
+									<div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
+									<div class="ml-2 mt-2 text-secondary">${dibs.areaName }</div>
 								</div>
 							</div>
 							</c:forEach>
@@ -102,6 +102,8 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		//css 클릭시 색변화
+		
 		
 		//찜 해제 
 		$(".undib-icon").on("click", function(){

@@ -41,7 +41,7 @@
 						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
 					</li>
 					<li class="nav-item mt-2">
-						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
+						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
 					</li>
 					<li class="nav-item mt-2">
 						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
@@ -151,7 +151,9 @@
 	</style>
 	<script>
 	 $(document).ready(function() {
-	
+		//css 클릭시 색변화
+		
+		
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 /*
