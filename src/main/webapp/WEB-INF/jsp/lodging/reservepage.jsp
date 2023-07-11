@@ -86,7 +86,7 @@
 					
 					<hr>
 					<div class="payselect mt-4 mx-3">
-						<div class=""> <b>결제수단을 선택하세요.</b> </div>
+						<div class=""> <b style="font-size: 20px">결제수단을 선택하세요.</b> </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
 							
                             <option value="">결제수단</option>
