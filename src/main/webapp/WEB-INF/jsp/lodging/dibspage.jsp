@@ -29,24 +29,24 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 			<section class="contents d-flex justify-content-center">
 				<div class="dibs-page">
-					<h1 class="text-center">
+					<h1 class="text-center pt-3 font-weight-bold">
 						ChoongMo Tour Dibs Page
 					</h1>
 					
-					<div class="dibspagecontents d-flex mx-3">
+					<div class="dibspagecontents d-flex mx-5">
 					<aside class="side-nav col-2 ">
 						
-					<ul class="nav">
-						<li class="mt-3">
-							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
+					<ul class="nav flex-column">
+						<li class="nav-item mt-2">
+							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-primrary">찜목록</a></b></h5>
 						</li>
-						<li class="mt-3">
-							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="nav-list">예약내역</a></h4>
+						<li class="nav-item mt-2">
+							<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 						</li>
-						<li class="mt-3">
-							<h4><a href="/user/mypage/view?id=${user.id }" class="nav-list">내 정보수정</a></h4>
+						<li class="nav-item mt-2">
+							<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
 						</li>
-					
+						
 					</ul>
 					
 					
@@ -59,7 +59,7 @@
 					
 					
 							<c:forEach var="dibs" items="${dibsDetailList }">
-							<div class="dibs-card  mt-4 ml-4 ">
+							<div class="dibs-card  mt-3 ml-3 ">
 								
 								<div class="">
 									
@@ -72,11 +72,11 @@
 									</a>
 								</div>
 								
-								<div class="dibs-card-body">
+								<div class="dibs-card-body d-flex justify-content-center">
 								<!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
 								<!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
-									<div class=""><a href="/lodging/room/view?id=${dibs.lodgingId }" >${dibs.roomName }</a></div>
-									<div class="">${dibs.areaName }</div>
+									<div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
+									<div class="ml-2 mt-2 text-secondary">${dibs.areaName }</div>
 								</div>
 							</div>
 							</c:forEach>
@@ -102,6 +102,8 @@
 	</style>
 	<script>
 	$(document).ready(function(){
+		//css 클릭시 색변화
+		
 		
 		//찜 해제 
 		$(".undib-icon").on("click", function(){

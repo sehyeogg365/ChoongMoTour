@@ -26,7 +26,7 @@
 		
 		<section class="contents d-flex justify-content-center">
 			<div class="login-box">
-				<h1 class="text-center pt-3">로그인</h1>
+				<h1 class="text-center pt-3"><b>ChoongMo Tour Signin</b></h1>
 				
 				
 				<div class="d-flex">
@@ -38,9 +38,9 @@
 					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					
 					<button type="button" class="btn btn-primary btn-block mt-3" id="loginBtn">로그인</button>
-					<div class="d-flex justify-content-between mt-4">
-						<a href="/user/signup/view" class="text-center">회원가입</a>
-						<a href="/user/find_id_pw/view" class="text-center">아이디/비밀번호 찾기</a>
+					<div class="d-flex justify-content-between mt-3">
+						<a href="/user/signup/view" class="text-center text-dark">회원가입</a>
+						<a href="/user/find_id_pw/view" class="text-center text-dark">아이디/비밀번호 찾기</a>
 						
 					</div>
 			</div>

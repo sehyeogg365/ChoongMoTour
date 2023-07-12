@@ -25,10 +25,10 @@
 		<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="join-box"><!-- 유저 회원가입과 달리 인증번호 보내기 추가 -->
-				<h1 class="text-center pt-3">관리자 회원 가입</h1>
+				<h1 class="text-center pt-3">ChoongMo Tour Admin Signup</h1>
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-					<button type="button" class="btn btn-primary btn-block" id="duplicateBtn">중복확인</button>
+					<button type="button" class="btn btn-primary" id="duplicateBtn">중복확인</button>
 				</div>
 				<div class="small d-none" id="duplicateYes"><!-- 중복될시  -->
 					중복된 아이디입니다.

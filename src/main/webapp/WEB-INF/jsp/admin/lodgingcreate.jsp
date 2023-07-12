@@ -29,46 +29,48 @@
 			
 			<div class="lodgingcreate-page">
 				
-				<h1 class="text-center pt-3">관리자 숙소 추가</h1>
+				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Lodging Create Page</h1><!-- pt-3제거 -->
 				
-				
-				<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-				
-				<input type="file" name="file" id="fileInput"><br>
-				
-				<label>이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
-
-			
-				<select class="form-control col-5 mt-3" id="areaSelector">
-							
-                            <option value="">지역</option>
-                            <option value="seoul">서울</option>
-                            <option value="incheon">인천</option>
-                            <option value="gangwon">강원</option>
-                            <option value="gyeongsang">경상</option>
-                            <option value="jeolla">전라</option>
-                            <option value="busan">부산</option>
-                            <option value="jeju">제주</option>
-                 </select>
-                 
-				<select class="form-control col-5 mt-3" id="levelSelector">
-							
-                            <option value="">등급</option>
-                            <option value="1성급">1성급</option>
-                            <option value="2성급">2성급</option>
-                            <option value="3성급">3성급</option>
-                            <option value="4성급">4성급</option>
-                            <option value="5성급">5성급</option>   
-                 </select>
-                 
-                 
-                 
-				
-				<div class="text-center mb-3">
-					<button id="createBtn"class="btn btn-primary" type="button" >입력 완료</button>
-				</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
+				<div class="lodgingcreate-page-contents">
+					<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3 mt-3"></i>
 					
+					<input type="file" name="file" id="fileInput" class="mt-3"><br>
 					
+					<div class="mx-3">
+						<label class="mt-4">이름</label><input type="text" id="roomNameInput" placeholder="내용을 입력해주세요" class="form-control mt-4"><br>
+					</div>
+				
+					<select class="form-control col-5 mt-3 ml-3" id="areaSelector">
+								
+	                            <option value="">지역</option>
+	                            <option value="seoul">서울</option>
+	                            <option value="incheon">인천</option>
+	                            <option value="gangwon">강원</option>
+	                            <option value="gyeongsang">경상</option>
+	                            <option value="jeolla">전라</option>
+	                            <option value="busan">부산</option>
+	                            <option value="jeju">제주</option>
+	                 </select>
+	                 
+					<select class="form-control col-5 mt-3 ml-3" id="levelSelector">
+								
+	                            <option value="">등급</option>
+	                            <option value="1성급">1성급</option>
+	                            <option value="2성급">2성급</option>
+	                            <option value="3성급">3성급</option>
+	                            <option value="4성급">4성급</option>
+	                            <option value="5성급">5성급</option>   
+	                 </select>
+	                 
+	                 
+	                 
+					
+					<div class="text-center my-3">
+						<button id="createBtn"class="btn btn-primary col-12" type="button" >입력 완료</button>
+					</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
+					
+				</div>	
+				
 			</div>
 		</section>
 	

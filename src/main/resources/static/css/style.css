@@ -8,9 +8,9 @@
 
 header{
 	
-	height:70px;
+	height:90px;
 	
-	background-color:#1E90FF;
+	background-color:#20B2AA;
 
 }
 
@@ -21,20 +21,19 @@ header{
 
 .contents > .join-box{
 	
-	width:450px;
+	width:350px;
 	
 }
 
 .contents > .login-box{
 	
-	width:450px;
+	width:350px;
 	
 }
 
 .contents > .find-id-pw-page{
 	
-	width:600px;
-	
+	width:350px;
 	
 }
 
@@ -53,33 +52,56 @@ header{
 }
 
 .contents> .lodgingcreate-page{
-	width:600px;
+	width:500px;
+
+}
+
+
+.lodgingcreate-page > .lodgingcreate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
-
 
 .contents> .lodgingupdate-page{
-	width:600px;
-	border: 1px solid;
-	box-shadow: 3px 3px 5px 0px black;
-	border-radius: 8px;
+	width:500px;
+	
 }
 
-.contents> .roomcreate-page{
-	width:600px;
+.lodgingupdate-page > .lodgingupdate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
+
+.contents> .roomcreate-page{
+	width:500px;
+	
+}
+
+.roomcreate-page >.roomcreate-page-contents{
+	border: 1px solid;
+	box-shadow: 3px 3px 5px 0px black;
+	border-radius: 8px;
+	
+}
+
 
 .contents> .roomupdate-page{
 	width:1000px;
+	
+}
+
+.roomupdate-page > .roomupdate-page-contents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
 
 .contents> .lodging-list{
 	width:1000px;
@@ -116,47 +138,85 @@ header{
 
 .box-list > .box{
 	
-	width: 270px;
-    height: 300px; 
+	width: 260px;
+    height: 280px; 
     
     overflow: hidden;
 }
 
- .box-profile > .profile{
-	width: 250px;
-    height: 250px;
-    border-radius: 70%;
-    object-fit: cover;
+.box > .inner-box{
+	width: 260px;
+	height: 260px; 
+	
 }
 
-.box> .box-body{
-	width:250px;
-	height:50px;
+
+.inner-box >.box-profile{
+	width: 230px;
+	height: 230px;
+	
 }
+
+
+ .box-profile > .profile{
+	width: 230px;
+    height: 230px;
+    border-radius: 70%;
+    object-fit: cover;  
+}
+
+
+
+ .box-profile > .profile:hover{
+
+	transform:scale(1.03, 1.03);
+	
+ }
+
+.box> .box-body{
+	width:270px;
+	height:20px;
+}
+/*
+.box> .box-body:hover{
+	width:235px;
+	height:20px;
+}
+*/
 
 .card-list > .card{
 	width: 400px;
-    height: 600px; 
+    height: 550px; 
     border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 	
 }
-
-.card-list > .card-body{
-	width: 400px;
-    height: 200px; 
-	
-}
-
-.card-profile > .profile{
-	width: 400px;
+.card >.card-profile > .profile{
+	width:100%;
     height: 400px;
     border-radius: 8px;
     object-fit: cover;
 	margin : auto;
  
 }
+
+.card-list > .card > .card-text{
+	padding: 5px 10px;
+	position: absolute;
+	
+	transform: translate( 0%, 380% );
+	
+}
+
+
+.card-list > .card > .card-body{
+	width: 400px;
+    height: 150px; 
+	
+}
+
+
 
 .info-input-box{
 	width:800px;
@@ -168,10 +228,13 @@ header{
 
 
 .lodging-card-list>.lodging-card{
+	/*height:450px;*/
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
+	
 }
+
 
  .heart{
  
@@ -183,7 +246,7 @@ header{
 .lodging-profile{
 	
 	
-    height: 300px;
+    height: 350px;
 }
 
 
@@ -193,11 +256,27 @@ header{
     height: 100%;
     border-radius: 8px;
     object-fit: cover;
-   
+   	
+}
+/*여기 뜯어고치기 숙소카드 글씨를 감싸는 태그*/
+.lodging-card-textbox{
+
+	
+	/*padding:  10px;*/
+	padding: 5px 10px;
+	position: absolute;
+	
+	transform: translate( -0%, -100% );
+	
+	
 }
 
-.lodging-card>.lodging-card-body{
-	height:50px;
+
+
+
+
+.room-page{
+	width:1000px;
 }
 
 .lodging-profile2 {
@@ -210,10 +289,6 @@ header{
     border-radius: 8px;
     object-fit: cover;
     
-}
-
-.room-page{
-	width:1000px;
 }
 
 .room-page>.room-card-list{
@@ -262,7 +337,7 @@ header{
 
 .dibs-card-list >.dibs-card{
 	width: 350px;
-    height: 450px; 
+    height: 420px; 
     border: 1px solid;
     border-radius: 8px;
     box-shadow: 3px 3px 5px 0px black;
@@ -282,7 +357,7 @@ header{
 }
 
 .dibs-profile >.profile{
-	width:348px;
+	width:100%;
     height: 250px;
     object-fit: cover;
     border-radius: 8px;
@@ -305,6 +380,12 @@ header{
 	position: absolute;
 }
 
+
+.reserve-page{
+	
+	width:600px;
+}
+
 .reservepagecontents{
 	
 	border: 1px solid;
@@ -320,7 +401,7 @@ header{
 
 .reservation-card-list >.reservation-card{
 	width: 350px;
-    height: 450px; 
+    height: 420px; /*450px->420px*/
     border: 1px solid;
     box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
@@ -354,7 +435,7 @@ header{
 }
 
 .commentwrite-page{
-	width:800px;
+	width:500px;
 }
 
 
@@ -410,8 +491,8 @@ header{
 
 footer{
 	
-	height:70px;
+	height:90px;
 	
-	background-color: #1E90FF;
+	background-color: #20B2AA;
 	
 }

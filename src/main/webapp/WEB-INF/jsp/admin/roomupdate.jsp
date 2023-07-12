@@ -28,13 +28,13 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="roomupdate-page">
 			
-				<h1 class="text-center pt-3">관리자 객실 수정</h1>
+				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Room Update Page</h1>
 				
 				<!-- 생각해보니 여기도 어드민 메인페이지처럼 roomList를 리스팅해서 불러오는게 맞는거 같긴하다.  -->
 				<!-- 굳이 셀렉터가 아닌 다른 양상으로. -->
 				
-				
-				<div class="">${lodging.roomName }</div>
+				<div class="roomupdate-page-contents">
+				<div class="pl-2 pt-2">${lodging.roomName }</div>
 				<table class="table">
 					<thead>
 						<tr>
@@ -72,7 +72,7 @@
 				</table>
                  
                  
-                 
+                 </div>
 				
 			</div>
 		</section>

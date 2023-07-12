@@ -8,7 +8,7 @@
 </head>
 <body>
 		<footer class="d-flex justify-content-center align-items-center mt-3">
-			<div class="text-center text-white pt-3">Copyright © choongmotour 2023</div>
+			<div class="text-center text-white">Copyright © choongmotour 2023</div>
 		</footer>
 </body>
 </html>

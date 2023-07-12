@@ -40,8 +40,8 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="room-page">
-				<h1 class="text-center">
-					ChoongMo Tour Room Page
+				<h1 class="text-center pt-3">
+					<b>ChoongMo Tour Room Page</b>
 				</h1>
 				
 				
@@ -72,7 +72,7 @@
 								</c:when>
 							</c:choose>
 							<div class="ml-3">
-								<h2 class="font-weight-bold">${lodging.roomName }</h2>
+								<h3 class="font-weight-bold">${lodging.roomName }</h3>
 							</div>
 							
 						</div>
@@ -101,9 +101,9 @@
 									<h4 class="text-secondary">제주</h4>
 								</c:when>
 								</c:choose>
-								<div class="search">
-									<input id ="address" type ="text" placeholder="검색할 주소">
-									<input id ="submit" type="button" value="주소검색">
+								<div class="search d-flex">
+									<input id ="address" type ="text" class="form-control"placeholder="검색할 주소">
+									<input id ="submit" type="button" class="btn btn-sm btn-primary" value="주소검색">
 								</div>
 								
 								<div id="map" style="width:360px; height:290px;"></div>
@@ -116,13 +116,13 @@
 				
 				<br>
 				
-				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
+				<ul class="nav nav-tabs"><!-- div class tab도가능 이런것도 선택한거만 빨간밑줄표시 해보기 -->
 				  <li class="nav-item">
-				    <a class="nav-link active" aria-current="page" href="/lodging/room/view?id=${lodging.id }">객실리스트</a>
+				    <a class="nav-link " aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
 				  </li>
 				  <li class="nav-item">
 
-				    <a class="nav-link " href="/lodging/commentlist/view?lodgingId=${lodging.id }">리뷰</a>  
+				    <a class="nav-link text-dark" href="/lodging/commentlist/view?lodgingId=${lodging.id }"><b>리뷰</b></a>  
 				  </li>
 			
 			
@@ -130,6 +130,7 @@
 				
 				<label class="mt-3">체크인 </label>
 		        <input type="text" id="startDate" class="" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
+		        ~	
 		        <label class="mt-3">체크아웃 </label>
 		        <input type="text" id="endDate" class="" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 				<!-- 여기서 폼태그 활용해보기 객실페이지서 예약페이지 넘어갈때 원래 딱 버튼눌렀을때 그다음 페이지 들어갈게 없을때 api쓰는게 좋다고 함(?) 그래서 폼태그였다가 api로 바꾼건데.. -->
@@ -161,7 +162,7 @@
 										<div class="ml-4">${room.size }</div>
 									</c:otherwise>
 								</c:choose>	
-								<p class="ml-4"><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></p>
+								<p class="mr-4"><strong><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></p>
 							</div>	
 							<div class = "buttonlist text-center mt-5">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
 								<button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
