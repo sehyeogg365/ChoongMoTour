@@ -27,17 +27,17 @@
 		<section class="contents d-flex justify-content-center">
 			<div class="find-id-pw-page">
 				<h1 class="text-center">
-					ChoongMo Tour Find Id/Pw
+					<b>ChoongMo Tour Find Id/Pw</b>
 				</h1>
 				<div class="findidpwcontents">
 				
-				<div class="d-flex justify-content-center align-items-end">
+				<div class="d-flex justify-content-center align-items-end mt-3">
 				 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
                          	
                     <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
   
 				</div><!-- class 값 space땜에 라디오 안먹힌듯 -->
-				<div class="find-id" id="findIdInput">
+				<div class="find-id mt-4" id="findIdInput">
 					<label>아이디 찾기</label>
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
@@ -45,7 +45,7 @@
 					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn" data-user-id="${user.loginId }">Next</button>
 				</div>
 				
-				<div class="find-pw d-none" id="findPasswordInput">
+				<div class="find-pw d-none mt-4" id="findPasswordInput">
 					<label>비밀번호 찾기</label>
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">

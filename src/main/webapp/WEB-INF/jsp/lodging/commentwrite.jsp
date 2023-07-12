@@ -30,13 +30,13 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="commentwrite-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour Comment Write Page
 				</h1>
 			
 				<div class="commentwritepagecontents">
 					 <div class="modal-content">
-				    	<div class="modal-header d-flex justify-content-between">
+				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
 							
 							<h4>${lodging.roomName }</h4>
@@ -50,7 +50,7 @@
 							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
 				       	
-				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3" readonly>
+				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3 d-none" readonly>
 				       
 				       	
 				    	<div class="mt-3">
@@ -69,7 +69,7 @@
 				       	</div>
 				       	
 				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
-				      <div class="modal-footer d-flex justify-content-between">
+				      <div class="modal-footer d-flex justify-content-center">
 						<button type="button" id="commentBtn" class="btn btn-primary" data-lodging-id="${lodging.id }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
 						
 					 </div>

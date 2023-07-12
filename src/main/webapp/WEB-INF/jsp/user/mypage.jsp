@@ -28,23 +28,23 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="my-page">
-				<h1 class="text-center">
-					ChoongMo Tour My Page
+				<h1 class="text-center pt-3">
+					<b>ChoongMo Tour My Page</b>
 				</h1>
 				
 				
-				<div class="mypagecontents d-flex mx-3">
+				<div class="mypagecontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
 				
-				<ul class="nav">
-					<li class="mt-3">
-						<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
+				<ul class="nav flex-column">
+					<li class="nav-item mt-2">
+						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
 					</li>
-					<li class="mt-3">
-						<h4><a href="/lodging/reservelist/view?id=${user.id }" class="nav-list">예약내역</a></h4>
+					<li class="nav-item mt-2">
+						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
 					</li>
-					<li class="mt-3">
-						<h4><a href="/user/mypage/view?id=${user.id }" class="nav-list">내 정보수정</a></h4>
+					<li class="nav-item mt-2">
+						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-primrary">내 정보수정</a></b></h5>
 					</li>
 					
 				</ul>
@@ -52,11 +52,12 @@
 				
 				<section class="contents1 col-10">
 					
-					<div class="info-input-box mx-4">
+					<div class="info-input-box mx-5">
 					
+						<div class="mx-4 ">
 						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
 						
-						<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
+						<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
 					
 						<input type="file" name="file" id="fileInput" class="">
 						
@@ -77,29 +78,29 @@
 				 		 </c:choose>	
 						
 							
-						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "" class="form-control mt-4 mr-3">
-						</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
-						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4 mr-3">
+							<div class="d-flex mx-3">
+								<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "" class="form-control mt-4 mr-3 col-6">
+							</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
+							<div class="d-flex mx-3">
+								<label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value= ""  class="form-control mt-4 mr-3 col-6">
+							</div>
+							<div class="d-flex mx-3">
+								<label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value="${user.name }" class="form-control mt-4 mr-3 col-6">
+							</div>	
+							<div class="d-flex mx-3">							<!-- 왜자꾸 이메일, 이메일 이렇게 뜨는지 모르겠다. 분명 프론트엔드 영역 문제고 그럴거같은데 -->
+								<label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value="${user.email }" class="form-control mt-4 mr-3 col-6">
+							</div>		
+							<div class="d-flex mx-3">
+								<label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value="${user.nickname }" class="form-control mt-4 mr-3 col-6">
+							</div>
+							<div class="d-flex mx-3">	
+								<label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value= "${user.phoneNumber }"  class="form-control mt-4 mr-3 col-6">
+							</div>
+							<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
+							<div class="text-center">
+								<button id="updateBtn"class="btn btn-primary my-3" type="button" data-user-id="${user.id }">수정 완료</button>
+							</div>
 						</div>
-						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">이름</label><input type="text" id="nameInput" value="${user.name }" class="form-control mt-4 mr-3">
-						</div>	
-						<div class="d-flex mx-3">							<!-- 왜자꾸 이메일, 이메일 이렇게 뜨는지 모르겠다. 분명 프론트엔드 영역 문제고 그럴거같은데 -->
-							<label class="col-4 mt-4">이메일</label><input type="text" id="emailInput" value="${user.email }" class="form-control mt-4 mr-3">
-						</div>		
-						<div class="d-flex mx-3">
-							<label class="col-4 mt-4">닉네임</label><input type="text" id="nicknameInput" value="${user.nickname }" class="form-control mt-4 mr-3">
-						</div>
-						<div class="d-flex mx-3">	
-							<label class="col-4 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value= "${user.phoneNumber }"  class="form-control mt-4 mr-3">
-						</div>
-						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
-						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary mt-3 mb-3" type="button" data-user-id="${user.id }">수정 완료</button>
-						</div>
-					
 					
 					</div>
 				</section>
@@ -118,10 +119,12 @@
 		font-family: 'Noto Sans KR', sans-serif;
 	}
 	
+	
 	</style>
 	<script>
 	$(document).ready(function(){
-	
+		
+		
 		
 		$("#updateBtn").on("click", function(){
 			

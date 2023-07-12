@@ -30,8 +30,8 @@
 		<section class="contents d-flex justify-content-center">
 			
 			<div class="lodging-list">
-				<h1 class="text-center">
-					ChoongMo Tour Lodging List Page
+				<h1 class="text-center pt-3">
+					<b>ChoongMo Tour Lodging List Page</b>
 				</h1>
 				
 				<div class="d-flex justify-content-between mt-3">
@@ -48,22 +48,22 @@
 				<div class="lodging-card-list">
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
 					<c:forEach var="lodging" items = "${lodgingList }">
-					<div class="lodging-card mt-3">
+					<div class="lodging-card bg-warning mt-3">
 						
-						<div class=" ">
+						
 							<div class="heart mr-3">
 							
 							<!-- 하트아이콘 -->
 							<c:choose>
 								<c:when test="${lodging.dibs}">
 																																		
-										<i class="undib-icon bi bi-heart-fill text-danger" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
+										<i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
 									
 								</c:when>
 								
 								<c:otherwise>	<!-- 검정하트 빈하트 -->
 									
-										<i class="dib-icon bi bi-heart " style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
+										<i class="dib-icon bi bi-heart mt-2 ml-2" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
 									
 								</c:otherwise>
 							</c:choose>
@@ -72,28 +72,31 @@
 							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
+							<div class="lodging-card-textbox ">
+								<h4 class="text-white lodging-texts">
+									<b>${lodging.roomName }</b>
+									<c:choose>
+										<c:when test = "${lodging.level eq '5성급' }">
+											<div class="text-warning"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+										</c:when>
+										<c:when test = "${lodging.level eq '4성급' }">
+											<div class="text-danger"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+										</c:when>
+										<c:when test = "${lodging.level eq '3성급' }">
+											<div class="text-secondary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+										</c:when>
+										<c:when test = "${lodging.level eq '2성급' }">
+											<div class="text-success"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+										</c:when>
+										<c:when test = "${lodging.level eq '1성급' }">
+											<div class="text-primary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
+										</c:when>
+									</c:choose>
+								</h4>
+							</div>
 							
-						</div>
-						<div class="lodging-card-body">									<!-- 400에러 뜨는중 여기를 room name이라 잡으면 안됨 이름만 뜨게 하고 파라미터는 lodgingId-->
-							<div class=""><a href="/lodging/room/view?id=${lodging.id }">${lodging.roomName }</a></div>
-							<c:choose>
-						<c:when test = "${lodging.level eq '5성급' }">
-							<div class="text-warning">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '4성급' }">
-							<div class="text-danger">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '3성급' }">
-							<div class="text-secondary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '2성급' }">
-							<div class="text-success">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-						<c:when test = "${lodging.level eq '1성급' }">
-							<div class="text-primary">${lodging.level }</div><!-- 성급도 for문써서 해보기 -->
-						</c:when>
-					</c:choose>
-						</div>
+						
+						
 					</div>
 					</c:forEach>
 					

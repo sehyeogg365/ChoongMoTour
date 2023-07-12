@@ -29,24 +29,24 @@
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="reservelist-page">
-				<h1 class="text-center">
+				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour ReserveList
 				</h1>
 				
-				<div class="reservelistcontents d-flex mx-3">
+				<div class="reservelistcontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
 				
-				<ul class="nav">
-						<li class="mt-3">
-							<h4><a href="/lodging/dibspage/view?id=${user.id }" class="nav-list">찜목록</a></h4>
-						</li >
-						<li class="mt-3">
-							<h4><a href="/lodging/reservelist/view?id=${user.id }" class="nav-list">예약내역</a></h4>
-						</li>
-						<li class="mt-3">
-							<h4><a href="/user/mypage/view?id=${user.id }" class="nav-list">내 정보수정</a></h4>
-						</li>
-					
+				<ul class="nav flex-column">
+					<li class="nav-item mt-2">
+						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
+					</li>
+					<li class="nav-item mt-2">
+						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
+					</li>
+					<li class="nav-item mt-2">
+						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
+					</li>
+						
 				</ul>
 		
 					
@@ -62,12 +62,12 @@
 						
 						
 						<c:forEach var="reserve" items="${reserveDetailList }">
-						<div class="reservation-card ml-4 mt-4">
+						<div class="reservation-card ml-3 mt-3">
 						
 							<div class="">
 							
 								<div class="x mr-3">
-									<i class="x-btn bi bi-x-circle " style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
+									<i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
 								</div>
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
@@ -77,40 +77,41 @@
 							</div>
 												
 							<div class="reservation-card-body">
-								<div class=""><strong>${reserve.roomName }</strong></div>
+								<div class="d-flex justify-content-center mt-2"><strong>${reserve.roomName }</strong>
 								<c:choose>
 									<c:when test="${reserve.size eq 'singleroom' }">
-										<div class=""><strong>싱글룸</strong></div>
+										<div class="text-secondary ml-2"><strong>싱글룸</strong></div>
 									</c:when>
 									<c:when test="${reserve.size eq 'doubleroom' }">
-										<div class=""><strong>더블룸</strong></div>
+										<div class="text-secondary ml-2"><strong>더블룸</strong></div>
 									</c:when>
 									<c:when test="${reserve.size eq 'twinroom' }">
-										<div class=""><strong>트윈룸</strong></div>
+										<div class="text-secondary ml-2"><strong>트윈룸</strong></div>
 									</c:when>
 									<c:otherwise>
-										<div class="">${reserve.size }</div>
+										<div class="text-secondary ml-2">${reserve.size }</div>
 									</c:otherwise>
 								</c:choose>	
-								<div class="d-flex justify-content-between mt-2">
+								</div>
+								<div class="d-flex justify-content-center mt-2">
 									<div class="">
-										<div class="">체크인  </div>
+										<div class="text-secondary">체크인  </div>
 										<div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
 									</div>
 									
-									<div class="">
-										<div class=""></div><br>
+									<div class="mx-2">
+										<br>
 										<div class="">~</div>
 									</div>
 									<div class="">
-										<div class="">체크아웃 </div>	
+										<div class="text-secondary">체크아웃 </div>	
 										<div class=""> <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/></div>			
 									</div>
 								</div>
-								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }">다시예약</a></div>
+								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }" class="text-dark">다시예약</a></div>
 					
 								
-								<div class="text-center">
+								<div class="text-center my-2">
 									<a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary">댓글달기</a>
 									<!-- <button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button> -->
 								</div>
@@ -150,7 +151,9 @@
 	</style>
 	<script>
 	 $(document).ready(function() {
-	
+		//css 클릭시 색변화
+		
+		
 		 //크게 사진위의 삭제버튼, 모달창의 댓글달기 
 		 
 		 /*
