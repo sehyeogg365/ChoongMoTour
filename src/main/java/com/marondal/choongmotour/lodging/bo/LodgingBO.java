@@ -21,13 +21,16 @@ import com.marondal.choongmotour.user.bo.UserBO;
 @Service
 public class LodgingBO {
 
-	@Autowired LodgingDAO lodgingDAO;
+	@Autowired 
+	private LodgingDAO lodgingDAO;//private 추가
 	
-	@Autowired UserBO userBO;
+	@Autowired 
+	private UserBO userBO;
 	
 	//순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	
-	@Autowired DibsCheckBO dibsCheckBO;
+	@Autowired 
+	private DibsCheckBO dibsCheckBO;
 	//사용자페이지
 
 	//lodging 정보 - 지역 불러오기??
