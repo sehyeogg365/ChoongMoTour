@@ -44,7 +44,6 @@ header{
 
 }
 
-
 .contents> .main-page{
 	width:1200px;
 }
@@ -56,7 +55,6 @@ header{
 	width:500px;
 
 }
-
 
 .lodgingcreate-page > .lodgingcreate-page-contents{
 	border: 1px solid;
@@ -103,11 +101,9 @@ header{
 	
 }
 
-
 .contents> .lodging-list{
 	width:1000px;
 }
-
 
 .contents> .room-page{
 	width:1000px;
@@ -127,6 +123,7 @@ header{
 .contents> .my-page{
 	width:1100px;
 }
+
 .contents> .dibs-page{
 	width:1100px;
 }
@@ -134,7 +131,6 @@ header{
 .contents> .reservelist-page{
 	width:1100px;
 }
-
 
 
 .box-list > .box{
@@ -151,7 +147,6 @@ header{
 	
 }
 
-
 .inner-box >.box-profile{
 	width: 230px;
 	height: 230px;
@@ -165,7 +160,6 @@ header{
     border-radius: 70%;
     object-fit: cover;  
 }
-
 
 
  .box-profile > .profile:hover{
@@ -184,7 +178,6 @@ header{
 	height:20px;
 }
 */
-
 .card-list > .card{
 	width: 400px;
     height: 550px; 
@@ -210,14 +203,11 @@ header{
 	
 }
 
-
 .card-list > .card > .card-body{
 	width: 400px;
     height: 150px; 
 	
 }
-
-
 
 .info-input-box{
 	width:800px;
@@ -225,8 +215,6 @@ header{
 	box-shadow: 3px 3px 5px 0px black;
 	border-radius: 8px;
 }
-
-
 
 .lodging-card-list>.lodging-card{
 	/*height:450px;*/
@@ -236,12 +224,10 @@ header{
 	
 }
 
-
  .heart{
  
  	position:relative; /*위에있는 로징카드 리스트가 아닌 하트아이콘 감싸는 태그에 적용 하기*/
  }
-
 
 
 .lodging-profile{
@@ -249,7 +235,6 @@ header{
 	
     height: 350px;
 }
-
 
 
 .lodging-profile> .profile{
@@ -272,10 +257,6 @@ header{
 	
 }
 
-
-
-
-
 .room-page{
 	width:1000px;
 }
@@ -284,6 +265,7 @@ header{
 	width:500px;
 	height:400px;
 }
+
 .lodging-profile2 >.profile{
 	width: 100%;
     height: 100%;
@@ -298,7 +280,6 @@ header{
 	margin:auto;
 }
 
-
 .room-card-list >.room-card{
 	
 	
@@ -312,6 +293,7 @@ header{
 	width:250px;
 	height:170px;
 }
+
 .room-profile > .profile {
 	width:100%;
 	height:100%;
@@ -322,19 +304,6 @@ header{
 .room-card>.room-card-body{
 	width:650px;
 }
-
-
-.modal{
-
-}
-
-
-
-.modalcontent{
-	
-}
-
-
 
 .dibs-card-list >.dibs-card{
 	width: 350px;
@@ -394,7 +363,6 @@ header{
 	border-radius: 8px;
 }
 
-
 .reservation-card-list{
 	
 	position: relative;
@@ -439,7 +407,6 @@ header{
 	width:500px;
 }
 
-
 .commentwritepagecontents{
 	border: 1px solid;
 	box-shadow: 3px 3px 5px 0px black;
@@ -476,8 +443,6 @@ header{
 	position: absolute;
 }
 
-
-
 .userprofile{
 
 	 border-radius: 70%;
@@ -488,7 +453,6 @@ header{
 	 border-radius: 70%;
 	 object-fit: cover;
 }
-
 
 footer{
 	

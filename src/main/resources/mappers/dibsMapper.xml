@@ -46,8 +46,6 @@
   	</delete>
   	
   	
-  	
-  	
   	<!-- 찜목록 -->
   	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="map">
   		SELECT
@@ -63,11 +61,6 @@
   			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
  
-  
-  	
-  
-  
-  
-  
+
   
   </mapper>
