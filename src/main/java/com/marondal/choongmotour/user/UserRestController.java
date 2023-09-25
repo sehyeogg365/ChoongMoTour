@@ -100,7 +100,7 @@ public class UserRestController {
 
 	}
 
-	//아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
+	// 아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
 	@GetMapping("/find_id")
 	public Map <String, Object> findId(	@RequestParam("loginId") String loginId
 										, @RequestParam("name") String name
@@ -124,8 +124,7 @@ public class UserRestController {
 		
 	}
 	
-	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
-	
+	// 임시 비밀번호 발급 api (특정 비밀번호로 수정)	
 	@PostMapping("/temppassword")
 	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
@@ -150,10 +149,10 @@ public class UserRestController {
 
 	}
 	
-	//사용자 회원정보 수정
+	// 사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("id") int id //restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
+			@RequestParam("id") int id // restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
 			, @RequestParam("email") String email
