@@ -38,70 +38,73 @@
 			     
 			     <!-- 여기를 라디오버튼이 아닌 셀렉터로 해보면 어떨까? 체인지 이벤트에서 한 밸류값을 그대로 클릭이벤트에도 적용이 가능할텐데??? -->
 			     
-			     <select class="form-control col-5 mt-3 ml-3" id="sizeSelector">
-							
-                            <option value="">사이즈</option>
-                            <option value="singleroom">싱글</option>
-                            <option value="doubleroom">더블</option>
-                            <option value="twinroom">트윈</option>
-                       
-                 </select>
+				     <select class="form-control col-5 mt-3 ml-3" id="sizeSelector">
+								
+	                            <option value="">사이즈</option>
+	                            <option value="singleroom">싱글</option>
+	                            <option value="doubleroom">더블</option>
+	                            <option value="twinroom">트윈</option>
+	                       
+	                 </select>
 			     <!--  <div class=""> ${lodging.id }</div>-->
 			   
 			     							<!-- id값부여해보기 -->
-                 <div id="singleInput" class="">
-	                 <label class="ml-3">기본정보 (싱글)</label><br><!-- 마찬가지로 라디오 버튼을 눌렀을때 위의 값이 굳이 바뀌어야 할이윤 없지만 라디오 버튼을 눌렀을때 특정값을 가져오게 할순 있다고함 -->
-	                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
-	                 <input type="file" name="file" id="singlefileInput"><br>
+	                 <div id="singleInput" class="">
+		                 <label class="ml-3">기본정보 (싱글)</label><br><!-- 마찬가지로 라디오 버튼을 눌렀을때 위의 값이 굳이 바뀌어야 할이윤 없지만 라디오 버튼을 눌렀을때 특정값을 가져오게 할순 있다고함 -->
+		                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
+		                
+		                 <input type="file" name="file" id="singlefileInput"><br>
+		                 
+		                 <div class="d-flex align-items-center mt-3 ml-3">
+							<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+						 </div>
+						 
+		                 <div class="mx-3">
+		                 	<textarea rows="5" cols="100" id="singlecontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
+	                 	 </div>
+	                 	 
+	                 	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->
+							<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+						 </div>
+						 
+	                 </div>
+                 
+	                 <div id="doubleInput" class="d-none">
+		                 <label class="ml-3">기본정보 (더블)</label><br>
+		                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
+		                 <input type="file" name="file" id="doublefileInput"><br>
+		                 
+		                 <div class="d-flex align-items-center mt-3 ml-3">					<!-- 여기도 사이즈 별로 id값 다르게 구별해야 한다. 그래서 계속 가격입력하라고 뜬것. -->
+							<label>가격</label><input type="text" id="doublepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+						 </div>
+		                 <div class="">
+		                 	<textarea rows="5" cols="100" id="doublecontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
+	                 	 </div>
+	                 	 <div class="text-center mb-3">																		<!-- 이름 어떻게 주는건 중요치 않음 근데 마지막건 -id이렇게 줘야함 -->
+							<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
+						 </div>
 	                 
-	                 <div class="d-flex align-items-center mt-3 ml-3">
-						<label>가격</label><input type="text" id="singlepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
-					 </div>
-	                 <div class="mx-3">
-	                 	<textarea rows="5" cols="100" id="singlecontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
-                 	 </div>
-                 	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->
-						<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
-					 </div>
-                 </div>
+	                 </div>
                  
-                 <div id="doubleInput" class="d-none">
-	                 <label class="ml-3">기본정보 (더블)</label><br>
-	                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
-	                 <input type="file" name="file" id="doublefileInput"><br>
+	                 <div id="twinInput" class="d-none">
+		                 <label class="ml-3">기본정보 (트윈)</label><br>
+		                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
+		                 <input type="file" name="file" id="twinfileInput"><br>
+		                 
+		                 <div class="d-flex align-items-center mt-3 ml-3">
+							<label>가격</label><input type="text" id="twinpriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
+						 </div>
+		                 <div class="">
+		                 	<textarea rows="5" cols="100" id="twincontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
+	                 	 </div>
+	                 	 <div class="text-center my-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
+							<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id  }">입력 완료</button>
+						 </div>
 	                 
-	                 <div class="d-flex align-items-center mt-3 ml-3">					<!-- 여기도 사이즈 별로 id값 다르게 구별해야 한다. 그래서 계속 가격입력하라고 뜬것. -->
-						<label>가격</label><input type="text" id="doublepriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
-					 </div>
-	                 <div class="">
-	                 	<textarea rows="5" cols="100" id="doublecontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
-                 	 </div>
-                 	 <div class="text-center mb-3">																		<!-- 이름 어떻게 주는건 중요치 않음 근데 마지막건 -id이렇게 줘야함 -->
-						<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
-					 </div>
-                 
-                 </div>
-                 
-                 <div id="twinInput" class="d-none">
-	                 <label class="ml-3">기본정보 (트윈)</label><br>
-	                 <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
-	                 <input type="file" name="file" id="twinfileInput"><br>
-	                 
-	                 <div class="d-flex align-items-center mt-3 ml-3">
-						<label>가격</label><input type="text" id="twinpriceInput" placeholder="내용을 입력해주세요" class="form-control col-6	">원<br>
-					 </div>
-	                 <div class="">
-	                 	<textarea rows="5" cols="100" id="twincontentInput" placeholder="상세정보를 입력해주세요" class="mt-4 form-control"></textarea>
-                 	 </div>
-                 	 <div class="text-center my-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
-						<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id  }">입력 완료</button>
-					 </div>
-                 
-                 </div>
+	                 </div>
 			
-			</div>
-				
-				
+				</div>
+	
 			</div>
 		</section>
 	

@@ -40,38 +40,37 @@
 				
 					<!-- 프론트엔드 영역 부분 피드백은 딱 처음 들어왔을때 값들이 미리 입력 된상태에서 수정이되어야 함 메모게시판 처럼 그게 일반적인 경우 -->
 					<div class="lodgingupdate-page-contents">
-					<label class="ml-2 mt-2">이름</label>
-					<input type="text" id="roomNameInput" value="${lodging.roomName }" placeholder="내용을 입력해주세요" class="form-control ml-2 mt-2 col-11" >
+						<label class="ml-2 mt-2">이름</label>
+						<input type="text" id="roomNameInput" value="${lodging.roomName }" placeholder="내용을 입력해주세요" class="form-control ml-2 mt-2 col-11" >
 	
 					<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
-					<select class="form-control col-5 ml-2 mt-4" id="areaSelector">
-								
-	                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
-	                            <option value="seoul">서울</option>
-	                            <option value="incheon">인천</option>
-	                            <option value="gangwon">강원</option>
-	                            <option value="gyeongsang">경상</option>
-	                            <option value="jeolla">전라</option>
-	                            <option value="busan">부산</option>
-	                            <option value="jeju">제주</option>
-	                 </select>
+						<select class="form-control col-5 ml-2 mt-4" id="areaSelector">
+									
+		                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
+		                            <option value="seoul">서울</option>
+		                            <option value="incheon">인천</option>
+		                            <option value="gangwon">강원</option>
+		                            <option value="gyeongsang">경상</option>
+		                            <option value="jeolla">전라</option>
+		                            <option value="busan">부산</option>
+		                            <option value="jeju">제주</option>
+		                 </select>
 	                 
-					<select class="form-control col-5 ml-2 mt-4" id="levelSelector">
-								
-	                            <option value="${lodging.level }">${lodging.level }</option>
-	                            <option value="1성급">1성급</option>
-	                            <option value="2성급">2성급</option>
-	                            <option value="3성급">3성급</option>
-	                            <option value="4성급">4성급</option>
-	                            <option value="5성급">5성급</option>   
-	                 </select>
+						<select class="form-control col-5 ml-2 mt-4" id="levelSelector">
+									
+		                            <option value="${lodging.level }">${lodging.level }</option>
+		                            <option value="1성급">1성급</option>
+		                            <option value="2성급">2성급</option>
+		                            <option value="3성급">3성급</option>
+		                            <option value="4성급">4성급</option>
+		                            <option value="5성급">5성급</option>   
+		                 </select>
 	                 
 					
-					<div class="text-center my-3">
-						<button id="updateBtn"class="btn btn-primary col-12 update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
-					</div>
-				
-				
+						<div class="text-center my-3">
+							<button id="updateBtn"class="btn btn-primary col-12 update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
+						</div>
+
 				</div>
 			</div>
 		
