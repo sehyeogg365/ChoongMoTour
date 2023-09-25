@@ -50,8 +50,6 @@ public class UserRestController {
 		
 		return resultMap;
 		
-		
-		
 	}
 	
 	@GetMapping("/duplicate_id")
@@ -70,10 +68,9 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-		
-		
+	
 	}
+	
 	@PostMapping("/signin")
 	public Map<String, String> signin(
 			@RequestParam("loginId") String loginId
@@ -98,11 +95,8 @@ public class UserRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
-		
+			
 		return resultMap;
-		
 
 	}
 
@@ -117,7 +111,6 @@ public class UserRestController {
 		
 		User user = userBO.getUserByNameEmail(loginId, name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 
-		
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
 			resultMap.put("info", user);
@@ -143,8 +136,6 @@ public class UserRestController {
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		//String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
-		
-		
 		
 		String password = userBO.updateTemporrayPassword(loginId, email);// 이젠 count, 업데이트 횟수가 아닌 password를 불러와야 한다.
 		
@@ -181,8 +172,7 @@ public class UserRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
+	
 		return resultMap;
 		
 	}
