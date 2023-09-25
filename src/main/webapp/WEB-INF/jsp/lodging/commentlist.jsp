@@ -108,10 +108,6 @@
 							</div>
 						
 						</div>
-						
-					
-							
-		
 					
 				</div><br>
 				
@@ -125,8 +121,6 @@
 				  <li class="nav-item">
 				    <a class="nav-link" href="#"><b>리뷰</b></a>
 				  </li>
-			
-			
 				</ul>
 				
 			
@@ -140,20 +134,19 @@
 				
 				<div class=""><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
 					
-				<c:choose>
-					<c:when test="${userId eq comment.userId }">
-						<div class="comment-delete mr-3">
-							<i class="delete-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-comment-id ="${comment.id }"></i>
-						</div>
-					</c:when>
-					<c:otherwise>
-						
-					</c:otherwise>	
-				</c:choose>	
+					<c:choose>
+						<c:when test="${userId eq comment.userId }">
+							<div class="comment-delete mr-3">
+								<i class="delete-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-comment-id ="${comment.id }"></i>
+							</div>
+						</c:when>
+						<c:otherwise>
+							
+						</c:otherwise>	
+					</c:choose>	
 					
 				</div>
-				
-				
+	
 					<div class="comment-profile d-flex">
 						<img class="userprofile mt-3 ml-3" width ="40" height="40"src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
 						<div class="ml-3 mt-4"><b>${comment.nickname }</b></div>
