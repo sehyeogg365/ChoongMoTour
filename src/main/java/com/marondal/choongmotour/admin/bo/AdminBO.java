@@ -37,10 +37,7 @@ public class AdminBO {
 			//return adminDAO.selectcertificationNumber(certificationNumber);//인서트 안되는 이유 매퍼에는 문제가 없었다. 인서트는 안하고 계속 인증번호만 확인하고 있는게 보인다.
 			return adminDAO.insertAdmin(loginId, encryptPassword, name, email, nickname);
 		}
-		
-		
-		
-		
+			
 		
 	}
 	
@@ -65,10 +62,7 @@ public class AdminBO {
 		
 	}
 	
-	
-
-	// 관리자 리스트
-	
+	// 관리자 리스트	
 	public List<Admin> getAdminList(String loginId) {
 		
 		
@@ -76,7 +70,7 @@ public class AdminBO {
 		
 	}
 	
-	//아이디 찾기
+	// 아이디 찾기
 	public Admin getAdminByNameEmail(String loginId, String name, String email) {//이것도 리턴타입 int 에서 Admin으로 변경
 
 		return adminDAO.selectAdminByNameEmail(loginId, name, email);
@@ -86,11 +80,11 @@ public class AdminBO {
 	
 	// 비번 찾기 (임시 비밀번호 발급) 이거를 구분하지말고 한번에 하라 함. 
 
-	//임시 비밀번호 발급
+	// 임시 비밀번호 발급
 	public String updateTemporrayPassword(String loginId, String email) {//이것도 로그인 아이디 이메일 추가 할것 다오도.
 		
 		
-		//임시비밀번호 생성 알고리즘
+		// 임시비밀번호 생성 알고리즘
 		
 		
 		char[] charSet = new char[] {
@@ -100,7 +94,7 @@ public class AdminBO {
 		Random random = new Random();
 		
 		
-		//int i = 0;
+		// int i = 0;
 		String password ="";
 		 
 		for(int i = 0; i < 100; i++) {
@@ -132,13 +126,13 @@ public class AdminBO {
 		
 	}
 	
-	//관리자 회원정보 조회 한행조회
+	// 관리자 회원정보 조회 한행조회
 	public Admin getAdminInfo(int id) {
 		return adminDAO.selectAdminInfo(id);
 	}
-	//딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
+	// 딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
 	
-	//관리자 회원정보 수정
+	// 관리자 회원정보 수정
 	public int updateAdmin( 
 			int id
 			, String password
@@ -150,8 +144,8 @@ public class AdminBO {
 		
 		String imagePath = FileManagerService.saveFile(id, file);
 		
-		 //여기서 한번더 암호화하면 로그인할때 암호화 여기서 한번더 암호화해서 두번 암호화 하는 꼴 그래서 아예 다른 비밀번호로 바뀌고 재로그인할경우 로그인 안되는현상이 발견
-		//암호화는 시키는게 맞다. 대신에 저기 마이페이지 창에 밸류값 입력하면 두번 암호화되는 꼴이다 라는 뜻.
+		 // 여기서 한번더 암호화하면 로그인할때 암호화 여기서 한번더 암호화해서 두번 암호화 하는 꼴 그래서 아예 다른 비밀번호로 바뀌고 재로그인할경우 로그인 안되는현상이 발견
+		// 암호화는 시키는게 맞다. 대신에 저기 마이페이지 창에 밸류값 입력하면 두번 암호화되는 꼴이다 라는 뜻.
 		String ecryptPassword = EncryptService.md5(password);
 		
 		return adminDAO.updateAdmin(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);

@@ -21,13 +21,16 @@ import com.marondal.choongmotour.user.bo.UserBO;
 @Service
 public class LodgingBO {
 
-	@Autowired LodgingDAO lodgingDAO;
+	@Autowired 
+	private LodgingDAO lodgingDAO;//private 추가
 	
-	@Autowired UserBO userBO;
+	@Autowired 
+	private UserBO userBO;
 	
 	//순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	
-	@Autowired DibsCheckBO dibsCheckBO;
+	@Autowired 
+	private DibsCheckBO dibsCheckBO;
 	//사용자페이지
 
 	//lodging 정보 - 지역 불러오기??
@@ -71,10 +74,9 @@ public class LodgingBO {
 		
 		return lodgingDetailList;
 		
-	}
+	}	
 	
-	
-	//객체 리스트 로징아이디별, 가격별
+	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
 		
 		
@@ -83,17 +85,14 @@ public class LodgingBO {
 		
 	}
 	
-
 	
 	// 예약목록 userId별로
-	
 	
 	
 	//-------관리자 페이지---------
 	
 	
-	//숙소 추가
-	
+	// 숙소 추가
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file ) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	//파일매니저 서비스 메소드의 id값은 사용자가 쓸값 그값을쓰는이유는 폴더별로 중복되지마라고 그렇게 한거임 따라서 여기서는 adminId로 저장했을때 별문제 안되면 써도 된다.
@@ -110,12 +109,12 @@ public class LodgingBO {
 
 	}
 	
-	//숙소 한행 불러오기
+	// 숙소 한행 불러오기
 	public Lodging getLodging(int id) {
 		return lodgingDAO.selectLodgingById(id);
 	}
 	
-	//숙소 수정
+	// 숙소 수정
 	public int updateLodging(int id, String roomName, String level, String areaName) {
 							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
 		//String imagePath = FileManagerService.saveFile(lodgingId, file);
@@ -124,8 +123,7 @@ public class LodgingBO {
 				
 	}
 	
-	//객실추가
-	
+	// 객실추가
 	public int addRoom(int lodgingId, int adminId, int price, String size, String content, MultipartFile file) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);
@@ -133,32 +131,27 @@ public class LodgingBO {
 		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);
 	}
 		
-	//객실 리스트
-	
+	// 객실 리스트
 	public List<Room> getRoomList(int lodgingId){
 
 		return lodgingDAO.selectRoomList(lodgingId);
 
 	}
 	
-	//객실 한행 조회
+	// 객실 한행 조회
 	public Room getRoom(int id) {
 		
 		return lodgingDAO.selectRoomById(id);
 	}
 	
-	
-	//객실 수정
-	
+	// 객실 수정
 	public int updateRoom(int id, int price, String size, String content) {
 	
 		return lodgingDAO.updateRoom(id, price, size, content);
 	
 	}
-		
-		
-	//숙소 삭제
 	
+	// 숙소 삭제
 	public int deleteLodging(int id) {
 		
 		

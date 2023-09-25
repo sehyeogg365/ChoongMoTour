@@ -50,8 +50,6 @@ public class UserRestController {
 		
 		return resultMap;
 		
-		
-		
 	}
 	
 	@GetMapping("/duplicate_id")
@@ -70,10 +68,9 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
-		
-		
+	
 	}
+	
 	@PostMapping("/signin")
 	public Map<String, String> signin(
 			@RequestParam("loginId") String loginId
@@ -98,15 +95,12 @@ public class UserRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
-		
+			
 		return resultMap;
-		
 
 	}
 
-	//아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
+	// 아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
 	@GetMapping("/find_id")
 	public Map <String, Object> findId(	@RequestParam("loginId") String loginId
 										, @RequestParam("name") String name
@@ -117,7 +111,6 @@ public class UserRestController {
 		
 		User user = userBO.getUserByNameEmail(loginId, name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 
-		
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
 			resultMap.put("info", user);
@@ -131,8 +124,7 @@ public class UserRestController {
 		
 	}
 	
-	//임시 비밀번호 발급 api (특정 비밀번호로 수정)
-	
+	// 임시 비밀번호 발급 api (특정 비밀번호로 수정)	
 	@PostMapping("/temppassword")
 	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
@@ -143,8 +135,6 @@ public class UserRestController {
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		//String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
-		
-		
 		
 		String password = userBO.updateTemporrayPassword(loginId, email);// 이젠 count, 업데이트 횟수가 아닌 password를 불러와야 한다.
 		
@@ -159,10 +149,10 @@ public class UserRestController {
 
 	}
 	
-	//사용자 회원정보 수정
+	// 사용자 회원정보 수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
-			@RequestParam("id") int id //restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
+			@RequestParam("id") int id // restcontroller에 추가했다고 비오,다오 이렇게 추가하는게 아닌 매퍼가 기준이 되야 한다는
 			, @RequestParam("password") String password
 			, @RequestParam("name") String name
 			, @RequestParam("email") String email
@@ -181,8 +171,7 @@ public class UserRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
+	
 		return resultMap;
 		
 	}

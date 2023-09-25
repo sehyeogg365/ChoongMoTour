@@ -42,8 +42,6 @@
   			`price`
   	</select>
   	
- 	
-  
   	
   <!-- 관리자 페이지 숙소 추가, 숙소리스트 조회, 객실 추가, 숙소 수정, 숙소 삭제 -->	
   <insert id="insertLodging" parameterType="map">
@@ -88,6 +86,7 @@
 	ORDER BY
   		`id` DESC;
  </select>
+ 
  <!-- 숙소 1행 조회 -->
  <select id="selectLodgingById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Lodging">
  
@@ -159,7 +158,6 @@
  </insert>
  
  <!-- 객실 리스트 조회 -->
- 
  <select id ="selectRoomList" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Room">
  	SELECT
  		`id`
@@ -182,7 +180,6 @@
  </select>
  
  <!-- 객실 1행 조회 -->
- 
  <select id ="selectRoomById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Room">
  	SELECT
  		`id`
