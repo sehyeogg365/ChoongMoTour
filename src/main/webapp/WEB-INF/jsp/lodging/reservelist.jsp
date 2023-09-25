@@ -34,32 +34,29 @@
 				</h1>
 				
 				<div class="reservelistcontents d-flex mx-5">
-				<aside class="side-nav col-2 ">
-				
-				<ul class="nav flex-column">
-					<li class="nav-item mt-2">
-						<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
-					</li>
-					<li class="nav-item mt-2">
-						<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
-					</li>
-					<li class="nav-item mt-2">
-						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
-					</li>
-						
-				</ul>
-		
+					<aside class="side-nav col-2 ">
 					
-				
-				</aside>
+					<ul class="nav flex-column">
+						<li class="nav-item mt-2">
+							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
+						</li>
+						<li class="nav-item mt-2">
+							<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
+						</li>
+						<li class="nav-item mt-2">
+							<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
+						</li>		
+					</ul>
+			
+						
+					
+					</aside>
 				
 				<section class="contents1 col-10 ">
 					<!-- 예약리스트 -->
 					
 					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
-						<!-- 예약 카드 -->
-						
-						
+						<!-- 예약 카드 -->			
 						
 						<c:forEach var="reserve" items="${reserveDetailList }">
 						<div class="reservation-card ml-3 mt-3">
@@ -127,13 +124,7 @@
 					
 			</div>
 				
-			
-				
-				 
-				
-				
-				
-				
+		
 			</div>
 			
 		

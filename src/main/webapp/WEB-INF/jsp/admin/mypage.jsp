@@ -34,17 +34,17 @@
 				<div class="mypagecontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
 				
-				<ul class="nav flex-column">
-					<li class="nav-item mt-2">
-					
-						<h5><b><a href="/admin/mypage/view?id=${admin.id }" class="nav-link text-primary">내 정보수정</a></b></h5>
-					</li>
-					
-					<li class="nav-item mt-2">
-						<h5><b><a href="#" class="nav-link text-white">사용자 삭제</a></b></h5>
-					</li>
-					
-				</ul>
+					<ul class="nav flex-column">
+						<li class="nav-item mt-2">
+						
+							<h5><b><a href="/admin/mypage/view?id=${admin.id }" class="nav-link text-primary">내 정보수정</a></b></h5>
+						</li>
+						
+						<li class="nav-item mt-2">
+							<h5><b><a href="#" class="nav-link text-white">사용자 삭제</a></b></h5>
+						</li>
+						
+					</ul>
 				</aside>
 				
 				<section class="contents1 col-10">
@@ -97,10 +97,10 @@
 						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						
 						
-						<div class="text-center">
-							<button id="updateBtn"class="btn btn-primary my-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
+							<div class="text-center">
+								<button id="updateBtn"class="btn btn-primary my-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
+							</div>
 						</div>
-					</div>
 					
 					</div>
 				</section>

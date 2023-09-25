@@ -32,28 +32,28 @@
 				</h1>
 				<div class="findidpwcontents">
 				
-				<div class="d-flex justify-content-center align-items-end mt-3">
-				 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
-                         	
-                    <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
-  
-				</div>
-				<div class="find-id mt-4" id="findIdInput">
-					<label>아이디 찾기</label>
-					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+					<div class="d-flex justify-content-center align-items-end mt-3">
+					 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
+	                         	
+	                    <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
+	  
+					</div>
+					<div class="find-id mt-4" id="findIdInput">
+						<label>아이디 찾기</label>
+						<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+						<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+					
+						<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn" data-admin-id="${user.loginId }" >Next</button>
+					</div>																		
 				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findIdBtn" data-admin-id="${user.loginId }" >Next</button>
-				</div>																		
-				
-				<div class="find-pw d-none mt-4" id="findPasswordInput">			
-					<label>비밀번호 찾기</label>
-					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
-					<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
-				
-					<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-admin-password="${user.password }">Next</button>
-				
-				</div>
+					<div class="find-pw d-none mt-4" id="findPasswordInput">			
+						<label>비밀번호 찾기</label>
+						<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
+						<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
+					
+						<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-admin-password="${user.password }">Next</button>
+					
+					</div>
 				
 				
 				
