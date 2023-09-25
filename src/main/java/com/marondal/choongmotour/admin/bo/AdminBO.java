@@ -37,10 +37,7 @@ public class AdminBO {
 			//return adminDAO.selectcertificationNumber(certificationNumber);//인서트 안되는 이유 매퍼에는 문제가 없었다. 인서트는 안하고 계속 인증번호만 확인하고 있는게 보인다.
 			return adminDAO.insertAdmin(loginId, encryptPassword, name, email, nickname);
 		}
-		
-		
-		
-		
+			
 		
 	}
 	
@@ -65,10 +62,7 @@ public class AdminBO {
 		
 	}
 	
-	
-
-	// 관리자 리스트
-	
+	// 관리자 리스트	
 	public List<Admin> getAdminList(String loginId) {
 		
 		

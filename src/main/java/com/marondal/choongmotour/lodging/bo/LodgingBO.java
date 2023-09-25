@@ -74,8 +74,7 @@ public class LodgingBO {
 		
 		return lodgingDetailList;
 		
-	}
-	
+	}	
 	
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
@@ -86,17 +85,14 @@ public class LodgingBO {
 		
 	}
 	
-
 	
 	// 예약목록 userId별로
-	
 	
 	
 	//-------관리자 페이지---------
 	
 	
 	// 숙소 추가
-	
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file ) {
 			
 		String imagePath = FileManagerService.saveFile(adminId, file);	//파일매니저 서비스 메소드의 id값은 사용자가 쓸값 그값을쓰는이유는 폴더별로 중복되지마라고 그렇게 한거임 따라서 여기서는 adminId로 저장했을때 별문제 안되면 써도 된다.
@@ -135,29 +131,27 @@ public class LodgingBO {
 		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);
 	}
 		
-	//객실 리스트
+	// 객실 리스트
 	public List<Room> getRoomList(int lodgingId){
 
 		return lodgingDAO.selectRoomList(lodgingId);
 
 	}
 	
-	//객실 한행 조회
+	// 객실 한행 조회
 	public Room getRoom(int id) {
 		
 		return lodgingDAO.selectRoomById(id);
 	}
 	
-	
-	//객실 수정
+	// 객실 수정
 	public int updateRoom(int id, int price, String size, String content) {
 	
 		return lodgingDAO.updateRoom(id, price, size, content);
 	
 	}
-		
-		
-	//숙소 삭제
+	
+	// 숙소 삭제
 	public int deleteLodging(int id) {
 		
 		
