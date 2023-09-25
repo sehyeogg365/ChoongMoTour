@@ -25,7 +25,7 @@ public class AdminRestController {
 	@Autowired AdminBO adminBO;
 	
 	
-	//관리자 회원가입 api
+	// 관리자 회원가입 api
 	@PostMapping("/signup")
 	public Map<String, String> signup(
 			@RequestParam("loginId") String loginId
@@ -41,11 +41,11 @@ public class AdminRestController {
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
-		//관리자 인증번호 확인 api
-		//인증번호 일치 여부 새로운 api를 만들필요없다고 함 기존의 api에서 애초에 인증번호를 전달받아서 그것이 일치 하는 여부를 따지고 그담에
-		//일치하면 리턴진행하고 이런식으로 할것.
+		// 관리자 인증번호 확인 api
+		// 인증번호 일치 여부 새로운 api를 만들필요없다 기존의 api에서 애초에 인증번호를 전달받아서 그것이 일치 하는 여부를 따지고 그담에
+		// 일치하면 리턴진행하고 이런식으로 할것.
 				
-		//인증번호 일치 여부
+		// 인증번호 일치 여부
 
 		
 		if(count == 0) {
@@ -78,7 +78,7 @@ public class AdminRestController {
 	}
 	
 	
-	//관리자 로그인 api
+	// 관리자 로그인 api
 	@PostMapping("/signin")
 	public Map<String, String> signin(
 			@RequestParam("loginId") String loginId
@@ -93,12 +93,12 @@ public class AdminRestController {
 			if(admin != null) {
 				resultMap.put("result", "success");
 				
-				//마이페이지 안들어가는원인이 세션에서 id 추가 안해서????
+				// 마이페이지 안들어가는원인이 세션에서 id 추가 안해서????
 			
-				session.setAttribute("adminId", admin.getId());//여기도
+				session.setAttribute("adminId", admin.getId());// 여기도
 				session.setAttribute("loginId", admin.getLoginId());
-				session.setAttribute("password", admin.getPassword()); //비번도 불러와보자.
-				session.setAttribute("adminName", admin.getName());//여기부분 필요한가 질문
+				session.setAttribute("password", admin.getPassword()); // 비번도 불러와보자.
+				session.setAttribute("adminName", admin.getName());// 여기부분 필요한가 질문
 				session.setAttribute("adminNickname", admin.getNickname());
 				session.setAttribute("adminImagePath", admin.getImagePath());
 			
@@ -111,17 +111,17 @@ public class AdminRestController {
 	}
 
 
-	//아이디 찾기 api
+	// 아이디 찾기 api
 	@GetMapping("/find_id")
 	public Map <String, Object> findId( @RequestParam("loginId") String loginId
 										, @RequestParam("name") String name
 										, @RequestParam("email") String email
 										//, Model model
 										){
-										//여기선 굳이 세션 필요없을듯 하다.
+										// 여기선 굳이 세션 필요없을듯 하다.
 		
-		//컨트롤러서 리스폰스 리퀘스트를 하고 파라미터로 필요한값 받아오고 리스폰스 요청보내는거
-		//우리가 reuslt success result fail 해서 원하는 값을 response 해주듯이 아이디 값도 마찬가지로 그렇게 한다고 어쩌구저쩌구..
+		// 컨트롤러서 리스폰스 리퀘스트를 하고 파라미터로 필요한값 받아오고 리스폰스 요청보내는거
+		// 우리가 reuslt success result fail 해서 원하는 값을 response 해주듯이 아이디 값도 마찬가지로 그렇게 한다고 어쩌구저쩌구..
 		// 그외에 나머지 것들은 비오
 
 		Map<String, Object> resultMap = new HashMap<>();
@@ -144,17 +144,17 @@ public class AdminRestController {
 	
 	
 	
-	//비밀번호 찾기 및 임시 비밀번호 발급 api (특정 비밀번호로 수정)
+	// 비밀번호 찾기 및 임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
 	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
 										//, HttpSession session
-									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
+									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 함. 그 역할이 비오가 제일 적당함
 										){
 		
 		Map<String, Object> resultMap = new HashMap<>();
 		
-		//String password = (String) session.getAttribute("password");
+		// String password = (String) session.getAttribute("password");
 		
 		String password= adminBO.updateTemporrayPassword(loginId, email);
 		
@@ -166,8 +166,8 @@ public class AdminRestController {
 		}
 
 		
-		//여기서 아마 임시 비밀번호 발급을 해야하나? 모르겠다. 여기서 페일이냐 석세스냐 바탕으로 update 진행
-		//어차피 일치하지않으면 업데이트는 진행안된다고 말하심.
+		// 여기서 아마 임시 비밀번호 발급을 해야하나? 모르겠다. 여기서 페일이냐 석세스냐 바탕으로 update 진행
+		// 어차피 일치하지않으면 업데이트는 진행안된다.
 		
 		
 		return resultMap;
@@ -175,7 +175,7 @@ public class AdminRestController {
 	}
 	
 	
-	//관리자 회원정보수정
+	// 관리자 회원정보수정
 	@PostMapping("/mypage")
 	public Map <String, String> mypageUpdate(
 			@RequestParam("id") int id

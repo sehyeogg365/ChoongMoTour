@@ -7,7 +7,6 @@
   <mapper namespace="com.marondal.choongmotour.lodging.comment.dao.CommentDAO">
   
   <!-- 댓글 달기 -->
-  
   <insert id ="insertComment" parameterType="map">
   	INSERT INTO
   			`comment`
@@ -56,8 +55,7 @@
   		`id` DESC; <!-- 최근 업로드한 순서대로 -->
   </select>
   
-  <!-- 댓글 한행 조회 -->
-  
+  <!-- 댓글 한행 조회 -->  
   <select id = "selectComment" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
   	SELECT
   		`id`

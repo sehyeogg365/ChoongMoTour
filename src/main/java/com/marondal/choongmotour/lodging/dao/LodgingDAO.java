@@ -10,21 +10,18 @@ import com.marondal.choongmotour.lodging.model.Room;
 @Repository
 public interface LodgingDAO {
 
-	//사용자페이지
+	// 사용자페이지
 	
-	//지역별 숙소 
+	// 지역별 숙소 
 	public List<Lodging> selectLodgingListByArea(@Param("areaName") String areaName);
 	
 	// 로징아이디 별 객실 
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 												
+
 	
-	
-	
-	
-	
-	//-------관리자 페이지---------
-	//숙소 추가
+	// -------관리자 페이지---------
+	// 숙소 추가
 	public int insertLodging(
 							@Param("adminId") int adminId
 							, @Param("roomName") String roomName
@@ -33,10 +30,10 @@ public interface LodgingDAO {
 							, @Param("imagePath") String imagePath
 							);
 
-	//숙소 리스트
+	// 숙소 리스트
 	public List<Lodging> selectLodgingList(@Param("id")int id);
 	
-	//숙소 한행
+	// 숙소 한행
 	public Lodging selectLodgingById(@Param("id") int id);
 	
 	
@@ -48,7 +45,7 @@ public interface LodgingDAO {
 							, @Param("areaName") String areaName
 						 	);
 	
-	//객실 추가
+	// 객실 추가
 	public int insertRoom(
 							
 						  @Param("lodgingId") int lodgingId
@@ -59,12 +56,11 @@ public interface LodgingDAO {
 						  , @Param("imagePath") String imagePath
 						  );
 		
-	//객실 리스트
+	// 객실 리스트
 	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
 	
 	
-	//객실 한행 조회
-	
+	// 객실 한행 조회
 	public Room selectRoomById(@Param("id")int id);
 	
 	// 객실 수정
