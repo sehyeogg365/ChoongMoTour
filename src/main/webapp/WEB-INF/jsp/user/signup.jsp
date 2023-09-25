@@ -39,12 +39,12 @@
 				</div>
 				
 				
-					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
-					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
-					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
-					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
-					<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-					<button type="button" class="btn btn-primary btn-block mt-3" id="joinBtn">가입</button>
+				<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+				<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
+				<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
+				<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
+				<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
+				<button type="button" class="btn btn-primary btn-block mt-3" id="joinBtn">가입</button>
 			</div>
 			
 		</section>

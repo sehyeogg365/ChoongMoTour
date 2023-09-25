@@ -30,14 +30,13 @@
 			 
 			  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			    
-			  </button>
-			  
+			  </button> 
 			  
 			  <div class="dropdown-menu">
 				<c:if test ="${not empty userId }">
-				<div class="mr-3">
-					<b>${userNickname } 님 </b>
-				</div>
+					<div class="mr-3">
+						<b>${userNickname } 님 </b>
+					</div>
 				</c:if>
 				
 				

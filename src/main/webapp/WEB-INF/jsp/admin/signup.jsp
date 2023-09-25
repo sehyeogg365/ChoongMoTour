@@ -36,7 +36,7 @@
 				<div class="small d-none" id="duplicateNo"><!-- 중복안될시  -->
 					사용가능한 아이디입니다.
 				</div>
-				<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+					<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					<input type="password" id="passwordConfirmInput" placeholder="비밀번호 확인" class="form-control mt-4">
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">

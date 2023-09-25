@@ -43,7 +43,7 @@
 					<!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
 					<div class="mt-3 ml-3 "><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
-					<c:choose>
+						<c:choose>
 							<c:when test="${room.size eq 'singleroom' }">
 								<h3 class="ml-3"><strong>싱글룸</strong></h3>
 							</c:when>
