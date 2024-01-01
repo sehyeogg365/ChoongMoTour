@@ -72,7 +72,7 @@
 							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
-							<div class="lodging-card-textbox ">
+							<div class="lodging-card-textbox bg-primary">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>
