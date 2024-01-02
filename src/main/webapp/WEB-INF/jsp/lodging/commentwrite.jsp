@@ -106,6 +106,15 @@
 			 let content = $("#contentInput").val();
 			 let starpoint = $("#starpointSelector").val();
 			 
+			 var result = confirm("댓글 작성 하시겠습니까?");
+	       	 
+		     if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+			 
+			 
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
 				 return ;				 
@@ -147,6 +156,7 @@
 					if(data.result == "success"){
 						alert("댓글 입력 성공");
 						location.href="/lodging/reservelist/view";
+						window.close();
 					} else {
 						alert("댓글 입력 실패");
 						
