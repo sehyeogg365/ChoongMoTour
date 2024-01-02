@@ -151,7 +151,14 @@
 			let id = $(this).data("room-id");
 
 			//let startDate = $(this).val();
-
+			var result = confirm("예약 하시겠습니까?");
+			
+			if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			} else {
+				return ;
+			}
+			
 			let startDate = $("#startDate").val();
 
 			//let endDate = $(this).val();
