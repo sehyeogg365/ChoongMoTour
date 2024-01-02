@@ -27,14 +27,14 @@
 <body>
 	<div id = "wrap">
 	
-	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<section class="contents d-flex justify-content-center">
-			<div class="commentwrite-page">
-				<h1 class="text-center pt-3 font-weight-bold">
+	
+		<section class="contents d-flex justify-content-center bg-danger col-4">
+			<div class="commentwrite-page bg-secondary">
+				<h1 class="text-center pt-3 font-weight-bold bg-primary">
 					ChoongMo Tour Comment Write Page
 				</h1>
 			
-				<div class="commentwritepagecontents">
+				<div class="commentwritepagecontents bg-warning">
 					 <div class="modal-content">
 				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
@@ -84,7 +84,7 @@
 		
 		</section>
 	
-	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+	
 	
 	
 	</div>
