@@ -25,16 +25,16 @@
 	
 </head>
 <body>
-	<div id = "wrap">
+	<div id = "">
 	
 	
-		<section class="contents d-flex justify-content-center bg-danger col-4">
-			<div class="commentwrite-page bg-secondary">
-				<h1 class="text-center pt-3 font-weight-bold bg-primary">
+		<section class="contents d-flex justify-content-center ">
+			<div class="commentwrite-page ">
+				<h1 class="text-center pt-3 font-weight-bold ">
 					ChoongMo Tour Comment Write Page
 				</h1>
 			
-				<div class="commentwritepagecontents bg-warning">
+				<div class="commentwritepagecontents ">
 					 <div class="modal-content">
 				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
