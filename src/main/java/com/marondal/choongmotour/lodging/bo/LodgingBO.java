@@ -63,7 +63,7 @@ public class LodgingBO {
 			lodgingDetail.setImagePath(lodging.getImagePath());// 숙소 사진
 			lodgingDetail.setDibs(isDibs);// 찜여부
 			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
-			
+			//여기서 dto로 댓글갯수,평점 추가 
 		
 			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
