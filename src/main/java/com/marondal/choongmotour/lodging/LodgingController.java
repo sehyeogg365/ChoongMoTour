@@ -80,6 +80,8 @@ public class LodgingController {
 		// 두개의 테이블을 융합해서 보여줘야함 로그인했을때 찜했는지 안했는지 여부, 지역별 숙소 리스팅
 		// sns 프로젝트 와 매우 유사하다고 하심 그리고 이과정을 비오에서 하는게 적합함
 		
+		//여기에 댓글 숙소 갯수, 지역명도 쓰면 좋다.
+		
 		return "lodging/lodginglist";
 	
 	}

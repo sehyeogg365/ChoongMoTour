@@ -40,7 +40,14 @@
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
 				</div>
 				
-				<h2><strong>호텔(x개)</strong></h2>
+				<h2>
+					<strong>
+					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
+						${lodging.areaName}
+	
+					</c:forEach>호텔(x개)
+					</strong>
+				</h2>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
 					
@@ -72,7 +79,7 @@
 							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
-							<div class="lodging-card-textbox">
+							<div class="lodging-card-textbox bg-primary">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>
