@@ -40,7 +40,7 @@
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
 				</div>
 				
-				<h2><strong>호텔</strong></h2>
+				<h2><strong>호텔(x개)</strong></h2>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
 					
