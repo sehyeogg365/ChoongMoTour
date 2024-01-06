@@ -43,7 +43,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=seoul" class="font-weight-bold text-dark">서울()</a>
+							<a href="/lodging/lodginglist/view?area_name=seoul" class="font-weight-bold text-dark">서울</a>
 						</div>
 						<!-- 지역별 숙소 갯수 나타내기 옵션 -->
 					</div>							
@@ -56,7 +56,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=incheon" class="font-weight-bold text-dark">인천()</a>
+							<a href="/lodging/lodginglist/view?area_name=incheon" class="font-weight-bold text-dark">인천</a>
 						</div>
 						
 					</div>
@@ -69,7 +69,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=gangwon" class="font-weight-bold text-dark">강원()</a>
+							<a href="/lodging/lodginglist/view?area_name=gangwon" class="font-weight-bold text-dark">강원</a>
 						</div>
 					</div>										
 						
@@ -81,7 +81,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=gyeongsang" class="font-weight-bold text-dark">경상()</a>
+							<a href="/lodging/lodginglist/view?area_name=gyeongsang" class="font-weight-bold text-dark">경상</a>
 						</div>
 					</div>
 					 	
@@ -93,7 +93,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=jeolla" class="font-weight-bold text-dark">전라()</a>
+							<a href="/lodging/lodginglist/view?area_name=jeolla" class="font-weight-bold text-dark">전라</a>
 						</div>
 						
 					</div>
@@ -107,7 +107,7 @@
 						</div>
 						
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=busan" class="font-weight-bold text-dark">부산()</a>
+							<a href="/lodging/lodginglist/view?area_name=busan" class="font-weight-bold text-dark">부산</a>
 						</div>						
 					</div>
 						
@@ -119,7 +119,7 @@
 							</a>
 						</div>
 						<div class="box-body d-flex justify-content-center align-items-center">
-							<a href="/lodging/lodginglist/view?area_name=jeju" class="font-weight-bold text-dark">제주()</a>
+							<a href="/lodging/lodginglist/view?area_name=jeju" class="font-weight-bold text-dark">제주</a>
 						</div>
 					</div>
 						
