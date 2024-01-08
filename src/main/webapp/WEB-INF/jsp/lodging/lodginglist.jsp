@@ -43,8 +43,29 @@
 				<h2>
 					<strong>
 					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
-						${lodging.areaName}
-	
+						<c:choose>
+									<c:when test ="${lodging.areaName eq 'seoul'}">
+										서울
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'incheon'}">
+										인천
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gangwon'}">
+										강원
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+										경상
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeolla'}">
+										전라
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'busan'}">
+										부산
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeju'}">
+										제주
+									</c:when>
+						</c:choose>
 					</c:forEach>호텔(x개)
 					</strong>
 				</h2>
