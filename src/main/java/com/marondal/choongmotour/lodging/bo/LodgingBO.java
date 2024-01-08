@@ -88,6 +88,7 @@ public class LodgingBO {
 	
 	// 예약목록 userId별로
 	
+	//숙소 개수
 	
 	//-------관리자 페이지---------
 	

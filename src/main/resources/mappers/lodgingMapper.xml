@@ -42,6 +42,7 @@
   			`price`
   	</select>
   	
+  	<!-- 숙소개수 -->
   	
   <!-- 관리자 페이지 숙소 추가, 숙소리스트 조회, 객실 추가, 숙소 수정, 숙소 삭제 -->	
   <insert id="insertLodging" parameterType="map">
