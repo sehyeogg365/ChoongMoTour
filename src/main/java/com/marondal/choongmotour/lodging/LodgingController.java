@@ -51,6 +51,10 @@ public class LodgingController {
 		
 		
 		// 생객해보니 매 페이지 마다 User객체를 할필요가없더라 ㅎㅎ.. 그래서 500에러가 뜨나보다.
+		
+		
+		// 여기에 숙소 갯수를 써야 한다. 그리고 지역별로 해야 하는데 그거를 하나하나씩 해줘야 할것으로 보인다. 
+		
 		return "lodging/main";
 	}
 	//숙소리스트
@@ -75,6 +79,8 @@ public class LodgingController {
 		
 		// 두개의 테이블을 융합해서 보여줘야함 로그인했을때 찜했는지 안했는지 여부, 지역별 숙소 리스팅
 		// sns 프로젝트 와 매우 유사하다고 하심 그리고 이과정을 비오에서 하는게 적합함
+		
+		//여기에 댓글 숙소 갯수, 지역명도 쓰면 좋다.
 		
 		return "lodging/lodginglist";
 	

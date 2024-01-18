@@ -31,5 +31,9 @@ public interface CommentDAO {
 	//댓글 삭제	
 	public int deleteComment(@Param("id") int id, @Param("userId") int userId);
 	
+	//댓글 개수
+	
+	//댓글 평균평점
+	
 }
 

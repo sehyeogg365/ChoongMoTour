@@ -25,16 +25,16 @@
 	
 </head>
 <body>
-	<div id = "wrap">
+	<div id = "">
 	
-	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		<section class="contents d-flex justify-content-center">
-			<div class="commentwrite-page">
-				<h1 class="text-center pt-3 font-weight-bold">
+	
+		<section class="contents d-flex justify-content-center ">
+			<div class="commentwrite-page ">
+				<h1 class="text-center pt-3 font-weight-bold ">
 					ChoongMo Tour Comment Write Page
 				</h1>
 			
-				<div class="commentwritepagecontents">
+				<div class="commentwritepagecontents ">
 					 <div class="modal-content">
 				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
@@ -84,7 +84,7 @@
 		
 		</section>
 	
-	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
+	
 	
 	
 	</div>
@@ -105,6 +105,15 @@
 			 let file = $("#fileInput")[0];
 			 let content = $("#contentInput").val();
 			 let starpoint = $("#starpointSelector").val();
+			 
+			 var result = confirm("댓글 작성 하시겠습니까?");
+	       	 
+		     if(result){
+				//alert(""); 아무것도 안쓰면 바로 추가성공이 뜬다.
+			 } else {
+				return ;
+			 }
+			 
 			 
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
@@ -147,6 +156,7 @@
 					if(data.result == "success"){
 						alert("댓글 입력 성공");
 						location.href="/lodging/reservelist/view";
+						window.close();
 					} else {
 						alert("댓글 입력 실패");
 						

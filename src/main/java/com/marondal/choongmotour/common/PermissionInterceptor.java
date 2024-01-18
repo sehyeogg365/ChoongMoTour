@@ -85,6 +85,10 @@ public class PermissionInterceptor implements HandlerInterceptor {
 					response.sendRedirect("/user/signin/view");
 					return false;
 				}
+				if(uri.startsWith("/lodging/commentwrite/view")) {//댓글작성페이지
+					response.sendRedirect("/user/signin/view");
+					return false;
+				}
 				
 			}
 		

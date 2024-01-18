@@ -40,7 +40,35 @@
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
 				</div>
 				
-				<h2><strong>호텔</strong></h2>
+				<h2>
+					<strong>
+					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
+						<c:choose>
+									<c:when test ="${lodging.areaName eq 'seoul'}">
+										서울
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'incheon'}">
+										인천
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gangwon'}">
+										강원
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
+										경상
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeolla'}">
+										전라
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'busan'}">
+										부산
+									</c:when>
+									<c:when test ="${lodging.areaName eq 'jeju'}">
+										제주
+									</c:when>
+						</c:choose>
+					</c:forEach>호텔(x개)
+					</strong>
+				</h2>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
 					
@@ -72,7 +100,7 @@
 							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
-							<div class="lodging-card-textbox ">
+							<div class="lodging-card-textbox bg-primary">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>

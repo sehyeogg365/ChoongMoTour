@@ -98,7 +98,9 @@ public class CommentBO {
 		
 	}
 	
+	//댓글 개수
 	
+	//댓글 평균평점
 	
 
 }
