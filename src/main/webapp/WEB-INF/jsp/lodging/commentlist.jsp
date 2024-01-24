@@ -126,7 +126,16 @@
 			
 		
 		<div class="comment-list">
-		
+			<!-- 한 페이지당 표시 댓글 개수 셀렉터 연습해보기-->
+			<select class="form-control col-5 mt-3" id="pageUnit" name="pageUnit">
+							
+                   <option value="">x개씩 표시</option>
+                   <option value="10">10개씩 표시</option>
+                   <option value="20">20개씩 표시</option>
+                   <option value="50">50개씩 표시</option>
+                   <option value="100">100개씩 표시</option>
+                       
+              </select>
 			<c:forEach var="comment"  items = "${commentDetailList }">
 			<div class="comment-box mt-3">
 				
@@ -220,6 +229,15 @@
 	<script>
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
+		
+	//댓글 갯수 표시	
+	$("#pageUnit").on("click", function(){
+		let number = $(this).val();
+		
+		console.log(number);
+		
+	});
+		
 		
 	$(".delete-btn").on("click", function(){
 			
