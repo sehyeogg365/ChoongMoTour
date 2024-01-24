@@ -235,7 +235,7 @@
 		let number = $(this).val();
 		
 		console.log(number);
-		
+		//alert(number);
 	});
 		
 		
