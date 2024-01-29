@@ -9,6 +9,13 @@ public class PageDTO {
 	
 	private int total;//전체 게시물 수 
 	
-	
+	/**
+	    * 페이징 계산
+	    * @param currPage 현재페이지
+	    * @param totalPage 총페이지
+	    * @param firstPage 첫페이지
+	    * @param lastPage 마지막페이지
+	    * @param totalData 총 DATA
+	    */
 	
 }
