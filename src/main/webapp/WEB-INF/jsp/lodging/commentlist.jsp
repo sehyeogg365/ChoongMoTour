@@ -31,7 +31,11 @@
 	<!-- 네이버 지도 api -->
 	<script type="text/javascript" 
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s&submodules=geocoder"></script>
+	
+	<!-- tui-pagination -->
+	<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
 
+	<script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
 </head>
 <body>
 	<div id = "wrap">
@@ -209,7 +213,8 @@
 	
 		
 		</div>
-		
+		<!-- tui-pagination 추가 -->
+		<div id="tui-pagination-container" class="tui-pagination"></div>
 		
 		</div>
 		</section>
@@ -227,14 +232,21 @@
 	
 	</style>
 	<script>
+	
+	
+	
+	
+	
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 		
-	//댓글 갯수 표시	
+	//한 화면에 댓글 갯수 표시	
 	$("#pageUnit").on("click", function(){
-		let number = $(this).val();
 		
-		console.log(number);
+		let list_size = $(this).val();
+		
+		console.log("한 화면에 x 개씩 댓글 조회" + list_size);
+		
 		//alert(number);
 	});
 		
