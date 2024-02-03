@@ -240,6 +240,8 @@
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 		
+	
+		
 	//한 화면에 댓글 갯수 표시	
 	$("#pageUnit").on("click", function(){
 		
@@ -378,7 +380,11 @@
 		     });
 		 }
 		
-		
+		//페이지네이션
+		const Pagination = require('tui-pagination');
+		//const container = document.getElementById('tui-pagination-container');
+		//const instance = new Pagination(container, { ... });
+		//instance.getCurrentPage();
 		
 		
 		
