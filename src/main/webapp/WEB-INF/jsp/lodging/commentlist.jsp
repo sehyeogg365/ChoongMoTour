@@ -241,7 +241,7 @@
 	$(document).ready(function(){
 		
 	
-		
+	
 	//한 화면에 댓글 갯수 표시	
 	$("#pageUnit").on("click", function(){
 		
@@ -382,11 +382,13 @@
 		
 		//페이지네이션
 		const Pagination = require('tui-pagination');
-		//const container = document.getElementById('tui-pagination-container');
-		//const instance = new Pagination(container, { ... });
-		//instance.getCurrentPage();
 		
-		
+		const dataSource = {
+				  contentType: 'application/json',
+				  api: {
+				    readData: { url: '/api/readData', method: 'GET'}
+				  }
+				};
 		
 	});
 	
