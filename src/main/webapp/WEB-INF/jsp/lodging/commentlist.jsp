@@ -32,7 +32,7 @@
 	<script type="text/javascript" 
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s&submodules=geocoder"></script>
 	
-	<!-- tui-pagination -->
+	<!-- 2024-02-04 수정내용 tui-pagination -->
 	<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
 
 	<script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
@@ -213,7 +213,7 @@
 	
 		
 		</div>
-		<!-- tui-pagination 추가 -->
+		<!--2024-02-03 수정 내용  tui-pagination 추가 -->
 		<div id="tui-pagination-container" class="tui-pagination"></div>
 		
 		</div>
@@ -380,7 +380,7 @@
 		     });
 		 }
 		
-		//페이지네이션
+		//페이지네이션  2024-02-03 수정 내용 
 		const Pagination = require('tui-pagination');
 		
 		const dataSource = {

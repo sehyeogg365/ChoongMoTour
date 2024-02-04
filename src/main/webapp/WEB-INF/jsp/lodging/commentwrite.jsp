@@ -40,7 +40,7 @@
 							<h5 class="modal-title">객실 댓글 달기</h5>
 							
 							<h4>${lodging.roomName }</h4>
-							<h4>${room.size }</h4>
+							<h4 id="sizeInput">${room.size }</h4>
 							
 						</div>	
 					   <div class="modal-body text-center">
@@ -49,9 +49,10 @@
 					
 							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
-				       	
+				       	<!-- 2024-02-04 수정 내용 .text()로해보기 -->
+				       	<!--  
 				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3 d-none" readonly>
-				       
+				       -->
 				       	
 				    	<div class="mt-3">
 				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
@@ -101,7 +102,7 @@
 		
 		$("#commentBtn").on("click", function(){
 			 let id = $(this).data("lodging-id");	
-			 let size = $("#sizeInput").val();//굳이 객체화 안해도 댓글은 저장이된다.
+			 let size = $("#sizeInput").text();//굳이 객체화 안해도 댓글은 저장이된다. 2024-02-04 수정 내용 .text()적용
 			 let file = $("#fileInput")[0];
 			 let content = $("#contentInput").val();
 			 let starpoint = $("#starpointSelector").val();
