@@ -36,6 +36,13 @@
 	<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
 
 	<script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+	
+	<!-- 2024-02-16 추가내용 페이지네이션 -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/tui-grid/tui-pagination.css">
+	
+	<style>
+	
+	</style>
 </head>
 <body>
 	<div id = "wrap">
@@ -214,7 +221,7 @@
 		
 		</div>
 		<!--2024-02-03 수정 내용  tui-pagination 추가 -->
-		<div id="tui-pagination-container" class="tui-pagination"></div>
+		<div id="pagination" class="tui-pagination"></div>
 		
 		</div>
 		</section>

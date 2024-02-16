@@ -1,14 +1,15 @@
 package com.marondal.choongmotour.lodging.model;
 
 public class PageDTO {
-	private int pageNum_cnt;//한번에 표시할 페이징 번호의 갯수
+	private int currPage;//현재페이지
 	
-	private int startPageNum;//표시되는 페이지 번호 중 첫번째 번호
+	private int totalPage;//총페이지
 	
-	private int endPageNum;//표시되는 페이지 번호 중 마지막 번호
+	private int firstPage;//첫페이지
 	
-	private int total;//전체 게시물 수 
+	private int lastPage;//마지막페이지
 	
+	private int totalData;//전체 게시물 수 
 	/**
 	    * 페이징 계산
 	    * @param currPage 현재페이지
@@ -17,5 +18,60 @@ public class PageDTO {
 	    * @param lastPage 마지막페이지
 	    * @param totalData 총 DATA
 	    */
+
+	public PageDTO() {}
+	
+	public PageDTO(int currPage, int totalPage, int firstPage, int lastPage, int totalData) {
+		super();
+		this.currPage = currPage;
+		this.totalPage = totalPage;
+		this.firstPage = firstPage;
+		this.lastPage = lastPage;
+		this.totalData = totalData;
+		
+	}
+	
+	
+	public int getCurrPage() {
+		return currPage;
+	}
+
+	public void setCurrPage(int currPage) {
+		this.currPage = currPage;
+	}
+
+	public int getTotalPage() {
+		return totalPage;
+	}
+
+	public void setTotalPage(int totalPage) {
+		this.totalPage = totalPage;
+	}
+
+	public int getFirstPage() {
+		return firstPage;
+	}
+
+	public void setFirstPage(int firstPage) {
+		this.firstPage = firstPage;
+	}
+
+	public int getLastPage() {
+		return lastPage;
+	}
+
+	public void setLastPage(int lastPage) {
+		this.lastPage = lastPage;
+	}
+
+	public int getTotalData() {
+		return totalData;
+	}
+
+	public void setTotalData(int totalData) {
+		this.totalData = totalData;
+	}
+	
+	
 	
 }
