@@ -31,7 +31,18 @@
 	<!-- 네이버 지도 api -->
 	<script type="text/javascript" 
 	src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=wfkavb5t6s&submodules=geocoder"></script>
+	
+	<!-- 2024-02-04 수정내용 tui-pagination -->
+	<link rel="stylesheet" href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css" />
 
+	<script src="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.js"></script>
+	
+	<!-- 2024-02-16 추가내용 페이지네이션 -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/resources/css/tui-grid/tui-pagination.css">
+	
+	<style>
+	
+	</style>
 </head>
 <body>
 	<div id = "wrap">
@@ -209,7 +220,8 @@
 	
 		
 		</div>
-		
+		<!--2024-02-03 수정 내용  tui-pagination 추가 -->
+		<div id="pagination" class="tui-pagination"></div>
 		
 		</div>
 		</section>
@@ -227,14 +239,23 @@
 	
 	</style>
 	<script>
+	
+	
+	
+	
+	
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 		
-	//댓글 갯수 표시	
+	
+	
+	//한 화면에 댓글 갯수 표시	
 	$("#pageUnit").on("click", function(){
-		let number = $(this).val();
 		
-		console.log(number);
+		let list_size = $(this).val();
+		
+		console.log("한 화면에 x 개씩 댓글 조회" + list_size);
+		
 		//alert(number);
 	});
 		
@@ -366,9 +387,57 @@
 		     });
 		 }
 		
+		 
+		 // 2024-03-03 list_size
+		 $("#page_unit").on("input", function(){
+			
+			 list_size = $(this).val();//페이지당 몇명씩 보여줄 것인지
+			 //셀렉터를 클릭과동시에 새로고침 되어야 함.
+		 });
+		 
+		//페이지네이션  2024-02-03 수정 내용 
+		const Pagination = require('tui-pagination');
 		
+		const dataSource = {
+				  contentType: 'application/json',
+				  api: {
+				    readData: { url: '/api/readData', method: 'GET'}
+				  }
+				};
 		
-		
+		function setPagination(id, obj){
+			var _pagination = new tui.Pagination(id, {
+			       totalItems : obj.totalData,
+			       itemsPerPage : list_size,// pageSize->list_size를 넣으면 셀렉터에서 선택한 밸류값에 따른 전체 페이지수 10개일때 1368페이지, 20개일때 684페이지 50개일때 274페이지
+			       visiblePages : 10, // 하단에 보여지는 페이지수
+			       page : 1,
+			       centerAlign : true 
+			    });
+			 _pagination.on('beforeMove', function(eventData){//클릭전값
+					showPage = eventData.page;
+					getDatatInfo();
+					/*
+					console.log(eventData);//{page: 1368}  현재 페이지가 뜬다.
+
+					console.log(showPage);//1368이라고 뜬다. 현재 페이지가 뜬다.
+					console.log(list_size);//한 화면에 표시될 갯수
+
+
+					console.log(obj.totalData);//전체 데이터
+
+					//현재 페이지가 마지막 페이지 일때 나머지 갯수 만큼 보여줘라. 13678데이터 일때 list_size 20일경우 마지막 페이지에서 18개가 나와야 함 50일때 28개 이렇게
+					if(showPage == Math.ceil(obj.totalData / list_size)){
+						console.log("마지막페이지");
+					}
+					*/
+		});
+	    
+	    _pagination.on('afterMove', function(eventData) {//클릭후값
+	            //alert('The current page is ' + eventData.page);
+
+	    });
+			
+		}
 		
 	});
 	
