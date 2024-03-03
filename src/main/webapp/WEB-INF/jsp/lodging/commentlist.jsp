@@ -387,6 +387,14 @@
 		     });
 		 }
 		
+		 
+		 // 2024-03-03 list_size
+		 $("#page_unit").on("input", function(){
+			
+			 list_size = $(this).val();//페이지당 몇명씩 보여줄 것인지
+			 //셀렉터를 클릭과동시에 새로고침 되어야 함.
+		 });
+		 
 		//페이지네이션  2024-02-03 수정 내용 
 		const Pagination = require('tui-pagination');
 		
@@ -396,6 +404,40 @@
 				    readData: { url: '/api/readData', method: 'GET'}
 				  }
 				};
+		
+		function setPagination(id, obj){
+			var _pagination = new tui.Pagination(id, {
+			       totalItems : obj.totalData,
+			       itemsPerPage : list_size,// pageSize->list_size를 넣으면 셀렉터에서 선택한 밸류값에 따른 전체 페이지수 10개일때 1368페이지, 20개일때 684페이지 50개일때 274페이지
+			       visiblePages : 10, // 하단에 보여지는 페이지수
+			       page : 1,
+			       centerAlign : true 
+			    });
+			 _pagination.on('beforeMove', function(eventData){//클릭전값
+					showPage = eventData.page;
+					getDatatInfo();
+					/*
+					console.log(eventData);//{page: 1368}  현재 페이지가 뜬다.
+
+					console.log(showPage);//1368이라고 뜬다. 현재 페이지가 뜬다.
+					console.log(list_size);//한 화면에 표시될 갯수
+
+
+					console.log(obj.totalData);//전체 데이터
+
+					//현재 페이지가 마지막 페이지 일때 나머지 갯수 만큼 보여줘라. 13678데이터 일때 list_size 20일경우 마지막 페이지에서 18개가 나와야 함 50일때 28개 이렇게
+					if(showPage == Math.ceil(obj.totalData / list_size)){
+						console.log("마지막페이지");
+					}
+					*/
+		});
+	    
+	    _pagination.on('afterMove', function(eventData) {//클릭후값
+	            //alert('The current page is ' + eventData.page);
+
+	    });
+			
+		}
 		
 	});
 	
