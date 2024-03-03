@@ -246,19 +246,7 @@
 	
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
-		
-	
-	
-	//한 화면에 댓글 갯수 표시	
-	$("#pageUnit").on("click", function(){
-		
-		let list_size = $(this).val();
-		
-		console.log("한 화면에 x 개씩 댓글 조회" + list_size);
-		
-		//alert(number);
-	});
-		
+			
 		
 	$(".delete-btn").on("click", function(){
 			
@@ -386,7 +374,7 @@
 		         map: map
 		     });
 		 }
-		
+	
 		 
 		 // 2024-03-03 list_size
 		 $("#page_unit").on("input", function(){
