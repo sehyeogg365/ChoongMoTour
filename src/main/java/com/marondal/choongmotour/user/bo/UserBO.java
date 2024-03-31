@@ -116,4 +116,15 @@ public class UserBO {
 
 	}
 
+	//2024-03-31 비밀번호 확인
+	/*
+	public int getPassword(int id, String password){
+
+		String ecryptPassword = EncryptService.md5(password);
+
+		return userDAO.selectPassword(id, ecryptPassword);
+
+	}
+	*/
+
 }

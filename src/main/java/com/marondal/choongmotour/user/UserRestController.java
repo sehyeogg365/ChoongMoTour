@@ -175,6 +175,29 @@ public class UserRestController {
 		return resultMap;
 		
 	}
+
+	//2024-03-31 비밀번호 확인
+	/*
+	@GetMapping("/pw_check")
+	public Map<String, String> confirmPassword(@RequestParam("password") String password
+			  							       , HttpSession session){
+
+
+		Map<String, String> resultMap = new HashMap<>();
+
+		int id = (Integer)session.getAttribute("userId");
+
+		int count = userBO.getPassword(id, password);
+		if(count == 0) {// 업데이트하는 행의 갯수
+			resultMap.put("result", "fail");
+
+		} else {
+			resultMap.put("result", "success");
+		}
+
+		return resultMap;
+	}
+	*/
 	
 	
 }

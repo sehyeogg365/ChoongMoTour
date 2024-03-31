@@ -49,5 +49,8 @@ public interface UserDAO {
 			, @Param("nickname")String nickname
 			, @Param("imagePath") String imagePath);
 
+
+	//2024-03-31 비밀번호 확인
+	//public int selectPassword(@Param("id") int id, @Param("password") String password);
 	
 }
