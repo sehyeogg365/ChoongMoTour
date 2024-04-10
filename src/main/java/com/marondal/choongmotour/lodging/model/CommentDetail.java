@@ -14,7 +14,7 @@ public class CommentDetail {
 	private double starpoint;	
 	private Date createdAt;
 
-	//페이지네이션 관련 변수들 추가
+	//2024-04-10 페이지네이션 관련 변수들 추가
 	/*
 	private Integer SIZE;
 	private Integer PAGE;				//현재페이지번호
