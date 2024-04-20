@@ -1,6 +1,6 @@
 package com.marondal.choongmotour.lodging.model;
 
-public class PageDTO {
+public class PagingDTO {
 	private int currPage;//현재페이지
 	
 	private int totalPage;//총페이지
@@ -19,9 +19,9 @@ public class PageDTO {
 	    * @param totalData 총 DATA
 	    */
 
-	public PageDTO() {}
+	public PagingDTO() {}
 	
-	public PageDTO(int currPage, int totalPage, int firstPage, int lastPage, int totalData) {
+	public PagingDTO(int currPage, int totalPage, int firstPage, int lastPage, int totalData) {
 		super();
 		this.currPage = currPage;
 		this.totalPage = totalPage;

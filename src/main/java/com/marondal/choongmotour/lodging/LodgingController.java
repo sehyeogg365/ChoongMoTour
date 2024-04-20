@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.marondal.choongmotour.lodging.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.comment.bo.CommentBO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
-import com.marondal.choongmotour.lodging.model.CommentDetail;
-import com.marondal.choongmotour.lodging.model.DibsDetail;
-import com.marondal.choongmotour.lodging.model.Lodging;
-import com.marondal.choongmotour.lodging.model.LodgingDetail;
-import com.marondal.choongmotour.lodging.model.ReserveDetail;
-import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
@@ -220,8 +215,9 @@ public class LodgingController {
 	public String commentList(Model model
 							, @RequestParam("lodgingId")int lodgingId
 							//, HttpSession session
+						    , CommentDetail commentDetail
 							) {
-		
+		PagingDTO pagingDTO = null;
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
 		
 		model.addAttribute("lodging", lodging);	

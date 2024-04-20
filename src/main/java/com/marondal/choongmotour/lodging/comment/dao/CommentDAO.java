@@ -2,6 +2,7 @@ package com.marondal.choongmotour.lodging.comment.dao;
 
 import java.util.List;
 
+import com.marondal.choongmotour.lodging.model.CommentDetail;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -32,6 +33,7 @@ public interface CommentDAO {
 	public int deleteComment(@Param("id") int id, @Param("userId") int userId);
 	
 	//댓글 개수
+	public int selectCommentCount(CommentDetail commentDetail);
 	
 	//댓글 평균평점
 	
