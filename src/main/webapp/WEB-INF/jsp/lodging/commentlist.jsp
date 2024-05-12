@@ -231,7 +231,9 @@
 	
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-
+    <script src="/resources/dist/w2ui/w2ui-1.5.min.js"></script><!--2024-04-04 경로 고치기 -->
+    <script src="/resources/js/tui-grid/tui-pagination.js"></script><!--2024-04-04 경로 고치기 -->
+    <script src="<%= application.getContextPath() %>/resources/js/plugin/select2/dist/js/select2.min.js"></script>
 	<style>
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
@@ -246,19 +248,7 @@
 	
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
-		
-	
-	
-	//한 화면에 댓글 갯수 표시	
-	$("#pageUnit").on("click", function(){
-		
-		let list_size = $(this).val();
-		
-		console.log("한 화면에 x 개씩 댓글 조회" + list_size);
-		
-		//alert(number);
-	});
-		
+			
 		
 	$(".delete-btn").on("click", function(){
 			
@@ -386,7 +376,7 @@
 		         map: map
 		     });
 		 }
-		
+	
 		 
 		 // 2024-03-03 list_size
 		 $("#page_unit").on("input", function(){

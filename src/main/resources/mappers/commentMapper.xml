@@ -86,6 +86,16 @@
   </delete>
   
   <!-- 댓글 개수 -->
-  
+  <select id ="selectCommentCount" parameterType="int">
+	SELECT
+	  count(*)
+	FROM
+	  `comment`
+	WHERE
+	  	`lodgingId` = #{lodgingId}
+
+  </select>
+
+
   <!-- 댓글 평균평점 -->
   </mapper>

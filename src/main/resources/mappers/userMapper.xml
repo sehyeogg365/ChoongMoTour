@@ -123,5 +123,17 @@
   		`id` = #{id}
   		;
   </update>
-  
+<!--2024-03-31 비밀번호 확인
+  <select id ="selectPassword" resultType="int" parameterType="String">
+	  SELECT
+	  		count(1)
+	  FROM
+	  		`user`
+	  WHERE
+	  		`id` = #{id}
+	  		AND
+	  		`password` = #{password}
+  </select>
+-->
+
   </mapper>

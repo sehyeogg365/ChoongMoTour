@@ -13,6 +13,16 @@ public class CommentDetail {
 	private String imagePath;
 	private double starpoint;	
 	private Date createdAt;
+
+	//2024-04-10 페이지네이션 관련 변수들 추가
+
+	private Integer SIZE;
+	private Integer PAGE;				//현재페이지번호
+	private Integer COUNTLIST;			//한 페이지에 출력될 게시물 수 (
+	private Integer BEGIN;
+	private Integer TOTALDATA;
+
+
 	public int getId() {
 		return id;
 	}
@@ -67,8 +77,44 @@ public class CommentDetail {
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
-	
-	
+
+	public Integer getSIZE() {
+		return SIZE;
+	}
+
+	public void setSIZE(Integer SIZE) {
+		this.SIZE = SIZE;
+	}
+
+	public Integer getPAGE() {
+		return PAGE;
+	}
+
+	public void setPAGE(Integer PAGE) {
+		this.PAGE = PAGE;
+	}
+
+	public Integer getCOUNTLIST() {
+		return COUNTLIST;
+	}
+
+	public void setCOUNTLIST(Integer COUNTLIST) {
+		this.COUNTLIST = COUNTLIST;
+	}
+
+	public Integer getBEGIN() {
+		return BEGIN;
+	}
+
+	public void setBEGIN(Integer BEGIN) {
+		this.BEGIN = BEGIN;
+	}
+
+	public Integer getTOTALDATA() {
+		return TOTALDATA;
+	}
+
+	public void setTOTALDATA(Integer TOTALDATA) {
+		this.TOTALDATA = TOTALDATA;
+	}
 }

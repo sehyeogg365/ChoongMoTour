@@ -17,6 +17,7 @@ import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
+
 @Service
 public class CommentBO {
 	
@@ -99,6 +100,10 @@ public class CommentBO {
 	}
 	
 	//댓글 개수
+	public Integer getCommentCount (CommentDetail commentDetail){
+
+		return commentDAO.selectCommentCount(commentDetail);
+	};
 	
 	//댓글 평균평점
 	

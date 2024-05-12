@@ -41,7 +41,7 @@
 				
 				
 			  	<div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="/user/mypage/view?id=${userId}">MyPage</a>
+			    <a class="dropdown-item" href="/user/mypage/view?id=${userId}" data-toggle="modal" data-target="#infoModal${userId }">MyPage</a>
 			    <a class="dropdown-item" href="/lodging/reservelist/view?id=${userId}">ReservePage</a>
 			    <a class="dropdown-item" href="/user/signout/">로그아웃</a>
 			    
@@ -57,7 +57,56 @@
 			</c:choose>
 			
 			<!-- 헤더도 실제 여기어때 처럼 이쁘게 구상해볼것 -->
+
+
+
 		</header>
+
+        <!--2024-03-31 비밀번호 확인 모달
+        <div class="modal fade" id="infoModal{userId}" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">비밀번호 확인</h5>
+                    </div>
+                    <div class="modal-body text-center">
+                        <p id="contentInput" class="modalcontent">아이디: ${loginId}</p>
+                        <input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="confirmBtn" class="btn btn-primary" data-dismiss="modal">확인</button>
+                        <button type="button" id="closeBtn" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(document).ready(function() {
+                $("#confirmBtn").on("click", function() {
+                    let id = "${userId}"; // JSP 태그를 이용하여 userId 값을 가져옴
+                    let password = $("#passwordInput").val();
+
+                    $.ajax({
+                        type: "get",
+                        url: "/user/pw_check",
+                        data: {"id": id, "password": password},
+                        success: function(data) {
+                            console.log(data);
+                            if (data.result === "success") {
+                                alert("비밀번호 확인 성공");
+                                location.href = "/user/mypage/view?id=" + id;
+                            } else {
+                                alert("비밀번호 확인 실패");
+                            }
+                        },
+                        error: function() {
+                            alert("비밀번호 확인 오류");
+                        }
+                    });
+                });
+            });
+        </script>
+        -->
 
 </body>
 </html>
