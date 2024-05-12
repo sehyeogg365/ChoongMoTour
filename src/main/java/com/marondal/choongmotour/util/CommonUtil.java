@@ -3,8 +3,7 @@ package com.marondal.choongmotour.util;
 import com.marondal.choongmotour.lodging.model.PagingDTO;
 
 public class CommonUtil {
-
-
+    // 2024-05-12
     public static PagingDTO calculatePaging(int countPage, int currPage, int size, int totalData) {
 
 //		int totalPage = (totalData -1) / size;
