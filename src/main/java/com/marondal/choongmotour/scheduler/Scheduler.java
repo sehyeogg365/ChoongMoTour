@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class Scheduler {
 
     @Autowired
-    private AutomaticDeletionService deletionService
+    private AutomaticDeletionService deletionService;
 
 
     // 2024-05-16 예약 30일 지난 숙소는 자동삭제
