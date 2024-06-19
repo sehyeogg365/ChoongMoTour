@@ -10,10 +10,10 @@ public class AutomaticDeletionServiceImpl implements AutomaticDeletionService{
     @Autowired
     private LodgingDAO loadingDAO;
 
-    @Override
+    /*@Override
     public void deleteLodging(){
 
 
 
-    }
+    }*/
 }
