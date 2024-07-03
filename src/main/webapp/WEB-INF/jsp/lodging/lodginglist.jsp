@@ -35,9 +35,9 @@
 				</h1>
 				
 				<div class="d-flex justify-content-between mt-3">
-					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;">필터</i>
+					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;" data-toggle="modal"  data-target="#filterModal">필터</i>
 					
-					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;">정렬</i>
+					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;" data-toggle="modal" data-target="#sortModal">정렬</i>
 				</div>
 				
 				<h2>
@@ -100,7 +100,7 @@
 							<a href="/lodging/room/view?id=${lodging.id }" class="d-block lodging-profile">
 								<img class="profile" src="${lodging.imagePath }">
 							</a>
-							<div class="lodging-card-textbox bg-primary">
+							<div class="lodging-card-textbox">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
 									<c:choose>
