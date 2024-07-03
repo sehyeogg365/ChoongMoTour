@@ -155,8 +155,8 @@
 				
 			}
 			
-			alert(id);
-			alert(email);
+			//alert(id);
+			//alert(email);
 			
 			
 				$.ajax({

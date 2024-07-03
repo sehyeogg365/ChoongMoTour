@@ -81,7 +81,8 @@
                 </div>
             </div>
         </div>
-        </c:if>
+        </c:if> -->
+        <!--
         <script>
             $(document).ready(function() {
                 $("#confirmBtn").on("click", function() {
