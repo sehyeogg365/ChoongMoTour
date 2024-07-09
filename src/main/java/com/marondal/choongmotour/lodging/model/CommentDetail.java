@@ -11,7 +11,10 @@ public class CommentDetail {
 	private String content;
 	private String nickname;
 	private String imagePath;
-	private double starpoint;	
+	private Integer commentCount;
+	private double starpoint;
+
+	private double avgStarPoint;
 	private Date createdAt;
 
 	//2024-04-10 페이지네이션 관련 변수들 추가
@@ -65,12 +68,22 @@ public class CommentDetail {
 	public void setImagePath(String imagePath) {
 		this.imagePath = imagePath;
 	}
+
+	public Integer getCommentCount() { return commentCount; }
+
+	public void setCommentCount(Integer commentCount) { this.commentCount = commentCount; }
+
 	public double getStarpoint() {
 		return starpoint;
 	}
 	public void setStarpoint(double starpoint) {
 		this.starpoint = starpoint;
 	}
+
+	public double getAvgStarPoint() { return avgStarPoint; }
+
+	public void setAvgStarPoint(double avgStarPoint) { this.avgStarPoint = avgStarPoint; }
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}

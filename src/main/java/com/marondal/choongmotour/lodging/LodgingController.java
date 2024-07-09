@@ -55,18 +55,18 @@ public class LodgingController {
 	//숙소리스트
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
+							  , LodgingDetail lodgingDetail
 							  , @RequestParam("area_name")String areaName
 							  , HttpSession session
-							 // , @RequestParam("id") int id
 							  ) {
-		
 		int userId = (Integer)session.getAttribute("userId"); //dibs detail 이랑 자꾸 헷갈려서 그런듯.
-		
-		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId);
-		
+
+		String sortType = lodgingDetail.getSortType();
+
+		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, lodgingDetail);
+
 		model.addAttribute("lodgingList", lodgingList);
-		
-		
+
 		
 		//로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		

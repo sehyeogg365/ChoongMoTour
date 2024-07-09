@@ -98,14 +98,17 @@ public class CommentBO {
 		
 		
 	}
-	
+
 	//댓글 개수
 	public Integer getCommentCount (CommentDetail commentDetail){
 
 		return commentDAO.selectCommentCount(commentDetail);
-	};
-	
+	}
+
 	//댓글 평균평점
+	public long getStarPoint (CommentDetail commentDetail){
+		return commentDAO.selectStarPoint(commentDetail);
+	}
 	
 
 }

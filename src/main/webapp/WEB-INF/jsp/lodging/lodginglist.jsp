@@ -103,6 +103,7 @@
 							<div class="lodging-card-textbox">
 								<h4 class="text-white lodging-texts">
 									<b>${lodging.roomName }</b>
+									<div class="d-flex">
 									<c:choose>
 										<c:when test = "${lodging.level eq '5성급' }">
 											<div class="text-warning"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
@@ -120,6 +121,10 @@
 											<div class="text-primary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
 										</c:when>
 									</c:choose>
+									    <div class="">${lodging.avgStarPoint}점</div>
+									    <div class="ml-2">${lodging.commentCount}명 평가</div>
+									    <div class="ml-2">${lodging.singleRoomPrice}원</div>
+									</div>
 								</h4>
 							</div>
 							
@@ -171,8 +176,20 @@
 					
 					      <div class="modal-body text-center">
 					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-					      
-					     	<p> </p>
+					        <!-- 평점높은순, 리뷰많은순, 낮은가격순, 높은가격순 정렬 -->
+
+					     	<div class="bg-info">
+                                <label class="col-9"><input type="radio" name="sortOrder" value="starPointOrder" checked>평점높은순</label>
+
+                                <label class="col-9"><input type="radio" name="sortOrder" value="commentOrder">리뷰순</label>
+
+                                <label class="col-9"><input type="radio" name="sortOrder" value="lowPriceOrder">낮은가격순</label>
+
+                                <label class="col-9"><input type="radio" name="sortOrder" value="highPriceOrder">높은가격순</label>
+
+                            </div>
+
+
 					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 					      <div class="modal-footer">
 			        
@@ -202,7 +219,31 @@
 		//필터모달
 		
 		//정렬모달
-		
+		$("input[name='sortOrder']").on("change", function() {
+            let order = $(this).val();
+            alert(order);
+            $.ajax({
+                type : "get"
+                , url : "/lodginglist/view"
+                , data: {sortType : order, area_name: ${lodging.areaName}}
+                , success:function(data){
+                    if(data.result == "success"){
+                           location.reload();
+                    } else {
+                           alert("정렬 실패");
+                    }
+                }
+                , error:function(){
+                    alert("정렬 오류");
+
+                }
+
+
+            });
+
+		});
+
+
 		
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
