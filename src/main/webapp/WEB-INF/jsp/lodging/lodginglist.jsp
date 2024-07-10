@@ -121,9 +121,9 @@
 											<div class="text-primary"><b>${lodging.level }</b></div><!-- 성급도 for문써서 해보기 -->
 										</c:when>
 									</c:choose>
-									    <div class="">${lodging.avgStarPoint}점</div>
+									    <div class="ml-2">${lodging.avgStarPoint}점</div>
 									    <div class="ml-2">${lodging.commentCount}명 평가</div>
-									    <div class="ml-2">${lodging.singleRoomPrice}원</div>
+									    <div class="ml-2"><fmt:formatNumber value="${lodging.singleRoomPrice}" type="currency" currencySymbol=""/>원</div>
 									</div>
 								</h4>
 							</div>

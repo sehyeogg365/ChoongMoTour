@@ -33,9 +33,9 @@ public interface CommentDAO {
 	public int deleteComment(@Param("id") int id, @Param("userId") int userId);
 	
 	//댓글 개수
-	public Integer selectCommentCount(CommentDetail commentDetail);
+	public Integer selectCommentCount(@Param("lodgingId") int lodgingId);
 	
 	//댓글 평균평점
-	public long selectStarPoint(CommentDetail commentDetail);
+	public Double selectStarPoint(@Param("lodgingId") int lodgingId);
 }
 

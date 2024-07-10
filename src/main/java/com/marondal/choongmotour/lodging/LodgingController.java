@@ -227,6 +227,12 @@ public class LodgingController {
 		List<CommentDetail> commentDetailList = commentBO.getCommentList(lodgingId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
+
+		Integer commentCount = commentBO.getCommentCount(lodgingId); //댓글 갯수, 평점
+		model.addAttribute("commentCount", commentCount);
+
+		Double starPoint = commentBO.getStarPoint(lodgingId);
+		model.addAttribute("starPoint", starPoint);
 		
 		return "lodging/commentlist";
 	}

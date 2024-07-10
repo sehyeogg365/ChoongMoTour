@@ -100,14 +100,14 @@ public class CommentBO {
 	}
 
 	//댓글 개수
-	public Integer getCommentCount (CommentDetail commentDetail){
+	public Integer getCommentCount (int lodgingId){
 
-		return commentDAO.selectCommentCount(commentDetail);
+		return commentDAO.selectCommentCount(lodgingId);
 	}
 
 	//댓글 평균평점
-	public long getStarPoint (CommentDetail commentDetail){
-		return commentDAO.selectStarPoint(commentDetail);
+	public Double getStarPoint (int lodgingId){
+		return commentDAO.selectStarPoint(lodgingId);
 	}
 	
 

@@ -54,23 +54,34 @@ public class LodgingBO {
 			//이거와 관련된 비오 하나를 차라리 더 팔것.
 			//댓글갯수,평점,가격, 정렬 방식 비오를 파기,
 
-			//Integer price = lodgingDAO.selectSingleRoomPrice(lodging.getId());//싱글룸 가격
-
 			CommentDetail commentDetail = new CommentDetail();
-			Integer commentCount = commentDAO.selectCommentCount(commentDetail);// 댓글 갯수
-			double starPoint = commentDAO.selectStarPoint(commentDetail);//댓글 평점
+			Integer commentCount = commentDAO.selectCommentCount(lodging.getId());// 댓글 갯수 이두개를 lodgingId로 변경?
+			Double starPoint = commentDAO.selectStarPoint(lodging.getId());//댓글 평점
 
-//			if(price == null){
-//				price = 0;
-//			}
+			Room room = new Room();
+			List<Room> roomList  = lodgingDAO.selectRoomListOrderByPrice(lodging.getId());//객실 정보 불러오기
 
-			if (lodging.getCommentCount() == null) {
-				lodging.setCommentCount(0);
+			Integer price = 0;
+
+			//객실 정보가 있을때
+			if(roomList != null && !roomList.isEmpty()){
+				price = roomList.get(0).getPrice(); // 첫번째요소인 싱글룸 가격
+			} else {
+				System.out.println("Lodging ID: " + lodging.getId());
 			}
 
-//			if (startPoint == null) {
-//				lodging.setAvgStarPoint(0.0);
-//			}
+
+			if (commentCount == null) {
+				lodging.setCommentCount(0);
+			} else {
+				lodging.setCommentCount(commentCount);
+			}
+
+			if (starPoint == null) {
+				lodging.setAvgStarPoint(0.0);
+			} else {
+				lodging.setAvgStarPoint(starPoint);
+			}
 			//if(commentCount == null){
 			//	commentCount = 0;
 			//}
@@ -93,10 +104,10 @@ public class LodgingBO {
 			lodgingDetail.setDibs(isDibs);// 찜여부
 			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
 			//여기서 dto로 댓글갯수,평점,가격, 정렬 타입 추가
-			lodgingDetail.setCommentCount(commentCount != null ? commentCount : 0); // lodging.getCommentCount()->commentCount != null ? commentCount : 0
-			lodgingDetail.setAvgStarPoint(starPoint); // lodging.getAvgStarPoint() -> starPoint != null ? starPoint : 0.0
-			//lodgingDetail.setSingleRoomPrice(price != null ? price : 0); // lodging.getSingleRoomPrice() -> price != null ? price : 0
-			lodgingDetail.setSortType(lodgingDetail.getSortType());
+			lodgingDetail.setCommentCount(lodging.getCommentCount()); // lodging.getCommentCount()->commentCount != null ? commentCount : 0
+			lodgingDetail.setAvgStarPoint(lodging.getAvgStarPoint()); // lodging.getAvgStarPoint() -> starPoint != null ? starPoint : 0.0
+			lodgingDetail.setSingleRoomPrice(price); // lodging.getSingleRoomPrice() -> price != null ? price : 0
+			lodgingDetail.setSortType(lodging.getSortType());
 			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
 			lodgingDetailList.add(lodgingDetail);
@@ -116,6 +127,7 @@ public class LodgingBO {
 		
 		
 	}
+
 	
 	
 	// 예약목록 userId별로

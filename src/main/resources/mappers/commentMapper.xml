@@ -86,7 +86,7 @@
   </delete>
   
   <!-- 댓글 개수 -->
-  <select id ="selectCommentCount" parameterType="com.marondal.choongmotour.lodging.model.CommentDetail" resultType="Integer">
+  <select id ="selectCommentCount" parameterType="int" resultType="Integer">
 	SELECT
 	  count(*) AS `commentCount`
 	FROM
@@ -98,7 +98,7 @@
 
 
   <!-- 댓글 평균평점 -->
-	<select id = "selectStarPoint" parameterType="com.marondal.choongmotour.lodging.model.CommentDetail" resultType="long">
+	<select id = "selectStarPoint" parameterType="int" resultType="double">
 		SELECT
 			AVG(`starpoint`) AS `avgStarPoint`
 		FROM
