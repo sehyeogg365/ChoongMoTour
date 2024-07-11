@@ -1,6 +1,8 @@
 package com.marondal.choongmotour.lodging;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +20,8 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/lodging")
@@ -215,7 +219,6 @@ public class LodgingController {
 	public String commentList(Model model
 							, @RequestParam("lodgingId")int lodgingId
 							//, HttpSession session
-						    , CommentDetail commentDetail
 							) {
 		PagingDTO pagingDTO = null;
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
@@ -230,17 +233,14 @@ public class LodgingController {
 
 		Integer commentCount = commentBO.getCommentCount(lodgingId); //댓글 갯수, 평점
 		model.addAttribute("commentCount", commentCount);
-
-		Double starPoint = commentBO.getStarPoint(lodgingId);
-		model.addAttribute("starPoint", starPoint);
+//
+		Double avgStarPoint = commentBO.getStarPoint(lodgingId);
+		model.addAttribute("avgStarPoint", avgStarPoint);
 		
 		return "lodging/commentlist";
 	}
-	
 
-	
-	
-	
+
 	
 	
 }
