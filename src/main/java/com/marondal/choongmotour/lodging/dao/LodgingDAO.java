@@ -19,7 +19,7 @@ public interface LodgingDAO {
 	// 로징아이디 별 객실 
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
 
-	
+
 	// -------관리자 페이지---------
 	// 숙소 추가
 	public int insertLodging(

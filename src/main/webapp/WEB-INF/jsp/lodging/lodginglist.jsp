@@ -66,7 +66,7 @@
 										제주
 									</c:when>
 						</c:choose>
-					</c:forEach>호텔(x개)
+					</c:forEach>호텔(${lodgingCount}개)
 					</strong>
 				</h2>
 				

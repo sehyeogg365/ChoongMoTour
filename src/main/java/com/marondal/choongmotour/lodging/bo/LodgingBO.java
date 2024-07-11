@@ -117,8 +117,8 @@ public class LodgingBO {
 		
 		return lodgingDetailList;
 		
-	}	
-	
+	}
+
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
 		
@@ -128,7 +128,6 @@ public class LodgingBO {
 		
 	}
 
-	
 	
 	// 예약목록 userId별로
 	
