@@ -7,6 +7,11 @@ public class LodgingDetail {//숙소카드 하나에 필요한 데이터들
 	private String level;
 	private String areaName;
 	private String imagePath;//여기에 댓글개수, 평균평점도 추가
+
+	private Integer singleRoomPrice;
+	private Integer commentCount;
+	private double avgStarPoint;
+	private String sortType;
 	public int getId() {
 		return id;
 	}
@@ -44,5 +49,16 @@ public class LodgingDetail {//숙소카드 하나에 필요한 데이터들
 		this.areaName = areaName;
 	}
 
-	
+	public Integer getSingleRoomPrice() { return singleRoomPrice; }
+
+	public void setSingleRoomPrice(Integer singleRoomPrice) { this.singleRoomPrice = singleRoomPrice; }
+
+	public Integer getCommentCount() { return commentCount; }
+
+	public void setCommentCount(Integer commentCount) { this.commentCount = commentCount; }
+
+	public double getAvgStarPoint() { return avgStarPoint; }
+	public void setAvgStarPoint(double avgStarPoint) { this.avgStarPoint = avgStarPoint; }
+	public String getSortType() { return sortType; }
+	public void setSortType(String sortType) { this.sortType = sortType; }
 }

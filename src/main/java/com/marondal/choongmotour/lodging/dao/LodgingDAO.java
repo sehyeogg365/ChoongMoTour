@@ -2,6 +2,7 @@ package com.marondal.choongmotour.lodging.dao;
 
 import java.util.List;
 
+import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import com.marondal.choongmotour.lodging.model.Lodging;
@@ -13,14 +14,12 @@ public interface LodgingDAO {
 	// 사용자페이지
 	
 	// 지역별 숙소 
-	public List<Lodging> selectLodgingListByArea(@Param("areaName") String areaName);
+	public List<LodgingDetail> selectLodgingListByArea(@Param("areaName") String areaName, @Param("sortType") String sortType);
 	
 	// 로징아이디 별 객실 
 	public List<Room> selectRoomListOrderByPrice(@Param("lodgingId") int lodgingId);
-												
-	//숙소 개수
-	
-	
+
+
 	// -------관리자 페이지---------
 	// 숙소 추가
 	public int insertLodging(

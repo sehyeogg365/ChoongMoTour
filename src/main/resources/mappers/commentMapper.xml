@@ -86,9 +86,9 @@
   </delete>
   
   <!-- 댓글 개수 -->
-  <select id ="selectCommentCount" parameterType="int">
+  <select id ="selectCommentCount" parameterType="int" resultType="Integer">
 	SELECT
-	  count(*)
+	  count(*) AS `commentCount`
 	FROM
 	  `comment`
 	WHERE
@@ -98,4 +98,15 @@
 
 
   <!-- 댓글 평균평점 -->
+	<select id = "selectStarPoint" parameterType="int" resultType="double">
+		SELECT
+			AVG(`starpoint`) AS `avgStarPoint`
+		FROM
+			`comment`
+		WHERE
+			`lodgingId` = #{lodgingId}
+
+	</select>
+
+
   </mapper>

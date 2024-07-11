@@ -1,7 +1,9 @@
 package com.marondal.choongmotour.lodging.comment.bo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -98,14 +100,36 @@ public class CommentBO {
 		
 		
 	}
-	
-	//댓글 개수
-	public Integer getCommentCount (CommentDetail commentDetail){
 
-		return commentDAO.selectCommentCount(commentDetail);
-	};
-	
+	//댓글 개수, 댓글 평균평점
+	public Map<String, Object> getCommentCountStarPoint (int lodgingId){
+
+		Map<String, Object> result = new HashMap<String, Object>();
+
+		Integer commentCount = commentDAO.selectCommentCount(lodgingId);
+
+		Double avgStarPoint = commentDAO.selectStarPoint(lodgingId);
+
+		result.put("commentCount", commentCount);
+		result.put("avgStarPoint", avgStarPoint);
+
+		return result;
+
+	}
+
+	//댓글 갯수
+	public Integer getCommentCount (int lodgingId){
+
+		return commentDAO.selectCommentCount(lodgingId);
+
+	}
+
 	//댓글 평균평점
-	
+	public Double getStarPoint (int lodgingId){
+
+		return commentDAO.selectStarPoint(lodgingId);
+
+	}
+
 
 }

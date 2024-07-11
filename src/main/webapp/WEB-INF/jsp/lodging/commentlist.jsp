@@ -138,6 +138,7 @@
 		
 		<div class="comment-list">
 			<!-- 한 페이지당 표시 댓글 개수 셀렉터 연습해보기-->
+			<!--
 			<select class="form-control col-5 mt-3" id="pageUnit" name="pageUnit">
 							
                    <option value="">x개씩 표시</option>
@@ -146,7 +147,15 @@
                    <option value="50">50개씩 표시</option>
                    <option value="100">100개씩 표시</option>
                        
-              </select>
+              </select> -->
+              <!-- 댓글갯수, 댓글 평점 -->
+              <div class="d-flex">
+
+                <div id ="avgStarPoint" class="ml-4"><b>${avgStarPoint}점</b></div>
+                <div id ="commentCount" class="ml-4 text-secondary"> ${commentCount}명 평가</div>
+
+              </div>
+
 			<c:forEach var="comment"  items = "${commentDetailList }">
 			<div class="comment-box mt-3">
 				
@@ -248,7 +257,12 @@
 	
 	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
-			
+
+    const lodgingId = "${lodging.id}";
+
+
+
+
 		
 	$(".delete-btn").on("click", function(){
 			

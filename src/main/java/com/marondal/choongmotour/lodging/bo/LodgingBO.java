@@ -3,6 +3,9 @@ package com.marondal.choongmotour.lodging.bo;
 import java.util.ArrayList;
 import java.util.List;
 
+
+import com.marondal.choongmotour.lodging.comment.dao.CommentDAO;
+import com.marondal.choongmotour.lodging.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,9 +14,6 @@ import com.marondal.choongmotour.common.FileManagerService;
 import com.marondal.choongmotour.lodging.dao.LodgingDAO;
 import com.marondal.choongmotour.lodging.dibs.bo.DibsCheckBO;
 
-import com.marondal.choongmotour.lodging.model.Lodging;
-import com.marondal.choongmotour.lodging.model.LodgingDetail;
-import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 
 
@@ -31,26 +31,66 @@ public class LodgingBO {
 	
 	@Autowired 
 	private DibsCheckBO dibsCheckBO;
+
+	@Autowired
+	private CommentDAO commentDAO;
 	//사용자페이지
 
 	//lodging 정보 - 지역 불러오기??
 	
 	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
-	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId){
+	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, LodgingDetail lodgingDetail){
 		
-		List<Lodging> lodgingList = lodgingDAO.selectLodgingListByArea(areaName);
+		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, lodgingDetail.getSortType());
 		
 		List<LodgingDetail> lodgingDetailList = new ArrayList<>();
 		
-		for(Lodging lodging:lodgingList) {
+		for(LodgingDetail lodging:lodgingList) {
 			
 			//숙소카드 한장에 유저정보가 들어갈일은 없다.
 			
 			
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
-			//이거와 관련된 비오 하나를 차라리 더 팔것.							
-			
-			LodgingDetail lodgingDetail = new LodgingDetail();
+			//이거와 관련된 비오 하나를 차라리 더 팔것.
+			//댓글갯수,평점,가격, 정렬 방식 비오를 파기,
+
+			CommentDetail commentDetail = new CommentDetail();
+			Integer commentCount = commentDAO.selectCommentCount(lodging.getId());// 댓글 갯수 이두개를 lodgingId로 변경?
+			Double starPoint = commentDAO.selectStarPoint(lodging.getId());//댓글 평점
+
+			Room room = new Room();
+			List<Room> roomList  = lodgingDAO.selectRoomListOrderByPrice(lodging.getId());//객실 정보 불러오기
+
+			Integer price = 0;
+
+			//객실 정보가 있을때
+			if(roomList != null && !roomList.isEmpty()){
+				price = roomList.get(0).getPrice(); // 첫번째요소인 싱글룸 가격
+			} else {
+				System.out.println("Lodging ID: " + lodging.getId());
+			}
+
+
+			if (commentCount == null) {
+				lodging.setCommentCount(0);
+			} else {
+				lodging.setCommentCount(commentCount);
+			}
+
+			if (starPoint == null) {
+				lodging.setAvgStarPoint(0.0);
+			} else {
+				lodging.setAvgStarPoint(starPoint);
+			}
+			//if(commentCount == null){
+			//	commentCount = 0;
+			//}
+
+			//if(startPoint == null){
+			//	startPoint = 0.0;
+			//}
+
+			lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			
 			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
 			
@@ -63,8 +103,11 @@ public class LodgingBO {
 			lodgingDetail.setImagePath(lodging.getImagePath());// 숙소 사진
 			lodgingDetail.setDibs(isDibs);// 찜여부
 			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
-			//여기서 dto로 댓글갯수,평점 추가 
-		
+			//여기서 dto로 댓글갯수,평점,가격, 정렬 타입 추가
+			lodgingDetail.setCommentCount(lodging.getCommentCount()); // lodging.getCommentCount()->commentCount != null ? commentCount : 0
+			lodgingDetail.setAvgStarPoint(lodging.getAvgStarPoint()); // lodging.getAvgStarPoint() -> starPoint != null ? starPoint : 0.0
+			lodgingDetail.setSingleRoomPrice(price); // lodging.getSingleRoomPrice() -> price != null ? price : 0
+			lodgingDetail.setSortType(lodging.getSortType());
 			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
 			lodgingDetailList.add(lodgingDetail);
@@ -74,8 +117,8 @@ public class LodgingBO {
 		
 		return lodgingDetailList;
 		
-	}	
-	
+	}
+
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
 		
@@ -84,7 +127,7 @@ public class LodgingBO {
 		
 		
 	}
-	
+
 	
 	// 예약목록 userId별로
 	

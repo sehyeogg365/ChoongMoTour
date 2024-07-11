@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.marondal.choongmotour.lodging.model.LodgingDetail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -61,11 +62,11 @@ public class AdminController {
 	}
 
 	@GetMapping("/main/view")
-	public String mainPage(Model model, HttpSession session) {
+	public String mainPage(Model model, LodgingDetail lodgingDetail) {
 
-		int adminId = (Integer) session.getAttribute("adminId");
+		int id = lodgingDetail.getId();
 
-		List<Lodging> lodgingList = lodgingBO.getLodgingList(adminId);//
+		List<Lodging> lodgingList = lodgingBO.getLodgingList(id);
 		model.addAttribute("lodgingList", lodgingList);
 
 		return "admin/main";

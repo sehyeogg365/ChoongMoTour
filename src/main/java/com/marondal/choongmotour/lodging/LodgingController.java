@@ -1,6 +1,8 @@
 package com.marondal.choongmotour.lodging;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -18,6 +20,8 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/lodging")
@@ -55,19 +59,21 @@ public class LodgingController {
 	//숙소리스트
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
+							  , LodgingDetail lodgingDetail
 							  , @RequestParam("area_name")String areaName
 							  , HttpSession session
-							 // , @RequestParam("id") int id
 							  ) {
-		
 		int userId = (Integer)session.getAttribute("userId"); //dibs detail 이랑 자꾸 헷갈려서 그런듯.
-		
-		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId);
-		
+
+		String sortType = lodgingDetail.getSortType();
+
+		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, lodgingDetail);
+
 		model.addAttribute("lodgingList", lodgingList);
-		
-		
-		
+
+		Integer lodgingCount = lodgingList.size();
+
+		model.addAttribute("lodgingCount", lodgingCount);
 		//로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		
 		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
@@ -215,7 +221,6 @@ public class LodgingController {
 	public String commentList(Model model
 							, @RequestParam("lodgingId")int lodgingId
 							//, HttpSession session
-						    , CommentDetail commentDetail
 							) {
 		PagingDTO pagingDTO = null;
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
@@ -227,14 +232,17 @@ public class LodgingController {
 		List<CommentDetail> commentDetailList = commentBO.getCommentList(lodgingId);
 		
 		model.addAttribute("commentDetailList", commentDetailList);
+
+		Integer commentCount = commentBO.getCommentCount(lodgingId); //댓글 갯수, 평점
+		model.addAttribute("commentCount", commentCount);
+//
+		Double avgStarPoint = commentBO.getStarPoint(lodgingId);
+		model.addAttribute("avgStarPoint", avgStarPoint);
 		
 		return "lodging/commentlist";
 	}
-	
 
-	
-	
-	
+
 	
 	
 }
