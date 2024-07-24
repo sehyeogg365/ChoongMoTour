@@ -64,7 +64,7 @@
 							<div class="">
 							
 								<div class="x mr-3">
-									<i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
+									<i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-reserve-id ="${reserve.id }" ></i>
 								</div>
 								
 								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
@@ -219,7 +219,7 @@
  		
  		$(".x-btn").on("click", function(){
  			
- 			let id = $(this).data("room-id");
+ 			let id = $(this).data("reserve-id");
  			
  			var result = confirm("예약취소 하시겠습니까?");
 			
@@ -229,12 +229,12 @@
 				return ;
 			}
  			
- 			
+ 			alert("예약id :" + id);
  			
  			$.ajax({
  				type: "get"
  				, url : "/lodging/deletereserve"
- 				, data:{"roomId" : id}
+ 				, data:{"id" : id}
  				, success:function(data){
  					if(data.result =="success"){
 						alert("예약 취소 성공");

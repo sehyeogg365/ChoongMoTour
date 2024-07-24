@@ -12,11 +12,7 @@ import com.marondal.choongmotour.lodging.model.ReserveDetail;
 
 @Repository
 public interface ReserveDAO {
-	
 
-
-	
-	
 	
 	
 	//예약하기
@@ -41,6 +37,6 @@ public interface ReserveDAO {
 	
 	//예약 취소
 	
-	public int deleteReserve(@Param("userId")int userId, @Param("roomId") int roomId);
+	public int deleteReserve(@Param("userId")int userId, @Param("id") int id);
 	
 }

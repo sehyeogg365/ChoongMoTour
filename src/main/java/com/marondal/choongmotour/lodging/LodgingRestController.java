@@ -112,24 +112,25 @@ public class LodgingRestController {
 	// 예약 취소
 	@GetMapping("/deletereserve")
 	public Map<String, String> reserveDelete(
-										@RequestParam("roomId")int roomId
+										@RequestParam("id")int id
 										, HttpSession session){
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = reserveBO.deleteReserve(userId, roomId);
+		int count = reserveBO.deleteReserve(userId, id);
 		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
+
 			resultMap.put("result", "success");
 			
 		} else { 
 			
 			resultMap.put("result", "fail");
+
 		}
-		
-		
+
 		return resultMap;
 	}
 	

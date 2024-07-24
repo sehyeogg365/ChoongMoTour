@@ -25,12 +25,7 @@ public class ReserveBO {
 	
 	@Autowired LodgingBO lodgingBO;
 	
-	
-	
 
-		
-		
-	
 	//예약하기 
 	public int addReserve(int roomId, int userId, String name, String phoneNumber,  String payment, Date startDate, Date endDate) {
 			
@@ -38,9 +33,7 @@ public class ReserveBO {
 			
 		
 	}
-	
-	
-	
+
 	
 	//
 	
@@ -86,9 +79,7 @@ public class ReserveBO {
 		
 			reserveDetailList.add(reserveDetail);
 		}
-		
-		
-		
+
 		return reserveDetailList;
 		
 	}
@@ -100,19 +91,13 @@ public class ReserveBO {
 //		
 //	}
 	
-	
-	
-	
+
 	//예약 취소
-	public int deleteReserve(int userId, int roomId) {
-		
-		
-		return reserveDAO.deleteReserve(userId, roomId);
-		
-		
+	public int deleteReserve(int userId, int id) {
+
+		return reserveDAO.deleteReserve(userId, id);
+
 	}
-	
-	
-	
+
 
 }
