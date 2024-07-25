@@ -55,16 +55,13 @@
 					
 					</div>
 				
-				
-				
 				</div>
 				
 			</div>
 		
 		
 		</section>
-	
-	
+
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -75,9 +72,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-	
-		
-		
+
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
@@ -89,8 +84,7 @@
 				 $("#findIdInput").addClass("d-none");
                  
 			 }
-			
-			
+
 		});	
 		
 		$("#findIdBtn").on("click", function(){
@@ -178,7 +172,6 @@
 					}
 				
 				});
-		
 		
 		});
 	});

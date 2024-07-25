@@ -66,9 +66,7 @@
 		
 		var isChecked = false;
 		
-		var isDuplicateId = true;//id중복여부	중복이되야 진행안되니 중복되는걸 기본값	
-		
-	
+		var isDuplicateId = true;//id중복여부	중복이되야 진행안되니 중복되는걸 기본값
 		
 		//중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
 		$("#loginIdInput").on("input", function(){
@@ -109,11 +107,9 @@
 				, error:function(){
 					alert("중복확인 에러");
 				}
-				
-				
+
 			});
-			
-			
+
 		});
 		
 		//조인버튼
@@ -192,8 +188,7 @@
 				alert("아이디가 중복됩니다.");
 				return ;
 			}
-			
-			
+
 			$.ajax({
 				type:"post"
 				, url : "/admin/signup"
@@ -214,8 +209,6 @@
 				}
 			
 			});
-			
-			
 			
 		});
 		

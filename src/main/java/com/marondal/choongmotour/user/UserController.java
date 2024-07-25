@@ -15,7 +15,6 @@ import com.marondal.choongmotour.user.model.User;
 @Controller
 @RequestMapping("/user")
 public class UserController {
-
 	@Autowired
 	private UserBO userBO;
 
@@ -45,18 +44,18 @@ public class UserController {
 	public String findIdPw() {
 
 		return "user/find_id_pw";
+
 	}
 
 	@GetMapping("/mypage/view") // 숙소 수정 잘 참조 해보기
-	public String myPage(Model model, @RequestParam("id") int id
-
-	) {
+	public String myPage(Model model, @RequestParam("id") int id) {
 
 		User user = userBO.getUserInfo(id);
 
 		model.addAttribute("user", user);
 
 		return "user/mypage";
+
 	}
 
 	@GetMapping("/reservepage/view")
@@ -64,9 +63,9 @@ public class UserController {
 		User user = userBO.getUserInfo(id);
 
 		model.addAttribute("user", user);
+
 		return "user/reservepage";
+
 	}
-
-
 
 }

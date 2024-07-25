@@ -123,7 +123,6 @@
 				</div><br>
 				
 				<br>
-		
 				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 -->
 				  <li class="nav-item">
@@ -133,9 +132,7 @@
 				    <a class="nav-link" href="#"><b>리뷰</b></a>
 				  </li>
 				</ul>
-				
-			
-		
+
 		<div class="comment-list">
 			<!-- 한 페이지당 표시 댓글 개수 셀렉터 연습해보기-->
 			<!--
@@ -206,8 +203,7 @@
 						</c:choose>
 						<div class="ml-4 mt-2 small text-secondary">${comment.size } 이용자</div>
 						<div class="ml-4 mt-2">${comment.content }</div>
-						
-						
+
 						<c:choose>
 							<c:when test= "${not empty comment.imagePath }">
 								<div class="comment-image ml-4 mt-2"><img width="400" height ="300"src="${comment.imagePath }"/></div>
@@ -226,8 +222,6 @@
 			</div>
 			</c:forEach>
 
-	
-		
 		</div>
 		<!--2024-02-03 수정 내용  tui-pagination 추가 -->
 		<div id="pagination" class="tui-pagination"></div>

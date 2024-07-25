@@ -55,8 +55,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		
+
 		$("#loginBtn").on("click", function(){
 			
 			
@@ -74,9 +73,7 @@
 				return;
 				
 			}
-			
-			
-			
+
 			$.ajax({
 				type:"post"
 				, url:"/admin/signin"
@@ -94,18 +91,10 @@
 					alert("로그인 에러");
 				}
 				
-				
-				
 			});
 			
-			
-			
-			
-			
 		});
-		
-		
-		
+
 	});
 	
 	</script>

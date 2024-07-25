@@ -214,7 +214,6 @@ public class LodgingRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
 
 		return resultMap;
 	
@@ -243,8 +242,7 @@ public class LodgingRestController {
 			}
 			
 			return resultMap;
-			
-			
+
 		}
 	
 	// 객실 추가 api
@@ -269,8 +267,7 @@ public class LodgingRestController {
 		} else {		
 			resultMap.put("result", "fail");
 		}
-		
-		
+
 		return resultMap;
 
 	}
@@ -317,11 +314,7 @@ public class LodgingRestController {
 		}
 		
 		return resultMap;
-		
-		
+
 	}
-	
-	
-	
 	
 }

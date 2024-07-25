@@ -25,7 +25,6 @@ public class UserRestController {
 	
 	@Autowired
 	private UserBO userBO;
-	
 
 	@PostMapping("/signup")
 		public Map<String, String> signup(

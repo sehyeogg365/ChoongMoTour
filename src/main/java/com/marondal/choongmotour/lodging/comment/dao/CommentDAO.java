@@ -19,16 +19,13 @@ public interface CommentDAO {
 							, @Param("content") String content
 							, @Param("starpoint") double starpoint
 					);
-	
-	
+
 	//댓글 리스트
 	public List<Comment> selectCommentList(@Param("lodgingId") int lodgingId);
-	
-	
+
 	//댓글 한행?
 	public Comment selectComment(@Param("id") int id, @Param("userId") int userId);
-	
-	
+
 	//댓글 삭제	
 	public int deleteComment(@Param("id") int id, @Param("userId") int userId);
 	

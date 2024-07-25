@@ -34,54 +34,51 @@
 					</h1>
 					
 					<div class="dibspagecontents d-flex mx-5">
-					<aside class="side-nav col-2 ">
-						
-						<ul class="nav flex-column">
-							<li class="nav-item mt-2">
-								<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-primrary">찜목록</a></b></h5>
-							</li>
-							<li class="nav-item mt-2">
-								<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
-							</li>
-							<li class="nav-item mt-2">
-								<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
-							</li>
-							
-						</ul>		
-					
-					</aside>
-					<section class="contents1 col-10 ">
+                        <aside class="side-nav col-2 ">
 
-						<div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
-					
-					
-							<c:forEach var="dibs" items="${dibsDetailList }">
-							<div class="dibs-card  mt-3 ml-3 ">
-								
-								<div class="">
-									
-									<div class="dibspage-heart mr-3">														<!-- 근데 희안하게 여기  -->		
-										<i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id= "${dibs.lodgingId}"></i>
-									</div>
-									<a href="/lodging/room/view?id=${dibs.lodgingId }" class="d-block dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->							
-														
-										<img class="profile" width="" src="${dibs.imagePath }" alt="호텔">												
-									</a>
-								</div>
-								
-								<div class="dibs-card-body d-flex justify-content-center">
-								<!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
-								<!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
-									<div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
-									<div class="ml-2 mt-2 text-secondary">${dibs.areaName }</div>
-								</div>
-							</div>
-							</c:forEach>
-	
-		
-						</div>
-					</section>
-					
+                            <ul class="nav flex-column">
+                                <li class="nav-item mt-2">
+                                    <h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-primrary">찜목록</a></b></h5>
+                                </li>
+                                <li class="nav-item mt-2">
+                                    <h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-white">예약내역</a></b></h5>
+                                </li>
+                                <li class="nav-item mt-2">
+                                    <h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
+                                </li>
+                            </ul>
+
+                        </aside>
+                        <section class="contents1 col-10 ">
+
+                            <div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
+
+
+                                <c:forEach var="dibs" items="${dibsDetailList }">
+                                    <div class="dibs-card  mt-3 ml-3 ">
+
+                                        <div class="">
+
+                                            <div class="dibspage-heart mr-3">														<!-- 근데 희안하게 여기  -->
+                                                <i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id= "${dibs.lodgingId}"></i>
+                                            </div>
+                                            <a href="/lodging/room/view?id=${dibs.lodgingId }" class="d-block dibs-profile">			                 <!-- 생각해보니 여기 lodgingId라 하는게 맞다. 왜냐면 숙소리스트서 추가할때 로징아이디로 추가한거니 -->
+
+                                                <img class="profile" width="" src="${dibs.imagePath }" alt="호텔">
+                                            </a>
+                                        </div>
+
+                                        <div class="dibs-card-body d-flex justify-content-center">
+                                        <!--  	<div class="">로징아이디:${dibs.lodgingId }</div>-->
+                                        <!--	<div class="">딥스아이디:${dibs.id }</div>	--><!-- 아예 딥스아이디는 안들어오는상황 -->
+                                            <div class="mt-2 text-center"><a href="/lodging/room/view?id=${dibs.lodgingId }" class="text-dark"><b>${dibs.roomName }</b></a></div>
+                                            <div class="ml-2 mt-2 text-secondary">${dibs.areaName }</div>
+                                        </div>
+                                    </div>
+                                </c:forEach>
+
+                            </div>
+                        </section>
 					</div>
 				
 				</div>
@@ -100,8 +97,7 @@
 	<script>
 	$(document).ready(function(){
 		//css 클릭시 색변화
-		
-		
+
 		//찜 해제 
 		$(".undib-icon").on("click", function(){
 			
@@ -131,10 +127,7 @@
 			});
 			
 		});
-		
-		
-		
-		
+
 	});
 	
 	

@@ -52,8 +52,7 @@
   		`certificationNumber` = #{certificationNumber};
 
   </select>
-  
- 
+
  <select id="selectAdmin" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
  	SELECT 
  		`id`<!-- id컬럼 추가를 안시켜서 자꾸 id값이 0이라고 들어가는거였다. -->
@@ -73,8 +72,7 @@
  		`password` = #{password};
  
  </select>
- 
- 
+
  <select id="selectAdminByNameEmail" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
  	SELECT <!-- 우선적으로 매퍼에서 부터 아이디가 필요없다고 함 이름, 이메일 이 두개만 있으면 된다 하시는데. -->
   		`loginId`
@@ -86,7 +84,6 @@
  		`email` = #{email};
  
  </select>
- 
  
   <update id = "updatePassword" parameterType="map">
   	UPDATE

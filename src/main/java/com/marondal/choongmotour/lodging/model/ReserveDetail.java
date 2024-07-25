@@ -89,10 +89,4 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 		this.endDate = endDate;
 	}
 
-	
-	
-	
-	
-	
-	
 }

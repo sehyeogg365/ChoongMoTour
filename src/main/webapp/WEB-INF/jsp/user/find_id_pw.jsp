@@ -86,8 +86,7 @@
 				 $("#findIdInput").addClass("d-none");
                  
 			 }
-			
-			
+
 		});
 			
 		$("#findIdBtn").on("click", function(){
@@ -100,18 +99,15 @@
 				if(name == ""){
 					alert("아이디를 입력하세요.");
 					return;
-						
 				}
 					
 				if(email == ""){
 					alert("이메일을 입력하세요.");
 					return;
-						
 				}
 				
 				//alert(name);
 				//alert(email);
-			
 					
 				$.ajax({
 					type:"get"
@@ -129,8 +125,8 @@
 							
 						}
 					}
-						, error:function(){
-							alert("아이디 찾기 에러");
+                    , error:function(){
+                        alert("아이디 찾기 에러");
 					}
 	
 				});
@@ -162,8 +158,7 @@
 				
 				//alert(id);
 				//alert(email);
-				
-					
+
 				$.ajax({
 					type:"post"
 					, url:"/user/temppassword"
@@ -186,14 +181,8 @@
 				
 			});
 			
-			
-			
-			
 		});
-		
-		
-	
-		
+
 	</script>
 
 </body>

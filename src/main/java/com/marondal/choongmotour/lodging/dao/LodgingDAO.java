@@ -36,7 +36,6 @@ public interface LodgingDAO {
 	// 숙소 한행
 	public Lodging selectLodgingById(@Param("id") int id);
 	
-	
 	// 숙소 수정
 	public int updateLodging(
 							@Param("id") int id
@@ -59,7 +58,6 @@ public interface LodgingDAO {
 	// 객실 리스트
 	public List<Room> selectRoomList(@Param("lodgingId") int lodgingId);
 	
-	
 	// 객실 한행 조회
 	public Room selectRoomById(@Param("id")int id);
 	
@@ -71,8 +69,6 @@ public interface LodgingDAO {
 						,@Param("content") String content
 						
 						);
-	
-	
 		
 	// 숙소 삭제
 	public int deleteLodging(@Param("id") int id);	

@@ -35,45 +35,39 @@
 				
 				<div class="roomupdate-page-contents">
 				<div class="pl-2 pt-2">${lodging.roomName }</div>
-				<table class="table">
-					<thead>
-						<tr>
-						
-							<th>사이즈</th>
-							<th>가격</th>
-							<th>정보</th>
-							<th></th>
-						</tr>
-					</thead>
-					
-					<tbody>
-					
-					<c:forEach var="room" items="${roomList }">
-						<tr>
-							
-							<td><select class="form-control size-selector" id="sizeSelector${room.id }">
-							
-		                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
-		                            <option value="singleroom">싱글</option>
-		                            <option value="doubleroom">더블</option>
-		                            <option value="twinroom">트윈</option>
-                       
-                 				</select>
-                 			</td>
-							<td><input type="text" id="priceInput${room.id }" value="${room.price }" class="form-control price-input"></td>
-							<td><textarea rows="5" cols="100" id="contentInput${room.id }" class="form-control content-input">${room.content }</textarea></td>
-							<td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
-						</tr>
-						
-					</c:forEach>
-					</tbody>
-				
-				
-				</table>
-                 
-                 
-                 </div>
-				
+                    <table class="table">
+                        <thead>
+                            <tr>
+
+                                <th>사이즈</th>
+                                <th>가격</th>
+                                <th>정보</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <c:forEach var="room" items="${roomList }">
+                                <tr>
+                                    <td>
+                                        <select class="form-control size-selector" id="sizeSelector${room.id }">
+
+                                            <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
+                                            <option value="singleroom">싱글</option>
+                                            <option value="doubleroom">더블</option>
+                                            <option value="twinroom">트윈</option>
+
+                                        </select>
+                                    </td>
+                                    <td><input type="text" id="priceInput${room.id }" value="${room.price }" class="form-control price-input"></td>
+                                    <td><textarea rows="5" cols="100" id="contentInput${room.id }" class="form-control content-input">${room.content }</textarea></td>
+                                    <td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
+                                </tr>
+
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
 			</div>
 		</section>
 	
@@ -94,8 +88,6 @@
 		//ths.parents("");
 		
 		//var id = "id"; // 이거굳이 넣어야하나?
-		
-		
 		
 		$(".update-btn").on("click", function(){
 			
@@ -143,16 +135,11 @@
 				, error:function(){
 					alert("수정 에러");
 				}
-				
-				
-				
+
 			});
-			
-			
+
 		});
 
-		
-		
 	});
 	
 	</script>

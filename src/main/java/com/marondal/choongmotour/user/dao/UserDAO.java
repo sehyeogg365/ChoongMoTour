@@ -7,7 +7,6 @@ import com.marondal.choongmotour.user.model.User;
 
 @Repository
 public interface UserDAO {
-	
 	public int insertUser(
 			@Param("loginId") String loginId
 			, @Param("password") String password
@@ -34,8 +33,6 @@ public interface UserDAO {
 							, @Param("email") String email
 							, @Param("password") String password);
 	
-	
-	
 	// 회원정보 한행 조회
 	public User selectUserInfo(@Param("id") int id);
 	
@@ -48,7 +45,6 @@ public interface UserDAO {
 			, @Param("phoneNumber")String phoneNumber
 			, @Param("nickname")String nickname
 			, @Param("imagePath") String imagePath);
-
 
 	//2024-03-31 비밀번호 확인
 	//public int selectPassword(@Param("id") int id, @Param("password") String password);

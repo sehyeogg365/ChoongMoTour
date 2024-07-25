@@ -39,7 +39,7 @@ public class LodgingBO {
 	//lodging 정보 - 지역 불러오기??
 	
 	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
-	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, LodgingDetail lodgingDetail){
+	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, String sortType, LodgingDetail lodgingDetail){
 		
 		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, lodgingDetail.getSortType());
 		
@@ -53,7 +53,7 @@ public class LodgingBO {
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
 			//이거와 관련된 비오 하나를 차라리 더 팔것.
 			//댓글갯수,평점,가격, 정렬 방식 비오를 파기,
-
+			lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			CommentDetail commentDetail = new CommentDetail();
 			Integer commentCount = commentDAO.selectCommentCount(lodging.getId());// 댓글 갯수 이두개를 lodgingId로 변경?
 			Double starPoint = commentDAO.selectStarPoint(lodging.getId());//댓글 평점
@@ -70,7 +70,6 @@ public class LodgingBO {
 				System.out.println("Lodging ID: " + lodging.getId());
 			}
 
-
 			if (commentCount == null) {
 				lodging.setCommentCount(0);
 			} else {
@@ -82,20 +81,12 @@ public class LodgingBO {
 			} else {
 				lodging.setAvgStarPoint(starPoint);
 			}
-			//if(commentCount == null){
-			//	commentCount = 0;
-			//}
 
-			//if(startPoint == null){
-			//	startPoint = 0.0;
-			//}
-
-			lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
+			//lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			
 			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
 			
 			//그 숙소리스팅에 들어갈 것들.
-			//lodgingDetail.setUserId(user.getId());//유저아이디?
 			lodgingDetail.setId(lodging.getId());//로징아이디
 			lodgingDetail.setRoomName(lodging.getRoomName());// 숙소명
 			lodgingDetail.setAreaName(lodging.getAreaName()); // 지역명
@@ -104,31 +95,26 @@ public class LodgingBO {
 			lodgingDetail.setDibs(isDibs);// 찜여부
 			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
 			//여기서 dto로 댓글갯수,평점,가격, 정렬 타입 추가
-			lodgingDetail.setCommentCount(lodging.getCommentCount()); // lodging.getCommentCount()->commentCount != null ? commentCount : 0
-			lodgingDetail.setAvgStarPoint(lodging.getAvgStarPoint()); // lodging.getAvgStarPoint() -> starPoint != null ? starPoint : 0.0
-			lodgingDetail.setSingleRoomPrice(price); // lodging.getSingleRoomPrice() -> price != null ? price : 0
-			lodgingDetail.setSortType(lodging.getSortType());
+			lodgingDetail.setCommentCount(lodging.getCommentCount());
+			lodgingDetail.setAvgStarPoint(lodging.getAvgStarPoint());
+			lodgingDetail.setSingleRoomPrice(price);
+			lodgingDetail.setSortType(sortType);
 			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
 			lodgingDetailList.add(lodgingDetail);
 		}
-		
-		
-		
+
 		return lodgingDetailList;
 		
 	}
 
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
-		
-		
+
 		return lodgingDAO.selectRoomListOrderByPrice(lodgingId);
-		
-		
+
 	}
 
-	
 	// 예약목록 userId별로
 	
 	//숙소 개수
@@ -197,13 +183,9 @@ public class LodgingBO {
 	
 	// 숙소 삭제
 	public int deleteLodging(int id) {
-		
-		
+
 		return lodgingDAO.deleteLodging(id);
 		
 	}
-	
-	
-	
-	
+
 }

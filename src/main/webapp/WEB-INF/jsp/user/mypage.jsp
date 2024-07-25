@@ -75,7 +75,7 @@
 						  <c:otherwise><!-- 없을때 -->
 						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> 
 						  </c:otherwise>
-				 		 </c:choose>	
+				 		</c:choose>
 						
 							
 							<div class="d-flex mx-3">
@@ -118,13 +118,10 @@
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
 	}
-	
-	
+
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		
 		
 		$("#updateBtn").on("click", function(){
 			
@@ -200,16 +197,13 @@
 						alert("수정 실패");
 					}
 				}
-				
 				, error:function(){
 					alert("수정 에러");
 				}
 				
 			});
 			
-			
-			
-			
+
 		});
 		
 		

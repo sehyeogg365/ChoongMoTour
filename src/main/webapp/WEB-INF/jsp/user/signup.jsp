@@ -76,8 +76,7 @@
 			 $("#duplicateNo").addClass("d-none");
 			//다시 지우면 중복확인 상태가 초기화
 		});
-		
-		
+
 		
 		$("#duplicateBtn").on("click", function(){
 			let id = $("#loginIdInput").val();
@@ -103,14 +102,12 @@
 						$("#duplicateNo").removeClass("d-none");
 						$("#duplicateYes").addClass("d-none");
 					}
-					
-					
-					}
+
+				}
 				, error:function(){
 					alert("중복확인 에러");
 				}
-	  
-				
+
 			});
 			
 		});
@@ -123,9 +120,7 @@
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
 			let nickname = $("#nicknameInput").val();
-			
 
-			
 			//유효성검사
 			if(id == ""){
 				alert("아이디를 입력해주세요.");
@@ -165,8 +160,7 @@
 				alert("닉네임을 두글자 이상 입력해주세요.");
 				return ;
 			}
-			
-			
+
 			//중복체크가 안됐을때
 			if(!isChecked) {
 				alert("중복체크를 진행해주세요.");
@@ -193,14 +187,9 @@
 				, error:function(){
 					alert("회원가입 오류");
 				}
-					
-					
-				   
-			  
-				
+
 			});
-			
-			
+
 		});
 		
 	});

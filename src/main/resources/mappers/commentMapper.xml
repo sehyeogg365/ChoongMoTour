@@ -32,8 +32,6 @@
   				, now()
   			
   			);
-  			
-  
   </insert>
   
   <!-- 댓글 목록 -->
@@ -93,7 +91,6 @@
 	  `comment`
 	WHERE
 	  	`lodgingId` = #{lodgingId}
-
   </select>
 
 
@@ -105,8 +102,6 @@
 			`comment`
 		WHERE
 			`lodgingId` = #{lodgingId}
-
 	</select>
-
 
   </mapper>

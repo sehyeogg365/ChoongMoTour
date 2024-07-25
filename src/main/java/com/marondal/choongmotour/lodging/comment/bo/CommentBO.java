@@ -38,8 +38,7 @@ public class CommentBO {
 		String imagePath = FileManagerService.saveFile(userId, file);
 		
 		return commentDAO.insertComment(lodgingId, userId, size, imagePath, content, starpoint);
-		
-		
+
 	}
 	
 	// 댓글 목록	
@@ -48,8 +47,7 @@ public class CommentBO {
 		List<Comment> commentList = commentDAO.selectCommentList(lodgingId);
 		
 		List<CommentDetail> commentDetailList = new ArrayList<>();
-		
-		
+
 		for (Comment comment : commentList) {
 					
 			User user = userBO.getUserInfo(comment.getUserId());
@@ -58,9 +56,7 @@ public class CommentBO {
 			// 근데 알다시피 밑에 값들은 카드 한장에 들어가는 값이라서 리스트는 불필요 함
 			
 			CommentDetail commentDetail = new CommentDetail();
-			
-			
-			
+
 			commentDetail.setId(comment.getId());
 			commentDetail.setUserId(user.getId());
 			commentDetail.setLodgingId(comment.getLodgingId());
@@ -73,21 +69,18 @@ public class CommentBO {
 			
 			commentDetailList.add(commentDetail);
 		}
-		
-		
-		
+
 		return commentDetailList;
-		
-		
+
 	}
 
 	// 댓글 한행조회 
 	public Comment getComment(int id, int userId) {// 옥의티 발견 여기서 id, userId일텐데 lodgingId->id
 		
 		return commentDAO.selectComment(id, userId);
+
 	}
-	
-	
+
 	// 댓글 삭제	
 	public int deleteComment(int id, int userId) {
 		
@@ -97,8 +90,7 @@ public class CommentBO {
 		FileManagerService.removeFile(comment.getImagePath());// userId추가해서 제대로 해보기 이제보니 첨에는 다오에선 id 여기선 roomId였다는... 그러니 500이뜨지.
 		
 		return commentDAO.deleteComment(id, userId);
-		
-		
+
 	}
 
 	//댓글 개수, 댓글 평균평점
