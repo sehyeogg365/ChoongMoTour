@@ -13,12 +13,6 @@ import com.marondal.choongmotour.lodging.model.ReserveDetail;
 @Repository
 public interface ReserveDAO {
 	
-
-
-	
-	
-	
-	
 	//예약하기
 	public int insertReserve(
 							@Param("roomId") int roomId 
@@ -29,7 +23,6 @@ public interface ReserveDAO {
 							, @Param("startDate") Date startDate
 							, @Param("endDate") Date endDate);
 	
-	
 	//예약 목록
 	public List<Reserve> selectReserveList(@Param("userId") int userId);//쿼리를 수행하는것이 다오 근데 예약목록을 조회하는데 예약id가필요한가???
 																		//여기다가 roomId를 넣는간 어떠한가?
@@ -38,9 +31,8 @@ public interface ReserveDAO {
 
 //	public ReserveDetail selectReserveInfoById (@Param("userId")int userId);
 	
-	
 	//예약 취소
 	
-	public int deleteReserve(@Param("userId")int userId, @Param("roomId") int roomId);
+	public int deleteReserve(@Param("userId")int userId, @Param("id") int id);
 	
 }

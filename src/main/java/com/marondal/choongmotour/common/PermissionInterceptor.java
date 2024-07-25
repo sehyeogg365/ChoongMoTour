@@ -9,7 +9,6 @@ import javax.servlet.http.HttpSession;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 public class PermissionInterceptor implements HandlerInterceptor {
-
 	@Override
 	public boolean preHandle(
 			HttpServletRequest request
@@ -152,14 +151,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			
 				
 			}
-
-		
-		
-		
-		
 		
 		return true;//문제없이 여기까지 왔으면 정상수행
-		
 		
 		//pre handle override
 	}

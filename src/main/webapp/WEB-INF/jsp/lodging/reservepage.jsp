@@ -230,11 +230,8 @@
 	            return ;
 
 	        } 
-			
-	
-			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
 
-		
+			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
 
 
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
@@ -250,8 +247,6 @@
 			//alert(startDate);//O
 
 			//alert(endDate);//O
-
-
 
 			$.ajax({//우선여기부터 하자.
 
@@ -273,25 +268,17 @@
 
 						alert("예약 실패");
 
-						
-
 					}
 
 				}
 
-					, error:function(){
+                , error:function(){
 
-						alert("예약 에러");
+                    alert("예약 에러");
 
-					}
-
-				
+                }
 
 			});
-
-			
-
-		
 
 		});
 		
@@ -326,10 +313,8 @@
               onSelect:function(selectedDate) {
                  
                  $("#startDate").datepicker("option", "maxDate", selectedDate );
-                 
-             
+
               }
-            
 
          });
 		
@@ -341,13 +326,9 @@
              } else {
                  $("input[name='check']").prop("checked", false);
              }
-             
-         
-          
-             
+
          });
-		
-		
+
 	});
 	
 	

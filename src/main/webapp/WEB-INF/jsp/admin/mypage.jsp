@@ -52,49 +52,46 @@
 					<div class="info-input-box mx-5">
 						
 						<div class="mx-4">
-						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
-						<i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
-					
-						<input type="file" name="file" id="fileInput">
-						
-						
-						
-						<c:choose>
-						  <c:when test="${not empty admin.imagePath }"><!-- 있을때 admin.imagePath -->
-						  	<img class="adminprofile" width ="40" height="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
-						  </c:when>
-						  <c:otherwise><!-- 없을때 -->
-						  	<img class="adminprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
-						  </c:otherwise>
-				 		 </c:choose>	
-					
-						
-						<div class="d-flex mx-3">
-							<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3 col-6">
-						</div>
-						
-						<div class="d-flex mx-3">
-							<label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3 col-6">
-						</div>
-						
-						
-							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3 col-6">
-							</div>
-							
-							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3 col-6">
-							</div>
-							
-							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3 col-6">
-							</div>
-							
-							<div class="d-flex mx-3">
-								<label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3 col-6">
-							</div>
-							
-						<!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
+						    <label class="mt-3 ml-3">프로필 사진 변경</label><br>
+                            <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
+
+                            <input type="file" name="file" id="fileInput">
+
+                            <c:choose>
+                              <c:when test="${not empty admin.imagePath }"><!-- 있을때 admin.imagePath -->
+                                <img class="adminprofile" width ="40" height="40" src="${admin.imagePath}"><!-- 이렇게 함 수정해보자 -->
+                              </c:when>
+                              <c:otherwise><!-- 없을때 -->
+                                <img class="adminprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+                              </c:otherwise>
+                             </c:choose>
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">이메일</label><input type="text" id="emailInput" value = "${admin.email}" placeholder="이메일" class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">닉네임</label><input type="text" id="nicknameInput" value = "${admin.nickname}" placeholder="닉네임" class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+                            <div class="d-flex mx-3">
+                                <label class="col-3 mt-4">전화번호</label><input type="text" id="phoneNumberInput" value = "${admin.phoneNumber}" placeholder="전화번호" class="form-control mt-4 mr-3 col-6">
+                            </div>
+
+                            <!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
 						
 						
 							<div class="text-center">
@@ -143,20 +140,21 @@
 				return ;
 			}
 			
-			
-			
 			if(password != passwordConfirm){
 				alert("비밀번호가 다릅니다.");
 				return ;
 			}
+
 			if(name == ""){		
 				alert("이름을 입력하세요.");
 				return ;
 			}
+
 			if(nickname == ""){		
 				alert("닉네임을 입력하세요.");
 				return ;
 			}
+
 			if(email == ""){		
 				alert("이메일을 입력하세요.");
 				return ;
@@ -166,6 +164,7 @@
 				alert("전화번호를 입력하세요.");
 				return ;
 			}
+
 			//alert(id);//보아하니 여기 데이터가 안들어오는 현상 디버깅은 안되서 매퍼 확인, api 확인후 api 값을 받아오는 쪽(아작스)도 확인
 			//alert(email);
 			//alert(file);
@@ -201,12 +200,8 @@
 				
 			});
 			
-			
-			
-			
 		});
-		
-		
+
 	});
 	
 	</script>

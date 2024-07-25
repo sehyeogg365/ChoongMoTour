@@ -41,7 +41,6 @@
   			
   	
   	</insert>
-  	
   
   <!-- 예약 목록 -->	
   <!-- 이제보니 이것도 안해놔서 때로는 오류가 뜬다. -->
@@ -78,17 +77,11 @@
   
   <!-- 예약 취소 -->
   <delete id = "deleteReserve" parameterType="int">
-  DELETE
-  FROM	`reserved_list`
-  WHERE `roomId` = #{roomId};
-  
-  
+	  DELETE
+	  FROM	`reserved_list`
+	  WHERE `id` = #{id};
   </delete>
  
- 
- 
- 
- 
- 
+
  
  </mapper>

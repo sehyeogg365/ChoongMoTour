@@ -40,10 +40,10 @@
 			     
 				     <select class="form-control col-5 mt-3 ml-3" id="sizeSelector">
 								
-	                            <option value="">사이즈</option>
-	                            <option value="singleroom">싱글</option>
-	                            <option value="doubleroom">더블</option>
-	                            <option value="twinroom">트윈</option>
+                            <option value="">사이즈</option>
+                            <option value="singleroom">싱글</option>
+                            <option value="doubleroom">더블</option>
+                            <option value="twinroom">트윈</option>
 	                       
 	                 </select>
 			     <!--  <div class=""> ${lodging.id }</div>-->
@@ -108,8 +108,6 @@
 			</div>
 		</section>
 	
-	
-	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	
 	</div>
@@ -150,11 +148,7 @@
 				
 			});
 			
-			
-			
 
-
-		
 		$("#singlecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
 			//400error면 코드문제 아니고 요청쪽 문제 아작스 볼것.
 			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
@@ -234,9 +228,7 @@
 				}
 				
 			});
-			
-			
-			
+
 		});
 		
 		
@@ -283,10 +275,7 @@
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
-			
-			
-			
-			
+
 			
 			$.ajax({
 				type: "post"
@@ -310,9 +299,7 @@
 				}
 				
 			});
-			
-			
-			
+
 		});
 		
 		
@@ -356,7 +343,6 @@
 			var formData = new FormData();
 			
 			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			
 	
 			//lodgingId제거 딱 여기서 넣는값만
 			formData.append("lodgingId", id);
@@ -364,9 +350,6 @@
 			formData.append("size", size);
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
-			
-
-			
 			
 			$.ajax({
 				type: "post"
@@ -391,10 +374,7 @@
 				
 			});
 			
-			
-			
 		});
-		
 		
 	});
 	

@@ -20,11 +20,8 @@ import com.marondal.choongmotour.admin.model.Admin;
 @RestController
 @RequestMapping("/admin")
 public class AdminRestController {
-
-	
 	@Autowired AdminBO adminBO;
-	
-	
+
 	// 관리자 회원가입 api
 	@PostMapping("/signup")
 	public Map<String, String> signup(
@@ -35,8 +32,7 @@ public class AdminRestController {
 			,@RequestParam("nickname") String nickname 
 			, @RequestParam("certificationNumber") String certificationNumber
 			){
-		
-		
+
 		int count = adminBO.addAdmin(loginId, password, name, email, nickname, certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -47,7 +43,6 @@ public class AdminRestController {
 				
 		// 인증번호 일치 여부
 
-		
 		if(count == 0) {
 			resultMap.put("result", "fail");
 		} else {
@@ -72,7 +67,6 @@ public class AdminRestController {
 			resultMap.put("is_duplicate", false);
 		}
 		
-		
 		return resultMap;
 		
 	}
@@ -86,7 +80,7 @@ public class AdminRestController {
 			, HttpSession session
 			){
 		
-		Map<String, String> resultMap = new HashMap<>();
+			Map<String, String> resultMap = new HashMap<>();
 		
 			Admin admin = adminBO.getAdmin(loginId, password);
 		

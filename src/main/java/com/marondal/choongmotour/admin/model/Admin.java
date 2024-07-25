@@ -73,7 +73,6 @@ public class Admin {//lombok도 한번써보기
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
 	}
-	
-	
-	
+
+
 }

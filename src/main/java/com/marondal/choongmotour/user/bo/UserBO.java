@@ -64,9 +64,7 @@ public class UserBO {
 
 		// 임시비밀번호 생성 알고리즘
 
-		// int index = 0;
 		char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', };
-//		int[] arr = new int[6];
 
 		Random random = new Random();
 
@@ -89,7 +87,6 @@ public class UserBO {
 		int count = userDAO.updatePassword(loginId, email, ecryptPassword);
 
 		if (count == 1) {// 횟수 1 정상일때 password 리턴
-
 			return password;
 		} else {
 			return null; // 비정상일땐 null 리턴

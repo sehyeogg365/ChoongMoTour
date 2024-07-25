@@ -71,7 +71,5 @@ public class PagingDTO {
 	public void setTotalData(int totalData) {
 		this.totalData = totalData;
 	}
-	
-	
-	
+
 }

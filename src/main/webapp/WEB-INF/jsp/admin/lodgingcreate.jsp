@@ -61,9 +61,7 @@
 	                            <option value="4성급">4성급</option>
 	                            <option value="5성급">5성급</option>   
 	                 </select>
-	                 
-	                 
-	                 
+
 					
 					<div class="text-center my-3">
 						<button id="createBtn"class="btn btn-primary col-12" type="button" >입력 완료</button>
@@ -120,8 +118,7 @@
 				alert("파일을 선택하세요");
 				return ;
 			}
-			
-		
+
 			//alert(roomName);
 			//alert(areaName);
 			//alert(level);
@@ -156,13 +153,8 @@
 				}
 			});
 			
-			
-			
-			
-			
 		});
-		
-		
+
 	});
 	
 	</script>

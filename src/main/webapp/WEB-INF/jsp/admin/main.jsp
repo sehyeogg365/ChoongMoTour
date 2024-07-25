@@ -39,58 +39,53 @@
 			<div class="card-list d-flex justify-content-center flex-wrap mt-3">
 				<!-- 게시글 카드 -->
 				<c:forEach var="lodging" items="${lodgingList}">
-				<div class="card mt-3"><!-- ml-3제거 -->
-					<div class="card-profile">
-						<img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
-					</div>
-					
-					<div class="card-text ">
-						<div class="text-white"><h4><strong>${lodging.roomName }</strong></h4></div>
-						
-						<c:choose>
-							<c:when test = "${lodging.level eq '5성급' }">
-								<div class="text-warning"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
-							</c:when>
-							<c:when test = "${lodging.level eq '4성급' }">
-								<div class="text-danger"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
-							</c:when>
-							<c:when test = "${lodging.level eq '3성급' }">
-								<div class="text-secondary"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
-							</c:when>
-							<c:when test = "${lodging.level eq '2성급' }">
-								<div class="text-success"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
-							</c:when>
-							<c:when test = "${lodging.level eq '1성급' }">
-								<div class="text-primary"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
-							</c:when>
-						</c:choose>
-					
-					</div>
-					
-					<div class="card-body">
-					
-						<div class="d-flex justify-content-between mt-3">
-							<a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>						
-							<button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn mr-4" data-lodging-id="${lodging.id }">삭제하기</button>
-						</div>
-						<div class="d-flex justify-content-between mt-3">
-							<a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
-							<a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary" >객실수정하기</a>
-							
-						</div>
-					</div>
-										
-				</div>
-				
-				
+                    <div class="card mt-3"><!-- ml-3제거 -->
+                        <div class="card-profile">
+                            <img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
+                        </div>
+
+                        <div class="card-text ">
+                            <div class="text-white"><h4><strong>${lodging.roomName }</strong></h4></div>
+
+                            <c:choose>
+                                <c:when test = "${lodging.level eq '5성급' }">
+                                    <div class="text-warning"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '4성급' }">
+                                    <div class="text-danger"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '3성급' }">
+                                    <div class="text-secondary"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '2성급' }">
+                                    <div class="text-success"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '1성급' }">
+                                    <div class="text-primary"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                            </c:choose>
+                        </div>
+
+                        <div class="card-body">
+
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>
+                                <button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn mr-4" data-lodging-id="${lodging.id }">삭제하기</button>
+                            </div>
+                            <div class="d-flex justify-content-between mt-3">
+                                <a href="/admin/room/create/view?id=${lodging.id }" class="btn btn-primary">객실추가하기</a>
+                                <a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary" >객실수정하기</a>
+                            </div>
+                        </div>
+
+                    </div>
+
 				</c:forEach>
-			
-			
+
 			</div>
 			
 			</div>
-		
-		
+
 		</section>
 
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -126,8 +121,6 @@
 			});
 			
 		});
-		
-		
 		
 	});
 	

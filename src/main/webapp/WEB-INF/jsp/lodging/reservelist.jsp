@@ -36,93 +36,88 @@
 				<div class="reservelistcontents d-flex mx-5">
 					<aside class="side-nav col-2 ">
 					
-					<ul class="nav flex-column">
-						<li class="nav-item mt-2">
-							<h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
-						</li>
-						<li class="nav-item mt-2">
-							<h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
-						</li>
-						<li class="nav-item mt-2">
-							<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
-						</li>		
-					</ul>
-			
-						
-					
-					</aside>
-				
-				<section class="contents1 col-10 ">
-					<!-- 예약리스트 -->
-					
-					<div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
-						<!-- 예약 카드 -->			
-						
-						<c:forEach var="reserve" items="${reserveDetailList }">
-						<div class="reservation-card ml-3 mt-3">
-						
-							<div class="">
-							
-								<div class="x mr-3">
-									<i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-room-id ="${reserve.roomId }" ></i>
-								</div>
-								
-								<a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
-									
-									<img class="profile" width="" src="${reserve.imagePath } " alt="호텔">
-								</a>		
-							</div>
-												
-							<div class="reservation-card-body">
-								<div class="d-flex justify-content-center mt-2"><strong>${reserve.roomName }</strong>
-								<c:choose>
-									<c:when test="${reserve.size eq 'singleroom' }">
-										<div class="text-secondary ml-2"><strong>싱글룸</strong></div>
-									</c:when>
-									<c:when test="${reserve.size eq 'doubleroom' }">
-										<div class="text-secondary ml-2"><strong>더블룸</strong></div>
-									</c:when>
-									<c:when test="${reserve.size eq 'twinroom' }">
-										<div class="text-secondary ml-2"><strong>트윈룸</strong></div>
-									</c:when>
-									<c:otherwise>
-										<div class="text-secondary ml-2">${reserve.size }</div>
-									</c:otherwise>
-								</c:choose>	
-								</div>
-								<div class="d-flex justify-content-center mt-2">
-									<div class="">
-										<div class="text-secondary">체크인  </div>
-										<div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
-									</div>
-									
-									<div class="mx-2">
-										<br>
-										<div class="">~</div>
-									</div>
-									<div class="">
-										<div class="text-secondary">체크아웃 </div>	
-										<div class=""> <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/></div>			
-									</div>
-								</div>
-								<div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }" class="text-dark">다시예약</a></div>
-					
-								
-								<div class="text-center my-2">
-									<a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary" onclick="window.open('/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}','new','scrollbars=yes,resizable=no width=400 height=600, left=Math.ceil(( window.screen.width - _width )/2),top=Math.ceil(( window.screen.height - _height )/2)');return false">댓글달기</a>
-									<!-- <button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button> -->
-								</div>
-							</div>
-						</div>
+                        <ul class="nav flex-column">
+                            <li class="nav-item mt-2">
+                                <h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-white">찜목록</a></b></h5>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <h5><b><a href="/lodging/reservelist/view?id=${user.id }" class="nav-link text-primrary">예약내역</a></b></h5>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
+                            </li>
+                        </ul>
 
-						</c:forEach>	
-					
-					</div>
-					
+				    </aside>
 				
-				</section>
+                    <section class="contents1 col-10 ">
+                        <!-- 예약리스트 -->
+
+                        <div class="reservation-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
+                            <!-- 예약 카드 -->
+                            <c:forEach var="reserve" items="${reserveDetailList }">
+                                <div class="reservation-card ml-3 mt-3">
+
+                                    <div class="">
+
+                                        <div class="x mr-3">
+                                            <i class="x-btn bi bi-x-circle mt-2 ml-2" style="font-size :20px;" data-reserve-id ="${reserve.id }" ></i>
+                                        </div>
+
+                                        <a href="/lodging/room/view?id=${reserve.lodgingId }" class="reservation-profile">
+
+                                            <img class="profile" width="" src="${reserve.imagePath } " alt="호텔">
+                                        </a>
+                                    </div>
+
+                                    <div class="reservation-card-body">
+                                        <div class="d-flex justify-content-center mt-2"><strong>${reserve.roomName }</strong>
+                                        <c:choose>
+                                            <c:when test="${reserve.size eq 'singleroom' }">
+                                                <div class="text-secondary ml-2"><strong>싱글룸</strong></div>
+                                            </c:when>
+                                            <c:when test="${reserve.size eq 'doubleroom' }">
+                                                <div class="text-secondary ml-2"><strong>더블룸</strong></div>
+                                            </c:when>
+                                            <c:when test="${reserve.size eq 'twinroom' }">
+                                                <div class="text-secondary ml-2"><strong>트윈룸</strong></div>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <div class="text-secondary ml-2">${reserve.size }</div>
+                                            </c:otherwise>
+                                        </c:choose>
+                                        </div>
+                                        <div class="d-flex justify-content-center mt-2">
+                                            <div class="">
+                                                <div class="text-secondary">체크인  </div>
+                                                <div class=""><fmt:formatDate value= "${reserve.startDate }" pattern ="yyyy년 MM월 dd일"/></div>
+                                            </div>
+
+                                            <div class="mx-2">
+                                                <br>
+                                                <div class="">~</div>
+                                            </div>
+                                            <div class="">
+                                                <div class="text-secondary">체크아웃 </div>
+                                                <div class=""> <fmt:formatDate value= "${reserve.endDate }" pattern ="yyyy년 MM월 dd일"/></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-2"><a href="/lodging/room/view?id=${reserve.lodgingId }" class="text-dark">다시예약</a></div>
+
+
+                                        <div class="text-center my-2">
+                                            <a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary" onclick="window.open('/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}','new','scrollbars=yes,resizable=no width=400 height=600, left=Math.ceil(( window.screen.width - _width )/2),top=Math.ceil(( window.screen.height - _height )/2)');return false">댓글달기</a>
+                                            <!-- <button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </c:forEach>
+
+                        </div>
+
+                    </section>
 					
-			</div>
+			    </div>
 				
 		
 			</div>
@@ -206,20 +201,16 @@
 					alert("댓글 입력 에러");
 					
 				}
-				
-				
+
 			 });
-			 
-			 
-			 
+
 		 });
 		 
 		 */
 
- 		
  		$(".x-btn").on("click", function(){
  			
- 			let id = $(this).data("room-id");
+ 			let id = $(this).data("reserve-id");
  			
  			var result = confirm("예약취소 하시겠습니까?");
 			
@@ -229,12 +220,12 @@
 				return ;
 			}
  			
- 			
+ 			alert("예약id :" + id);
  			
  			$.ajax({
  				type: "get"
  				, url : "/lodging/deletereserve"
- 				, data:{"roomId" : id}
+ 				, data:{"id" : id}
  				, success:function(data){
  					if(data.result =="success"){
 						alert("예약 취소 성공");
@@ -247,15 +238,11 @@
 					alert("예약 취소 오류");
 					
 				}
- 				
- 				
+
  			});
- 			
- 			
- 			
+
  		});
-		 
-		 
+
 	 });
 	
 	</script>

@@ -27,11 +27,7 @@
 		  	, #{nickname}
 		  	, now()
 		  	, now()
-		  	
 		  )
-  
-  
-  
   </insert>
   
   <select id = "selectCountloginId" resultType="int" parameterType="String">
@@ -45,7 +41,7 @@
   </select>
   
   <select id="selectUser" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
-  	
+
   	SELECT
   		 `id`	
   		 , `loginId`<!-- id컬럼 추가를 안시켜서 자꾸 id값이 0이라고 들어가는거였다. -->

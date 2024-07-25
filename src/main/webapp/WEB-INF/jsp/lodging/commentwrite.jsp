@@ -26,8 +26,7 @@
 </head>
 <body>
 	<div id = "">
-	
-	
+
 		<section class="contents d-flex justify-content-center ">
 			<div class="commentwrite-page ">
 				<h1 class="text-center pt-3 font-weight-bold ">
@@ -81,12 +80,8 @@
 				</div>
 			
 			</div>
-		
-		
+
 		</section>
-	
-	
-	
 	
 	</div>
 	<style>
