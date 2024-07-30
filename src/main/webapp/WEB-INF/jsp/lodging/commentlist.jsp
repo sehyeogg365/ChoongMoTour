@@ -146,7 +146,7 @@
                        
               </select> -->
               <!-- 댓글갯수, 댓글 평점 -->
-              <div class="d-flex">
+              <div class="d-flex mt-3">
 
                 <div id ="avgStarPoint" class="ml-4"><b>${avgStarPoint}점</b></div>
                 <div id ="commentCount" class="ml-4 text-secondary"> ${commentCount}명 평가</div>

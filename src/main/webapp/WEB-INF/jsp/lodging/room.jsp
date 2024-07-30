@@ -118,7 +118,7 @@
 				  </li>
 				  <li class="nav-item">
 
-				    <a class="nav-link text-dark" href="/lodging/commentlist/view?lodgingId=${lodging.id }" data-lodgingId="${lodging.id}"><b>리뷰</b></a>
+				    <a class="nav-link text-dark" href="/lodging/commentlist/view?lodgingId=${lodging.id }" data-lodging-id="${lodging.id}"><b>리뷰</b></a>
 				  </li>
 				</ul>
 
@@ -127,9 +127,9 @@
                     <input type="text" id="startDate" class="" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
                     ~
                     <label class="mt-3">체크아웃 </label>
-                    <input type="text" id="endDate" class="" name="endDate" value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
+                    <input type="text" id="endDate" class="" name="endDate" value="" autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
                     <!-- 여기서 폼태그 활용해보기 객실페이지서 예약페이지 넘어갈때 원래 딱 버튼눌렀을때 그다음 페이지 들어갈게 없을때 api쓰는게 좋다고 함(?) 그래서 폼태그였다가 api로 바꾼건데.. -->
-				</form>
+                </form>
 				
 				<!-- 객실리스트 시작 -->
 				<div class="room-card-list">
@@ -161,11 +161,11 @@
                                 </div>
                                 <div class = "buttonlist text-center mt-5">											<!-- data-toggle="modal"을 부여하면 modal을 띄울 준비가 되고 data-target="DOM선택자"를 입력하면 지정된 내용을 modal로 띄울 수 있다 -->
                                     <button id = "infomodalBtn" type="button"  class="btn btn-primary info-modal-btn btn-sm col-11"  data-toggle="modal" data-target="#moreModal${room.id }" data-room-id="${room.id }">상세정보</button><br>
-                                    <a href="/lodging/reservation/view?startDate=${startDate}&endDate=${endDate}&roomId=${room.id }&lodgingId=${lodging.id}" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-room-id="${room.id }">예약하기</a>
+                                    <a href="/lodging/reservation/view?startDate=${startDate}&endDate=${endDate}&roomId=${room.id }&lodgingId=${lodging.id}" class="btn btn-primary reserve-btn btn-sm mt-3 col-11" type="button" data-lodging-id = "${lodging.id }" data-room-id="${room.id }">예약하기</a>
                                 </div>																				<!-- 우선 모달을위해 들어가는 값들 이렇게 두개가 있다고 함 data-toggle="modal" data-target="#moreModal" 타겟은 그 id가 들어가는 모달인데 id마다 각각버튼마다 각각 다른 모달들이 1:1 매칭이 되어야 한다. 이값과 밑에 값 수정해보기 -->
                             </div>
                         </div>
-					
+
 					
 					<!-- Button trigger modal -->
 		
@@ -268,7 +268,35 @@
               }
 
          });
-		
+
+		//예약버튼 여기에 url링크 넣기
+
+         $(".reserve-btn").on("click", function(event){
+
+             event.preventDefault();
+
+             let startDate = $("#startDate").val();
+             let endDate = $("#endDate").val();
+
+             let roomId = $(this).data('room-id');
+             let lodgingId = $(this).data('lodging-id');
+             /*
+             if(startDate != '' && endDate != ''){
+                 alert("시작날짜 : " + startDate);
+                 alert("끝나는날짜 : " + endDate);
+                 alert("로징아이디 : " + lodgingId);
+                 alert("룸아이디 : " + roomId);
+             }*/
+
+             var url = '/lodging/reservation/view?startDate=' + encodeURIComponent(startDate) +
+                                                     '&endDate=' + encodeURIComponent(endDate) +
+                                                     '&roomId=' + encodeURIComponent(roomId) +
+                                                     '&lodgingId=' + encodeURIComponent(lodgingId);
+             console.log('URL:', url);
+             // 새 URL로 이동
+             window.location.href = url;
+
+         });
 		
 		//지도를 그려주는 함수 실행
 		 selectMapList();
@@ -364,33 +392,6 @@
 		         map: map
 		     });
 		 }
-
-
-		 //예약버튼 여기에 url링크 넣기
-		 $(".reserve-btn").on("click", function(event){
-			
-			 //let startDate = $(this).val();
-			 //let endDate = $(this).val();
-              event.preventDefault();
-			 var startDate = document.getElementById('startDate').value;
-             var endDate = document.getElementById('endDate').value;
-
-             var roomId = $(this).data('room-id');
-             var lodgingId = $(this).data('lodging-id');
-             if(startDate != '' && endDate != ''){
-                 alert("시작날짜 : " + startDate);
-                 alert("끝나는날짜 : " + endDate);
-             }
-             alert("객실아이디 : " + roomId);
-             alert("숙소아이디 : " + lodgingId);
-
-
-			 var newUrl = '/lodging/reservation/view?startDate=startDate&endDate=endDate&roomId=${roomId}&lodgingId=${lodgingId}';
-
-             // 새 URL로 이동
-             location.href = newUrl;
-
-		 });
 
 	 });
 	</script>

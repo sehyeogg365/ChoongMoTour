@@ -68,8 +68,6 @@
 		        		
 		        		<label class="mt-4 text-secondary">체크아웃 </label>
 		        		<input type="text" id="endDate" name="endDate" class="mt-4 col-4"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
-				
-					
 					</div>
 					
 					<div class = "mx-3 ">
@@ -98,8 +96,6 @@
                  		</select>
 					
 					</div>
-					
-					
 					
 					<div class="check-box form-control mt-4">
 						<input type="checkbox" id="allCheck" s><label class="ml-2"><b>전체 선택</b></label> <br>
@@ -144,7 +140,20 @@
 		
 		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
-		
+		//여기선 오늘날짜 내일날짜를 고르게 해선 안된다. url 파라미터상의 데이터를 추출해야 한다.
+
+        // URL 파라미터를 추출하는 함수
+        function getParameterByName(name) {
+            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        }
+
+        // URL에서 startDate와 endDate 파라미터 추출
+        var startDate = getParameterByName('startDate');
+        var endDate = getParameterByName('endDate');
+
 		$("#payBtn").on("click", function(){
 
 
@@ -161,24 +170,14 @@
 			
 			let startDate = $("#startDate").val();
 
-			//let endDate = $(this).val();
-
 			let endDate = $("#endDate").val();
-
-			
 
 			let phoneNumber = $("#phoneNumberInput").val();
 
-			
-
 			let name = $("#nameInput").val();
-
-			
 
 			let payment = $("#paySelector").val();
 
-			
-			
 
 			if(name == ""){
 
@@ -196,7 +195,6 @@
 
 			}
 
-			
 			if(payment == ""){
 
 				alert("지불수단을 선택하세요.");
@@ -205,7 +203,6 @@
 
 			}
 
-		
 			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔 
 
  
@@ -295,7 +292,7 @@
                  
                  $("#endDate").datepicker("option", "minDate", selectedDate);
 
-                 }
+             }
 
          });
 		// todayHighlight :true,
@@ -310,13 +307,22 @@
              closeText: 'done',
              minDate:'+1D',//오늘날짜 다음 부터
              //beforeShow: customRange
-              onSelect:function(selectedDate) {
+             onSelect:function(selectedDate) {
                  
-                 $("#startDate").datepicker("option", "maxDate", selectedDate );
+                $("#startDate").datepicker("option", "maxDate", selectedDate );
 
-              }
+             }
 
          });
+
+         // URL 파라미터 값으로 Date Picker 초기값 설정
+         if (startDate) {
+             $("#startDate").datepicker("setDate", startDate);
+         }
+         if (endDate) {
+             $("#endDate").datepicker("setDate", endDate);
+         }
+
 		
          var chkList = $("input[name = check]");
 		 $("#allCheck").on("change", function() {
