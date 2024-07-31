@@ -136,10 +136,10 @@
 	<script>
 	$(document).ready(function(){
 
-		document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
+		//document.getElementById('startDate').value = new Date().toISOString().substring(0, 10);
 		
-		var now = new Date();
-		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
+		//var now = new Date();
+		//document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 		//여기선 오늘날짜 내일날짜를 고르게 해선 안된다. url 파라미터상의 데이터를 추출해야 한다.
 
         // URL 파라미터를 추출하는 함수
@@ -155,7 +155,6 @@
         var endDate = getParameterByName('endDate');
 
 		$("#payBtn").on("click", function(){
-
 
 			let id = $(this).data("room-id");
 
@@ -177,7 +176,6 @@
 			let name = $("#nameInput").val();
 
 			let payment = $("#paySelector").val();
-
 
 			if(name == ""){
 
@@ -203,8 +201,7 @@
 
 			}
 
-			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔 
-
+			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔
  
 			if(!$("input:checked[id='check1']").is(":checked")){
 
@@ -229,7 +226,6 @@
 	        } 
 
 			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
-
 
 			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
 
@@ -296,7 +292,6 @@
 
          });
 		// todayHighlight :true,
-       
 
          $("#endDate").datepicker({//종료일
              dateFormat:"yy-mm-dd",
@@ -323,7 +318,6 @@
              $("#endDate").datepicker("setDate", endDate);
          }
 
-		
          var chkList = $("input[name = check]");
 		 $("#allCheck").on("change", function() {
              // 내 자신이 체크 되었는지 안되었는지
