@@ -236,15 +236,15 @@
             $("input[name='sortOrder'][value='" + sortType + "']").prop("checked", true);
         }
 
-
 		//정렬모달
 		$("input[name='sortOrder']").on("change", function() {
             let order = $(this).val();
             let areaName = $("#areaName").data("area-name").trim();//jstl 변수 js 변수로 불러오기
-            console.log("정렬: " + order);
-            console.log("지역명: " + areaName);
-            alert("정렬: " + order);
-            alert("지역명: " + areaName);
+
+            //console.log("정렬: " + order);
+            //console.log("지역명: " + areaName);
+            //alert("정렬: " + order);
+            //alert("지역명: " + areaName);
 
             $.ajax({
                 type : "get"
@@ -252,16 +252,11 @@
                 , data: {area_name : areaName, sortType : order}
                 , success:function(data){//일단 조건문 수정하기
                     if(data != null){
-                           //$('#sortModal').modal('hide');
                             var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
                             window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
-                            //$("input[name=sortOrder][value='" + order + "' ]").prop("checked", false); //이렇게 함 참고해서 해보기
-                            //$this.prop('checked', true); //체크한 라디오 버튼에 체크 넣기
                     } else {
-                        alert(data);
+                        //alert(data);
                         alert("정렬 실패");
-                        //var url ="lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
-                        //location.href = url;
                     }
                 }
                 , error:function(){
