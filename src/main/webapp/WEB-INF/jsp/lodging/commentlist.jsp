@@ -235,7 +235,7 @@
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
     <script src="/resources/dist/w2ui/w2ui-1.5.min.js"></script><!--2024-04-04 경로 고치기 -->
-    <script src="/resources/js/tui-grid/tui-pagination.js"></script><!--2024-04-04 경로 고치기 -->
+    <script src="/resources/js/tui-grid/tui-pagination.js"></script><!--2024-04-04 경로 고치기 /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js-->
     <script src="<%= application.getContextPath() %>/resources/js/plugin/select2/dist/js/select2.min.js"></script>
 	<style>
 	*{

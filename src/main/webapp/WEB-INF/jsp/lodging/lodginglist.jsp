@@ -214,7 +214,14 @@
 	$(document).ready(function(){
 		
 		//필터모달
+        /*
+        function getSettingValue() {
+        }
 
+        //숙소리스트 새로그리기
+        function changeSearchCondition() {
+            getSettingValue():
+        }*/
 
 		//URL 파라미터를 읽어오는 함수
         function getParameterByName(name) {
