@@ -48,8 +48,7 @@ public class LodgingBO {
 		for(LodgingDetail lodging:lodgingList) {
 			
 			//숙소카드 한장에 유저정보가 들어갈일은 없다.
-			
-			
+
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
 			//이거와 관련된 비오 하나를 차라리 더 팔것.
 			//댓글갯수,평점,가격, 정렬 방식 비오를 파기,

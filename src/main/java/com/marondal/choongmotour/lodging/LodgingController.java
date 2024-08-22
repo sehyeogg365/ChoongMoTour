@@ -85,6 +85,7 @@ public class LodgingController {
 		return "lodging/lodginglist";
 	
 	}
+
 	// 객실리스트
 	@GetMapping("/room/view")
 	public String room(Model model
@@ -101,6 +102,7 @@ public class LodgingController {
 		model.addAttribute("roomList", roomList);
 
 		return "lodging/room";
+
 	}
 	
 	

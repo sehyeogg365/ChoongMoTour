@@ -176,8 +176,8 @@
 					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 					        <!-- 평점높은순, 리뷰많은순, 낮은가격순, 높은가격순 정렬 -->
 
-					     	<div class="bg-info">
-                                <label class="col-9"><input type="radio" name="sortOrder" value="starPointOrder" checked>평점높은순</label>
+					     	<div class="">
+                                <label class="col-9"><input type="radio" name="sortOrder" value="starPointOrder">평점높은순</label>
 
                                 <label class="col-9"><input type="radio" name="sortOrder" value="commentOrder">리뷰많은순</label>
 
@@ -214,32 +214,62 @@
 	$(document).ready(function(){
 		
 		//필터모달
-		
+        /*
+        function getSettingValue() {
+        }
+
+        //숙소리스트 새로그리기
+        function changeSearchCondition() {
+            getSettingValue():
+        }*/
+
+		//URL 파라미터를 읽어오는 함수
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
+            const results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // URL 파라미터에서 sortType 값을 읽어옴
+        const sortType = getParameterByName('sortType');
+        if (sortType) {
+            // 모든 라디오 버튼의 checked 속성을 제거
+            $("input[name='sortOrder']").prop("checked", false);
+            // sortType 값에 해당하는 라디오 버튼에 checked 속성을 추가
+            $("input[name='sortOrder'][value='" + sortType + "']").prop("checked", true);
+        }
+
 		//정렬모달
 		$("input[name='sortOrder']").on("change", function() {
             let order = $(this).val();
             let areaName = $("#areaName").data("area-name").trim();//jstl 변수 js 변수로 불러오기
-            console.log("정렬: " + order);
-            console.log("지역명: " + areaName);
-            alert("정렬: " + order);
-            alert("지역명: " + areaName);
+
+            //console.log("정렬: " + order);
+            //console.log("지역명: " + areaName);
+            //alert("정렬: " + order);
+            //alert("지역명: " + areaName);
+
             $.ajax({
                 type : "get"
                 , url : "/lodging/lodginglist/view"
                 , data: {area_name : areaName, sortType : order}
-                , success:function(data){
-                    if(data.result == "success"){
-                           $('#sortModal').modal('hide');
-                            location.reload();
+                , success:function(data){//일단 조건문 수정하기
+                    if(data != null){
+                            var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
+                            window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
                     } else {
-                           alert("정렬 실패");
+                        //alert(data);
+                        alert("정렬 실패");
                     }
                 }
                 , error:function(){
                     alert("정렬 오류");
 
                 }
-
 
             });
 

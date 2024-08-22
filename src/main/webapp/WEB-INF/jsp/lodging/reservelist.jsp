@@ -106,7 +106,7 @@
 
 
                                         <div class="text-center my-2">
-                                            <a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary" onclick="window.open('/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}','new','scrollbars=yes,resizable=no width=400 height=600, left=Math.ceil(( window.screen.width - _width )/2),top=Math.ceil(( window.screen.height - _height )/2)');return false">댓글달기</a>
+                                            <a href="/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}" class="btn btn-sm btn-primary" onclick="window.open('/lodging/commentwrite/view?lodgingId=${reserve.lodgingId }&roomId=${reserve.roomId}','new','scrollbars=yes,resizable=no width=600 height=800, left=Math.ceil(( window.screen.width - _width )/2),top=Math.ceil(( window.screen.height - _height )/2)');return false">댓글달기</a>
                                             <!-- <button id="commentmodalBtn"class="btn btn-primary mt-2 btn-sm comment-btn" type="button" data-toggle="modal" data-target="#commentModal${reserve.roomId }" data-room-id="${reserve.roomId }">댓글달기</button> -->
                                         </div>
                                     </div>

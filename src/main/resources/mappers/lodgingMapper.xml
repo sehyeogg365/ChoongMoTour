@@ -17,30 +17,33 @@
 	 		, `areaName`
 	 		, `createdAt`	
 	 		, `updatedAt`
+			, (SELECT price FROM room r WHERE r.lodgingId = l.id ORDER BY price LIMIT 1) AS `singleRoomPrice`
+			, (SELECT COUNT(*) FROM comment c WHERE c.lodgingId = l.id) AS `commentCount`
+			, (SELECT AVG(starpoint) FROM comment c WHERE c.lodgingId = l.id) AS `avgStarPoint`
   		FROM
-  			`lodging`
+  			`lodging` l
   		WHERE
   			`areaName` = #{areaName}
 
-		<if test ='sortType != null'>
+		<if test ='sortType != null and sortType != "" '>
 			<choose>
-				<when test ='sortType != null and sortType == "starPointOrder"'>
-					ORDER BY `avgStarPoint`
+				<when test ='sortType != null and sortType != "" and sortType == "starPointOrder"'>
+					ORDER BY `avgStarPoint` DESC;
 				</when>
 			</choose>
 			<choose>
-				<when test ='sortType != null and sortType == "commentOrder"'>
-					ORDER BY `commentCount`
+				<when test ='sortType != null and sortType != "" and sortType == "commentOrder"'>
+					ORDER BY `commentCount` DESC;
 				</when>
 			</choose>
 			<choose>
-				<when test ='sortType != null and sortType == "lowPriceOrder"'>
-					ORDER BY `price`;
+				<when test ='sortType != null and sortType != "" and sortType == "lowPriceOrder"'>
+					ORDER BY `singleRoomPrice`;
 				</when>
 			</choose>
 			<choose>
-				<when test ='sortType != null and sortType == "highPriceOrder"'>
-					ORDER BY `price` DESC;
+				<when test ='sortType != null and sortType != "" and sortType == "highPriceOrder"'>
+					ORDER BY `singleRoomPrice` DESC;
 				</when>
 			</choose>
 
