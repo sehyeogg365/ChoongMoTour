@@ -143,16 +143,14 @@
 		//여기선 오늘날짜 내일날짜를 고르게 해선 안된다. url 파라미터상의 데이터를 추출해야 한다.
 
         // URL 파라미터를 추출하는 함수
-        function getParameterByName(name) {
-            name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-            var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-                results = regex.exec(location.search);
-            return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-        }
+
+        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
 
         // URL에서 startDate와 endDate 파라미터 추출
-        var startDate = getParameterByName('startDate');
-        var endDate = getParameterByName('endDate');
+        const startDate = urlParams.get('startDate');
+        const endDate = urlParams.get('endDate');
+
 
 		$("#payBtn").on("click", function(){
 
