@@ -41,7 +41,7 @@
 						</li>
 						
 						<li class="nav-item mt-2">
-							<h5><b><a href="#" class="nav-link text-white">사용자 삭제</a></b></h5>
+							<h5><b><a href="/admin/userAdmin/view" class="nav-link text-white">사용자 관리</a></b></h5>
 						</li>
 						
 					</ul>
