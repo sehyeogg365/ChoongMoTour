@@ -60,9 +60,14 @@ public class LodgingController {
 							  , LodgingDetail lodgingDetail
 							  , @RequestParam("area_name")String areaName
 							  , @RequestParam("sortType")String sortType
+							  // @RequestParam(value = "sortType", required = false) String sortType,  // sortType 선택안됐을시 수정된 부분
 							  , HttpSession session
 							  ) {
 		int userId = (Integer)session.getAttribute("userId"); //dibs detail 이랑 자꾸 헷갈려서 그런듯.
+
+//		if (sortType != null) {//정렬타입이 있을때
+//			lodgingDetail.setSortType(sortType);  // 요청받은 sortType을 DTO에 설정
+//		}
 
 		lodgingDetail.setSortType(sortType); //요청받은 sortType dto에 set
 
@@ -78,7 +83,7 @@ public class LodgingController {
 		//찜 찜취소 이것도 보여줘야 한다 이페이지에서.
 		
 		// 두개의 테이블을 융합해서 보여줘야함 로그인했을때 찜했는지 안했는지 여부, 지역별 숙소 리스팅
-		// sns 프로젝트 와 매우 유사하다고 하심 그리고 이과정을 비오에서 하는게 적합함
+		// sns 프로젝트 와 매우 유사하다 그리고 이과정을 비오에서 하는게 적합함
 		
 		//여기에 댓글 숙소 갯수, 지역명도 쓰면 좋다.
 		
