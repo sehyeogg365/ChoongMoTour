@@ -35,11 +35,11 @@
                     <ul class="nav flex-column">
                         <li class="nav-item mt-2">
 
-                            <h5><b><a href="/admin/mypage/view?id=${adminId }" class="nav-link text-primary">내 정보수정</a></b></h5>
+                            <h5><b><a href="/admin/mypage/view?id=${adminId }" class="nav-link text-white">내 정보수정</a></b></h5>
                         </li>
 
                         <li class="nav-item mt-2">
-                            <h5><b><a href="/admin/userAdmin/view" class="nav-link text-white">사용자 삭제</a></b></h5>
+                            <h5><b><a href="/admin/userAdmin/view" class="nav-link text-primary">사용자 관리</a></b></h5>
                         </li>
 
                     </ul>

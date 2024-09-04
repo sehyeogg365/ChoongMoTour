@@ -27,7 +27,7 @@ public class AdminBO {
 		
 		String encryptPassword = EncryptService.md5(password);
 		
-		//인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다고 함
+		//인증번호가 일치하는지 여부 확인 bo 서만 수행하면 된다
 		
 		int count = adminDAO.selectcertificationNumber(certificationNumber);//실행된 행의갯수 리턴 일단 비오부터 완성하고 오기. 
 

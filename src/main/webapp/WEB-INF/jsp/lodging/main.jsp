@@ -204,6 +204,14 @@
               }
 
          });
+         /*
+         function navigateToLodgingList(areaName, sortType) {
+             let url = `/lodging/lodginglist/view?area_name=${areaName}`;
+             if (sortType) {
+                 url += `&sortType=${sortType}`;
+             }
+             window.location.href = url;
+         }*/
 		
 		var imageList = ["https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156_960_720.jpg"
 						  ,"https://cdn.pixabay.com/photo/2019/08/19/13/58/bed-4416515_960_720.jpg"  
