@@ -112,7 +112,7 @@ public class UserRestController {
 
 		if(user != null) {
 			resultMap.put("result", "success");//일치함
-			resultMap.put("info", user);
+			resultMap.put("info", user);//user->user.getLoginId 도 가능
 	
 			 // 여기서 id를 풋 하란뜻인데..
 		} else {
