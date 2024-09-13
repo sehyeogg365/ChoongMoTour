@@ -224,6 +224,7 @@
         }*/
 
 		//URL 파라미터를 읽어오는 함수
+		/*
         function getParameterByName(name) {
             const url = window.location.href;
             name = name.replace(/[\[\]]/g, '\\$&');
@@ -232,10 +233,17 @@
             if (!results) return null;
             if (!results[2]) return '';
             return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }
+        }*/
+        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
+
+
 
         // URL 파라미터에서 sortType 값을 읽어옴
-        const sortType = getParameterByName('sortType');
+        //const sortType = getParameterByName('sortType');
+        const sortType = urlParams.get('sortType');
+
+
         if (sortType) {
             // 모든 라디오 버튼의 checked 속성을 제거
             $("input[name='sortOrder']").prop("checked", false);

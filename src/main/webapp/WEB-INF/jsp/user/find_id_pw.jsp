@@ -118,7 +118,7 @@
 							
 							//console.log(data.info);
 							location.reload();
-							alert("아이디는 : " + data.info.loginId);
+							alert("아이디는 : " + data.info.loginId);//data.info.loginId->data.info 도 가능
 							
 						} else {
 							alert("이름/이메일이 일치하지 않습니다.");
