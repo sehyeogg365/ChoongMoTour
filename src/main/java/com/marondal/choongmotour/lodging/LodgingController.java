@@ -59,8 +59,8 @@ public class LodgingController {
 	public String lodgingList(Model model
 							  , LodgingDetail lodgingDetail
 							  , @RequestParam("area_name")String areaName
-							  , @RequestParam("sortType")String sortType
-							  // @RequestParam(value = "sortType", required = false) String sortType,  // sortType 선택안됐을시 수정된 부분
+							  //, @RequestParam("sortType")String sortType
+							  , @RequestParam(value = "sortType", required = false) String sortType  // sortType 선택안됐을시 수정된 부분
 							  , HttpSession session
 							  ) {
 		int userId = (Integer)session.getAttribute("userId"); //dibs detail 이랑 자꾸 헷갈려서 그런듯.
