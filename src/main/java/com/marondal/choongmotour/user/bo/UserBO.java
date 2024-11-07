@@ -22,7 +22,6 @@ public class UserBO {
 		String encryptPassword = EncryptService.md5(password);
 
 		return userDAO.insertUser(loginId, encryptPassword, name, email, nickname);
-
 	}
 
 	// 중복 여부 api
@@ -35,7 +34,6 @@ public class UserBO {
 		} else {
 			return true;
 		}
-
 	}
 
 	// 로그인 api
@@ -45,14 +43,12 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 
 		return userDAO.selectUser(loginId, ecryptPassword);
-
 	}
 
 	// 아이디 찾기
 	public User getUserByNameEmail(String loginId, String name, String email) {
 
 		return userDAO.selectUserByNameEmail(loginId, name, email);
-
 	}
 
 	// 비밀번호 어차피 암호화되있어서 조회는 무의미하다 보면된다고 한다.
@@ -97,7 +93,6 @@ public class UserBO {
 	public User getUserInfo(int id) {// loginId->id로변경하기
 
 		return userDAO.selectUserInfo(id);
-
 	}
 	// 딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
 
@@ -110,7 +105,6 @@ public class UserBO {
 		String ecryptPassword = EncryptService.md5(password);
 
 		return userDAO.updateUser(id, ecryptPassword, name, email, phoneNumber, nickname, imagePath);
-
 	}
 
 	//2024-03-31 비밀번호 확인

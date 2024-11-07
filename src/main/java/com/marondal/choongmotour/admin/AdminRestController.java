@@ -50,7 +50,6 @@ public class AdminRestController {
 		}
 		
 		return resultMap;
-	
 	}
 	// 관리자 아이디 중복확인
 	@GetMapping("/duplicate_id")
@@ -68,9 +67,7 @@ public class AdminRestController {
 		}
 		
 		return resultMap;
-		
 	}
-	
 	
 	// 관리자 로그인 api
 	@PostMapping("/signin")
@@ -101,7 +98,6 @@ public class AdminRestController {
 			}
 			
 			return resultMap;
-		
 	}
 
 
@@ -132,11 +128,8 @@ public class AdminRestController {
 			resultMap.put("result", "fail");
 		}
 		
-		return resultMap;	
-		
+		return resultMap;
 	}
-	
-	
 	
 	// 비밀번호 찾기 및 임시 비밀번호 발급 api (특정 비밀번호로 수정)
 	@PostMapping("/temppassword")
@@ -165,7 +158,6 @@ public class AdminRestController {
 		
 		
 		return resultMap;
-
 	}
 	
 	
@@ -194,7 +186,6 @@ public class AdminRestController {
 		
 		
 		return resultMap;
-		
 	}
 	
 }

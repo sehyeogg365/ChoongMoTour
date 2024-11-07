@@ -55,5 +55,4 @@ public interface AdminDAO {
 			, @Param("nickname")String nickname
 			, @Param("imagePath") String imagePath);
 
-	
 }

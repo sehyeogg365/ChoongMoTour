@@ -28,9 +28,7 @@ public class ReserveBO {
 	//예약하기 
 	public int addReserve(int roomId, int userId, String name, String phoneNumber,  String payment, Date startDate, Date endDate) {
 			
-		return reserveDAO.insertReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);	
-			
-		
+		return reserveDAO.insertReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);
 	}
 
 	//예약 목록
@@ -68,13 +66,11 @@ public class ReserveBO {
 			reserveDetail.setImagePath(lodging.getImagePath());//사진은 숙소사진
 			reserveDetail.setStartDate(reserve.getStartDate());
 			reserveDetail.setEndDate(reserve.getEndDate());
-		
-		
+
 			reserveDetailList.add(reserveDetail);
 		}
 
 		return reserveDetailList;
-		
 	}
 	
 	//예약 한행 정보 조회(예약페이지조회)
@@ -89,7 +85,6 @@ public class ReserveBO {
 	public int deleteReserve(int userId, int id) {
 
 		return reserveDAO.deleteReserve(userId, id);
-
 	}
 
 

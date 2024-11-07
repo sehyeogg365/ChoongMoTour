@@ -37,7 +37,6 @@ public class UserController {
 		session.removeAttribute("userImagePath");// 로그인할때 세션 갑으로 불러오면 당연히 여기서도 있어야 한다 함
 
 		return "redirect:/user/signin/view";
-
 	}
 
 	@GetMapping("/find_id_pw/view")
@@ -55,7 +54,6 @@ public class UserController {
 		model.addAttribute("user", user);
 
 		return "user/mypage";
-
 	}
 
 	@GetMapping("/reservepage/view")
@@ -65,7 +63,6 @@ public class UserController {
 		model.addAttribute("user", user);
 
 		return "user/reservepage";
-
 	}
 
 }

@@ -51,7 +51,6 @@ public class LodgingRestController {
 		}
 		
 		return resultMap;
-
 	}
 	
 	//찜 취소
@@ -73,11 +72,7 @@ public class LodgingRestController {
 		}
 		
 		return resultMap;
-		
 	}
-	
-	
-	
 	
 	//예약 하기 
 	@PostMapping("/reserve")
@@ -106,7 +101,6 @@ public class LodgingRestController {
 		}	
 		
 		return resultMap;
-
 	}
 	
 	// 예약 취소
@@ -155,15 +149,10 @@ public class LodgingRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
+
 		return resultMap;
-		
-		
 	}
-	
-	
-	
+
 	//댓글 삭제
 	@GetMapping("/comment/delete")
 	public Map<String, String> commentDelete(@RequestParam("id") int id
@@ -181,15 +170,8 @@ public class LodgingRestController {
 			resultMap.put("result", "fail");
 		}
 		
-		
-		
 		return resultMap;
-		
-		
-		
 	}
-	
-	
 	
 	
 	//-------관리자 페이지---------
@@ -216,7 +198,6 @@ public class LodgingRestController {
 		}
 
 		return resultMap;
-	
 	}
 	
 	// 숙소 수정 api
@@ -242,7 +223,6 @@ public class LodgingRestController {
 			}
 			
 			return resultMap;
-
 		}
 	
 	// 객실 추가 api
@@ -269,9 +249,7 @@ public class LodgingRestController {
 		}
 
 		return resultMap;
-
 	}
-	
 	
 	// 객실 수정 api
 	@PostMapping("/room/update")
@@ -294,9 +272,7 @@ public class LodgingRestController {
 		}
 		
 		return resultMap;
-			
 	}
-	
 	
 	// 숙소 삭제 api
 	@GetMapping("/delete")//이것도 겟매핑으로
@@ -314,7 +290,6 @@ public class LodgingRestController {
 		}
 		
 		return resultMap;
-
 	}
 	
 }
