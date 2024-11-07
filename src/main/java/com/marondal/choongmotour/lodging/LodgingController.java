@@ -88,7 +88,6 @@ public class LodgingController {
 		//여기에 댓글 숙소 갯수, 지역명도 쓰면 좋다.
 		
 		return "lodging/lodginglist";
-	
 	}
 
 	// 객실리스트
@@ -107,7 +106,6 @@ public class LodgingController {
 		model.addAttribute("roomList", roomList);
 
 		return "lodging/room";
-
 	}
 	
 	
@@ -132,7 +130,6 @@ public class LodgingController {
 		model.addAttribute("user", user);
 		
 		return "lodging/dibspage";
-
 	}
 	
 	
@@ -170,7 +167,6 @@ public class LodgingController {
 		//생각해보면 예약페이지 한행 조회 이거를 쓸수가없다. 왜냐면 저장 자체를 안했는데. 
 //
 		return "lodging/reservepage";
-
 	}
 	
 	//예약목록
@@ -212,7 +208,6 @@ public class LodgingController {
 		model.addAttribute("room", room);
 
 		return "lodging/commentwrite";
-
 	}
 
 	//댓글목록

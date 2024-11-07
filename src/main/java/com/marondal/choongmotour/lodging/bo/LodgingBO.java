@@ -104,14 +104,12 @@ public class LodgingBO {
 		}
 
 		return lodgingDetailList;
-		
 	}
 
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
 
 		return lodgingDAO.selectRoomListOrderByPrice(lodgingId);
-
 	}
 
 	// 예약목록 userId별로
@@ -135,7 +133,6 @@ public class LodgingBO {
 	public List<Lodging> getLodgingList(int id) {
 			
 		return lodgingDAO.selectLodgingList(id);
-
 	}
 	
 	// 숙소 한행 불러오기
@@ -149,7 +146,6 @@ public class LodgingBO {
 		//String imagePath = FileManagerService.saveFile(lodgingId, file);
 		//이것도 꼭넣어야하는지? 빼보기
 		return lodgingDAO.updateLodging(id, roomName, level, areaName);
-				
 	}
 	
 	// 객실추가
@@ -164,7 +160,6 @@ public class LodgingBO {
 	public List<Room> getRoomList(int lodgingId){
 
 		return lodgingDAO.selectRoomList(lodgingId);
-
 	}
 	
 	// 객실 한행 조회
@@ -177,14 +172,12 @@ public class LodgingBO {
 	public int updateRoom(int id, int price, String size, String content) {
 	
 		return lodgingDAO.updateRoom(id, price, size, content);
-	
 	}
 	
 	// 숙소 삭제
 	public int deleteLodging(int id) {
 
 		return lodgingDAO.deleteLodging(id);
-		
 	}
 
 }

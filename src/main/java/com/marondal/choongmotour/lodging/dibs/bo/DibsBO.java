@@ -33,7 +33,6 @@ public class DibsBO {
 	public int deleteDibs(int lodgingId, int userId) {
 
 		return dibsDAO.deleteDibs(lodgingId, userId);
-
 	}
 
 	// 찜목록 보기
