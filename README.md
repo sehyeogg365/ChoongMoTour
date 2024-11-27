@@ -2,7 +2,7 @@
 
 
 <h2><b>개발환경<b></h2>
-<hr/>
+
 <div class="text-center">
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/><br>
 <img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/><br>
@@ -22,7 +22,7 @@
   
   </div>    
  <h2>💪<b>Skills</b></h2>
- <hr/>
+
  <div class="text-center">
  JAVA
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
