@@ -64,8 +64,11 @@ Gradle
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
 
 ## <h2><b>ERD</b></h2>
-
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Frb1rh%2FbtsKYZ1T2yP%2FPU04qbTXg4AZEjVe2FUcoK%2Fimg.png"/>
 ## <h2><b>만든계기</b></h2>
 
-## <h2><b>핵심기능 ChoongMoTour
+## <h2><b>화면구성</b></h2>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbCOBAp%2FbtsnjbeuWCp%2Fewmvs6ohpsUkmgESBy0Qx1%2Fimg.png"/>
+
+## <h2><b>핵심기능</b></h2>
 
