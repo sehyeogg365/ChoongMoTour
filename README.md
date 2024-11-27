@@ -3,15 +3,15 @@
 
 <h2><b>개발환경<b></h2>
 <div class="text-center">
-
-</div>
-
-
-<h2><b>사용기술<b></h2>
-<div class="text-center">
+  
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/><br>
 <img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/><br>
 <img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/> <br>
+  
+</div>
+
+<h2><b>사용기술<b></h2>
+<div class="text-center">
 
   프론트엔드 <br>
   * Html5/css3, javascript, jQuery, Bootstrap 5 <br>
@@ -27,10 +27,9 @@
   
   라이브러리 <br>
   * 네이버지도 api<br>
-
   
-  </div>    
- <h2>💪<b>Skills</b></h2>
+</div>    
+<h2>💪<b>Skills</b></h2>
 
  <div class="text-center">
  JAVA
@@ -45,10 +44,8 @@
 JAVASCRIPT 
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/>
   
-  
 JQuery
 <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white"/>
-  
   
 MY SQL
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
@@ -75,6 +72,7 @@ Gradle
 <a href="https://www.miricanvas.com/v/118g5f1">포트폴리오</a>  
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
 </div>
+
 충모투어 사용자 로그인화면 : http://13.209.26.116:8080/user/signin/view<br>
 충모투어 관리자 로그인화면 : http://13.209.26.116:8080/admin/signin/view
 <div class="">새로운 War 파일 배포 진행중이라서 실행이안됩니다..</div>
