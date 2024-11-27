@@ -9,26 +9,7 @@
 <img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/> <br>
   
 </div>
-
-<h2><b>사용기술<b></h2>
-<div class="text-center">
-
-  프론트엔드 <br>
-  * Html5/css3, javascript, jQuery, Bootstrap 5 <br>
-  
-  백엔드 <br> 
-   * java11, SpringBoot, Gradle <br>
    
-  데이터베이스 <br>
-  * MySQL <br>
-  
-  인프라 <br>
-  * AWS EC2<br>
-  
-  라이브러리 <br>
-  * 네이버지도 api<br>
-  
-</div>    
 <h2>💪<b>Skills</b></h2>
 
  <div class="text-center">
@@ -68,6 +49,22 @@ AWS
 
 Gradle
 <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>
+
+
+프론트엔드 <br>
+  * Html5/css3, javascript, jQuery, Bootstrap 5 <br>
+  
+  백엔드 <br> 
+   * java11, SpringBoot, Gradle <br>
+   
+  데이터베이스 <br>
+  * MySQL <br>
+  
+  인프라 <br>
+  * AWS EC2<br>
+  
+  라이브러리 <br>
+  * 네이버지도 api<br>
 
 <a href="https://www.miricanvas.com/v/118g5f1">포트폴리오</a>  
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
