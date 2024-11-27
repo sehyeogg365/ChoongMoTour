@@ -10,6 +10,7 @@
 
   프론트엔드 <br>
   *Html5/css3, javascript, jQuery, Bootstrap 5 <br>
+  * front-End : thymeleaf, JQuery, Ajax, Bootstrap
   백엔드 <br> 
   *java11, SpringBoot, Gradle  <br>
   데이터베이스 <br>
