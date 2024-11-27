@@ -2,18 +2,27 @@
 
 
 <h4><b>개발환경<b></h4>
-<hr>
+<hr/>
 <div class="text-center">
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/><br>
 <img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/><br>
-<img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/>
+<img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/> <br>
 
-  프론트엔드 Html5/css3, javascript, jQuery, Bootstrap 5
-  백엔드 java11, SpringBoot, Gradle  
+  프론트엔드 <br>
+  Html5/css3, javascript, jQuery, Bootstrap 5 <br>
+  백엔드 <br> 
+  java11, SpringBoot, Gradle  <br>
+  데이터베이스 <br>
+  MySQL<br>
+  인프라 <br>
+  AWS EC2<br>
+  라이브러리 <br>
+  네이버지도 api 
+  
   
   </div>    
  💪<b>Skills</b>
-  <hr>
+ <hr/>
  <div class="text-center">
  JAVA
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
