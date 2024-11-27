@@ -1,12 +1,17 @@
 # ChoongMoTour
 
 
-  <b>개발환경<b>
- <hr>
-<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/>
-<img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/>
+<h4><b>개발환경<b></h4>
+<hr>
+<div class="text-center">
+<img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/><br>
+<img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/><br>
 <img src="https://img.shields.io/badge/intellijidea-000000?style=flat-square&logo=intellijidea&logoColor=white"/>
+
+  프론트엔드 Html5/css3, javascript, jQuery, Bootstrap 5
+  백엔드 java11, SpringBoot, Gradle  
   
+  </div>    
  💪<b>Skills</b>
   <hr>
  <div class="text-center">
