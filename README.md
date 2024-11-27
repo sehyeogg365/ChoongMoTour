@@ -59,6 +59,28 @@ AWS
 Gradle
 <img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>
 
+백엔드
+Java 11
+SpringBoot 3.4.0
+
+프론트엔드
+Html5/css3
+Javascript
+Bootstrap 5
+
+빌드 툴
+Gradle
+
+데이터베이스
+MySQL
+
+인프라
+AWS EC2
+
+라이브러리
+네이버 지도 api 
+
+
 <a href="https://www.miricanvas.com/v/118g5f1">포트폴리오</a><br>
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
 
