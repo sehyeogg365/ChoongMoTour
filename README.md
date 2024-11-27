@@ -1,5 +1,17 @@
 # ChoongMoTour
 
+<h2><b>목차</b></h2>
+<div class="text-center">
+  * 개발환경
+  * Skills
+  * ERD
+  * 만든계
+  * 화면구성
+  * 핵심기능
+  
+</div>
+
+
 
 <h2><b>개발환경<b></h2>
 <div class="text-center">
@@ -35,7 +47,6 @@ MY SQL
 Jsp Servlet
 <img src="https://img.shields.io/badge/JSP Servlet-232F3E?style=flat-square&logo=JSP Servlet&logoColor=white"/>
   
-  
 Spring Boot
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/>
   
@@ -69,6 +80,11 @@ Gradle
 
 <a href="https://www.miricanvas.com/v/118g5f1">포트폴리오</a>  
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
+</div>
+
+<h2><b>ERD</b></h2>
+<div class="text-center">
+
 </div>
 
 충모투어 사용자 로그인화면 : http://13.209.26.116:8080/user/signin/view<br>
