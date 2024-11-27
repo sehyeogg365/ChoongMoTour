@@ -13,10 +13,13 @@
   
   백엔드 <br> 
    * java11, SpringBoot, Gradle <br>
+   
   데이터베이스 <br>
   * MySQL <br>
+  
   인프라 <br>
   * AWS EC2<br>
+  
   라이브러리 <br>
   * 네이버지도 api<br>
 
