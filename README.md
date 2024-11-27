@@ -2,12 +2,12 @@
 
 <h2><b>목차</b></h2>
 <div class="text-center">
-   * 개발환경 api<br>
+  * 개발환경 api<br>
   * Skills<br>
   * ERD<br>
-  * 만든계기i<br>
+  * 만든계기<br>
   * 화면구성<br>
- * 핵심기능<br>
+  * 핵심기능<br>
 </div>
 
 
