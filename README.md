@@ -1,7 +1,7 @@
 # ChoongMoTour
 
 
-<h4><b>개발환경<b></h4>
+<h2><b>개발환경<b></h2>
 <hr/>
 <div class="text-center">
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/><br>
@@ -21,7 +21,7 @@
   
   
   </div>    
- 💪<b>Skills</b>
+ <h2>💪<b>Skills</b></h2>
  <hr/>
  <div class="text-center">
  JAVA
