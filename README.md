@@ -5,7 +5,6 @@
 이프로젝트는 AWS 프리티어 지원 종료로 인해 배포가 종료되었습니다.
 
 ## <h2><b>목차</b></h2>
-
   * [개발환경](#개발환경) <br>
   * [Skills](#Skills)<br>
   * [ERD](#ERD)<br>
@@ -14,7 +13,6 @@
   * [핵심기능](#핵심기능)<br>
 
 ## <h2><b>개발환경<b></h2>
-
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=black"/>
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
 <img src="https://img.shields.io/badge/sourcetree-0052CC?style=flat-square&logo=sourcetree&logoColor=black"/>
@@ -22,7 +20,6 @@
 
 
 ## <h2>💪<b>Skills</b></h2>
-
  JAVA
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
@@ -67,12 +64,10 @@ Gradle
 
 
 ## <h2><b>ERD</b></h2>
-
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Frb1rh%2FbtsKYZ1T2yP%2FPU04qbTXg4AZEjVe2FUcoK%2Fimg.png"/>
 
 
 ## <h2><b>만든계기</b></h2>
-
 숙소예약 홈페이지에 대한 실제 서비스를 알아보고 싶고, 이 기능들을 구현할 때 어떻게 구현되는지에 대한 호기심이 생기고, 코딩에 대한 강력한 열정이라고 볼수 있습니다.
 
 
