@@ -1,6 +1,6 @@
 # ChoongMoTour
 
-<h2><b>목차</b></h2>
+## <h2><b>목차</b></h2>
 <div class="text-center">
   * [개발환경](#개발환경) <br>
   * [Skills](#Skills)<br>
