@@ -90,8 +90,7 @@ Gradle
 ## 만든계기
 숙소예약 홈페이지에 대한 실제 서비스를 알아보고 싶고, 이 기능들을 구현할 때 어떻게 구현되는지에 대한 호기심이 생기고, 코딩에 대한 강력한 열정이라고 볼수 있습니다.
 
-## 화면구성
-<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbCOBAp%2FbtsnjbeuWCp%2Fewmvs6ohpsUkmgESBy0Qx1%2Fimg.png"/>
+## 화면구성 💻
 
 | 회원가입 | 로그인화면 | 관리자 메인페이지 | 숙소추가화면 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
