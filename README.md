@@ -107,7 +107,7 @@ Gradle
 
 | 찜목록 | 예약페이지 | 예약목록 | 댓글목록 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb0tmvV%2FbtsKY0npC3h%2F5KDv7MfqeiTOKpVlbzAlj1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FAorjT%2FbtsK0oHm6AB%2FkfMesqGbLpMmdP5291jxeK%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fp5ptz%2FbtsKYXROVLy%2FwoQllN2W7f5FAdb8W2p3p0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FYKYDJ%2FbtsKZ70aWYX%2FUmirYeXtT4Nn7Ahk6f8Uhk%2Fimg.png" width="200px" heighth="200px"/> |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb0tmvV%2FbtsKY0npC3h%2F5KDv7MfqeiTOKpVlbzAlj1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnAJZq%2FbtsKZPMbJ8I%2FPqSAl9HtEHZiu4urhjpzxk%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ1rTH%2FbtsKY4i40mz%2FP8q0oIDwfhREPzmodSitK0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEcrfq%2FbtsK0n2Mgcu%2Ff6WLYIJT4DVMJfS14hi5f1%2Fimg.png" width="200px" heighth="200px"/> |
 
 ## 핵심기능
 
