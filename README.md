@@ -95,7 +95,7 @@ Gradle
 
 | 헤더1 | 헤더2 | 헤더3 | 헤더 4 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="20%"/>| 행1 열2 | 행1 열3 | 행1 열4 |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="50px" height="50px"/>| 행1 열2 | 행1 열3 | 행1 열4 |
 | 행2 열1 | 행2 열2 | 행2 열3 | 행2 열4 |
 | 행3 열1 | 행3 열2 | 행3 열3 | 행3 열4 |
 ## 핵심기능
