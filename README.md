@@ -95,11 +95,11 @@ Gradle
 
 | 회원가입 | 관리자 메인페이지 | 숙소추가화면 | 객실추가화면 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="300px" height="300px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGRjBf%2FbtsKZAV3Tdp%2FggioKukG71ciJlkOwKCQp0%2Fimg.png" width="300px" height="300px"/>| <img src="https://blog.kakaocdn.net/dn/co9eiE/btsKZcnBoRK/J1Xv57e29kM57SGw4OaNWK/img.png" width="300px" height="300px"/>  | 행1 열4 |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGRjBf%2FbtsKZAV3Tdp%2FggioKukG71ciJlkOwKCQp0%2Fimg.png" width="200px" height="200px"/>| <img src="https://blog.kakaocdn.net/dn/co9eiE/btsKZcnBoRK/J1Xv57e29kM57SGw4OaNWK/img.png" width="200px" height="200px"/>  | <img src="https://blog.kakaocdn.net/dn/co9eiE/btsKZcnBoRK/J1Xv57e29kM57SGw4OaNWK/img.png" width="200px" height="200px"/> |
 
 | 숙소수정화면 | 객실수정화면 | 로그인화면 | 아이디찾기 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
-|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="300px" height="300px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGRjBf%2FbtsKZAV3Tdp%2FggioKukG71ciJlkOwKCQp0%2Fimg.png" width="300px" height="300px"/>| <img src="https://blog.kakaocdn.net/dn/co9eiE/btsKZcnBoRK/J1Xv57e29kM57SGw4OaNWK/img.png" width="300px" height="300px"/>  | 행1 열4 |
+|<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="300px" height="300px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGRjBf%2FbtsKZAV3Tdp%2FggioKukG71ciJlkOwKCQp0%2Fimg.png" width="300px" height="300px"/>| <img src="https://blog.kakaocdn.net/dn/co9eiE/btsKZcnBoRK/J1Xv57e29kM57SGw4OaNWK/img.png" width="300px" height="300px"/>  | <img src="https://blog.kakaocdn.net/dn/AorjT/btsK0oHm6AB/kfMesqGbLpMmdP5291jxeK/img.png" width="300px" heighth="300px"/> |
 
 
 ## 핵심기능
