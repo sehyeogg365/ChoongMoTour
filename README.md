@@ -91,7 +91,6 @@ Gradle
 숙소예약 홈페이지에 대한 실제 서비스를 알아보고 싶고, 이 기능들을 구현할 때 어떻게 구현되는지에 대한 호기심이 생기고, 코딩에 대한 강력한 열정이라고 볼수 있습니다.
 
 ## 화면구성 💻
-
 | 회원가입 | 로그인화면 | 관리자 메인페이지 | 숙소추가화면 |
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
 |<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbZv3hC%2FbtsKZc2cI1e%2FS6Msb9mo3EakWobiavJBi1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FmqYzc%2FbtsKX536ryq%2Fz8axNokcKdCvLMOpY6IUik%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FGRjBf%2FbtsKZAV3Tdp%2FggioKukG71ciJlkOwKCQp0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fco9eiE%2FbtsKZcnBoRK%2FJ1Xv57e29kM57SGw4OaNWK%2Fimg.png" width="200px" height="200px"/> |
