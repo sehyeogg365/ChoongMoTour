@@ -93,7 +93,7 @@ Gradle
 ## 화면구성
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbCOBAp%2FbtsnjbeuWCp%2Fewmvs6ohpsUkmgESBy0Qx1%2Fimg.png"/>
 
-| 헤더1 | 헤더2 | 헤더3 |
+| 헤더1 | 헤더2 | 헤더3 | 헤더 4]
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
 | 행1 열1 | 행1 열2 | 행1 열3 | 행1 열4 |
 | 행2 열1 | 행2 열2 | 행2 열3 | 행2 열4 |
