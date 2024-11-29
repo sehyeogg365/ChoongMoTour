@@ -11,7 +11,16 @@
   * [만든계기](#만든계기)<br>
   * [화면구성](#화면구성)<br>
   * [핵심기능](#핵심기능)<br>
-  
+    * [숙소추가](#숙소추가)
+    * [숙소수정](#숙소수정)
+    * [숙소삭제](#숙소삭제)
+    * [객실추가](#객실추가)
+    * [객실수정](#객실수정)
+    * [찜/찜취소](#찜/찜취소)
+    * [예약/예약취소](#예약/예약취소)
+    * [댓글작성/삭제](#댓글작성/삭제)
+    * [네이버지도 api](#네이버지도-api)
+    * [정렬모달](#정렬모달)
 
 ## 개발환경
 <div class="d-flex">
@@ -21,7 +30,7 @@
  <img src="https://img.shields.io/badge/Intellij IDEA-000000?style=flat-square&logo=Intellij IDEA&logoColor=white"/> 
 </div>
 
-## 💪Skills
+## Skills💪
  JAVA
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
@@ -108,5 +117,18 @@ Gradle
 | ----------------------- | ----------------------- | ----------------------- | ----------------------- |
 |<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbr8Mv4%2FbtsKZvUJO1W%2FD1EZuhB8MRjkk83SuxTWI1%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FnAJZq%2FbtsKZPMbJ8I%2FPqSAl9HtEHZiu4urhjpzxk%2Fimg.png" width="200px" height="200px"/>| <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FQ1rTH%2FbtsKY4i40mz%2FP8q0oIDwfhREPzmodSitK0%2Fimg.png" width="200px" height="200px"/>  | <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FEcrfq%2FbtsK0n2Mgcu%2Ff6WLYIJT4DVMJfS14hi5f1%2Fimg.png" width="200px" heighth="200px"/> |
 
-## 핵심기능
+## 핵심기능⭐
+### 숙소추가
+### 숙소수정
+### 숙소삭제
+### 객실추가
+### 객실수정
+
+### 찜/찜취소
+### 예약/예약취소
+### 댓글달기/삭제
+### 네이버지도 api 
+### 정렬모달
+
+
 
