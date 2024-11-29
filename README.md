@@ -235,7 +235,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 선택 시 정렬이 되며, 모달창이 닫힌다.
 
-모달창을 다시 눌러보면 선택한 정렬모드가 그대로 표시되어있고, url 파라미터에도 정렬종류가 나온다.
+모달창을 다시 눌러보면 선택한 정렬모드가 그대로 표시되어있다.
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
 
 
