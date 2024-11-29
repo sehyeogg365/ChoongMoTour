@@ -146,6 +146,7 @@ api 서 수정된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 
 ### 숙소삭제
+
  * 하나의 숙소 카드에 있는 삭제 버튼을 클릭하면, 해당하는 숙소가 삭제되는 기능이다.
 
 숙소 id 값을 파라미터로 잡은 후 해당하는 id의 숙소를 삭제하는 원리다.
@@ -182,6 +183,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">객실추가</a>
   
 <h3 id="찜찜취소">찜&찜취소</h3>
+
  *  오른쪽 상단의 하트 버튼을 누르면 찜한 목록에서 삭제가 된다.
 찜 취소는 해당 숙소를 찜 취소를 하니 숙소 id를 파라미터로 받아왔다.
 그리고 숙소카드 한 장의 정보를 담아내는 dto까지 만들었다.
@@ -190,6 +192,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">찜&찜취소</a>
 
 <h3 id="예약예약취소">예약&예약취소</h3>
+
  * 컨트롤러에서 user한행 정보를 조회하는 메소드를 호출해서 변수로 저장했다. 
 그러고나서 모델에 해당 변수를 저장시켜서 뷰에서 로그인한 사용자 정보 정보를 불러올수 있다. 
 추가된 객실 정보는 예약 목록에서 확인할 수 있다.
@@ -201,6 +204,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">예약&예약취소</a>
 
 <h3 id="댓글작성삭제">댓글작성&삭제</h3>
+
  * 예약 리스트 페이지 내 예약카드의 댓글 달기 버튼을 누르면 댓글 입력 팝업창이 뜬다.
 
 사진, 댓글 내용, 별점을 작성해야 한다.
@@ -214,6 +218,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 
 ### 네이버지도 api 
+
  * 검색창에 원하는 지역을 쓴 다음 검색 버튼을 누르면 원하는 지역으로 이동한다.
 네이버 지도 왼쪽 확대 축소 바를 움직이면 지도를 확대 축소를 할 수가 있다.
 확대 축소 바가 아닌 마우스 스크롤로도 지도를 확대 축소할 수가 있다.
@@ -221,6 +226,7 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 
 ### 정렬모달
+
  * 숙소 리스트 상단의 정렬 모달 버튼을 클릭하면, 모달창이 뜬다.
 
 처음에는 아무것도 선택이 안 돼있다.
