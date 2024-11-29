@@ -120,23 +120,118 @@ Gradle
 ## 핵심기능⭐
 ### 숙소추가
 
+ * 숙소를 추가하기 위해서 우선 관리자 페이지에 로그인이 필요하다.
+
+이미지 파일이 필수며, 유효성 검사에서 추가시켰다.
+
+이미지 파일, 숙소 명, 지역, 등급을 입력해야만 한다.
+
+그리고 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용해서
+파일명이 중복이 안되게끔 관리자 아이디 값을 넣어서 저장을 시켰다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소추가</a>
+
+
 ### 숙소수정
+
+ * 이전에 추가한 숙소를 수정하는 기능이다.
+
+업로드 한 이미지 파일 제외하고 뭐든지 수정이 가능하게 끔 만들었다.
+
+해당하는 id, 해당하는 숙소를 조회해,  자기가 수정하고 싶으면, 숙소 명, 성급, 지역명을 수정하는 기능이다.
+
+숙소 id를 url 파라미터로 받아 해당하는 숙소 정보 한행을 조회해서, 그것을 자기가 수정하고 싶으면 숙소 명, 성급, 지역명으로 수정하는 기능이다.
+
+api 서 수정된 행의 개수 결과가 1이냐 아니냐에 따라 result라는 키로 success fail 형태 값으로 전달한다. 제이슨 문자열로 리스폰스를 통해서
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소수정</a>
+
 
 ### 숙소삭제
 
+ * 하나의 숙소 카드에 있는 삭제 버튼을 클릭하면, 해당하는 숙소가 삭제되는 기능이다.
+
+숙소 id 값을 파라미터로 잡은 후 해당하는 id의 숙소를 삭제하는 원리다.
+
+비즈니스 로직을 관리하는 클래스로부터 삭제된 행의 개수를 리턴한다.
+api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라는 키로 success fail 형태 값으로 전달한다. 제이슨 문자열로 
+리스폰스를 통해서
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소삭제</a>
+
 ### 객실추가
+
+ * 자신이 객실을 추가시키고 싶은 숙소의 객실 추가 버튼을 클릭하면 그 숙소에 객실을 추가할 수 있다.
+
+객실은 싱글룸, 더블룸, 트윈룸으로 나눠지며, 셀렉터로 선택이 가능하다.
+
+한 번에 객실 하나를 추가할 수가 있다.
+
+사이즈, 이미지 파일, 가격, 상세정보를 입력되어야 수정이 가능하다.
+
+마찬가지로, 파일매니저 서비스 메서드를 사용해서 파일명이 중복이 안되게 끔 아이디 값을 넣어서 저장을 시켰다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">객실추가</a>
+
 
 ### 객실수정
 
+ * 해당하는 숙소카드의 객실 수정 버튼을 누를 시 기존에 추가했던 객실들이 테이블 형식으로 출력된다.
+
+단, 객실 추가한 내역이 없으면 아무것도 안 뜨며, 이미지 파일은 수정 못하게 개발을 했다.
+
+사이즈, 가격, 상세정보 이렇게 세 가지 정보를 수정할 수가 있다.
+
+한 숙소에 추가한 객실 정보들을 리스트로 조회하는 방식으로 출력하게 끔 했다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">객실추가</a>
+  
 <h3 id="찜찜취소">찜&찜취소</h3>
+ *  오른쪽 상단의 하트 버튼을 누르면 찜한 목록에서 삭제가 된다.
+찜 취소는 해당 숙소를 찜 취소를 하니 숙소 id를 파라미터로 받아왔다.
+그리고 숙소카드 한 장의 정보를 담아내는 dto까지 만들었다.
+숙소 정보의 비즈니스 로직을 관리하는 클래스에서 찜 여부를 나타내는변수를 적절히 조화시켰다.
+숙소 목록과 찜여부 보여주는 for 문을 구현했고, 리스트를 만들어 컨트롤러로 숙소 목록 리스트 값을 보냈다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">찜&찜취소</a>
 
 <h3 id="예약예약취소">예약&예약취소</h3>
+ * 컨트롤러에서 user한행 정보를 조회하는 메소드를 호출해서 변수로 저장했다. 
+그러고나서 모델에 해당 변수를 저장시켜서 뷰에서 로그인한 사용자 정보 정보를 불러올수 있다. 
+추가된 객실 정보는 예약 목록에서 확인할 수 있다.
+
+해당 예약 카드 상단의 x 아이콘을 누르면 예약 취소또한 할수 있다.
+예약 취소는 예약 아이디를 파라미터로 받아서 취소 작업이 진행 된다.
+예약목록은 비즈니스로직을 관리하는 클래스에서 예약 카드 구성에 들어가는 데이터를 담은 dto와
+예약하기위한 기본정보만 있는 Reserve 모델을  잘 융합해서 리스트를 만든다.
+
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">예약&예약취소</a>
 
 <h3 id="댓글작성삭제">댓글작성&삭제</h3>
+ * 예약 리스트 페이지 내 예약카드의 댓글 달기 버튼을 누르면 댓글 입력 팝업창이 뜬다.
+
+사진, 댓글 내용, 별점을 작성해야 한다.
+사진은 필수로 안 넣어도 댓글이 입력이 된다.
+댓글 달기 버튼을 누르면 댓글이 입력된다.
+
+댓글 카드 우측 상단의 x 아이콘을 누르면 해당 댓글이 삭제가 된다.
+로그인한 사람이 작성한 댓글만 삭제 아이콘이 뜨게끔 조건문을 사용했다.
+삭제 기능은 id 값을 파라미터로 사용했다.
+
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">댓글작성&삭제</a>
 
 ### 네이버지도 api 
+ * 검색창에 원하는 지역을 쓴 다음 검색 버튼을 누르면 원하는 지역으로 이동한다.
+네이버 지도 왼쪽 확대 축소 바를 움직이면 지도를 확대 축소를 할 수가 있다.
+확대 축소 바가 아닌 마우스 스크롤로도 지도를 확대 축소할 수가 있다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/room.jsp">네이버지도 api</a>
 
 ### 정렬모달
+ * 숙소 리스트 상단의 정렬 모달 버튼을 클릭하면, 모달창이 뜬다.
+
+처음에는 아무것도 선택이 안 돼있다.
+
+평점 높은순, 리뷰 많은순, 낮은 가격순, 높은 가격순 라디오 버튼으로 선택할 수가 있다.
+
+선택 시 정렬이 되며, 모달창이 닫힌다.
+
+모달창을 다시 눌러보면 선택한 정렬모드가 그대로 표시되어있고, url 파라미터에도 정렬종류가 나온다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
+
 
 
 
