@@ -146,7 +146,6 @@ api 서 수정된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 
 
 ### 숙소삭제
-
  * 하나의 숙소 카드에 있는 삭제 버튼을 클릭하면, 해당하는 숙소가 삭제되는 기능이다.
 
 숙소 id 값을 파라미터로 잡은 후 해당하는 id의 숙소를 삭제하는 원리다.
@@ -155,6 +154,7 @@ api 서 수정된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라는 키로 success fail 형태 값으로 전달한다. 제이슨 문자열로 
 리스폰스를 통해서
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소삭제</a>
+
 
 ### 객실추가
 
@@ -198,7 +198,6 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 예약 취소는 예약 아이디를 파라미터로 받아서 취소 작업이 진행 된다.
 예약목록은 비즈니스로직을 관리하는 클래스에서 예약 카드 구성에 들어가는 데이터를 담은 dto와
 예약하기위한 기본정보만 있는 Reserve 모델을  잘 융합해서 리스트를 만든다.
-
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">예약&예약취소</a>
 
 <h3 id="댓글작성삭제">댓글작성&삭제</h3>
@@ -211,14 +210,15 @@ api 서 삭제된 행의 개수 결과가 1이냐 아니냐에 따라 result라�
 댓글 카드 우측 상단의 x 아이콘을 누르면 해당 댓글이 삭제가 된다.
 로그인한 사람이 작성한 댓글만 삭제 아이콘이 뜨게끔 조건문을 사용했다.
 삭제 기능은 id 값을 파라미터로 사용했다.
-
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">댓글작성&삭제</a>
+
 
 ### 네이버지도 api 
  * 검색창에 원하는 지역을 쓴 다음 검색 버튼을 누르면 원하는 지역으로 이동한다.
 네이버 지도 왼쪽 확대 축소 바를 움직이면 지도를 확대 축소를 할 수가 있다.
 확대 축소 바가 아닌 마우스 스크롤로도 지도를 확대 축소할 수가 있다.
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/room.jsp">네이버지도 api</a>
+
 
 ### 정렬모달
  * 숙소 리스트 상단의 정렬 모달 버튼을 클릭하면, 모달창이 뜬다.
