@@ -177,7 +177,7 @@ Gradle
 
  * 모달창을 활용하여 숙소 정렬 방법을 선택한다. 아작스와 컨트롤러를 활용하여  만들었으며, 해당 리스폰스 받은 data null여부에 따라 정렬옵션이 포함된 url으로 이동여부를 결정한다.
 
- * if(data != null) 로 표시하기로 했고
+   if(data != null) 로 표시하기로 했고
 data는 숙소리스트 코드문이고, 그 코드문이 있으면 새 url로 이동하게 작성했다.
 , success:function(data){
                     if(data != null){
