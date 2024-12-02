@@ -168,7 +168,7 @@ Gradle
 
  * 검색창에 원하는 지역을 쓴 다음 검색 버튼을 누르면 원하는 지역으로 이동한다. 자바스크립트 함수로 확대바, 검색창등등의 기본 설정들을 입력했다. 
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/room.jsp">네이버지도 api</a>
-
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlQZLL%2FbtsK25B1r95%2FlUqgkuK7vCH8WeKzGJDiSk%2Fimg.png" width="400px" heighth="400px"/>
 
 ### 정렬모달
 
@@ -182,7 +182,7 @@ data는 숙소리스트 코드문이고, 그 코드문이 있으면 새 url로 �
                             window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
                     }
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
-
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="400px" heighth="400px"/>
 
 
 
