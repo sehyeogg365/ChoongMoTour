@@ -21,8 +21,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		Integer userId = (Integer)session.getAttribute("userId");//이게저장되있으면 로그인 된상태 아니면 로그인 안된상태
 		Integer adminId = (Integer)session.getAttribute("adminId");
 		
-		//null이저장가능하게 끔 
-		
+		//null이저장가능하게 끔
 		// /user/signin/view
 		String uri = request.getRequestURI();
 		
@@ -91,8 +90,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
 				
 			}
 		
-		
-		
 		if(adminId != null) {
 			// 로그인이 되었을때
 			// 회원 가입, 로그인 페이지 접근하려고 하면
@@ -120,7 +117,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
 				
 				return false;//원래 가려 했던 그 목적페이지에 못가게 하려면 폴스
 			}
-	
 			
 			} else {
 			// 로그인이 안되었을떄
@@ -148,12 +144,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
 					return false;
 				}
 				
-			
-				
 			}
-		
 		return true;//문제없이 여기까지 왔으면 정상수행
-		
 		//pre handle override
 	}
 }
