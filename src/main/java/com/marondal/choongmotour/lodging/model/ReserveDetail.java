@@ -88,5 +88,4 @@ public class ReserveDetail {//예약 카드에 필요한 데이터들 예약 상
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
 	}
-
 }

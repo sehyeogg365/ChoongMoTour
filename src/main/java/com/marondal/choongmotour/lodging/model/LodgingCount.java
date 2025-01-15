@@ -22,5 +22,4 @@ public class LodgingCount {
 	public void setNumberCount(int numberCount) {
 		this.numberCount = numberCount;
 	}
-	
 }

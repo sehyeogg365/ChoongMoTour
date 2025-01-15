@@ -23,7 +23,6 @@ public class DibsBO {
 
 	// 찜
 	public int addDibs(int lodgingId, int userId) {// 어떤 숙소를 찜할것이냐, 누가 찜할것이냐
-
 		return dibsDAO.insertDibs(lodgingId, userId);
 	}
 
@@ -31,7 +30,6 @@ public class DibsBO {
 
 	// 찜 취소
 	public int deleteDibs(int lodgingId, int userId) {
-
 		return dibsDAO.deleteDibs(lodgingId, userId);
 	}
 

@@ -29,10 +29,7 @@ public interface ReserveDAO {
 	
 	//예약 조회 이게굳이 필요할련지는 모르겠다? 카드 클릭했을때 예약 정보가 상세 하게 뜨게하는 카드 기능
 
-//	public ReserveDetail selectReserveInfoById (@Param("userId")int userId);
-	
 	//예약 취소
-	
 	public int deleteReserve(@Param("userId")int userId, @Param("id") int id);
 	
 }

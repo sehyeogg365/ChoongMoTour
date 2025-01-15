@@ -54,8 +54,6 @@ public class UserRestController {
 	@GetMapping("/duplicate_id")
 	@ResponseBody
 	public Map<String, Boolean> duplicateCheck(@RequestParam("loginId") String loginId) {
-		
-		
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
 		boolean isDuplicate = userBO.isDuplicate(loginId);
@@ -67,7 +65,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-	
 	}
 	
 	@PostMapping("/signin")
@@ -76,7 +73,6 @@ public class UserRestController {
 			, @RequestParam("password") String password
 			, HttpSession session//id, 네임, 닉네임 값을 가져오기 위해 세션
 			) {
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		User user = userBO.getUser(loginId, password);
@@ -120,7 +116,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 	// 임시 비밀번호 발급 api (특정 비밀번호로 수정)	
@@ -130,7 +125,6 @@ public class UserRestController {
 										//, HttpSession session 세션은 만능이 아님. 무조건 세션 쓰지 말기.
 										//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
-		
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		//String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
@@ -145,7 +139,6 @@ public class UserRestController {
 		}
 	
 		return resultMap;
-
 	}
 	
 	// 사용자 회원정보 수정
@@ -159,7 +152,6 @@ public class UserRestController {
 			, @RequestParam("nickname") String nickname
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int count = userBO.updateUser(id, password, name, email, phoneNumber, nickname, file);
@@ -172,7 +164,6 @@ public class UserRestController {
 		}
 	
 		return resultMap;
-		
 	}
 
 	//2024-03-31 비밀번호 확인

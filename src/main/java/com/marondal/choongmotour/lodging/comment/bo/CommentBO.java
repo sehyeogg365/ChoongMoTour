@@ -50,10 +50,8 @@ public class CommentBO {
 		for (Comment comment : commentList) {
 					
 			User user = userBO.getUserInfo(comment.getUserId());
-			
 			// Lodging lodging = lodgingBO.getLodging(lodgingId);
 			// 근데 알다시피 밑에 값들은 카드 한장에 들어가는 값이라서 리스트는 불필요 함
-			
 			CommentDetail commentDetail = new CommentDetail();
 
 			commentDetail.setId(comment.getId());
@@ -74,7 +72,6 @@ public class CommentBO {
 
 	// 댓글 한행조회 
 	public Comment getComment(int id, int userId) {// 옥의티 발견 여기서 id, userId일텐데 lodgingId->id
-		
 		return commentDAO.selectComment(id, userId);
 	}
 
@@ -82,7 +79,6 @@ public class CommentBO {
 	public int deleteComment(int id, int userId) {
 		
 		// 파일 있을때 파일도 삭제
-		
 		Comment comment = commentDAO.selectComment(id, userId);// 몇몇 호텔의 댓삭이 안이뤄지는 상황.
 		FileManagerService.removeFile(comment.getImagePath());// userId추가해서 제대로 해보기 이제보니 첨에는 다오에선 id 여기선 roomId였다는... 그러니 500이뜨지.
 		
@@ -106,13 +102,11 @@ public class CommentBO {
 
 	//댓글 갯수
 	public Integer getCommentCount (int lodgingId){
-
 		return commentDAO.selectCommentCount(lodgingId);
 	}
 
 	//댓글 평균평점
 	public Double getStarPoint (int lodgingId){
-
 		return commentDAO.selectStarPoint(lodgingId);
 	}
 
