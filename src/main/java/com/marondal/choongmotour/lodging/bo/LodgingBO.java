@@ -108,7 +108,6 @@ public class LodgingBO {
 
 	// 객체 리스트 로징아이디별, 가격별
 	public List<Room> getRoomListOrderByPrice(int lodgingId){
-
 		return lodgingDAO.selectRoomListOrderByPrice(lodgingId);
 	}
 
@@ -131,7 +130,6 @@ public class LodgingBO {
 	// 숙소 리스트
 	
 	public List<Lodging> getLodgingList(int id) {
-			
 		return lodgingDAO.selectLodgingList(id);
 	}
 	
@@ -158,25 +156,21 @@ public class LodgingBO {
 		
 	// 객실 리스트
 	public List<Room> getRoomList(int lodgingId){
-
 		return lodgingDAO.selectRoomList(lodgingId);
 	}
 	
 	// 객실 한행 조회
 	public Room getRoom(int id) {
-		
 		return lodgingDAO.selectRoomById(id);
 	}
 	
 	// 객실 수정
 	public int updateRoom(int id, int price, String size, String content) {
-	
 		return lodgingDAO.updateRoom(id, price, size, content);
 	}
 	
 	// 숙소 삭제
 	public int deleteLodging(int id) {
-
 		return lodgingDAO.deleteLodging(id);
 	}
 

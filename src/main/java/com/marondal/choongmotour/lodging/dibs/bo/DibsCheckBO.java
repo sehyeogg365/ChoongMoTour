@@ -17,10 +17,8 @@ public class DibsCheckBO {
 		int count = dibsDAO.selectDibsByUserId(userId, lodgingId);
 
 		if (count == 0) {// 0개면 찜이 안됨
-
 			return false;
 		} else {
-
 			return true;
 		}
 	}

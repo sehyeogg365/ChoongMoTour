@@ -30,7 +30,6 @@ public class UserController {
 
 	@GetMapping("/signout")
 	public String signout(HttpServletRequest request) {
-
 		HttpSession session = request.getSession();
 		session.removeAttribute("userId");
 		session.removeAttribute("userNickname");
@@ -41,14 +40,11 @@ public class UserController {
 
 	@GetMapping("/find_id_pw/view")
 	public String findIdPw() {
-
 		return "user/find_id_pw";
-
 	}
 
 	@GetMapping("/mypage/view") // 숙소 수정 잘 참조 해보기
 	public String myPage(Model model, @RequestParam("id") int id) {
-
 		User user = userBO.getUserInfo(id);
 
 		model.addAttribute("user", user);

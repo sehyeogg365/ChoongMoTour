@@ -31,7 +31,6 @@ public class PagingDTO {
 		
 	}
 	
-	
 	public int getCurrPage() {
 		return currPage;
 	}
@@ -71,5 +70,4 @@ public class PagingDTO {
 	public void setTotalData(int totalData) {
 		this.totalData = totalData;
 	}
-
 }

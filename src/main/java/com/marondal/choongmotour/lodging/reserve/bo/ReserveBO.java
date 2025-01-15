@@ -27,7 +27,6 @@ public class ReserveBO {
 
 	//예약하기 
 	public int addReserve(int roomId, int userId, String name, String phoneNumber,  String payment, Date startDate, Date endDate) {
-			
 		return reserveDAO.insertReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);
 	}
 
@@ -79,11 +78,8 @@ public class ReserveBO {
 //		return reserveDAO.selectReserveInfoById(userId);
 //		
 //	}
-	
-
 	//예약 취소
 	public int deleteReserve(int userId, int id) {
-
 		return reserveDAO.deleteReserve(userId, id);
 	}
 

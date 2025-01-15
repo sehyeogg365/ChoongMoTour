@@ -38,7 +38,6 @@ public class UserBO {
 
 	// 로그인 api
 	public User getUser(String loginId, String password) {// 모델객체 불러오는것.
-
 		// 비밀번호 암호화
 		String ecryptPassword = EncryptService.md5(password);
 
@@ -47,7 +46,6 @@ public class UserBO {
 
 	// 아이디 찾기
 	public User getUserByNameEmail(String loginId, String name, String email) {
-
 		return userDAO.selectUserByNameEmail(loginId, name, email);
 	}
 
@@ -59,14 +57,12 @@ public class UserBO {
 		// 마찬가지로 비밀번호가 파라미터로 들어갈 이유가 없음 원래 비밀번호를 알 필요가 없어서.
 
 		// 임시비밀번호 생성 알고리즘
-
 		char[] charSet = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', };
 
 		Random random = new Random();
 
 		String password = ""; // 대신에 여기에 생성
 		for (int i = 0; i < 100; i++) {
-
 			int rNum = random.nextInt(charSet.length);
 
 			char shuffle = charSet[0];
@@ -91,7 +87,6 @@ public class UserBO {
 
 	// 회원정보 한행 조회
 	public User getUserInfo(int id) {// loginId->id로변경하기
-
 		return userDAO.selectUserInfo(id);
 	}
 	// 딱 정리를 내리자면 조회는 id만 있어도 됨 수정은 다있어야 함 이거같음
@@ -117,5 +112,4 @@ public class UserBO {
 
 	}
 	*/
-
 }
