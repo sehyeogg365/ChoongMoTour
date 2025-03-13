@@ -35,7 +35,7 @@
  <img src="https://img.shields.io/badge/JAVA-4479A1?style=flat-square&logo=JAVA&logoColor=white"/>
   
  HTML5  
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
+ <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/>
  
  CSS3
  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/>
@@ -57,8 +57,9 @@ Jsp Servlet
   
 Spring Boot
 <img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=flat-square&logo=Spring Boot&logoColor=white"/>
-  
 
+Gradle
+<img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>  
 
 Git Hub
 <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=GitHub&logoColor=white"/>
@@ -66,8 +67,6 @@ Git Hub
 AWS
 <img src="https://img.shields.io/badge/aws-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white"/>
 
-Gradle
-<img src="https://img.shields.io/badge/Gradle-02303A?style=flat-square&logo=Gradle&logoColor=white"/>
 
 백엔드
 * Java 11
