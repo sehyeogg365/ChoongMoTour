@@ -49,10 +49,10 @@ JAVASCRIPT
 JQuery
 <img src="https://img.shields.io/badge/jQuery-0769AD?style=flat-square&logo=jQuery&logoColor=white"/>
   
-MY SQL
+MySQL
 <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=MySQL&logoColor=white"/>
   
-Jsp Servlet
+JSP Servlet
 <img src="https://img.shields.io/badge/JSP Servlet-232F3E?style=flat-square&logo=JSP Servlet&logoColor=white"/>
   
 Spring Boot
