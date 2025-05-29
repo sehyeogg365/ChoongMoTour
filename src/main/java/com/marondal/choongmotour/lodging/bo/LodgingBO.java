@@ -3,7 +3,6 @@ package com.marondal.choongmotour.lodging.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import com.marondal.choongmotour.lodging.comment.dao.CommentDAO;
 import com.marondal.choongmotour.lodging.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,29 +15,27 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsCheckBO;
 
 import com.marondal.choongmotour.user.bo.UserBO;
 
-
-
 @Service
 public class LodgingBO {
 
 	@Autowired 
-	private LodgingDAO lodgingDAO;//private 추가
+	private LodgingDAO lodgingDAO;// private 추가
 	
 	@Autowired 
 	private UserBO userBO;
 	
-	//순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
+	// 순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	
 	@Autowired 
 	private DibsCheckBO dibsCheckBO;
 
 	@Autowired
 	private CommentDAO commentDAO;
-	//사용자페이지
+	// 사용자페이지
 
-	//lodging 정보 - 지역 불러오기??
+	// lodging 정보 - 지역 불러오기??
 	
-	//숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
+	// 숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
 	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, String sortType, LodgingDetail lodgingDetail){
 		
 		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, lodgingDetail.getSortType());
@@ -47,11 +44,11 @@ public class LodgingBO {
 		
 		for(LodgingDetail lodging:lodgingList) {
 			
-			//숙소카드 한장에 유저정보가 들어갈일은 없다.
+			// 숙소카드 한장에 유저정보가 들어갈일은 없다.
 
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
-			//이거와 관련된 비오 하나를 차라리 더 팔것.
-			//댓글갯수,평점,가격, 정렬 방식 비오를 파기,
+			// 이거와 관련된 비오 하나를 차라리 더 팔것.
+			// 댓글갯수,평점,가격, 정렬 방식 비오를 파기,
 			lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			CommentDetail commentDetail = new CommentDetail();
 			Integer commentCount = commentDAO.selectCommentCount(lodging.getId());// 댓글 갯수 이두개를 lodgingId로 변경?
@@ -81,15 +78,15 @@ public class LodgingBO {
 				lodging.setAvgStarPoint(starPoint);
 			}
 
-			//lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
+			// lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			
-			//현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
+			// 현재 뜨는 500에러 여기서 로징아이디가 안불러와지고 있단뜻인듯.
 			
-			//그 숙소리스팅에 들어갈 것들.
-			lodgingDetail.setId(lodging.getId());//로징아이디
+			// 그 숙소리스팅에 들어갈 것들.
+			lodgingDetail.setId(lodging.getId());// 로징아이디
 			lodgingDetail.setRoomName(lodging.getRoomName());// 숙소명
 			lodgingDetail.setAreaName(lodging.getAreaName()); // 지역명
-			lodgingDetail.setLevel(lodging.getLevel());//성급
+			lodgingDetail.setLevel(lodging.getLevel());// 성급
 			lodgingDetail.setImagePath(lodging.getImagePath());// 숙소 사진
 			lodgingDetail.setDibs(isDibs);// 찜여부
 			//로징아이디 로징 룸네임 성급이미지 그리고찜여부
@@ -98,7 +95,7 @@ public class LodgingBO {
 			lodgingDetail.setAvgStarPoint(lodging.getAvgStarPoint());
 			lodgingDetail.setSingleRoomPrice(price);
 			lodgingDetail.setSortType(sortType);
-			//nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
+			// nullpointException이 뜬다. 여 값이 널값이란뜻 왜 널일까
 			
 			lodgingDetailList.add(lodgingDetail);
 		}
