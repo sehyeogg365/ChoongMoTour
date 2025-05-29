@@ -29,28 +29,21 @@
 				<h1 class="text-center pt-3 font-weight-bold">
 					ChoongMo Tour Admin My Page
 				</h1>
-				
-				
+
 				<div class="mypagecontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
-				
 					<ul class="nav flex-column">
 						<li class="nav-item mt-2">
-						
 							<h5><b><a href="/admin/mypage/view?id=${admin.id }" class="nav-link text-primary">내 정보수정</a></b></h5>
 						</li>
-						
 						<li class="nav-item mt-2">
 							<h5><b><a href="/admin/userAdmin/view" class="nav-link text-white">사용자 관리</a></b></h5>
 						</li>
-						
 					</ul>
 				</aside>
 				
 				<section class="contents1 col-10">
-					
 					<div class="info-input-box mx-5">
-						
 						<div class="mx-4">
 						    <label class="mt-3 ml-3">프로필 사진 변경</label><br>
                             <i id="imageIcon" class="bi bi-card-image image-icon-size ml-3"></i>
@@ -64,7 +57,7 @@
                               <c:otherwise><!-- 없을때 -->
                                 <img class="adminprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
                               </c:otherwise>
-                             </c:choose>
+                            </c:choose>
 
                             <div class="d-flex mx-3">
                                 <label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"  value = ""  class="form-control mt-4 mr-3 col-6">
@@ -73,7 +66,6 @@
                             <div class="d-flex mx-3">
                                 <label class="col-3 mt-4">비밀번호 확인</label><input type="password" id="passwordConfirmInput" value=""  class="form-control mt-4 mr-3 col-6">
                             </div>
-
 
                             <div class="d-flex mx-3">
                                 <label class="col-3 mt-4">이름</label><input type="text" id="nameInput" value = "${admin.name}" placeholder="이름" class="form-control mt-4 mr-3 col-6">
@@ -92,20 +84,15 @@
                             </div>
 
                             <!-- ajax아직 안해서 에러 400에러 뜨나봄 -->
-						
-						
+
 							<div class="text-center">
 								<button id="updateBtn"class="btn btn-primary my-3" type="button" data-admin-id="${admin.id }">수정 완료</button>
 							</div>
 						</div>
-					
 					</div>
 				</section>
-					
 			</div>
-			
 			</div>
-		
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -119,7 +106,6 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
 		$("#updateBtn").on("click", function(){
 			let id = $(this).data("admin-id");
 			let password = $("#passwordInput").val();
@@ -193,17 +179,12 @@
 						alert("수정 실패");
 					}
 				}
-				
 				, error:function(){
 					alert("수정 에러");
 				}
-				
 			});
-			
 		});
-
 	});
-	
 	</script>
 </body>
 </html>

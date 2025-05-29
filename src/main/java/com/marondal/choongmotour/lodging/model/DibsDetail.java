@@ -1,15 +1,15 @@
 package com.marondal.choongmotour.lodging.model;
 
 public class DibsDetail {// 찜 카드에 필요한 데이터들
-	private int id; //몇번째 찜했는지 
-	private int userId; //누가 저장했는지
+	private int id; // 몇번째 찜했는지
+	private int userId; // 누가 저장했는지
 	private int lodgingId; // 어떤숙소인지
 	private int roomId;
-	private String roomName; //숙소명
-	private String areaName; //지역
-	private String imagePath; //사진 등
+	private String roomName; // 숙소명
+	private String areaName; // 지역
+	private String imagePath; // 사진 등
 	private boolean isDibs; // 이것도 가만생각해보니 넣어야 한다. 빨간하트일때 남아있고 빈하트일때 사라지게 끔
-	//가만생각해보니 roomId도 안넣었는데 어떻게 가격이 나오는가? 근데 생각해보면 싱글룸 가격을 넣는게 되게 복잡하니 넣지 말자.
+	// 가만생각해보니 roomId도 안넣었는데 어떻게 가격이 나오는가? 근데 생각해보면 싱글룸 가격을 넣는게 되게 복잡하니 넣지 말자.
 	public int getId() {
 		return id;
 	}

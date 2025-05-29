@@ -26,12 +26,8 @@
 	<div id = "wrap">
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="roomcreate-page">
-				
 				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Room Create Page</h1>
-				
-			
 				<div class="roomcreate-page-contents">
 				 <!--  <label>사이즈</label> <br> --><!-- 클릭할때마다 텍스트 입력창이 떠야함 -->
 			     <!-- roomcreate, update 에서 굳이 입력란을 처음부터 숨겨야하는지? 굳이 이점이 없다면 다른 페이지들처럼 처음에는 드러내놓는게 좋을듯 -->
@@ -39,12 +35,10 @@
 			     <!-- 여기를 라디오버튼이 아닌 셀렉터로 해보면 어떨까? 체인지 이벤트에서 한 밸류값을 그대로 클릭이벤트에도 적용이 가능할텐데??? -->
 			     
 				     <select class="form-control col-5 mt-3 ml-3" id="sizeSelector">
-								
                             <option value="">사이즈</option>
                             <option value="singleroom">싱글</option>
                             <option value="doubleroom">더블</option>
                             <option value="twinroom">트윈</option>
-	                       
 	                 </select>
 			     <!--  <div class=""> ${lodging.id }</div>-->
 			   
@@ -66,7 +60,6 @@
 	                 	 <div class="text-center mb-3">																		<!-- 아이디 값을 부여 하면 ""가 뜨고 lodgingId가 하면 undefined -->
 							<button id="singlecreateBtn"class="btn btn-primary single-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 						 </div>
-						 
 	                 </div>
                  
 	                 <div id="doubleInput" class="d-none">
@@ -83,7 +76,6 @@
 	                 	 <div class="text-center mb-3">																		<!-- 이름 어떻게 주는건 중요치 않음 근데 마지막건 -id이렇게 줘야함 -->
 							<button id="doublecreateBtn"class="btn btn-primary double-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id }">입력 완료</button>
 						 </div>
-	                 
 	                 </div>
                  
 	                 <div id="twinInput" class="d-none">
@@ -100,11 +92,8 @@
 	                 	 <div class="text-center my-3">																			<!-- room.lodgingId 로 하니 alert창에 id 또 안뜸 -->
 							<button id="twincreateBtn"class="btn btn-primary twin-create-btn mt-3 col-12" type="button" data-lodging-id="${lodging.id  }">입력 완료</button>
 						 </div>
-	                 
 	                 </div>
-			
 				</div>
-	
 			</div>
 		</section>
 	
@@ -119,51 +108,43 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		
-			//마찬가지로 클래스에 create-btn 값지정 id마다 버튼이 하나씩 달려있으므로.
-			
-			// 입력란 바꾸기
-			$("#sizeSelector").on("change", function(){//체인지 이벤트 밸류값을 밑에 클릭 이벤트에다가도 가져오는 방법? 셀렉터가 답이라고 본다.
-				
-				let size = $(this).val();
-				
-				//alert(size);//클릭시 경고창
-				
-				if(size == 'singleroom'){
-					$("#singleInput").removeClass("d-none");
-					$("#doubleInput").addClass("d-none");
-					$("#twinInput").addClass("d-none");
-					
-				} else if(size == 'doubleroom'){//이거실수로 = 하나만함
-					$("#doubleInput").removeClass("d-none");
-					$("#singleInput").addClass("d-none");
-					$("#twinInput").addClass("d-none");
-					
-				} else if(size == 'twinroom'){//여기서 트윈눌렀을때도 왜 더블이 나오는진 몰라도 얼추는 해결됨 d
-					$("#twinInput").removeClass("d-none");
-					$("#singleInput").addClass("d-none");
-					$("#doubleInput").addClass("d-none");
-				}
-				
-			});
-			
+        //마찬가지로 클래스에 create-btn 값지정 id마다 버튼이 하나씩 달려있으므로.
+        // 입력란 바꾸기
+        $("#sizeSelector").on("change", function(){//체인지 이벤트 밸류값을 밑에 클릭 이벤트에다가도 가져오는 방법? 셀렉터가 답이라고 본다.
+            let size = $(this).val();
+
+            //alert(size);//클릭시 경고창
+
+            if(size == 'singleroom'){
+                $("#singleInput").removeClass("d-none");
+                $("#doubleInput").addClass("d-none");
+                $("#twinInput").addClass("d-none");
+            } else if(size == 'doubleroom'){//이거실수로 = 하나만함
+                $("#doubleInput").removeClass("d-none");
+                $("#singleInput").addClass("d-none");
+                $("#twinInput").addClass("d-none");
+            } else if(size == 'twinroom'){//여기서 트윈눌렀을때도 왜 더블이 나오는진 몰라도 얼추는 해결됨 d
+                $("#twinInput").removeClass("d-none");
+                $("#singleInput").addClass("d-none");
+                $("#doubleInput").addClass("d-none");
+            }
+        });
 
 		$("#singlecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
-			//400error면 코드문제 아니고 요청쪽 문제 아작스 볼것.
-			//Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
+			// 400error면 코드문제 아니고 요청쪽 문제 아작스 볼것.
+			// Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황
 		
 			let id = $(this).data("lodging-id");
 			
 			let price = $("#singlepriceInput").val();
 			
-			//여긴 클릭이벤트 저기위에는 체인지이벤트라서 아무상관없다하고. 이 밸류값 당연히 못가져옴.
+			// 여긴 클릭이벤트 저기위에는 체인지이벤트라서 아무상관없다하고. 이 밸류값 당연히 못가져옴.
 			
 			let size = $("#sizeSelector").val();
 			
 			let content = $("#singlecontentInput").val(); 
 			
-			let file = $("#singlefileInput")[0];//여기도 id값 컨텐트, 파일 다 이렇게 구분해줘야 함.
+			let file = $("#singlefileInput")[0];// 여기도 id값 컨텐트, 파일 다 이렇게 구분해줘야 함.
 			
 			if(price == ""){		
 				alert("가격을 입력하세요.");
@@ -193,8 +174,8 @@
 			
 			var formData = new FormData();
 			
-			//레스트컨트롤러 파라미터 값 다 적어야 하는듯
-			//lodgingId제거 딱 여기서 넣는값만
+			// 레스트컨트롤러 파라미터 값 다 적어야 하는듯
+			// lodgingId제거 딱 여기서 넣는값만
 			
 			formData.append("lodgingId", id);
 			formData.append("price", price);
@@ -203,9 +184,7 @@
 			formData.append("file", file.files[0]);
 			
 			// //Required request parameter 'lodgingId' for method parameter type int is not present] 계속뜨는상황	
-			
-			
-			
+
 			$.ajax({
 				type: "post"
 				, url: "/lodging/room/create"
@@ -220,20 +199,15 @@
 					} else{
 						//또 400에러가뜬다.
 						alert("추가 실패");
-					}		
-					
+					}
 				}
 				, error:function(){
 					alert("추가 에러");
 				}
-				
 			});
-
 		});
-		
-		
+
 		$("#doublecreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
-			 
 			let id = $(this).data("lodging-id");
 		
 			let price = $("#doublepriceInput").val();
@@ -276,7 +250,6 @@
 			formData.append("content", content);
 			formData.append("file", file.files[0]);
 
-			
 			$.ajax({
 				type: "post"
 				, url: "/lodging/room/create"
@@ -291,21 +264,15 @@
 					} else{
 						//또 400에러가뜬다.
 						alert("추가 실패");
-					}		
-					
+					}
 				}
 				, error:function(){
 					alert("추가 에러");
 				}
-				
 			});
-
 		});
-		
-		
+
 		$("#twincreateBtn").on("click", function(){//역시나 id별로 버튼이 달려있으므로 class에 create-btn 값주고 진행
-			
-			
 			let id = $(this).data("lodging-id");
 			
 			let price = $("#twinpriceInput").val();
@@ -365,20 +332,14 @@
 					} else{
 						//또 400에러가뜬다.
 						alert("추가 실패");
-					}		
-					
+					}
 				}
 				, error:function(){
 					alert("추가 에러");
 				}
-				
 			});
-			
 		});
-		
 	});
-	
 	</script>
-
 </body>
 </html>

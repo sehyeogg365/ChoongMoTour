@@ -26,9 +26,7 @@
 	<div id = "wrap">
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="lodgingcreate-page">
-				
 				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Lodging Create Page</h1><!-- pt-3제거 -->
 				
 				<div class="lodgingcreate-page-contents">
@@ -41,38 +39,32 @@
 					</div>
 				
 					<select class="form-control col-5 mt-3 ml-3" id="areaSelector">
-								
-	                            <option value="">지역</option>
-	                            <option value="seoul">서울</option>
-	                            <option value="incheon">인천</option>
-	                            <option value="gangwon">강원</option>
-	                            <option value="gyeongsang">경상</option>
-	                            <option value="jeolla">전라</option>
-	                            <option value="busan">부산</option>
-	                            <option value="jeju">제주</option>
+                        <option value="">지역</option>
+                        <option value="seoul">서울</option>
+                        <option value="incheon">인천</option>
+                        <option value="gangwon">강원</option>
+                        <option value="gyeongsang">경상</option>
+                        <option value="jeolla">전라</option>
+                        <option value="busan">부산</option>
+                        <option value="jeju">제주</option>
 	                 </select>
 	                 
 					<select class="form-control col-5 mt-3 ml-3" id="levelSelector">
-								
-	                            <option value="">등급</option>
-	                            <option value="1성급">1성급</option>
-	                            <option value="2성급">2성급</option>
-	                            <option value="3성급">3성급</option>
-	                            <option value="4성급">4성급</option>
-	                            <option value="5성급">5성급</option>   
+                        <option value="">등급</option>
+                        <option value="1성급">1성급</option>
+                        <option value="2성급">2성급</option>
+                        <option value="3성급">3성급</option>
+                        <option value="4성급">4성급</option>
+                        <option value="5성급">5성급</option>
 	                 </select>
 
-					
 					<div class="text-center my-3">
 						<button id="createBtn"class="btn btn-primary col-12" type="button" >입력 완료</button>
 					</div>										<!-- data-lodging-id="${lodging.id }" 이거 안넣어도 되는모습 -->
-					
-				</div>	
-				
+				</div>
 			</div>
 		</section>
-	
-	
+
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -83,15 +75,9 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		
 		//셀렉터에 대한 체인지 이벤트는 사실상 필요없다고 함 왜냐면 어떤걸 선택했는지만 확인하면 되기 때문에 이안에서 바꾸거나 그러지 않으므로
-			
-		
+
 		$("#createBtn").on("click", function(){
-			
-			//let id = $(this).data("lodging-id");
-			
 			let roomName = $("#roomNameInput").val();
 			
 			let areaName = $("#areaSelector").val();
@@ -152,11 +138,8 @@
 					alert("추가 에러");
 				}
 			});
-			
 		});
-
 	});
-	
 	</script>
 </body>
 </html>

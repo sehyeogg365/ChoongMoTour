@@ -18,12 +18,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-	
-	
 </head>
 <body>
 	<div id = "wrap">
-	
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="find-id-pw-page">
@@ -31,12 +28,10 @@
 					<b>ChoongMo Tour Admin Find Id/Pw</b>
 				</h1>
 				<div class="findidpwcontents">
-				
 					<div class="d-flex justify-content-center align-items-end mt-3">
 					 	<label>아이디찾기<input type="radio" name="type" value="findId" checked></label>
 	                         	
 	                    <label class="ml-3">비밀번호 찾기<input type="radio" name="type" value="findPassword"></label>
-	  
 					</div>
 					<div class="find-id mt-4" id="findIdInput">
 						<label>아이디 찾기</label>
@@ -52,16 +47,10 @@
 						<input type="text" id="email2Input" placeholder="이메일" class="form-control mt-4">
 					
 						<button type="button" class="btn btn-primary btn-block mt-3" id="findPwBtn" data-admin-password="${user.password }">Next</button>
-					
 					</div>
-				
 				</div>
-				
 			</div>
-		
-		
 		</section>
-
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -72,24 +61,18 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-
 		// 라디오 버튼 선택에 따른 인풋 변경
 		$("input[name=type]").on('change', function() {
 			 if($(this).val() == 'findId') {
 				 $("#findIdInput").removeClass("d-none");
                  $("#findPasswordInput").addClass("d-none");
-				 
 			 } else {
 				 $("#findPasswordInput").removeClass("d-none");
 				 $("#findIdInput").addClass("d-none");
-                 
 			 }
-
 		});	
 		
 		$("#findIdBtn").on("click", function(){
-			
-			
 			let id = $(this).data("admin-id");
 			let name = $("#nameInput").val();
 			let email = $("#emailInput").val();
@@ -97,19 +80,16 @@
 			if(name == ""){
 				alert("이름을 입력하세요.");
 				return;
-				
 			}
 			
 			if(email == ""){
 				alert("이메일을 입력하세요.");
 				return;
-				
 			}
 
 			alert(name);
 			alert(email);
-	
-			
+
 			$.ajax({
 				type:"get"
 				, url:"/admin/find_id"
@@ -120,63 +100,51 @@
 						location.reload();
 					} else {
 						alert("이름/이메일이 일치하지 않습니다.");
-					
 					}		
 				}
 				, error:function(){
 					alert("아이디 찾기 에러");
 				}
-			
 			});
 		});
-		
-		
+
 		$("#findPwBtn").on("click", function(){
 			let password =  $(this).data("admin-password");
 			let id = $("#loginIdInput").val();
 			let email = $("#email2Input").val();
-			
-			
+
 			if(id == ""){
 				alert("아이디를 입력하세요.");
 				return;
-				
 			}
 			
 			if(email == ""){
 				alert("이메일을 입력하세요.");
 				return;
-				
 			}
 			
 			//alert(id);
 			//alert(email);
-			
-			
-				$.ajax({
-					type:"post"
-					, url:"/admin/temppassword"
-					, data:{"loginId":id, "email":email, "password":password}
-					, success:function(data){
-						
-						if(data.result == "success"){
-							//console.log(data.info);
-							alert("임시비밀번호는 :"+ data.info + "입니다." );
-							location.reload();
-						}else{
-							alert("아이디/이메일이 일치하지 않습니다.");
-						}
-					}
-					, error:function(){
-						alert("비밀번호 찾기 에러");
-					}
-				
-				});
-		
+
+            $.ajax({
+                type:"post"
+                , url:"/admin/temppassword"
+                , data:{"loginId":id, "email":email, "password":password}
+                , success:function(data){
+                    if(data.result == "success"){
+                        //console.log(data.info);
+                        alert("임시비밀번호는 :"+ data.info + "입니다." );
+                        location.reload();
+                    }else{
+                        alert("아이디/이메일이 일치하지 않습니다.");
+                    }
+                }
+                , error:function(){
+                    alert("비밀번호 찾기 에러");
+                }
+            });
 		});
 	});
-	
 	</script>
-
 </body>
 </html>

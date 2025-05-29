@@ -27,9 +27,7 @@
   			, #{nickname}
   			, now()
   			, now()
-  		
   		);
-
   </insert>
   
   <select id = "selectCountloginId" resultType="int" parameterType="String">
@@ -38,8 +36,7 @@
   	FROM
   		`admin`
   	WHERE
-  		`loginId` = #{loginId}; 
-  
+  		`loginId` = #{loginId};
   </select>
   
   <!-- 인증번호 조회및 일치여부 확인 --> 
@@ -50,7 +47,6 @@
   		`certificationnumber`
   	WHERE
   		`certificationNumber` = #{certificationNumber};
-
   </select>
 
  <select id="selectAdmin" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
@@ -70,7 +66,6 @@
  		`loginId` = #{loginId}
  		AND
  		`password` = #{password};
- 
  </select>
 
  <select id="selectAdminByNameEmail" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
@@ -82,7 +77,6 @@
  		`name` = #{name}
  		AND
  		`email` = #{email};
- 
  </select>
  
   <update id = "updatePassword" parameterType="map">
@@ -127,11 +121,9 @@
   			,`imagePath` =#{imagePath}
   		</if><!-- 파일 업로드 예외처리 성공 -->
   		, `updatedAt` = now()
-
   	WHERE
   		`id` = #{id}
   		;
   </update>
 
-  
   </mapper>

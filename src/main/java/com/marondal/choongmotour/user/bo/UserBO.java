@@ -26,7 +26,6 @@ public class UserBO {
 
 	// 중복 여부 api
 	public boolean isDuplicate(String loginId) {
-
 		int count = userDAO.selectCountloginId(loginId);
 
 		if (count == 0) {
@@ -64,7 +63,6 @@ public class UserBO {
 		String password = ""; // 대신에 여기에 생성
 		for (int i = 0; i < 100; i++) {
 			int rNum = random.nextInt(charSet.length);
-
 			char shuffle = charSet[0];
 			charSet[0] = charSet[rNum];
 			charSet[rNum] = (char) shuffle;
@@ -94,7 +92,6 @@ public class UserBO {
 	// 회원정보 수정
 	public int updateUser(int id// loginId빼보기
 			, String password, String name, String email, String phoneNumber, String nickname, MultipartFile file) {
-
 		String imagePath = FileManagerService.saveFile(id, file);
 
 		String ecryptPassword = EncryptService.md5(password);

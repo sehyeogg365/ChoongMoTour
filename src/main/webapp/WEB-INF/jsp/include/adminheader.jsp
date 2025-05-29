@@ -28,34 +28,26 @@
 			  </c:choose>	
 			
 			  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    
+
 			  </button>
-			  
-			  
+
 			  <div class="dropdown-menu">
 				<c:if test ="${not empty adminId }">
 					<div class="mr-3">
 						<b>${adminNickname } 님 </b> 
 					</div>
 				</c:if>
-				
-				
 			  	<div class="dropdown-divider"></div>
 			    <a class="dropdown-item" href="/admin/mypage/view?id=${adminId }">MyPage</a>
 			    <a class="dropdown-item" href="/admin/signout/">로그아웃</a>
-			    
-			   
 			  </div>
 			</div>
 			</c:when>
 			<c:otherwise><!-- 로그인 했을시 위에 드롭다운 버튼이 로그인 안됐을시 로그인 글씨가 -->
 				<h3> <a href="/admin/signin/view" class="text-white">로그인</a></h3>
 			</c:otherwise>
-			
 			</c:choose>
-			
 			<!-- 헤더도 실제 여기어때 처럼 이쁘게 구상해볼것 -->
 		</header>
-
 </body>
 </html>

@@ -26,37 +26,30 @@
 </head>
 <body>
 	<div id = "">
-
 		<section class="contents d-flex justify-content-center ">
 			<div class="commentwrite-page ">
 				<h1 class="text-center pt-3 font-weight-bold ">
 					ChoongMo Tour Comment Write Page
 				</h1>
-			
 				<div class="commentwritepagecontents ">
 					 <div class="modal-content">
 				    	<div class="modal-header d-flex justify-content-between align-items-center">
 							<h5 class="modal-title">객실 댓글 달기</h5>
-							
 							<h4>${lodging.roomName }</h4>
 							<h4 id="sizeInput">${room.size }</h4>
-							
 						</div>	
 					   <div class="modal-body text-center">
 				       	<div class="imageInput d-flex justify-content-start">
 				       		<i id="imageIcon" class="bi bi-card-image image-icon-size"></i>
-					
 							<input type="file" name="file" id="fileInput" class="" >
 				       	</div>
 				       	<!-- 2024-02-04 수정 내용 .text()로해보기 -->
 				       	<!--  
 				       	<input type="text" id="sizeInput" value="${room.size }" class="form-control mt-3 d-none" readonly>
 				       -->
-				       	
 				    	<div class="mt-3">
 				    		<textarea rows="5" cols="100" id="contentInput" class="form-control content-input"></textarea>
 				    	</div>
-				    	
 				    	<div>
 					    	<select style="width:200px;" class="form-control mt-3" id ="starpointSelector">
 					    		<option>별점 선택</option>
@@ -67,22 +60,14 @@
 					    		<option value="5.0" title="">★★★★★</option>
 					    	</select>
 				       	</div>
-				       	
 				      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 				      <div class="modal-footer d-flex justify-content-center">
-						<button type="button" id="commentBtn" class="btn btn-primary" data-lodging-id="${lodging.id }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->	        
-						
-					 </div>
-				   
+						<button type="button" id="commentBtn" class="btn btn-primary" data-lodging-id="${lodging.id }">댓글달기</button> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
+					  </div>
 				    </div>
-				
-				
 				</div>
-			
 			</div>
-
 		</section>
-	
 	</div>
 	<style>
 	*{
@@ -90,11 +75,9 @@
 	}
 	
 	</style>
-	
-	
+
 	<script>
 	$(document).ready(function(){
-		
 		$("#commentBtn").on("click", function(){
 			 let id = $(this).data("lodging-id");	
 			 let size = $("#sizeInput").text();//굳이 객체화 안해도 댓글은 저장이된다. 2024-02-04 수정 내용 .text()적용
@@ -109,8 +92,7 @@
 			 } else {
 				return ;
 			 }
-			 
-			 
+
 			 if(content == ""){
 				 alert("댓글을 입력하세요");
 				 return ;				 
@@ -139,8 +121,7 @@
 			 formData.append("file", file.files[0]);
 			 formData.append("content", content);
 			 formData.append("starpoint", starpoint);
-		
-			 
+
 			 $.ajax({
 				type:"post"
 				, url : "/lodging/comment/create"
@@ -155,31 +136,14 @@
 						window.close();
 					} else {
 						alert("댓글 입력 실패");
-						
 					}
-					
 				} 
 				, error:function(){
 					alert("댓글 입력 에러");
-					
 				}
-				
-				
 			 });
-			 
-			 
-			 
 		 });
-		
-		
-		
 	});
-	
-	
-	
 	</script>
-	
-
-
 </body>
 </html>

@@ -41,18 +41,13 @@
 					<input type="text" id="nameInput" placeholder="이름" class="form-control mt-4">
 					<input type="text" id="emailInput" placeholder="이메일" class="form-control mt-4">
 					<input type="text" id="nicknameInput" placeholder="닉네임" class="form-control mt-4">
-					
 					<div class="d-flex">
 						<input type="text" id="certificationnumberInput" placeholder="인증번호" class="form-control mt-4">	
 					</div>
-					
-					
+
 					<button type="button" class="btn btn-primary btn-block mt-3" id="joinBtn">가입</button>
-			
 			</div>
-		
 		</section>
-	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -63,12 +58,11 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
 		var isChecked = false;
 		
-		var isDuplicateId = true;//id중복여부	중복이되야 진행안되니 중복되는걸 기본값
+		var isDuplicateId = true;// id중복여부	중복이되야 진행안되니 중복되는걸 기본값
 		
-		//중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
+		// 중복아이디 검사하고 교체시 바로 중복됩니다로 나오게 하기
 		$("#loginIdInput").on("input", function(){
 			isChecked = false;
 			 isDuplicateId = true;
@@ -77,7 +71,7 @@
 			 $("#duplicateNo").addClass("d-none");
 		});
 		
-		//중복검사 버튼
+		// 중복검사 버튼
 		$("#duplicateBtn").on("click", function(){
 			let id = $("#loginIdInput").val();	
 			
@@ -91,7 +85,6 @@
 				, url: "/admin/duplicate_id"
 				, data: {"loginId":id}
 				, success:function(data){
-					
 					isChecked = true;
 					isDuplicateId = data.is_duplicate;
 					
@@ -102,17 +95,14 @@
 						$("#duplicateYes").addClass("d-none");
 						$("#duplicateNo").removeClass("d-none");
 					}
-	
 				}
 				, error:function(){
 					alert("중복확인 에러");
 				}
-
 			});
-
 		});
 		
-		//조인버튼
+		// 조인버튼
 		$("#joinBtn").on("click", function(){
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
@@ -150,7 +140,6 @@
 			if(!email.includes('@')){
 				alert("이메일 형식이 아닙니다.");
 				return;
-				
 			}
 			
 			if(nickname == ""){
@@ -167,23 +156,18 @@
 				alert("인증번호를 입력해주세요.");
 				return ;
 			}
-			
-			
-			//인증번호가 일치 하지 않습니다. 인증번호는 디비값이므로 서버에서 알아서 해결될문제 굳이 없어도됨
-			//if(certificationnumber != "#123$%"){
-			//	alert("인증번호가 일치 하지 않습니다.")
-			//	return ;
-			//}
-			//레스트 컨트롤러 디버깅 결과 값들이 정상적으로 다 들어왔다. 그말인즉슨 아작스 위의 값은 다 정상적으로 수행되고 문제없단뜻
-			
-			
-			//중복체크가 안됐을때
+
+			// 인증번호가 일치 하지 않습니다. 인증번호는 디비값이므로 서버에서 알아서 해결될문제 굳이 없어도됨
+
+			// 레스트 컨트롤러 디버깅 결과 값들이 정상적으로 다 들어왔다. 그말인즉슨 아작스 위의 값은 다 정상적으로 수행되고 문제없단뜻
+
+			// 중복체크가 안됐을때
 			if(!isChecked){
 				alert("중복체크를 진행해주세요.");
 				return ;
 			}
 			
-			//중복된 아이디일때
+			// 중복된 아이디일때
 			if(isDuplicateId){
 				alert("아이디가 중복됩니다.");
 				return ;
@@ -201,20 +185,14 @@
 					} else {//레스트 컨트롤러가서 왜 fail이 뜨는건지 확인
 						alert("회원가입 실패");	
 					}
-					
 				}
 				, error:function(){
 					alert("회원가입 오류");
 					
 				}
-			
 			});
-			
 		});
-		
 	});
-	
 	</script>
-
 </body>
 </html>

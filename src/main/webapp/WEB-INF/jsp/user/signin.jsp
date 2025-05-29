@@ -18,23 +18,18 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-	
 </head>
 <body>
 	<div id ="wrap">
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
-		
 		<section class="contents d-flex justify-content-center">
 			<div class="login-box">
 				<h1 class="text-center pt-3"><b>ChoongMo Tour Signin</b></h1>
-				
-				
+
 				<div class="d-flex">
 					<input type="text" id="loginIdInput" placeholder="로그인 ID" class="form-control mt-4">
 				</div>
-			
-				
-			
+
 				<input type="password" id="passwordInput" placeholder="비밀번호" class="form-control mt-4">
 					
 				<button type="button" class="btn btn-primary btn-block mt-3" id="loginBtn">로그인</button>
@@ -42,14 +37,10 @@
 				<div class="d-flex justify-content-between mt-3">
 					<a href="/user/signup/view" class="text-center text-dark">회원가입</a>
 					<a href="/user/find_id_pw/view" class="text-center text-dark">아이디/비밀번호 찾기</a>
-						
 				</div>
 			</div>
-			
 		</section>
-
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	
 	</div>
 	<style>
 	*{
@@ -59,9 +50,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
 		$("#loginBtn").on("click", function(){
-			
 			let id = $("#loginIdInput").val();
 			let password = $("#passwordInput").val();
 	
@@ -90,14 +79,9 @@
                 ,error:function(){
                     alert("로그인 에러");
                 }
-
 			});
-
 		});
-		
 	});
-	
-
 	</script>
 </body>
 </html>

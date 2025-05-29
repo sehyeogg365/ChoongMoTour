@@ -32,7 +32,6 @@ public class AdminRestController {
 			,@RequestParam("nickname") String nickname 
 			, @RequestParam("certificationNumber") String certificationNumber
 			){
-
 		int count = adminBO.addAdmin(loginId, password, name, email, nickname, certificationNumber);
 		
 		Map<String, String> resultMap = new HashMap<>();
@@ -55,7 +54,6 @@ public class AdminRestController {
 	@GetMapping("/duplicate_id")
 	@ResponseBody
 	public Map<String, Boolean> duplicateCheck(@RequestParam("loginId") String loginId){//@RequestParam String loginId 이렇게 되있는거 발견함 이와중에
-		
 		Map<String, Boolean> resultMap = new HashMap<>();
 		
 		boolean is_duplicate = adminBO.isDuplicate(loginId);
@@ -76,23 +74,19 @@ public class AdminRestController {
 			, @RequestParam("password") String password
 			, HttpSession session
 			){
-		
 			Map<String, String> resultMap = new HashMap<>();
 		
 			Admin admin = adminBO.getAdmin(loginId, password);
 		
 			if(admin != null) {
 				resultMap.put("result", "success");
-				
 				// 마이페이지 안들어가는원인이 세션에서 id 추가 안해서????
-			
 				session.setAttribute("adminId", admin.getId());// 여기도
 				session.setAttribute("loginId", admin.getLoginId());
 				session.setAttribute("password", admin.getPassword()); // 비번도 불러와보자.
 				session.setAttribute("adminName", admin.getName());// 여기부분 필요한가 질문
 				session.setAttribute("adminNickname", admin.getNickname());
 				session.setAttribute("adminImagePath", admin.getImagePath());
-			
 			} else {
 				resultMap.put("result", "fail");
 			}
@@ -106,14 +100,11 @@ public class AdminRestController {
 	public Map <String, Object> findId( @RequestParam("loginId") String loginId
 										, @RequestParam("name") String name
 										, @RequestParam("email") String email
-										//, Model model
 										){
 										// 여기선 굳이 세션 필요없을듯 하다.
-		
 		// 컨트롤러서 리스폰스 리퀘스트를 하고 파라미터로 필요한값 받아오고 리스폰스 요청보내는거
 		// 우리가 reuslt success result fail 해서 원하는 값을 response 해주듯이 아이디 값도 마찬가지로 그렇게 한다고 어쩌구저쩌구..
 		// 그외에 나머지 것들은 비오
-
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		Admin admin = adminBO.getAdminByNameEmail(loginId, name, email);//이것도 int 에서 admin으로 Admin에서 List로
@@ -121,9 +112,7 @@ public class AdminRestController {
 		if(admin != null) {
 			resultMap.put("result", "success");
 			resultMap.put("info", admin);
-		
 			// 여기서 id를 풋 하란뜻인데..
-			
 		} else {
 			resultMap.put("result", "fail");
 		}
@@ -138,11 +127,9 @@ public class AdminRestController {
 										//, HttpSession session
 									//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 함. 그 역할이 비오가 제일 적당함
 										){
-		
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		// String password = (String) session.getAttribute("password");
-		
 		String password= adminBO.updateTemporrayPassword(loginId, email);
 		
 		if(password == null) {
@@ -151,12 +138,8 @@ public class AdminRestController {
 			resultMap.put("result", "success");
 			resultMap.put("info", password);
 		}
-
-		
 		// 여기서 아마 임시 비밀번호 발급을 해야하나? 모르겠다. 여기서 페일이냐 석세스냐 바탕으로 update 진행
 		// 어차피 일치하지않으면 업데이트는 진행안된다.
-		
-		
 		return resultMap;
 	}
 	
@@ -172,7 +155,6 @@ public class AdminRestController {
 			, @RequestParam("nickname") String nickname
 			, @RequestParam(value="file", required=false) MultipartFile file
 			){
-		
 		Map<String, String> resultMap = new HashMap<>();
 		
 		int count = adminBO.updateAdmin(id, password, name, email, phoneNumber, nickname,  file);
@@ -183,8 +165,6 @@ public class AdminRestController {
 		} else {
 			resultMap.put("result", "fail");
 		}
-		
-		
 		return resultMap;
 	}
 	
