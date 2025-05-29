@@ -36,10 +36,8 @@
 				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Reserve Page</b>
 				</h1>
-			
-				
+
 				<div class="reservepagecontents ">
-				
 					<!-- 보다시피 룸아이디가 안받아와지고 있는상황 -->
 					<!-- 어제와 같은상황 유저아이디가 2인 고트로 접속했는데 1이뜨는상황 그렇다 룸아이디랑 유저아이디가 바뀌어 나오는상황 -->
 					<div class="mt-3 ml-3 "><h2 class=""><strong>${lodging.roomName }</strong></h2></div><br>
@@ -64,37 +62,28 @@
 		        		<div class="mt-4 mx-3">
 		        		~
 		        		</div>
-		        		
-		        		
 		        		<label class="mt-4 text-secondary">체크아웃 </label>
 		        		<input type="text" id="endDate" name="endDate" class="mt-4 col-4"value= " " autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
 					</div>
 					
 					<div class = "mx-3 ">
 						<label class="input-lable mt-4 text-secondary">예약자 이름</label><input type="text" id="nameInput" class="form-control text-secondary" value = "${user.name }" class="form-control ">
-					
-					
 						<label class="input-lable mt-4 text-secondary">전화번호</label><input type="text" id="phoneNumberInput" class="form-control text-secondary" value = "${user.phoneNumber}" class="form-control ">
 					</div>
 					<hr>
-					
 					<div class="col-5 d-flex">
 						<label class="mt-3 mr-3 text-secondary">총 결제 금액 <strong class="text-dark"><fmt:formatNumber value= "${room.price }" type="currency" currencySymbol =""/>원</strong></label> <!-- 이것도 fmt활용해보기 -->
 					</div>
-					
 					<hr>
 					<div class="payselect mt-4 mx-3">
 						<div class=""> <b style="font-size: 20px">결제수단을 선택하세요.</b> </div>
 						<select class="form-control col-5 mt-3" id="paySelector">
-							
                             <option value="">결제수단</option>
                             <option value="카카오페이">카카오페이</option>
                             <option value="네이버페이">네이버페이</option>
                             <option value="삼성페이">삼성페이</option>
                             <option value="카드">카드</option>
-                       
                  		</select>
-					
 					</div>
 					
 					<div class="check-box form-control mt-4">
@@ -102,30 +91,14 @@
 				        <input type="checkbox" name="check" value="check1" id="check1" class=""><label class="ml-2">개인정보 활용 동의</label><br><!-- 이제보니 여기도 밸류값 잘못됨 -->
 				        <input type="checkbox" name="check" value="check2" id="check2"><label class="ml-2">서비스 이용 동의</label><br>
 				        <input type="checkbox" name="check" value="check3" id="check3"><label class="ml-2">마케팅 활용 동의</label>
-					
 					</div>
-					
-					
 					<div class="text-center mt-3">
-					
 						<button id = "payBtn" type="submit"  class="btn btn-danger col-8 mb-3" data-room-id = "${room.id}" >결제하기</button>
 					</div>
 				</div>
-				
-			
-			
 			</div>
-		
-		
-		
-		
 		</section>
-	
-	
-	
-	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-	
 	</div>
 	<style>
 	*{
@@ -143,17 +116,14 @@
 		//여기선 오늘날짜 내일날짜를 고르게 해선 안된다. url 파라미터상의 데이터를 추출해야 한다.
 
         // URL 파라미터를 추출하는 함수
-
-        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
-        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
+        const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;// 좀더 가독성있게 코드문 고쳐보기
 
         // URL에서 startDate와 endDate 파라미터 추출
         const startDate = urlParams.get('startDate');
         const endDate = urlParams.get('endDate');
 
-
 		$("#payBtn").on("click", function(){
-
 			let id = $(this).data("room-id");
 
 			//let startDate = $(this).val();
@@ -176,56 +146,38 @@
 			let payment = $("#paySelector").val();
 
 			if(name == ""){
-
 				alert("이름을 입력하세요.");
-
 				return ;
-
 			}
 
 			if(phoneNumber == ""){
-
 				alert("전화번호를 입력하세요.");
-
 				return ;
-
 			}
 
 			if(payment == ""){
-
 				alert("지불수단을 선택하세요.");
-
 				return ;
-
 			}
 
 			//전체 하나만 눌려도 유효성검사 통과 이며 그 반대로 세개만 눌려도 통과가되게끔
  
 			if(!$("input:checked[id='check1']").is(":checked")){
-
 	            alert("체크박스를 선택해주세요.");
-
 	            return ;
-
 	        } 
 			if(!$("input:checked[id='check2']").is(":checked")){
-
 	            alert("체크박스를 선택해주세요.");
-
 	            return ;
-
 	        } 
 			if(!$("input:checked[id='check3']").is(":checked")){
-
 	            alert("체크박스를 선택해주세요.");
-
 	            return ;
-
 	        } 
 
-			//여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
+			// 여기및에는 세개중 하나를 선택안했을시에 뜨게 한다.
 
-			//유효성검사 이름, 전화번호, 결제수단, 전체 동의 
+			// 유효성검사 이름, 전화번호, 결제수단, 전체 동의
 
 			//alert(id);
 
@@ -239,43 +191,26 @@
 
 			//alert(endDate);//O
 
-			$.ajax({//우선여기부터 하자.
-
+			$.ajax({// 우선여기부터 하자.
 				type:"post"
-
-				, url:"/lodging/reserve" //userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
-
-				, data:{"roomId":id, "name" : name, "phoneNumber":phoneNumber, "payment":payment, "startDate" : startDate, "endDate" : endDate}//여기실수로 네임을 안넣었다.
-
+				, url:"/lodging/reserve" // userId는 세션값이라서 빼도되는건가? 다오에서도 뻈다.
+				, data:{"roomId":id, "name" : name, "phoneNumber":phoneNumber, "payment":payment, "startDate" : startDate, "endDate" : endDate}// 여기실수로 네임을 안넣었다.
 				, success:function(data){
-
 					if(data.result == "success"){
-
 						location.href="/lodging/reservelist/view";
-
 						alert("예약 성공");
-
 					} else {
-
 						alert("예약 실패");
-
 					}
-
 				}
-
                 , error:function(){
-
                     alert("예약 에러");
-
                 }
-
 			});
-
 		});
 		
 		 $("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy-mm-dd",
-            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
              todayHighlight :true,// 오늘을 표시해줄지. default 가 false
@@ -283,17 +218,13 @@
              closeText: 'done',
              minDate: 0,//오늘날짜 부터
              onSelect:function(selectedDate) {
-                 
                  $("#endDate").datepicker("option", "minDate", selectedDate);
-
              }
-
          });
 		// todayHighlight :true,
 
          $("#endDate").datepicker({//종료일
              dateFormat:"yy-mm-dd",
-           
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
              showButtonPanel:true,//버튼보이기
@@ -301,11 +232,8 @@
              minDate:'+1D',//오늘날짜 다음 부터
              //beforeShow: customRange
              onSelect:function(selectedDate) {
-                 
                 $("#startDate").datepicker("option", "maxDate", selectedDate );
-
              }
-
          });
 
          // URL 파라미터 값으로 Date Picker 초기값 설정
@@ -324,14 +252,8 @@
              } else {
                  $("input[name='check']").prop("checked", false);
              }
-
          });
-
 	});
-	
-	
 	</script>
-
-
 </body>
 </html>

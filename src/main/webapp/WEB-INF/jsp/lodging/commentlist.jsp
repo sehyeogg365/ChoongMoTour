@@ -46,80 +46,73 @@
 </head>
 <body>
 	<div id = "wrap">
-	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="comment-page">
 			<h1 class="text-center pt-3">
 				<b>ChoongMo Tour Comment Page</b>
 			</h1>
-		
 			<div class="d-flex  mt-4">
 					<div class="lodging-profile2">
 						<img class="profile" width="" src="${lodging.imagePath } " alt="호텔">
 					</div>
-						
-					
-						<div class="ml-3">
-							<div class="d-flex">
-								<c:choose>
-									<c:when test = "${lodging.level eq '5성급' }">
-										<h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '4성급' }">
-										<h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '3성급' }">
-										<h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '2성급' }">
-										<h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-									<c:when test = "${lodging.level eq '1성급' }">
-										<h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
-									</c:when>
-								</c:choose>
-								<div class="ml-3">
-									<h3 class="font-weight-bold">${lodging.roomName }</h3>
-								</div>
+
+                    <div class="ml-3">
+                        <div class="d-flex">
+                            <c:choose>
+                                <c:when test = "${lodging.level eq '5성급' }">
+                                    <h3 class="text-warning">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '4성급' }">
+                                    <h3 class="text-danger">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '3성급' }">
+                                    <h3 class="text-secondary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '2성급' }">
+                                    <h3 class="text-success">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                                <c:when test = "${lodging.level eq '1성급' }">
+                                    <h3 class="text-primary">${lodging.level }</h3><!-- 성급도 for문써서 해보기 -->
+                                </c:when>
+                            </c:choose>
+                            <div class="ml-3">
+                                <h3 class="font-weight-bold">${lodging.roomName }</h3>
+                            </div>
+                        </div>
 							
-							</div>
-							
-							<div class="">
-								<c:choose>
-									<c:when test ="${lodging.areaName eq 'seoul'}">
-										<h4 class="text-secondary">서울</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'incheon'}">
-										<h4 class="text-secondary">인천</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'gangwon'}">
-										<h4 class="text-secondary">강원</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'gyeongsang'}">
-										<h4 class="text-secondary">경상</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'jeolla'}">
-										<h4 class="text-secondary">전라</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'busan'}">
-										<h4 class="text-secondary">부산</h4>
-									</c:when>
-									<c:when test ="${lodging.areaName eq 'jeju'}">
-										<h4 class="text-secondary">제주</h4>
-									</c:when>
-								</c:choose>
-								<div class="search d-flex">
-									<input id ="address" type ="text" class="form-control"placeholder="검색할 주소">
-									<input id ="submit" type="button" class="btn btn-sm btn-primary" value="주소검색">
-								</div>
-								
-								<div id="map" style="width:360px; height:290px;"></div>
-							
-							</div>
-						
-						</div>
-					
+                        <div class="">
+                            <c:choose>
+                                <c:when test ="${lodging.areaName eq 'seoul'}">
+                                    <h4 class="text-secondary">서울</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'incheon'}">
+                                    <h4 class="text-secondary">인천</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'gangwon'}">
+                                    <h4 class="text-secondary">강원</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'gyeongsang'}">
+                                    <h4 class="text-secondary">경상</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'jeolla'}">
+                                    <h4 class="text-secondary">전라</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'busan'}">
+                                    <h4 class="text-secondary">부산</h4>
+                                </c:when>
+                                <c:when test ="${lodging.areaName eq 'jeju'}">
+                                    <h4 class="text-secondary">제주</h4>
+                                </c:when>
+                            </c:choose>
+                            <div class="search d-flex">
+                                <input id ="address" type ="text" class="form-control"placeholder="검색할 주소">
+                                <input id ="submit" type="button" class="btn btn-sm btn-primary" value="주소검색">
+                            </div>
+
+                            <div id="map" style="width:360px; height:290px;"></div>
+                        </div>
+					</div>
 				</div><br>
 				
 				<br>
@@ -137,29 +130,22 @@
 			<!-- 한 페이지당 표시 댓글 개수 셀렉터 연습해보기-->
 			<!--
 			<select class="form-control col-5 mt-3" id="pageUnit" name="pageUnit">
-							
                    <option value="">x개씩 표시</option>
                    <option value="10">10개씩 표시</option>
                    <option value="20">20개씩 표시</option>
                    <option value="50">50개씩 표시</option>
                    <option value="100">100개씩 표시</option>
-                       
-              </select> -->
+             </select> -->
               <!-- 댓글갯수, 댓글 평점 -->
               <div class="d-flex mt-3">
-
                 <div id ="avgStarPoint" class="ml-4"><b>${avgStarPoint}점</b></div>
                 <div id ="commentCount" class="ml-4 text-secondary"> ${commentCount}명 평가</div>
-
               </div>
 
 			<c:forEach var="comment"  items = "${commentDetailList }">
 			<div class="comment-box mt-3">
-				
 				<div class="comment">
-				
 				<div class=""><!-- 로그인한 사용자의 댓글일때만 보여주기  -->
-					
 					<c:choose>
 						<c:when test="${userId eq comment.userId }">
 							<div class="comment-delete mr-3">
@@ -169,8 +155,7 @@
 						<c:otherwise>
 							
 						</c:otherwise>	
-					</c:choose>	
-					
+					</c:choose>
 				</div>
 	
 					<div class="comment-profile d-flex">
@@ -183,7 +168,6 @@
 						<div class="ml-4">유저아이디${comment.userId }</div>
 					-->	
 						<c:choose>
-						
 						<c:when test = "${comment.starpoint eq 1.0}">
 							<div class="ml-4"><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_fill.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/><img src= "http://marondal.com/material/images/dulumary/web/jstl/star_empty.png" width="20"/>&nbsp1.0</div>
 						</c:when>
@@ -216,23 +200,16 @@
 						
 						<div class="ml-4 my-2 small text-secondary"><fmt:formatDate value ="${comment.createdAt }" pattern ="yyyy년 MM월 dd일"/></div>
 					</div>
-			
 				</div>
-			
 			</div>
 			</c:forEach>
-
 		</div>
 		<!--2024-02-03 수정 내용  tui-pagination 추가 -->
 		<div id="pagination" class="tui-pagination"></div>
-		
 		</div>
 		</section>
 	</div>
 
-	
-	
-	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
     <script src="/resources/dist/w2ui/w2ui-1.5.min.js"></script><!--2024-04-04 경로 고치기 -->
     <script src="/resources/js/tui-grid/tui-pagination.js"></script><!--2024-04-04 경로 고치기 /resources/js/tui-grid/tui-pagination.js -> /resources/static/css/tui-pagination.js-->
@@ -245,50 +222,34 @@
 	</style>
 	<script>
 	
-	
-	
-	
-	
-	//근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
+	// 근데 댓글삭제도 아마 예약화면에서만 가능할텐데 잘모르겠다 이건.
 	$(document).ready(function(){
 
     const lodgingId = "${lodging.id}";
-
-
-
-
 		
 	$(".delete-btn").on("click", function(){
 			
-			let id = $(this).data("comment-id");
-			
-			//alert(id);
-			
-			
-			$.ajax({
-				type:"get"
-				, url:"/lodging/comment/delete"
-				, data:{"id": id}
-				, success:function(data){
-					if(data.result == "success"){
-						alert("댓글 삭제 성공");
-						location.reload();
-					} else {
-						alert("댓글 삭제 실패");
-					}
-				}	
-				, error:function(){
-					alert("댓글 삭제 오류");
-				}
-				
-				
-			});
-			
-			
-			
-		});
-		
-		
+        let id = $(this).data("comment-id");
+
+        //alert(id);
+        $.ajax({
+            type:"get"
+            , url:"/lodging/comment/delete"
+            , data:{"id": id}
+            , success:function(data){
+                if(data.result == "success"){
+                    alert("댓글 삭제 성공");
+                    location.reload();
+                } else {
+                    alert("댓글 삭제 실패");
+                }
+            }
+            , error:function(){
+                alert("댓글 삭제 오류");
+            }
+        });
+	});
+
 		//지도를 그려주는 함수 실행
 		 selectMapList();
 
@@ -317,7 +278,6 @@
 		         }
 
 		         insertAddress(item.roadAddress, item.x, item.y);
-		         
 		     });
 		 }
 
@@ -333,8 +293,6 @@
 		     searchAddressToCoordinate($('#address').val());
 		 });
 		 naver.maps.Event.once(map, 'init_stylemap', initGeocoder);
-
-
 		     
 		 //검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
 		 function insertAddress(address, latitude, longitude) {
@@ -370,7 +328,6 @@
 		 	});
 		 }
 
-
 		 // 지도를 이동하게 해주는 함수
 		 function moveMap(len, lat) {
 		 	var mapOptions = {
@@ -384,8 +341,7 @@
 		         map: map
 		     });
 		 }
-	
-		 
+
 		 // 2024-03-03 list_size
 		 $("#page_unit").on("input", function(){
 			
@@ -397,11 +353,11 @@
 		const Pagination = require('tui-pagination');
 		
 		const dataSource = {
-				  contentType: 'application/json',
-				  api: {
-				    readData: { url: '/api/readData', method: 'GET'}
-				  }
-				};
+              contentType: 'application/json',
+              api: {
+                readData: { url: '/api/readData', method: 'GET'}
+              }
+		};
 		
 		function setPagination(id, obj){
 			var _pagination = new tui.Pagination(id, {
@@ -436,10 +392,7 @@
 	    });
 			
 		}
-		
 	});
-	
 	</script>
-
 </body>
 </html>

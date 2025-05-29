@@ -24,20 +24,16 @@
 </head>
 <body>
 	<div id = "wrap">
-	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="lodging-list">
 				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Lodging List Page</b>
 				</h1>
-				
 				<div class="d-flex justify-content-between mt-3">
 					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;" data-toggle="modal"  data-target="#filterModal">필터</i>
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;" data-toggle="modal" data-target="#sortModal">정렬</i>
 				</div>
-				
 				<h2 class="d-flex">
 					<strong id = "">
 					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
@@ -69,9 +65,8 @@
 					</strong>
 					</c:forEach><strong>호텔(${lodgingCount}개)</strong>
 				</h2>
-				
+
 				<!-- 숙소 리스트 카드 리스트 -->
-				
 				<div class="lodging-card-list">
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
 					<c:forEach var="lodging" items = "${lodgingList }">
@@ -121,7 +116,6 @@
 					</div>
 					</c:forEach>
 				</div>
-
 			</div>
 			<!-- 숙소 리스트 카드 리스트 -->
 
@@ -171,16 +165,13 @@
 					      <div class="modal-footer">
 			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 			      		  </div>
-					   
 					    </div>
 					  </div>
 					</div>
 		</section>
-		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-		
 	</div>
-	
+
 	<style>
 	*{
 		font-family: 'Noto Sans KR', sans-serif;
@@ -201,18 +192,8 @@
         }*/
 
 		// URL 파라미터를 읽어오는 함수
-		/*
-        function getParameterByName(name) {
-            const url = window.location.href;
-            name = name.replace(/[\[\]]/g, '\\$&');
-            const regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)');
-            const results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, ' '));
-        }*/
-        const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
-        const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
+        const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;// 좀더 가독성있게 코드문 고쳐보기
 
         // URL 파라미터에서 sortType 값을 읽어옴
         //const sortType = getParameterByName('sortType');
@@ -240,8 +221,8 @@
                 , data: {area_name : areaName, sortType : order}
                 , success:function(data){// 일단 조건문 수정하기
                     if(data != null){
-                            var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
-                            window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
+                        var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
+                        window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
                     } else {
                         //alert(data);
                         alert("정렬 실패");
@@ -255,7 +236,6 @@
 
 		// 찜 해제
 		$(".undib-icon").on("click", function(){
-			
 			let id = $(this).data("lodging-id");
 			
 			//alert(id);
@@ -279,7 +259,6 @@
 		});
 		// 찜
 		$(".dib-icon").on("click", function(){
-			
 			let id = $(this).data("lodging-id");
 			
 			//alert(id);
@@ -303,6 +282,5 @@
 		});
 	});
 	</script>
-
 </body>
 </html>

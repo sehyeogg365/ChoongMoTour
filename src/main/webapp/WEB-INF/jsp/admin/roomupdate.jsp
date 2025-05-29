@@ -27,7 +27,6 @@
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="roomupdate-page">
-			
 				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Room Update Page</h1>
 				
 				<!-- 생각해보니 여기도 어드민 메인페이지처럼 roomList를 리스팅해서 불러오는게 맞는거 같긴하다.  -->
@@ -38,7 +37,6 @@
                     <table class="table">
                         <thead>
                             <tr>
-
                                 <th>사이즈</th>
                                 <th>가격</th>
                                 <th>정보</th>
@@ -51,19 +49,16 @@
                                 <tr>
                                     <td>
                                         <select class="form-control size-selector" id="sizeSelector${room.id }">
-
                                             <option value="${room.size }">"${room.size }"</option><!-- 알고보니 꺾새 안에 안써서 안뜬거였다. ㅡㅡ -->
                                             <option value="singleroom">싱글</option>
                                             <option value="doubleroom">더블</option>
                                             <option value="twinroom">트윈</option>
-
                                         </select>
                                     </td>
                                     <td><input type="text" id="priceInput${room.id }" value="${room.price }" class="form-control price-input"></td>
                                     <td><textarea rows="5" cols="100" id="contentInput${room.id }" class="form-control content-input">${room.content }</textarea></td>
                                     <td><button id = "updateBtn" type="button"  class="btn btn-primary update-btn btn-sm" data-room-id="${room.id }">수정하기</button></td>
                                 </tr>
-
                             </c:forEach>
                         </tbody>
                     </table>
@@ -82,7 +77,6 @@
 
 	<script>
 	$(document).ready(function(){
-		
 		//var ths = $(ths);
 		
 		//ths.parents("");
@@ -90,7 +84,6 @@
 		//var id = "id"; // 이거굳이 넣어야하나?
 		
 		$(".update-btn").on("click", function(){
-			
 			let id = $(this).data("room-id");
 			
 			let price = $("#priceInput" + id).val();
@@ -98,9 +91,7 @@
 			let size = $("#sizeSelector" + id).val();
 			
 			let content = $("#contentInput" + id).val(); 
-				
-			
-			
+
 			if(price == ""){		
 				alert("가격을 입력하세요.");
 				return ;
@@ -130,18 +121,13 @@
 					} else{
 						alert("수정 실패")
 					}
-					
 				}
 				, error:function(){
 					alert("수정 에러");
 				}
-
 			});
-
 		});
-
 	});
-	
 	</script>
 </body>
 </html>

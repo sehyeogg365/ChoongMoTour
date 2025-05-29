@@ -23,13 +23,11 @@
 <body>
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
-
 	    <section class="contents d-flex justify-content-center">
             <div class="my-page">
                 <h1 class="text-center pt-3 font-weight-bold">
                     ChoongMo Tour Admin User List
                 </h1>
-
                 <div class="mypagecontents d-flex mx-5">
                 <aside class="side-nav col-2 ">
                     <ul class="nav flex-column">
@@ -37,11 +35,9 @@
 
                             <h5><b><a href="/admin/mypage/view?id=${adminId }" class="nav-link text-white">내 정보수정</a></b></h5>
                         </li>
-
                         <li class="nav-item mt-2">
                             <h5><b><a href="/admin/userAdmin/view" class="nav-link text-primary">사용자 관리</a></b></h5>
                         </li>
-
                     </ul>
                 </aside>
 
@@ -50,13 +46,9 @@
 
                     </div>
                 </section>
-
-
                 </div>
-
             </div>
 	    </section>
-
 	    <c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -68,10 +60,7 @@
 	<script>
 	$(document).ready(function(){
 
-
 	});
 	</script>
-
-
 </body>
 </html>

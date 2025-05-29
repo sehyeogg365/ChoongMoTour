@@ -20,8 +20,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
 	<div id = "wrap">
@@ -31,8 +29,6 @@
 				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour My Page</b>
 				</h1>
-				
-				
 				<div class="mypagecontents d-flex mx-5">
 				<aside class="side-nav col-2 ">
 				
@@ -46,14 +42,11 @@
 					<li class="nav-item mt-2">
 						<h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-primrary">내 정보수정</a></b></h5>
 					</li>
-					
 				</ul>
 				</aside>
 				
 				<section class="contents1 col-10">
-					
 					<div class="info-input-box mx-5">
-					
 						<div class="mx-4 ">
 						<label class="mt-3 ml-3">프로필 사진 변경</label><br>
 						
@@ -63,7 +56,6 @@
 						
 						<c:choose>
 						  <c:when test="${not empty user.imagePath }"><!-- 있을때 이거를 user.imagePath로 바꾸면 어떨까?  프사가 뜬다.-->
-						  	
 							<!-- 우선 굳이 이미지아이콘 이용해야하는지도 의문이긴한지만, 있을때는 사진변경/ 사진삭제 버튼 -->
 							<!-- 없을때는 사진 업로드 버튼 이렇게만 있게하는걸로,  -->
 							<!-- 그리고 음.. 사진변경을 안하고 수정을 누르면 아예 사라져버리는데 프로필변경과 따로해야하나 싶다. -->
@@ -76,8 +68,6 @@
 						  	<img class="userprofile" width ="40" height="40" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"> 
 						  </c:otherwise>
 				 		</c:choose>
-						
-							
 							<div class="d-flex mx-3">
 								<label class="col-3 mt-4">비밀번호</label><input type="password" id="passwordInput"value= "" class="form-control mt-4 mr-3 col-6">
 							</div><!-- 보아하니 암호화된 값이 그대로 비밀번호 창에 들어가서 길게 뜨나봄 -->
@@ -101,18 +91,12 @@
 								<button id="updateBtn"class="btn btn-primary my-3" type="button" data-user-id="${user.id }">수정 완료</button>
 							</div>
 						</div>
-					
 					</div>
 				</section>
-					
 			</div>
-			
 			</div>
-		
 		</section>
-		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-		
 	</div>
 	<style>
 	*{
@@ -122,9 +106,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
 		$("#updateBtn").on("click", function(){
-			
 			let id = $(this).data("user-id");
 			let password = $("#passwordInput").val();//이것도 틀림
 			let passwordConfirm = $("#passwordConfirmInput").val();			
@@ -200,15 +182,9 @@
 				, error:function(){
 					alert("수정 에러");
 				}
-				
 			});
-			
-
 		});
-		
-		
 	});
-	
 	</script>
 </body>
 </html>

@@ -36,7 +36,6 @@
 </head>
 <body>
 	<div id = "wrap">
-	
 	<c:import url="/WEB-INF/jsp/include/header.jsp"/>
 		<section class="contents d-flex justify-content-center">
 			<div class="room-page">
@@ -71,9 +70,7 @@
 							<div class="ml-3">
 								<h3 class="font-weight-bold">${lodging.roomName }</h3>
 							</div>
-							
 						</div>
-							
 						<div class="">
 							<c:choose>
 								<c:when test ="${lodging.areaName eq 'seoul'}">
@@ -102,16 +99,11 @@
 									<input id ="address" type ="text" class="form-control"placeholder="검색할 주소">
 									<input id ="submit" type="button" class="btn btn-sm btn-primary" value="주소검색">
 								</div>
-								
 								<div id="map" style="width:360px; height:290px;"></div>
 						</div>
 					</div>
-							
-					
 				</div><br>
-				
 				<br>
-				
 				<ul class="nav nav-tabs"><!-- div class tab도가능 이런것도 선택한거만 빨간밑줄표시 해보기 -->
 				  <li class="nav-item">
 				    <a class="nav-link " aria-current="page" href="/lodging/room/view?id=${lodging.id }"><b>객실리스트</b></a>
@@ -122,7 +114,6 @@
 				  </li>
 				</ul>
 
-
                     <label class="mt-3">체크인 </label>
                     <input type="text" id="startDate" class="" name="startDate" value="" autocomplete="off"><!--각각 객체를 만들어야 하므로 id값 부여.-->
                     ~
@@ -130,7 +121,6 @@
                     <input type="text" id="endDate" class="" name="endDate" value="" autocomplete="off"><br><!-- input type을 텍스트로 해서 저장이안됐나?? -->
                     <!-- 여기서 폼태그 활용해보기 객실페이지서 예약페이지 넘어갈때 원래 딱 버튼눌렀을때 그다음 페이지 들어갈게 없을때 api쓰는게 좋다고 함(?) 그래서 폼태그였다가 api로 바꾼건데.. -->
 
-				
 				<!-- 객실리스트 시작 -->
 				<div class="room-card-list">
 					<!-- 객실 카드 -->
@@ -140,7 +130,6 @@
                             <div class="room-profile ml-3 mt-3">
                                 <img class="profile" width="" src="${room.imagePath }" alt="호텔">
                             </div>
-
                             <div class="room-card-body ml-3 mt-3">
                                 <div class="d-flex justify-content-between">
                                     <c:choose>
@@ -165,50 +154,32 @@
                                 </div>																				<!-- 우선 모달을위해 들어가는 값들 이렇게 두개가 있다고 함 data-toggle="modal" data-target="#moreModal" 타겟은 그 id가 들어가는 모달인데 id마다 각각버튼마다 각각 다른 모달들이 1:1 매칭이 되어야 한다. 이값과 밑에 값 수정해보기 -->
                             </div>
                         </div>
-
-					
 					<!-- Button trigger modal -->
 		
 					<!-- Modal -->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
 					
 					<!-- 객실 사이즈 별로 다른 모달을 띄워버리자 차라리 -->
-				
-						
 							<div class="modal fade" id="moreModal${room.id }" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 							  <div class="modal-dialog modal-dialog-centered" role="document">
 							    <div class="modal-content">
 							       <div class="modal-header">
 							        <h5 class="modal-title">객실 이용 안내</h5>
-							        
-					     			 </div>	
-							
+					     			 </div>
 							      <div class="modal-body text-center">
 							       <p id="contentInput${room.id }" class="modalcontent">${room.content }</p> <!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-							      
-							     	
 							      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 							      <div class="modal-footer">
-					        
 					        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 					      		  </div>
-							   
 							    </div>
 							  </div>
-							</div>	
-
+							</div>
 					</c:forEach> 
 			<!-- 객실리스트 끝 -->
-				
-
 				</div>
-	
 			</div>
-			
 		</section>
-
-		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
-		
 	</div>
 	<style>
 	*{
@@ -218,7 +189,6 @@
 	</style>
 	<script>
 	 $(document).ready(function() {
-
 		 // 체크인 및 체크아웃 날짜 값 가져오기
          var startDate = document.getElementById('startDate').value;
          var endDate = document.getElementById('endDate').value;
@@ -228,12 +198,10 @@
 		var now = new Date();
 		document.getElementById('endDate').value = new Date(now.setDate(now.getDate()+1)).toISOString().substring(0, 10);
 
-			 
-		//newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
+		// newDate거는 시간 날자를 구한담에 10까지 잘라내라 이런뜻임 newDate안의 객체에서+1하는거를 찾아보기.
 		
 		$("#startDate").datepicker({//datepicker 요일 한글로 검색
              dateFormat:"yy-mm-dd",
-            
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , 
              todayHighlight :true,// 오늘을 표시해줄지. default 가 false
@@ -242,18 +210,13 @@
              minDate: 0,//오늘날짜 부터
              language: 'ko',
              onSelect:function(selectedDate) {
-                 
                  $("#endDate").datepicker("option", "minDate", selectedDate);
-
              }
-
          });
 		// todayHighlight :true,
-       
 
          $("#endDate").datepicker({//종료일
              dateFormat:"yy-mm-dd",
-           
              dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
              currentText: '오늘 날짜' , // 오늘 날짜로 이동하는 버튼 패널
              showButtonPanel:true,//버튼보이기
@@ -262,19 +225,14 @@
              language: 'ko',
              //beforeShow: customRange
               onSelect:function(selectedDate) {
-                 
                  $("#startDate").datepicker("option", "maxDate", selectedDate );
-
               }
-
          });
 
-		//예약버튼 여기에 url링크 넣기
+		// 예약버튼 여기에 url링크 넣기
 
          $(".reserve-btn").on("click", function(event){
-
              event.preventDefault();
-
              let startDate = $("#startDate").val();
              let endDate = $("#endDate").val();
 
@@ -287,7 +245,6 @@
                  alert("로징아이디 : " + lodgingId);
                  alert("룸아이디 : " + roomId);
              }*/
-
              var url = '/lodging/reservation/view?startDate=' + encodeURIComponent(startDate) +
                                                      '&endDate=' + encodeURIComponent(endDate) +
                                                      '&roomId=' + encodeURIComponent(roomId) +
@@ -295,13 +252,12 @@
              console.log('URL:', url);
              // 새 URL로 이동
              window.location.href = url;
-
          });
 		
-		//지도를 그려주는 함수 실행
+		// 지도를 그려주는 함수 실행
 		 selectMapList();
 
-		 //검색한 주소의 정보를 insertAddress 함수로 넘겨준다.
+		 // 검색한 주소의 정보를 insertAddress 함수로 넘겨준다.
 		 function searchAddressToCoordinate(address) {
 		     naver.maps.Service.geocode({
 		         query: address
@@ -326,7 +282,6 @@
 		         }
 
 		         insertAddress(item.roadAddress, item.x, item.y);
-		         
 		     });
 		 }
 
@@ -343,8 +298,7 @@
 		 });
 		 naver.maps.Event.once(map, 'init_stylemap', initGeocoder);
 
-		     
-		 //검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
+		 // 검색정보를 테이블로 작성해주고, 지도에 마커를 찍어준다.
 		 function insertAddress(address, latitude, longitude) {
 		 	var mapList = "";
 		 	mapList += "<tr>"
@@ -365,9 +319,8 @@
 		     });
 		 }
 
-		 //지도를 그려주는 함수
+		 // 지도를 그려주는 함수
 		 function selectMapList() {
-		 	
 		 	var map = new naver.maps.Map('map', {
 		 	    center: new naver.maps.LatLng(37.3595704, 127.105399),
 		 	    zoom: 10,
@@ -377,7 +330,6 @@
 		        zoomControl: true,
 		 	});
 		 }
-
 
 		 // 지도를 이동하게 해주는 함수
 		 function moveMap(len, lat) {
@@ -392,10 +344,7 @@
 		         map: map
 		     });
 		 }
-
 	 });
 	</script>
-
-
 </body>
 </html>

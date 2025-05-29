@@ -35,7 +35,6 @@
 					
 					<div class="dibspagecontents d-flex mx-5">
                         <aside class="side-nav col-2 ">
-
                             <ul class="nav flex-column">
                                 <li class="nav-item mt-2">
                                     <h5><b><a href="/lodging/dibspage/view?id=${user.id }" class="nav-link text-primrary">찜목록</a></b></h5>
@@ -47,18 +46,12 @@
                                     <h5><b><a href="/user/mypage/view?id=${user.id }" class="nav-link text-white">내 정보수정</a></b></h5>
                                 </li>
                             </ul>
-
                         </aside>
                         <section class="contents1 col-10 ">
-
                             <div class="dibs-card-list d-flex justify-content-center flex-wrap ml-3 mt-3">
-
-
                                 <c:forEach var="dibs" items="${dibsDetailList }">
                                     <div class="dibs-card  mt-3 ml-3 ">
-
                                         <div class="">
-
                                             <div class="dibspage-heart mr-3">														<!-- 근데 희안하게 여기  -->
                                                 <i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id= "${dibs.lodgingId}"></i>
                                             </div>
@@ -76,16 +69,11 @@
                                         </div>
                                     </div>
                                 </c:forEach>
-
                             </div>
                         </section>
 					</div>
-				
 				</div>
-			
 			</section>
-		
-	
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
 	</div>
 	<style>
@@ -96,17 +84,14 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		//css 클릭시 색변화
-
-		//찜 해제 
+		// css 클릭시 색변화
+		// 찜 해제
 		$(".undib-icon").on("click", function(){
-			
 			let id = $(this).data("lodging-id");
 			
 			//alert(id);//아까 삭제할떄 14 가 뜨고 삭제됐다.그말인즉슨 이제 딥스아이디도 잘들어오고있꼬 삭제할떄 lodgingId로 삭제하는게 또 맞다. 왜냐면 lodgingId로 추가했으니.
 			
 			$.ajax({
-				
 				type: "get"
 				, url :"/lodging/undib"
 				, data:{"lodgingId": id} // 여기선 id 가 맞다. 왜냐면 해당하는 딥스id를 의미하니
@@ -117,20 +102,13 @@
 					} else {
 						alert("찜 취소 실패");
 					}
-					
 				}
 				, error:function(){
 					alert("찜 취소 오류");
-					
 				}
-				
 			});
-			
 		});
-
 	});
-	
-	
 	</script>
 </body>
 </html>

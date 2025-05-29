@@ -26,9 +26,7 @@
 	<div id = "wrap">
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
-			
 			<div class="lodgingupdate-page">
-			
 				<h1 class="text-center pt-3 font-weight-bold">ChoongMo Tour Lodging Update Page</h1><!-- pt-3제거 -->
 				
 				<!-- 그냥 파일업로드는 수정 넣지말기 -->
@@ -45,36 +43,30 @@
 	
 					<!-- c태그 넣으니  아예 안들어온다. 왜안될까 -->
 						<select class="form-control col-5 ml-2 mt-4" id="areaSelector">
-									
-		                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
-		                            <option value="seoul">서울</option>
-		                            <option value="incheon">인천</option>
-		                            <option value="gangwon">강원</option>
-		                            <option value="gyeongsang">경상</option>
-		                            <option value="jeolla">전라</option>
-		                            <option value="busan">부산</option>
-		                            <option value="jeju">제주</option>
+                            <option value="${lodging.areaName }">${lodging.areaName }</option><!-- 굳이 여기부분은 중복안되게끔 나오게 하는거 수정안해도 되지만 옵션으로 해보기. -->
+                            <option value="seoul">서울</option>
+                            <option value="incheon">인천</option>
+                            <option value="gangwon">강원</option>
+                            <option value="gyeongsang">경상</option>
+                            <option value="jeolla">전라</option>
+                            <option value="busan">부산</option>
+                            <option value="jeju">제주</option>
 		                 </select>
-	                 
+
 						<select class="form-control col-5 ml-2 mt-4" id="levelSelector">
-									
-		                            <option value="${lodging.level }">${lodging.level }</option>
-		                            <option value="1성급">1성급</option>
-		                            <option value="2성급">2성급</option>
-		                            <option value="3성급">3성급</option>
-		                            <option value="4성급">4성급</option>
-		                            <option value="5성급">5성급</option>   
+                            <option value="${lodging.level }">${lodging.level }</option>
+                            <option value="1성급">1성급</option>
+                            <option value="2성급">2성급</option>
+                            <option value="3성급">3성급</option>
+                            <option value="4성급">4성급</option>
+                            <option value="5성급">5성급</option>
 		                 </select>
-	                 
-					
+
 						<div class="text-center my-3">
 							<button id="updateBtn"class="btn btn-primary col-12 update-btn" type="button" data-lodging-id="${lodging.id }">수정 완료</button>
 						</div>
-
 				</div>
 			</div>
-		
-		
 		</section>
 	
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -87,9 +79,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
-		$(".update-btn").on("click", function(){//아마 class가아닌 id값을 받아와서 500에러가 뜨는건가?? 업데이트 버튼이 여러개이므로
-			
+		$(".update-btn").on("click", function(){// 아마 class가아닌 id값을 받아와서 500에러가 뜨는건가?? 업데이트 버튼이 여러개이므로
 			let id = $(this).data("lodging-id"); 
 			
 			let roomName = $("#roomNameInput").val();
@@ -128,21 +118,12 @@
 						alert("수정 실패");
 					}
 				}
-				
 				, error:function(){
 					alert("수정 에러");
 				}
-				
 			});
-			
-			
 		});
-		
-		
 	});
-	
 	</script>
-
-
 </body>
 </html>

@@ -24,16 +24,13 @@
 	<div id = "wrap">
 	<c:import url="/WEB-INF/jsp/include/adminheader.jsp"/>
 		<section class="contents d-flex justify-content-center">
-		
 			<div class="adminmain-page">
 				<h1 class="text-center pt-3">
 					<b>ChoongMo Tour Admin Main Page</b>
 				</h1>
-			
 			<div class="text-center mt-3">
 				<a href="/admin/lodging/create/view" class="btn btn-primary col-8">추가하기</a>
 			</div>
-			
 			<!-- 게시글 카드 리스트 -->
 				<!-- c태그 반복문 활용   -->
 			<div class="card-list d-flex justify-content-center flex-wrap mt-3">
@@ -43,10 +40,8 @@
                         <div class="card-profile">
                             <img class="profile" width="" src="${lodging.imagePath }" alt="호텔">
                         </div>
-
                         <div class="card-text ">
                             <div class="text-white"><h4><strong>${lodging.roomName }</strong></h4></div>
-
                             <c:choose>
                                 <c:when test = "${lodging.level eq '5성급' }">
                                     <div class="text-warning"><h4><strong>${lodging.level }</strong></h4></div><!-- 성급도 for문써서 해보기 -->
@@ -67,7 +62,6 @@
                         </div>
 
                         <div class="card-body">
-
                             <div class="d-flex justify-content-between mt-3">
                                 <a href="/admin/lodging/update/view?id=${lodging.id }" class="btn btn-primary">수정하기</a>
                                 <button id = "deleteBtn" type="button"  class="btn btn-danger delete-btn mr-4" data-lodging-id="${lodging.id }">삭제하기</button>
@@ -77,15 +71,10 @@
                                 <a href="/admin/room/update/view?id=${lodging.id }" class="btn btn-primary" >객실수정하기</a>
                             </div>
                         </div>
-
                     </div>
-
 				</c:forEach>
-
 			</div>
-			
 			</div>
-
 		</section>
 
 	<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -98,9 +87,7 @@
 	</style>
 	<script>
 	$(document).ready(function(){
-		
 		$(".delete-btn").on("click", function(){
-			
 			let id = $(this).data("lodging-id");
 			
 			$.ajax({
