@@ -135,7 +135,7 @@
 				return ;
 			}
  			
- 			alert("예약id :" + id);
+ 			//alert("예약id :" + id);
  			
  			$.ajax({
  				type: "get"
