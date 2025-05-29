@@ -132,18 +132,15 @@
 					    <div class="modal-content">
 					       <div class="modal-header">
 					        <h5 class="modal-title">필터 모달</h5>
-					        
 			     		   </div>
 					
 					      <div class="modal-body text-center">
 					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
-					      
 					     	<p> </p>
 					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 					      <div class="modal-footer">
 			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 			      		  </div>
-
 					    </div>
 					  </div>
 					</div>
