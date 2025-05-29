@@ -35,12 +35,10 @@
 				
 				<div class="d-flex justify-content-between mt-3">
 					<i id="filterIcon"class="filter-icon bi bi-filter-left" style="font-size :20px;" data-toggle="modal"  data-target="#filterModal">필터</i>
-					
 					<i id="sortIcon" class="sort-icon bi bi-arrow-down-up" style="font-size :20px;" data-toggle="modal" data-target="#sortModal">정렬</i>
 				</div>
 				
 				<h2 class="d-flex">
-
 					<strong id = "">
 					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
 					    <div id = "areaName" data-area-name="${lodging.areaName}">
@@ -69,9 +67,7 @@
                             </c:choose>
 						</div>
 					</strong>
-
 					</c:forEach><strong>호텔(${lodgingCount}개)</strong>
-
 				</h2>
 				
 				<!-- 숙소 리스트 카드 리스트 -->
@@ -80,21 +76,14 @@
 					<!-- 그니까 애초에 여기있는 c태그도 다르게 써야하는게 아닌가싶다?? 찜한 정보가안올라오는데??? -->
 					<c:forEach var="lodging" items = "${lodgingList }">
 					<div class="lodging-card bg-warning mt-3">
-
 							<div class="heart mr-3">
-							
                                 <!-- 하트아이콘 -->
                                 <c:choose>
                                     <c:when test="${lodging.dibs}">
-
                                             <i class="undib-icon bi bi-heart-fill text-danger mt-2 ml-2" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
-
                                     </c:when>
-
                                     <c:otherwise>	<!-- 검정하트 빈하트 -->
-
                                             <i class="dib-icon bi bi-heart mt-2 ml-2" style="font-size :20px;" data-lodging-id = "${lodging.id }"></i>
-
                                     </c:otherwise>
                                 </c:choose>
 							</div>
@@ -129,17 +118,14 @@
 									</div>
 								</h4>
 							</div>
-
 					</div>
 					</c:forEach>
 				</div>
 
 			</div>
 			<!-- 숙소 리스트 카드 리스트 -->
-			
-			
+
 			<!-- Button trigger modal -->
-		
 					<!-- Modal -->		<!-- class에 info-modal 이렇게 해서 안지워지는 오류가 생긴거였음 -->		<!-- 모달사이즈 -->
 					<div class="modal fade " id="filterModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 					  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -147,7 +133,7 @@
 					       <div class="modal-header">
 					        <h5 class="modal-title">필터 모달</h5>
 					        
-			     			 </div>	
+			     		   </div>
 					
 					      <div class="modal-body text-center">
 					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
@@ -155,15 +141,13 @@
 					     	<p> </p>
 					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 					      <div class="modal-footer">
-			        
 			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 			      		  </div>
-					   
+
 					    </div>
 					  </div>
 					</div>
-					
-					
+
 					<div class="modal fade " id="sortModal" tabindex="-1" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 					  <div class="modal-dialog modal-dialog-centered" role="document">
 					    <div class="modal-content">
@@ -184,20 +168,16 @@
                                 <label class="col-9"><input type="radio" name="sortOrder" value="lowPriceOrder">낮은가격순</label>
 
                                 <label class="col-9"><input type="radio" name="sortOrder" value="highPriceOrder">높은가격순</label>
-
                             </div>
 
 					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 					      <div class="modal-footer">
-			        
 			        		<button type="button" id="closeBtn "class="btn btn-secondary" data-dismiss="modal">닫기</button>
 			      		  </div>
 					   
 					    </div>
 					  </div>
 					</div>
-			
-		
 		</section>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp"/>
@@ -213,17 +193,17 @@
 	<script>
 	$(document).ready(function(){
 		
-		//필터모달
+		// 필터모달
         /*
         function getSettingValue() {
         }
 
-        //숙소리스트 새로그리기
+        // 숙소리스트 새로그리기
         function changeSearchCondition() {
             getSettingValue():
         }*/
 
-		//URL 파라미터를 읽어오는 함수
+		// URL 파라미터를 읽어오는 함수
 		/*
         function getParameterByName(name) {
             const url = window.location.href;
@@ -237,12 +217,9 @@
         const url = new URL(window.location.href); //좀더 가독성있게 코드문 고쳐보기
         const urlParams = url.searchParams;//좀더 가독성있게 코드문 고쳐보기
 
-
-
         // URL 파라미터에서 sortType 값을 읽어옴
         //const sortType = getParameterByName('sortType');
         const sortType = urlParams.get('sortType');
-
 
         if (sortType) {
             // 모든 라디오 버튼의 checked 속성을 제거
@@ -250,8 +227,7 @@
             // sortType 값에 해당하는 라디오 버튼에 checked 속성을 추가
             $("input[name='sortOrder'][value='" + sortType + "']").prop("checked", true);
         }
-
-		//정렬모달
+		// 정렬모달
 		$("input[name='sortOrder']").on("change", function() {
             let order = $(this).val();
             let areaName = $("#areaName").data("area-name").trim();//jstl 변수 js 변수로 불러오기
@@ -265,7 +241,7 @@
                 type : "get"
                 , url : "/lodging/lodginglist/view"
                 , data: {area_name : areaName, sortType : order}
-                , success:function(data){//일단 조건문 수정하기
+                , success:function(data){// 일단 조건문 수정하기
                     if(data != null){
                             var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
                             window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
@@ -276,15 +252,11 @@
                 }
                 , error:function(){
                     alert("정렬 오류");
-
                 }
-
             });
-
 		});
 
-
-		//찜 해제 
+		// 찜 해제
 		$(".undib-icon").on("click", function(){
 			
 			let id = $(this).data("lodging-id");
@@ -302,18 +274,13 @@
 					} else {
 						alert("찜 취소 실패");
 					}
-					
 				}
 				, error:function(){
 					alert("찜 취소 오류");
-					
 				}
-				
 			});
-			
 		});
-
-		//찜
+		// 찜
 		$(".dib-icon").on("click", function(){
 			
 			let id = $(this).data("lodging-id");
@@ -321,9 +288,8 @@
 			//alert(id);
 			
 			$.ajax({
-				
 				type:"post"
-				, url:"/lodging/dib" //404 경로문제 여기가 잘못되었다.
+				, url:"/lodging/dib" // 404 경로문제 여기가 잘못되었다.
 				, data:{"lodgingId":id}
 				, success:function(data){
 					if(data.result == "success"){
@@ -334,16 +300,11 @@
 					}
 				}
 				,error:function(){
-					
 					alert("찜 오류");
 				}
-				
 			});
-
 		});
-
 	});
-	
 	</script>
 
 </body>
