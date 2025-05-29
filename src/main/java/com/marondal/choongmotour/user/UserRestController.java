@@ -1,13 +1,11 @@
 package com.marondal.choongmotour.user;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,14 +31,11 @@ public class UserRestController {
 				,@RequestParam("name") String name
 				,@RequestParam("email") String email
 				,@RequestParam("nickname") String nickname
-	
 				) {
-		
 		int count = userBO.addUser(loginId, password, name, email, nickname);
 		
 		Map<String, String> resultMap = new HashMap<>();
-		
-		
+
 		if(count == 1) {
 			resultMap.put("result", "success");
 		} else {
@@ -48,7 +43,6 @@ public class UserRestController {
 		}
 		
 		return resultMap;
-		
 	}
 	
 	@GetMapping("/duplicate_id")
@@ -92,7 +86,6 @@ public class UserRestController {
 		}
 			
 		return resultMap;
-
 	}
 
 	// 아이디 찾기 api 이제보니 조회 서치에는 Get이맞다.
@@ -101,18 +94,18 @@ public class UserRestController {
 										, @RequestParam("name") String name
 										, @RequestParam("email") String email
 										){
-										//여기선 굳이 세션 필요없을듯 하다.
+										// 여기선 굳이 세션 필요없을듯 하다.
 		Map<String, Object> resultMap = new HashMap<>();
 		
 		User user = userBO.getUserByNameEmail(loginId, name, email);// 해당하는 이름, 이메일주소로 여러개 닉네임이 나올수 있어서 리스트로 함
 
 		if(user != null) {
-			resultMap.put("result", "success");//일치함
-			resultMap.put("info", user);//user->user.getLoginId 도 가능
+			resultMap.put("result", "success");// 일치함
+			resultMap.put("info", user);// user->user.getLoginId 도 가능
 	
 			 // 여기서 id를 풋 하란뜻인데..
 		} else {
-			resultMap.put("result", "fail");//일치하지 않음
+			resultMap.put("result", "fail");// 일치하지 않음
 		}
 		
 		return resultMap;
@@ -123,17 +116,15 @@ public class UserRestController {
 	public Map <String, Object> passwordUpdate(@RequestParam("loginId") String loginId
 										, @RequestParam("email") String email
 										//, HttpSession session 세션은 만능이 아님. 무조건 세션 쓰지 말기.
-										//비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
+										// 비밀번호는 서버로부터 받아오는거기때문에 패스워드를 파라미터로 받는건 적합하지 못하다고 함 임시비밀번호는 그리고 매번 주기적으로 생성 해내야 한다고 함. 그 역할이 비오가 제일 적당함
 										){
 		Map<String, Object> resultMap = new HashMap<>();
-		
-		//String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
-		
+		// String password = (String) session.getAttribute("password");//안되는 원인 한마디로 암호화된 값이 넘어오고있어서???
 		String password = userBO.updateTemporrayPassword(loginId, email);// 이젠 count, 업데이트 횟수가 아닌 password를 불러와야 한다.
 		
-		if(password == null) {//패스워드가 없을시
+		if(password == null) {// 패스워드가 없을시
 			resultMap.put("result", "fail");
-		} else {//그외에
+		} else {// 그외에
 			resultMap.put("result", "success");
 			resultMap.put("info", password);
 		}

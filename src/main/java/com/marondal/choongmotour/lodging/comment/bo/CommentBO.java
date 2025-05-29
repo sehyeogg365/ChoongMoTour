@@ -34,7 +34,6 @@ public class CommentBO {
 	
 	// 댓글 작성
 	public int addComment(int lodgingId, int userId, String size, MultipartFile file, String content, double starpoint) {
-		
 		String imagePath = FileManagerService.saveFile(userId, file);
 		
 		return commentDAO.insertComment(lodgingId, userId, size, imagePath, content, starpoint);
@@ -42,7 +41,6 @@ public class CommentBO {
 	
 	// 댓글 목록	
 	public List<CommentDetail> getCommentList(int lodgingId){
-		
 		List<Comment> commentList = commentDAO.selectCommentList(lodgingId);
 		
 		List<CommentDetail> commentDetailList = new ArrayList<>();
@@ -77,7 +75,6 @@ public class CommentBO {
 
 	// 댓글 삭제	
 	public int deleteComment(int id, int userId) {
-		
 		// 파일 있을때 파일도 삭제
 		Comment comment = commentDAO.selectComment(id, userId);// 몇몇 호텔의 댓삭이 안이뤄지는 상황.
 		FileManagerService.removeFile(comment.getImagePath());// userId추가해서 제대로 해보기 이제보니 첨에는 다오에선 id 여기선 roomId였다는... 그러니 500이뜨지.
@@ -87,7 +84,6 @@ public class CommentBO {
 
 	//댓글 개수, 댓글 평균평점
 	public Map<String, Object> getCommentCountStarPoint (int lodgingId){
-
 		Map<String, Object> result = new HashMap<String, Object>();
 
 		Integer commentCount = commentDAO.selectCommentCount(lodgingId);

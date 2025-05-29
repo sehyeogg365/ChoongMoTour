@@ -37,13 +37,11 @@ public class LodgingBO {
 	
 	// 숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
 	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, String sortType, LodgingDetail lodgingDetail){
-		
 		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, lodgingDetail.getSortType());
 		
 		List<LodgingDetail> lodgingDetailList = new ArrayList<>();
 		
 		for(LodgingDetail lodging:lodgingList) {
-			
 			// 숙소카드 한장에 유저정보가 들어갈일은 없다.
 
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
@@ -117,7 +115,6 @@ public class LodgingBO {
 	
 	// 숙소 추가
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file ) {
-			
 		String imagePath = FileManagerService.saveFile(adminId, file);	//파일매니저 서비스 메소드의 id값은 사용자가 쓸값 그값을쓰는이유는 폴더별로 중복되지마라고 그렇게 한거임 따라서 여기서는 adminId로 저장했을때 별문제 안되면 써도 된다.
 		
 		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
@@ -145,7 +142,6 @@ public class LodgingBO {
 	
 	// 객실추가
 	public int addRoom(int lodgingId, int adminId, int price, String size, String content, MultipartFile file) {
-			
 		String imagePath = FileManagerService.saveFile(adminId, file);
 		
 		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);

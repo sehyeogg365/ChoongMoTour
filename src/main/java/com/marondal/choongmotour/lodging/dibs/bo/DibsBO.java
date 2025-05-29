@@ -47,7 +47,6 @@ public class DibsBO {
 		// 여기도 마찬가지로 잘 조화시켜보기
 
 		for (Dibs dibs : dibsList) {
-
 			Lodging lodging = lodgingBO.getLodging(dibs.getLodgingId());
 
 			DibsDetail dibsDetail = new DibsDetail();

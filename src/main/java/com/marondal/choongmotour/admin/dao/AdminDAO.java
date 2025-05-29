@@ -15,7 +15,6 @@ public interface AdminDAO {
 			, @Param("name") String name
 			, @Param("email") String email
 			, @Param("nickname") String nickname
-			
 			);
 	
 	public int selectCountloginId(@Param("loginId") String loginId);

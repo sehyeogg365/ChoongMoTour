@@ -30,9 +30,9 @@ public class LodgingRestController {
 	@Autowired ReserveBO reserveBO;
 	@Autowired CommentBO commentBO;
 	
-	//사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
+	// 사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	
-	//찜
+	// 찜
 	@PostMapping("/dib")
 	public Map<String, String> dibsCreate(
 			@RequestParam("lodgingId") int lodgingId
@@ -53,7 +53,7 @@ public class LodgingRestController {
 		return resultMap;
 	}
 	
-	//찜 취소
+	// 찜 취소
 	@GetMapping("/undib")
 	public Map<String, String> dibsDelete(
 			@RequestParam("lodgingId") int lodgingId
@@ -74,7 +74,7 @@ public class LodgingRestController {
 		return resultMap;
 	}
 	
-	//예약 하기 
+	// 예약 하기
 	@PostMapping("/reserve")
 	public Map<String, String> reserveRoom(
 				@RequestParam("roomId") int roomId
@@ -87,7 +87,6 @@ public class LodgingRestController {
 				 @RequestParam("endDate") Date endDate
 				, HttpSession session
 			) {
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		int count = reserveBO.addReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);
@@ -108,7 +107,6 @@ public class LodgingRestController {
 	public Map<String, String> reserveDelete(
 										@RequestParam("id")int id
 										, HttpSession session){
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		int count = reserveBO.deleteReserve(userId, id);
@@ -116,19 +114,15 @@ public class LodgingRestController {
 		Map<String, String> resultMap = new HashMap<>();
 		
 		if(count == 1) {
-
 			resultMap.put("result", "success");
-			
-		} else { 
-			
+		} else {
 			resultMap.put("result", "fail");
-
 		}
 
 		return resultMap;
 	}
 	
-	//댓글 작성
+	// 댓글 작성
 	@PostMapping("/comment/create")
 	public Map<String, String> commentCreate(
 											@RequestParam("lodgingId") int lodgingId
@@ -137,7 +131,6 @@ public class LodgingRestController {
 											, @RequestParam("content") String content
 											, @RequestParam("starpoint") double starpoint				
 											, HttpSession session){
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		int count = commentBO.addComment(lodgingId, userId, size, file, content, starpoint);
@@ -153,11 +146,10 @@ public class LodgingRestController {
 		return resultMap;
 	}
 
-	//댓글 삭제
+	// 댓글 삭제
 	@GetMapping("/comment/delete")
 	public Map<String, String> commentDelete(@RequestParam("id") int id
 											, HttpSession session){
-		
 		int userId = (Integer)session.getAttribute("userId");
 		
 		int count = commentBO.deleteComment(id, userId);
@@ -175,13 +167,13 @@ public class LodgingRestController {
 	
 	
 	//-------관리자 페이지---------
-	//숙소 추가 api
+	// 숙소 추가 api
 	@PostMapping("/create")
 	public Map<String, String>lodgingCreate(
-		 @RequestParam("roomName") String roomName //400에러면 파라미터 문제
+		 @RequestParam("roomName") String roomName // 400에러면 파라미터 문제
 			, @RequestParam("level") String level// 그리고 사용자영역에서 지역이름별로 숙소 조회 하는데 여긴 입력부분이고 관리자 입력부분과 사용자 조회부분은 아예 별개라서 신경쓸필요 없다하심
 			, @RequestParam("areaName") String areaName
-			, @RequestParam(value="file", required=false) MultipartFile file //Memo 프로젝트 포스트 컨트롤러로 이현상 참조해보기
+			, @RequestParam(value="file", required=false) MultipartFile file // Memo 프로젝트 포스트 컨트롤러로 이현상 참조해보기
 			, HttpSession session
 			// id값 불러오기
 			) {

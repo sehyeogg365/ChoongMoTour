@@ -34,7 +34,6 @@ public class UserController {
 		session.removeAttribute("userId");
 		session.removeAttribute("userNickname");
 		session.removeAttribute("userImagePath");// 로그인할때 세션 갑으로 불러오면 당연히 여기서도 있어야 한다 함
-
 		return "redirect:/user/signin/view";
 	}
 
@@ -46,18 +45,14 @@ public class UserController {
 	@GetMapping("/mypage/view") // 숙소 수정 잘 참조 해보기
 	public String myPage(Model model, @RequestParam("id") int id) {
 		User user = userBO.getUserInfo(id);
-
 		model.addAttribute("user", user);
-
 		return "user/mypage";
 	}
 
 	@GetMapping("/reservepage/view")
 	public String reservePage(Model model, @RequestParam("id") int id) {
 		User user = userBO.getUserInfo(id);
-
 		model.addAttribute("user", user);
-
 		return "user/reservepage";
 	}
 
