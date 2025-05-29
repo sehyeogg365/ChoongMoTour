@@ -73,7 +73,6 @@
   
   <!-- 댓글 삭제 -->
   <delete id = "deleteComment" parameterType="int">
-  
   	DELETE 
   	FROM
   		`comment`
@@ -92,7 +91,6 @@
 	WHERE
 	  	`lodgingId` = #{lodgingId}
   </select>
-
 
   <!-- 댓글 평균평점 -->
 	<select id = "selectStarPoint" parameterType="int" resultType="double">

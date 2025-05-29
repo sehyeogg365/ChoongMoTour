@@ -24,7 +24,6 @@
   			`lodging` l
   		WHERE
   			`areaName` = #{areaName}
-
 		<if test ='sortType != null and sortType != "" '>
 			<choose>
 				<when test ='sortType != null and sortType != "" and sortType == "starPointOrder"'>
@@ -46,9 +45,7 @@
 					ORDER BY `singleRoomPrice` DESC;
 				</when>
 			</choose>
-
 		</if>
-
   	</select>
   	
   	<!-- 객실 사이즈 순(가격 오름차순)으로 조회하기 끔 한다. -->
@@ -96,8 +93,6 @@
  		, now()
  		, now()
  	);
- 	
- 
  </insert>
  
  <select id="selectLodgingList" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="int">
@@ -118,7 +113,6 @@
  
  <!-- 숙소 1행 조회 -->
  <select id="selectLodgingById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Lodging">
- 
  	SELECT 
  		`id`
  		, `adminId` 	<!-- 이거 없이도 잘조회되는 모습 -->
@@ -132,7 +126,6 @@
  		`lodging`
  	WHERE
  		`id` = #{id};
- 
  </select>
  
  <!-- 숙소 수정 -->
@@ -169,9 +162,7 @@
 	)
 	VALUES
 	(
-
 		<!-- 500error adminId 넣으나 안넣으나 똑같은데 왜그럴까? -->
-		
 		 #{lodgingId}  
 		,#{adminId}
 		, #{imagePath}
@@ -180,10 +171,7 @@
 		, #{content}
 		, now()
 		, now()
-	 	
 	);
-	 			
- 
  </insert>
  
  <!-- 객실 리스트 조회 -->
@@ -204,8 +192,6 @@
  	WHERE
  		`lodgingId` = #{lodgingId};
 	<!-- orderby 넣는거는 사용자 영역에서만 -->
- 	
- 
  </select>
  
  <!-- 객실 1행 조회 -->

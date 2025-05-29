@@ -20,8 +20,6 @@
   		#{userId}
   		, #{lodgingId}
   		, now()
-  		
-  	
   	);	
   	</insert>
 
@@ -56,7 +54,6 @@
   			`dibs_basket`
   		WHERE 
   			`userId` = #{userId} <!-- 이거는 어떡해야하는가? -->
-		
   		ORDER BY 
   			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
