@@ -31,6 +31,9 @@ public class LodgingBO {
 
 	@Autowired
 	private CommentDAO commentDAO;
+
+	//TODO 필터모달및 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
+
 	// 사용자페이지
 
 	// lodging 정보 - 지역 불러오기??
