@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-
 import com.marondal.choongmotour.lodging.model.Reserve;
-import com.marondal.choongmotour.lodging.model.ReserveDetail;
 
 
 @Repository

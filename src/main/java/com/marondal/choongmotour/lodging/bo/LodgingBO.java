@@ -5,7 +5,7 @@ import java.util.List;
 
 import com.marondal.choongmotour.lodging.comment.dao.CommentDAO;
 import com.marondal.choongmotour.lodging.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -16,21 +16,16 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsCheckBO;
 import com.marondal.choongmotour.user.bo.UserBO;
 
 @Service
+@RequiredArgsConstructor
 public class LodgingBO {
+	private final LodgingDAO lodgingDAO;// private 추가
 
-	@Autowired 
-	private LodgingDAO lodgingDAO;// private 추가
-	
-	@Autowired 
-	private UserBO userBO;
+	private final UserBO userBO;
 	
 	// 순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
-	
-	@Autowired 
-	private DibsCheckBO dibsCheckBO;
+	private final DibsCheckBO dibsCheckBO;
 
-	@Autowired
-	private CommentDAO commentDAO;
+	private final CommentDAO commentDAO;
 
 	//TODO 필터모달및 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
 
@@ -119,7 +114,6 @@ public class LodgingBO {
 	// 숙소 추가
 	public int addLodging(int adminId, String roomName, String level, String areaName, MultipartFile file ) {
 		String imagePath = FileManagerService.saveFile(adminId, file);	//파일매니저 서비스 메소드의 id값은 사용자가 쓸값 그값을쓰는이유는 폴더별로 중복되지마라고 그렇게 한거임 따라서 여기서는 adminId로 저장했을때 별문제 안되면 써도 된다.
-		
 		return lodgingDAO.insertLodging(adminId, roomName, level, areaName, imagePath);
 									//bo 에서 필요해서 호출한 adminId가 dao에서는 필요가없으므로 뺀다. 금욜날 이거를 말한거였음
 	}								//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
@@ -146,7 +140,6 @@ public class LodgingBO {
 	// 객실추가
 	public int addRoom(int lodgingId, int adminId, int price, String size, String content, MultipartFile file) {
 		String imagePath = FileManagerService.saveFile(adminId, file);
-		
 		return lodgingDAO.insertRoom(lodgingId, adminId, price, size, content, imagePath);
 	}
 		

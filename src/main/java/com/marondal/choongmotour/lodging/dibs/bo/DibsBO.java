@@ -3,7 +3,7 @@ package com.marondal.choongmotour.lodging.dibs.bo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
@@ -13,13 +13,11 @@ import com.marondal.choongmotour.lodging.model.DibsDetail;
 import com.marondal.choongmotour.lodging.model.Lodging;
 
 @Service
+@RequiredArgsConstructor
 public class DibsBO {
+	private final DibsDAO dibsDAO;
 
-	@Autowired
-	private DibsDAO dibsDAO;
-
-	@Autowired
-	private LodgingBO lodgingBO;
+	private final LodgingBO lodgingBO;
 
 	// 찜
 	public int addDibs(int lodgingId, int userId) {// 어떤 숙소를 찜할것이냐, 누가 찜할것이냐

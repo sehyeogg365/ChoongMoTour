@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,13 +23,16 @@ import com.marondal.choongmotour.lodging.dibs.bo.DibsBO;
 import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/lodging")
 public class LodgingRestController {
+	private final LodgingBO lodgingBO;
 
-	@Autowired LodgingBO lodgingBO;
-	@Autowired DibsBO dibsBO;
-	@Autowired ReserveBO reserveBO;
-	@Autowired CommentBO commentBO;
+	private final DibsBO dibsBO;
+
+	private final ReserveBO reserveBO;
+
+	private final CommentBO commentBO;
 	
 	// 사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
 	

@@ -1,6 +1,6 @@
 package com.marondal.choongmotour.user.bo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -11,10 +11,9 @@ import com.marondal.choongmotour.common.FileManagerService;
 import java.util.Random;
 
 @Service
+@RequiredArgsConstructor
 public class UserBO {
-
-	@Autowired
-	private UserDAO userDAO;
+	private final UserDAO userDAO;
 
 	// 회원가입 api
 	public int addUser(String loginId, String password, String name, String email, String nickname) {
