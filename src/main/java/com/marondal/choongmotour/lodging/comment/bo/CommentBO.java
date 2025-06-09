@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -14,28 +14,22 @@ import com.marondal.choongmotour.lodging.bo.LodgingBO;
 import com.marondal.choongmotour.lodging.comment.dao.CommentDAO;
 import com.marondal.choongmotour.lodging.model.Comment;
 import com.marondal.choongmotour.lodging.model.CommentDetail;
-import com.marondal.choongmotour.lodging.model.Lodging;
-import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
 
 @Service
+@RequiredArgsConstructor
 public class CommentBO {
-	
-	@Autowired
-	private UserBO userBO;
-	
-	@Autowired
-	private LodgingBO lodgingBO;
-	
-	@Autowired
-	private CommentDAO commentDAO;
+	private final UserBO userBO;
+
+	private final LodgingBO lodgingBO;
+
+	private final CommentDAO commentDAO;
 	
 	// 댓글 작성
 	public int addComment(int lodgingId, int userId, String size, MultipartFile file, String content, double starpoint) {
 		String imagePath = FileManagerService.saveFile(userId, file);
-		
 		return commentDAO.insertComment(lodgingId, userId, size, imagePath, content, starpoint);
 	}
 	

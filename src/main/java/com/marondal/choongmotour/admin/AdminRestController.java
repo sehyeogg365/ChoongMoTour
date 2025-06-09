@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +18,10 @@ import com.marondal.choongmotour.admin.bo.AdminBO;
 import com.marondal.choongmotour.admin.model.Admin;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/admin")
 public class AdminRestController {
-	@Autowired AdminBO adminBO;
+	private final AdminBO adminBO;
 
 	// 관리자 회원가입 api
 	@PostMapping("/signup")

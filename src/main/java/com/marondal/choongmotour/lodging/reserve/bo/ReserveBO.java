@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import com.marondal.choongmotour.lodging.bo.LodgingBO;
@@ -17,13 +17,13 @@ import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
 @Service
+@RequiredArgsConstructor
 public class ReserveBO {
-	
-	@Autowired UserBO userBO;
-	
-	@Autowired ReserveDAO reserveDAO;
-	
-	@Autowired LodgingBO lodgingBO;
+	private final UserBO userBO;
+
+	private final ReserveDAO reserveDAO;
+
+	private final LodgingBO lodgingBO;
 
 	// 예약하기
 	public int addReserve(int roomId, int userId, String name, String phoneNumber,  String payment, Date startDate, Date endDate) {

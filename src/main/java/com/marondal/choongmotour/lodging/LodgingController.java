@@ -5,7 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import com.marondal.choongmotour.lodging.model.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,25 +20,19 @@ import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/lodging")
 public class LodgingController {
+	private final LodgingBO lodgingBO;
 
-	@Autowired
-	private LodgingBO lodgingBO;
-	
-	@Autowired
-	private UserBO userBO;
-	
-	@Autowired
-	private DibsBO dibsBO;
-	
-	@Autowired
-	private ReserveBO reserveBO;
-	
-	@Autowired
-	private CommentBO commentBO;
+	private final UserBO userBO;
 
-	
+	private final DibsBO dibsBO;
+
+	private final ReserveBO reserveBO;
+
+	private final CommentBO commentBO;
+
 	// 사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
 	@GetMapping("/main/view")
 	public String mainPage() {// 지역 나타내기 및 id

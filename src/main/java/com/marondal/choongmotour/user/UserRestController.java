@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,11 +18,10 @@ import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserRestController {
-	
-	@Autowired
-	private UserBO userBO;
+	private final UserBO userBO;
 
 	@PostMapping("/signup")
 		public Map<String, String> signup(

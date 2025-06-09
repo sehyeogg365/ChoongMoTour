@@ -2,7 +2,7 @@ package com.marondal.choongmotour.admin.bo;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -12,9 +12,9 @@ import com.marondal.choongmotour.common.EncryptService;
 import com.marondal.choongmotour.common.FileManagerService;
 import java.util.Random;
 @Service
+@RequiredArgsConstructor
 public class AdminBO {
-	
-	@Autowired AdminDAO adminDAO;
+	private final AdminDAO adminDAO;
 	//관리자 페이지긴 해도 숙소에 대한 테이블, 숙소에 대한 기능으로 생각해볼것.
 	public int addAdmin(
 			String loginId

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.marondal.choongmotour.lodging.model.LodgingDetail;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,14 +20,12 @@ import com.marondal.choongmotour.lodging.model.Lodging;
 import com.marondal.choongmotour.lodging.model.Room;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/admin")
 public class AdminController {
+	private final AdminBO adminBO;
 
-	@Autowired
-	private AdminBO adminBO;
-
-	@Autowired
-	private LodgingBO lodgingBO;
+	private final LodgingBO lodgingBO;
 
 	@GetMapping("/signup/view")
 	public String signupInput() {
@@ -69,7 +67,6 @@ public class AdminController {
 		// 그니까 이상하다 숙소수정 객실 수정도 컨트롤러서 이렇게 불렀는데 왜자꾸 400에러가뜰까
 		Admin admin = adminBO.getAdminInfo(id);
 		model.addAttribute("admin", admin);
-
 		return "admin/mypage";
 	}
 
@@ -84,18 +81,14 @@ public class AdminController {
 	@GetMapping("/lodging/update/view")
 	public String lodgingupdatePage(@RequestParam("id") int id, Model model) {
 		Lodging lodging = lodgingBO.getLodging(id);
-
 		model.addAttribute("lodging", lodging);// 이거를 깜빡함 근데도 500에러가 뜬다.
-
 		return "admin/lodgingupdate";
 	}
 
 	@GetMapping("/room/create/view")
 	public String roomcreatePage(Model model, int id) {// lodging 모델?
 		Lodging lodging = lodgingBO.getLodging(id);
-
 		model.addAttribute("lodging", lodging);
-
 		return "admin/roomcreate";
 	}
 
@@ -105,7 +98,6 @@ public class AdminController {
 		// LodgingId, room id 둘다 불러오게 하려면 room 객체에서 불러오는게 맞을듯.
 		
 		Lodging lodging = lodgingBO.getLodging(id);
-
 		model.addAttribute("lodging", lodging);
 
 		List<Room> roomList = lodgingBO.getRoomList(id);// lodgingId
