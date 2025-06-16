@@ -24,7 +24,7 @@
   	</insert>
 
   	<!-- 찜여부 보기 -->
-  	<select id="selectDibsByUserId" parameterType="map" resultType="int">
+  	<select id="selectDibsByUserId" resultType="int" parameterType="map">
   		SELECT 
   			count(1)
   		FROM

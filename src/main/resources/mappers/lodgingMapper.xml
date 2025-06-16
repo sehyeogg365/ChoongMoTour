@@ -112,7 +112,7 @@
  </select>
  
  <!-- 숙소 1행 조회 -->
- <select id="selectLodgingById" parameterType="int" resultType="com.marondal.choongmotour.lodging.model.Lodging">
+ <select id="selectLodgingById" resultType="com.marondal.choongmotour.lodging.model.Lodging" parameterType="int">
  	SELECT 
  		`id`
  		, `adminId` 	<!-- 이거 없이도 잘조회되는 모습 -->
