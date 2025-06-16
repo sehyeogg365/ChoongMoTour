@@ -190,16 +190,15 @@
         function changeSearchCondition() {
             getSettingValue():
         }*/
-
+        // 페이지 로딩 시 URL 파라미터로 라디오 버튼 상태 초기 세팅
 		// URL 파라미터를 읽어오는 함수
         const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
-        const urlParams = url.searchParams;// 좀더 가독성있게 코드문 고쳐보기
+        const urlParams = url.searchParams;
 
         // URL 파라미터에서 sortType 값을 읽어옴
-        //const sortType = getParameterByName('sortType');
         const sortType = urlParams.get('sortType');
 
-        if (sortType) {
+        if (sortType) {// 정렬 타입이 선택 했을시 로딩해도 체크 유지
             // 모든 라디오 버튼의 checked 속성을 제거
             $("input[name='sortOrder']").prop("checked", false);
             // sortType 값에 해당하는 라디오 버튼에 checked 속성을 추가
@@ -208,7 +207,7 @@
 		// 정렬모달
 		$("input[name='sortOrder']").on("change", function() {
             let order = $(this).val();
-            let areaName = $("#areaName").data("area-name").trim();//jstl 변수 js 변수로 불러오기
+            let areaName = $("#areaName").data("area-name").trim();// jstl 변수 js 변수로 불러오기
 
             //console.log("정렬: " + order);
             //console.log("지역명: " + areaName);

@@ -83,7 +83,7 @@
   </delete>
   
   <!-- 댓글 개수 -->
-  <select id ="selectCommentCount" parameterType="int" resultType="Integer">
+  <select id ="selectCommentCount" resultType="Integer" parameterType="int">
 	SELECT
 	  count(*) AS `commentCount`
 	FROM
@@ -93,7 +93,7 @@
   </select>
 
   <!-- 댓글 평균평점 -->
-	<select id = "selectStarPoint" parameterType="int" resultType="double">
+	<select id = "selectStarPoint" resultType="double" parameterType="int">
 		SELECT
 			AVG(`starpoint`) AS `avgStarPoint`
 		FROM

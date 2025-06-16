@@ -11,7 +11,6 @@
   	INSERT INTO
   			`reserved_list`
   	(
-  		
   		 `roomId`
   		, `userId` 
   		, `name`
@@ -24,7 +23,6 @@
   	) 
   		VALUES
   	(
-  		
   		#{roomId}
   		, #{userId}
   		, #{name}
@@ -34,7 +32,6 @@
   		, #{endDate}
   		, now()
   		, now()
-  	
   	);
   			
   	
