@@ -36,34 +36,33 @@
 				</div>
 				<h2 class="d-flex">
 					<strong id = "">
-					<c:forEach var="lodging" begin="0" end="0" items = "${lodgingList }">
-					    <div id = "areaName" data-area-name="${lodging.areaName}">
+					    <div id = "areaName" data-area-name="${lodgingList[0].areaName}">
                             <c:choose>
-                                <c:when test ="${lodging.areaName eq 'seoul'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'seoul'}">
                                     서울
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'incheon'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'incheon'}">
                                     인천
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'gangwon'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'gangwon'}">
                                     강원
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'gyeongsang'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'gyeongsang'}">
                                     경상
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'jeolla'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'jeolla'}">
                                     전라
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'busan'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'busan'}">
                                     부산
                                 </c:when>
-                                <c:when test ="${lodging.areaName eq 'jeju'}">
+                                <c:when test ="${lodgingList[0].areaName eq 'jeju'}">
                                     제주
                                 </c:when>
                             </c:choose>
 						</div>
 					</strong>
-					</c:forEach><strong>호텔(${lodgingCount}개)</strong>
+					<strong>호텔(${lodgingCount}개)</strong>
 				</h2>
 
 				<!-- 숙소 리스트 카드 리스트 -->
@@ -150,16 +149,20 @@
 					      <div class="modal-body text-center">
 					       								<!-- 동떨어진 하나의 태그기때문에 쓸수 있는정보가 암것도 없다. -->
 					        <!-- 평점높은순, 리뷰많은순, 낮은가격순, 높은가격순 정렬 -->
+                            <form action="/lodging/lodginglist/view" method="get" class="">
+                                <div class="">
+                                    <c:if test="${not empty lodgingList}">
+                                        <input type="hidden" name="area_name" value="${lodgingList[0].areaName}">
+                                    </c:if>
+                                    <label class="col-9"><input type="radio" name="sortType" value="starPointOrder" onchange="this.form.submit()">평점높은순</label>
 
-					     	<div class="">
-                                <label class="col-9"><input type="radio" name="sortOrder" value="starPointOrder">평점높은순</label>
+                                    <label class="col-9"><input type="radio" name="sortType" value="commentOrder" onchange="this.form.submit()">리뷰많은순</label>
 
-                                <label class="col-9"><input type="radio" name="sortOrder" value="commentOrder">리뷰많은순</label>
+                                    <label class="col-9"><input type="radio" name="sortType" value="lowPriceOrder" onchange="this.form.submit()">낮은가격순</label>
 
-                                <label class="col-9"><input type="radio" name="sortOrder" value="lowPriceOrder">낮은가격순</label>
-
-                                <label class="col-9"><input type="radio" name="sortOrder" value="highPriceOrder">높은가격순</label>
-                            </div>
+                                    <label class="col-9"><input type="radio" name="sortType" value="highPriceOrder" onchange="this.form.submit()">높은가격순</label>
+                                </div>
+                            </form>
 
 					      </div><!-- 객체화시켜야 하므로 아이디 부여 --><!-- 속성을 동적으로 추가할려면? -->
 					      <div class="modal-footer">
@@ -191,6 +194,7 @@
             getSettingValue():
         }*/
         // 페이지 로딩 시 URL 파라미터로 라디오 버튼 상태 초기 세팅
+
 		// URL 파라미터를 읽어오는 함수
         const url = new URL(window.location.href); // 좀더 가독성있게 코드문 고쳐보기
         const urlParams = url.searchParams;
@@ -200,38 +204,10 @@
 
         if (sortType) {// 정렬 타입이 선택 했을시 로딩해도 체크 유지
             // 모든 라디오 버튼의 checked 속성을 제거
-            $("input[name='sortOrder']").prop("checked", false);
+            $("input[name='sortType']").prop("checked", false);
             // sortType 값에 해당하는 라디오 버튼에 checked 속성을 추가
-            $("input[name='sortOrder'][value='" + sortType + "']").prop("checked", true);
+            $("input[name='sortType'][value='" + sortType + "']").prop("checked", true);
         }
-		// 정렬모달
-		$("input[name='sortOrder']").on("change", function() {
-            let order = $(this).val();
-            let areaName = $("#areaName").data("area-name").trim();// jstl 변수 js 변수로 불러오기
-
-            //console.log("정렬: " + order);
-            //console.log("지역명: " + areaName);
-            //alert("정렬: " + order);
-            //alert("지역명: " + areaName);
-
-            $.ajax({
-                type : "get"
-                , url : "/lodging/lodginglist/view"
-                , data: {area_name : areaName, sortType : order}
-                , success:function(data){// 일단 조건문 수정하기
-                    if(data != null){
-                        var new_url ="/lodging/lodginglist/view?area_name=" + areaName + "&sortType=" + order;
-                        window.location.href = new_url; // 명시적으로 window 객체의 location 속성을 참조
-                    } else {
-                        //alert(data);
-                        alert("정렬 실패");
-                    }
-                }
-                , error:function(){
-                    alert("정렬 오류");
-                }
-            });
-		});
 
 		// 찜 해제
 		$(".undib-icon").on("click", function(){

@@ -60,11 +60,9 @@ public class LodgingController {
 		lodgingDetail.setSortType(sortType); //요청받은 sortType dto에 set
 
 		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, sortType, lodgingDetail);
-
 		model.addAttribute("lodgingList", lodgingList);
 
 		Integer lodgingCount = lodgingList.size();
-
 		model.addAttribute("lodgingCount", lodgingCount);
 		// 로징디테일로 싹다 갈고, 로징비오도 마찬가지
 		
