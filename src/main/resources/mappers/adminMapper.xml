@@ -7,6 +7,7 @@
   <mapper namespace="com.marondal.choongmotour.admin.dao.AdminDAO">
   
   <insert id ="insertAdmin" parameterType="map">
+	-- adminMapper.insertAdmin
   	INSERT INTO
   			`admin`
   		(
@@ -31,6 +32,7 @@
   </insert>
   
   <select id = "selectCountloginId" resultType="int" parameterType="String">
+	-- adminMapper.selectCountloginId
   	SELECT
   		count(1)
   	FROM
@@ -41,6 +43,7 @@
   
   <!-- 인증번호 조회및 일치여부 확인 --> 
   <select id="selectcertificationNumber" resultType="int" parameterType="String">
+	-- adminMapper.selectcertificationNumber
   	SELECT
   		count(1)
   	FROM
@@ -50,7 +53,8 @@
   </select>
 
  <select id="selectAdmin" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
- 	SELECT 
+	 -- adminMapper.selectAdmin
+	 SELECT
  		`id`<!-- id컬럼 추가를 안시켜서 자꾸 id값이 0이라고 들어가는거였다. -->
  		 , `loginId`
   		 , `password`
@@ -69,7 +73,8 @@
  </select>
 
  <select id="selectAdminByNameEmail" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
- 	SELECT <!-- 우선적으로 매퍼에서 부터 아이디가 필요없다고 함 이름, 이메일 이 두개만 있으면 된다 하시는데. -->
+	-- adminMapper.selectAdminByNameEmail
+	SELECT <!-- 우선적으로 매퍼에서 부터 아이디가 필요없다고 함 이름, 이메일 이 두개만 있으면 된다 하시는데. -->
   		`loginId`
  	FROM
  		`admin`
@@ -80,7 +85,8 @@
  </select>
  
   <update id = "updatePassword" parameterType="map">
-  	UPDATE
+	-- adminMapper.updatePassword
+	UPDATE
   		`admin`
   	SET
   		`password` = #{password}<!-- 그리고 비밀번호도 암호화되야하기에 이렇게 하는것도 적합하지 않다고 함 -->
@@ -91,7 +97,8 @@
   <!-- 여기선 id가아닌 loginId 아닐까 싶음 -->
 
  <select id="selectAdminInfo" resultType="com.marondal.choongmotour.admin.model.Admin" parameterType="map">
-	SELECT
+	 -- adminMapper.selectAdminInfo
+	 SELECT
 		 `id`<!-- 여기도 당연히 추가해보기 -->
   		 , `password`<!-- 이거 콤마앞에 찍음 -->
   		 , `name`
@@ -109,7 +116,8 @@
 
    <!-- 수정 -->	
   <update id ="updateAdmin" parameterType="map"> <!-- 여기에 실수로 이메일 컬럼 두번씀 -->
-  	UPDATE
+	-- adminMapper.updateAdmin
+	UPDATE
   		`admin`
   	SET
   		`password` =#{password}
