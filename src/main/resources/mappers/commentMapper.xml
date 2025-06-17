@@ -8,34 +8,35 @@
   
   <!-- 댓글 달기 -->
   <insert id ="insertComment" parameterType="map">
+	-- commentMapper.insertComment
   	INSERT INTO
-  			`comment`
-  			(
-  				`userId`
-  				, `lodgingId`
-  				, `size`
-  				, `content`
-  				, `imagePath`
-  				, `starpoint`
-  				, `createdAt`
-  				, `updatedAt`
-  			)
-  			VALUES
-  			(
-  				#{userId}
-  				, #{lodgingId}
-  				, #{size}
-  				, #{content}
-  				, #{imagePath}
-  				, #{starpoint}
-  				, now()
-  				, now()
-  			
-  			);
+		`comment`
+		(
+			`userId`
+			, `lodgingId`
+			, `size`
+			, `content`
+			, `imagePath`
+			, `starpoint`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUES
+		(
+			#{userId}
+			, #{lodgingId}
+			, #{size}
+			, #{content}
+			, #{imagePath}
+			, #{starpoint}
+			, now()
+			, now()
+		);
   </insert>
   
   <!-- 댓글 목록 -->
   <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="map">
+	-- commentMapper.selectCommentList
   	SELECT
   		 `id`
   		, `userId`
@@ -55,6 +56,7 @@
   
   <!-- 댓글 한행 조회 -->  
   <select id = "selectComment" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
+	-- commentMapper.selectComment
   	SELECT
   		`id`
   		, `userId`
@@ -73,7 +75,8 @@
   
   <!-- 댓글 삭제 -->
   <delete id = "deleteComment" parameterType="int">
-  	DELETE 
+	-- commentMapper.deleteComment
+	DELETE
   	FROM
   		`comment`
   	WHERE
@@ -84,6 +87,7 @@
   
   <!-- 댓글 개수 -->
   <select id ="selectCommentCount" resultType="Integer" parameterType="int">
+	-- commentMapper.selectCommentCount
 	SELECT
 	  count(*) AS `commentCount`
 	FROM
@@ -94,6 +98,7 @@
 
   <!-- 댓글 평균평점 -->
 	<select id = "selectStarPoint" resultType="double" parameterType="int">
+		-- commentMapper.selectStarPoint
 		SELECT
 			AVG(`starpoint`) AS `avgStarPoint`
 		FROM
@@ -101,5 +106,4 @@
 		WHERE
 			`lodgingId` = #{lodgingId}
 	</select>
-
   </mapper>

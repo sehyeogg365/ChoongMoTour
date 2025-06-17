@@ -8,6 +8,7 @@
   
   <!-- 찜하기 -->
   	<insert id="insertDibs" parameterType="map">
+	-- dibsMapper.insertDibs
   	INSERT INTO 
   			`dibs_basket`
   	(
@@ -25,7 +26,8 @@
 
   	<!-- 찜여부 보기 -->
   	<select id="selectDibsByUserId" resultType="int" parameterType="map">
-  		SELECT 
+		-- dibsMapper.selectDibsByUserId
+		SELECT
   			count(1)
   		FROM
   			`dibs_basket`
@@ -37,7 +39,8 @@
   	
   	<!-- 찜취소 -->
   	<delete id ="deleteDibs" parameterType="int">
-  		DELETE
+		-- dibsMapper.deleteDibs
+		DELETE
   		FROM
   			`dibs_basket`
   		WHERE
@@ -46,7 +49,8 @@
   	
   	<!-- 찜목록 -->
   	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="map">
-  		SELECT
+		-- dibsMapper.selectDibsList
+		SELECT
   			`id`
 			,`lodgingId`
 			<!-- 어떤것을 조회해올것인지 생각 로징아이디는 조회해야하나 싶음 --> 
@@ -57,5 +61,4 @@
   		ORDER BY 
   			`id` DESC; <!-- 최근 찜한 순서대로 -->
   	</select>
-  
   </mapper>

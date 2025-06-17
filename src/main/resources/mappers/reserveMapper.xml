@@ -6,41 +6,41 @@
 
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
 
- <!-- 예약하기 -->
-  	<insert id = "insertReserve" parameterType="map">
-  	INSERT INTO
-  			`reserved_list`
-  	(
-  		 `roomId`
-  		, `userId` 
-  		, `name`
-  		, `phoneNumber`
-  		, `payment`
-  		, `startDate` <!-- 여기서 왜 payment가 없는가??? 이래서 예약이 안되는건 아닌지??? -->
-  		, `endDate`
-  		, `createdAt`
-  		, `updatedAt`
-  	) 
-  		VALUES
-  	(
-  		#{roomId}
-  		, #{userId}
-  		, #{name}
-  		, #{phoneNumber}
-  		, #{payment}
-  		, #{startDate}
-  		, #{endDate}
-  		, now()
-  		, now()
-  	);
-  			
-  	
-  	</insert>
+	<!-- 예약하기 -->
+  <insert id = "insertReserve" parameterType="map">
+	-- reserveMapper.insertReserve
+	INSERT INTO
+		`reserved_list`
+	(
+		 `roomId`
+		, `userId`
+		, `name`
+		, `phoneNumber`
+		, `payment`
+		, `startDate` <!-- 여기서 왜 payment가 없는가??? 이래서 예약이 안되는건 아닌지??? -->
+		, `endDate`
+		, `createdAt`
+		, `updatedAt`
+	)
+		VALUES
+	(
+		#{roomId}
+		, #{userId}
+		, #{name}
+		, #{phoneNumber}
+		, #{payment}
+		, #{startDate}
+		, #{endDate}
+		, now()
+		, now()
+	);
+  </insert>
   
   <!-- 예약 목록 -->	
   <!-- 이제보니 이것도 안해놔서 때로는 오류가 뜬다. -->
   <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.model.Reserve" parameterType="int">
-  	SELECT
+	-- reserveMapper.selectReserveList
+	SELECT
   		`id`
   		, `userId`
   		, `roomId`
@@ -57,26 +57,27 @@
   
    <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
   <select id = "selectReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
-   SELECT
+	-- reserveMapper.selectReserveInfoById
+	SELECT
    		`id`
   		, `userId`
   		, `roomId`
   		, `payment`
   		, `startDate`
   		, `endDate`
-   FROM
+    FROM
    		`reserved_list`
-   WHERE
+    WHERE
 	 `userId` = #{userId};
   </select>
   
   <!-- 예약 취소 -->
   <delete id = "deleteReserve" parameterType="int">
-	  DELETE
-	  FROM	`reserved_list`
-	  WHERE `id` = #{id};
+	 -- reserveMapper.deleteReserve
+	 DELETE
+	 FROM
+	  `reserved_list`
+	 WHERE
+	  `id` = #{id};
   </delete>
- 
-
- 
  </mapper>

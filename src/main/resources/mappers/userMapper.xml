@@ -7,7 +7,8 @@
   <mapper namespace="com.marondal.choongmotour.user.dao.UserDAO">
   
   <insert id ="insertUser" parameterType="map">
-	  INSERT INTO 
+	  -- userMapper.insertUser
+	  INSERT INTO
 	  		`user`
 		  	(
 		  		`loginId`
@@ -31,7 +32,8 @@
   </insert>
   
   <select id = "selectCountloginId" resultType="int" parameterType="String">
-  	SELECT 
+	-- userMapper.selectCountloginId
+	SELECT
   		count(1)
   	FROM
   		`user`
@@ -40,7 +42,8 @@
   </select>
   
   <select id="selectUser" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
-  	SELECT
+	-- userMapper.selectUser
+	SELECT
   		 `id`	
   		 , `loginId`<!-- id컬럼 추가를 안시켜서 자꾸 id값이 0이라고 들어가는거였다. -->
 		 , `password` 
@@ -58,7 +61,8 @@
   </select>
   
   <select id ="selectUserByNameEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
-  	SELECT
+	-- userMapper.selectUserByNameEmail
+	SELECT
   		`loginId`<!-- 실수로 ` 하나 빼먹는 실수로 500뜸 --> 
   	FROM
   		`user`
@@ -70,7 +74,8 @@
 
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
   <update id = "updatePassword" parameterType="map">
-  	UPDATE
+	-- userMapper.updatePassword
+	UPDATE
   		`user`
   	SET
   		`password` = #{password}<!-- 그리고 비밀번호도 암호화되야하기에 이렇게 하는것도 적합하지 않다고 함 -->
@@ -82,16 +87,17 @@
   
   <!-- 회원 정보 조회 -->
   <select id="selectUserInfo" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+	-- userMapper.selectUserInfo
 	SELECT
 		 `id` <!-- 여기도 당연히 추가해보기 -->
-  		 ,`password`
-  		 , `name`
-		 , `email` 
+		 ,`password`
+		 , `name`
+		 , `email`
 		 , `phoneNumber`
 		 , `nickname`
 		 , `imagePath`
-		 , `createdAt` 
-		 , `updatedAt` 
+		 , `createdAt`
+		 , `updatedAt`
 	FROM
 		`user`
 	WHERE
@@ -100,7 +106,8 @@
 
   <!-- 수정 -->
   <update id ="updateUser" parameterType="map">
-  	UPDATE
+	-- userMapper.updateUser
+	UPDATE
   		`user`
   	SET
   		`password` =#{password}
