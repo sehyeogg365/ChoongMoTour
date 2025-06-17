@@ -175,15 +175,7 @@ AWS
 
  * 모달창을 활용하여 숙소 정렬 방법을 선택한다. 폼메서드를 활용하여  만들었으며, 라디오 버튼이 누르자 말자 로딩이 되게끔 onchange 이벤트로 폼이 자동 제출되어 페이지가 다시 로딩된다. 그리고 지역명도 요청하기 위해
  * input 창에 히든 타입을 준후 areaName 모델값을 인풋칸에 불러왔다.
-<form action="/lodging/lodginglist/view" method="get" class="">
-                                <div class="">
-                                    <input type="hidden" name="area_name" value="${lodgingList[0].areaName}">
-                                    <label class="col-9"><input type="radio" name="sortType" value="starPointOrder" onchange="this.form.submit()">평점높은순</label>
-                                    <label class="col-9"><input type="radio" name="sortType" value="commentOrder" onchange="this.form.submit()">리뷰많은순</label>
-                                    <label class="col-9"><input type="radio" name="sortType" value="lowPriceOrder" onchange="this.form.submit()">낮은가격순</label>
-                                    <label class="col-9"><input type="radio" name="sortType" value="highPriceOrder" onchange="this.form.submit()">높은가격순</label>
-                                </div>
-                            </form>
+                           
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="600px" heighth="600px"/>
 
