@@ -34,8 +34,8 @@ public class LodgingBO {
 	// lodging 정보 - 지역 불러오기??
 	
 	// 숙소리스트 지역별로 보여주면서 로그인 했을시 찜했는지 안했는지 여부까지 나타내야 함
-	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, String sortType, LodgingDetail lodgingDetail){
-		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, lodgingDetail.getSortType());
+	public List<LodgingDetail> getLodgingListByArea(String areaName, int userId, String sortType){
+		List<LodgingDetail> lodgingList = lodgingDAO.selectLodgingListByArea(areaName, sortType);
 		
 		List<LodgingDetail> lodgingDetailList = new ArrayList<>();
 		
@@ -45,7 +45,7 @@ public class LodgingBO {
 			boolean isDibs = dibsCheckBO.isDibs(userId, lodging.getId());
 			// 이거와 관련된 비오 하나를 차라리 더 팔것.
 			// 댓글갯수,평점,가격, 정렬 방식 비오를 파기,
-			lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
+			LodgingDetail lodgingDetail = new LodgingDetail(); // 이것을 반복문 밖에 파라미터로 선언 하면 자꾸 같은 숙소가 나옴
 			CommentDetail commentDetail = new CommentDetail();
 			Integer commentCount = commentDAO.selectCommentCount(lodging.getId());// 댓글 갯수 이두개를 lodgingId로 변경?
 			Double starPoint = commentDAO.selectStarPoint(lodging.getId());//댓글 평점

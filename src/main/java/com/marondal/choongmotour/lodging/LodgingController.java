@@ -46,7 +46,6 @@ public class LodgingController {
 	// 숙소리스트
 	@GetMapping("/lodginglist/view")
 	public String lodgingList(Model model
-							  , LodgingDetail lodgingDetail
 							  , @RequestParam("area_name")String areaName
 							  , @RequestParam(value = "sortType", required = false) String sortType  // sortType 선택안됐을시 수정된 부분
 							  , HttpSession session
@@ -57,9 +56,7 @@ public class LodgingController {
 //			lodgingDetail.setSortType(sortType);  // 요청받은 sortType을 DTO에 설정
 //		}
 
-		lodgingDetail.setSortType(sortType); //요청받은 sortType dto에 set
-
-		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, sortType, lodgingDetail);
+		List<LodgingDetail> lodgingList = lodgingBO.getLodgingListByArea(areaName, userId, sortType);
 		model.addAttribute("lodgingList", lodgingList);
 
 		Integer lodgingCount = lodgingList.size();
