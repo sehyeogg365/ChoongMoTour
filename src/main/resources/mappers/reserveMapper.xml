@@ -6,8 +6,8 @@
 
  <mapper namespace="com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO">
 
-	<!-- 예약하기 -->
-  <insert id = "insertReserve" parameterType="map">
+  <!-- 예약하기 -->
+  <insert id="insertReserve" parameterType="map">
 	-- reserveMapper.insertReserve
 	INSERT INTO
 		`reserved_list`
@@ -38,7 +38,7 @@
   
   <!-- 예약 목록 -->	
   <!-- 이제보니 이것도 안해놔서 때로는 오류가 뜬다. -->
-  <select id ="selectReserveList" resultType="com.marondal.choongmotour.lodging.model.Reserve" parameterType="int">
+  <select id="selectReserveList" resultType="com.marondal.choongmotour.lodging.model.Reserve" parameterType="int">
 	-- reserveMapper.selectReserveList
 	SELECT
   		`id`
@@ -56,7 +56,7 @@
   </select>  
   
    <!-- 예약정보 한행 조회 -->										<!-- 애초에 이것도 왜 리설트 타입이렇게 했는지 모르겠다 다오가 아니라 모델아닌가?-->
-  <select id = "selectReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
+  <select id="selectReserveInfoById" resultType="com.marondal.choongmotour.lodging.model.ReserveDetail" parameterType="map">
 	-- reserveMapper.selectReserveInfoById
 	SELECT
    		`id`
@@ -72,7 +72,7 @@
   </select>
   
   <!-- 예약 취소 -->
-  <delete id = "deleteReserve" parameterType="int">
+  <delete id="deleteReserve" parameterType="int">
 	 -- reserveMapper.deleteReserve
 	 DELETE
 	 FROM

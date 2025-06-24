@@ -31,7 +31,7 @@
 		  )
   </insert>
   
-  <select id = "selectCountloginId" resultType="int" parameterType="String">
+  <select id="selectCountloginId" resultType="int" parameterType="String">
 	-- userMapper.selectCountloginId
 	SELECT
   		count(1)
@@ -60,7 +60,7 @@
   		AND `password` = #{password};
   </select>
   
-  <select id ="selectUserByNameEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
+  <select id="selectUserByNameEmail" resultType="com.marondal.choongmotour.user.model.User" parameterType="map">
 	-- userMapper.selectUserByNameEmail
 	SELECT
   		`loginId`<!-- 실수로 ` 하나 빼먹는 실수로 500뜸 --> 
@@ -73,7 +73,7 @@
   </select>
 
   <!-- 가만 생각해보니 임시 비밀번호 발급 api도 필요할듯? -->
-  <update id = "updatePassword" parameterType="map">
+  <update id="updatePassword" parameterType="map">
 	-- userMapper.updatePassword
 	UPDATE
   		`user`
@@ -105,7 +105,7 @@
  </select>
 
   <!-- 수정 -->
-  <update id ="updateUser" parameterType="map">
+  <update id="updateUser" parameterType="map">
 	-- userMapper.updateUser
 	UPDATE
   		`user`
