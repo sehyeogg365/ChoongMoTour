@@ -7,7 +7,7 @@
   <mapper namespace="com.marondal.choongmotour.lodging.comment.dao.CommentDAO">
   
   <!-- 댓글 달기 -->
-  <insert id ="insertComment" parameterType="map">
+  <insert id="insertComment" parameterType="map">
 	-- commentMapper.insertComment
   	INSERT INTO
 		`comment`
@@ -35,7 +35,7 @@
   </insert>
   
   <!-- 댓글 목록 -->
-  <select id = "selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="map">
+  <select id="selectCommentList" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="map">
 	-- commentMapper.selectCommentList
   	SELECT
   		 `id`
@@ -55,7 +55,7 @@
   </select>
   
   <!-- 댓글 한행 조회 -->  
-  <select id = "selectComment" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
+  <select id="selectComment" resultType="com.marondal.choongmotour.lodging.model.Comment" parameterType="int">
 	-- commentMapper.selectComment
   	SELECT
   		`id`
@@ -74,7 +74,7 @@
   </select>
   
   <!-- 댓글 삭제 -->
-  <delete id = "deleteComment" parameterType="int">
+  <delete id="deleteComment" parameterType="int">
 	-- commentMapper.deleteComment
 	DELETE
   	FROM
@@ -86,7 +86,7 @@
   </delete>
   
   <!-- 댓글 개수 -->
-  <select id ="selectCommentCount" resultType="Integer" parameterType="int">
+  <select id="selectCommentCount" resultType="Integer" parameterType="int">
 	-- commentMapper.selectCommentCount
 	SELECT
 	  count(*) AS `commentCount`
@@ -97,7 +97,7 @@
   </select>
 
   <!-- 댓글 평균평점 -->
-	<select id = "selectStarPoint" resultType="double" parameterType="int">
+	<select id="selectStarPoint" resultType="double" parameterType="int">
 		-- commentMapper.selectStarPoint
 		SELECT
 			AVG(`starpoint`) AS `avgStarPoint`

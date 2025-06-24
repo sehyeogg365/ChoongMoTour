@@ -6,7 +6,7 @@
   
   <mapper namespace="com.marondal.choongmotour.admin.dao.AdminDAO">
   
-  <insert id ="insertAdmin" parameterType="map">
+  <insert id="insertAdmin" parameterType="map">
 	-- adminMapper.insertAdmin
   	INSERT INTO
   			`admin`
@@ -31,7 +31,7 @@
   		);
   </insert>
   
-  <select id = "selectCountloginId" resultType="int" parameterType="String">
+  <select id="selectCountloginId" resultType="int" parameterType="String">
 	-- adminMapper.selectCountloginId
   	SELECT
   		count(1)
@@ -84,7 +84,7 @@
  		`email` = #{email};
  </select>
  
-  <update id = "updatePassword" parameterType="map">
+  <update id="updatePassword" parameterType="map">
 	-- adminMapper.updatePassword
 	UPDATE
   		`admin`

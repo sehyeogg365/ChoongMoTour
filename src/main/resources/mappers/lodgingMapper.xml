@@ -7,7 +7,7 @@
   <mapper namespace="com.marondal.choongmotour.lodging.dao.LodgingDAO">
   	
   <!-- 사용자 페이지 지역별 숙소조회, 객실조회, 예약 등등 -->	<!-- 여기에 if문 추가해서 필머모달/정렬모달 검색조건 추가 -->
-  	<select id = "selectLodgingListByArea" resultType="com.marondal.choongmotour.lodging.model.LodgingDetail" parameterType="String">
+  	<select id="selectLodgingListByArea" resultType="com.marondal.choongmotour.lodging.model.LodgingDetail" parameterType="String">
 		-- lodgingMapper.selectLodgingListByArea
   		SELECT
   			`id`
@@ -49,7 +49,7 @@
   	</select>
   	
   	<!-- 객실 사이즈 순(가격 오름차순)으로 조회하기 끔 한다. -->
-  	<select id = "selectRoomListOrderByPrice" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
+  	<select id ="selectRoomListOrderByPrice" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
 		-- lodgingMapper.selectRoomListOrderByPrice
 		SELECT
   			`id`
@@ -177,7 +177,7 @@
 	 </insert>
  
 	 <!-- 객실 리스트 조회 -->
-	 <select id ="selectRoomList" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
+	 <select id="selectRoomList" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
 		-- lodgingMapper.selectRoomList
 		SELECT
 			`id`
@@ -197,7 +197,7 @@
 	 </select>
  
 	 <!-- 객실 1행 조회 -->
-	 <select id ="selectRoomById" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
+	 <select id="selectRoomById" resultType="com.marondal.choongmotour.lodging.model.Room" parameterType="int">
 		-- lodgingMapper.selectRoomById
 		SELECT
 			`id`

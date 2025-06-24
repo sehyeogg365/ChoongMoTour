@@ -38,7 +38,7 @@
   	</select>
   	
   	<!-- 찜취소 -->
-  	<delete id ="deleteDibs" parameterType="int">
+  	<delete id="deleteDibs" parameterType="int">
 		-- dibsMapper.deleteDibs
 		DELETE
   		FROM
@@ -48,7 +48,7 @@
   	</delete>
   	
   	<!-- 찜목록 -->
-  	<select id = "selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="map">
+  	<select id="selectDibsList" resultType="com.marondal.choongmotour.lodging.model.Dibs" parameterType="map">
 		-- dibsMapper.selectDibsList
 		SELECT
   			`id`
