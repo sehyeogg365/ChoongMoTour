@@ -20,10 +20,9 @@ import com.marondal.choongmotour.user.model.User;
 @Service
 @RequiredArgsConstructor
 public class CommentBO {
+
 	private final UserBO userBO;
-
 	private final LodgingBO lodgingBO;
-
 	private final CommentDAO commentDAO;
 	
 	// 댓글 작성

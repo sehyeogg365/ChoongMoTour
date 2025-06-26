@@ -2,7 +2,6 @@ package com.marondal.choongmotour.lodging.comment.dao;
 
 import java.util.List;
 
-import com.marondal.choongmotour.lodging.model.CommentDetail;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 

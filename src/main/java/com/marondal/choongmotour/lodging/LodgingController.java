@@ -23,14 +23,11 @@ import com.marondal.choongmotour.user.model.User;
 @RequiredArgsConstructor
 @RequestMapping("/lodging")
 public class LodgingController {
+
 	private final LodgingBO lodgingBO;
-
 	private final UserBO userBO;
-
 	private final DibsBO dibsBO;
-
 	private final ReserveBO reserveBO;
-
 	private final CommentBO commentBO;
 
 	// 사용자페이지 가만생각해보니 이것도 메인페이지인데 굳이 여기 있어야하나 혼란이든다.
@@ -79,11 +76,9 @@ public class LodgingController {
 						) {
 		// 숙소 한행 , @RequestParam("id") int id
 		Lodging lodging = lodgingBO.getLodging(id);
-		
 		model.addAttribute("lodging", lodging);		
 		// 객실리스트 싱글, 더블, 트윈
 		List<Room> roomList = lodgingBO.getRoomListOrderByPrice(id);
-		
 		model.addAttribute("roomList", roomList);
 
 		return "lodging/room";
@@ -100,11 +95,9 @@ public class LodgingController {
 		int userId = (Integer)session.getAttribute("userId");
 		
 		List<DibsDetail> dibsDetailList = dibsBO.getDibsList(userId, id);
-		
 		model.addAttribute("dibsDetailList", dibsDetailList);
 		// 로징리스트를 불러올일은 없다.
 		User user = userBO.getUserInfo(id);
-		
 		model.addAttribute("user", user);
 		
 		return "lodging/dibspage";
@@ -134,11 +127,9 @@ public class LodgingController {
 		// 여기서 세개의 테이블을 넣어야하는데 id로 만 값을 지칭하다보니 꼬인거 같다. 어떤값인 지도 모르고 제대로 지칭 해줘야 할듯 하면 세션 또는 파라미터로 불러와야할터.
 
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
-		
 		model.addAttribute("lodging", lodging);	
 		// 여기는 예약페이지니 절대 건드리지말기
 		Room room = lodgingBO.getRoom(roomId);
-		
 		model.addAttribute("room", room);
 		
 		// 여기가 비오를 호출하는곳
@@ -178,11 +169,9 @@ public class LodgingController {
 							  , @RequestParam("lodgingId")int lodgingId
 							  , @RequestParam("roomId") int roomId ) {
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
-		
 		model.addAttribute("lodging", lodging);	
 		
 		Room room = lodgingBO.getRoom(roomId);
-		
 		model.addAttribute("room", room);
 
 		return "lodging/commentwrite";
@@ -195,13 +184,11 @@ public class LodgingController {
 							) {
 		PagingDTO pagingDTO = null;
 		Lodging lodging = lodgingBO.getLodging(lodgingId);
-		
 		model.addAttribute("lodging", lodging);	
 	
 		//int userId = (Integer)session.getAttribute("userId");
 		
 		List<CommentDetail> commentDetailList = commentBO.getCommentList(lodgingId);
-		
 		model.addAttribute("commentDetailList", commentDetailList);
 
 		Integer commentCount = commentBO.getCommentCount(lodgingId); // 댓글 갯수, 평점
@@ -212,5 +199,4 @@ public class LodgingController {
 		
 		return "lodging/commentlist";
 	}
-	
 }

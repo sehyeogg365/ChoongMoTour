@@ -13,13 +13,13 @@ import java.util.Random;
 @Service
 @RequiredArgsConstructor
 public class UserBO {
+
 	private final UserDAO userDAO;
 
 	// 회원가입 api
 	public int addUser(String loginId, String password, String name, String email, String nickname) {
 		// 비밀번호 암호화
 		String encryptPassword = EncryptService.md5(password);
-
 		return userDAO.insertUser(loginId, encryptPassword, name, email, nickname);
 	}
 

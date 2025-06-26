@@ -15,8 +15,8 @@ import com.marondal.choongmotour.lodging.model.Lodging;
 @Service
 @RequiredArgsConstructor
 public class DibsBO {
-	private final DibsDAO dibsDAO;
 
+	private final DibsDAO dibsDAO;
 	private final LodgingBO lodgingBO;
 
 	// 찜
@@ -60,5 +60,4 @@ public class DibsBO {
 		}
 		return dibsDetailList;// 이것도 로징아이디 별 조회
 	}
-
 }

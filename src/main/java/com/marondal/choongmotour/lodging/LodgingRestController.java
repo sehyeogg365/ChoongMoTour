@@ -26,11 +26,8 @@ import com.marondal.choongmotour.lodging.reserve.bo.ReserveBO;
 @RequestMapping("/lodging")
 public class LodgingRestController {
 	private final LodgingBO lodgingBO;
-
 	private final DibsBO dibsBO;
-
 	private final ReserveBO reserveBO;
-
 	private final CommentBO commentBO;
 	
 	// 사용자 페이지 숙소예약 예약취소 이런건 user일지 lodging일지??
@@ -280,5 +277,4 @@ public class LodgingRestController {
 		
 		return resultMap;
 	}
-	
 }
