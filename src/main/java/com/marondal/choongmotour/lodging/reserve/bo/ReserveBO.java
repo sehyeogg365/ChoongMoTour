@@ -15,17 +15,18 @@ import com.marondal.choongmotour.lodging.model.Room;
 import com.marondal.choongmotour.lodging.reserve.dao.ReserveDAO;
 import com.marondal.choongmotour.user.bo.UserBO;
 import com.marondal.choongmotour.user.model.User;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class ReserveBO {
+
 	private final UserBO userBO;
-
 	private final ReserveDAO reserveDAO;
-
 	private final LodgingBO lodgingBO;
 
 	// 예약하기
+	@Transactional
 	public int addReserve(int roomId, int userId, String name, String phoneNumber,  String payment, Date startDate, Date endDate) {
 		return reserveDAO.insertReserve(roomId, userId, name, phoneNumber, payment, startDate, endDate);
 	}
@@ -79,5 +80,4 @@ public class ReserveBO {
 	public int deleteReserve(int userId, int id) {
 		return reserveDAO.deleteReserve(userId, id);
 	}
-
 }

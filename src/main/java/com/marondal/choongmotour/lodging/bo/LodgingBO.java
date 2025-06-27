@@ -7,6 +7,7 @@ import com.marondal.choongmotour.lodging.comment.dao.CommentDAO;
 import com.marondal.choongmotour.lodging.model.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.marondal.choongmotour.common.FileManagerService;
@@ -18,13 +19,10 @@ import com.marondal.choongmotour.user.bo.UserBO;
 @Service
 @RequiredArgsConstructor
 public class LodgingBO {
+
 	private final LodgingDAO lodgingDAO;// private 추가
-
 	private final UserBO userBO;
-	
-	// 순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
-	private final DibsCheckBO dibsCheckBO;
-
+	private final DibsCheckBO dibsCheckBO;// 순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	private final CommentDAO commentDAO;
 
 	//TODO 필터모달및 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
@@ -119,7 +117,6 @@ public class LodgingBO {
 	}								//파일매니저서도 파일을 중복되지않게 저장하기위해 adminId가 당연히 필요한것.
 									// 모호하게 전에서 이걸 써서 이게 필요할것이다 라는 생각이 들게됨 근데 명확하게 해야함개발은 쓸때 쓰고 뺄땐빼고 이래야 함.
 	// 숙소 리스트
-	
 	public List<Lodging> getLodgingList(int id) {
 		return lodgingDAO.selectLodgingList(id);
 	}
@@ -130,6 +127,7 @@ public class LodgingBO {
 	}
 	
 	// 숙소 수정
+	@Transactional
 	public int updateLodging(int id, String roomName, String level, String areaName) {
 							//update에 꼭 필요한값만 넣어야 한다고 판단 추가메서드에서도 꼭 adminId를 넣어야만 하는지 검토해보기 누가 넣느냐가 중요하다면 넣는거고.
 		//String imagePath = FileManagerService.saveFile(lodgingId, file);
@@ -154,13 +152,14 @@ public class LodgingBO {
 	}
 	
 	// 객실 수정
+	@Transactional
 	public int updateRoom(int id, int price, String size, String content) {
 		return lodgingDAO.updateRoom(id, price, size, content);
 	}
 	
 	// 숙소 삭제
+	@Transactional
 	public int deleteLodging(int id) {
 		return lodgingDAO.deleteLodging(id);
 	}
-
 }
