@@ -81,7 +81,7 @@ Postman
 
 
 백엔드
-* Java 11
+* Java 17
 * SpringBoot 2.7.10
 
 프론트엔드
