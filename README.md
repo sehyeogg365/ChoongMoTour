@@ -82,7 +82,7 @@ Postman
 
 백엔드
 * Java 11
-* SpringBoot 3.4.0
+* SpringBoot 2.7.10
 
 프론트엔드
 * Html5/css3
