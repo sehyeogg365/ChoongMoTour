@@ -96,10 +96,13 @@ Postman
 * MySQL
 
 인프라
-* AWS EC2
+* AWS EC2, Docker
 
 라이브러리
-* 네이버 지도 api 
+* 네이버 지도 api
+
+테스트
+* Github Action, Swagger, Postman
 
 <a href="https://www.miricanvas.com/v/118g5f1">포트폴리오</a><br>
 <a href="https://docs.google.com/spreadsheets/d/1ulS-dG7vU--vupX4izbBoyuIOq97HsWBosX10JA7HQY/edit?gid=0#gid=0">설계서</a>
