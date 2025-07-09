@@ -25,7 +25,7 @@ public class LodgingBO {
 	private final DibsCheckBO dibsCheckBO;// 순환참조 문제 때문에 새로운 비오를 따로 하나 만듦
 	private final CommentDAO commentDAO;
 
-	//TODO 필터모달및 롬복주입(생성자주입), JUnit, TDD추가 해보기 등등
+	//TODO 필터모달및 JUnit, TDD추가 해보기 등등
 
 	// 사용자페이지
 

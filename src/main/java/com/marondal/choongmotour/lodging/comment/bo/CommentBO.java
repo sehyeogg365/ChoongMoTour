@@ -24,7 +24,7 @@ public class CommentBO {
 	private final UserBO userBO;
 	private final LodgingBO lodgingBO;
 	private final CommentDAO commentDAO;
-	
+	//TODO 체크아웃 날짜로부터 30일이 경과된 예약 내역은 댓글달기 불가능, 포인트 적립/사용, 조회페이지
 	// 댓글 작성
 	public int addComment(int lodgingId, int userId, String size, MultipartFile file, String content, double starpoint) {
 		String imagePath = FileManagerService.saveFile(userId, file);
