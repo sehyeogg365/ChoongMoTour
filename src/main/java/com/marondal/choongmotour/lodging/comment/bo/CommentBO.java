@@ -38,7 +38,6 @@ public class CommentBO {
 		List<CommentDetail> commentDetailList = new ArrayList<>();
 
 		for (Comment comment : commentList) {
-					
 			User user = userBO.getUserInfo(comment.getUserId());
 			// Lodging lodging = lodgingBO.getLodging(lodgingId);
 			// 근데 알다시피 밑에 값들은 카드 한장에 들어가는 값이라서 리스트는 불필요 함
