@@ -38,7 +38,6 @@ public class UserBO {
 	public User getUser(String loginId, String password) {// 모델객체 불러오는것.
 		// 비밀번호 암호화
 		String ecryptPassword = EncryptService.md5(password);
-
 		return userDAO.selectUser(loginId, ecryptPassword);
 	}
 

@@ -24,7 +24,7 @@ public class CommentBO {
 	private final UserBO userBO;
 	private final LodgingBO lodgingBO;
 	private final CommentDAO commentDAO;
-	
+	//TODO 체크아웃 날짜로부터 30일이 경과된 예약 내역은 댓글달기 불가능, 포인트 적립/사용, 조회페이지
 	// 댓글 작성
 	public int addComment(int lodgingId, int userId, String size, MultipartFile file, String content, double starpoint) {
 		String imagePath = FileManagerService.saveFile(userId, file);
@@ -38,7 +38,6 @@ public class CommentBO {
 		List<CommentDetail> commentDetailList = new ArrayList<>();
 
 		for (Comment comment : commentList) {
-					
 			User user = userBO.getUserInfo(comment.getUserId());
 			// Lodging lodging = lodgingBO.getLodging(lodgingId);
 			// 근데 알다시피 밑에 값들은 카드 한장에 들어가는 값이라서 리스트는 불필요 함
