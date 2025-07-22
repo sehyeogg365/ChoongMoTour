@@ -196,7 +196,7 @@ Postman
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="600px" heighth="600px"/>
 
 ### 숙소 예약 프로젝트에 DevOps 및 API 도구 연동을 통한 개발 및 배포 환경 고도화
-*<a href=">보고서# 핵심기능⭐
+# 핵심기능⭐
 ### 숙소추가
 
  * 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용해서
@@ -260,6 +260,6 @@ Postman
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="600px" heighth="600px"/>
 
-## 숙소 예약 프로젝트에 DevOps 및 API 도구 연동을 통한 개발 및 배포 환경 고도화
+## 보고서
  * <a href="https://github.com/sehyeogg365/ChoongMoTour/blob/master/docs/%EC%88%99%EC%86%8C%20%EC%98%88%EC%95%BD%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90%20DevOps%20%EB%B0%8F%20API%20%EB%8F%84%EA%B5%AC%20%EC%97%B0%EB%8F%99%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EA%B0%9C%EB%B0%9C%20%EB%B0%8F%20%EB%B0%B0%ED%8F%AC%20%ED%99%98%EA%B2%BD%20%EA%B3%A0%EB%8F%84%ED%99%94.md">보고서</a>
 
