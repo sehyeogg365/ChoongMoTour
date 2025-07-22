@@ -21,6 +21,7 @@
     * [댓글작성&삭제](#댓글작성삭제)
     * [네이버지도 api](#네이버지도-api)
     * [정렬모달](#정렬모달)
+    * [숙소 예약 프로젝트에 DevOps및 API 도구 연동을 통한 개발 및 배포 환경 고도화](#보고서)
 
 ## 개발환경
 <div class="d-flex">
@@ -194,5 +195,71 @@ Postman
   * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
 <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="600px" heighth="600px"/>
 
+### 숙소 예약 프로젝트에 DevOps 및 API 도구 연동을 통한 개발 및 배포 환경 고도화
+*<a href=">보고서# 핵심기능⭐
+### 숙소추가
 
+ * 비즈니스 로직을 관리하는 클래스에서 파일을 저장시키게 하는 파일매니저 서비스 메서드를 사용해서
+파일명이 중복이 안되게끔 관리자 아이디 값을 넣어서 저장을 시켰다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소추가</a>
+
+
+### 숙소수정
+
+ * 숙소 id를 url 파라미터로 받아 해당하는 숙소 정보 한행을 조회해서, 그것을 자기가 수정하고 싶으면 숙소 명, 성급, 지역명으로 수정하는 기능이다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소수정</a>
+
+
+### 숙소삭제
+
+ * 숙소 id 값을 파라미터로 잡은 후 해당하는 id의 숙소를 삭제하는 원리다. 비즈니스 로직을 관리하는 클래스로부터 삭제된 행의 개수를 리턴한다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">숙소삭제</a>
+
+
+### 객실추가
+
+ * 마찬가지로, 파일매니저 서비스 메서드를 사용해서 파일명이 중복이 안되게 끔 아이디 값을 넣어서 저장을 시켰다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">객실추가</a>
+
+
+### 객실수정
+
+ * 한 숙소에 추가한 객실 정보들을 리스트로 조회하는 방식으로 출력하게 끔 했다. 상세정보 창, 가격, 사이즈 이렇게 세 개 인풋창을 객체화 시켰다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">객실추가</a>
+
+  
+<h3 id="찜찜취소">찜&찜취소</h3>
+
+ *  찜/찜 취소는 해당 숙소를 찜 추가/취소를 하니 숙소 id를 파라미터로 받아왔다. 그리고 숙소카드 한 장의 정보를 담아내는 dto까지 만들었다. 숙소 정보의 비즈니스 로직을 관리하는 클래스에서 찜 여부를 나타내는변수를 적절히 조화시켰다. 숙소 목록과 찜여부 보여주는 for 문을 구현했고, 리스트를 만들어 컨트롤러로 숙소 목록 리스트 값을 보냈다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">찜&찜취소</a>
+
+
+<h3 id="예약예약취소">예약&예약취소</h3>
+
+ * 컨트롤러에서 user한행 정보를 조회하는 메소드를 호출해서 변수로 저장했다.모델에 해당 변수를 저장시켜서 뷰에서 로그인한 사용자 정보 정보를 불러올수 있다. 숙소 id,객실id 값을 파라미터로 잡은 후 해당하는 id의 숙소,객실정보를 불러왔다. 예약 취소는 예약 아이디를 파라미터로 받아서 취소 작업이 진행 된다. 예약목록은 비즈니스로직을 관리하는 클래스에서 예약 카드 구성에 들어가는 데이터를 담은 dto와 예약하기위한 기본정보만 있는 Reserve 모델을  잘 융합해서 리스트를 만든다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">예약&예약취소</a>
+
+<h3 id="댓글작성삭제">댓글작성&삭제</h3>
+
+ * 예약 리스트 페이지 내 예약카드의 댓글 달기 버튼을 누르면 댓글 입력 팝업창이 뜬다. 숙소아이디와 객실아이디를 파라미터로 받는 댓글 팝업창으로 만들었다.
+댓글 카드 우측 상단의 x 아이콘을 누르면 해당 댓글이 삭제가 된다.삭제 기능은 댓글id 값을 파라미터로 사용했다.
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/java/com/marondal/choongmotour/lodging/LodgingRestController.java">댓글작성&삭제</a>
+
+
+### 네이버지도 api 
+
+ * 검색창에 원하는 지역을 쓴 다음 검색 버튼을 누르면 원하는 지역으로 이동한다. 자바스크립트 함수로 확대바, 검색창등등의 기본 설정들을 입력했다. 
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/room.jsp">네이버지도 api</a>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlQZLL%2FbtsK25B1r95%2FlUqgkuK7vCH8WeKzGJDiSk%2Fimg.png" width="600px" heighth="600px"/>
+
+### 정렬모달
+
+ * 모달창을 활용하여 숙소 정렬 방법을 선택한다. 폼메서드를 활용하여  만들었으며, 라디오 버튼이 누르자 말자 로딩이 되게끔 onchange 이벤트로 폼이 자동 제출되어 페이지가 다시 로딩된다. 그리고 지역명도 요청하기 위해
+ * input 창에 히든 타입을 준후 areaName 모델값을 인풋칸에 불러왔다.
+                           
+  * <a href="https://github.com/sehyeogi365/ChoongMoTour/blob/master/src/main/webapp/WEB-INF/jsp/lodging/lodginglist.jsp">정렬모달</a>
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FVM54d%2FbtsK2vIdOTk%2FL0D5q4kOTUIu6fuK6kS9t1%2Fimg.png" width="600px" heighth="600px"/>
+
+### 숙소 예약 프로젝트에 DevOps 및 API 도구 연동을 통한 개발 및 배포 환경 고도화
+*<a href="https://github.com/sehyeogg365/ChoongMoTour/blob/master/docs/%EC%88%99%EC%86%8C%20%EC%98%88%EC%95%BD%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EC%97%90%20DevOps%20%EB%B0%8F%20API%20%EB%8F%84%EA%B5%AC%20%EC%97%B0%EB%8F%99%EC%9D%84%20%ED%86%B5%ED%95%9C%20%EA%B0%9C%EB%B0%9C%20%EB%B0%8F%20%EB%B0%B0%ED%8F%AC%20%ED%99%98%EA%B2%BD%20%EA%B3%A0%EB%8F%84%ED%99%94.md">보고서</a>
 
