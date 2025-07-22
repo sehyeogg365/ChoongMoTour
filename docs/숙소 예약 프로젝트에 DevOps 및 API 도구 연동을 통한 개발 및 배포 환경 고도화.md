@@ -23,36 +23,36 @@
 version: '3.8'
 
 services:
-mysql:
-image: mysql:8.0
-container_name: mysql-tour
-restart: always
-environment:
-MYSQL_ROOT_PASSWORD: root
-MYSQL_DATABASE: choongmotour
-MYSQL_USER: root
-MYSQL_PASSWORD: root
-ports:
-- "3306:3306"
-volumes:
-- dbdata:/var/lib/mysql
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-tour
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: choongmotour
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
 
-springboot:
-build: .
-container_name: choongmotour-app
-depends_on:
-- mysql
-ports:
-- "8080:8080"
-environment:
-SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/choongmotour?serverTimezone=Asia/Seoul
-SPRING_DATASOURCE_USERNAME: root
-SPRING_DATASOURCE_PASSWORD: root
-SPRING_PROFILES_ACTIVE: docker
-restart: always
+  springboot:
+    build: .
+    container_name: choongmotour-app
+    depends_on:
+      - mysql
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/choongmotour?serverTimezone=Asia/Seoul
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_PROFILES_ACTIVE: docker
+    restart: always
 
 volumes:
-dbdata:
+  dbdata:
 ```
 
 &nbsp;&nbsp;_version:_ '3.8' 현재 도커 컴포즈 파일 버전을 의미함.
@@ -130,7 +130,7 @@ implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'`
 | OpenAPI 버전     | OpenAPI 3                             | OpenAPI 3                                       |
 
 •	Swagger UI 스크린샷 및 주요 API 테스트 예시
- ![img.png](swagger/img.png)
+![img.png](swagger/img.png)
 ![img_1.png](swagger/img_1.png)
 ![img_2.png](swagger/img_2.png)
 ![img_3.png](swagger/img_3.png)
@@ -148,16 +148,16 @@ implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'`
    Swagger는 간단한 테스트용으로는 편했지만, 로그인 → 토큰 획득 → 인증이 필요한 API 요청 같이 흐름 기반 테스트에는 부족하다고 느꼈습니다.
    Postman을 활용해 컬렉션 기반 시나리오 테스트를 구성했고,
    이후에는 테스트 자동화 스크립트도 추가해 반복 테스트를 줄였습니다.
-   이는 실무에서도 QA나 협업자와 공유하기 용이하다는 점에서 유용했습니다.<br>
+   이는 실무에서도 QA나 협업자와 공유하기 용이하다는 점에서 유용했습니다.<br><br>
 &nbsp;&nbsp;•	v3/api-docs로 import → Postman 화면 구성
-![img_11.png](postman/success/img_11.png)
-•	쿠키 기반 세션 유지 문제 해결법 (JSESSIONID 수동 설정 등)
+![img_11.png](postman/success/img_11.png)<br>
+&nbsp;&nbsp;•	쿠키 기반 세션 유지 문제 해결법 (JSESSIONID 수동 설정 등)
 1.	로그인 API 요청을 보낸 뒤 → Set-Cookie 응답 헤더에서 JSESSIONID를 수동으로 복사
 2.	이후 요청부터는 Headers 탭에서 수동으로 설정:
       Key: Cookie  
       Value: JSESSIONID=복사한_값
 
-•	API 테스트 스크린샷 (성공/실패 case 구분해서 첨부)
+&nbsp;&nbsp;•	API 테스트 스크린샷
 
 1. 성공 case
 ![img.png](postman/success/img.png)
@@ -294,7 +294,7 @@ DockerHub 회원가입 및 `Access Token` 새로 생성 후 `read-only` 설정
 
 **6. 실행 결과 요약**<br>
    •	모든 연동 구성 완료 후 실제 실행 장면 스크린샷<br>
-   •	Docker 컨테이너 실행 화면 + Swagger API + Postman 테스트 결과 등<br>
+   •	Docker 컨테이너 실행 화면 + Swagger API + Postman 테스트 결과<br>
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
