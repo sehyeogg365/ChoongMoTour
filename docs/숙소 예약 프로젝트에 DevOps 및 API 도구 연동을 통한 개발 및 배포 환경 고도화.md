@@ -300,7 +300,7 @@ DockerHub 회원가입 및 `Access Token` 새로 생성 후 `read-only` 설정
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
 **7. 도입 효과 및 회고**<br>
-&nbsp;&nbsp;•	기술적 개선 효과 요약
+&nbsp;&nbsp;•	기술적 개선 효과 요약<br>
 
 | 도입 기술        | 개선 효과                                 |
 |------------------|---------------------------------------|
@@ -308,5 +308,6 @@ DockerHub 회원가입 및 `Access Token` 새로 생성 후 `read-only` 설정
 | Swagger          | “API 테스트 및 명세 자동화를 통해 팀 내 커뮤니케이션 효율화” |
 | Postman          | “세션 기반 API 테스트, 오류 재현 시나리오 작성에 유리”    |
 | GitHub Actions   | “CI/CD 자동화를 통해 개발 흐름에 배포를 통합”         |
+<br>
 •	DevOps에 대한 이해도 향상, CI/CD, 테스트 자동화에 대한 경험 축적<br>
 •	다음 목표: Redis 기반 캐시 적용, JUnit + Mockito로 테스트 자동화, 기타 기능들 구현
