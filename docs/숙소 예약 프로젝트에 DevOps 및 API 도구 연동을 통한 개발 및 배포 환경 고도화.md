@@ -299,7 +299,7 @@ DockerHub 회원가입 및 `Access Token` 새로 생성 후 `read-only` 설정
 ![img_1.png](img_1.png)
 ![img_2.png](img_2.png)
 ![img_3.png](img_3.png)
-<br>
+<br><br>
 **7. 도입 효과 및 회고**<br>
 &nbsp;&nbsp;•	기술적 개선 효과 요약<br>
 
