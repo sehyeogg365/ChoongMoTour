@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.marondal.choongmotour.common.FileManagerService;
 
 public class FileManagerService {
-	public static final String FILE_UPLOAD_PATH = "D:\\limsehyeok\\spring\\springProject\\upload\\ChoongMoTour\\image"; //이렇게 되면 상수가 된다.
+	public static final String FILE_UPLOAD_PATH = "C:\\D드라이브\\limsehyeok\\spring\\springProject\\upload\\ChoongMoTour\\image"; //이렇게 되면 상수가 된다.
 											//알고보니 이 이미지 경로도 틀렸음 이미지 업로드할때 주의 사항 세가지 참조
 	private static Logger logger = LoggerFactory.getLogger(FileManagerService.class);
 	//member변수 웬만하면 public안쓴다.				//경로 잘 지정하고 슬래쉬 잘구분하기(메가그램거이므로 경로 수정)
